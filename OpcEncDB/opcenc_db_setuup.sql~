@@ -1,0 +1,32 @@
+
+DROP TABLE BinaryFile;
+
+
+CREATE TABLE binaryFile ( 
+ id bigint NOT NULL AUTO_INCREMENT,
+ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ name varchar(30) NOT NULL,
+ fullPath varchar(100) NOT NULL,
+ sizeInKb int(11) NOT NULL,
+ PRIMARY KEY (Id)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='binaryFile - Info regarding filesystem (name, path, size...)';
+
+
+/*    0x00000000006c7806 <+6>:	48 8d 15 b7 38 34 00	lea    0x3438b7(%rip),%rdx        # 0xa0b0c4 <db__unit_init_count> */
+CREATE TABLE instruction ( 
+ id bigint NOT NULL AUTO_INCREMENT,
+ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ binaryFileId bigint NOT NULL;
+ disassemyLine varchar(500) NOT NULL,
+ PRIMARY KEY (Id),
+    FOREIGN KEY (BinaryFileId) 
+        REFERENCES BinaryFile(Id)
+        ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='BinaryFile - Info regarding filesystem';
+
+
+    FOREIGN KEY (product_category, product_id)
+      REFERENCES product(category, id)
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+
+/* /home/lvr/src/Area51/dissas/out */
