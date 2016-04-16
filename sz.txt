@@ -1,3 +1,8 @@
+[ROOT Data exchange]
+/home/lvr/Documents/GSRN/Dropbox/Public/GSRN/ITP/git/opcenc/dataexch
+
+
+
 /home/lvr/Documents/GSRN/Dropbox/Public/GSRN/ITP/git/opcenc/OpcEncDB/opcenc_db_setuup.sql
 
 /*    0x00000000006c7806 <+6>:	48 8d 15 b7 38 34 00	lea    0x3438b7(%rip),%rdx        # 0xa0b0c4 <db__unit_init_count> */
@@ -19,4 +24,43 @@ java -classpath /home/lvr/src/Lib/hibernate-search-5.5.2.Final/dist/lib/required
 java com.journaldev.hibernate.main.HibernateAnnotationMain
 
 
+DATA_ROOT_DIR 
+
 CLASSPATH=/home/lvr/src/Lib/hibernate-search-5.5.2.Final/dist/lib/required:/home/lvr/src/Lib/hibernate-search-5.5.2.Final/dist/lib/provided:/home/lvr/src/Lib/mysql-connector-java-5.1.38:
+
+
+
+
+#or
+#sudo apt-get install xserver-xorg-core-dbgsym
+
+
+## gather functions of following binaries for disassembling - only functions declared in binary will be considered (externals are excluded)
+./disass_func.sh /home/lvr/src/Area51/SomeFunctionCalls/bin/Debug/SomeFunctionCalls
+#./disass_func.sh /usr/bin/shotwell
+#./disass_func.sh /usr/bin/openssl
+./disass_func.sh /usr/bin/vim
+
+## start disassembling functions
+chmod +x disass_all.sh
+./disass_all.sh
+echo "$(tput setaf 3)all done! :) $(tput sgr0)";
+
+# 1. Debug symbols for openssl
+echo "$(tput setaf 3) installing openssl-dbgsym$(tput sgr0)"
+sudo apt-get --yes install openssl-dbgsym
+# 2. Debug symbols for vim
+echo "$(tput setaf 3) installing vim-dbg$(tput sgr0)"
+sudo apt-get --yes install vim-dbg
+# 3. Debug symbols for xserver
+echo "$(tput setaf 3) installing xserver-xorg-core-dbg$(tput sgr0)"
+sudo apt-get --yes install xserver-xorg-core-dbg
+#### (  I. ) done
+echo "$(tput setaf 3) done: installing Debug symbols $(tput sgr0)"
+
+
+
+
+/home/lvr/Documents/GSRN/Dropbox/Public/GSRN/ITP/git/opcenc/01_DisassembleBinaries
+
+
