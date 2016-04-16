@@ -19,7 +19,8 @@ declare -a app_names=("openssl" "vim")
 declare -a app_debug_sym=("openssl-dbgsym" "vim-dbg")
 # application paths (incl. application name) 
 #declare -a app_paths=("/usr/bin/openssl" "/usr/bin/vim") 
-declare -a app_paths=("/usr/bin/openssl") 
+#declare -a app_paths=("/usr/bin/openssl") 
+declare -a app_paths=("/usr/bin/vim") 
 
 #### (  I. ) install all programms to be analysed
 echo "$(tput setaf 3) start: installing Debug symbols $(tput sgr0)"
