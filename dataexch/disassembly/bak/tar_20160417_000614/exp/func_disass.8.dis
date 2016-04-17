@@ -1,0 +1,418 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function find_backup_file_name:
+   0x00029db0 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00029db4 <+4>:	8d b0	sub	sp, #52	; 0x34
+   0x00029db6 <+6>:	05 46	mov	r5, r0
+   0x00029db8 <+8>:	45 f2 04 78	movw	r8, #22276	; 0x5704
+   0x00029dbc <+12>:	04 91	str	r1, [sp, #16]
+   0x00029dbe <+14>:	e1 f7 b0 e8	blx	0xaf20 <strlen@plt+4>
+   0x00029dc2 <+18>:	c0 f2 04 08	movt	r8, #4
+   0x00029dc6 <+22>:	82 46	mov	r10, r0
+   0x00029dc8 <+24>:	d8 f8 00 00	ldr.w	r0, [r8]
+   0x00029dcc <+28>:	e1 f7 a8 e8	blx	0xaf20 <strlen@plt+4>
+   0x00029dd0 <+32>:	0a f1 01 04	add.w	r4, r10, #1
+   0x00029dd4 <+36>:	01 30	adds	r0, #1
+   0x00029dd6 <+38>:	03 90	str	r0, [sp, #12]
+   0x00029dd8 <+40>:	09 28	cmp	r0, #9
+   0x00029dda <+42>:	2c bf	ite	cs
+   0x00029ddc <+44>:	23 18	addcs	r3, r4, r0
+   0x00029dde <+46>:	04 f1 09 03	addcc.w	r3, r4, #9
+   0x00029de2 <+50>:	05 93	str	r3, [sp, #20]
+   0x00029de4 <+52>:	18 46	mov	r0, r3
+   0x00029de6 <+54>:	05 f0 a7 fa	bl	0x2f338 <xmalloc>
+   0x00029dea <+58>:	29 46	mov	r1, r5
+   0x00029dec <+60>:	22 46	mov	r2, r4
+   0x00029dee <+62>:	83 46	mov	r11, r0
+   0x00029df0 <+64>:	e0 f7 c0 ee	blx	0xab74 <memcpy@plt+4>
+   0x00029df4 <+68>:	04 9b	ldr	r3, [sp, #16]
+   0x00029df6 <+70>:	01 2b	cmp	r3, #1
+   0x00029df8 <+72>:	00 f0 d5 80	beq.w	0x29fa6 <find_backup_file_name+502>
+   0x00029dfc <+76>:	58 46	mov	r0, r11
+   0x00029dfe <+78>:	00 f0 07 fa	bl	0x2a210 <last_component>
+   0x00029e02 <+82>:	04 46	mov	r4, r0
+   0x00029e04 <+84>:	00 f0 1a fa	bl	0x2a23c <base_len>
+   0x00029e08 <+88>:	46 f2 88 23	movw	r3, #25224	; 0x6288
+   0x00029e0c <+92>:	c0 f2 03 03	movt	r3, #3
+   0x00029e10 <+96>:	22 88	ldrh	r2, [r4, #0]
+   0x00029e12 <+98>:	1b 88	ldrh	r3, [r3, #0]
+   0x00029e14 <+100>:	ad f8 2c 20	strh.w	r2, [sp, #44]	; 0x2c
+   0x00029e18 <+104>:	23 80	strh	r3, [r4, #0]
+   0x00029e1a <+106>:	05 46	mov	r5, r0
+   0x00029e1c <+108>:	58 46	mov	r0, r11
+   0x00029e1e <+110>:	00 f0 87 f9	bl	0x2a130 <opendir_safer>
+   0x00029e22 <+114>:	49 f6 fc 33	movw	r3, #39932	; 0x9bfc
+   0x00029e26 <+118>:	c0 f2 03 03	movt	r3, #3
+   0x00029e2a <+122>:	bd f8 2c 10	ldrh.w	r1, [sp, #44]	; 0x2c
+   0x00029e2e <+126>:	62 19	adds	r2, r4, r5
+   0x00029e30 <+128>:	21 80	strh	r1, [r4, #0]
+   0x00029e32 <+130>:	06 46	mov	r6, r0
+   0x00029e34 <+132>:	18 68	ldr	r0, [r3, #0]
+   0x00029e36 <+134>:	1b 79	ldrb	r3, [r3, #4]
+   0x00029e38 <+136>:	60 51	str	r0, [r4, r5]
+   0x00029e3a <+138>:	13 71	strb	r3, [r2, #4]
+   0x00029e3c <+140>:	00 2e	cmp	r6, #0
+   0x00029e3e <+142>:	00 f0 af 80	beq.w	0x29fa0 <find_backup_file_name+496>
+   0x00029e42 <+146>:	01 23	movs	r3, #1
+   0x00029e44 <+148>:	cb eb 04 04	rsb	r4, r11, r4
+   0x00029e48 <+152>:	08 93	str	r3, [sp, #32]
+   0x00029e4a <+154>:	2f 1d	adds	r7, r5, #4
+   0x00029e4c <+156>:	02 23	movs	r3, #2
+   0x00029e4e <+158>:	02 94	str	r4, [sp, #8]
+   0x00029e50 <+160>:	05 eb 03 09	add.w	r9, r5, r3
+   0x00029e54 <+164>:	07 93	str	r3, [sp, #28]
+   0x00029e56 <+166>:	12 35	adds	r5, #18
+   0x00029e58 <+168>:	0a f1 03 03	add.w	r3, r10, #3
+   0x00029e5c <+172>:	06 95	str	r5, [sp, #24]
+   0x00029e5e <+174>:	09 93	str	r3, [sp, #36]	; 0x24
+   0x00029e60 <+176>:	30 46	mov	r0, r6
+   0x00029e62 <+178>:	e1 f7 b0 e9	blx	0xb1c4 <readdir64@plt>
+   0x00029e66 <+182>:	05 46	mov	r5, r0
+   0x00029e68 <+184>:	00 28	cmp	r0, #0
+   0x00029e6a <+186>:	00 f0 84 80	beq.w	0x29f76 <find_backup_file_name+454>
+   0x00029e6e <+190>:	d5 e9 00 23	ldrd	r2, r3, [r5]
+   0x00029e72 <+194>:	52 ea 03 01	orrs.w	r1, r2, r3
+   0x00029e76 <+198>:	f3 d0	beq.n	0x29e60 <find_backup_file_name+176>
+   0x00029e78 <+200>:	05 f1 13 04	add.w	r4, r5, #19
+   0x00029e7c <+204>:	20 46	mov	r0, r4
+   0x00029e7e <+206>:	e1 f7 50 e8	blx	0xaf20 <strlen@plt+4>
+   0x00029e82 <+210>:	b8 42	cmp	r0, r7
+   0x00029e84 <+212>:	ec d3	bcc.n	0x29e60 <find_backup_file_name+176>
+   0x00029e86 <+214>:	02 98	ldr	r0, [sp, #8]
+   0x00029e88 <+216>:	21 46	mov	r1, r4
+   0x00029e8a <+218>:	4a 46	mov	r2, r9
+   0x00029e8c <+220>:	58 44	add	r0, r11
+   0x00029e8e <+222>:	e0 f7 ac ee	blx	0xabe8 <memcmp@plt>
+   0x00029e92 <+226>:	00 28	cmp	r0, #0
+   0x00029e94 <+228>:	e4 d1	bne.n	0x29e60 <find_backup_file_name+176>
+   0x00029e96 <+230>:	05 eb 09 02	add.w	r2, r5, r9
+   0x00029e9a <+234>:	d1 7c	ldrb	r1, [r2, #19]
+   0x00029e9c <+236>:	a1 f1 31 02	sub.w	r2, r1, #49	; 0x31
+   0x00029ea0 <+240>:	08 2a	cmp	r2, #8
+   0x00029ea2 <+242>:	dd d8	bhi.n	0x29e60 <find_backup_file_name+176>
+   0x00029ea4 <+244>:	06 9b	ldr	r3, [sp, #24]
+   0x00029ea6 <+246>:	01 24	movs	r4, #1
+   0x00029ea8 <+248>:	2b 44	add	r3, r5
+   0x00029eaa <+250>:	a1 f1 39 05	sub.w	r5, r1, #57	; 0x39
+   0x00029eae <+254>:	03 33	adds	r3, #3
+   0x00029eb0 <+256>:	b5 fa 85 f5	clz	r5, r5
+   0x00029eb4 <+260>:	58 78	ldrb	r0, [r3, #1]
+   0x00029eb6 <+262>:	6d 09	lsrs	r5, r5, #5
+   0x00029eb8 <+264>:	a0 f1 30 02	sub.w	r2, r0, #48	; 0x30
+   0x00029ebc <+268>:	09 2a	cmp	r2, #9
+   0x00029ebe <+270>:	0a d8	bhi.n	0x29ed6 <find_backup_file_name+294>
+   0x00029ec0 <+272>:	01 34	adds	r4, #1
+   0x00029ec2 <+274>:	39 28	cmp	r0, #57	; 0x39
+   0x00029ec4 <+276>:	14 bf	ite	ne
+   0x00029ec6 <+278>:	00 25	movne	r5, #0
+   0x00029ec8 <+280>:	05 f0 01 05	andeq.w	r5, r5, #1
+   0x00029ecc <+284>:	18 5d	ldrb	r0, [r3, r4]
+   0x00029ece <+286>:	a0 f1 30 02	sub.w	r2, r0, #48	; 0x30
+   0x00029ed2 <+290>:	09 2a	cmp	r2, #9
+   0x00029ed4 <+292>:	f4 d9	bls.n	0x29ec0 <find_backup_file_name+272>
+   0x00029ed6 <+294>:	7e 28	cmp	r0, #126	; 0x7e
+   0x00029ed8 <+296>:	c2 d1	bne.n	0x29e60 <find_backup_file_name+176>
+   0x00029eda <+298>:	1a 19	adds	r2, r3, r4
+   0x00029edc <+300>:	52 78	ldrb	r2, [r2, #1]
+   0x00029ede <+302>:	00 2a	cmp	r2, #0
+   0x00029ee0 <+304>:	be d1	bne.n	0x29e60 <find_backup_file_name+176>
+   0x00029ee2 <+306>:	08 9a	ldr	r2, [sp, #32]
+   0x00029ee4 <+308>:	94 42	cmp	r4, r2
+   0x00029ee6 <+310>:	40 f2 97 80	bls.w	0x2a018 <find_backup_file_name+616>
+   0x00029eea <+314>:	09 9a	ldr	r2, [sp, #36]	; 0x24
+   0x00029eec <+316>:	29 19	adds	r1, r5, r4
+   0x00029eee <+318>:	08 91	str	r1, [sp, #32]
+   0x00029ef0 <+320>:	0a 44	add	r2, r1
+   0x00029ef2 <+322>:	05 99	ldr	r1, [sp, #20]
+   0x00029ef4 <+324>:	8a 42	cmp	r2, r1
+   0x00029ef6 <+326>:	14 d3	bcc.n	0x29f22 <find_backup_file_name+370>
+   0x00029ef8 <+328>:	11 46	mov	r1, r2
+   0x00029efa <+330>:	4f f0 ff 30	mov.w	r0, #4294967295
+   0x00029efe <+334>:	01 92	str	r2, [sp, #4]
+   0x00029f00 <+336>:	00 93	str	r3, [sp, #0]
+   0x00029f02 <+338>:	07 f0 d5 ff	bl	0x31eb0 <__udivsi3>
+   0x00029f06 <+342>:	01 9a	ldr	r2, [sp, #4]
+   0x00029f08 <+344>:	00 9b	ldr	r3, [sp, #0]
+   0x00029f0a <+346>:	01 28	cmp	r0, #1
+   0x00029f0c <+348>:	40 f2 93 80	bls.w	0x2a036 <find_backup_file_name+646>
+   0x00029f10 <+352>:	52 00	lsls	r2, r2, #1
+   0x00029f12 <+354>:	58 46	mov	r0, r11
+   0x00029f14 <+356>:	00 93	str	r3, [sp, #0]
+   0x00029f16 <+358>:	11 46	mov	r1, r2
+   0x00029f18 <+360>:	05 92	str	r2, [sp, #20]
+   0x00029f1a <+362>:	05 f0 31 fa	bl	0x2f380 <xrealloc>
+   0x00029f1e <+366>:	00 9b	ldr	r3, [sp, #0]
+   0x00029f20 <+368>:	83 46	mov	r11, r0
+   0x00029f22 <+370>:	0b eb 0a 02	add.w	r2, r11, r10
+   0x00029f26 <+374>:	4f f0 2e 01	mov.w	r1, #46	; 0x2e
+   0x00029f2a <+378>:	90 1c	adds	r0, r2, #2
+   0x00029f2c <+380>:	0b f8 0a 10	strb.w	r1, [r11, r10]
+   0x00029f30 <+384>:	19 46	mov	r1, r3
+   0x00029f32 <+386>:	43 19	adds	r3, r0, r5
+   0x00029f34 <+388>:	4f f0 30 0c	mov.w	r12, #48	; 0x30
+   0x00029f38 <+392>:	7e 20	movs	r0, #126	; 0x7e
+   0x00029f3a <+394>:	82 f8 02 c0	strb.w	r12, [r2, #2]
+   0x00029f3e <+398>:	50 70	strb	r0, [r2, #1]
+   0x00029f40 <+400>:	18 46	mov	r0, r3
+   0x00029f42 <+402>:	a2 1c	adds	r2, r4, #2
+   0x00029f44 <+404>:	cd f8 04 c0	str.w	r12, [sp, #4]
+   0x00029f48 <+408>:	e0 f7 14 ee	blx	0xab74 <memcpy@plt+4>
+   0x00029f4c <+412>:	dd f8 04 c0	ldr.w	r12, [sp, #4]
+   0x00029f50 <+416>:	03 46	mov	r3, r0
+   0x00029f52 <+418>:	23 44	add	r3, r4
+   0x00029f54 <+420>:	59 1e	subs	r1, r3, #1
+   0x00029f56 <+422>:	13 f8 01 2c	ldrb.w	r2, [r3, #-1]
+   0x00029f5a <+426>:	39 2a	cmp	r2, #57	; 0x39
+   0x00029f5c <+428>:	07 d1	bne.n	0x29f6e <find_backup_file_name+446>
+   0x00029f5e <+430>:	02 3b	subs	r3, #2
+   0x00029f60 <+432>:	83 f8 01 c0	strb.w	r12, [r3, #1]
+   0x00029f64 <+436>:	19 46	mov	r1, r3
+   0x00029f66 <+438>:	13 f8 01 29	ldrb.w	r2, [r3], #-1
+   0x00029f6a <+442>:	39 2a	cmp	r2, #57	; 0x39
+   0x00029f6c <+444>:	f8 d0	beq.n	0x29f60 <find_backup_file_name+432>
+   0x00029f6e <+446>:	01 32	adds	r2, #1
+   0x00029f70 <+448>:	07 95	str	r5, [sp, #28]
+   0x00029f72 <+450>:	0a 70	strb	r2, [r1, #0]
+   0x00029f74 <+452>:	74 e7	b.n	0x29e60 <find_backup_file_name+176>
+   0x00029f76 <+454>:	30 46	mov	r0, r6
+   0x00029f78 <+456>:	e1 f7 d0 e9	blx	0xb31c <closedir@plt>
+   0x00029f7c <+460>:	07 9b	ldr	r3, [sp, #28]
+   0x00029f7e <+462>:	01 2b	cmp	r3, #1
+   0x00029f80 <+464>:	0c d1	bne.n	0x29f9c <find_backup_file_name+492>
+   0x00029f82 <+466>:	58 46	mov	r0, r11
+   0x00029f84 <+468>:	00 f0 44 f9	bl	0x2a210 <last_component>
+   0x00029f88 <+472>:	04 46	mov	r4, r0
+   0x00029f8a <+474>:	00 f0 57 f9	bl	0x2a23c <base_len>
+   0x00029f8e <+478>:	0e 28	cmp	r0, #14
+   0x00029f90 <+480>:	05 46	mov	r5, r0
+   0x00029f92 <+482>:	10 d8	bhi.n	0x29fb6 <find_backup_file_name+518>
+   0x00029f94 <+484>:	58 46	mov	r0, r11
+   0x00029f96 <+486>:	0d b0	add	sp, #52	; 0x34
+   0x00029f98 <+488>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00029f9c <+492>:	02 2b	cmp	r3, #2
+   0x00029f9e <+494>:	f9 d1	bne.n	0x29f94 <find_backup_file_name+484>
+   0x00029fa0 <+496>:	04 9b	ldr	r3, [sp, #16]
+   0x00029fa2 <+498>:	02 2b	cmp	r3, #2
+   0x00029fa4 <+500>:	ed d1	bne.n	0x29f82 <find_backup_file_name+466>
+   0x00029fa6 <+502>:	d8 f8 00 10	ldr.w	r1, [r8]
+   0x00029faa <+506>:	0b eb 0a 00	add.w	r0, r11, r10
+   0x00029fae <+510>:	03 9a	ldr	r2, [sp, #12]
+   0x00029fb0 <+512>:	e0 f7 e0 ed	blx	0xab74 <memcpy@plt+4>
+   0x00029fb4 <+516>:	e5 e7	b.n	0x29f82 <find_backup_file_name+466>
+   0x00029fb6 <+518>:	46 f2 88 23	movw	r3, #25224	; 0x6288
+   0x00029fba <+522>:	c0 f2 03 03	movt	r3, #3
+   0x00029fbe <+526>:	22 88	ldrh	r2, [r4, #0]
+   0x00029fc0 <+528>:	1b 88	ldrh	r3, [r3, #0]
+   0x00029fc2 <+530>:	ad f8 2c 20	strh.w	r2, [sp, #44]	; 0x2c
+   0x00029fc6 <+534>:	23 80	strh	r3, [r4, #0]
+   0x00029fc8 <+536>:	e0 f7 f6 ef	blx	0xafb8 <__errno_location@plt>
+   0x00029fcc <+540>:	00 23	movs	r3, #0
+   0x00029fce <+542>:	03 21	movs	r1, #3
+   0x00029fd0 <+544>:	06 46	mov	r6, r0
+   0x00029fd2 <+546>:	58 46	mov	r0, r11
+   0x00029fd4 <+548>:	33 60	str	r3, [r6, #0]
+   0x00029fd6 <+550>:	e0 f7 50 ed	blx	0xaa78 <pathconf@plt>
+   0x00029fda <+554>:	00 28	cmp	r0, #0
+   0x00029fdc <+556>:	17 db	blt.n	0x2a00e <find_backup_file_name+606>
+   0x00029fde <+558>:	03 46	mov	r3, r0
+   0x00029fe0 <+560>:	bd f8 2c 20	ldrh.w	r2, [sp, #44]	; 0x2c
+   0x00029fe4 <+564>:	9d 42	cmp	r5, r3
+   0x00029fe6 <+566>:	22 80	strh	r2, [r4, #0]
+   0x00029fe8 <+568>:	d4 d9	bls.n	0x29f94 <find_backup_file_name+484>
+   0x00029fea <+570>:	da 44	add	r10, r11
+   0x00029fec <+572>:	7e 21	movs	r1, #126	; 0x7e
+   0x00029fee <+574>:	c4 eb 0a 0a	rsb	r10, r4, r10
+   0x00029ff2 <+578>:	00 22	movs	r2, #0
+   0x00029ff4 <+580>:	9a 45	cmp	r10, r3
+   0x00029ff6 <+582>:	58 46	mov	r0, r11
+   0x00029ff8 <+584>:	28 bf	it	cs
+   0x00029ffa <+586>:	03 f1 ff 3a	addcs.w	r10, r3, #4294967295
+   0x00029ffe <+590>:	04 eb 0a 03	add.w	r3, r4, r10
+   0x0002a002 <+594>:	04 f8 0a 10	strb.w	r1, [r4, r10]
+   0x0002a006 <+598>:	5a 70	strb	r2, [r3, #1]
+   0x0002a008 <+600>:	0d b0	add	sp, #52	; 0x34
+   0x0002a00a <+602>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0002a00e <+606>:	32 68	ldr	r2, [r6, #0]
+   0x0002a010 <+608>:	ff 23	movs	r3, #255	; 0xff
+   0x0002a012 <+610>:	00 2a	cmp	r2, #0
+   0x0002a014 <+612>:	e4 d1	bne.n	0x29fe0 <find_backup_file_name+560>
+   0x0002a016 <+614>:	e2 e7	b.n	0x29fde <find_backup_file_name+558>
+   0x0002a018 <+616>:	7f f4 22 af	bne.w	0x29e60 <find_backup_file_name+176>
+   0x0002a01c <+620>:	0a f1 02 00	add.w	r0, r10, #2
+   0x0002a020 <+624>:	19 46	mov	r1, r3
+   0x0002a022 <+626>:	58 44	add	r0, r11
+   0x0002a024 <+628>:	22 46	mov	r2, r4
+   0x0002a026 <+630>:	00 93	str	r3, [sp, #0]
+   0x0002a028 <+632>:	e0 f7 de ed	blx	0xabe8 <memcmp@plt>
+   0x0002a02c <+636>:	00 9b	ldr	r3, [sp, #0]
+   0x0002a02e <+638>:	00 28	cmp	r0, #0
+   0x0002a030 <+640>:	3f f7 16 af	bgt.w	0x29e60 <find_backup_file_name+176>
+   0x0002a034 <+644>:	59 e7	b.n	0x29eea <find_backup_file_name+314>
+   0x0002a036 <+646>:	e8 f7 01 ff	bl	0x12e3c <xalloc_die>
+End of assembler dump.
+Dump of assembler code for function get_version:
+   0x00029d80 <+0>:	45 f2 d8 63	movw	r3, #22232	; 0x56d8
+   0x00029d84 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x00029d88 <+8>:	70 b5	push	{r4, r5, r6, lr}
+   0x00029d8a <+10>:	49 f6 b8 34	movw	r4, #39864	; 0x9bb8
+   0x00029d8e <+14>:	1d 68	ldr	r5, [r3, #0]
+   0x00029d90 <+16>:	82 b0	sub	sp, #8
+   0x00029d92 <+18>:	c0 f2 03 04	movt	r4, #3
+   0x00029d96 <+22>:	04 26	movs	r6, #4
+   0x00029d98 <+24>:	04 f1 24 03	add.w	r3, r4, #36	; 0x24
+   0x00029d9c <+28>:	00 96	str	r6, [sp, #0]
+   0x00029d9e <+30>:	22 46	mov	r2, r4
+   0x00029da0 <+32>:	01 95	str	r5, [sp, #4]
+   0x00029da2 <+34>:	fc f7 8f ff	bl	0x26cc4 <__xargmatch_internal>
+   0x00029da6 <+38>:	04 eb 80 00	add.w	r0, r4, r0, lsl #2
+   0x00029daa <+42>:	40 6a	ldr	r0, [r0, #36]	; 0x24
+   0x00029dac <+44>:	02 b0	add	sp, #8
+   0x00029dae <+46>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function xget_version:
+   0x0002a048 <+0>:	08 b5	push	{r3, lr}
+   0x0002a04a <+2>:	21 b1	cbz	r1, 0x2a056 <xget_version+14>
+   0x0002a04c <+4>:	0b 78	ldrb	r3, [r1, #0]
+   0x0002a04e <+6>:	13 b1	cbz	r3, 0x2a056 <xget_version+14>
+   0x0002a050 <+8>:	bd e8 08 40	ldmia.w	sp!, {r3, lr}
+   0x0002a054 <+12>:	94 e6	b.n	0x29d80 <get_version>
+   0x0002a056 <+14>:	49 f6 04 40	movw	r0, #39940	; 0x9c04
+   0x0002a05a <+18>:	c0 f2 03 00	movt	r0, #3
+   0x0002a05e <+22>:	e0 f7 ce ee	blx	0xadfc <getenv@plt>
+   0x0002a062 <+26>:	08 b1	cbz	r0, 0x2a068 <xget_version+32>
+   0x0002a064 <+28>:	03 78	ldrb	r3, [r0, #0]
+   0x0002a066 <+30>:	0b b9	cbnz	r3, 0x2a06c <xget_version+36>
+   0x0002a068 <+32>:	02 20	movs	r0, #2
+   0x0002a06a <+34>:	08 bd	pop	{r3, pc}
+   0x0002a06c <+36>:	01 46	mov	r1, r0
+   0x0002a06e <+38>:	49 f6 14 40	movw	r0, #39956	; 0x9c14
+   0x0002a072 <+42>:	bd e8 08 40	ldmia.w	sp!, {r3, lr}
+   0x0002a076 <+46>:	c0 f2 03 00	movt	r0, #3
+   0x0002a07a <+50>:	81 e6	b.n	0x29d80 <get_version>
+End of assembler dump.
+Dump of assembler code for function base_len:
+   0x0002a23c <+0>:	10 b5	push	{r4, lr}
+   0x0002a23e <+2>:	04 46	mov	r4, r0
+   0x0002a240 <+4>:	e0 f7 6e ee	blx	0xaf20 <strlen@plt+4>
+   0x0002a244 <+8>:	01 28	cmp	r0, #1
+   0x0002a246 <+10>:	03 d9	bls.n	0x2a250 <base_len+20>
+   0x0002a248 <+12>:	43 1e	subs	r3, r0, #1
+   0x0002a24a <+14>:	e2 5c	ldrb	r2, [r4, r3]
+   0x0002a24c <+16>:	2f 2a	cmp	r2, #47	; 0x2f
+   0x0002a24e <+18>:	00 d0	beq.n	0x2a252 <base_len+22>
+   0x0002a250 <+20>:	10 bd	pop	{r4, pc}
+   0x0002a252 <+22>:	18 46	mov	r0, r3
+   0x0002a254 <+24>:	01 28	cmp	r0, #1
+   0x0002a256 <+26>:	03 f1 ff 33	add.w	r3, r3, #4294967295
+   0x0002a25a <+30>:	f9 d0	beq.n	0x2a250 <base_len+20>
+   0x0002a25c <+32>:	e2 5c	ldrb	r2, [r4, r3]
+   0x0002a25e <+34>:	2f 2a	cmp	r2, #47	; 0x2f
+   0x0002a260 <+36>:	f7 d0	beq.n	0x2a252 <base_len+22>
+   0x0002a262 <+38>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function last_component:
+   0x0002a210 <+0>:	03 78	ldrb	r3, [r0, #0]
+   0x0002a212 <+2>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0002a214 <+4>:	03 d1	bne.n	0x2a21e <last_component+14>
+   0x0002a216 <+6>:	10 f8 01 3f	ldrb.w	r3, [r0, #1]!
+   0x0002a21a <+10>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0002a21c <+12>:	fb d0	beq.n	0x2a216 <last_component+6>
+   0x0002a21e <+14>:	63 b1	cbz	r3, 0x2a23a <last_component+42>
+   0x0002a220 <+16>:	02 46	mov	r2, r0
+   0x0002a222 <+18>:	00 21	movs	r1, #0
+   0x0002a224 <+20>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0002a226 <+22>:	08 bf	it	eq
+   0x0002a228 <+24>:	01 21	moveq	r1, #1
+   0x0002a22a <+26>:	02 d0	beq.n	0x2a232 <last_component+34>
+   0x0002a22c <+28>:	09 b1	cbz	r1, 0x2a232 <last_component+34>
+   0x0002a22e <+30>:	10 46	mov	r0, r2
+   0x0002a230 <+32>:	00 21	movs	r1, #0
+   0x0002a232 <+34>:	12 f8 01 3f	ldrb.w	r3, [r2, #1]!
+   0x0002a236 <+38>:	00 2b	cmp	r3, #0
+   0x0002a238 <+40>:	f4 d1	bne.n	0x2a224 <last_component+20>
+   0x0002a23a <+42>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function archive_read_error:
+   0x0000cc68 <+0>:	08 b5	push	{r3, lr}
+   0x0000cc6a <+2>:	46 f2 98 23	movw	r3, #25240	; 0x6298
+   0x0000cc6e <+6>:	c0 f2 04 03	movt	r3, #4
+   0x0000cc72 <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x0000cc74 <+12>:	18 68	ldr	r0, [r3, #0]
+   0x0000cc76 <+14>:	16 f0 af fe	bl	0x239d8 <read_error>
+   0x0000cc7a <+18>:	45 f2 90 71	movw	r1, #22416	; 0x5790
+   0x0000cc7e <+22>:	c0 f2 04 01	movt	r1, #4
+   0x0000cc82 <+26>:	d1 e9 0c 23	ldrd	r2, r3, [r1, #48]	; 0x30
+   0x0000cc86 <+30>:	52 ea 03 00	orrs.w	r0, r2, r3
+   0x0000cc8a <+34>:	02 bf	ittt	eq
+   0x0000cc8c <+36>:	42 f6 88 51	movweq	r1, #11656	; 0x2d88
+   0x0000cc90 <+40>:	00 20	moveq	r0, #0
+   0x0000cc92 <+42>:	c0 f2 03 01	movteq	r1, #3
+   0x0000cc96 <+46>:	0d d0	beq.n	0xccb4 <archive_read_error+76>
+   0x0000cc98 <+48>:	d1 f8 40 31	ldr.w	r3, [r1, #320]	; 0x140
+   0x0000cc9c <+52>:	0a 2b	cmp	r3, #10
+   0x0000cc9e <+54>:	03 f1 01 02	add.w	r2, r3, #1
+   0x0000cca2 <+58>:	c1 f8 40 21	str.w	r2, [r1, #320]	; 0x140
+   0x0000cca6 <+62>:	00 dc	bgt.n	0xccaa <archive_read_error+66>
+   0x0000cca8 <+64>:	08 bd	pop	{r3, pc}
+   0x0000ccaa <+66>:	42 f6 ac 51	movw	r1, #11692	; 0x2dac
+   0x0000ccae <+70>:	c0 f2 03 01	movt	r1, #3
+   0x0000ccb2 <+74>:	00 20	movs	r0, #0
+   0x0000ccb4 <+76>:	05 22	movs	r2, #5
+   0x0000ccb6 <+78>:	fd f7 b0 ef	blx	0xac18 <dcgettext@plt>
+   0x0000ccba <+82>:	02 46	mov	r2, r0
+   0x0000ccbc <+84>:	00 20	movs	r0, #0
+   0x0000ccbe <+86>:	01 46	mov	r1, r0
+   0x0000ccc0 <+88>:	fe f7 7e e8	blx	0xadc0 <error@plt+4>
+   0x0000ccc4 <+92>:	06 f0 a2 f8	bl	0x12e0c <fatal_exit>
+End of assembler dump.
+Dump of assembler code for function archive_write_error:
+   0x0000cbe0 <+0>:	08 b5	push	{r3, lr}
+   0x0000cbe2 <+2>:	46 f2 7e 23	movw	r3, #25214	; 0x627e
+   0x0000cbe6 <+6>:	c0 f2 04 03	movt	r3, #4
+   0x0000cbea <+10>:	05 46	mov	r5, r0
+   0x0000cbec <+12>:	1b 78	ldrb	r3, [r3, #0]
+   0x0000cbee <+14>:	6b b9	cbnz	r3, 0xcc0c <archive_write_error+44>
+   0x0000cbf0 <+16>:	46 f2 98 22	movw	r2, #25240	; 0x6298
+   0x0000cbf4 <+20>:	c0 f2 04 02	movt	r2, #4
+   0x0000cbf8 <+24>:	46 f2 14 33	movw	r3, #25364	; 0x6314
+   0x0000cbfc <+28>:	c0 f2 04 03	movt	r3, #4
+   0x0000cc00 <+32>:	14 68	ldr	r4, [r2, #0]
+   0x0000cc02 <+34>:	29 46	mov	r1, r5
+   0x0000cc04 <+36>:	1a 68	ldr	r2, [r3, #0]
+   0x0000cc06 <+38>:	20 68	ldr	r0, [r4, #0]
+   0x0000cc08 <+40>:	0e f0 f8 fd	bl	0x1b7fc <write_fatal_details>
+   0x0000cc0c <+44>:	fe f7 d4 e9	blx	0xafb8 <__errno_location@plt>
+   0x0000cc10 <+48>:	06 68	ldr	r6, [r0, #0]
+   0x0000cc12 <+50>:	04 46	mov	r4, r0
+   0x0000cc14 <+52>:	ff f7 5a fe	bl	0xc8cc <print_total_stats>
+   0x0000cc18 <+56>:	26 60	str	r6, [r4, #0]
+   0x0000cc1a <+58>:	e9 e7	b.n	0xcbf0 <archive_write_error+16>
+End of assembler dump.
+Dump of assembler code for function available_space_after:
+   0x0000cbac <+0>:	46 f2 60 03	movw	r3, #24672	; 0x6060
+   0x0000cbb0 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0000cbb4 <+8>:	1b 68	ldr	r3, [r3, #0]
+   0x0000cbb6 <+10>:	18 1a	subs	r0, r3, r0
+   0x0000cbb8 <+12>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function buffer_write_global_xheader:
+   0x0000c6f4 <+0>:	01 48	ldr	r0, [pc, #4]	; (0xc6fc <buffer_write_global_xheader+8>)
+   0x0000c6f6 <+2>:	09 f0 11 bf	b.w	0x1651c <xheader_write_global>
+   0x0000c6fa <+6>:	00 bf	nop
+   0x0000c6fc <+8>:	a0 58	ldr	r0, [r4, r2]
+   0x0000c6fe <+10>:	04 00	movs	r4, r0
+End of assembler dump.

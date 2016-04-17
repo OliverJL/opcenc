@@ -1,0 +1,394 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function find_tabpage:
+   0x000827d4 <+0>:	08 4b	ldr	r3, [pc, #32]	; (0x827f8 <find_tabpage+36>)
+   0x000827d6 <+2>:	09 4a	ldr	r2, [pc, #36]	; (0x827fc <find_tabpage+40>)
+   0x000827d8 <+4>:	7b 44	add	r3, pc
+   0x000827da <+6>:	9b 58	ldr	r3, [r3, r2]
+   0x000827dc <+8>:	1b 68	ldr	r3, [r3, #0]
+   0x000827de <+10>:	00 2b	cmp	r3, #0
+   0x000827e0 <+12>:	18 bf	it	ne
+   0x000827e2 <+14>:	01 28	cmpne	r0, #1
+   0x000827e4 <+16>:	06 d0	beq.n	0x827f4 <find_tabpage+32>
+   0x000827e6 <+18>:	01 22	movs	r2, #1
+   0x000827e8 <+20>:	1b 68	ldr	r3, [r3, #0]
+   0x000827ea <+22>:	01 32	adds	r2, #1
+   0x000827ec <+24>:	00 2b	cmp	r3, #0
+   0x000827ee <+26>:	18 bf	it	ne
+   0x000827f0 <+28>:	90 42	cmpne	r0, r2
+   0x000827f2 <+30>:	f9 d1	bne.n	0x827e8 <find_tabpage+20>
+   0x000827f4 <+32>:	18 46	mov	r0, r3
+   0x000827f6 <+34>:	70 47	bx	lr
+   0x000827f8 <+36>:	c0 4e	ldr	r6, [pc, #768]	; (0x82afc <win_rotate+236>)
+   0x000827fa <+38>:	02 00	movs	r2, r0
+   0x000827fc <+40>:	84 06	lsls	r4, r0, #26
+   0x000827fe <+42>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function free_tabpage:
+   0x00082790 <+0>:	10 b5	push	{r4, lr}
+   0x00082792 <+2>:	04 46	mov	r4, r0
+   0x00082794 <+4>:	40 6a	ldr	r0, [r0, #36]	; 0x24
+   0x00082796 <+6>:	ff f7 c9 fb	bl	0x81f2c <clear_snapshot_rec>
+   0x0008279a <+10>:	00 23	movs	r3, #0
+   0x0008279c <+12>:	20 46	mov	r0, r4
+   0x0008279e <+14>:	63 62	str	r3, [r4, #36]	; 0x24
+   0x000827a0 <+16>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x000827a4 <+20>:	ba f7 fe bd	b.w	0x3d3a4 <vim_free>
+End of assembler dump.
+Dump of assembler code for function get_wincmd_addr_type:
+   0x00082498 <+0>:	03 78	ldrb	r3, [r0, #0]
+   0x0008249a <+2>:	02 3b	subs	r3, #2
+   0x0008249c <+4>:	7a 2b	cmp	r3, #122	; 0x7a
+   0x0008249e <+6>:	41 d8	bhi.n	0x82524 <get_wincmd_addr_type+140>
+   0x000824a0 <+8>:	df e8 03 f0	tbb	[pc, r3]
+   0x000824a4 <+12>:	3e 44	add	r6, r7
+   0x000824a6 <+14>:	40 40	eors	r0, r0
+   0x000824a8 <+16>:	40 3e	subs	r6, #64	; 0x40
+   0x000824aa <+18>:	40 40	eors	r0, r0
+   0x000824ac <+20>:	3e 3e	subs	r6, #62	; 0x3e
+   0x000824ae <+22>:	40 3e	subs	r6, #64	; 0x40
+   0x000824b0 <+24>:	3e 44	add	r6, r7
+   0x000824b2 <+26>:	3e 44	add	r6, r7
+   0x000824b4 <+28>:	3e 3e	subs	r6, #62	; 0x3e
+   0x000824b6 <+30>:	3e 40	ands	r6, r7
+   0x000824b8 <+32>:	40 44	add	r0, r8
+   0x000824ba <+34>:	44 40	eors	r4, r0
+   0x000824bc <+36>:	40 40	eors	r0, r0
+   0x000824be <+38>:	40 3e	subs	r6, #64	; 0x40
+   0x000824c0 <+40>:	41 3e	subs	r6, #65	; 0x41
+   0x000824c2 <+42>:	40 40	eors	r0, r0
+   0x000824c4 <+44>:	40 40	eors	r0, r0
+   0x000824c6 <+46>:	40 40	eors	r0, r0
+   0x000824c8 <+48>:	40 40	eors	r0, r0
+   0x000824ca <+50>:	40 40	eors	r0, r0
+   0x000824cc <+52>:	40 3e	subs	r6, #64	; 0x40
+   0x000824ce <+54>:	40 3e	subs	r6, #64	; 0x40
+   0x000824d0 <+56>:	40 40	eors	r0, r0
+   0x000824d2 <+58>:	40 40	eors	r0, r0
+   0x000824d4 <+60>:	40 40	eors	r0, r0
+   0x000824d6 <+62>:	40 40	eors	r0, r0
+   0x000824d8 <+64>:	40 40	eors	r0, r0
+   0x000824da <+66>:	40 40	eors	r0, r0
+   0x000824dc <+68>:	40 40	eors	r0, r0
+   0x000824de <+70>:	40 3e	subs	r6, #64	; 0x40
+   0x000824e0 <+72>:	40 40	eors	r0, r0
+   0x000824e2 <+74>:	40 40	eors	r0, r0
+   0x000824e4 <+76>:	40 40	eors	r0, r0
+   0x000824e6 <+78>:	40 40	eors	r0, r0
+   0x000824e8 <+80>:	40 40	eors	r0, r0
+   0x000824ea <+82>:	40 40	eors	r0, r0
+   0x000824ec <+84>:	3e 3e	subs	r6, #62	; 0x3e
+   0x000824ee <+86>:	40 40	eors	r0, r0
+   0x000824f0 <+88>:	40 40	eors	r0, r0
+   0x000824f2 <+90>:	40 40	eors	r0, r0
+   0x000824f4 <+92>:	3e 3e	subs	r6, #62	; 0x3e
+   0x000824f6 <+94>:	3e 40	ands	r6, r7
+   0x000824f8 <+96>:	40 44	add	r0, r8
+   0x000824fa <+98>:	40 40	eors	r0, r0
+   0x000824fc <+100>:	40 40	eors	r0, r0
+   0x000824fe <+102>:	40 3e	subs	r6, #64	; 0x40
+   0x00082500 <+104>:	41 3e	subs	r6, #65	; 0x41
+   0x00082502 <+106>:	40 40	eors	r0, r0
+   0x00082504 <+108>:	3e 44	add	r6, r7
+   0x00082506 <+110>:	40 40	eors	r0, r0
+   0x00082508 <+112>:	40 3e	subs	r6, #64	; 0x40
+   0x0008250a <+114>:	40 40	eors	r0, r0
+   0x0008250c <+116>:	3e 3e	subs	r6, #62	; 0x3e
+   0x0008250e <+118>:	40 40	eors	r0, r0
+   0x00082510 <+120>:	3e 44	add	r6, r7
+   0x00082512 <+122>:	3e 44	add	r6, r7
+   0x00082514 <+124>:	3e 3e	subs	r6, #62	; 0x3e
+   0x00082516 <+126>:	3e 40	ands	r6, r7
+   0x00082518 <+128>:	40 44	add	r0, r8
+   0x0008251a <+130>:	44 40	eors	r4, r0
+   0x0008251c <+132>:	40 40	eors	r0, r0
+   0x0008251e <+134>:	3e 00	movs	r6, r7
+   0x00082520 <+136>:	00 23	movs	r3, #0
+   0x00082522 <+138>:	cb 62	str	r3, [r1, #44]	; 0x2c
+   0x00082524 <+140>:	70 47	bx	lr
+   0x00082526 <+142>:	04 23	movs	r3, #4
+   0x00082528 <+144>:	cb 62	str	r3, [r1, #44]	; 0x2c
+   0x0008252a <+146>:	70 47	bx	lr
+   0x0008252c <+148>:	01 23	movs	r3, #1
+   0x0008252e <+150>:	cb 62	str	r3, [r1, #44]	; 0x2c
+   0x00082530 <+152>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function goto_tabpage:
+   0x00084854 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x00084856 <+2>:	04 46	mov	r4, r0
+   0x00084858 <+4>:	28 4d	ldr	r5, [pc, #160]	; (0x848fc <goto_tabpage+168>)
+   0x0008485a <+6>:	7d 44	add	r5, pc
+   0x0008485c <+8>:	9d f7 22 fd	bl	0x222a4 <text_locked>
+   0x00084860 <+12>:	48 bb	cbnz	r0, 0x848b6 <goto_tabpage+98>
+   0x00084862 <+14>:	27 4b	ldr	r3, [pc, #156]	; (0x84900 <goto_tabpage+172>)
+   0x00084864 <+16>:	eb 58	ldr	r3, [r5, r3]
+   0x00084866 <+18>:	19 68	ldr	r1, [r3, #0]
+   0x00084868 <+20>:	0e 68	ldr	r6, [r1, #0]
+   0x0008486a <+22>:	8e b3	cbz	r6, 0x848d0 <goto_tabpage+124>
+   0x0008486c <+24>:	00 2c	cmp	r4, #0
+   0x0008486e <+26>:	0c d1	bne.n	0x8488a <goto_tabpage+54>
+   0x00084870 <+28>:	24 4b	ldr	r3, [pc, #144]	; (0x84904 <goto_tabpage+176>)
+   0x00084872 <+30>:	eb 58	ldr	r3, [r5, r3]
+   0x00084874 <+32>:	1b 68	ldr	r3, [r3, #0]
+   0x00084876 <+34>:	18 68	ldr	r0, [r3, #0]
+   0x00084878 <+36>:	00 28	cmp	r0, #0
+   0x0008487a <+38>:	08 bf	it	eq
+   0x0008487c <+40>:	08 46	moveq	r0, r1
+   0x0008487e <+42>:	01 22	movs	r2, #1
+   0x00084880 <+44>:	11 46	mov	r1, r2
+   0x00084882 <+46>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x00084886 <+50>:	ff f7 43 bf	b.w	0x84710 <goto_tabpage_tp>
+   0x0008488a <+54>:	24 db	blt.n	0x848d6 <goto_tabpage+130>
+   0x0008488c <+56>:	42 f2 0f 73	movw	r3, #9999	; 0x270f
+   0x00084890 <+60>:	9c 42	cmp	r4, r3
+   0x00084892 <+62>:	16 d0	beq.n	0x848c2 <goto_tabpage+110>
+   0x00084894 <+64>:	01 2c	cmp	r4, #1
+   0x00084896 <+66>:	2e d0	beq.n	0x848f6 <goto_tabpage+162>
+   0x00084898 <+68>:	30 46	mov	r0, r6
+   0x0008489a <+70>:	01 23	movs	r3, #1
+   0x0008489c <+72>:	00 e0	b.n	0x848a0 <goto_tabpage+76>
+   0x0008489e <+74>:	00 68	ldr	r0, [r0, #0]
+   0x000848a0 <+76>:	01 33	adds	r3, #1
+   0x000848a2 <+78>:	00 28	cmp	r0, #0
+   0x000848a4 <+80>:	18 bf	it	ne
+   0x000848a6 <+82>:	9c 42	cmpne	r4, r3
+   0x000848a8 <+84>:	f9 d1	bne.n	0x8489e <goto_tabpage+74>
+   0x000848aa <+86>:	00 28	cmp	r0, #0
+   0x000848ac <+88>:	e7 d1	bne.n	0x8487e <goto_tabpage+42>
+   0x000848ae <+90>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x000848b2 <+94>:	b6 f7 7d bd	b.w	0x3b3b0 <beep_flush>
+   0x000848b6 <+98>:	14 4b	ldr	r3, [pc, #80]	; (0x84908 <goto_tabpage+180>)
+   0x000848b8 <+100>:	e8 58	ldr	r0, [r5, r3]
+   0x000848ba <+102>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x000848be <+106>:	b3 f7 b3 bd	b.w	0x38428 <emsg>
+   0x000848c2 <+110>:	30 46	mov	r0, r6
+   0x000848c4 <+112>:	00 e0	b.n	0x848c8 <goto_tabpage+116>
+   0x000848c6 <+114>:	18 46	mov	r0, r3
+   0x000848c8 <+116>:	03 68	ldr	r3, [r0, #0]
+   0x000848ca <+118>:	00 2b	cmp	r3, #0
+   0x000848cc <+120>:	fb d1	bne.n	0x848c6 <goto_tabpage+114>
+   0x000848ce <+122>:	d6 e7	b.n	0x8487e <goto_tabpage+42>
+   0x000848d0 <+124>:	01 2c	cmp	r4, #1
+   0x000848d2 <+126>:	ec dc	bgt.n	0x848ae <goto_tabpage+90>
+   0x000848d4 <+128>:	70 bd	pop	{r4, r5, r6, pc}
+   0x000848d6 <+130>:	0b 4b	ldr	r3, [pc, #44]	; (0x84904 <goto_tabpage+176>)
+   0x000848d8 <+132>:	eb 58	ldr	r3, [r5, r3]
+   0x000848da <+134>:	1a 68	ldr	r2, [r3, #0]
+   0x000848dc <+136>:	33 46	mov	r3, r6
+   0x000848de <+138>:	08 46	mov	r0, r1
+   0x000848e0 <+140>:	01 e0	b.n	0x848e6 <goto_tabpage+146>
+   0x000848e2 <+142>:	18 46	mov	r0, r3
+   0x000848e4 <+144>:	1b 68	ldr	r3, [r3, #0]
+   0x000848e6 <+146>:	00 2b	cmp	r3, #0
+   0x000848e8 <+148>:	18 bf	it	ne
+   0x000848ea <+150>:	9a 42	cmpne	r2, r3
+   0x000848ec <+152>:	f9 d1	bne.n	0x848e2 <goto_tabpage+142>
+   0x000848ee <+154>:	01 34	adds	r4, #1
+   0x000848f0 <+156>:	c5 d0	beq.n	0x8487e <goto_tabpage+42>
+   0x000848f2 <+158>:	02 46	mov	r2, r0
+   0x000848f4 <+160>:	f2 e7	b.n	0x848dc <goto_tabpage+136>
+   0x000848f6 <+162>:	08 46	mov	r0, r1
+   0x000848f8 <+164>:	c1 e7	b.n	0x8487e <goto_tabpage+42>
+   0x000848fa <+166>:	00 bf	nop
+   0x000848fc <+168>:	3e 2e	cmp	r6, #62	; 0x3e
+   0x000848fe <+170>:	02 00	movs	r2, r0
+   0x00084900 <+172>:	84 06	lsls	r4, r0, #26
+   0x00084902 <+174>:	00 00	movs	r0, r0
+   0x00084904 <+176>:	9c 06	lsls	r4, r3, #26
+   0x00084906 <+178>:	00 00	movs	r0, r0
+   0x00084908 <+180>:	dc 04	lsls	r4, r3, #19
+   0x0008490a <+182>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function goto_tabpage_tp:
+   0x00084710 <+0>:	00 21	movs	r1, #0
+   0x00084712 <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x00084714 <+4>:	04 46	mov	r4, r0
+   0x00084716 <+6>:	0f 4d	ldr	r5, [pc, #60]	; (0x84754 <goto_tabpage_tp+68>)
+   0x00084718 <+8>:	08 46	mov	r0, r1
+   0x0008471a <+10>:	b1 f7 1f fc	bl	0x35f5c <set_keep_msg>
+   0x0008471e <+14>:	0e 4b	ldr	r3, [pc, #56]	; (0x84758 <goto_tabpage_tp+72>)
+   0x00084720 <+16>:	7d 44	add	r5, pc
+   0x00084722 <+18>:	ee 58	ldr	r6, [r5, r3]
+   0x00084724 <+20>:	33 68	ldr	r3, [r6, #0]
+   0x00084726 <+22>:	a3 42	cmp	r3, r4
+   0x00084728 <+24>:	03 d0	beq.n	0x84732 <goto_tabpage_tp+34>
+   0x0008472a <+26>:	fd f7 27 fd	bl	0x8217c <leave_tabpage>
+   0x0008472e <+30>:	01 28	cmp	r0, #1
+   0x00084730 <+32>:	00 d0	beq.n	0x84734 <goto_tabpage_tp+36>
+   0x00084732 <+34>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00084734 <+36>:	09 4b	ldr	r3, [pc, #36]	; (0x8475c <goto_tabpage_tp+76>)
+   0x00084736 <+38>:	eb 58	ldr	r3, [r5, r3]
+   0x00084738 <+40>:	01 e0	b.n	0x8473e <goto_tabpage_tp+46>
+   0x0008473a <+42>:	9c 42	cmp	r4, r3
+   0x0008473c <+44>:	06 d0	beq.n	0x8474c <goto_tabpage_tp+60>
+   0x0008473e <+46>:	1b 68	ldr	r3, [r3, #0]
+   0x00084740 <+48>:	00 2b	cmp	r3, #0
+   0x00084742 <+50>:	fa d1	bne.n	0x8473a <goto_tabpage_tp+42>
+   0x00084744 <+52>:	30 68	ldr	r0, [r6, #0]
+   0x00084746 <+54>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x0008474a <+58>:	87 e7	b.n	0x8465c <enter_tabpage>
+   0x0008474c <+60>:	20 46	mov	r0, r4
+   0x0008474e <+62>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x00084752 <+66>:	83 e7	b.n	0x8465c <enter_tabpage>
+   0x00084754 <+68>:	78 2f	cmp	r7, #120	; 0x78
+   0x00084756 <+70>:	02 00	movs	r2, r0
+   0x00084758 <+72>:	9c 06	lsls	r4, r3, #26
+   0x0008475a <+74>:	00 00	movs	r0, r0
+   0x0008475c <+76>:	84 06	lsls	r4, r0, #26
+   0x0008475e <+78>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function goto_tabpage_win:
+   0x0008490c <+0>:	01 22	movs	r2, #1
+   0x0008490e <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x00084910 <+4>:	0c 46	mov	r4, r1
+   0x00084912 <+6>:	11 4d	ldr	r5, [pc, #68]	; (0x84958 <goto_tabpage_win+76>)
+   0x00084914 <+8>:	11 46	mov	r1, r2
+   0x00084916 <+10>:	06 46	mov	r6, r0
+   0x00084918 <+12>:	ff f7 fa fe	bl	0x84710 <goto_tabpage_tp>
+   0x0008491c <+16>:	0f 4a	ldr	r2, [pc, #60]	; (0x8495c <goto_tabpage_win+80>)
+   0x0008491e <+18>:	7d 44	add	r5, pc
+   0x00084920 <+20>:	b4 fa 84 f3	clz	r3, r4
+   0x00084924 <+24>:	aa 58	ldr	r2, [r5, r2]
+   0x00084926 <+26>:	5b 09	lsrs	r3, r3, #5
+   0x00084928 <+28>:	12 68	ldr	r2, [r2, #0]
+   0x0008492a <+30>:	b2 42	cmp	r2, r6
+   0x0008492c <+32>:	18 bf	it	ne
+   0x0008492e <+34>:	43 f0 01 03	orrne.w	r3, r3, #1
+   0x00084932 <+38>:	1b b9	cbnz	r3, 0x8493c <goto_tabpage_win+48>
+   0x00084934 <+40>:	0a 4b	ldr	r3, [pc, #40]	; (0x84960 <goto_tabpage_win+84>)
+   0x00084936 <+42>:	eb 58	ldr	r3, [r5, r3]
+   0x00084938 <+44>:	1b 68	ldr	r3, [r3, #0]
+   0x0008493a <+46>:	13 b9	cbnz	r3, 0x84942 <goto_tabpage_win+54>
+   0x0008493c <+48>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0008493e <+50>:	9b 68	ldr	r3, [r3, #8]
+   0x00084940 <+52>:	43 b1	cbz	r3, 0x84954 <goto_tabpage_win+72>
+   0x00084942 <+54>:	9c 42	cmp	r4, r3
+   0x00084944 <+56>:	fb d1	bne.n	0x8493e <goto_tabpage_win+50>
+   0x00084946 <+58>:	20 46	mov	r0, r4
+   0x00084948 <+60>:	00 22	movs	r2, #0
+   0x0008494a <+62>:	01 21	movs	r1, #1
+   0x0008494c <+64>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x00084950 <+68>:	fe f7 8c be	b.w	0x8366c <win_enter_ext>
+   0x00084954 <+72>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00084956 <+74>:	00 bf	nop
+   0x00084958 <+76>:	7a 2d	cmp	r5, #122	; 0x7a
+   0x0008495a <+78>:	02 00	movs	r2, r0
+   0x0008495c <+80>:	9c 06	lsls	r4, r3, #26
+   0x0008495e <+82>:	00 00	movs	r0, r0
+   0x00084960 <+84>:	38 09	lsrs	r0, r7, #4
+   0x00084962 <+86>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function last_status:
+   0x00084604 <+0>:	10 4b	ldr	r3, [pc, #64]	; (0x84648 <last_status+68>)
+   0x00084606 <+2>:	11 49	ldr	r1, [pc, #68]	; (0x8464c <last_status+72>)
+   0x00084608 <+4>:	7b 44	add	r3, pc
+   0x0008460a <+6>:	11 4a	ldr	r2, [pc, #68]	; (0x84650 <last_status+76>)
+   0x0008460c <+8>:	59 58	ldr	r1, [r3, r1]
+   0x0008460e <+10>:	9a 58	ldr	r2, [r3, r2]
+   0x00084610 <+12>:	09 68	ldr	r1, [r1, #0]
+   0x00084612 <+14>:	12 68	ldr	r2, [r2, #0]
+   0x00084614 <+16>:	02 29	cmp	r1, #2
+   0x00084616 <+18>:	08 bf	it	eq
+   0x00084618 <+20>:	01 21	moveq	r1, #1
+   0x0008461a <+22>:	03 d0	beq.n	0x84624 <last_status+32>
+   0x0008461c <+24>:	01 29	cmp	r1, #1
+   0x0008461e <+26>:	18 bf	it	ne
+   0x00084620 <+28>:	00 21	movne	r1, #0
+   0x00084622 <+30>:	02 d0	beq.n	0x8462a <last_status+38>
+   0x00084624 <+32>:	10 46	mov	r0, r2
+   0x00084626 <+34>:	ff f7 b9 bb	b.w	0x83d9c <last_status_rec>
+   0x0008462a <+38>:	00 28	cmp	r0, #0
+   0x0008462c <+40>:	fa d1	bne.n	0x84624 <last_status+32>
+   0x0008462e <+42>:	09 48	ldr	r0, [pc, #36]	; (0x84654 <last_status+80>)
+   0x00084630 <+44>:	09 49	ldr	r1, [pc, #36]	; (0x84658 <last_status+84>)
+   0x00084632 <+46>:	18 58	ldr	r0, [r3, r0]
+   0x00084634 <+48>:	59 58	ldr	r1, [r3, r1]
+   0x00084636 <+50>:	03 68	ldr	r3, [r0, #0]
+   0x00084638 <+52>:	10 46	mov	r0, r2
+   0x0008463a <+54>:	09 68	ldr	r1, [r1, #0]
+   0x0008463c <+56>:	59 1a	subs	r1, r3, r1
+   0x0008463e <+58>:	18 bf	it	ne
+   0x00084640 <+60>:	01 21	movne	r1, #1
+   0x00084642 <+62>:	ff f7 ab bb	b.w	0x83d9c <last_status_rec>
+   0x00084646 <+66>:	00 bf	nop
+   0x00084648 <+68>:	90 30	adds	r0, #144	; 0x90
+   0x0008464a <+70>:	02 00	movs	r2, r0
+   0x0008464c <+72>:	68 02	lsls	r0, r5, #9
+   0x0008464e <+74>:	00 00	movs	r0, r0
+   0x00084650 <+76>:	fc 05	lsls	r4, r7, #23
+   0x00084652 <+78>:	00 00	movs	r0, r0
+   0x00084654 <+80>:	00 05	lsls	r0, r0, #20
+   0x00084656 <+82>:	00 00	movs	r0, r0
+   0x00084658 <+84>:	38 09	lsrs	r0, r7, #4
+   0x0008465a <+86>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function make_snapshot:
+   0x00084d10 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x00084d12 <+2>:	06 46	mov	r6, r0
+   0x00084d14 <+4>:	0b 4c	ldr	r4, [pc, #44]	; (0x84d44 <make_snapshot+52>)
+   0x00084d16 <+6>:	0c 4b	ldr	r3, [pc, #48]	; (0x84d48 <make_snapshot+56>)
+   0x00084d18 <+8>:	7c 44	add	r4, pc
+   0x00084d1a <+10>:	e7 58	ldr	r7, [r4, r3]
+   0x00084d1c <+12>:	3d 68	ldr	r5, [r7, #0]
+   0x00084d1e <+14>:	05 eb 80 05	add.w	r5, r5, r0, lsl #2
+   0x00084d22 <+18>:	68 6a	ldr	r0, [r5, #36]	; 0x24
+   0x00084d24 <+20>:	fd f7 02 f9	bl	0x81f2c <clear_snapshot_rec>
+   0x00084d28 <+24>:	08 4a	ldr	r2, [pc, #32]	; (0x84d4c <make_snapshot+60>)
+   0x00084d2a <+26>:	3b 68	ldr	r3, [r7, #0]
+   0x00084d2c <+28>:	00 21	movs	r1, #0
+   0x00084d2e <+30>:	69 62	str	r1, [r5, #36]	; 0x24
+   0x00084d30 <+32>:	a2 58	ldr	r2, [r4, r2]
+   0x00084d32 <+34>:	03 eb 86 01	add.w	r1, r3, r6, lsl #2
+   0x00084d36 <+38>:	24 31	adds	r1, #36	; 0x24
+   0x00084d38 <+40>:	bd e8 f8 40	ldmia.w	sp!, {r3, r4, r5, r6, r7, lr}
+   0x00084d3c <+44>:	10 68	ldr	r0, [r2, #0]
+   0x00084d3e <+46>:	fd f7 05 b9	b.w	0x81f4c <make_snapshot_rec>
+   0x00084d42 <+50>:	00 bf	nop
+   0x00084d44 <+52>:	80 29	cmp	r1, #128	; 0x80
+   0x00084d46 <+54>:	02 00	movs	r2, r0
+   0x00084d48 <+56>:	9c 06	lsls	r4, r3, #26
+   0x00084d4a <+58>:	00 00	movs	r0, r0
+   0x00084d4c <+60>:	fc 05	lsls	r4, r7, #23
+   0x00084d4e <+62>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function make_tabpages:
+   0x00084b14 <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00084b16 <+2>:	0a 4b	ldr	r3, [pc, #40]	; (0x84b40 <make_tabpages+44>)
+   0x00084b18 <+4>:	0a 4a	ldr	r2, [pc, #40]	; (0x84b44 <make_tabpages+48>)
+   0x00084b1a <+6>:	7b 44	add	r3, pc
+   0x00084b1c <+8>:	9b 58	ldr	r3, [r3, r2]
+   0x00084b1e <+10>:	1d 68	ldr	r5, [r3, #0]
+   0x00084b20 <+12>:	85 42	cmp	r5, r0
+   0x00084b22 <+14>:	a8 bf	it	ge
+   0x00084b24 <+16>:	05 46	movge	r5, r0
+   0x00084b26 <+18>:	6c 1e	subs	r4, r5, #1
+   0x00084b28 <+20>:	00 2c	cmp	r4, #0
+   0x00084b2a <+22>:	02 dc	bgt.n	0x84b32 <make_tabpages+30>
+   0x00084b2c <+24>:	06 e0	b.n	0x84b3c <make_tabpages+40>
+   0x00084b2e <+26>:	01 3c	subs	r4, #1
+   0x00084b30 <+28>:	04 d0	beq.n	0x84b3c <make_tabpages+40>
+   0x00084b32 <+30>:	00 20	movs	r0, #0
+   0x00084b34 <+32>:	ff f7 4c ff	bl	0x849d0 <win_new_tabpage>
+   0x00084b38 <+36>:	00 28	cmp	r0, #0
+   0x00084b3a <+38>:	f8 d1	bne.n	0x84b2e <make_tabpages+26>
+   0x00084b3c <+40>:	28 1b	subs	r0, r5, r4
+   0x00084b3e <+42>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00084b40 <+44>:	7e 2b	cmp	r3, #126	; 0x7e
+   0x00084b42 <+46>:	02 00	movs	r2, r0
+   0x00084b44 <+48>:	64 07	lsls	r4, r4, #29
+   0x00084b46 <+50>:	00 00	movs	r0, r0
+End of assembler dump.

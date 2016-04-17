@@ -1,0 +1,915 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function calc_sizes:
+   0x00028f7c <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00028f7e <+2>:	0c 46	mov	r4, r1
+   0x00028f80 <+4>:	03 68	ldr	r3, [r0, #0]
+   0x00028f82 <+6>:	05 69	ldr	r5, [r0, #16]
+   0x00028f84 <+8>:	00 2b	cmp	r3, #0
+   0x00028f86 <+10>:	2c d0	beq.n	0x28fe2 <calc_sizes+102>
+   0x00028f88 <+12>:	89 68	ldr	r1, [r1, #8]
+   0x00028f8a <+14>:	00 22	movs	r2, #0
+   0x00028f8c <+16>:	01 31	adds	r1, #1
+   0x00028f8e <+18>:	a1 60	str	r1, [r4, #8]
+   0x00028f90 <+20>:	00 e0	b.n	0x28f94 <calc_sizes+24>
+   0x00028f92 <+22>:	01 32	adds	r2, #1
+   0x00028f94 <+24>:	18 33	adds	r3, #24
+   0x00028f96 <+26>:	53 f8 14 1c	ldr.w	r1, [r3, #-20]
+   0x00028f9a <+30>:	00 29	cmp	r1, #0
+   0x00028f9c <+32>:	f9 d1	bne.n	0x28f92 <calc_sizes+22>
+   0x00028f9e <+34>:	53 f8 18 1c	ldr.w	r1, [r3, #-24]
+   0x00028fa2 <+38>:	00 29	cmp	r1, #0
+   0x00028fa4 <+40>:	f5 d1	bne.n	0x28f92 <calc_sizes+22>
+   0x00028fa6 <+42>:	53 f8 08 1c	ldr.w	r1, [r3, #-8]
+   0x00028faa <+46>:	00 29	cmp	r1, #0
+   0x00028fac <+48>:	f1 d1	bne.n	0x28f92 <calc_sizes+22>
+   0x00028fae <+50>:	53 f8 04 1c	ldr.w	r1, [r3, #-4]
+   0x00028fb2 <+54>:	00 29	cmp	r1, #0
+   0x00028fb4 <+56>:	ed d1	bne.n	0x28f92 <calc_sizes+22>
+   0x00028fb6 <+58>:	21 68	ldr	r1, [r4, #0]
+   0x00028fb8 <+60>:	02 eb 42 00	add.w	r0, r2, r2, lsl #1
+   0x00028fbc <+64>:	63 68	ldr	r3, [r4, #4]
+   0x00028fbe <+66>:	01 44	add	r1, r0
+   0x00028fc0 <+68>:	21 60	str	r1, [r4, #0]
+   0x00028fc2 <+70>:	13 44	add	r3, r2
+   0x00028fc4 <+72>:	63 60	str	r3, [r4, #4]
+   0x00028fc6 <+74>:	a5 b1	cbz	r5, 0x28ff2 <calc_sizes+118>
+   0x00028fc8 <+76>:	28 68	ldr	r0, [r5, #0]
+   0x00028fca <+78>:	90 b1	cbz	r0, 0x28ff2 <calc_sizes+118>
+   0x00028fcc <+80>:	21 46	mov	r1, r4
+   0x00028fce <+82>:	ff f7 d5 ff	bl	0x28f7c <calc_sizes>
+   0x00028fd2 <+86>:	e3 68	ldr	r3, [r4, #12]
+   0x00028fd4 <+88>:	55 f8 10 0f	ldr.w	r0, [r5, #16]!
+   0x00028fd8 <+92>:	01 33	adds	r3, #1
+   0x00028fda <+94>:	e3 60	str	r3, [r4, #12]
+   0x00028fdc <+96>:	00 28	cmp	r0, #0
+   0x00028fde <+98>:	f5 d1	bne.n	0x28fcc <calc_sizes+80>
+   0x00028fe0 <+100>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00028fe2 <+102>:	43 68	ldr	r3, [r0, #4]
+   0x00028fe4 <+104>:	00 2b	cmp	r3, #0
+   0x00028fe6 <+106>:	ee d0	beq.n	0x28fc6 <calc_sizes+74>
+   0x00028fe8 <+108>:	8b 68	ldr	r3, [r1, #8]
+   0x00028fea <+110>:	01 33	adds	r3, #1
+   0x00028fec <+112>:	8b 60	str	r3, [r1, #8]
+   0x00028fee <+114>:	00 2d	cmp	r5, #0
+   0x00028ff0 <+116>:	ea d1	bne.n	0x28fc8 <calc_sizes+76>
+   0x00028ff2 <+118>:	38 bd	pop	{r3, r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function convert_options:
+   0x00028ff4 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00028ff8 <+4>:	89 b0	sub	sp, #36	; 0x24
+   0x00028ffa <+6>:	06 68	ldr	r6, [r0, #0]
+   0x00028ffc <+8>:	1f 46	mov	r7, r3
+   0x00028ffe <+10>:	07 92	str	r2, [sp, #28]
+   0x00029000 <+12>:	02 69	ldr	r2, [r0, #16]
+   0x00029002 <+14>:	04 90	str	r0, [sp, #16]
+   0x00029004 <+16>:	06 91	str	r1, [sp, #24]
+   0x00029006 <+18>:	03 92	str	r2, [sp, #12]
+   0x00029008 <+20>:	12 9d	ldr	r5, [sp, #72]	; 0x48
+   0x0002900a <+22>:	00 2e	cmp	r6, #0
+   0x0002900c <+24>:	00 f0 9c 80	beq.w	0x29148 <convert_options+340>
+   0x00029010 <+28>:	06 f1 18 0b	add.w	r11, r6, #24
+   0x00029014 <+32>:	ba 46	mov	r10, r7
+   0x00029016 <+34>:	a8 46	mov	r8, r5
+   0x00029018 <+36>:	48 f6 39 63	movw	r3, #36409	; 0x8e39
+   0x0002901c <+40>:	c3 f6 e3 03	movt	r3, #14563	; 0x38e3
+   0x00029020 <+44>:	05 93	str	r3, [sp, #20]
+   0x00029022 <+46>:	5b f8 14 4c	ldr.w	r4, [r11, #-20]
+   0x00029026 <+50>:	ab f1 18 02	sub.w	r2, r11, #24
+   0x0002902a <+54>:	1c b9	cbnz	r4, 0x29034 <convert_options+64>
+   0x0002902c <+56>:	5b f8 18 3c	ldr.w	r3, [r11, #-24]
+   0x00029030 <+60>:	00 2b	cmp	r3, #0
+   0x00029032 <+62>:	79 d0	beq.n	0x29128 <convert_options+308>
+   0x00029034 <+64>:	5b f8 0c 3c	ldr.w	r3, [r11, #-12]
+   0x00029038 <+68>:	58 07	lsls	r0, r3, #29
+   0x0002903a <+70>:	5c bf	itt	pl
+   0x0002903c <+72>:	16 46	movpl	r6, r2
+   0x0002903e <+74>:	1a 46	movpl	r2, r3
+   0x00029040 <+76>:	00 d5	bpl.n	0x29044 <convert_options+80>
+   0x00029042 <+78>:	f2 68	ldr	r2, [r6, #12]
+   0x00029044 <+80>:	12 07	lsls	r2, r2, #28
+   0x00029046 <+82>:	61 d4	bmi.n	0x2910c <convert_options+280>
+   0x00029048 <+84>:	1f 07	lsls	r7, r3, #28
+   0x0002904a <+86>:	27 d4	bmi.n	0x2909c <convert_options+168>
+   0x0002904c <+88>:	63 1e	subs	r3, r4, #1
+   0x0002904e <+90>:	fe 2b	cmp	r3, #254	; 0xfe
+   0x00029050 <+92>:	24 d8	bhi.n	0x2909c <convert_options+168>
+   0x00029052 <+94>:	e1 f7 40 ef	blx	0xaed4 <__ctype_b_loc@plt>
+   0x00029056 <+98>:	03 68	ldr	r3, [r0, #0]
+   0x00029058 <+100>:	33 f8 14 30	ldrh.w	r3, [r3, r4, lsl #1]
+   0x0002905c <+104>:	5d 04	lsls	r5, r3, #17
+   0x0002905e <+106>:	1d d5	bpl.n	0x2909c <convert_options+168>
+   0x00029060 <+108>:	d8 f8 04 30	ldr.w	r3, [r8, #4]
+   0x00029064 <+112>:	5a 1c	adds	r2, r3, #1
+   0x00029066 <+114>:	c8 f8 04 20	str.w	r2, [r8, #4]
+   0x0002906a <+118>:	1c 70	strb	r4, [r3, #0]
+   0x0002906c <+120>:	b3 68	ldr	r3, [r6, #8]
+   0x0002906e <+122>:	83 b1	cbz	r3, 0x29092 <convert_options+158>
+   0x00029070 <+124>:	d8 f8 04 30	ldr.w	r3, [r8, #4]
+   0x00029074 <+128>:	4f f0 3a 01	mov.w	r1, #58	; 0x3a
+   0x00029078 <+132>:	5a 1c	adds	r2, r3, #1
+   0x0002907a <+134>:	c8 f8 04 20	str.w	r2, [r8, #4]
+   0x0002907e <+138>:	19 70	strb	r1, [r3, #0]
+   0x00029080 <+140>:	f3 68	ldr	r3, [r6, #12]
+   0x00029082 <+142>:	dc 07	lsls	r4, r3, #31
+   0x00029084 <+144>:	41 bf	itttt	mi
+   0x00029086 <+146>:	d8 f8 04 30	ldrmi.w	r3, [r8, #4]
+   0x0002908a <+150>:	5a 1c	addmi	r2, r3, #1
+   0x0002908c <+152>:	c8 f8 04 20	strmi.w	r2, [r8, #4]
+   0x00029090 <+156>:	19 70	strbmi	r1, [r3, #0]
+   0x00029092 <+158>:	d8 f8 04 30	ldr.w	r3, [r8, #4]
+   0x00029096 <+162>:	4f f0 00 02	mov.w	r2, #0
+   0x0002909a <+166>:	1a 70	strb	r2, [r3, #0]
+   0x0002909c <+168>:	5b f8 18 5c	ldr.w	r5, [r11, #-24]
+   0x000290a0 <+172>:	00 2d	cmp	r5, #0
+   0x000290a2 <+174>:	33 d0	beq.n	0x2910c <convert_options+280>
+   0x000290a4 <+176>:	d8 f8 00 90	ldr.w	r9, [r8]
+   0x000290a8 <+180>:	d9 f8 08 70	ldr.w	r7, [r9, #8]
+   0x000290ac <+184>:	38 68	ldr	r0, [r7, #0]
+   0x000290ae <+186>:	40 b1	cbz	r0, 0x290c2 <convert_options+206>
+   0x000290b0 <+188>:	3c 46	mov	r4, r7
+   0x000290b2 <+190>:	29 46	mov	r1, r5
+   0x000290b4 <+192>:	e1 f7 da ec	blx	0xaa6c <strcmp@plt+4>
+   0x000290b8 <+196>:	58 b3	cbz	r0, 0x29112 <convert_options+286>
+   0x000290ba <+198>:	54 f8 10 0f	ldr.w	r0, [r4, #16]!
+   0x000290be <+202>:	00 28	cmp	r0, #0
+   0x000290c0 <+204>:	f7 d1	bne.n	0x290b2 <convert_options+190>
+   0x000290c2 <+206>:	d8 f8 08 30	ldr.w	r3, [r8, #8]
+   0x000290c6 <+210>:	b2 68	ldr	r2, [r6, #8]
+   0x000290c8 <+212>:	1d 60	str	r5, [r3, #0]
+   0x000290ca <+214>:	5a b3	cbz	r2, 0x29124 <convert_options+304>
+   0x000290cc <+216>:	f2 68	ldr	r2, [r6, #12]
+   0x000290ce <+218>:	12 f0 01 0f	tst.w	r2, #1
+   0x000290d2 <+222>:	0c bf	ite	eq
+   0x000290d4 <+224>:	01 21	moveq	r1, #1
+   0x000290d6 <+226>:	02 21	movne	r1, #2
+   0x000290d8 <+228>:	5b f8 14 2c	ldr.w	r2, [r11, #-20]
+   0x000290dc <+232>:	00 24	movs	r4, #0
+   0x000290de <+234>:	59 60	str	r1, [r3, #4]
+   0x000290e0 <+236>:	9c 60	str	r4, [r3, #8]
+   0x000290e2 <+238>:	7a b3	cbz	r2, 0x29144 <convert_options+336>
+   0x000290e4 <+240>:	d9 f8 34 00	ldr.w	r0, [r9, #52]	; 0x34
+   0x000290e8 <+244>:	22 f0 7f 42	bic.w	r2, r2, #4278190080	; 0xff000000
+   0x000290ec <+248>:	05 9c	ldr	r4, [sp, #20]
+   0x000290ee <+250>:	03 f1 10 01	add.w	r1, r3, #16
+   0x000290f2 <+254>:	c0 eb 0a 00	rsb	r0, r0, r10
+   0x000290f6 <+258>:	80 10	asrs	r0, r0, #2
+   0x000290f8 <+260>:	04 fb 00 f0	mul.w	r0, r4, r0
+   0x000290fc <+264>:	01 30	adds	r0, #1
+   0x000290fe <+266>:	02 eb 00 62	add.w	r2, r2, r0, lsl #24
+   0x00029102 <+270>:	da 60	str	r2, [r3, #12]
+   0x00029104 <+272>:	c8 f8 08 10	str.w	r1, [r8, #8]
+   0x00029108 <+276>:	00 21	movs	r1, #0
+   0x0002910a <+278>:	19 61	str	r1, [r3, #16]
+   0x0002910c <+280>:	0b f1 18 0b	add.w	r11, r11, #24
+   0x00029110 <+284>:	87 e7	b.n	0x29022 <convert_options+46>
+   0x00029112 <+286>:	e4 1b	subs	r4, r4, r7
+   0x00029114 <+288>:	0f 34	adds	r4, #15
+   0x00029116 <+290>:	f9 da	bge.n	0x2910c <convert_options+280>
+   0x00029118 <+292>:	d8 f8 08 30	ldr.w	r3, [r8, #8]
+   0x0002911c <+296>:	b2 68	ldr	r2, [r6, #8]
+   0x0002911e <+298>:	1d 60	str	r5, [r3, #0]
+   0x00029120 <+300>:	00 2a	cmp	r2, #0
+   0x00029122 <+302>:	d3 d1	bne.n	0x290cc <convert_options+216>
+   0x00029124 <+304>:	11 46	mov	r1, r2
+   0x00029126 <+306>:	d7 e7	b.n	0x290d8 <convert_options+228>
+   0x00029128 <+308>:	5b f8 08 3c	ldr.w	r3, [r11, #-8]
+   0x0002912c <+312>:	00 2b	cmp	r3, #0
+   0x0002912e <+314>:	81 d1	bne.n	0x29034 <convert_options+64>
+   0x00029130 <+316>:	5b f8 04 3c	ldr.w	r3, [r11, #-4]
+   0x00029134 <+320>:	00 2b	cmp	r3, #0
+   0x00029136 <+322>:	7f f4 7d af	bne.w	0x29034 <convert_options+64>
+   0x0002913a <+326>:	04 9c	ldr	r4, [sp, #16]
+   0x0002913c <+328>:	57 46	mov	r7, r10
+   0x0002913e <+330>:	45 46	mov	r5, r8
+   0x00029140 <+332>:	61 68	ldr	r1, [r4, #4]
+   0x00029142 <+334>:	05 e0	b.n	0x29150 <convert_options+348>
+   0x00029144 <+336>:	72 68	ldr	r2, [r6, #4]
+   0x00029146 <+338>:	cd e7	b.n	0x290e4 <convert_options+240>
+   0x00029148 <+340>:	04 9c	ldr	r4, [sp, #16]
+   0x0002914a <+342>:	61 68	ldr	r1, [r4, #4]
+   0x0002914c <+344>:	00 29	cmp	r1, #0
+   0x0002914e <+346>:	35 d0	beq.n	0x291bc <convert_options+456>
+   0x00029150 <+348>:	04 9c	ldr	r4, [sp, #16]
+   0x00029152 <+350>:	00 23	movs	r3, #0
+   0x00029154 <+352>:	6a 68	ldr	r2, [r5, #4]
+   0x00029156 <+354>:	39 60	str	r1, [r7, #0]
+   0x00029158 <+356>:	7c 60	str	r4, [r7, #4]
+   0x0002915a <+358>:	06 9c	ldr	r4, [sp, #24]
+   0x0002915c <+360>:	ba 60	str	r2, [r7, #8]
+   0x0002915e <+362>:	07 9a	ldr	r2, [sp, #28]
+   0x00029160 <+364>:	3c 61	str	r4, [r7, #16]
+   0x00029162 <+366>:	03 9c	ldr	r4, [sp, #12]
+   0x00029164 <+368>:	7a 61	str	r2, [r7, #20]
+   0x00029166 <+370>:	fb 60	str	r3, [r7, #12]
+   0x00029168 <+372>:	bb 61	str	r3, [r7, #24]
+   0x0002916a <+374>:	3b 62	str	r3, [r7, #32]
+   0x0002916c <+376>:	fb 61	str	r3, [r7, #28]
+   0x0002916e <+378>:	64 b1	cbz	r4, 0x2918a <convert_options+406>
+   0x00029170 <+380>:	22 68	ldr	r2, [r4, #0]
+   0x00029172 <+382>:	0a b3	cbz	r2, 0x291b8 <convert_options+452>
+   0x00029174 <+384>:	22 46	mov	r2, r4
+   0x00029176 <+386>:	52 f8 10 1f	ldr.w	r1, [r2, #16]!
+   0x0002917a <+390>:	01 33	adds	r3, #1
+   0x0002917c <+392>:	00 29	cmp	r1, #0
+   0x0002917e <+394>:	fa d1	bne.n	0x29176 <convert_options+386>
+   0x00029180 <+396>:	9b 00	lsls	r3, r3, #2
+   0x00029182 <+398>:	ea 68	ldr	r2, [r5, #12]
+   0x00029184 <+400>:	13 44	add	r3, r2
+   0x00029186 <+402>:	fa 61	str	r2, [r7, #28]
+   0x00029188 <+404>:	eb 60	str	r3, [r5, #12]
+   0x0002918a <+406>:	07 f1 24 03	add.w	r3, r7, #36	; 0x24
+   0x0002918e <+410>:	03 9a	ldr	r2, [sp, #12]
+   0x00029190 <+412>:	72 b1	cbz	r2, 0x291b0 <convert_options+444>
+   0x00029192 <+414>:	10 68	ldr	r0, [r2, #0]
+   0x00029194 <+416>:	60 b1	cbz	r0, 0x291b0 <convert_options+444>
+   0x00029196 <+418>:	92 46	mov	r10, r2
+   0x00029198 <+420>:	00 26	movs	r6, #0
+   0x0002919a <+422>:	32 46	mov	r2, r6
+   0x0002919c <+424>:	00 95	str	r5, [sp, #0]
+   0x0002919e <+426>:	39 46	mov	r1, r7
+   0x000291a0 <+428>:	01 36	adds	r6, #1
+   0x000291a2 <+430>:	ff f7 27 ff	bl	0x28ff4 <convert_options>
+   0x000291a6 <+434>:	03 46	mov	r3, r0
+   0x000291a8 <+436>:	5a f8 10 0f	ldr.w	r0, [r10, #16]!
+   0x000291ac <+440>:	00 28	cmp	r0, #0
+   0x000291ae <+442>:	f4 d1	bne.n	0x2919a <convert_options+422>
+   0x000291b0 <+444>:	18 46	mov	r0, r3
+   0x000291b2 <+446>:	09 b0	add	sp, #36	; 0x24
+   0x000291b4 <+448>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000291b8 <+452>:	13 46	mov	r3, r2
+   0x000291ba <+454>:	e2 e7	b.n	0x29182 <convert_options+398>
+   0x000291bc <+456>:	0f 46	mov	r7, r1
+   0x000291be <+458>:	e6 e7	b.n	0x2918e <convert_options+410>
+End of assembler dump.
+Dump of assembler code for function argp_version_setup:
+   0x00029d58 <+0>:	45 f6 c4 62	movw	r2, #24260	; 0x5ec4
+   0x00029d5c <+4>:	45 f6 c8 63	movw	r3, #24264	; 0x5ec8
+   0x00029d60 <+8>:	c0 f2 04 02	movt	r2, #4
+   0x00029d64 <+12>:	c0 f2 04 03	movt	r3, #4
+   0x00029d68 <+16>:	10 b4	push	{r4}
+   0x00029d6a <+18>:	49 f6 2d 54	movw	r4, #40237	; 0x9d2d
+   0x00029d6e <+22>:	18 60	str	r0, [r3, #0]
+   0x00029d70 <+24>:	c0 f2 02 04	movt	r4, #2
+   0x00029d74 <+28>:	59 60	str	r1, [r3, #4]
+   0x00029d76 <+30>:	14 60	str	r4, [r2, #0]
+   0x00029d78 <+32>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x00029d7c <+36>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function version_etc_hook:
+   0x00029d2c <+0>:	10 b5	push	{r4, lr}
+   0x00029d2e <+2>:	45 f6 c8 64	movw	r4, #24264	; 0x5ec8
+   0x00029d32 <+6>:	c0 f2 04 04	movt	r4, #4
+   0x00029d36 <+10>:	82 b0	sub	sp, #8
+   0x00029d38 <+12>:	44 f2 34 62	movw	r2, #17972	; 0x4634
+   0x00029d3c <+16>:	44 f2 5c 73	movw	r3, #18268	; 0x475c
+   0x00029d40 <+20>:	21 68	ldr	r1, [r4, #0]
+   0x00029d42 <+22>:	c0 f2 03 02	movt	r2, #3
+   0x00029d46 <+26>:	64 68	ldr	r4, [r4, #4]
+   0x00029d48 <+28>:	c0 f2 03 03	movt	r3, #3
+   0x00029d4c <+32>:	00 94	str	r4, [sp, #0]
+   0x00029d4e <+34>:	05 f0 87 fa	bl	0x2f260 <version_etc_ar>
+   0x00029d52 <+38>:	02 b0	add	sp, #8
+   0x00029d54 <+40>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function getfileconat:
+   0x0002ff90 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0002ff94 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x0002ff98 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x0002ff9c <+12>:	ad f6 dc 7d	subw	sp, sp, #4060	; 0xfdc
+   0x0002ffa0 <+16>:	10 f1 64 0f	cmn.w	r0, #100	; 0x64
+   0x0002ffa4 <+20>:	05 46	mov	r5, r0
+   0x0002ffa6 <+22>:	23 68	ldr	r3, [r4, #0]
+   0x0002ffa8 <+24>:	0e 46	mov	r6, r1
+   0x0002ffaa <+26>:	17 46	mov	r7, r2
+   0x0002ffac <+28>:	cd f8 d4 3f	str.w	r3, [sp, #4052]	; 0xfd4
+   0x0002ffb0 <+32>:	49 d0	beq.n	0x30046 <getfileconat+182>
+   0x0002ffb2 <+34>:	0b 78	ldrb	r3, [r1, #0]
+   0x0002ffb4 <+36>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0002ffb6 <+38>:	46 d0	beq.n	0x30046 <getfileconat+182>
+   0x0002ffb8 <+40>:	0d f1 14 08	add.w	r8, sp, #20
+   0x0002ffbc <+44>:	01 46	mov	r1, r0
+   0x0002ffbe <+46>:	32 46	mov	r2, r6
+   0x0002ffc0 <+48>:	40 46	mov	r0, r8
+   0x0002ffc2 <+50>:	ff f7 75 ff	bl	0x2feb0 <openat_proc_name>
+   0x0002ffc6 <+54>:	81 46	mov	r9, r0
+   0x0002ffc8 <+56>:	18 b3	cbz	r0, 0x30012 <getfileconat+130>
+   0x0002ffca <+58>:	39 46	mov	r1, r7
+   0x0002ffcc <+60>:	ff f7 7e fe	bl	0x2fccc <rpl_getfilecon>
+   0x0002ffd0 <+64>:	82 46	mov	r10, r0
+   0x0002ffd2 <+66>:	da f7 f2 ef	blx	0xafb8 <__errno_location@plt>
+   0x0002ffd6 <+70>:	c1 45	cmp	r9, r8
+   0x0002ffd8 <+72>:	83 46	mov	r11, r0
+   0x0002ffda <+74>:	03 68	ldr	r3, [r0, #0]
+   0x0002ffdc <+76>:	04 d0	beq.n	0x2ffe8 <getfileconat+88>
+   0x0002ffde <+78>:	48 46	mov	r0, r9
+   0x0002ffe0 <+80>:	01 93	str	r3, [sp, #4]
+   0x0002ffe2 <+82>:	da f7 9c ed	blx	0xab1c <free>
+   0x0002ffe6 <+86>:	01 9b	ldr	r3, [sp, #4]
+   0x0002ffe8 <+88>:	ba f1 ff 3f	cmp.w	r10, #4294967295
+   0x0002ffec <+92>:	0a d0	beq.n	0x30004 <getfileconat+116>
+   0x0002ffee <+94>:	53 46	mov	r3, r10
+   0x0002fff0 <+96>:	dd f8 d4 2f	ldr.w	r2, [sp, #4052]	; 0xfd4
+   0x0002fff4 <+100>:	18 46	mov	r0, r3
+   0x0002fff6 <+102>:	23 68	ldr	r3, [r4, #0]
+   0x0002fff8 <+104>:	9a 42	cmp	r2, r3
+   0x0002fffa <+106>:	56 d1	bne.n	0x300aa <getfileconat+282>
+   0x0002fffc <+108>:	0d f6 dc 7d	addw	sp, sp, #4060	; 0xfdc
+   0x00030000 <+112>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00030004 <+116>:	14 2b	cmp	r3, #20
+   0x00030006 <+118>:	04 d0	beq.n	0x30012 <getfileconat+130>
+   0x00030008 <+120>:	5a 1e	subs	r2, r3, #1
+   0x0003000a <+122>:	0d 2b	cmp	r3, #13
+   0x0003000c <+124>:	18 bf	it	ne
+   0x0003000e <+126>:	01 2a	cmpne	r2, #1
+   0x00030010 <+128>:	35 d8	bhi.n	0x3007e <getfileconat+238>
+   0x00030012 <+130>:	03 a8	add	r0, sp, #12
+   0x00030014 <+132>:	fe f7 14 ff	bl	0x2ee40 <save_cwd>
+   0x00030018 <+136>:	00 28	cmp	r0, #0
+   0x0003001a <+138>:	48 d1	bne.n	0x300ae <getfileconat+286>
+   0x0003001c <+140>:	00 2d	cmp	r5, #0
+   0x0003001e <+142>:	02 db	blt.n	0x30026 <getfileconat+150>
+   0x00030020 <+144>:	03 9b	ldr	r3, [sp, #12]
+   0x00030022 <+146>:	ab 42	cmp	r3, r5
+   0x00030024 <+148>:	37 d0	beq.n	0x30096 <getfileconat+262>
+   0x00030026 <+150>:	28 46	mov	r0, r5
+   0x00030028 <+152>:	db f7 f8 e8	blx	0xb21c <fchdir@plt+4>
+   0x0003002c <+156>:	05 46	mov	r5, r0
+   0x0003002e <+158>:	80 b1	cbz	r0, 0x30052 <getfileconat+194>
+   0x00030030 <+160>:	da f7 c2 ef	blx	0xafb8 <__errno_location@plt>
+   0x00030034 <+164>:	06 68	ldr	r6, [r0, #0]
+   0x00030036 <+166>:	05 46	mov	r5, r0
+   0x00030038 <+168>:	03 a8	add	r0, sp, #12
+   0x0003003a <+170>:	fe f7 2d ff	bl	0x2ee98 <free_cwd>
+   0x0003003e <+174>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00030042 <+178>:	2e 60	str	r6, [r5, #0]
+   0x00030044 <+180>:	d4 e7	b.n	0x2fff0 <getfileconat+96>
+   0x00030046 <+182>:	30 46	mov	r0, r6
+   0x00030048 <+184>:	39 46	mov	r1, r7
+   0x0003004a <+186>:	ff f7 3f fe	bl	0x2fccc <rpl_getfilecon>
+   0x0003004e <+190>:	03 46	mov	r3, r0
+   0x00030050 <+192>:	ce e7	b.n	0x2fff0 <getfileconat+96>
+   0x00030052 <+194>:	30 46	mov	r0, r6
+   0x00030054 <+196>:	39 46	mov	r1, r7
+   0x00030056 <+198>:	ff f7 39 fe	bl	0x2fccc <rpl_getfilecon>
+   0x0003005a <+202>:	43 1c	adds	r3, r0, #1
+   0x0003005c <+204>:	06 46	mov	r6, r0
+   0x0003005e <+206>:	16 d0	beq.n	0x3008e <getfileconat+254>
+   0x00030060 <+208>:	03 a8	add	r0, sp, #12
+   0x00030062 <+210>:	fe f7 0f ff	bl	0x2ee84 <restore_cwd>
+   0x00030066 <+214>:	38 bb	cbnz	r0, 0x300b8 <getfileconat+296>
+   0x00030068 <+216>:	03 a8	add	r0, sp, #12
+   0x0003006a <+218>:	fe f7 15 ff	bl	0x2ee98 <free_cwd>
+   0x0003006e <+222>:	33 46	mov	r3, r6
+   0x00030070 <+224>:	00 2d	cmp	r5, #0
+   0x00030072 <+226>:	bd d0	beq.n	0x2fff0 <getfileconat+96>
+   0x00030074 <+228>:	da f7 a0 ef	blx	0xafb8 <__errno_location@plt>
+   0x00030078 <+232>:	33 46	mov	r3, r6
+   0x0003007a <+234>:	05 60	str	r5, [r0, #0]
+   0x0003007c <+236>:	b8 e7	b.n	0x2fff0 <getfileconat+96>
+   0x0003007e <+238>:	26 2b	cmp	r3, #38	; 0x26
+   0x00030080 <+240>:	18 bf	it	ne
+   0x00030082 <+242>:	5f 2b	cmpne	r3, #95	; 0x5f
+   0x00030084 <+244>:	18 bf	it	ne
+   0x00030086 <+246>:	cb f8 00 30	strne.w	r3, [r11]
+   0x0003008a <+250>:	b0 d1	bne.n	0x2ffee <getfileconat+94>
+   0x0003008c <+252>:	c1 e7	b.n	0x30012 <getfileconat+130>
+   0x0003008e <+254>:	da f7 94 ef	blx	0xafb8 <__errno_location@plt>
+   0x00030092 <+258>:	05 68	ldr	r5, [r0, #0]
+   0x00030094 <+260>:	e4 e7	b.n	0x30060 <getfileconat+208>
+   0x00030096 <+262>:	03 a8	add	r0, sp, #12
+   0x00030098 <+264>:	fe f7 fe fe	bl	0x2ee98 <free_cwd>
+   0x0003009c <+268>:	da f7 8c ef	blx	0xafb8 <__errno_location@plt>
+   0x000300a0 <+272>:	09 22	movs	r2, #9
+   0x000300a2 <+274>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000300a6 <+278>:	02 60	str	r2, [r0, #0]
+   0x000300a8 <+280>:	a2 e7	b.n	0x2fff0 <getfileconat+96>
+   0x000300aa <+282>:	da f7 bc ed	blx	0xac24 <__stack_chk_fail@plt>
+   0x000300ae <+286>:	da f7 84 ef	blx	0xafb8 <__errno_location@plt>
+   0x000300b2 <+290>:	00 68	ldr	r0, [r0, #0]
+   0x000300b4 <+292>:	fc f7 76 fc	bl	0x2c9a4 <openat_save_fail>
+   0x000300b8 <+296>:	da f7 7e ef	blx	0xafb8 <__errno_location@plt>
+   0x000300bc <+300>:	00 68	ldr	r0, [r0, #0]
+   0x000300be <+302>:	fc f7 87 fc	bl	0x2c9d0 <openat_restore_fail>
+End of assembler dump.
+Dump of assembler code for function lgetfileconat:
+   0x000300c4 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000300c8 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x000300cc <+8>:	c0 f2 04 04	movt	r4, #4
+   0x000300d0 <+12>:	ad f6 dc 7d	subw	sp, sp, #4060	; 0xfdc
+   0x000300d4 <+16>:	10 f1 64 0f	cmn.w	r0, #100	; 0x64
+   0x000300d8 <+20>:	05 46	mov	r5, r0
+   0x000300da <+22>:	23 68	ldr	r3, [r4, #0]
+   0x000300dc <+24>:	0e 46	mov	r6, r1
+   0x000300de <+26>:	17 46	mov	r7, r2
+   0x000300e0 <+28>:	cd f8 d4 3f	str.w	r3, [sp, #4052]	; 0xfd4
+   0x000300e4 <+32>:	49 d0	beq.n	0x3017a <lgetfileconat+182>
+   0x000300e6 <+34>:	0b 78	ldrb	r3, [r1, #0]
+   0x000300e8 <+36>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x000300ea <+38>:	46 d0	beq.n	0x3017a <lgetfileconat+182>
+   0x000300ec <+40>:	0d f1 14 08	add.w	r8, sp, #20
+   0x000300f0 <+44>:	01 46	mov	r1, r0
+   0x000300f2 <+46>:	32 46	mov	r2, r6
+   0x000300f4 <+48>:	40 46	mov	r0, r8
+   0x000300f6 <+50>:	ff f7 db fe	bl	0x2feb0 <openat_proc_name>
+   0x000300fa <+54>:	81 46	mov	r9, r0
+   0x000300fc <+56>:	18 b3	cbz	r0, 0x30146 <lgetfileconat+130>
+   0x000300fe <+58>:	39 46	mov	r1, r7
+   0x00030100 <+60>:	ff f7 ec fd	bl	0x2fcdc <rpl_lgetfilecon>
+   0x00030104 <+64>:	82 46	mov	r10, r0
+   0x00030106 <+66>:	da f7 58 ef	blx	0xafb8 <__errno_location@plt>
+   0x0003010a <+70>:	c1 45	cmp	r9, r8
+   0x0003010c <+72>:	83 46	mov	r11, r0
+   0x0003010e <+74>:	03 68	ldr	r3, [r0, #0]
+   0x00030110 <+76>:	04 d0	beq.n	0x3011c <lgetfileconat+88>
+   0x00030112 <+78>:	48 46	mov	r0, r9
+   0x00030114 <+80>:	01 93	str	r3, [sp, #4]
+   0x00030116 <+82>:	da f7 02 ed	blx	0xab1c <free>
+   0x0003011a <+86>:	01 9b	ldr	r3, [sp, #4]
+   0x0003011c <+88>:	ba f1 ff 3f	cmp.w	r10, #4294967295
+   0x00030120 <+92>:	0a d0	beq.n	0x30138 <lgetfileconat+116>
+   0x00030122 <+94>:	53 46	mov	r3, r10
+   0x00030124 <+96>:	dd f8 d4 2f	ldr.w	r2, [sp, #4052]	; 0xfd4
+   0x00030128 <+100>:	18 46	mov	r0, r3
+   0x0003012a <+102>:	23 68	ldr	r3, [r4, #0]
+   0x0003012c <+104>:	9a 42	cmp	r2, r3
+   0x0003012e <+106>:	56 d1	bne.n	0x301de <lgetfileconat+282>
+   0x00030130 <+108>:	0d f6 dc 7d	addw	sp, sp, #4060	; 0xfdc
+   0x00030134 <+112>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00030138 <+116>:	14 2b	cmp	r3, #20
+   0x0003013a <+118>:	04 d0	beq.n	0x30146 <lgetfileconat+130>
+   0x0003013c <+120>:	5a 1e	subs	r2, r3, #1
+   0x0003013e <+122>:	0d 2b	cmp	r3, #13
+   0x00030140 <+124>:	18 bf	it	ne
+   0x00030142 <+126>:	01 2a	cmpne	r2, #1
+   0x00030144 <+128>:	35 d8	bhi.n	0x301b2 <lgetfileconat+238>
+   0x00030146 <+130>:	03 a8	add	r0, sp, #12
+   0x00030148 <+132>:	fe f7 7a fe	bl	0x2ee40 <save_cwd>
+   0x0003014c <+136>:	00 28	cmp	r0, #0
+   0x0003014e <+138>:	48 d1	bne.n	0x301e2 <lgetfileconat+286>
+   0x00030150 <+140>:	00 2d	cmp	r5, #0
+   0x00030152 <+142>:	02 db	blt.n	0x3015a <lgetfileconat+150>
+   0x00030154 <+144>:	03 9b	ldr	r3, [sp, #12]
+   0x00030156 <+146>:	ab 42	cmp	r3, r5
+   0x00030158 <+148>:	37 d0	beq.n	0x301ca <lgetfileconat+262>
+   0x0003015a <+150>:	28 46	mov	r0, r5
+   0x0003015c <+152>:	db f7 5e e8	blx	0xb21c <fchdir@plt+4>
+   0x00030160 <+156>:	05 46	mov	r5, r0
+   0x00030162 <+158>:	80 b1	cbz	r0, 0x30186 <lgetfileconat+194>
+   0x00030164 <+160>:	da f7 28 ef	blx	0xafb8 <__errno_location@plt>
+   0x00030168 <+164>:	06 68	ldr	r6, [r0, #0]
+   0x0003016a <+166>:	05 46	mov	r5, r0
+   0x0003016c <+168>:	03 a8	add	r0, sp, #12
+   0x0003016e <+170>:	fe f7 93 fe	bl	0x2ee98 <free_cwd>
+   0x00030172 <+174>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00030176 <+178>:	2e 60	str	r6, [r5, #0]
+   0x00030178 <+180>:	d4 e7	b.n	0x30124 <lgetfileconat+96>
+   0x0003017a <+182>:	30 46	mov	r0, r6
+   0x0003017c <+184>:	39 46	mov	r1, r7
+   0x0003017e <+186>:	ff f7 ad fd	bl	0x2fcdc <rpl_lgetfilecon>
+   0x00030182 <+190>:	03 46	mov	r3, r0
+   0x00030184 <+192>:	ce e7	b.n	0x30124 <lgetfileconat+96>
+   0x00030186 <+194>:	30 46	mov	r0, r6
+   0x00030188 <+196>:	39 46	mov	r1, r7
+   0x0003018a <+198>:	ff f7 a7 fd	bl	0x2fcdc <rpl_lgetfilecon>
+   0x0003018e <+202>:	43 1c	adds	r3, r0, #1
+   0x00030190 <+204>:	06 46	mov	r6, r0
+   0x00030192 <+206>:	16 d0	beq.n	0x301c2 <lgetfileconat+254>
+   0x00030194 <+208>:	03 a8	add	r0, sp, #12
+   0x00030196 <+210>:	fe f7 75 fe	bl	0x2ee84 <restore_cwd>
+   0x0003019a <+214>:	38 bb	cbnz	r0, 0x301ec <lgetfileconat+296>
+   0x0003019c <+216>:	03 a8	add	r0, sp, #12
+   0x0003019e <+218>:	fe f7 7b fe	bl	0x2ee98 <free_cwd>
+   0x000301a2 <+222>:	33 46	mov	r3, r6
+   0x000301a4 <+224>:	00 2d	cmp	r5, #0
+   0x000301a6 <+226>:	bd d0	beq.n	0x30124 <lgetfileconat+96>
+   0x000301a8 <+228>:	da f7 06 ef	blx	0xafb8 <__errno_location@plt>
+   0x000301ac <+232>:	33 46	mov	r3, r6
+   0x000301ae <+234>:	05 60	str	r5, [r0, #0]
+   0x000301b0 <+236>:	b8 e7	b.n	0x30124 <lgetfileconat+96>
+   0x000301b2 <+238>:	26 2b	cmp	r3, #38	; 0x26
+   0x000301b4 <+240>:	18 bf	it	ne
+   0x000301b6 <+242>:	5f 2b	cmpne	r3, #95	; 0x5f
+   0x000301b8 <+244>:	18 bf	it	ne
+   0x000301ba <+246>:	cb f8 00 30	strne.w	r3, [r11]
+   0x000301be <+250>:	b0 d1	bne.n	0x30122 <lgetfileconat+94>
+   0x000301c0 <+252>:	c1 e7	b.n	0x30146 <lgetfileconat+130>
+   0x000301c2 <+254>:	da f7 fa ee	blx	0xafb8 <__errno_location@plt>
+   0x000301c6 <+258>:	05 68	ldr	r5, [r0, #0]
+   0x000301c8 <+260>:	e4 e7	b.n	0x30194 <lgetfileconat+208>
+   0x000301ca <+262>:	03 a8	add	r0, sp, #12
+   0x000301cc <+264>:	fe f7 64 fe	bl	0x2ee98 <free_cwd>
+   0x000301d0 <+268>:	da f7 f2 ee	blx	0xafb8 <__errno_location@plt>
+   0x000301d4 <+272>:	09 22	movs	r2, #9
+   0x000301d6 <+274>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000301da <+278>:	02 60	str	r2, [r0, #0]
+   0x000301dc <+280>:	a2 e7	b.n	0x30124 <lgetfileconat+96>
+   0x000301de <+282>:	da f7 22 ed	blx	0xac24 <__stack_chk_fail@plt>
+   0x000301e2 <+286>:	da f7 ea ee	blx	0xafb8 <__errno_location@plt>
+   0x000301e6 <+290>:	00 68	ldr	r0, [r0, #0]
+   0x000301e8 <+292>:	fc f7 dc fb	bl	0x2c9a4 <openat_save_fail>
+   0x000301ec <+296>:	da f7 e4 ee	blx	0xafb8 <__errno_location@plt>
+   0x000301f0 <+300>:	00 68	ldr	r0, [r0, #0]
+   0x000301f2 <+302>:	fc f7 ed fb	bl	0x2c9d0 <openat_restore_fail>
+End of assembler dump.
+Dump of assembler code for function lsetfileconat:
+   0x0003032c <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00030330 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x00030334 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x00030338 <+12>:	ad f6 dc 7d	subw	sp, sp, #4060	; 0xfdc
+   0x0003033c <+16>:	10 f1 64 0f	cmn.w	r0, #100	; 0x64
+   0x00030340 <+20>:	05 46	mov	r5, r0
+   0x00030342 <+22>:	23 68	ldr	r3, [r4, #0]
+   0x00030344 <+24>:	0e 46	mov	r6, r1
+   0x00030346 <+26>:	17 46	mov	r7, r2
+   0x00030348 <+28>:	cd f8 d4 3f	str.w	r3, [sp, #4052]	; 0xfd4
+   0x0003034c <+32>:	49 d0	beq.n	0x303e2 <lsetfileconat+182>
+   0x0003034e <+34>:	0b 78	ldrb	r3, [r1, #0]
+   0x00030350 <+36>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x00030352 <+38>:	46 d0	beq.n	0x303e2 <lsetfileconat+182>
+   0x00030354 <+40>:	0d f1 14 08	add.w	r8, sp, #20
+   0x00030358 <+44>:	01 46	mov	r1, r0
+   0x0003035a <+46>:	32 46	mov	r2, r6
+   0x0003035c <+48>:	40 46	mov	r0, r8
+   0x0003035e <+50>:	ff f7 a7 fd	bl	0x2feb0 <openat_proc_name>
+   0x00030362 <+54>:	81 46	mov	r9, r0
+   0x00030364 <+56>:	18 b3	cbz	r0, 0x303ae <lsetfileconat+130>
+   0x00030366 <+58>:	39 46	mov	r1, r7
+   0x00030368 <+60>:	da f7 be eb	blx	0xaae8 <lsetfilecon@plt>
+   0x0003036c <+64>:	82 46	mov	r10, r0
+   0x0003036e <+66>:	da f7 24 ee	blx	0xafb8 <__errno_location@plt>
+   0x00030372 <+70>:	c1 45	cmp	r9, r8
+   0x00030374 <+72>:	83 46	mov	r11, r0
+   0x00030376 <+74>:	03 68	ldr	r3, [r0, #0]
+   0x00030378 <+76>:	04 d0	beq.n	0x30384 <lsetfileconat+88>
+   0x0003037a <+78>:	48 46	mov	r0, r9
+   0x0003037c <+80>:	01 93	str	r3, [sp, #4]
+   0x0003037e <+82>:	da f7 ce eb	blx	0xab1c <free>
+   0x00030382 <+86>:	01 9b	ldr	r3, [sp, #4]
+   0x00030384 <+88>:	ba f1 ff 3f	cmp.w	r10, #4294967295
+   0x00030388 <+92>:	0a d0	beq.n	0x303a0 <lsetfileconat+116>
+   0x0003038a <+94>:	53 46	mov	r3, r10
+   0x0003038c <+96>:	dd f8 d4 2f	ldr.w	r2, [sp, #4052]	; 0xfd4
+   0x00030390 <+100>:	18 46	mov	r0, r3
+   0x00030392 <+102>:	23 68	ldr	r3, [r4, #0]
+   0x00030394 <+104>:	9a 42	cmp	r2, r3
+   0x00030396 <+106>:	56 d1	bne.n	0x30446 <lsetfileconat+282>
+   0x00030398 <+108>:	0d f6 dc 7d	addw	sp, sp, #4060	; 0xfdc
+   0x0003039c <+112>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000303a0 <+116>:	14 2b	cmp	r3, #20
+   0x000303a2 <+118>:	04 d0	beq.n	0x303ae <lsetfileconat+130>
+   0x000303a4 <+120>:	5a 1e	subs	r2, r3, #1
+   0x000303a6 <+122>:	0d 2b	cmp	r3, #13
+   0x000303a8 <+124>:	18 bf	it	ne
+   0x000303aa <+126>:	01 2a	cmpne	r2, #1
+   0x000303ac <+128>:	35 d8	bhi.n	0x3041a <lsetfileconat+238>
+   0x000303ae <+130>:	03 a8	add	r0, sp, #12
+   0x000303b0 <+132>:	fe f7 46 fd	bl	0x2ee40 <save_cwd>
+   0x000303b4 <+136>:	00 28	cmp	r0, #0
+   0x000303b6 <+138>:	48 d1	bne.n	0x3044a <lsetfileconat+286>
+   0x000303b8 <+140>:	00 2d	cmp	r5, #0
+   0x000303ba <+142>:	02 db	blt.n	0x303c2 <lsetfileconat+150>
+   0x000303bc <+144>:	03 9b	ldr	r3, [sp, #12]
+   0x000303be <+146>:	ab 42	cmp	r3, r5
+   0x000303c0 <+148>:	37 d0	beq.n	0x30432 <lsetfileconat+262>
+   0x000303c2 <+150>:	28 46	mov	r0, r5
+   0x000303c4 <+152>:	da f7 2a ef	blx	0xb21c <fchdir@plt+4>
+   0x000303c8 <+156>:	05 46	mov	r5, r0
+   0x000303ca <+158>:	80 b1	cbz	r0, 0x303ee <lsetfileconat+194>
+   0x000303cc <+160>:	da f7 f4 ed	blx	0xafb8 <__errno_location@plt>
+   0x000303d0 <+164>:	06 68	ldr	r6, [r0, #0]
+   0x000303d2 <+166>:	05 46	mov	r5, r0
+   0x000303d4 <+168>:	03 a8	add	r0, sp, #12
+   0x000303d6 <+170>:	fe f7 5f fd	bl	0x2ee98 <free_cwd>
+   0x000303da <+174>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000303de <+178>:	2e 60	str	r6, [r5, #0]
+   0x000303e0 <+180>:	d4 e7	b.n	0x3038c <lsetfileconat+96>
+   0x000303e2 <+182>:	30 46	mov	r0, r6
+   0x000303e4 <+184>:	39 46	mov	r1, r7
+   0x000303e6 <+186>:	da f7 80 eb	blx	0xaae8 <lsetfilecon@plt>
+   0x000303ea <+190>:	03 46	mov	r3, r0
+   0x000303ec <+192>:	ce e7	b.n	0x3038c <lsetfileconat+96>
+   0x000303ee <+194>:	30 46	mov	r0, r6
+   0x000303f0 <+196>:	39 46	mov	r1, r7
+   0x000303f2 <+198>:	da f7 7a eb	blx	0xaae8 <lsetfilecon@plt>
+   0x000303f6 <+202>:	43 1c	adds	r3, r0, #1
+   0x000303f8 <+204>:	06 46	mov	r6, r0
+   0x000303fa <+206>:	16 d0	beq.n	0x3042a <lsetfileconat+254>
+   0x000303fc <+208>:	03 a8	add	r0, sp, #12
+   0x000303fe <+210>:	fe f7 41 fd	bl	0x2ee84 <restore_cwd>
+   0x00030402 <+214>:	38 bb	cbnz	r0, 0x30454 <lsetfileconat+296>
+   0x00030404 <+216>:	03 a8	add	r0, sp, #12
+   0x00030406 <+218>:	fe f7 47 fd	bl	0x2ee98 <free_cwd>
+   0x0003040a <+222>:	33 46	mov	r3, r6
+   0x0003040c <+224>:	00 2d	cmp	r5, #0
+   0x0003040e <+226>:	bd d0	beq.n	0x3038c <lsetfileconat+96>
+   0x00030410 <+228>:	da f7 d2 ed	blx	0xafb8 <__errno_location@plt>
+   0x00030414 <+232>:	33 46	mov	r3, r6
+   0x00030416 <+234>:	05 60	str	r5, [r0, #0]
+   0x00030418 <+236>:	b8 e7	b.n	0x3038c <lsetfileconat+96>
+   0x0003041a <+238>:	26 2b	cmp	r3, #38	; 0x26
+   0x0003041c <+240>:	18 bf	it	ne
+   0x0003041e <+242>:	5f 2b	cmpne	r3, #95	; 0x5f
+   0x00030420 <+244>:	18 bf	it	ne
+   0x00030422 <+246>:	cb f8 00 30	strne.w	r3, [r11]
+   0x00030426 <+250>:	b0 d1	bne.n	0x3038a <lsetfileconat+94>
+   0x00030428 <+252>:	c1 e7	b.n	0x303ae <lsetfileconat+130>
+   0x0003042a <+254>:	da f7 c6 ed	blx	0xafb8 <__errno_location@plt>
+   0x0003042e <+258>:	05 68	ldr	r5, [r0, #0]
+   0x00030430 <+260>:	e4 e7	b.n	0x303fc <lsetfileconat+208>
+   0x00030432 <+262>:	03 a8	add	r0, sp, #12
+   0x00030434 <+264>:	fe f7 30 fd	bl	0x2ee98 <free_cwd>
+   0x00030438 <+268>:	da f7 be ed	blx	0xafb8 <__errno_location@plt>
+   0x0003043c <+272>:	09 22	movs	r2, #9
+   0x0003043e <+274>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00030442 <+278>:	02 60	str	r2, [r0, #0]
+   0x00030444 <+280>:	a2 e7	b.n	0x3038c <lsetfileconat+96>
+   0x00030446 <+282>:	da f7 ee eb	blx	0xac24 <__stack_chk_fail@plt>
+   0x0003044a <+286>:	da f7 b6 ed	blx	0xafb8 <__errno_location@plt>
+   0x0003044e <+290>:	00 68	ldr	r0, [r0, #0]
+   0x00030450 <+292>:	fc f7 a8 fa	bl	0x2c9a4 <openat_save_fail>
+   0x00030454 <+296>:	da f7 b0 ed	blx	0xafb8 <__errno_location@plt>
+   0x00030458 <+300>:	00 68	ldr	r0, [r0, #0]
+   0x0003045a <+302>:	fc f7 b9 fa	bl	0x2c9d0 <openat_restore_fail>
+End of assembler dump.
+Dump of assembler code for function setfileconat:
+   0x000301f8 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000301fc <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x00030200 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x00030204 <+12>:	ad f6 dc 7d	subw	sp, sp, #4060	; 0xfdc
+   0x00030208 <+16>:	10 f1 64 0f	cmn.w	r0, #100	; 0x64
+   0x0003020c <+20>:	05 46	mov	r5, r0
+   0x0003020e <+22>:	23 68	ldr	r3, [r4, #0]
+   0x00030210 <+24>:	0e 46	mov	r6, r1
+   0x00030212 <+26>:	17 46	mov	r7, r2
+   0x00030214 <+28>:	cd f8 d4 3f	str.w	r3, [sp, #4052]	; 0xfd4
+   0x00030218 <+32>:	49 d0	beq.n	0x302ae <setfileconat+182>
+   0x0003021a <+34>:	0b 78	ldrb	r3, [r1, #0]
+   0x0003021c <+36>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0003021e <+38>:	46 d0	beq.n	0x302ae <setfileconat+182>
+   0x00030220 <+40>:	0d f1 14 08	add.w	r8, sp, #20
+   0x00030224 <+44>:	01 46	mov	r1, r0
+   0x00030226 <+46>:	32 46	mov	r2, r6
+   0x00030228 <+48>:	40 46	mov	r0, r8
+   0x0003022a <+50>:	ff f7 41 fe	bl	0x2feb0 <openat_proc_name>
+   0x0003022e <+54>:	81 46	mov	r9, r0
+   0x00030230 <+56>:	18 b3	cbz	r0, 0x3027a <setfileconat+130>
+   0x00030232 <+58>:	39 46	mov	r1, r7
+   0x00030234 <+60>:	da f7 3c ef	blx	0xb0b0 <setfilecon@plt>
+   0x00030238 <+64>:	82 46	mov	r10, r0
+   0x0003023a <+66>:	da f7 be ee	blx	0xafb8 <__errno_location@plt>
+   0x0003023e <+70>:	c1 45	cmp	r9, r8
+   0x00030240 <+72>:	83 46	mov	r11, r0
+   0x00030242 <+74>:	03 68	ldr	r3, [r0, #0]
+   0x00030244 <+76>:	04 d0	beq.n	0x30250 <setfileconat+88>
+   0x00030246 <+78>:	48 46	mov	r0, r9
+   0x00030248 <+80>:	01 93	str	r3, [sp, #4]
+   0x0003024a <+82>:	da f7 68 ec	blx	0xab1c <free>
+   0x0003024e <+86>:	01 9b	ldr	r3, [sp, #4]
+   0x00030250 <+88>:	ba f1 ff 3f	cmp.w	r10, #4294967295
+   0x00030254 <+92>:	0a d0	beq.n	0x3026c <setfileconat+116>
+   0x00030256 <+94>:	53 46	mov	r3, r10
+   0x00030258 <+96>:	dd f8 d4 2f	ldr.w	r2, [sp, #4052]	; 0xfd4
+   0x0003025c <+100>:	18 46	mov	r0, r3
+   0x0003025e <+102>:	23 68	ldr	r3, [r4, #0]
+   0x00030260 <+104>:	9a 42	cmp	r2, r3
+   0x00030262 <+106>:	56 d1	bne.n	0x30312 <setfileconat+282>
+   0x00030264 <+108>:	0d f6 dc 7d	addw	sp, sp, #4060	; 0xfdc
+   0x00030268 <+112>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0003026c <+116>:	14 2b	cmp	r3, #20
+   0x0003026e <+118>:	04 d0	beq.n	0x3027a <setfileconat+130>
+   0x00030270 <+120>:	5a 1e	subs	r2, r3, #1
+   0x00030272 <+122>:	0d 2b	cmp	r3, #13
+   0x00030274 <+124>:	18 bf	it	ne
+   0x00030276 <+126>:	01 2a	cmpne	r2, #1
+   0x00030278 <+128>:	35 d8	bhi.n	0x302e6 <setfileconat+238>
+   0x0003027a <+130>:	03 a8	add	r0, sp, #12
+   0x0003027c <+132>:	fe f7 e0 fd	bl	0x2ee40 <save_cwd>
+   0x00030280 <+136>:	00 28	cmp	r0, #0
+   0x00030282 <+138>:	48 d1	bne.n	0x30316 <setfileconat+286>
+   0x00030284 <+140>:	00 2d	cmp	r5, #0
+   0x00030286 <+142>:	02 db	blt.n	0x3028e <setfileconat+150>
+   0x00030288 <+144>:	03 9b	ldr	r3, [sp, #12]
+   0x0003028a <+146>:	ab 42	cmp	r3, r5
+   0x0003028c <+148>:	37 d0	beq.n	0x302fe <setfileconat+262>
+   0x0003028e <+150>:	28 46	mov	r0, r5
+   0x00030290 <+152>:	da f7 c4 ef	blx	0xb21c <fchdir@plt+4>
+   0x00030294 <+156>:	05 46	mov	r5, r0
+   0x00030296 <+158>:	80 b1	cbz	r0, 0x302ba <setfileconat+194>
+   0x00030298 <+160>:	da f7 8e ee	blx	0xafb8 <__errno_location@plt>
+   0x0003029c <+164>:	06 68	ldr	r6, [r0, #0]
+   0x0003029e <+166>:	05 46	mov	r5, r0
+   0x000302a0 <+168>:	03 a8	add	r0, sp, #12
+   0x000302a2 <+170>:	fe f7 f9 fd	bl	0x2ee98 <free_cwd>
+   0x000302a6 <+174>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000302aa <+178>:	2e 60	str	r6, [r5, #0]
+   0x000302ac <+180>:	d4 e7	b.n	0x30258 <setfileconat+96>
+   0x000302ae <+182>:	30 46	mov	r0, r6
+   0x000302b0 <+184>:	39 46	mov	r1, r7
+   0x000302b2 <+186>:	da f7 fe ee	blx	0xb0b0 <setfilecon@plt>
+   0x000302b6 <+190>:	03 46	mov	r3, r0
+   0x000302b8 <+192>:	ce e7	b.n	0x30258 <setfileconat+96>
+   0x000302ba <+194>:	30 46	mov	r0, r6
+   0x000302bc <+196>:	39 46	mov	r1, r7
+   0x000302be <+198>:	da f7 f8 ee	blx	0xb0b0 <setfilecon@plt>
+   0x000302c2 <+202>:	43 1c	adds	r3, r0, #1
+   0x000302c4 <+204>:	06 46	mov	r6, r0
+   0x000302c6 <+206>:	16 d0	beq.n	0x302f6 <setfileconat+254>
+   0x000302c8 <+208>:	03 a8	add	r0, sp, #12
+   0x000302ca <+210>:	fe f7 db fd	bl	0x2ee84 <restore_cwd>
+   0x000302ce <+214>:	38 bb	cbnz	r0, 0x30320 <setfileconat+296>
+   0x000302d0 <+216>:	03 a8	add	r0, sp, #12
+   0x000302d2 <+218>:	fe f7 e1 fd	bl	0x2ee98 <free_cwd>
+   0x000302d6 <+222>:	33 46	mov	r3, r6
+   0x000302d8 <+224>:	00 2d	cmp	r5, #0
+   0x000302da <+226>:	bd d0	beq.n	0x30258 <setfileconat+96>
+   0x000302dc <+228>:	da f7 6c ee	blx	0xafb8 <__errno_location@plt>
+   0x000302e0 <+232>:	33 46	mov	r3, r6
+   0x000302e2 <+234>:	05 60	str	r5, [r0, #0]
+   0x000302e4 <+236>:	b8 e7	b.n	0x30258 <setfileconat+96>
+   0x000302e6 <+238>:	26 2b	cmp	r3, #38	; 0x26
+   0x000302e8 <+240>:	18 bf	it	ne
+   0x000302ea <+242>:	5f 2b	cmpne	r3, #95	; 0x5f
+   0x000302ec <+244>:	18 bf	it	ne
+   0x000302ee <+246>:	cb f8 00 30	strne.w	r3, [r11]
+   0x000302f2 <+250>:	b0 d1	bne.n	0x30256 <setfileconat+94>
+   0x000302f4 <+252>:	c1 e7	b.n	0x3027a <setfileconat+130>
+   0x000302f6 <+254>:	da f7 60 ee	blx	0xafb8 <__errno_location@plt>
+   0x000302fa <+258>:	05 68	ldr	r5, [r0, #0]
+   0x000302fc <+260>:	e4 e7	b.n	0x302c8 <setfileconat+208>
+   0x000302fe <+262>:	03 a8	add	r0, sp, #12
+   0x00030300 <+264>:	fe f7 ca fd	bl	0x2ee98 <free_cwd>
+   0x00030304 <+268>:	da f7 58 ee	blx	0xafb8 <__errno_location@plt>
+   0x00030308 <+272>:	09 22	movs	r2, #9
+   0x0003030a <+274>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x0003030e <+278>:	02 60	str	r2, [r0, #0]
+   0x00030310 <+280>:	a2 e7	b.n	0x30258 <setfileconat+96>
+   0x00030312 <+282>:	da f7 88 ec	blx	0xac24 <__stack_chk_fail@plt>
+   0x00030316 <+286>:	da f7 50 ee	blx	0xafb8 <__errno_location@plt>
+   0x0003031a <+290>:	00 68	ldr	r0, [r0, #0]
+   0x0003031c <+292>:	fc f7 42 fb	bl	0x2c9a4 <openat_save_fail>
+   0x00030320 <+296>:	da f7 4a ee	blx	0xafb8 <__errno_location@plt>
+   0x00030324 <+300>:	00 68	ldr	r0, [r0, #0]
+   0x00030326 <+302>:	fc f7 53 fb	bl	0x2c9d0 <openat_restore_fail>
+End of assembler dump.
+Dump of assembler code for function local_utimensat:
+   0x00030460 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00030464 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x00030468 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x0003046c <+12>:	07 46	mov	r7, r0
+   0x0003046e <+14>:	ad f6 dc 7d	subw	sp, sp, #4060	; 0xfdc
+   0x00030472 <+18>:	1d 46	mov	r5, r3
+   0x00030474 <+20>:	20 68	ldr	r0, [r4, #0]
+   0x00030476 <+22>:	35 f4 80 73	bics.w	r3, r5, #256	; 0x100
+   0x0003047a <+26>:	cd f8 d4 0f	str.w	r0, [sp, #4052]	; 0xfd4
+   0x0003047e <+30>:	40 f0 82 80	bne.w	0x30586 <local_utimensat+294>
+   0x00030482 <+34>:	17 f1 64 0f	cmn.w	r7, #100	; 0x64
+   0x00030486 <+38>:	0e 46	mov	r6, r1
+   0x00030488 <+40>:	90 46	mov	r8, r2
+   0x0003048a <+42>:	24 d0	beq.n	0x304d6 <local_utimensat+118>
+   0x0003048c <+44>:	0b 78	ldrb	r3, [r1, #0]
+   0x0003048e <+46>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x00030490 <+48>:	21 d0	beq.n	0x304d6 <local_utimensat+118>
+   0x00030492 <+50>:	0d f1 14 09	add.w	r9, sp, #20
+   0x00030496 <+54>:	39 46	mov	r1, r7
+   0x00030498 <+56>:	32 46	mov	r2, r6
+   0x0003049a <+58>:	48 46	mov	r0, r9
+   0x0003049c <+60>:	ff f7 08 fd	bl	0x2feb0 <openat_proc_name>
+   0x000304a0 <+64>:	82 46	mov	r10, r0
+   0x000304a2 <+66>:	80 b3	cbz	r0, 0x30506 <local_utimensat+166>
+   0x000304a4 <+68>:	b5 f5 80 7f	cmp.w	r5, #256	; 0x100
+   0x000304a8 <+72>:	41 46	mov	r1, r8
+   0x000304aa <+74>:	57 d0	beq.n	0x3055c <local_utimensat+252>
+   0x000304ac <+76>:	00 f0 aa fe	bl	0x31204 <utimens>
+   0x000304b0 <+80>:	83 46	mov	r11, r0
+   0x000304b2 <+82>:	da f7 82 ed	blx	0xafb8 <__errno_location@plt>
+   0x000304b6 <+86>:	ca 45	cmp	r10, r9
+   0x000304b8 <+88>:	03 46	mov	r3, r0
+   0x000304ba <+90>:	02 68	ldr	r2, [r0, #0]
+   0x000304bc <+92>:	06 d0	beq.n	0x304cc <local_utimensat+108>
+   0x000304be <+94>:	50 46	mov	r0, r10
+   0x000304c0 <+96>:	8d e8 0c 00	stmia.w	sp, {r2, r3}
+   0x000304c4 <+100>:	da f7 2a eb	blx	0xab1c <free>
+   0x000304c8 <+104>:	9d e8 0c 00	ldmia.w	sp, {r2, r3}
+   0x000304cc <+108>:	bb f1 ff 3f	cmp.w	r11, #4294967295
+   0x000304d0 <+112>:	17 d0	beq.n	0x30502 <local_utimensat+162>
+   0x000304d2 <+114>:	5b 46	mov	r3, r11
+   0x000304d4 <+116>:	07 e0	b.n	0x304e6 <local_utimensat+134>
+   0x000304d6 <+118>:	b5 f5 80 7f	cmp.w	r5, #256	; 0x100
+   0x000304da <+122>:	30 46	mov	r0, r6
+   0x000304dc <+124>:	41 46	mov	r1, r8
+   0x000304de <+126>:	0c d0	beq.n	0x304fa <local_utimensat+154>
+   0x000304e0 <+128>:	00 f0 90 fe	bl	0x31204 <utimens>
+   0x000304e4 <+132>:	03 46	mov	r3, r0
+   0x000304e6 <+134>:	dd f8 d4 2f	ldr.w	r2, [sp, #4052]	; 0xfd4
+   0x000304ea <+138>:	18 46	mov	r0, r3
+   0x000304ec <+140>:	23 68	ldr	r3, [r4, #0]
+   0x000304ee <+142>:	9a 42	cmp	r2, r3
+   0x000304f0 <+144>:	69 d1	bne.n	0x305c6 <local_utimensat+358>
+   0x000304f2 <+146>:	0d f6 dc 7d	addw	sp, sp, #4060	; 0xfdc
+   0x000304f6 <+150>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000304fa <+154>:	00 f0 89 fe	bl	0x31210 <lutimens>
+   0x000304fe <+158>:	03 46	mov	r3, r0
+   0x00030500 <+160>:	f1 e7	b.n	0x304e6 <local_utimensat+134>
+   0x00030502 <+162>:	14 2a	cmp	r2, #20
+   0x00030504 <+164>:	2e d1	bne.n	0x30564 <local_utimensat+260>
+   0x00030506 <+166>:	03 a8	add	r0, sp, #12
+   0x00030508 <+168>:	fe f7 9a fc	bl	0x2ee40 <save_cwd>
+   0x0003050c <+172>:	00 28	cmp	r0, #0
+   0x0003050e <+174>:	61 d1	bne.n	0x305d4 <local_utimensat+372>
+   0x00030510 <+176>:	00 2f	cmp	r7, #0
+   0x00030512 <+178>:	02 db	blt.n	0x3051a <local_utimensat+186>
+   0x00030514 <+180>:	03 9b	ldr	r3, [sp, #12]
+   0x00030516 <+182>:	bb 42	cmp	r3, r7
+   0x00030518 <+184>:	4b d0	beq.n	0x305b2 <local_utimensat+338>
+   0x0003051a <+186>:	38 46	mov	r0, r7
+   0x0003051c <+188>:	da f7 7e ee	blx	0xb21c <fchdir@plt+4>
+   0x00030520 <+192>:	00 28	cmp	r0, #0
+   0x00030522 <+194>:	37 d1	bne.n	0x30594 <local_utimensat+308>
+   0x00030524 <+196>:	b5 f5 80 7f	cmp.w	r5, #256	; 0x100
+   0x00030528 <+200>:	30 46	mov	r0, r6
+   0x0003052a <+202>:	41 46	mov	r1, r8
+   0x0003052c <+204>:	27 d0	beq.n	0x3057e <local_utimensat+286>
+   0x0003052e <+206>:	00 f0 69 fe	bl	0x31204 <utimens>
+   0x00030532 <+210>:	05 46	mov	r5, r0
+   0x00030534 <+212>:	6b 1c	adds	r3, r5, #1
+   0x00030536 <+214>:	18 bf	it	ne
+   0x00030538 <+216>:	00 26	movne	r6, #0
+   0x0003053a <+218>:	36 d0	beq.n	0x305aa <local_utimensat+330>
+   0x0003053c <+220>:	03 a8	add	r0, sp, #12
+   0x0003053e <+222>:	fe f7 a1 fc	bl	0x2ee84 <restore_cwd>
+   0x00030542 <+226>:	00 28	cmp	r0, #0
+   0x00030544 <+228>:	41 d1	bne.n	0x305ca <local_utimensat+362>
+   0x00030546 <+230>:	03 a8	add	r0, sp, #12
+   0x00030548 <+232>:	fe f7 a6 fc	bl	0x2ee98 <free_cwd>
+   0x0003054c <+236>:	2b 46	mov	r3, r5
+   0x0003054e <+238>:	00 2e	cmp	r6, #0
+   0x00030550 <+240>:	c9 d0	beq.n	0x304e6 <local_utimensat+134>
+   0x00030552 <+242>:	da f7 32 ed	blx	0xafb8 <__errno_location@plt>
+   0x00030556 <+246>:	2b 46	mov	r3, r5
+   0x00030558 <+248>:	06 60	str	r6, [r0, #0]
+   0x0003055a <+250>:	c4 e7	b.n	0x304e6 <local_utimensat+134>
+   0x0003055c <+252>:	00 f0 58 fe	bl	0x31210 <lutimens>
+   0x00030560 <+256>:	83 46	mov	r11, r0
+   0x00030562 <+258>:	a6 e7	b.n	0x304b2 <local_utimensat+82>
+   0x00030564 <+260>:	51 1e	subs	r1, r2, #1
+   0x00030566 <+262>:	0d 2a	cmp	r2, #13
+   0x00030568 <+264>:	18 bf	it	ne
+   0x0003056a <+266>:	01 29	cmpne	r1, #1
+   0x0003056c <+268>:	cb d9	bls.n	0x30506 <local_utimensat+166>
+   0x0003056e <+270>:	26 2a	cmp	r2, #38	; 0x26
+   0x00030570 <+272>:	18 bf	it	ne
+   0x00030572 <+274>:	5f 2a	cmpne	r2, #95	; 0x5f
+   0x00030574 <+276>:	18 bf	it	ne
+   0x00030576 <+278>:	1a 60	strne	r2, [r3, #0]
+   0x00030578 <+280>:	c5 d0	beq.n	0x30506 <local_utimensat+166>
+   0x0003057a <+282>:	5b 46	mov	r3, r11
+   0x0003057c <+284>:	b3 e7	b.n	0x304e6 <local_utimensat+134>
+   0x0003057e <+286>:	00 f0 47 fe	bl	0x31210 <lutimens>
+   0x00030582 <+290>:	05 46	mov	r5, r0
+   0x00030584 <+292>:	d6 e7	b.n	0x30534 <local_utimensat+212>
+   0x00030586 <+294>:	da f7 18 ed	blx	0xafb8 <__errno_location@plt>
+   0x0003058a <+298>:	16 22	movs	r2, #22
+   0x0003058c <+300>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00030590 <+304>:	02 60	str	r2, [r0, #0]
+   0x00030592 <+306>:	a8 e7	b.n	0x304e6 <local_utimensat+134>
+   0x00030594 <+308>:	da f7 10 ed	blx	0xafb8 <__errno_location@plt>
+   0x00030598 <+312>:	06 68	ldr	r6, [r0, #0]
+   0x0003059a <+314>:	05 46	mov	r5, r0
+   0x0003059c <+316>:	03 a8	add	r0, sp, #12
+   0x0003059e <+318>:	fe f7 7b fc	bl	0x2ee98 <free_cwd>
+   0x000305a2 <+322>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000305a6 <+326>:	2e 60	str	r6, [r5, #0]
+   0x000305a8 <+328>:	9d e7	b.n	0x304e6 <local_utimensat+134>
+   0x000305aa <+330>:	da f7 06 ed	blx	0xafb8 <__errno_location@plt>
+   0x000305ae <+334>:	06 68	ldr	r6, [r0, #0]
+   0x000305b0 <+336>:	c4 e7	b.n	0x3053c <local_utimensat+220>
+   0x000305b2 <+338>:	03 a8	add	r0, sp, #12
+   0x000305b4 <+340>:	fe f7 70 fc	bl	0x2ee98 <free_cwd>
+   0x000305b8 <+344>:	da f7 fe ec	blx	0xafb8 <__errno_location@plt>
+   0x000305bc <+348>:	09 22	movs	r2, #9
+   0x000305be <+350>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000305c2 <+354>:	02 60	str	r2, [r0, #0]
+   0x000305c4 <+356>:	8f e7	b.n	0x304e6 <local_utimensat+134>
+   0x000305c6 <+358>:	da f7 2e eb	blx	0xac24 <__stack_chk_fail@plt>
+   0x000305ca <+362>:	da f7 f6 ec	blx	0xafb8 <__errno_location@plt>
+   0x000305ce <+366>:	00 68	ldr	r0, [r0, #0]
+   0x000305d0 <+368>:	fc f7 fe f9	bl	0x2c9d0 <openat_restore_fail>
+   0x000305d4 <+372>:	da f7 f0 ec	blx	0xafb8 <__errno_location@plt>
+   0x000305d8 <+376>:	00 68	ldr	r0, [r0, #0]
+   0x000305da <+378>:	fc f7 e3 f9	bl	0x2c9a4 <openat_save_fail>
+End of assembler dump.

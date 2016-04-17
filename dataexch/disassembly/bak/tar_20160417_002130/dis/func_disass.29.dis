@@ -1,0 +1,447 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function hash_initialize:
+   0x0002afdc <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x0002afe0 <+4>:	80 46	mov	r8, r0
+   0x0002afe2 <+6>:	4a f6 b9 26	movw	r6, #43705	; 0xaab9
+   0x0002afe6 <+10>:	4a f6 c9 24	movw	r4, #43721	; 0xaac9
+   0x0002afea <+14>:	c0 f2 02 06	movt	r6, #2
+   0x0002afee <+18>:	c0 f2 02 04	movt	r4, #2
+   0x0002aff2 <+22>:	28 20	movs	r0, #40	; 0x28
+   0x0002aff4 <+24>:	00 2b	cmp	r3, #0
+   0x0002aff6 <+26>:	14 bf	ite	ne
+   0x0002aff8 <+28>:	99 46	movne	r9, r3
+   0x0002affa <+30>:	a1 46	moveq	r9, r4
+   0x0002affc <+32>:	0d 46	mov	r5, r1
+   0x0002affe <+34>:	00 2a	cmp	r2, #0
+   0x0002b000 <+36>:	18 bf	it	ne
+   0x0002b002 <+38>:	16 46	movne	r6, r2
+   0x0002b004 <+40>:	df f7 18 ef	blx	0xae38 <malloc@plt>
+   0x0002b008 <+44>:	04 46	mov	r4, r0
+   0x0002b00a <+46>:	00 28	cmp	r0, #0
+   0x0002b00c <+48>:	45 d0	beq.n	0x2b09a <hash_initialize+190>
+   0x0002b00e <+50>:	49 f6 cc 47	movw	r7, #40140	; 0x9ccc
+   0x0002b012 <+54>:	c0 f2 03 07	movt	r7, #3
+   0x0002b016 <+58>:	00 2d	cmp	r5, #0
+   0x0002b018 <+60>:	08 bf	it	eq
+   0x0002b01a <+62>:	3d 46	moveq	r5, r7
+   0x0002b01c <+64>:	40 f8 14 5f	str.w	r5, [r0, #20]!
+   0x0002b020 <+68>:	ff f7 ae fd	bl	0x2ab80 <check_tuning>
+   0x0002b024 <+72>:	98 b3	cbz	r0, 0x2b08e <hash_initialize+178>
+   0x0002b026 <+74>:	2b 7c	ldrb	r3, [r5, #16]
+   0x0002b028 <+76>:	d5 ed 02 7a	vldr	s15, [r5, #8]
+   0x0002b02c <+80>:	83 b9	cbnz	r3, 0x2b050 <hash_initialize+116>
+   0x0002b02e <+82>:	07 ee 10 8a	vmov	s14, r8
+   0x0002b032 <+86>:	f8 ee 47 6a	vcvt.f32.u32	s13, s14
+   0x0002b036 <+90>:	9f ed 1a 7a	vldr	s14, [pc, #104]	; 0x2b0a0 <hash_initialize+196>
+   0x0002b03a <+94>:	c6 ee a7 7a	vdiv.f32	s15, s13, s15
+   0x0002b03e <+98>:	f4 ee c7 7a	vcmpe.f32	s15, s14
+   0x0002b042 <+102>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b046 <+106>:	20 da	bge.n	0x2b08a <hash_initialize+174>
+   0x0002b048 <+108>:	fc ee e7 7a	vcvt.u32.f32	s15, s15
+   0x0002b04c <+112>:	17 ee 90 8a	vmov	r8, s15
+   0x0002b050 <+116>:	40 46	mov	r0, r8
+   0x0002b052 <+118>:	ff f7 fd fc	bl	0x2aa50 <next_prime>
+   0x0002b056 <+122>:	b0 f1 80 4f	cmp.w	r0, #1073741824	; 0x40000000
+   0x0002b05a <+126>:	05 46	mov	r5, r0
+   0x0002b05c <+128>:	15 d2	bcs.n	0x2b08a <hash_initialize+174>
+   0x0002b05e <+130>:	a0 60	str	r0, [r4, #8]
+   0x0002b060 <+132>:	a8 b1	cbz	r0, 0x2b08e <hash_initialize+178>
+   0x0002b062 <+134>:	08 21	movs	r1, #8
+   0x0002b064 <+136>:	df f7 c8 ec	blx	0xa9f8 <calloc@plt>
+   0x0002b068 <+140>:	20 60	str	r0, [r4, #0]
+   0x0002b06a <+142>:	80 b1	cbz	r0, 0x2b08e <hash_initialize+178>
+   0x0002b06c <+144>:	08 99	ldr	r1, [sp, #32]
+   0x0002b06e <+146>:	00 23	movs	r3, #0
+   0x0002b070 <+148>:	00 eb c5 05	add.w	r5, r0, r5, lsl #3
+   0x0002b074 <+152>:	a6 61	str	r6, [r4, #24]
+   0x0002b076 <+154>:	65 60	str	r5, [r4, #4]
+   0x0002b078 <+156>:	20 46	mov	r0, r4
+   0x0002b07a <+158>:	c4 f8 1c 90	str.w	r9, [r4, #28]
+   0x0002b07e <+162>:	21 62	str	r1, [r4, #32]
+   0x0002b080 <+164>:	e3 60	str	r3, [r4, #12]
+   0x0002b082 <+166>:	23 61	str	r3, [r4, #16]
+   0x0002b084 <+168>:	63 62	str	r3, [r4, #36]	; 0x24
+   0x0002b086 <+170>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x0002b08a <+174>:	00 23	movs	r3, #0
+   0x0002b08c <+176>:	a3 60	str	r3, [r4, #8]
+   0x0002b08e <+178>:	20 46	mov	r0, r4
+   0x0002b090 <+180>:	df f7 44 ed	blx	0xab1c <free>
+   0x0002b094 <+184>:	00 20	movs	r0, #0
+   0x0002b096 <+186>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x0002b09a <+190>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x0002b09e <+194>:	00 bf	nop
+   0x0002b0a0 <+196>:	00 00	movs	r0, r0
+   0x0002b0a2 <+198>:	80 4f	ldr	r7, [pc, #512]	; (0x2b2a4 <hash_insert_if_absent+56>)
+End of assembler dump.
+Dump of assembler code for function hash_insert:
+   0x0002b384 <+0>:	10 b5	push	{r4, lr}
+   0x0002b386 <+2>:	82 b0	sub	sp, #8
+   0x0002b388 <+4>:	01 aa	add	r2, sp, #4
+   0x0002b38a <+6>:	0c 46	mov	r4, r1
+   0x0002b38c <+8>:	ff f7 6e ff	bl	0x2b26c <hash_insert_if_absent>
+   0x0002b390 <+12>:	43 1c	adds	r3, r0, #1
+   0x0002b392 <+14>:	06 d0	beq.n	0x2b3a2 <hash_insert+30>
+   0x0002b394 <+16>:	10 b1	cbz	r0, 0x2b39c <hash_insert+24>
+   0x0002b396 <+18>:	20 46	mov	r0, r4
+   0x0002b398 <+20>:	02 b0	add	sp, #8
+   0x0002b39a <+22>:	10 bd	pop	{r4, pc}
+   0x0002b39c <+24>:	01 98	ldr	r0, [sp, #4]
+   0x0002b39e <+26>:	02 b0	add	sp, #8
+   0x0002b3a0 <+28>:	10 bd	pop	{r4, pc}
+   0x0002b3a2 <+30>:	00 20	movs	r0, #0
+   0x0002b3a4 <+32>:	f8 e7	b.n	0x2b398 <hash_insert+20>
+End of assembler dump.
+Dump of assembler code for function hash_insert0:
+   0x0002b380 <+0>:	ff f7 74 bf	b.w	0x2b26c <hash_insert_if_absent>
+End of assembler dump.
+Dump of assembler code for function hash_insert_if_absent:
+   0x0002b26c <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002b26e <+2>:	82 b0	sub	sp, #8
+   0x0002b270 <+4>:	00 29	cmp	r1, #0
+   0x0002b272 <+6>:	67 d0	beq.n	0x2b344 <hash_insert_if_absent+216>
+   0x0002b274 <+8>:	14 46	mov	r4, r2
+   0x0002b276 <+10>:	00 23	movs	r3, #0
+   0x0002b278 <+12>:	01 aa	add	r2, sp, #4
+   0x0002b27a <+14>:	05 46	mov	r5, r0
+   0x0002b27c <+16>:	0e 46	mov	r6, r1
+   0x0002b27e <+18>:	ff f7 39 fc	bl	0x2aaf4 <hash_find_entry>
+   0x0002b282 <+22>:	20 b1	cbz	r0, 0x2b28e <hash_insert_if_absent+34>
+   0x0002b284 <+24>:	44 b3	cbz	r4, 0x2b2d8 <hash_insert_if_absent+108>
+   0x0002b286 <+26>:	20 60	str	r0, [r4, #0]
+   0x0002b288 <+28>:	00 20	movs	r0, #0
+   0x0002b28a <+30>:	02 b0	add	sp, #8
+   0x0002b28c <+32>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002b28e <+34>:	d5 ed 02 5a	vldr	s11, [r5, #8]
+   0x0002b292 <+38>:	b8 ee 65 7a	vcvt.f32.u32	s14, s11
+   0x0002b296 <+42>:	6b 69	ldr	r3, [r5, #20]
+   0x0002b298 <+44>:	d3 ed 02 7a	vldr	s15, [r3, #8]
+   0x0002b29c <+48>:	d5 ed 03 6a	vldr	s13, [r5, #12]
+   0x0002b2a0 <+52>:	67 ee 27 7a	vmul.f32	s15, s14, s15
+   0x0002b2a4 <+56>:	b8 ee 66 7a	vcvt.f32.u32	s14, s13
+   0x0002b2a8 <+60>:	b4 ee e7 7a	vcmpe.f32	s14, s15
+   0x0002b2ac <+64>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b2b0 <+68>:	15 dc	bgt.n	0x2b2de <hash_insert_if_absent+114>
+   0x0002b2b2 <+70>:	01 9c	ldr	r4, [sp, #4]
+   0x0002b2b4 <+72>:	23 68	ldr	r3, [r4, #0]
+   0x0002b2b6 <+74>:	00 2b	cmp	r3, #0
+   0x0002b2b8 <+76>:	46 d0	beq.n	0x2b348 <hash_insert_if_absent+220>
+   0x0002b2ba <+78>:	6b 6a	ldr	r3, [r5, #36]	; 0x24
+   0x0002b2bc <+80>:	00 2b	cmp	r3, #0
+   0x0002b2be <+82>:	53 d0	beq.n	0x2b368 <hash_insert_if_absent+252>
+   0x0002b2c0 <+84>:	5a 68	ldr	r2, [r3, #4]
+   0x0002b2c2 <+86>:	6a 62	str	r2, [r5, #36]	; 0x24
+   0x0002b2c4 <+88>:	62 68	ldr	r2, [r4, #4]
+   0x0002b2c6 <+90>:	01 20	movs	r0, #1
+   0x0002b2c8 <+92>:	29 69	ldr	r1, [r5, #16]
+   0x0002b2ca <+94>:	1e 60	str	r6, [r3, #0]
+   0x0002b2cc <+96>:	5a 60	str	r2, [r3, #4]
+   0x0002b2ce <+98>:	0a 18	adds	r2, r1, r0
+   0x0002b2d0 <+100>:	63 60	str	r3, [r4, #4]
+   0x0002b2d2 <+102>:	2a 61	str	r2, [r5, #16]
+   0x0002b2d4 <+104>:	02 b0	add	sp, #8
+   0x0002b2d6 <+106>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002b2d8 <+108>:	20 46	mov	r0, r4
+   0x0002b2da <+110>:	02 b0	add	sp, #8
+   0x0002b2dc <+112>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002b2de <+114>:	05 f1 14 00	add.w	r0, r5, #20
+   0x0002b2e2 <+118>:	ff f7 4d fc	bl	0x2ab80 <check_tuning>
+   0x0002b2e6 <+122>:	d5 ed 02 5a	vldr	s11, [r5, #8]
+   0x0002b2ea <+126>:	f8 ee 65 7a	vcvt.f32.u32	s15, s11
+   0x0002b2ee <+130>:	6b 69	ldr	r3, [r5, #20]
+   0x0002b2f0 <+132>:	93 ed 02 7a	vldr	s14, [r3, #8]
+   0x0002b2f4 <+136>:	d5 ed 03 5a	vldr	s11, [r5, #12]
+   0x0002b2f8 <+140>:	67 ee 27 6a	vmul.f32	s13, s14, s15
+   0x0002b2fc <+144>:	b8 ee 65 6a	vcvt.f32.u32	s12, s11
+   0x0002b300 <+148>:	b4 ee e6 6a	vcmpe.f32	s12, s13
+   0x0002b304 <+152>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b308 <+156>:	d3 dd	ble.n	0x2b2b2 <hash_insert_if_absent+70>
+   0x0002b30a <+158>:	1a 7c	ldrb	r2, [r3, #16]
+   0x0002b30c <+160>:	2a b3	cbz	r2, 0x2b35a <hash_insert_if_absent+238>
+   0x0002b30e <+162>:	93 ed 03 7a	vldr	s14, [r3, #12]
+   0x0002b312 <+166>:	67 ee 87 7a	vmul.f32	s15, s15, s14
+   0x0002b316 <+170>:	9f ed 19 7a	vldr	s14, [pc, #100]	; 0x2b37c <hash_insert_if_absent+272>
+   0x0002b31a <+174>:	f4 ee c7 7a	vcmpe.f32	s15, s14
+   0x0002b31e <+178>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b322 <+182>:	27 da	bge.n	0x2b374 <hash_insert_if_absent+264>
+   0x0002b324 <+184>:	fc ee e7 7a	vcvt.u32.f32	s15, s15
+   0x0002b328 <+188>:	28 46	mov	r0, r5
+   0x0002b32a <+190>:	17 ee 90 1a	vmov	r1, s15
+   0x0002b32e <+194>:	ff f7 29 ff	bl	0x2b184 <hash_rehash>
+   0x0002b332 <+198>:	f8 b1	cbz	r0, 0x2b374 <hash_insert_if_absent+264>
+   0x0002b334 <+200>:	01 aa	add	r2, sp, #4
+   0x0002b336 <+202>:	28 46	mov	r0, r5
+   0x0002b338 <+204>:	31 46	mov	r1, r6
+   0x0002b33a <+206>:	00 23	movs	r3, #0
+   0x0002b33c <+208>:	ff f7 da fb	bl	0x2aaf4 <hash_find_entry>
+   0x0002b340 <+212>:	00 28	cmp	r0, #0
+   0x0002b342 <+214>:	b6 d0	beq.n	0x2b2b2 <hash_insert_if_absent+70>
+   0x0002b344 <+216>:	df f7 cc ef	blx	0xb2e0 <abort@plt>
+   0x0002b348 <+220>:	2a 69	ldr	r2, [r5, #16]
+   0x0002b34a <+222>:	01 20	movs	r0, #1
+   0x0002b34c <+224>:	eb 68	ldr	r3, [r5, #12]
+   0x0002b34e <+226>:	02 44	add	r2, r0
+   0x0002b350 <+228>:	26 60	str	r6, [r4, #0]
+   0x0002b352 <+230>:	03 44	add	r3, r0
+   0x0002b354 <+232>:	2a 61	str	r2, [r5, #16]
+   0x0002b356 <+234>:	eb 60	str	r3, [r5, #12]
+   0x0002b358 <+236>:	97 e7	b.n	0x2b28a <hash_insert_if_absent+30>
+   0x0002b35a <+238>:	d3 ed 03 6a	vldr	s13, [r3, #12]
+   0x0002b35e <+242>:	67 ee a6 7a	vmul.f32	s15, s15, s13
+   0x0002b362 <+246>:	67 ee 27 7a	vmul.f32	s15, s14, s15
+   0x0002b366 <+250>:	d6 e7	b.n	0x2b316 <hash_insert_if_absent+170>
+   0x0002b368 <+252>:	08 20	movs	r0, #8
+   0x0002b36a <+254>:	df f7 66 ed	blx	0xae38 <malloc@plt>
+   0x0002b36e <+258>:	03 46	mov	r3, r0
+   0x0002b370 <+260>:	00 28	cmp	r0, #0
+   0x0002b372 <+262>:	a7 d1	bne.n	0x2b2c4 <hash_insert_if_absent+88>
+   0x0002b374 <+264>:	4f f0 ff 30	mov.w	r0, #4294967295
+   0x0002b378 <+268>:	87 e7	b.n	0x2b28a <hash_insert_if_absent+30>
+   0x0002b37a <+270>:	00 bf	nop
+   0x0002b37c <+272>:	00 00	movs	r0, r0
+   0x0002b37e <+274>:	80 4f	ldr	r7, [pc, #512]	; (0x2b580 <human_readable+288>)
+End of assembler dump.
+Dump of assembler code for function hash_lookup:
+   0x0002ae68 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002ae6a <+2>:	06 46	mov	r6, r0
+   0x0002ae6c <+4>:	0d 46	mov	r5, r1
+   0x0002ae6e <+6>:	ff f7 31 fe	bl	0x2aad4 <safe_hasher>
+   0x0002ae72 <+10>:	03 68	ldr	r3, [r0, #0]
+   0x0002ae74 <+12>:	04 46	mov	r4, r0
+   0x0002ae76 <+14>:	0b b9	cbnz	r3, 0x2ae7c <hash_lookup+20>
+   0x0002ae78 <+16>:	0a e0	b.n	0x2ae90 <hash_lookup+40>
+   0x0002ae7a <+18>:	23 68	ldr	r3, [r4, #0]
+   0x0002ae7c <+20>:	9d 42	cmp	r5, r3
+   0x0002ae7e <+22>:	19 46	mov	r1, r3
+   0x0002ae80 <+24>:	28 46	mov	r0, r5
+   0x0002ae82 <+26>:	08 d0	beq.n	0x2ae96 <hash_lookup+46>
+   0x0002ae84 <+28>:	f3 69	ldr	r3, [r6, #28]
+   0x0002ae86 <+30>:	98 47	blx	r3
+   0x0002ae88 <+32>:	20 b9	cbnz	r0, 0x2ae94 <hash_lookup+44>
+   0x0002ae8a <+34>:	64 68	ldr	r4, [r4, #4]
+   0x0002ae8c <+36>:	00 2c	cmp	r4, #0
+   0x0002ae8e <+38>:	f4 d1	bne.n	0x2ae7a <hash_lookup+18>
+   0x0002ae90 <+40>:	00 20	movs	r0, #0
+   0x0002ae92 <+42>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002ae94 <+44>:	23 68	ldr	r3, [r4, #0]
+   0x0002ae96 <+46>:	18 46	mov	r0, r3
+   0x0002ae98 <+48>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function hash_print_statistics:
+   0x0002ad9c <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0002ada0 <+4>:	02 46	mov	r2, r0
+   0x0002ada2 <+6>:	88 46	mov	r8, r1
+   0x0002ada4 <+8>:	01 68	ldr	r1, [r0, #0]
+   0x0002ada6 <+10>:	40 68	ldr	r0, [r0, #4]
+   0x0002ada8 <+12>:	82 b0	sub	sp, #8
+   0x0002adaa <+14>:	13 69	ldr	r3, [r2, #16]
+   0x0002adac <+16>:	81 42	cmp	r1, r0
+   0x0002adae <+18>:	d2 f8 08 90	ldr.w	r9, [r2, #8]
+   0x0002adb2 <+22>:	d2 f8 0c a0	ldr.w	r10, [r2, #12]
+   0x0002adb6 <+26>:	4f d2	bcs.n	0x2ae58 <hash_print_statistics+188>
+   0x0002adb8 <+28>:	01 f1 08 05	add.w	r5, r1, #8
+   0x0002adbc <+32>:	c2 1d	adds	r2, r0, #7
+   0x0002adbe <+34>:	52 1b	subs	r2, r2, r5
+   0x0002adc0 <+36>:	10 31	adds	r1, #16
+   0x0002adc2 <+38>:	22 f0 07 02	bic.w	r2, r2, #7
+   0x0002adc6 <+42>:	00 26	movs	r6, #0
+   0x0002adc8 <+44>:	8f 18	adds	r7, r1, r2
+   0x0002adca <+46>:	55 f8 08 2c	ldr.w	r2, [r5, #-8]
+   0x0002adce <+50>:	52 b1	cbz	r2, 0x2ade6 <hash_print_statistics+74>
+   0x0002add0 <+52>:	55 f8 04 2c	ldr.w	r2, [r5, #-4]
+   0x0002add4 <+56>:	01 24	movs	r4, #1
+   0x0002add6 <+58>:	1a b1	cbz	r2, 0x2ade0 <hash_print_statistics+68>
+   0x0002add8 <+60>:	52 68	ldr	r2, [r2, #4]
+   0x0002adda <+62>:	01 34	adds	r4, #1
+   0x0002addc <+64>:	00 2a	cmp	r2, #0
+   0x0002adde <+66>:	fb d1	bne.n	0x2add8 <hash_print_statistics+60>
+   0x0002ade0 <+68>:	a6 42	cmp	r6, r4
+   0x0002ade2 <+70>:	38 bf	it	cc
+   0x0002ade4 <+72>:	26 46	movcc	r6, r4
+   0x0002ade6 <+74>:	08 35	adds	r5, #8
+   0x0002ade8 <+76>:	bd 42	cmp	r5, r7
+   0x0002adea <+78>:	ee d1	bne.n	0x2adca <hash_print_statistics+46>
+   0x0002adec <+80>:	40 46	mov	r0, r8
+   0x0002adee <+82>:	01 21	movs	r1, #1
+   0x0002adf0 <+84>:	49 f6 e0 42	movw	r2, #40160	; 0x9ce0
+   0x0002adf4 <+88>:	c0 f2 03 02	movt	r2, #3
+   0x0002adf8 <+92>:	e0 f7 4e e9	blx	0xb098 <__fprintf_chk@plt+4>
+   0x0002adfc <+96>:	4b 46	mov	r3, r9
+   0x0002adfe <+98>:	40 46	mov	r0, r8
+   0x0002ae00 <+100>:	01 21	movs	r1, #1
+   0x0002ae02 <+102>:	49 f6 f8 42	movw	r2, #40184	; 0x9cf8
+   0x0002ae06 <+106>:	c0 f2 03 02	movt	r2, #3
+   0x0002ae0a <+110>:	e0 f7 46 e9	blx	0xb098 <__fprintf_chk@plt+4>
+   0x0002ae0e <+114>:	07 ee 90 aa	vmov	s15, r10
+   0x0002ae12 <+118>:	9f ed 13 6b	vldr	d6, [pc, #76]	; 0x2ae60 <hash_print_statistics+196>
+   0x0002ae16 <+122>:	53 46	mov	r3, r10
+   0x0002ae18 <+124>:	b8 ee 67 5b	vcvt.f64.u32	d5, s15
+   0x0002ae1c <+128>:	40 46	mov	r0, r8
+   0x0002ae1e <+130>:	01 21	movs	r1, #1
+   0x0002ae20 <+132>:	49 f6 10 52	movw	r2, #40208	; 0x9d10
+   0x0002ae24 <+136>:	c0 f2 03 02	movt	r2, #3
+   0x0002ae28 <+140>:	25 ee 06 6b	vmul.f64	d6, d5, d6
+   0x0002ae2c <+144>:	05 ee 90 9a	vmov	s11, r9
+   0x0002ae30 <+148>:	b8 ee 65 7b	vcvt.f64.u32	d7, s11
+   0x0002ae34 <+152>:	86 ee 07 7b	vdiv.f64	d7, d6, d7
+   0x0002ae38 <+156>:	8d ed 00 7b	vstr	d7, [sp]
+   0x0002ae3c <+160>:	e0 f7 2c e9	blx	0xb098 <__fprintf_chk@plt+4>
+   0x0002ae40 <+164>:	40 46	mov	r0, r8
+   0x0002ae42 <+166>:	33 46	mov	r3, r6
+   0x0002ae44 <+168>:	49 f6 34 52	movw	r2, #40244	; 0x9d34
+   0x0002ae48 <+172>:	01 21	movs	r1, #1
+   0x0002ae4a <+174>:	c0 f2 03 02	movt	r2, #3
+   0x0002ae4e <+178>:	02 b0	add	sp, #8
+   0x0002ae50 <+180>:	bd e8 f0 47	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0002ae54 <+184>:	e0 f7 1e b9	b.w	0xb094 <__fprintf_chk@plt>
+   0x0002ae58 <+188>:	00 26	movs	r6, #0
+   0x0002ae5a <+190>:	c7 e7	b.n	0x2adec <hash_print_statistics+80>
+   0x0002ae5c <+192>:	af f3 00 80	nop.w
+   0x0002ae60 <+196>:	00 00	movs	r0, r0
+   0x0002ae62 <+198>:	00 00	movs	r0, r0
+   0x0002ae64 <+200>:	00 00	movs	r0, r0
+   0x0002ae66 <+202>:	59 40	eors	r1, r3
+End of assembler dump.
+Dump of assembler code for function hash_rehash:
+   0x0002b184 <+0>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0002b186 <+2>:	04 46	mov	r4, r0
+   0x0002b188 <+4>:	45 69	ldr	r5, [r0, #20]
+   0x0002b18a <+6>:	8b b0	sub	sp, #44	; 0x2c
+   0x0002b18c <+8>:	d5 ed 02 7a	vldr	s15, [r5, #8]
+   0x0002b190 <+12>:	2b 7c	ldrb	r3, [r5, #16]
+   0x0002b192 <+14>:	83 b9	cbnz	r3, 0x2b1b6 <hash_rehash+50>
+   0x0002b194 <+16>:	07 ee 10 1a	vmov	s14, r1
+   0x0002b198 <+20>:	f8 ee 47 6a	vcvt.f32.u32	s13, s14
+   0x0002b19c <+24>:	9f ed 32 7a	vldr	s14, [pc, #200]	; 0x2b268 <hash_rehash+228>
+   0x0002b1a0 <+28>:	c6 ee a7 7a	vdiv.f32	s15, s13, s15
+   0x0002b1a4 <+32>:	f4 ee c7 7a	vcmpe.f32	s15, s14
+   0x0002b1a8 <+36>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b1ac <+40>:	47 da	bge.n	0x2b23e <hash_rehash+186>
+   0x0002b1ae <+42>:	fc ee e7 7a	vcvt.u32.f32	s15, s15
+   0x0002b1b2 <+46>:	17 ee 90 1a	vmov	r1, s15
+   0x0002b1b6 <+50>:	08 46	mov	r0, r1
+   0x0002b1b8 <+52>:	ff f7 4a fc	bl	0x2aa50 <next_prime>
+   0x0002b1bc <+56>:	4f f6 fe 73	movw	r3, #65534	; 0xfffe
+   0x0002b1c0 <+60>:	c3 f6 ff 73	movt	r3, #16383	; 0x3fff
+   0x0002b1c4 <+64>:	42 1e	subs	r2, r0, #1
+   0x0002b1c6 <+66>:	07 46	mov	r7, r0
+   0x0002b1c8 <+68>:	9a 42	cmp	r2, r3
+   0x0002b1ca <+70>:	38 d8	bhi.n	0x2b23e <hash_rehash+186>
+   0x0002b1cc <+72>:	a3 68	ldr	r3, [r4, #8]
+   0x0002b1ce <+74>:	83 42	cmp	r3, r0
+   0x0002b1d0 <+76>:	31 d0	beq.n	0x2b236 <hash_rehash+178>
+   0x0002b1d2 <+78>:	08 21	movs	r1, #8
+   0x0002b1d4 <+80>:	df f7 10 ec	blx	0xa9f8 <calloc@plt>
+   0x0002b1d8 <+84>:	06 46	mov	r6, r0
+   0x0002b1da <+86>:	00 90	str	r0, [sp, #0]
+   0x0002b1dc <+88>:	00 28	cmp	r0, #0
+   0x0002b1de <+90>:	2e d0	beq.n	0x2b23e <hash_rehash+186>
+   0x0002b1e0 <+92>:	05 95	str	r5, [sp, #20]
+   0x0002b1e2 <+94>:	00 23	movs	r3, #0
+   0x0002b1e4 <+96>:	a5 69	ldr	r5, [r4, #24]
+   0x0002b1e6 <+98>:	68 46	mov	r0, sp
+   0x0002b1e8 <+100>:	1a 46	mov	r2, r3
+   0x0002b1ea <+102>:	21 46	mov	r1, r4
+   0x0002b1ec <+104>:	06 eb c7 06	add.w	r6, r6, r7, lsl #3
+   0x0002b1f0 <+108>:	02 97	str	r7, [sp, #8]
+   0x0002b1f2 <+110>:	06 95	str	r5, [sp, #24]
+   0x0002b1f4 <+112>:	e5 69	ldr	r5, [r4, #28]
+   0x0002b1f6 <+114>:	01 96	str	r6, [sp, #4]
+   0x0002b1f8 <+116>:	03 93	str	r3, [sp, #12]
+   0x0002b1fa <+118>:	07 95	str	r5, [sp, #28]
+   0x0002b1fc <+120>:	25 6a	ldr	r5, [r4, #32]
+   0x0002b1fe <+122>:	04 93	str	r3, [sp, #16]
+   0x0002b200 <+124>:	08 95	str	r5, [sp, #32]
+   0x0002b202 <+126>:	65 6a	ldr	r5, [r4, #36]	; 0x24
+   0x0002b204 <+128>:	09 95	str	r5, [sp, #36]	; 0x24
+   0x0002b206 <+130>:	ff f7 03 fd	bl	0x2ac10 <transfer_entries>
+   0x0002b20a <+134>:	05 46	mov	r5, r0
+   0x0002b20c <+136>:	d8 b9	cbnz	r0, 0x2b246 <hash_rehash+194>
+   0x0002b20e <+138>:	09 9b	ldr	r3, [sp, #36]	; 0x24
+   0x0002b210 <+140>:	20 46	mov	r0, r4
+   0x0002b212 <+142>:	69 46	mov	r1, sp
+   0x0002b214 <+144>:	01 22	movs	r2, #1
+   0x0002b216 <+146>:	63 62	str	r3, [r4, #36]	; 0x24
+   0x0002b218 <+148>:	ff f7 fa fc	bl	0x2ac10 <transfer_entries>
+   0x0002b21c <+152>:	10 b3	cbz	r0, 0x2b264 <hash_rehash+224>
+   0x0002b21e <+154>:	20 46	mov	r0, r4
+   0x0002b220 <+156>:	69 46	mov	r1, sp
+   0x0002b222 <+158>:	2a 46	mov	r2, r5
+   0x0002b224 <+160>:	ff f7 f4 fc	bl	0x2ac10 <transfer_entries>
+   0x0002b228 <+164>:	e0 b1	cbz	r0, 0x2b264 <hash_rehash+224>
+   0x0002b22a <+166>:	00 98	ldr	r0, [sp, #0]
+   0x0002b22c <+168>:	df f7 76 ec	blx	0xab1c <free>
+   0x0002b230 <+172>:	28 46	mov	r0, r5
+   0x0002b232 <+174>:	0b b0	add	sp, #44	; 0x2c
+   0x0002b234 <+176>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002b236 <+178>:	01 25	movs	r5, #1
+   0x0002b238 <+180>:	28 46	mov	r0, r5
+   0x0002b23a <+182>:	0b b0	add	sp, #44	; 0x2c
+   0x0002b23c <+184>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002b23e <+186>:	00 25	movs	r5, #0
+   0x0002b240 <+188>:	28 46	mov	r0, r5
+   0x0002b242 <+190>:	0b b0	add	sp, #44	; 0x2c
+   0x0002b244 <+192>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002b246 <+194>:	20 68	ldr	r0, [r4, #0]
+   0x0002b248 <+196>:	df f7 68 ec	blx	0xab1c <free>
+   0x0002b24c <+200>:	01 a8	add	r0, sp, #4
+   0x0002b24e <+202>:	00 9e	ldr	r6, [sp, #0]
+   0x0002b250 <+204>:	07 c8	ldmia	r0, {r0, r1, r2}
+   0x0002b252 <+206>:	09 9b	ldr	r3, [sp, #36]	; 0x24
+   0x0002b254 <+208>:	26 60	str	r6, [r4, #0]
+   0x0002b256 <+210>:	60 60	str	r0, [r4, #4]
+   0x0002b258 <+212>:	28 46	mov	r0, r5
+   0x0002b25a <+214>:	a1 60	str	r1, [r4, #8]
+   0x0002b25c <+216>:	e2 60	str	r2, [r4, #12]
+   0x0002b25e <+218>:	63 62	str	r3, [r4, #36]	; 0x24
+   0x0002b260 <+220>:	0b b0	add	sp, #44	; 0x2c
+   0x0002b262 <+222>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002b264 <+224>:	e0 f7 3c e8	blx	0xb2e0 <abort@plt>
+   0x0002b268 <+228>:	00 00	movs	r0, r0
+   0x0002b26a <+230>:	80 4f	ldr	r7, [pc, #512]	; (0x2b46c <human_readable+12>)
+End of assembler dump.
+Dump of assembler code for function hash_reset_tuning:
+   0x0002afc4 <+0>:	30 b4	push	{r4, r5}
+   0x0002afc6 <+2>:	49 f6 cc 44	movw	r4, #40140	; 0x9ccc
+   0x0002afca <+6>:	c0 f2 03 04	movt	r4, #3
+   0x0002afce <+10>:	05 46	mov	r5, r0
+   0x0002afd0 <+12>:	0f cc	ldmia	r4!, {r0, r1, r2, r3}
+   0x0002afd2 <+14>:	24 68	ldr	r4, [r4, #0]
+   0x0002afd4 <+16>:	0f c5	stmia	r5!, {r0, r1, r2, r3}
+   0x0002afd6 <+18>:	2c 60	str	r4, [r5, #0]
+   0x0002afd8 <+20>:	30 bc	pop	{r4, r5}
+   0x0002afda <+22>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function hash_string:
+   0x0002af9c <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x0002af9e <+2>:	03 78	ldrb	r3, [r0, #0]
+   0x0002afa0 <+4>:	73 b1	cbz	r3, 0x2afc0 <hash_string+36>
+   0x0002afa2 <+6>:	0d 46	mov	r5, r1
+   0x0002afa4 <+8>:	04 46	mov	r4, r0
+   0x0002afa6 <+10>:	00 21	movs	r1, #0
+   0x0002afa8 <+12>:	c1 eb 41 10	rsb	r0, r1, r1, lsl #5
+   0x0002afac <+16>:	29 46	mov	r1, r5
+   0x0002afae <+18>:	18 44	add	r0, r3
+   0x0002afb0 <+20>:	07 f0 ac f8	bl	0x3210c <__aeabi_uidivmod>
+   0x0002afb4 <+24>:	14 f8 01 3f	ldrb.w	r3, [r4, #1]!
+   0x0002afb8 <+28>:	00 2b	cmp	r3, #0
+   0x0002afba <+30>:	f5 d1	bne.n	0x2afa8 <hash_string+12>
+   0x0002afbc <+32>:	08 46	mov	r0, r1
+   0x0002afbe <+34>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0002afc0 <+36>:	19 46	mov	r1, r3
+   0x0002afc2 <+38>:	fb e7	b.n	0x2afbc <hash_string+32>
+End of assembler dump.

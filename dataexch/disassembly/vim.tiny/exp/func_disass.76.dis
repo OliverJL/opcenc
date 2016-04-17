@@ -1,0 +1,649 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function show_sb_text:
+   0x00037bb8 <+0>:	08 b5	push	{r3, lr}
+   0x00037bba <+2>:	0b 4b	ldr	r3, [pc, #44]	; (0x37be8 <show_sb_text+48>)
+   0x00037bbc <+4>:	7b 44	add	r3, pc
+   0x00037bbe <+6>:	db 68	ldr	r3, [r3, #12]
+   0x00037bc0 <+8>:	13 b9	cbnz	r3, 0x37bc8 <show_sb_text+16>
+   0x00037bc2 <+10>:	04 e0	b.n	0x37bce <show_sb_text+22>
+   0x00037bc4 <+12>:	1a 7a	ldrb	r2, [r3, #8]
+   0x00037bc6 <+14>:	32 b9	cbnz	r2, 0x37bd6 <show_sb_text+30>
+   0x00037bc8 <+16>:	5b 68	ldr	r3, [r3, #4]
+   0x00037bca <+18>:	00 2b	cmp	r3, #0
+   0x00037bcc <+20>:	fa d1	bne.n	0x37bc4 <show_sb_text+12>
+   0x00037bce <+22>:	bd e8 08 40	ldmia.w	sp!, {r3, lr}
+   0x00037bd2 <+26>:	03 f0 b7 bb	b.w	0x3b344 <vim_beep>
+   0x00037bd6 <+30>:	47 20	movs	r0, #71	; 0x47
+   0x00037bd8 <+32>:	fe f7 80 fb	bl	0x362dc <do_more_prompt>
+   0x00037bdc <+36>:	00 20	movs	r0, #0
+   0x00037bde <+38>:	bd e8 08 40	ldmia.w	sp!, {r3, lr}
+   0x00037be2 <+42>:	ff f7 9d bd	b.w	0x37720 <wait_return>
+   0x00037be6 <+46>:	00 bf	nop
+   0x00037be8 <+48>:	ac 80	strh	r4, [r5, #4]
+   0x00037bea <+50>:	07 00	movs	r7, r0
+End of assembler dump.
+Dump of assembler code for function smsg:
+   0x00039108 <+0>:	0f b4	push	{r0, r1, r2, r3}
+   0x0003910a <+2>:	40 f2 01 41	movw	r1, #1025	; 0x401
+   0x0003910e <+6>:	11 48	ldr	r0, [pc, #68]	; (0x39154 <smsg+76>)
+   0x00039110 <+8>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x00039112 <+10>:	78 44	add	r0, pc
+   0x00039114 <+12>:	10 4d	ldr	r5, [pc, #64]	; (0x39158 <smsg+80>)
+   0x00039116 <+14>:	85 b0	sub	sp, #20
+   0x00039118 <+16>:	0a ab	add	r3, sp, #40	; 0x28
+   0x0003911a <+18>:	10 4c	ldr	r4, [pc, #64]	; (0x3915c <smsg+84>)
+   0x0003911c <+20>:	00 26	movs	r6, #0
+   0x0003911e <+22>:	45 59	ldr	r5, [r0, r5]
+   0x00039120 <+24>:	53 f8 04 2b	ldr.w	r2, [r3], #4
+   0x00039124 <+28>:	2f 68	ldr	r7, [r5, #0]
+   0x00039126 <+30>:	02 93	str	r3, [sp, #8]
+   0x00039128 <+32>:	03 97	str	r7, [sp, #12]
+   0x0003912a <+34>:	04 59	ldr	r4, [r0, r4]
+   0x0003912c <+36>:	00 96	str	r6, [sp, #0]
+   0x0003912e <+38>:	20 68	ldr	r0, [r4, #0]
+   0x00039130 <+40>:	ff f7 b6 fa	bl	0x386a0 <vim_vsnprintf>
+   0x00039134 <+44>:	32 46	mov	r2, r6
+   0x00039136 <+46>:	31 46	mov	r1, r6
+   0x00039138 <+48>:	20 68	ldr	r0, [r4, #0]
+   0x0003913a <+50>:	ff f7 1b f8	bl	0x38174 <msg_attr_keep>
+   0x0003913e <+54>:	03 9a	ldr	r2, [sp, #12]
+   0x00039140 <+56>:	2b 68	ldr	r3, [r5, #0]
+   0x00039142 <+58>:	9a 42	cmp	r2, r3
+   0x00039144 <+60>:	04 d1	bne.n	0x39150 <smsg+72>
+   0x00039146 <+62>:	05 b0	add	sp, #20
+   0x00039148 <+64>:	bd e8 f0 40	ldmia.w	sp!, {r4, r5, r6, r7, lr}
+   0x0003914c <+68>:	04 b0	add	sp, #16
+   0x0003914e <+70>:	70 47	bx	lr
+   0x00039150 <+72>:	d3 f7 86 ee	blx	0xce60 <__stack_chk_fail@plt>
+   0x00039154 <+76>:	86 e5	b.n	0x38c64 <vim_vsnprintf+1476>
+   0x00039156 <+78>:	06 00	movs	r6, r0
+   0x00039158 <+80>:	78 03	lsls	r0, r7, #13
+   0x0003915a <+82>:	00 00	movs	r0, r0
+   0x0003915c <+84>:	e8 05	lsls	r0, r5, #23
+   0x0003915e <+86>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function smsg_attr:
+   0x00039160 <+0>:	0e b4	push	{r1, r2, r3}
+   0x00039162 <+2>:	14 49	ldr	r1, [pc, #80]	; (0x391b4 <smsg_attr+84>)
+   0x00039164 <+4>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x00039166 <+6>:	79 44	add	r1, pc
+   0x00039168 <+8>:	13 4d	ldr	r5, [pc, #76]	; (0x391b8 <smsg_attr+88>)
+   0x0003916a <+10>:	07 46	mov	r7, r0
+   0x0003916c <+12>:	08 46	mov	r0, r1
+   0x0003916e <+14>:	84 b0	sub	sp, #16
+   0x00039170 <+16>:	09 ab	add	r3, sp, #36	; 0x24
+   0x00039172 <+18>:	12 4c	ldr	r4, [pc, #72]	; (0x391bc <smsg_attr+92>)
+   0x00039174 <+20>:	45 59	ldr	r5, [r0, r5]
+   0x00039176 <+22>:	00 26	movs	r6, #0
+   0x00039178 <+24>:	53 f8 04 2b	ldr.w	r2, [r3], #4
+   0x0003917c <+28>:	40 f2 01 41	movw	r1, #1025	; 0x401
+   0x00039180 <+32>:	d5 f8 00 e0	ldr.w	lr, [r5]
+   0x00039184 <+36>:	02 93	str	r3, [sp, #8]
+   0x00039186 <+38>:	cd f8 0c e0	str.w	lr, [sp, #12]
+   0x0003918a <+42>:	04 59	ldr	r4, [r0, r4]
+   0x0003918c <+44>:	00 96	str	r6, [sp, #0]
+   0x0003918e <+46>:	20 68	ldr	r0, [r4, #0]
+   0x00039190 <+48>:	ff f7 86 fa	bl	0x386a0 <vim_vsnprintf>
+   0x00039194 <+52>:	32 46	mov	r2, r6
+   0x00039196 <+54>:	39 46	mov	r1, r7
+   0x00039198 <+56>:	20 68	ldr	r0, [r4, #0]
+   0x0003919a <+58>:	fe f7 eb ff	bl	0x38174 <msg_attr_keep>
+   0x0003919e <+62>:	03 9a	ldr	r2, [sp, #12]
+   0x000391a0 <+64>:	2b 68	ldr	r3, [r5, #0]
+   0x000391a2 <+66>:	9a 42	cmp	r2, r3
+   0x000391a4 <+68>:	04 d1	bne.n	0x391b0 <smsg_attr+80>
+   0x000391a6 <+70>:	04 b0	add	sp, #16
+   0x000391a8 <+72>:	bd e8 f0 40	ldmia.w	sp!, {r4, r5, r6, r7, lr}
+   0x000391ac <+76>:	03 b0	add	sp, #12
+   0x000391ae <+78>:	70 47	bx	lr
+   0x000391b0 <+80>:	d3 f7 56 ee	blx	0xce60 <__stack_chk_fail@plt>
+   0x000391b4 <+84>:	32 e5	b.n	0x38c1c <vim_vsnprintf+1404>
+   0x000391b6 <+86>:	06 00	movs	r6, r0
+   0x000391b8 <+88>:	78 03	lsls	r0, r7, #13
+   0x000391ba <+90>:	00 00	movs	r0, r0
+   0x000391bc <+92>:	e8 05	lsls	r0, r5, #23
+   0x000391be <+94>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function str2special:
+   0x00035fdc <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00035fe0 <+4>:	83 b0	sub	sp, #12
+   0x00035fe2 <+6>:	5d 4e	ldr	r6, [pc, #372]	; (0x36158 <str2special+380>)
+   0x00035fe4 <+8>:	07 46	mov	r7, r0
+   0x00035fe6 <+10>:	5d 4b	ldr	r3, [pc, #372]	; (0x3615c <str2special+384>)
+   0x00035fe8 <+12>:	88 46	mov	r8, r1
+   0x00035fea <+14>:	7e 44	add	r6, pc
+   0x00035fec <+16>:	05 68	ldr	r5, [r0, #0]
+   0x00035fee <+18>:	f3 58	ldr	r3, [r6, r3]
+   0x00035ff0 <+20>:	01 93	str	r3, [sp, #4]
+   0x00035ff2 <+22>:	1b 68	ldr	r3, [r3, #0]
+   0x00035ff4 <+24>:	ab b9	cbnz	r3, 0x36022 <str2special+70>
+   0x00035ff6 <+26>:	95 f8 00 b0	ldrb.w	r11, [r5]
+   0x00035ffa <+30>:	bb f1 80 0f	cmp.w	r11, #128	; 0x80
+   0x00035ffe <+34>:	2b d0	beq.n	0x36058 <str2special+124>
+   0x00036000 <+36>:	1c 46	mov	r4, r3
+   0x00036002 <+38>:	9a 46	mov	r10, r3
+   0x00036004 <+40>:	01 35	adds	r5, #1
+   0x00036006 <+42>:	3d 60	str	r5, [r7, #0]
+   0x00036008 <+44>:	24 b9	cbnz	r4, 0x36014 <str2special+56>
+   0x0003600a <+46>:	58 46	mov	r0, r11
+   0x0003600c <+48>:	db f7 58 f8	bl	0x110c0 <char2cells>
+   0x00036010 <+52>:	01 28	cmp	r0, #1
+   0x00036012 <+54>:	0d dd	ble.n	0x36030 <str2special+84>
+   0x00036014 <+56>:	51 46	mov	r1, r10
+   0x00036016 <+58>:	58 46	mov	r0, r11
+   0x00036018 <+60>:	03 b0	add	sp, #12
+   0x0003601a <+62>:	bd e8 f0 4f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0003601e <+66>:	07 f0 31 bc	b.w	0x3d884 <get_special_key_name>
+   0x00036022 <+70>:	0c f0 1d fb	bl	0x42660 <mb_unescape>
+   0x00036026 <+74>:	00 28	cmp	r0, #0
+   0x00036028 <+76>:	3a d0	beq.n	0x360a0 <str2special+196>
+   0x0003602a <+78>:	03 b0	add	sp, #12
+   0x0003602c <+80>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00036030 <+84>:	18 f1 00 03	adds.w	r3, r8, #0
+   0x00036034 <+88>:	18 bf	it	ne
+   0x00036036 <+90>:	01 23	movne	r3, #1
+   0x00036038 <+92>:	bb f1 20 0f	cmp.w	r11, #32
+   0x0003603c <+96>:	18 bf	it	ne
+   0x0003603e <+98>:	00 23	movne	r3, #0
+   0x00036040 <+100>:	00 2b	cmp	r3, #0
+   0x00036042 <+102>:	e7 d1	bne.n	0x36014 <str2special+56>
+   0x00036044 <+104>:	46 4b	ldr	r3, [pc, #280]	; (0x36160 <str2special+388>)
+   0x00036046 <+106>:	7b 44	add	r3, pc
+   0x00036048 <+108>:	03 f1 1c 00	add.w	r0, r3, #28
+   0x0003604c <+112>:	83 f8 1c b0	strb.w	r11, [r3, #28]
+   0x00036050 <+116>:	5c 77	strb	r4, [r3, #29]
+   0x00036052 <+118>:	03 b0	add	sp, #12
+   0x00036054 <+120>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00036058 <+124>:	6c 78	ldrb	r4, [r5, #1]
+   0x0003605a <+126>:	00 2c	cmp	r4, #0
+   0x0003605c <+128>:	57 d0	beq.n	0x3610e <str2special+306>
+   0x0003605e <+130>:	aa 78	ldrb	r2, [r5, #2]
+   0x00036060 <+132>:	00 2a	cmp	r2, #0
+   0x00036062 <+134>:	6c d0	beq.n	0x3613e <str2special+354>
+   0x00036064 <+136>:	fc 2c	cmp	r4, #252	; 0xfc
+   0x00036066 <+138>:	1c bf	itt	ne
+   0x00036068 <+140>:	00 21	movne	r1, #0
+   0x0003606a <+142>:	8a 46	movne	r10, r1
+   0x0003606c <+144>:	46 d0	beq.n	0x360fc <str2special+288>
+   0x0003606e <+146>:	fe 2c	cmp	r4, #254	; 0xfe
+   0x00036070 <+148>:	5b d0	beq.n	0x3612a <str2special+334>
+   0x00036072 <+150>:	ff 2c	cmp	r4, #255	; 0xff
+   0x00036074 <+152>:	5d d0	beq.n	0x36132 <str2special+342>
+   0x00036076 <+154>:	04 eb 02 24	add.w	r4, r4, r2, lsl #8
+   0x0003607a <+158>:	01 22	movs	r2, #1
+   0x0003607c <+160>:	c4 f1 00 0b	rsb	r11, r4, #0
+   0x00036080 <+164>:	0a 43	orrs	r2, r1
+   0x00036082 <+166>:	05 f1 02 05	add.w	r5, r5, #2
+   0x00036086 <+170>:	12 d0	beq.n	0x360ae <str2special+210>
+   0x00036088 <+172>:	6f ea 0b 02	mvn.w	r2, r11
+   0x0003608c <+176>:	00 2b	cmp	r3, #0
+   0x0003608e <+178>:	4f ea d2 72	mov.w	r2, r2, lsr #31
+   0x00036092 <+182>:	4f f0 01 04	mov.w	r4, #1
+   0x00036096 <+186>:	08 bf	it	eq
+   0x00036098 <+188>:	00 22	moveq	r2, #0
+   0x0003609a <+190>:	00 2a	cmp	r2, #0
+   0x0003609c <+192>:	b2 d0	beq.n	0x36004 <str2special+40>
+   0x0003609e <+194>:	0a e0	b.n	0x360b6 <str2special+218>
+   0x000360a0 <+196>:	95 f8 00 b0	ldrb.w	r11, [r5]
+   0x000360a4 <+200>:	bb f1 80 0f	cmp.w	r11, #128	; 0x80
+   0x000360a8 <+204>:	1f d0	beq.n	0x360ea <str2special+270>
+   0x000360aa <+206>:	01 9b	ldr	r3, [sp, #4]
+   0x000360ac <+208>:	1b 68	ldr	r3, [r3, #0]
+   0x000360ae <+210>:	00 24	movs	r4, #0
+   0x000360b0 <+212>:	a2 46	mov	r10, r4
+   0x000360b2 <+214>:	00 2b	cmp	r3, #0
+   0x000360b4 <+216>:	a4 d0	beq.n	0x36000 <str2special+36>
+   0x000360b6 <+218>:	2b 4b	ldr	r3, [pc, #172]	; (0x36164 <str2special+392>)
+   0x000360b8 <+220>:	28 46	mov	r0, r5
+   0x000360ba <+222>:	f3 58	ldr	r3, [r6, r3]
+   0x000360bc <+224>:	1b 68	ldr	r3, [r3, #0]
+   0x000360be <+226>:	98 47	blx	r3
+   0x000360c0 <+228>:	01 9b	ldr	r3, [sp, #4]
+   0x000360c2 <+230>:	1a 68	ldr	r2, [r3, #0]
+   0x000360c4 <+232>:	81 46	mov	r9, r0
+   0x000360c6 <+234>:	2a b1	cbz	r2, 0x360d4 <str2special+248>
+   0x000360c8 <+236>:	27 4a	ldr	r2, [pc, #156]	; (0x36168 <str2special+396>)
+   0x000360ca <+238>:	29 78	ldrb	r1, [r5, #0]
+   0x000360cc <+240>:	b2 58	ldr	r2, [r6, r2]
+   0x000360ce <+242>:	52 5c	ldrb	r2, [r2, r1]
+   0x000360d0 <+244>:	90 42	cmp	r0, r2
+   0x000360d2 <+246>:	1e db	blt.n	0x36112 <str2special+310>
+   0x000360d4 <+248>:	25 4a	ldr	r2, [pc, #148]	; (0x3616c <str2special+400>)
+   0x000360d6 <+250>:	28 46	mov	r0, r5
+   0x000360d8 <+252>:	4d 44	add	r5, r9
+   0x000360da <+254>:	b2 58	ldr	r2, [r6, r2]
+   0x000360dc <+256>:	12 68	ldr	r2, [r2, #0]
+   0x000360de <+258>:	90 47	blx	r2
+   0x000360e0 <+260>:	3d 60	str	r5, [r7, #0]
+   0x000360e2 <+262>:	83 46	mov	r11, r0
+   0x000360e4 <+264>:	00 2c	cmp	r4, #0
+   0x000360e6 <+266>:	90 d0	beq.n	0x3600a <str2special+46>
+   0x000360e8 <+268>:	94 e7	b.n	0x36014 <str2special+56>
+   0x000360ea <+270>:	01 9b	ldr	r3, [sp, #4]
+   0x000360ec <+272>:	6c 78	ldrb	r4, [r5, #1]
+   0x000360ee <+274>:	1b 68	ldr	r3, [r3, #0]
+   0x000360f0 <+276>:	00 2c	cmp	r4, #0
+   0x000360f2 <+278>:	dc d0	beq.n	0x360ae <str2special+210>
+   0x000360f4 <+280>:	aa 78	ldrb	r2, [r5, #2]
+   0x000360f6 <+282>:	00 2a	cmp	r2, #0
+   0x000360f8 <+284>:	d9 d0	beq.n	0x360ae <str2special+210>
+   0x000360fa <+286>:	b3 e7	b.n	0x36064 <str2special+136>
+   0x000360fc <+288>:	95 f8 03 b0	ldrb.w	r11, [r5, #3]
+   0x00036100 <+292>:	92 46	mov	r10, r2
+   0x00036102 <+294>:	e9 1c	adds	r1, r5, #3
+   0x00036104 <+296>:	bb f1 80 0f	cmp.w	r11, #128	; 0x80
+   0x00036108 <+300>:	1c d0	beq.n	0x36144 <str2special+360>
+   0x0003610a <+302>:	0d 46	mov	r5, r1
+   0x0003610c <+304>:	bc e7	b.n	0x36088 <str2special+172>
+   0x0003610e <+306>:	a2 46	mov	r10, r4
+   0x00036110 <+308>:	78 e7	b.n	0x36004 <str2special+40>
+   0x00036112 <+310>:	17 48	ldr	r0, [pc, #92]	; (0x36170 <str2special+404>)
+   0x00036114 <+312>:	59 46	mov	r1, r11
+   0x00036116 <+314>:	01 35	adds	r5, #1
+   0x00036118 <+316>:	78 44	add	r0, pc
+   0x0003611a <+318>:	00 f1 1c 04	add.w	r4, r0, #28
+   0x0003611e <+322>:	20 46	mov	r0, r4
+   0x00036120 <+324>:	da f7 68 ff	bl	0x10ff4 <transchar_nonprint>
+   0x00036124 <+328>:	20 46	mov	r0, r4
+   0x00036126 <+330>:	3d 60	str	r5, [r7, #0]
+   0x00036128 <+332>:	7f e7	b.n	0x3602a <str2special+78>
+   0x0003612a <+334>:	00 22	movs	r2, #0
+   0x0003612c <+336>:	4f f0 80 0b	mov.w	r11, #128	; 0x80
+   0x00036130 <+340>:	a6 e7	b.n	0x36080 <str2special+164>
+   0x00036132 <+342>:	4a f2 01 7b	movw	r11, #42753	; 0xa701
+   0x00036136 <+346>:	01 22	movs	r2, #1
+   0x00036138 <+348>:	cf f6 ff 7b	movt	r11, #65535	; 0xffff
+   0x0003613c <+352>:	a0 e7	b.n	0x36080 <str2special+164>
+   0x0003613e <+354>:	14 46	mov	r4, r2
+   0x00036140 <+356>:	92 46	mov	r10, r2
+   0x00036142 <+358>:	5f e7	b.n	0x36004 <str2special+40>
+   0x00036144 <+360>:	2c 79	ldrb	r4, [r5, #4]
+   0x00036146 <+362>:	00 2c	cmp	r4, #0
+   0x00036148 <+364>:	df d0	beq.n	0x3610a <str2special+302>
+   0x0003614a <+366>:	6a 79	ldrb	r2, [r5, #5]
+   0x0003614c <+368>:	00 2a	cmp	r2, #0
+   0x0003614e <+370>:	dc d0	beq.n	0x3610a <str2special+302>
+   0x00036150 <+372>:	0d 46	mov	r5, r1
+   0x00036152 <+374>:	01 21	movs	r1, #1
+   0x00036154 <+376>:	8b e7	b.n	0x3606e <str2special+146>
+   0x00036156 <+378>:	00 bf	nop
+   0x00036158 <+380>:	ae 16	asrs	r6, r5, #26
+   0x0003615a <+382>:	07 00	movs	r7, r0
+   0x0003615c <+384>:	24 05	lsls	r4, r4, #20
+   0x0003615e <+386>:	00 00	movs	r0, r0
+   0x00036160 <+388>:	22 9c	ldr	r4, [sp, #136]	; 0x88
+   0x00036162 <+390>:	07 00	movs	r7, r0
+   0x00036164 <+392>:	9c 03	lsls	r4, r3, #14
+   0x00036166 <+394>:	00 00	movs	r0, r0
+   0x00036168 <+396>:	54 06	lsls	r4, r2, #25
+   0x0003616a <+398>:	00 00	movs	r0, r0
+   0x0003616c <+400>:	88 03	lsls	r0, r1, #14
+   0x0003616e <+402>:	00 00	movs	r0, r0
+   0x00036170 <+404>:	50 9b	ldr	r3, [sp, #320]	; 0x140
+   0x00036172 <+406>:	07 00	movs	r7, r0
+End of assembler dump.
+Dump of assembler code for function str2specialbuf:
+   0x00036174 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00036178 <+4>:	82 b0	sub	sp, #8
+   0x0003617a <+6>:	02 ad	add	r5, sp, #8
+   0x0003617c <+8>:	00 23	movs	r3, #0
+   0x0003617e <+10>:	0e 46	mov	r6, r1
+   0x00036180 <+12>:	17 46	mov	r7, r2
+   0x00036182 <+14>:	45 f8 04 0d	str.w	r0, [r5, #-4]!
+   0x00036186 <+18>:	0b 70	strb	r3, [r1, #0]
+   0x00036188 <+20>:	0b e0	b.n	0x361a2 <str2specialbuf+46>
+   0x0003618a <+22>:	ff f7 27 ff	bl	0x35fdc <str2special>
+   0x0003618e <+26>:	80 46	mov	r8, r0
+   0x00036190 <+28>:	d6 f7 a0 ef	blx	0xd0d4 <strlen@plt>
+   0x00036194 <+32>:	04 46	mov	r4, r0
+   0x00036196 <+34>:	30 46	mov	r0, r6
+   0x00036198 <+36>:	d6 f7 9c ef	blx	0xd0d4 <strlen@plt>
+   0x0003619c <+40>:	23 18	adds	r3, r4, r0
+   0x0003619e <+42>:	bb 42	cmp	r3, r7
+   0x000361a0 <+44>:	08 db	blt.n	0x361b4 <str2specialbuf+64>
+   0x000361a2 <+46>:	01 9b	ldr	r3, [sp, #4]
+   0x000361a4 <+48>:	00 21	movs	r1, #0
+   0x000361a6 <+50>:	28 46	mov	r0, r5
+   0x000361a8 <+52>:	1b 78	ldrb	r3, [r3, #0]
+   0x000361aa <+54>:	00 2b	cmp	r3, #0
+   0x000361ac <+56>:	ed d1	bne.n	0x3618a <str2specialbuf+22>
+   0x000361ae <+58>:	02 b0	add	sp, #8
+   0x000361b0 <+60>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x000361b4 <+64>:	62 1c	adds	r2, r4, #1
+   0x000361b6 <+66>:	41 46	mov	r1, r8
+   0x000361b8 <+68>:	30 44	add	r0, r6
+   0x000361ba <+70>:	d6 f7 fc ed	blx	0xcdb4 <memcpy@plt+4>
+   0x000361be <+74>:	f0 e7	b.n	0x361a2 <str2specialbuf+46>
+End of assembler dump.
+Dump of assembler code for function trunc_string:
+   0x000359b8 <+0>:	03 3a	subs	r2, #3
+   0x000359ba <+2>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000359be <+6>:	02 eb d2 79	add.w	r9, r2, r2, lsr #31
+   0x000359c2 <+10>:	1d 46	mov	r5, r3
+   0x000359c4 <+12>:	85 b0	sub	sp, #20
+   0x000359c6 <+14>:	4f ea 69 03	mov.w	r3, r9, asr #1
+   0x000359ca <+18>:	df f8 1c a2	ldr.w	r10, [pc, #540]	; 0x35be8 <trunc_string+560>
+   0x000359ce <+22>:	00 2b	cmp	r3, #0
+   0x000359d0 <+24>:	c8 bf	it	gt
+   0x000359d2 <+26>:	00 2d	cmpgt	r5, #0
+   0x000359d4 <+28>:	01 93	str	r3, [sp, #4]
+   0x000359d6 <+30>:	fa 44	add	r10, pc
+   0x000359d8 <+32>:	02 92	str	r2, [sp, #8]
+   0x000359da <+34>:	06 46	mov	r6, r0
+   0x000359dc <+36>:	00 91	str	r1, [sp, #0]
+   0x000359de <+38>:	cc bf	ite	gt
+   0x000359e0 <+40>:	01 23	movgt	r3, #1
+   0x000359e2 <+42>:	00 23	movle	r3, #0
+   0x000359e4 <+44>:	40 f3 f6 80	ble.w	0x35bd4 <trunc_string+540>
+   0x000359e8 <+48>:	01 78	ldrb	r1, [r0, #0]
+   0x000359ea <+50>:	00 29	cmp	r1, #0
+   0x000359ec <+52>:	00 f0 f8 80	beq.w	0x35be0 <trunc_string+552>
+   0x000359f0 <+56>:	4f f0 00 09	mov.w	r9, #0
+   0x000359f4 <+60>:	07 46	mov	r7, r0
+   0x000359f6 <+62>:	4c 46	mov	r4, r9
+   0x000359f8 <+64>:	c8 46	mov	r8, r9
+   0x000359fa <+66>:	a3 46	mov	r11, r4
+   0x000359fc <+68>:	38 46	mov	r0, r7
+   0x000359fe <+70>:	db f7 97 fb	bl	0x11130 <ptr2cells>
+   0x00035a02 <+74>:	01 9b	ldr	r3, [sp, #4]
+   0x00035a04 <+76>:	00 eb 0b 09	add.w	r9, r0, r11
+   0x00035a08 <+80>:	4b 45	cmp	r3, r9
+   0x00035a0a <+82>:	70 dd	ble.n	0x35aee <trunc_string+310>
+   0x00035a0c <+84>:	39 78	ldrb	r1, [r7, #0]
+   0x00035a0e <+86>:	77 4b	ldr	r3, [pc, #476]	; (0x35bec <trunc_string+564>)
+   0x00035a10 <+88>:	00 9a	ldr	r2, [sp, #0]
+   0x00035a12 <+90>:	02 f8 08 10	strb.w	r1, [r2, r8]
+   0x00035a16 <+94>:	5a f8 03 30	ldr.w	r3, [r10, r3]
+   0x00035a1a <+98>:	1b 68	ldr	r3, [r3, #0]
+   0x00035a1c <+100>:	8b b9	cbnz	r3, 0x35a42 <trunc_string+138>
+   0x00035a1e <+102>:	20 46	mov	r0, r4
+   0x00035a20 <+104>:	44 1c	adds	r4, r0, #1
+   0x00035a22 <+106>:	a5 42	cmp	r5, r4
+   0x00035a24 <+108>:	2b dd	ble.n	0x35a7e <trunc_string+198>
+   0x00035a26 <+110>:	31 5d	ldrb	r1, [r6, r4]
+   0x00035a28 <+112>:	cb 46	mov	r11, r9
+   0x00035a2a <+114>:	a0 46	mov	r8, r4
+   0x00035a2c <+116>:	37 19	adds	r7, r6, r4
+   0x00035a2e <+118>:	00 29	cmp	r1, #0
+   0x00035a30 <+120>:	e4 d1	bne.n	0x359fc <trunc_string+68>
+   0x00035a32 <+122>:	a1 46	mov	r9, r4
+   0x00035a34 <+124>:	00 9a	ldr	r2, [sp, #0]
+   0x00035a36 <+126>:	00 23	movs	r3, #0
+   0x00035a38 <+128>:	02 f8 09 30	strb.w	r3, [r2, r9]
+   0x00035a3c <+132>:	05 b0	add	sp, #20
+   0x00035a3e <+134>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00035a42 <+138>:	6b 4b	ldr	r3, [pc, #428]	; (0x35bf0 <trunc_string+568>)
+   0x00035a44 <+140>:	38 46	mov	r0, r7
+   0x00035a46 <+142>:	5a f8 03 30	ldr.w	r3, [r10, r3]
+   0x00035a4a <+146>:	1b 68	ldr	r3, [r3, #0]
+   0x00035a4c <+148>:	98 47	blx	r3
+   0x00035a4e <+150>:	01 28	cmp	r0, #1
+   0x00035a50 <+152>:	e5 dd	ble.n	0x35a1e <trunc_string+102>
+   0x00035a52 <+154>:	63 1c	adds	r3, r4, #1
+   0x00035a54 <+156>:	9d 42	cmp	r5, r3
+   0x00035a56 <+158>:	0e d0	beq.n	0x35a76 <trunc_string+190>
+   0x00035a58 <+160>:	61 1e	subs	r1, r4, #1
+   0x00035a5a <+162>:	32 19	adds	r2, r6, r4
+   0x00035a5c <+164>:	08 44	add	r0, r1
+   0x00035a5e <+166>:	00 99	ldr	r1, [sp, #0]
+   0x00035a60 <+168>:	0c 44	add	r4, r1
+   0x00035a62 <+170>:	12 f8 01 1f	ldrb.w	r1, [r2, #1]!
+   0x00035a66 <+174>:	83 42	cmp	r3, r0
+   0x00035a68 <+176>:	03 f1 01 03	add.w	r3, r3, #1
+   0x00035a6c <+180>:	04 f8 01 1f	strb.w	r1, [r4, #1]!
+   0x00035a70 <+184>:	d6 d0	beq.n	0x35a20 <trunc_string+104>
+   0x00035a72 <+186>:	9d 42	cmp	r5, r3
+   0x00035a74 <+188>:	f5 d1	bne.n	0x35a62 <trunc_string+170>
+   0x00035a76 <+190>:	28 46	mov	r0, r5
+   0x00035a78 <+192>:	44 1c	adds	r4, r0, #1
+   0x00035a7a <+194>:	a5 42	cmp	r5, r4
+   0x00035a7c <+196>:	d3 dc	bgt.n	0x35a26 <trunc_string+110>
+   0x00035a7e <+198>:	03 1d	adds	r3, r0, #4
+   0x00035a80 <+200>:	03 93	str	r3, [sp, #12]
+   0x00035a82 <+202>:	5c 4b	ldr	r3, [pc, #368]	; (0x35bf4 <trunc_string+572>)
+   0x00035a84 <+204>:	4f 46	mov	r7, r9
+   0x00035a86 <+206>:	01 94	str	r4, [sp, #4]
+   0x00035a88 <+208>:	5a f8 03 30	ldr.w	r3, [r10, r3]
+   0x00035a8c <+212>:	1b 68	ldr	r3, [r3, #0]
+   0x00035a8e <+214>:	00 2b	cmp	r3, #0
+   0x00035a90 <+216>:	37 d0	beq.n	0x35b02 <trunc_string+330>
+   0x00035a92 <+218>:	01 9b	ldr	r3, [sp, #4]
+   0x00035a94 <+220>:	f0 18	adds	r0, r6, r3
+   0x00035a96 <+222>:	db f7 a5 fb	bl	0x111e4 <vim_strsize>
+   0x00035a9a <+226>:	02 99	ldr	r1, [sp, #8]
+   0x00035a9c <+228>:	c3 19	adds	r3, r0, r7
+   0x00035a9e <+230>:	83 46	mov	r11, r0
+   0x00035aa0 <+232>:	99 42	cmp	r1, r3
+   0x00035aa2 <+234>:	80 f2 9f 80	bge.w	0x35be4 <trunc_string+556>
+   0x00035aa6 <+238>:	52 4b	ldr	r3, [pc, #328]	; (0x35bf0 <trunc_string+568>)
+   0x00035aa8 <+240>:	a1 46	mov	r9, r4
+   0x00035aaa <+242>:	88 46	mov	r8, r1
+   0x00035aac <+244>:	5a f8 03 a0	ldr.w	r10, [r10, r3]
+   0x00035ab0 <+248>:	02 94	str	r4, [sp, #8]
+   0x00035ab2 <+250>:	06 eb 09 04	add.w	r4, r6, r9
+   0x00035ab6 <+254>:	20 46	mov	r0, r4
+   0x00035ab8 <+256>:	db f7 3a fb	bl	0x11130 <ptr2cells>
+   0x00035abc <+260>:	da f8 00 20	ldr.w	r2, [r10]
+   0x00035ac0 <+264>:	c0 eb 0b 0b	rsb	r11, r0, r11
+   0x00035ac4 <+268>:	20 46	mov	r0, r4
+   0x00035ac6 <+270>:	90 47	blx	r2
+   0x00035ac8 <+272>:	0b eb 07 03	add.w	r3, r11, r7
+   0x00035acc <+276>:	98 45	cmp	r8, r3
+   0x00035ace <+278>:	81 44	add	r9, r0
+   0x00035ad0 <+280>:	ef db	blt.n	0x35ab2 <trunc_string+250>
+   0x00035ad2 <+282>:	02 9c	ldr	r4, [sp, #8]
+   0x00035ad4 <+284>:	03 9b	ldr	r3, [sp, #12]
+   0x00035ad6 <+286>:	9d 42	cmp	r5, r3
+   0x00035ad8 <+288>:	53 dc	bgt.n	0x35b82 <trunc_string+458>
+   0x00035ada <+290>:	9d e8 0c 00	ldmia.w	sp, {r2, r3}
+   0x00035ade <+294>:	13 44	add	r3, r2
+   0x00035ae0 <+296>:	98 46	mov	r8, r3
+   0x00035ae2 <+298>:	00 23	movs	r3, #0
+   0x00035ae4 <+300>:	08 f8 01 3c	strb.w	r3, [r8, #-1]
+   0x00035ae8 <+304>:	05 b0	add	sp, #20
+   0x00035aea <+306>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00035aee <+310>:	5f 46	mov	r7, r11
+   0x00035af0 <+312>:	e3 1c	adds	r3, r4, #3
+   0x00035af2 <+314>:	01 94	str	r4, [sp, #4]
+   0x00035af4 <+316>:	03 93	str	r3, [sp, #12]
+   0x00035af6 <+318>:	3f 4b	ldr	r3, [pc, #252]	; (0x35bf4 <trunc_string+572>)
+   0x00035af8 <+320>:	5a f8 03 30	ldr.w	r3, [r10, r3]
+   0x00035afc <+324>:	1b 68	ldr	r3, [r3, #0]
+   0x00035afe <+326>:	00 2b	cmp	r3, #0
+   0x00035b00 <+328>:	c7 d1	bne.n	0x35a92 <trunc_string+218>
+   0x00035b02 <+330>:	3d 4b	ldr	r3, [pc, #244]	; (0x35bf8 <trunc_string+576>)
+   0x00035b04 <+332>:	30 46	mov	r0, r6
+   0x00035b06 <+334>:	5a f8 03 30	ldr.w	r3, [r10, r3]
+   0x00035b0a <+338>:	1b 68	ldr	r3, [r3, #0]
+   0x00035b0c <+340>:	33 b3	cbz	r3, 0x35b5c <trunc_string+420>
+   0x00035b0e <+342>:	d7 f7 e2 ea	blx	0xd0d4 <strlen@plt>
+   0x00035b12 <+346>:	3a 4b	ldr	r3, [pc, #232]	; (0x35bfc <trunc_string+580>)
+   0x00035b14 <+348>:	5a f8 03 a0	ldr.w	r10, [r10, r3]
+   0x00035b18 <+352>:	83 46	mov	r11, r0
+   0x00035b1a <+354>:	81 46	mov	r9, r0
+   0x00035b1c <+356>:	0b f1 ff 31	add.w	r1, r11, #4294967295
+   0x00035b20 <+360>:	da f8 00 30	ldr.w	r3, [r10]
+   0x00035b24 <+364>:	31 44	add	r1, r6
+   0x00035b26 <+366>:	30 46	mov	r0, r6
+   0x00035b28 <+368>:	98 47	blx	r3
+   0x00035b2a <+370>:	c0 eb 0b 00	rsb	r0, r0, r11
+   0x00035b2e <+374>:	00 f1 ff 3b	add.w	r11, r0, #4294967295
+   0x00035b32 <+378>:	06 eb 0b 08	add.w	r8, r6, r11
+   0x00035b36 <+382>:	40 46	mov	r0, r8
+   0x00035b38 <+384>:	0b f0 40 f9	bl	0x40dbc <utf_ptr2char>
+   0x00035b3c <+388>:	0c f0 70 f9	bl	0x41e20 <utf_iscomposing>
+   0x00035b40 <+392>:	00 28	cmp	r0, #0
+   0x00035b42 <+394>:	18 bf	it	ne
+   0x00035b44 <+396>:	bb f1 00 0f	cmpne.w	r11, #0
+   0x00035b48 <+400>:	e8 dc	bgt.n	0x35b1c <trunc_string+356>
+   0x00035b4a <+402>:	40 46	mov	r0, r8
+   0x00035b4c <+404>:	db f7 f0 fa	bl	0x11130 <ptr2cells>
+   0x00035b50 <+408>:	02 9b	ldr	r3, [sp, #8]
+   0x00035b52 <+410>:	07 44	add	r7, r0
+   0x00035b54 <+412>:	bb 42	cmp	r3, r7
+   0x00035b56 <+414>:	bd db	blt.n	0x35ad4 <trunc_string+284>
+   0x00035b58 <+416>:	d9 46	mov	r9, r11
+   0x00035b5a <+418>:	df e7	b.n	0x35b1c <trunc_string+356>
+   0x00035b5c <+420>:	d7 f7 ba ea	blx	0xd0d4 <strlen@plt>
+   0x00035b60 <+424>:	dd f8 08 a0	ldr.w	r10, [sp, #8]
+   0x00035b64 <+428>:	81 46	mov	r9, r0
+   0x00035b66 <+430>:	00 e0	b.n	0x35b6a <trunc_string+434>
+   0x00035b68 <+432>:	c1 46	mov	r9, r8
+   0x00035b6a <+434>:	09 f1 ff 38	add.w	r8, r9, #4294967295
+   0x00035b6e <+438>:	06 eb 08 00	add.w	r0, r6, r8
+   0x00035b72 <+442>:	db f7 dd fa	bl	0x11130 <ptr2cells>
+   0x00035b76 <+446>:	07 44	add	r7, r0
+   0x00035b78 <+448>:	ba 45	cmp	r10, r7
+   0x00035b7a <+450>:	f5 da	bge.n	0x35b68 <trunc_string+432>
+   0x00035b7c <+452>:	03 9b	ldr	r3, [sp, #12]
+   0x00035b7e <+454>:	9d 42	cmp	r5, r3
+   0x00035b80 <+456>:	ab dd	ble.n	0x35ada <trunc_string+290>
+   0x00035b82 <+458>:	1f 4b	ldr	r3, [pc, #124]	; (0x35c00 <trunc_string+584>)
+   0x00035b84 <+460>:	4e 44	add	r6, r9
+   0x00035b86 <+462>:	9d e8 06 00	ldmia.w	sp, {r1, r2}
+   0x00035b8a <+466>:	2c 1b	subs	r4, r5, r4
+   0x00035b8c <+468>:	7b 44	add	r3, pc
+   0x00035b8e <+470>:	30 46	mov	r0, r6
+   0x00035b90 <+472>:	0a 44	add	r2, r1
+   0x00035b92 <+474>:	1f 88	ldrh	r7, [r3, #0]
+   0x00035b94 <+476>:	99 78	ldrb	r1, [r3, #2]
+   0x00035b96 <+478>:	00 9b	ldr	r3, [sp, #0]
+   0x00035b98 <+480>:	9e 46	mov	lr, r3
+   0x00035b9a <+482>:	01 9b	ldr	r3, [sp, #4]
+   0x00035b9c <+484>:	2e f8 03 70	strh.w	r7, [lr, r3]
+   0x00035ba0 <+488>:	91 70	strb	r1, [r2, #2]
+   0x00035ba2 <+490>:	d7 f7 98 ea	blx	0xd0d4 <strlen@plt>
+   0x00035ba6 <+494>:	e3 1e	subs	r3, r4, #3
+   0x00035ba8 <+496>:	31 46	mov	r1, r6
+   0x00035baa <+498>:	45 1c	adds	r5, r0, #1
+   0x00035bac <+500>:	01 98	ldr	r0, [sp, #4]
+   0x00035bae <+502>:	9d 42	cmp	r5, r3
+   0x00035bb0 <+504>:	a8 bf	it	ge
+   0x00035bb2 <+506>:	25 1f	subge	r5, r4, #4
+   0x00035bb4 <+508>:	00 9c	ldr	r4, [sp, #0]
+   0x00035bb6 <+510>:	03 30	adds	r0, #3
+   0x00035bb8 <+512>:	2a 46	mov	r2, r5
+   0x00035bba <+514>:	20 44	add	r0, r4
+   0x00035bbc <+516>:	d7 f7 d2 e8	blx	0xcd64 <memmove@plt+4>
+   0x00035bc0 <+520>:	03 9a	ldr	r2, [sp, #12]
+   0x00035bc2 <+522>:	23 46	mov	r3, r4
+   0x00035bc4 <+524>:	2b 44	add	r3, r5
+   0x00035bc6 <+526>:	13 44	add	r3, r2
+   0x00035bc8 <+528>:	00 22	movs	r2, #0
+   0x00035bca <+530>:	03 f8 01 2c	strb.w	r2, [r3, #-1]
+   0x00035bce <+534>:	05 b0	add	sp, #20
+   0x00035bd0 <+536>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00035bd4 <+540>:	03 22	movs	r2, #3
+   0x00035bd6 <+542>:	1f 46	mov	r7, r3
+   0x00035bd8 <+544>:	01 93	str	r3, [sp, #4]
+   0x00035bda <+546>:	1c 46	mov	r4, r3
+   0x00035bdc <+548>:	03 92	str	r2, [sp, #12]
+   0x00035bde <+550>:	8a e7	b.n	0x35af6 <trunc_string+318>
+   0x00035be0 <+552>:	89 46	mov	r9, r1
+   0x00035be2 <+554>:	27 e7	b.n	0x35a34 <trunc_string+124>
+   0x00035be4 <+556>:	a1 46	mov	r9, r4
+   0x00035be6 <+558>:	75 e7	b.n	0x35ad4 <trunc_string+284>
+   0x00035be8 <+560>:	c2 1c	adds	r2, r0, #3
+   0x00035bea <+562>:	07 00	movs	r7, r0
+   0x00035bec <+564>:	24 05	lsls	r4, r4, #20
+   0x00035bee <+566>:	00 00	movs	r0, r0
+   0x00035bf0 <+568>:	9c 03	lsls	r4, r3, #14
+   0x00035bf2 <+570>:	00 00	movs	r0, r0
+   0x00035bf4 <+572>:	0c 07	lsls	r4, r1, #28
+   0x00035bf6 <+574>:	00 00	movs	r0, r0
+   0x00035bf8 <+576>:	48 09	lsrs	r0, r1, #5
+   0x00035bfa <+578>:	00 00	movs	r0, r0
+   0x00035bfc <+580>:	d0 08	lsrs	r0, r2, #3
+   0x00035bfe <+582>:	00 00	movs	r0, r0
+   0x00035c00 <+584>:	a0 1b	subs	r0, r4, r6
+   0x00035c02 <+586>:	05 00	movs	r5, r0
+End of assembler dump.
+Dump of assembler code for function verbose_enter:
+   0x00036e1c <+0>:	06 4b	ldr	r3, [pc, #24]	; (0x36e38 <verbose_enter+28>)
+   0x00036e1e <+2>:	07 4a	ldr	r2, [pc, #28]	; (0x36e3c <verbose_enter+32>)
+   0x00036e20 <+4>:	7b 44	add	r3, pc
+   0x00036e22 <+6>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e24 <+8>:	12 68	ldr	r2, [r2, #0]
+   0x00036e26 <+10>:	12 78	ldrb	r2, [r2, #0]
+   0x00036e28 <+12>:	22 b1	cbz	r2, 0x36e34 <verbose_enter+24>
+   0x00036e2a <+14>:	05 4a	ldr	r2, [pc, #20]	; (0x36e40 <verbose_enter+36>)
+   0x00036e2c <+16>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e2e <+18>:	13 68	ldr	r3, [r2, #0]
+   0x00036e30 <+20>:	01 33	adds	r3, #1
+   0x00036e32 <+22>:	13 60	str	r3, [r2, #0]
+   0x00036e34 <+24>:	70 47	bx	lr
+   0x00036e36 <+26>:	00 bf	nop
+   0x00036e38 <+28>:	78 08	lsrs	r0, r7, #1
+   0x00036e3a <+30>:	07 00	movs	r7, r0
+   0x00036e3c <+32>:	3c 05	lsls	r4, r7, #20
+   0x00036e3e <+34>:	00 00	movs	r0, r0
+   0x00036e40 <+36>:	74 02	lsls	r4, r6, #9
+   0x00036e42 <+38>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function verbose_enter_scroll:
+   0x00036e70 <+0>:	08 4b	ldr	r3, [pc, #32]	; (0x36e94 <verbose_enter_scroll+36>)
+   0x00036e72 <+2>:	09 4a	ldr	r2, [pc, #36]	; (0x36e98 <verbose_enter_scroll+40>)
+   0x00036e74 <+4>:	7b 44	add	r3, pc
+   0x00036e76 <+6>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e78 <+8>:	12 68	ldr	r2, [r2, #0]
+   0x00036e7a <+10>:	12 78	ldrb	r2, [r2, #0]
+   0x00036e7c <+12>:	22 b9	cbnz	r2, 0x36e88 <verbose_enter_scroll+24>
+   0x00036e7e <+14>:	07 4a	ldr	r2, [pc, #28]	; (0x36e9c <verbose_enter_scroll+44>)
+   0x00036e80 <+16>:	01 21	movs	r1, #1
+   0x00036e82 <+18>:	9b 58	ldr	r3, [r3, r2]
+   0x00036e84 <+20>:	19 60	str	r1, [r3, #0]
+   0x00036e86 <+22>:	70 47	bx	lr
+   0x00036e88 <+24>:	05 4a	ldr	r2, [pc, #20]	; (0x36ea0 <verbose_enter_scroll+48>)
+   0x00036e8a <+26>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e8c <+28>:	13 68	ldr	r3, [r2, #0]
+   0x00036e8e <+30>:	01 33	adds	r3, #1
+   0x00036e90 <+32>:	13 60	str	r3, [r2, #0]
+   0x00036e92 <+34>:	70 47	bx	lr
+   0x00036e94 <+36>:	24 08	lsrs	r4, r4, #32
+   0x00036e96 <+38>:	07 00	movs	r7, r0
+   0x00036e98 <+40>:	3c 05	lsls	r4, r7, #20
+   0x00036e9a <+42>:	00 00	movs	r0, r0
+   0x00036e9c <+44>:	8c 04	lsls	r4, r1, #18
+   0x00036e9e <+46>:	00 00	movs	r0, r0
+   0x00036ea0 <+48>:	74 02	lsls	r4, r6, #9
+   0x00036ea2 <+50>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function verbose_leave:
+   0x00036e44 <+0>:	07 4b	ldr	r3, [pc, #28]	; (0x36e64 <verbose_leave+32>)
+   0x00036e46 <+2>:	08 4a	ldr	r2, [pc, #32]	; (0x36e68 <verbose_leave+36>)
+   0x00036e48 <+4>:	7b 44	add	r3, pc
+   0x00036e4a <+6>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e4c <+8>:	12 68	ldr	r2, [r2, #0]
+   0x00036e4e <+10>:	12 78	ldrb	r2, [r2, #0]
+   0x00036e50 <+12>:	32 b1	cbz	r2, 0x36e60 <verbose_leave+28>
+   0x00036e52 <+14>:	06 4a	ldr	r2, [pc, #24]	; (0x36e6c <verbose_leave+40>)
+   0x00036e54 <+16>:	9a 58	ldr	r2, [r3, r2]
+   0x00036e56 <+18>:	13 68	ldr	r3, [r2, #0]
+   0x00036e58 <+20>:	01 3b	subs	r3, #1
+   0x00036e5a <+22>:	48 bf	it	mi
+   0x00036e5c <+24>:	00 23	movmi	r3, #0
+   0x00036e5e <+26>:	13 60	str	r3, [r2, #0]
+   0x00036e60 <+28>:	70 47	bx	lr
+   0x00036e62 <+30>:	00 bf	nop
+   0x00036e64 <+32>:	50 08	lsrs	r0, r2, #1
+   0x00036e66 <+34>:	07 00	movs	r7, r0
+   0x00036e68 <+36>:	3c 05	lsls	r4, r7, #20
+   0x00036e6a <+38>:	00 00	movs	r0, r0
+   0x00036e6c <+40>:	74 02	lsls	r4, r6, #9
+   0x00036e6e <+42>:	00 00	movs	r0, r0
+End of assembler dump.

@@ -1,0 +1,338 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function sys_write_archive_buffer:
+   0x0001eb90 <+0>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001eb94 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001eb98 <+8>:	46 f2 7c 02	movw	r2, #24700	; 0x607c
+   0x0001eb9c <+12>:	c0 f2 04 02	movt	r2, #4
+   0x0001eba0 <+16>:	18 68	ldr	r0, [r3, #0]
+   0x0001eba2 <+18>:	46 f2 14 33	movw	r3, #25364	; 0x6314
+   0x0001eba6 <+22>:	c0 f2 04 03	movt	r3, #4
+   0x0001ebaa <+26>:	b0 f1 80 4f	cmp.w	r0, #1073741824	; 0x40000000
+   0x0001ebae <+30>:	03 da	bge.n	0x1ebb8 <sys_write_archive_buffer+40>
+   0x0001ebb0 <+32>:	11 68	ldr	r1, [r2, #0]
+   0x0001ebb2 <+34>:	1a 68	ldr	r2, [r3, #0]
+   0x0001ebb4 <+36>:	0b f0 16 bf	b.w	0x2a9e4 <full_write>
+   0x0001ebb8 <+40>:	11 68	ldr	r1, [r2, #0]
+   0x0001ebba <+42>:	00 f1 40 40	add.w	r0, r0, #3221225472	; 0xc0000000
+   0x0001ebbe <+46>:	1a 68	ldr	r2, [r3, #0]
+   0x0001ebc0 <+48>:	05 f0 fc bd	b.w	0x247bc <rmt_write__>
+End of assembler dump.
+Dump of assembler code for function dec_to_env:
+   0x0000b3d8 <+0>:	30 b5	push	{r4, r5, lr}
+   0x0000b3da <+2>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x0000b3de <+6>:	c0 f2 04 04	movt	r4, #4
+   0x0000b3e2 <+10>:	19 46	mov	r1, r3
+   0x0000b3e4 <+12>:	89 b0	sub	sp, #36	; 0x24
+   0x0000b3e6 <+14>:	05 46	mov	r5, r0
+   0x0000b3e8 <+16>:	23 68	ldr	r3, [r4, #0]
+   0x0000b3ea <+18>:	10 46	mov	r0, r2
+   0x0000b3ec <+20>:	01 aa	add	r2, sp, #4
+   0x0000b3ee <+22>:	07 93	str	r3, [sp, #28]
+   0x0000b3f0 <+24>:	20 f0 fe fc	bl	0x2bdf0 <umaxtostr>
+   0x0000b3f4 <+28>:	01 22	movs	r2, #1
+   0x0000b3f6 <+30>:	01 46	mov	r1, r0
+   0x0000b3f8 <+32>:	28 46	mov	r0, r5
+   0x0000b3fa <+34>:	ff f7 9e ed	blx	0xaf38 <setenv@plt>
+   0x0000b3fe <+38>:	08 b1	cbz	r0, 0xb404 <dec_to_env+44>
+   0x0000b400 <+40>:	07 f0 1c fd	bl	0x12e3c <xalloc_die>
+   0x0000b404 <+44>:	07 9a	ldr	r2, [sp, #28]
+   0x0000b406 <+46>:	23 68	ldr	r3, [r4, #0]
+   0x0000b408 <+48>:	9a 42	cmp	r2, r3
+   0x0000b40a <+50>:	01 d0	beq.n	0xb410 <dec_to_env+56>
+   0x0000b40c <+52>:	ff f7 0a ec	blx	0xac24 <__stack_chk_fail@plt>
+   0x0000b410 <+56>:	09 b0	add	sp, #36	; 0x24
+   0x0000b412 <+58>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function is_regular_file:
+   0x0001e7f4 <+0>:	00 b5	push	{lr}
+   0x0001e7f6 <+2>:	9b b0	sub	sp, #108	; 0x6c
+   0x0001e7f8 <+4>:	01 46	mov	r1, r0
+   0x0001e7fa <+6>:	03 20	movs	r0, #3
+   0x0001e7fc <+8>:	6a 46	mov	r2, sp
+   0x0001e7fe <+10>:	ec f7 56 ed	blx	0xb2ac <__xstat64@plt>
+   0x0001e802 <+14>:	50 b1	cbz	r0, 0x1e81a <is_regular_file+38>
+   0x0001e804 <+16>:	ec f7 d8 eb	blx	0xafb8 <__errno_location@plt>
+   0x0001e808 <+20>:	00 68	ldr	r0, [r0, #0]
+   0x0001e80a <+22>:	a0 f1 02 00	sub.w	r0, r0, #2
+   0x0001e80e <+26>:	b0 fa 80 f0	clz	r0, r0
+   0x0001e812 <+30>:	40 09	lsrs	r0, r0, #5
+   0x0001e814 <+32>:	1b b0	add	sp, #108	; 0x6c
+   0x0001e816 <+34>:	5d f8 04 fb	ldr.w	pc, [sp], #4
+   0x0001e81a <+38>:	04 98	ldr	r0, [sp, #16]
+   0x0001e81c <+40>:	00 f4 70 40	and.w	r0, r0, #61440	; 0xf000
+   0x0001e820 <+44>:	a0 f5 00 40	sub.w	r0, r0, #32768	; 0x8000
+   0x0001e824 <+48>:	b0 fa 80 f0	clz	r0, r0
+   0x0001e828 <+52>:	40 09	lsrs	r0, r0, #5
+   0x0001e82a <+54>:	1b b0	add	sp, #108	; 0x6c
+   0x0001e82c <+56>:	5d f8 04 fb	ldr.w	pc, [sp], #4
+End of assembler dump.
+Dump of assembler code for function run_decompress_program:
+   0x0001e6d0 <+0>:	45 f2 68 73	movw	r3, #22376	; 0x5768
+   0x0001e6d4 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001e6d8 <+8>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x0001e6dc <+12>:	99 b0	sub	sp, #100	; 0x64
+   0x0001e6de <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x0001e6e0 <+16>:	03 a8	add	r0, sp, #12
+   0x0001e6e2 <+18>:	01 22	movs	r2, #1
+   0x0001e6e4 <+20>:	06 92	str	r2, [sp, #24]
+   0x0001e6e6 <+22>:	0f 93	str	r3, [sp, #60]	; 0x3c
+   0x0001e6e8 <+24>:	ee f7 7e f8	bl	0xc7e8 <first_decompress_program>
+   0x0001e6ec <+28>:	06 46	mov	r6, r0
+   0x0001e6ee <+30>:	00 28	cmp	r0, #0
+   0x0001e6f0 <+32>:	71 d0	beq.n	0x1e7d6 <run_decompress_program+262>
+   0x0001e6f2 <+34>:	40 f6 06 62	movw	r2, #3590	; 0xe06
+   0x0001e6f6 <+38>:	45 f2 ac 18	movw	r8, #20908	; 0x51ac
+   0x0001e6fa <+42>:	45 f2 f0 57	movw	r7, #22000	; 0x55f0
+   0x0001e6fe <+46>:	c0 f2 08 22	movt	r2, #520	; 0x208
+   0x0001e702 <+50>:	c0 f2 03 08	movt	r8, #3
+   0x0001e706 <+54>:	c0 f2 04 07	movt	r7, #4
+   0x0001e70a <+58>:	04 e0	b.n	0x1e716 <run_decompress_program+70>
+   0x0001e70c <+60>:	40 f6 0e 62	movw	r2, #3598	; 0xe0e
+   0x0001e710 <+64>:	c0 f2 08 22	movt	r2, #520	; 0x208
+   0x0001e714 <+68>:	2e 46	mov	r6, r5
+   0x0001e716 <+70>:	30 46	mov	r0, r6
+   0x0001e718 <+72>:	04 a9	add	r1, sp, #16
+   0x0001e71a <+74>:	06 f0 df ff	bl	0x256dc <wordsplit>
+   0x0001e71e <+78>:	04 46	mov	r4, r0
+   0x0001e720 <+80>:	00 28	cmp	r0, #0
+   0x0001e722 <+82>:	40 d1	bne.n	0x1e7a6 <run_decompress_program+214>
+   0x0001e724 <+84>:	06 99	ldr	r1, [sp, #24]
+   0x0001e726 <+86>:	04 9a	ldr	r2, [sp, #16]
+   0x0001e728 <+88>:	05 98	ldr	r0, [sp, #20]
+   0x0001e72a <+90>:	92 00	lsls	r2, r2, #2
+   0x0001e72c <+92>:	00 eb 81 01	add.w	r1, r0, r1, lsl #2
+   0x0001e730 <+96>:	ec f7 e0 e9	blx	0xaaf4 <memmove@plt>
+   0x0001e734 <+100>:	04 9a	ldr	r2, [sp, #16]
+   0x0001e736 <+102>:	05 9b	ldr	r3, [sp, #20]
+   0x0001e738 <+104>:	43 f8 22 80	str.w	r8, [r3, r2, lsl #2]
+   0x0001e73c <+108>:	05 99	ldr	r1, [sp, #20]
+   0x0001e73e <+110>:	08 68	ldr	r0, [r1, #0]
+   0x0001e740 <+112>:	ec f7 1e ea	blx	0xab80 <execvp@plt>
+   0x0001e744 <+116>:	04 9a	ldr	r2, [sp, #16]
+   0x0001e746 <+118>:	05 9b	ldr	r3, [sp, #20]
+   0x0001e748 <+120>:	03 a8	add	r0, sp, #12
+   0x0001e74a <+122>:	43 f8 22 40	str.w	r4, [r3, r2, lsl #2]
+   0x0001e74e <+126>:	ee f7 85 f8	bl	0xc85c <next_decompress_program>
+   0x0001e752 <+130>:	05 46	mov	r5, r0
+   0x0001e754 <+132>:	00 28	cmp	r0, #0
+   0x0001e756 <+134>:	3b d0	beq.n	0x1e7d0 <run_decompress_program+256>
+   0x0001e758 <+136>:	3b 68	ldr	r3, [r7, #0]
+   0x0001e75a <+138>:	1a 03	lsls	r2, r3, #12
+   0x0001e75c <+140>:	d6 d5	bpl.n	0x1e70c <run_decompress_program+60>
+   0x0001e75e <+142>:	ec f7 2c ec	blx	0xafb8 <__errno_location@plt>
+   0x0001e762 <+146>:	05 22	movs	r2, #5
+   0x0001e764 <+148>:	45 f2 90 11	movw	r1, #20880	; 0x5190
+   0x0001e768 <+152>:	c0 f2 03 01	movt	r1, #3
+   0x0001e76c <+156>:	d0 f8 00 90	ldr.w	r9, [r0]
+   0x0001e770 <+160>:	20 46	mov	r0, r4
+   0x0001e772 <+162>:	ec f7 52 ea	blx	0xac18 <dcgettext@plt>
+   0x0001e776 <+166>:	33 46	mov	r3, r6
+   0x0001e778 <+168>:	49 46	mov	r1, r9
+   0x0001e77a <+170>:	02 46	mov	r2, r0
+   0x0001e77c <+172>:	20 46	mov	r0, r4
+   0x0001e77e <+174>:	ec f7 20 eb	blx	0xadc0 <error@plt+4>
+   0x0001e782 <+178>:	3b 68	ldr	r3, [r7, #0]
+   0x0001e784 <+180>:	1b 03	lsls	r3, r3, #12
+   0x0001e786 <+182>:	c1 d5	bpl.n	0x1e70c <run_decompress_program+60>
+   0x0001e788 <+184>:	20 46	mov	r0, r4
+   0x0001e78a <+186>:	05 22	movs	r2, #5
+   0x0001e78c <+188>:	45 f2 a0 11	movw	r1, #20896	; 0x51a0
+   0x0001e790 <+192>:	c0 f2 03 01	movt	r1, #3
+   0x0001e794 <+196>:	ec f7 40 ea	blx	0xac18 <dcgettext@plt>
+   0x0001e798 <+200>:	21 46	mov	r1, r4
+   0x0001e79a <+202>:	2b 46	mov	r3, r5
+   0x0001e79c <+204>:	02 46	mov	r2, r0
+   0x0001e79e <+206>:	20 46	mov	r0, r4
+   0x0001e7a0 <+208>:	ec f7 0e eb	blx	0xadc0 <error@plt+4>
+   0x0001e7a4 <+212>:	b2 e7	b.n	0x1e70c <run_decompress_program+60>
+   0x0001e7a6 <+214>:	05 22	movs	r2, #5
+   0x0001e7a8 <+216>:	44 f6 48 61	movw	r1, #20040	; 0x4e48
+   0x0001e7ac <+220>:	00 20	movs	r0, #0
+   0x0001e7ae <+222>:	c0 f2 03 01	movt	r1, #3
+   0x0001e7b2 <+226>:	ec f7 32 ea	blx	0xac18 <dcgettext@plt>
+   0x0001e7b6 <+230>:	04 46	mov	r4, r0
+   0x0001e7b8 <+232>:	04 a8	add	r0, sp, #16
+   0x0001e7ba <+234>:	07 f0 91 fd	bl	0x262e0 <wordsplit_strerror>
+   0x0001e7be <+238>:	22 46	mov	r2, r4
+   0x0001e7c0 <+240>:	33 46	mov	r3, r6
+   0x0001e7c2 <+242>:	00 90	str	r0, [sp, #0]
+   0x0001e7c4 <+244>:	00 20	movs	r0, #0
+   0x0001e7c6 <+246>:	01 46	mov	r1, r0
+   0x0001e7c8 <+248>:	ec f7 fa ea	blx	0xadc0 <error@plt+4>
+   0x0001e7cc <+252>:	f4 f7 1e fb	bl	0x12e0c <fatal_exit>
+   0x0001e7d0 <+256>:	30 46	mov	r0, r6
+   0x0001e7d2 <+258>:	05 f0 a1 f8	bl	0x23918 <exec_fatal>
+   0x0001e7d6 <+262>:	05 22	movs	r2, #5
+   0x0001e7d8 <+264>:	45 f2 6c 11	movw	r1, #20844	; 0x516c
+   0x0001e7dc <+268>:	c0 f2 03 01	movt	r1, #3
+   0x0001e7e0 <+272>:	ec f7 1a ea	blx	0xac18 <dcgettext@plt>
+   0x0001e7e4 <+276>:	31 46	mov	r1, r6
+   0x0001e7e6 <+278>:	02 46	mov	r2, r0
+   0x0001e7e8 <+280>:	30 46	mov	r0, r6
+   0x0001e7ea <+282>:	ec f7 ea ea	blx	0xadc0 <error@plt+4>
+   0x0001e7ee <+286>:	f4 f7 0d fb	bl	0x12e0c <fatal_exit>
+End of assembler dump.
+Dump of assembler code for function str_to_env:
+   0x0000b380 <+0>:	31 b1	cbz	r1, 0xb390 <str_to_env+16>
+   0x0000b382 <+2>:	08 b5	push	{r3, lr}
+   0x0000b384 <+4>:	01 22	movs	r2, #1
+   0x0000b386 <+6>:	ff f7 d8 ed	blx	0xaf38 <setenv@plt>
+   0x0000b38a <+10>:	18 b1	cbz	r0, 0xb394 <str_to_env+20>
+   0x0000b38c <+12>:	07 f0 56 fd	bl	0x12e3c <xalloc_die>
+   0x0000b390 <+16>:	ff f7 92 bf	b.w	0xb2b8 <unsetenv@plt>
+   0x0000b394 <+20>:	08 bd	pop	{r3, pc}
+End of assembler dump.
+Dump of assembler code for function time_to_env:
+   0x0000b398 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0000b39a <+2>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x0000b39e <+6>:	c0 f2 04 04	movt	r4, #4
+   0x0000b3a2 <+10>:	8c b0	sub	sp, #48	; 0x30
+   0x0000b3a4 <+12>:	05 46	mov	r5, r0
+   0x0000b3a6 <+14>:	26 68	ldr	r6, [r4, #0]
+   0x0000b3a8 <+16>:	8d e8 06 00	stmia.w	sp, {r1, r2}
+   0x0000b3ac <+20>:	03 aa	add	r2, sp, #12
+   0x0000b3ae <+22>:	9d e8 03 00	ldmia.w	sp, {r0, r1}
+   0x0000b3b2 <+26>:	0b 96	str	r6, [sp, #44]	; 0x2c
+   0x0000b3b4 <+28>:	0f f0 3a fe	bl	0x1b02c <code_timespec>
+   0x0000b3b8 <+32>:	01 22	movs	r2, #1
+   0x0000b3ba <+34>:	01 46	mov	r1, r0
+   0x0000b3bc <+36>:	28 46	mov	r0, r5
+   0x0000b3be <+38>:	ff f7 bc ed	blx	0xaf38 <setenv@plt>
+   0x0000b3c2 <+42>:	08 b1	cbz	r0, 0xb3c8 <time_to_env+48>
+   0x0000b3c4 <+44>:	07 f0 3a fd	bl	0x12e3c <xalloc_die>
+   0x0000b3c8 <+48>:	0b 9a	ldr	r2, [sp, #44]	; 0x2c
+   0x0000b3ca <+50>:	23 68	ldr	r3, [r4, #0]
+   0x0000b3cc <+52>:	9a 42	cmp	r2, r3
+   0x0000b3ce <+54>:	01 d0	beq.n	0xb3d4 <time_to_env+60>
+   0x0000b3d0 <+56>:	ff f7 28 ec	blx	0xac24 <__stack_chk_fail@plt>
+   0x0000b3d4 <+60>:	0c b0	add	sp, #48	; 0x30
+   0x0000b3d6 <+62>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function wait_for_grandchild:
+   0x0001e680 <+0>:	00 b5	push	{lr}
+   0x0001e682 <+2>:	04 46	mov	r4, r0
+   0x0001e684 <+4>:	83 b0	sub	sp, #12
+   0x0001e686 <+6>:	04 e0	b.n	0x1e692 <wait_for_grandchild+18>
+   0x0001e688 <+8>:	ec f7 96 ec	blx	0xafb8 <__errno_location@plt>
+   0x0001e68c <+12>:	03 68	ldr	r3, [r0, #0]
+   0x0001e68e <+14>:	04 2b	cmp	r3, #4
+   0x0001e690 <+16>:	16 d1	bne.n	0x1e6c0 <wait_for_grandchild+64>
+   0x0001e692 <+18>:	20 46	mov	r0, r4
+   0x0001e694 <+20>:	01 a9	add	r1, sp, #4
+   0x0001e696 <+22>:	00 22	movs	r2, #0
+   0x0001e698 <+24>:	ec f7 5a eb	blx	0xad50 <waitpid@plt>
+   0x0001e69c <+28>:	01 30	adds	r0, #1
+   0x0001e69e <+30>:	f3 d0	beq.n	0x1e688 <wait_for_grandchild+8>
+   0x0001e6a0 <+32>:	01 9b	ldr	r3, [sp, #4]
+   0x0001e6a2 <+34>:	03 f0 7f 00	and.w	r0, r3, #127	; 0x7f
+   0x0001e6a6 <+38>:	42 1c	adds	r2, r0, #1
+   0x0001e6a8 <+40>:	42 f3 46 02	sbfx	r2, r2, #1, #7
+   0x0001e6ac <+44>:	00 2a	cmp	r2, #0
+   0x0001e6ae <+46>:	d8 bf	it	le
+   0x0001e6b0 <+48>:	c3 f3 07 20	ubfxle	r0, r3, #8, #8
+   0x0001e6b4 <+52>:	02 dd	ble.n	0x1e6bc <wait_for_grandchild+60>
+   0x0001e6b6 <+54>:	ec f7 ae e9	blx	0xaa14 <raise@plt>
+   0x0001e6ba <+58>:	00 20	movs	r0, #0
+   0x0001e6bc <+60>:	ec f7 1c ec	blx	0xaef8 <exit@plt>
+   0x0001e6c0 <+64>:	46 f2 0c 33	movw	r3, #25356	; 0x630c
+   0x0001e6c4 <+68>:	c0 f2 04 03	movt	r3, #4
+   0x0001e6c8 <+72>:	18 68	ldr	r0, [r3, #0]
+   0x0001e6ca <+74>:	05 f0 49 fb	bl	0x23d60 <waitpid_error>
+   0x0001e6ce <+78>:	e7 e7	b.n	0x1e6a0 <wait_for_grandchild+32>
+End of assembler dump.
+Dump of assembler code for function xdup2:
+   0x0001e830 <+0>:	88 42	cmp	r0, r1
+   0x0001e832 <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x0001e834 <+4>:	05 46	mov	r5, r0
+   0x0001e836 <+6>:	0c 46	mov	r4, r1
+   0x0001e838 <+8>:	11 d0	beq.n	0x1e85e <xdup2+46>
+   0x0001e83a <+10>:	08 46	mov	r0, r1
+   0x0001e83c <+12>:	ec f7 56 ed	blx	0xb2ec <close@plt>
+   0x0001e840 <+16>:	20 b1	cbz	r0, 0x1e84c <xdup2+28>
+   0x0001e842 <+18>:	ec f7 ba eb	blx	0xafb8 <__errno_location@plt>
+   0x0001e846 <+22>:	06 68	ldr	r6, [r0, #0]
+   0x0001e848 <+24>:	09 2e	cmp	r6, #9
+   0x0001e84a <+26>:	20 d1	bne.n	0x1e88e <xdup2+94>
+   0x0001e84c <+28>:	28 46	mov	r0, r5
+   0x0001e84e <+30>:	ec f7 08 ea	blx	0xac60 <dup@plt>
+   0x0001e852 <+34>:	a0 42	cmp	r0, r4
+   0x0001e854 <+36>:	16 d0	beq.n	0x1e884 <xdup2+84>
+   0x0001e856 <+38>:	00 28	cmp	r0, #0
+   0x0001e858 <+40>:	02 db	blt.n	0x1e860 <xdup2+48>
+   0x0001e85a <+42>:	ec f7 42 ed	blx	0xb2e0 <abort@plt>
+   0x0001e85e <+46>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0001e860 <+48>:	ec f7 aa eb	blx	0xafb8 <__errno_location@plt>
+   0x0001e864 <+52>:	05 22	movs	r2, #5
+   0x0001e866 <+54>:	45 f2 c0 11	movw	r1, #20928	; 0x51c0
+   0x0001e86a <+58>:	c0 f2 03 01	movt	r1, #3
+   0x0001e86e <+62>:	04 68	ldr	r4, [r0, #0]
+   0x0001e870 <+64>:	00 20	movs	r0, #0
+   0x0001e872 <+66>:	ec f7 d2 e9	blx	0xac18 <dcgettext@plt>
+   0x0001e876 <+70>:	21 46	mov	r1, r4
+   0x0001e878 <+72>:	02 46	mov	r2, r0
+   0x0001e87a <+74>:	00 20	movs	r0, #0
+   0x0001e87c <+76>:	ec f7 a0 ea	blx	0xadc0 <error@plt+4>
+   0x0001e880 <+80>:	f4 f7 c4 fa	bl	0x12e0c <fatal_exit>
+   0x0001e884 <+84>:	28 46	mov	r0, r5
+   0x0001e886 <+86>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x0001e88a <+90>:	ee f7 97 b9	b.w	0xcbbc <xclose>
+   0x0001e88e <+94>:	05 22	movs	r2, #5
+   0x0001e890 <+96>:	45 f2 b0 11	movw	r1, #20912	; 0x51b0
+   0x0001e894 <+100>:	00 20	movs	r0, #0
+   0x0001e896 <+102>:	c0 f2 03 01	movt	r1, #3
+   0x0001e89a <+106>:	ec f7 be e9	blx	0xac18 <dcgettext@plt>
+   0x0001e89e <+110>:	31 46	mov	r1, r6
+   0x0001e8a0 <+112>:	02 46	mov	r2, r0
+   0x0001e8a2 <+114>:	00 20	movs	r0, #0
+   0x0001e8a4 <+116>:	ec f7 8c ea	blx	0xadc0 <error@plt+4>
+   0x0001e8a8 <+120>:	f4 f7 b0 fa	bl	0x12e0c <fatal_exit>
+End of assembler dump.
+Dump of assembler code for function xexec:
+   0x0001e624 <+0>:	45 f2 68 73	movw	r3, #22376	; 0x5768
+   0x0001e628 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001e62c <+8>:	00 b5	push	{lr}
+   0x0001e62e <+10>:	97 b0	sub	sp, #92	; 0x5c
+   0x0001e630 <+12>:	1c 68	ldr	r4, [r3, #0]
+   0x0001e632 <+14>:	40 f6 04 62	movw	r2, #3588	; 0xe04
+   0x0001e636 <+18>:	02 a9	add	r1, sp, #8
+   0x0001e638 <+20>:	c0 f2 08 22	movt	r2, #520	; 0x208
+   0x0001e63c <+24>:	05 46	mov	r5, r0
+   0x0001e63e <+26>:	0d 94	str	r4, [sp, #52]	; 0x34
+   0x0001e640 <+28>:	07 f0 4c f8	bl	0x256dc <wordsplit>
+   0x0001e644 <+32>:	a0 b1	cbz	r0, 0x1e670 <xexec+76>
+   0x0001e646 <+34>:	05 22	movs	r2, #5
+   0x0001e648 <+36>:	44 f6 48 61	movw	r1, #20040	; 0x4e48
+   0x0001e64c <+40>:	00 20	movs	r0, #0
+   0x0001e64e <+42>:	c0 f2 03 01	movt	r1, #3
+   0x0001e652 <+46>:	ec f7 e2 ea	blx	0xac18 <dcgettext@plt>
+   0x0001e656 <+50>:	04 46	mov	r4, r0
+   0x0001e658 <+52>:	02 a8	add	r0, sp, #8
+   0x0001e65a <+54>:	07 f0 41 fe	bl	0x262e0 <wordsplit_strerror>
+   0x0001e65e <+58>:	22 46	mov	r2, r4
+   0x0001e660 <+60>:	2b 46	mov	r3, r5
+   0x0001e662 <+62>:	00 90	str	r0, [sp, #0]
+   0x0001e664 <+64>:	00 20	movs	r0, #0
+   0x0001e666 <+66>:	01 46	mov	r1, r0
+   0x0001e668 <+68>:	ec f7 aa eb	blx	0xadc0 <error@plt+4>
+   0x0001e66c <+72>:	f4 f7 ce fb	bl	0x12e0c <fatal_exit>
+   0x0001e670 <+76>:	03 99	ldr	r1, [sp, #12]
+   0x0001e672 <+78>:	08 68	ldr	r0, [r1, #0]
+   0x0001e674 <+80>:	ec f7 84 ea	blx	0xab80 <execvp@plt>
+   0x0001e678 <+84>:	28 46	mov	r0, r5
+   0x0001e67a <+86>:	05 f0 4d f9	bl	0x23918 <exec_fatal>
+End of assembler dump.

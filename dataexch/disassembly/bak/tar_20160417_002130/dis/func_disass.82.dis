@@ -1,0 +1,296 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function sparse_major_decoder:
+   0x00015874 <+0>:	10 b5	push	{r4, lr}
+   0x00015876 <+2>:	84 b0	sub	sp, #16
+   0x00015878 <+4>:	04 46	mov	r4, r0
+   0x0001587a <+6>:	00 23	movs	r3, #0
+   0x0001587c <+8>:	00 91	str	r1, [sp, #0]
+   0x0001587e <+10>:	02 a8	add	r0, sp, #8
+   0x00015880 <+12>:	11 46	mov	r1, r2
+   0x00015882 <+14>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x00015886 <+18>:	ff f7 1d ff	bl	0x156c4 <decode_num>
+   0x0001588a <+22>:	10 b1	cbz	r0, 0x15892 <sparse_major_decoder+30>
+   0x0001588c <+24>:	02 9b	ldr	r3, [sp, #8]
+   0x0001588e <+26>:	c4 f8 bc 30	str.w	r3, [r4, #188]	; 0xbc
+   0x00015892 <+30>:	04 b0	add	sp, #16
+   0x00015894 <+32>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_map_decoder:
+   0x00014ee4 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00014ee8 <+4>:	00 23	movs	r3, #0
+   0x00014eea <+6>:	16 46	mov	r6, r2
+   0x00014eec <+8>:	c0 f8 c4 30	str.w	r3, [r0, #196]	; 0xc4
+   0x00014ef0 <+12>:	12 78	ldrb	r2, [r2, #0]
+   0x00014ef2 <+14>:	87 b0	sub	sp, #28
+   0x00014ef4 <+16>:	07 46	mov	r7, r0
+   0x00014ef6 <+18>:	30 3a	subs	r2, #48	; 0x30
+   0x00014ef8 <+20>:	03 91	str	r1, [sp, #12]
+   0x00014efa <+22>:	09 2a	cmp	r2, #9
+   0x00014efc <+24>:	36 d8	bhi.n	0x14f6c <sparse_map_decoder+136>
+   0x00014efe <+26>:	98 46	mov	r8, r3
+   0x00014f00 <+28>:	f6 f7 5a e8	blx	0xafb8 <__errno_location@plt>
+   0x00014f04 <+32>:	01 25	movs	r5, #1
+   0x00014f06 <+34>:	83 46	mov	r11, r0
+   0x00014f08 <+36>:	10 e0	b.n	0x14f2c <sparse_map_decoder+72>
+   0x00014f0a <+38>:	22 2b	cmp	r3, #34	; 0x22
+   0x00014f0c <+40>:	81 46	mov	r9, r0
+   0x00014f0e <+42>:	8a 46	mov	r10, r1
+   0x00014f10 <+44>:	44 d0	beq.n	0x14f9c <sparse_map_decoder+184>
+   0x00014f12 <+46>:	05 9c	ldr	r4, [sp, #20]
+   0x00014f14 <+48>:	85 f0 01 05	eor.w	r5, r5, #1
+   0x00014f18 <+52>:	66 1c	adds	r6, r4, #1
+   0x00014f1a <+54>:	23 78	ldrb	r3, [r4, #0]
+   0x00014f1c <+56>:	00 2b	cmp	r3, #0
+   0x00014f1e <+58>:	4c d0	beq.n	0x14fba <sparse_map_decoder+214>
+   0x00014f20 <+60>:	2c 2b	cmp	r3, #44	; 0x2c
+   0x00014f22 <+62>:	61 d1	bne.n	0x14fe8 <sparse_map_decoder+260>
+   0x00014f24 <+64>:	63 78	ldrb	r3, [r4, #1]
+   0x00014f26 <+66>:	30 3b	subs	r3, #48	; 0x30
+   0x00014f28 <+68>:	09 2b	cmp	r3, #9
+   0x00014f2a <+70>:	1f d8	bhi.n	0x14f6c <sparse_map_decoder+136>
+   0x00014f2c <+72>:	00 23	movs	r3, #0
+   0x00014f2e <+74>:	cb f8 00 80	str.w	r8, [r11]
+   0x00014f32 <+78>:	30 46	mov	r0, r6
+   0x00014f34 <+80>:	05 a9	add	r1, sp, #20
+   0x00014f36 <+82>:	0a 22	movs	r2, #10
+   0x00014f38 <+84>:	f6 f7 76 e9	blx	0xb228 <__strtoll_internal@plt>
+   0x00014f3c <+88>:	db f8 00 30	ldr.w	r3, [r11]
+   0x00014f40 <+92>:	00 2d	cmp	r5, #0
+   0x00014f42 <+94>:	e2 d1	bne.n	0x14f0a <sparse_map_decoder+38>
+   0x00014f44 <+96>:	22 2b	cmp	r3, #34	; 0x22
+   0x00014f46 <+98>:	29 d0	beq.n	0x14f9c <sparse_map_decoder+184>
+   0x00014f48 <+100>:	d7 f8 c4 30	ldr.w	r3, [r7, #196]	; 0xc4
+   0x00014f4c <+104>:	d7 f8 c8 20	ldr.w	r2, [r7, #200]	; 0xc8
+   0x00014f50 <+108>:	5c 1c	adds	r4, r3, #1
+   0x00014f52 <+110>:	93 42	cmp	r3, r2
+   0x00014f54 <+112>:	58 d2	bcs.n	0x15008 <sparse_map_decoder+292>
+   0x00014f56 <+114>:	d7 f8 cc 20	ldr.w	r2, [r7, #204]	; 0xcc
+   0x00014f5a <+118>:	c7 f8 c4 40	str.w	r4, [r7, #196]	; 0xc4
+   0x00014f5e <+122>:	02 eb 03 13	add.w	r3, r2, r3, lsl #4
+   0x00014f62 <+126>:	83 e8 00 06	stmia.w	r3, {r9, r10}
+   0x00014f66 <+130>:	98 60	str	r0, [r3, #8]
+   0x00014f68 <+132>:	d9 60	str	r1, [r3, #12]
+   0x00014f6a <+134>:	d2 e7	b.n	0x14f12 <sparse_map_decoder+46>
+   0x00014f6c <+136>:	05 22	movs	r2, #5
+   0x00014f6e <+138>:	43 f6 9c 71	movw	r1, #16284	; 0x3f9c
+   0x00014f72 <+142>:	00 20	movs	r0, #0
+   0x00014f74 <+144>:	c0 f2 03 01	movt	r1, #3
+   0x00014f78 <+148>:	f5 f7 4e ee	blx	0xac18 <dcgettext@plt>
+   0x00014f7c <+152>:	02 46	mov	r2, r0
+   0x00014f7e <+154>:	00 20	movs	r0, #0
+   0x00014f80 <+156>:	03 9b	ldr	r3, [sp, #12]
+   0x00014f82 <+158>:	01 46	mov	r1, r0
+   0x00014f84 <+160>:	00 96	str	r6, [sp, #0]
+   0x00014f86 <+162>:	f5 f7 1c ef	blx	0xadc0 <error@plt+4>
+   0x00014f8a <+166>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x00014f8e <+170>:	c0 f2 04 03	movt	r3, #4
+   0x00014f92 <+174>:	02 22	movs	r2, #2
+   0x00014f94 <+176>:	1a 60	str	r2, [r3, #0]
+   0x00014f96 <+178>:	07 b0	add	sp, #28
+   0x00014f98 <+180>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00014f9c <+184>:	03 98	ldr	r0, [sp, #12]
+   0x00014f9e <+186>:	31 46	mov	r1, r6
+   0x00014fa0 <+188>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x00014fa4 <+192>:	6f f0 00 45	mvn.w	r5, #2147483648	; 0x80000000
+   0x00014fa8 <+196>:	00 22	movs	r2, #0
+   0x00014faa <+198>:	00 23	movs	r3, #0
+   0x00014fac <+200>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00014fb0 <+204>:	ff f7 5e ff	bl	0x14e70 <out_of_range_header>
+   0x00014fb4 <+208>:	07 b0	add	sp, #28
+   0x00014fb6 <+210>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00014fba <+214>:	00 2d	cmp	r5, #0
+   0x00014fbc <+216>:	eb d1	bne.n	0x14f96 <sparse_map_decoder+178>
+   0x00014fbe <+218>:	05 22	movs	r2, #5
+   0x00014fc0 <+220>:	44 f2 30 01	movw	r1, #16432	; 0x4030
+   0x00014fc4 <+224>:	28 46	mov	r0, r5
+   0x00014fc6 <+226>:	c0 f2 03 01	movt	r1, #3
+   0x00014fca <+230>:	f5 f7 26 ee	blx	0xac18 <dcgettext@plt>
+   0x00014fce <+234>:	03 9b	ldr	r3, [sp, #12]
+   0x00014fd0 <+236>:	29 46	mov	r1, r5
+   0x00014fd2 <+238>:	02 46	mov	r2, r0
+   0x00014fd4 <+240>:	28 46	mov	r0, r5
+   0x00014fd6 <+242>:	f5 f7 f4 ee	blx	0xadc0 <error@plt+4>
+   0x00014fda <+246>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x00014fde <+250>:	c0 f2 04 03	movt	r3, #4
+   0x00014fe2 <+254>:	02 22	movs	r2, #2
+   0x00014fe4 <+256>:	1a 60	str	r2, [r3, #0]
+   0x00014fe6 <+258>:	d6 e7	b.n	0x14f96 <sparse_map_decoder+178>
+   0x00014fe8 <+260>:	05 22	movs	r2, #5
+   0x00014fea <+262>:	43 f6 f0 71	movw	r1, #16368	; 0x3ff0
+   0x00014fee <+266>:	00 20	movs	r0, #0
+   0x00014ff0 <+268>:	c0 f2 03 01	movt	r1, #3
+   0x00014ff4 <+272>:	f5 f7 10 ee	blx	0xac18 <dcgettext@plt>
+   0x00014ff8 <+276>:	05 9c	ldr	r4, [sp, #20]
+   0x00014ffa <+278>:	03 9b	ldr	r3, [sp, #12]
+   0x00014ffc <+280>:	24 78	ldrb	r4, [r4, #0]
+   0x00014ffe <+282>:	00 94	str	r4, [sp, #0]
+   0x00015000 <+284>:	02 46	mov	r2, r0
+   0x00015002 <+286>:	00 20	movs	r0, #0
+   0x00015004 <+288>:	01 46	mov	r1, r0
+   0x00015006 <+290>:	be e7	b.n	0x14f86 <sparse_map_decoder+162>
+   0x00015008 <+292>:	05 22	movs	r2, #5
+   0x0001500a <+294>:	43 f6 c8 71	movw	r1, #16328	; 0x3fc8
+   0x0001500e <+298>:	28 46	mov	r0, r5
+   0x00015010 <+300>:	c0 f2 03 01	movt	r1, #3
+   0x00015014 <+304>:	f5 f7 00 ee	blx	0xac18 <dcgettext@plt>
+   0x00015018 <+308>:	02 46	mov	r2, r0
+   0x0001501a <+310>:	28 46	mov	r0, r5
+   0x0001501c <+312>:	b0 e7	b.n	0x14f80 <sparse_map_decoder+156>
+End of assembler dump.
+Dump of assembler code for function sparse_minor_coder:
+   0x000159f0 <+0>:	30 b5	push	{r4, r5, lr}
+   0x000159f2 <+2>:	85 b0	sub	sp, #20
+   0x000159f4 <+4>:	d0 f8 c0 00	ldr.w	r0, [r0, #192]	; 0xc0
+   0x000159f8 <+8>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x000159fc <+12>:	02 92	str	r2, [sp, #8]
+   0x000159fe <+14>:	4f f0 ff 35	mov.w	r5, #4294967295
+   0x00015a02 <+18>:	0a 46	mov	r2, r1
+   0x00015a04 <+20>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015a08 <+24>:	00 21	movs	r1, #0
+   0x00015a0a <+26>:	ff f7 73 ff	bl	0x158f4 <code_signed_num>
+   0x00015a0e <+30>:	05 b0	add	sp, #20
+   0x00015a10 <+32>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_minor_decoder:
+   0x00015850 <+0>:	10 b5	push	{r4, lr}
+   0x00015852 <+2>:	84 b0	sub	sp, #16
+   0x00015854 <+4>:	04 46	mov	r4, r0
+   0x00015856 <+6>:	00 23	movs	r3, #0
+   0x00015858 <+8>:	00 91	str	r1, [sp, #0]
+   0x0001585a <+10>:	02 a8	add	r0, sp, #8
+   0x0001585c <+12>:	11 46	mov	r1, r2
+   0x0001585e <+14>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x00015862 <+18>:	ff f7 2f ff	bl	0x156c4 <decode_num>
+   0x00015866 <+22>:	10 b1	cbz	r0, 0x1586e <sparse_minor_decoder+30>
+   0x00015868 <+24>:	02 9b	ldr	r3, [sp, #8]
+   0x0001586a <+26>:	c4 f8 c0 30	str.w	r3, [r4, #192]	; 0xc0
+   0x0001586e <+30>:	04 b0	add	sp, #16
+   0x00015870 <+32>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_numblocks_coder:
+   0x00015a14 <+0>:	30 b5	push	{r4, r5, lr}
+   0x00015a16 <+2>:	85 b0	sub	sp, #20
+   0x00015a18 <+4>:	d0 f8 c4 00	ldr.w	r0, [r0, #196]	; 0xc4
+   0x00015a1c <+8>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x00015a20 <+12>:	02 92	str	r2, [sp, #8]
+   0x00015a22 <+14>:	4f f0 ff 35	mov.w	r5, #4294967295
+   0x00015a26 <+18>:	0a 46	mov	r2, r1
+   0x00015a28 <+20>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015a2c <+24>:	00 21	movs	r1, #0
+   0x00015a2e <+26>:	ff f7 61 ff	bl	0x158f4 <code_signed_num>
+   0x00015a32 <+30>:	05 b0	add	sp, #20
+   0x00015a34 <+32>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_numblocks_decoder:
+   0x000158c0 <+0>:	10 b5	push	{r4, lr}
+   0x000158c2 <+2>:	84 b0	sub	sp, #16
+   0x000158c4 <+4>:	04 46	mov	r4, r0
+   0x000158c6 <+6>:	00 23	movs	r3, #0
+   0x000158c8 <+8>:	00 91	str	r1, [sp, #0]
+   0x000158ca <+10>:	02 a8	add	r0, sp, #8
+   0x000158cc <+12>:	11 46	mov	r1, r2
+   0x000158ce <+14>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x000158d2 <+18>:	ff f7 f7 fe	bl	0x156c4 <decode_num>
+   0x000158d6 <+22>:	50 b1	cbz	r0, 0x158ee <sparse_numblocks_decoder+46>
+   0x000158d8 <+24>:	02 98	ldr	r0, [sp, #8]
+   0x000158da <+26>:	10 21	movs	r1, #16
+   0x000158dc <+28>:	c4 f8 c8 00	str.w	r0, [r4, #200]	; 0xc8
+   0x000158e0 <+32>:	19 f0 ca fd	bl	0x2f478 <xcalloc>
+   0x000158e4 <+36>:	00 23	movs	r3, #0
+   0x000158e6 <+38>:	c4 f8 c4 30	str.w	r3, [r4, #196]	; 0xc4
+   0x000158ea <+42>:	c4 f8 cc 00	str.w	r0, [r4, #204]	; 0xcc
+   0x000158ee <+46>:	04 b0	add	sp, #16
+   0x000158f0 <+48>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_numbytes_coder:
+   0x00015a64 <+0>:	1b 68	ldr	r3, [r3, #0]
+   0x00015a66 <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x00015a68 <+4>:	0e 46	mov	r6, r1
+   0x00015a6a <+6>:	d0 f8 cc 10	ldr.w	r1, [r0, #204]	; 0xcc
+   0x00015a6e <+10>:	84 b0	sub	sp, #16
+   0x00015a70 <+12>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x00015a74 <+16>:	4f f0 ff 35	mov.w	r5, #4294967295
+   0x00015a78 <+20>:	01 eb 03 13	add.w	r3, r1, r3, lsl #4
+   0x00015a7c <+24>:	d3 e9 02 01	ldrd	r0, r1, [r3, #8]
+   0x00015a80 <+28>:	02 92	str	r2, [sp, #8]
+   0x00015a82 <+30>:	32 46	mov	r2, r6
+   0x00015a84 <+32>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015a88 <+36>:	ff f7 34 ff	bl	0x158f4 <code_signed_num>
+   0x00015a8c <+40>:	04 b0	add	sp, #16
+   0x00015a8e <+42>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_numbytes_decoder:
+   0x00015744 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x00015746 <+2>:	84 b0	sub	sp, #16
+   0x00015748 <+4>:	16 46	mov	r6, r2
+   0x0001574a <+6>:	04 46	mov	r4, r0
+   0x0001574c <+8>:	0d 46	mov	r5, r1
+   0x0001574e <+10>:	00 91	str	r1, [sp, #0]
+   0x00015750 <+12>:	02 a8	add	r0, sp, #8
+   0x00015752 <+14>:	11 46	mov	r1, r2
+   0x00015754 <+16>:	6f f0 00 43	mvn.w	r3, #2147483648	; 0x80000000
+   0x00015758 <+20>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x0001575c <+24>:	ff f7 b2 ff	bl	0x156c4 <decode_num>
+   0x00015760 <+28>:	80 b1	cbz	r0, 0x15784 <sparse_numbytes_decoder+64>
+   0x00015762 <+30>:	d4 f8 c4 10	ldr.w	r1, [r4, #196]	; 0xc4
+   0x00015766 <+34>:	d4 f8 c8 30	ldr.w	r3, [r4, #200]	; 0xc8
+   0x0001576a <+38>:	99 42	cmp	r1, r3
+   0x0001576c <+40>:	0c d2	bcs.n	0x15788 <sparse_numbytes_decoder+68>
+   0x0001576e <+42>:	d4 f8 cc 00	ldr.w	r0, [r4, #204]	; 0xcc
+   0x00015772 <+46>:	4d 1c	adds	r5, r1, #1
+   0x00015774 <+48>:	dd e9 02 23	ldrd	r2, r3, [sp, #8]
+   0x00015778 <+52>:	00 eb 01 11	add.w	r1, r0, r1, lsl #4
+   0x0001577c <+56>:	c4 f8 c4 50	str.w	r5, [r4, #196]	; 0xc4
+   0x00015780 <+60>:	c1 e9 02 23	strd	r2, r3, [r1, #8]
+   0x00015784 <+64>:	04 b0	add	sp, #16
+   0x00015786 <+66>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00015788 <+68>:	05 22	movs	r2, #5
+   0x0001578a <+70>:	43 f6 c8 71	movw	r1, #16328	; 0x3fc8
+   0x0001578e <+74>:	00 20	movs	r0, #0
+   0x00015790 <+76>:	c0 f2 03 01	movt	r1, #3
+   0x00015794 <+80>:	f5 f7 40 ea	blx	0xac18 <dcgettext@plt>
+   0x00015798 <+84>:	2b 46	mov	r3, r5
+   0x0001579a <+86>:	00 96	str	r6, [sp, #0]
+   0x0001579c <+88>:	02 46	mov	r2, r0
+   0x0001579e <+90>:	00 20	movs	r0, #0
+   0x000157a0 <+92>:	01 46	mov	r1, r0
+   0x000157a2 <+94>:	f5 f7 0e eb	blx	0xadc0 <error@plt+4>
+   0x000157a6 <+98>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x000157aa <+102>:	c0 f2 04 03	movt	r3, #4
+   0x000157ae <+106>:	02 22	movs	r2, #2
+   0x000157b0 <+108>:	1a 60	str	r2, [r3, #0]
+   0x000157b2 <+110>:	04 b0	add	sp, #16
+   0x000157b4 <+112>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_offset_coder:
+   0x00015a38 <+0>:	1b 68	ldr	r3, [r3, #0]
+   0x00015a3a <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x00015a3c <+4>:	0e 46	mov	r6, r1
+   0x00015a3e <+6>:	d0 f8 cc 10	ldr.w	r1, [r0, #204]	; 0xcc
+   0x00015a42 <+10>:	84 b0	sub	sp, #16
+   0x00015a44 <+12>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x00015a48 <+16>:	4f f0 ff 35	mov.w	r5, #4294967295
+   0x00015a4c <+20>:	01 eb 03 13	add.w	r3, r1, r3, lsl #4
+   0x00015a50 <+24>:	d3 e9 00 01	ldrd	r0, r1, [r3]
+   0x00015a54 <+28>:	02 92	str	r2, [sp, #8]
+   0x00015a56 <+30>:	32 46	mov	r2, r6
+   0x00015a58 <+32>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015a5c <+36>:	ff f7 4a ff	bl	0x158f4 <code_signed_num>
+   0x00015a60 <+40>:	04 b0	add	sp, #16
+   0x00015a62 <+42>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.

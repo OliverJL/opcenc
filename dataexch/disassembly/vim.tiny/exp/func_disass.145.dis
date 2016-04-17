@@ -1,0 +1,1374 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function screen_valid:
+   0x0007012c <+0>:	08 b5	push	{r3, lr}
+   0x0007012e <+2>:	ff f7 15 fc	bl	0x6f95c <screenalloc>
+   0x00070132 <+6>:	04 4b	ldr	r3, [pc, #16]	; (0x70144 <screen_valid+24>)
+   0x00070134 <+8>:	04 4a	ldr	r2, [pc, #16]	; (0x70148 <screen_valid+28>)
+   0x00070136 <+10>:	7b 44	add	r3, pc
+   0x00070138 <+12>:	9b 58	ldr	r3, [r3, r2]
+   0x0007013a <+14>:	18 68	ldr	r0, [r3, #0]
+   0x0007013c <+16>:	00 30	adds	r0, #0
+   0x0007013e <+18>:	18 bf	it	ne
+   0x00070140 <+20>:	01 20	movne	r0, #1
+   0x00070142 <+22>:	08 bd	pop	{r3, pc}
+   0x00070144 <+24>:	62 75	strb	r2, [r4, #21]
+   0x00070146 <+26>:	03 00	movs	r3, r0
+   0x00070148 <+28>:	c4 05	lsls	r4, r0, #23
+   0x0007014a <+30>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function screenalloc:
+   0x0006f95c <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0006f960 <+4>:	a5 b0	sub	sp, #148	; 0x94
+   0x0006f962 <+6>:	df f8 4c 47	ldr.w	r4, [pc, #1868]	; 0x700b0 <screenalloc+1876>
+   0x0006f966 <+10>:	82 46	mov	r10, r0
+   0x0006f968 <+12>:	df f8 48 27	ldr.w	r2, [pc, #1864]	; 0x700b4 <screenalloc+1880>
+   0x0006f96c <+16>:	7c 44	add	r4, pc
+   0x0006f96e <+18>:	df f8 48 37	ldr.w	r3, [pc, #1864]	; 0x700b8 <screenalloc+1884>
+   0x0006f972 <+22>:	a2 58	ldr	r2, [r4, r2]
+   0x0006f974 <+24>:	01 92	str	r2, [sp, #4]
+   0x0006f976 <+26>:	12 68	ldr	r2, [r2, #0]
+   0x0006f978 <+28>:	23 92	str	r2, [sp, #140]	; 0x8c
+   0x0006f97a <+30>:	e3 58	ldr	r3, [r4, r3]
+   0x0006f97c <+32>:	19 68	ldr	r1, [r3, #0]
+   0x0006f97e <+34>:	02 93	str	r3, [sp, #8]
+   0x0006f980 <+36>:	00 29	cmp	r1, #0
+   0x0006f982 <+38>:	00 f0 ea 80	beq.w	0x6fb5a <screenalloc+510>
+   0x0006f986 <+42>:	df f8 34 27	ldr.w	r2, [pc, #1844]	; 0x700bc <screenalloc+1888>
+   0x0006f98a <+46>:	df f8 34 37	ldr.w	r3, [pc, #1844]	; 0x700c0 <screenalloc+1892>
+   0x0006f98e <+50>:	a5 58	ldr	r5, [r4, r2]
+   0x0006f990 <+52>:	e6 58	ldr	r6, [r4, r3]
+   0x0006f992 <+54>:	2b 68	ldr	r3, [r5, #0]
+   0x0006f994 <+56>:	32 68	ldr	r2, [r6, #0]
+   0x0006f996 <+58>:	93 42	cmp	r3, r2
+   0x0006f998 <+60>:	1e d0	beq.n	0x6f9d8 <screenalloc+124>
+   0x0006f99a <+62>:	a3 b1	cbz	r3, 0x6f9c6 <screenalloc+106>
+   0x0006f99c <+64>:	df f8 24 37	ldr.w	r3, [pc, #1828]	; 0x700c4 <screenalloc+1896>
+   0x0006f9a0 <+68>:	54 f8 03 b0	ldr.w	r11, [r4, r3]
+   0x0006f9a4 <+72>:	db f8 00 30	ldr.w	r3, [r11]
+   0x0006f9a8 <+76>:	6b b1	cbz	r3, 0x6f9c6 <screenalloc+106>
+   0x0006f9aa <+78>:	df f8 1c 37	ldr.w	r3, [pc, #1820]	; 0x700c8 <screenalloc+1900>
+   0x0006f9ae <+82>:	e3 58	ldr	r3, [r4, r3]
+   0x0006f9b0 <+84>:	1b 68	ldr	r3, [r3, #0]
+   0x0006f9b2 <+86>:	00 29	cmp	r1, #0
+   0x0006f9b4 <+88>:	08 bf	it	eq
+   0x0006f9b6 <+90>:	00 2b	cmpeq	r3, #0
+   0x0006f9b8 <+92>:	05 d0	beq.n	0x6f9c6 <screenalloc+106>
+   0x0006f9ba <+94>:	df f8 10 37	ldr.w	r3, [pc, #1808]	; 0x700cc <screenalloc+1904>
+   0x0006f9be <+98>:	7b 44	add	r3, pc
+   0x0006f9c0 <+100>:	da 68	ldr	r2, [r3, #12]
+   0x0006f9c2 <+102>:	00 2a	cmp	r2, #0
+   0x0006f9c4 <+104>:	42 d0	beq.n	0x6fa4c <screenalloc+240>
+   0x0006f9c6 <+106>:	01 9b	ldr	r3, [sp, #4]
+   0x0006f9c8 <+108>:	23 9a	ldr	r2, [sp, #140]	; 0x8c
+   0x0006f9ca <+110>:	1b 68	ldr	r3, [r3, #0]
+   0x0006f9cc <+112>:	9a 42	cmp	r2, r3
+   0x0006f9ce <+114>:	40 f0 6c 83	bne.w	0x700aa <screenalloc+1870>
+   0x0006f9d2 <+118>:	25 b0	add	sp, #148	; 0x94
+   0x0006f9d4 <+120>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0006f9d8 <+124>:	df f8 f4 06	ldr.w	r0, [pc, #1780]	; 0x700d0 <screenalloc+1908>
+   0x0006f9dc <+128>:	df f8 e4 26	ldr.w	r2, [pc, #1764]	; 0x700c4 <screenalloc+1896>
+   0x0006f9e0 <+132>:	54 f8 00 80	ldr.w	r8, [r4, r0]
+   0x0006f9e4 <+136>:	a2 58	ldr	r2, [r4, r2]
+   0x0006f9e6 <+138>:	10 68	ldr	r0, [r2, #0]
+   0x0006f9e8 <+140>:	d8 f8 00 20	ldr.w	r2, [r8]
+   0x0006f9ec <+144>:	90 42	cmp	r0, r2
+   0x0006f9ee <+146>:	d4 d1	bne.n	0x6f99a <screenalloc+62>
+   0x0006f9f0 <+148>:	df f8 e0 06	ldr.w	r0, [pc, #1760]	; 0x700d4 <screenalloc+1912>
+   0x0006f9f4 <+152>:	df f8 e0 26	ldr.w	r2, [pc, #1760]	; 0x700d8 <screenalloc+1916>
+   0x0006f9f8 <+156>:	27 58	ldr	r7, [r4, r0]
+   0x0006f9fa <+158>:	a0 58	ldr	r0, [r4, r2]
+   0x0006f9fc <+160>:	3a 68	ldr	r2, [r7, #0]
+   0x0006f9fe <+162>:	00 68	ldr	r0, [r0, #0]
+   0x0006fa00 <+164>:	00 32	adds	r2, #0
+   0x0006fa02 <+166>:	18 bf	it	ne
+   0x0006fa04 <+168>:	01 22	movne	r2, #1
+   0x0006fa06 <+170>:	82 42	cmp	r2, r0
+   0x0006fa08 <+172>:	c7 d1	bne.n	0x6f99a <screenalloc+62>
+   0x0006fa0a <+174>:	df f8 d0 06	ldr.w	r0, [pc, #1744]	; 0x700dc <screenalloc+1920>
+   0x0006fa0e <+178>:	42 f2 cc 67	movw	r7, #9932	; 0x26cc
+   0x0006fa12 <+182>:	df f8 cc 26	ldr.w	r2, [pc, #1740]	; 0x700e0 <screenalloc+1924>
+   0x0006fa16 <+186>:	26 58	ldr	r6, [r4, r0]
+   0x0006fa18 <+188>:	a2 58	ldr	r2, [r4, r2]
+   0x0006fa1a <+190>:	30 68	ldr	r0, [r6, #0]
+   0x0006fa1c <+192>:	12 68	ldr	r2, [r2, #0]
+   0x0006fa1e <+194>:	c0 1b	subs	r0, r0, r7
+   0x0006fa20 <+196>:	18 bf	it	ne
+   0x0006fa22 <+198>:	01 20	movne	r0, #1
+   0x0006fa24 <+200>:	00 32	adds	r2, #0
+   0x0006fa26 <+202>:	18 bf	it	ne
+   0x0006fa28 <+204>:	01 22	movne	r2, #1
+   0x0006fa2a <+206>:	90 42	cmp	r0, r2
+   0x0006fa2c <+208>:	b5 d0	beq.n	0x6f99a <screenalloc+62>
+   0x0006fa2e <+210>:	df f8 b4 06	ldr.w	r0, [pc, #1716]	; 0x700e4 <screenalloc+1928>
+   0x0006fa32 <+214>:	df f8 b4 26	ldr.w	r2, [pc, #1716]	; 0x700e8 <screenalloc+1932>
+   0x0006fa36 <+218>:	54 f8 00 90	ldr.w	r9, [r4, r0]
+   0x0006fa3a <+222>:	a2 58	ldr	r2, [r4, r2]
+   0x0006fa3c <+224>:	d9 f8 00 00	ldr.w	r0, [r9]
+   0x0006fa40 <+228>:	12 68	ldr	r2, [r2, #0]
+   0x0006fa42 <+230>:	90 42	cmp	r0, r2
+   0x0006fa44 <+232>:	bf d0	beq.n	0x6f9c6 <screenalloc+106>
+   0x0006fa46 <+234>:	00 2b	cmp	r3, #0
+   0x0006fa48 <+236>:	bd d0	beq.n	0x6f9c6 <screenalloc+106>
+   0x0006fa4a <+238>:	a7 e7	b.n	0x6f99c <screenalloc+64>
+   0x0006fa4c <+240>:	df f8 9c 26	ldr.w	r2, [pc, #1692]	; 0x700ec <screenalloc+1936>
+   0x0006fa50 <+244>:	01 21	movs	r1, #1
+   0x0006fa52 <+246>:	d9 60	str	r1, [r3, #12]
+   0x0006fa54 <+248>:	a3 58	ldr	r3, [r4, r2]
+   0x0006fa56 <+250>:	19 46	mov	r1, r3
+   0x0006fa58 <+252>:	10 93	str	r3, [sp, #64]	; 0x40
+   0x0006fa5a <+254>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fa5c <+256>:	01 33	adds	r3, #1
+   0x0006fa5e <+258>:	0b 60	str	r3, [r1, #0]
+   0x0006fa60 <+260>:	0d f0 a0 fe	bl	0x7d7a4 <win_new_shellsize>
+   0x0006fa64 <+264>:	e1 f7 e4 fe	bl	0x51830 <comp_col>
+   0x0006fa68 <+268>:	df f8 84 36	ldr.w	r3, [pc, #1668]	; 0x700f0 <screenalloc+1940>
+   0x0006fa6c <+272>:	54 f8 03 80	ldr.w	r8, [r4, r3]
+   0x0006fa70 <+276>:	d8 f8 00 70	ldr.w	r7, [r8]
+   0x0006fa74 <+280>:	97 b1	cbz	r7, 0x6fa9c <screenalloc+320>
+   0x0006fa76 <+282>:	df f8 7c 36	ldr.w	r3, [pc, #1660]	; 0x700f4 <screenalloc+1944>
+   0x0006fa7a <+286>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fa7c <+288>:	99 46	mov	r9, r3
+   0x0006fa7e <+290>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fa82 <+294>:	bb 42	cmp	r3, r7
+   0x0006fa84 <+296>:	71 d0	beq.n	0x6fb6a <screenalloc+526>
+   0x0006fa86 <+298>:	3e 69	ldr	r6, [r7, #16]
+   0x0006fa88 <+300>:	2e b1	cbz	r6, 0x6fa96 <screenalloc+314>
+   0x0006fa8a <+302>:	30 46	mov	r0, r6
+   0x0006fa8c <+304>:	12 f0 82 ff	bl	0x82994 <win_free_lsize>
+   0x0006fa90 <+308>:	b6 68	ldr	r6, [r6, #8]
+   0x0006fa92 <+310>:	00 2e	cmp	r6, #0
+   0x0006fa94 <+312>:	f9 d1	bne.n	0x6fa8a <screenalloc+302>
+   0x0006fa96 <+314>:	3f 68	ldr	r7, [r7, #0]
+   0x0006fa98 <+316>:	00 2f	cmp	r7, #0
+   0x0006fa9a <+318>:	f0 d1	bne.n	0x6fa7e <screenalloc+290>
+   0x0006fa9c <+320>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fa9e <+322>:	1d aa	add	r2, sp, #116	; 0x74
+   0x0006faa0 <+324>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006faa4 <+328>:	00 21	movs	r1, #0
+   0x0006faa6 <+330>:	17 46	mov	r7, r2
+   0x0006faa8 <+332>:	0e 46	mov	r6, r1
+   0x0006faaa <+334>:	0a 92	str	r2, [sp, #40]	; 0x28
+   0x0006faac <+336>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006fab0 <+340>:	ce f7 0a fd	bl	0x3e4c8 <lalloc>
+   0x0006fab4 <+344>:	df f8 20 36	ldr.w	r3, [pc, #1568]	; 0x700d8 <screenalloc+1916>
+   0x0006fab8 <+348>:	7e 60	str	r6, [r7, #4]
+   0x0006faba <+350>:	1d 96	str	r6, [sp, #116]	; 0x74
+   0x0006fabc <+352>:	be 60	str	r6, [r7, #8]
+   0x0006fabe <+354>:	fe 60	str	r6, [r7, #12]
+   0x0006fac0 <+356>:	3e 61	str	r6, [r7, #16]
+   0x0006fac2 <+358>:	7e 61	str	r6, [r7, #20]
+   0x0006fac4 <+360>:	03 90	str	r0, [sp, #12]
+   0x0006fac6 <+362>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fac8 <+364>:	1a 68	ldr	r2, [r3, #0]
+   0x0006faca <+366>:	0f 93	str	r3, [sp, #60]	; 0x3c
+   0x0006facc <+368>:	00 2a	cmp	r2, #0
+   0x0006face <+370>:	51 d1	bne.n	0x6fb74 <screenalloc+536>
+   0x0006fad0 <+372>:	df f8 10 36	ldr.w	r3, [pc, #1552]	; 0x700e4 <screenalloc+1928>
+   0x0006fad4 <+376>:	06 92	str	r2, [sp, #24]
+   0x0006fad6 <+378>:	54 f8 03 90	ldr.w	r9, [r4, r3]
+   0x0006fada <+382>:	df f8 00 36	ldr.w	r3, [pc, #1536]	; 0x700dc <screenalloc+1920>
+   0x0006fade <+386>:	42 f2 cc 62	movw	r2, #9932	; 0x26cc
+   0x0006fae2 <+390>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fae4 <+392>:	11 93	str	r3, [sp, #68]	; 0x44
+   0x0006fae6 <+394>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fae8 <+396>:	93 42	cmp	r3, r2
+   0x0006faea <+398>:	1c bf	itt	ne
+   0x0006faec <+400>:	00 23	movne	r3, #0
+   0x0006faee <+402>:	04 93	strne	r3, [sp, #16]
+   0x0006faf0 <+404>:	00 f0 43 82	beq.w	0x6ff7a <screenalloc+1566>
+   0x0006faf4 <+408>:	2b 68	ldr	r3, [r5, #0]
+   0x0006faf6 <+410>:	00 21	movs	r1, #0
+   0x0006faf8 <+412>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fafc <+416>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006fb00 <+420>:	ce f7 e2 fc	bl	0x3e4c8 <lalloc>
+   0x0006fb04 <+424>:	00 21	movs	r1, #0
+   0x0006fb06 <+426>:	05 90	str	r0, [sp, #20]
+   0x0006fb08 <+428>:	28 68	ldr	r0, [r5, #0]
+   0x0006fb0a <+430>:	80 00	lsls	r0, r0, #2
+   0x0006fb0c <+432>:	ce f7 dc fc	bl	0x3e4c8 <lalloc>
+   0x0006fb10 <+436>:	00 21	movs	r1, #0
+   0x0006fb12 <+438>:	07 90	str	r0, [sp, #28]
+   0x0006fb14 <+440>:	28 68	ldr	r0, [r5, #0]
+   0x0006fb16 <+442>:	ce f7 d7 fc	bl	0x3e4c8 <lalloc>
+   0x0006fb1a <+446>:	00 21	movs	r1, #0
+   0x0006fb1c <+448>:	08 90	str	r0, [sp, #32]
+   0x0006fb1e <+450>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fb22 <+454>:	40 00	lsls	r0, r0, #1
+   0x0006fb24 <+456>:	ce f7 d0 fc	bl	0x3e4c8 <lalloc>
+   0x0006fb28 <+460>:	d8 f8 00 60	ldr.w	r6, [r8]
+   0x0006fb2c <+464>:	09 90	str	r0, [sp, #36]	; 0x24
+   0x0006fb2e <+466>:	00 2e	cmp	r6, #0
+   0x0006fb30 <+468>:	47 d0	beq.n	0x6fbc2 <screenalloc+614>
+   0x0006fb32 <+470>:	df f8 c0 35	ldr.w	r3, [pc, #1472]	; 0x700f4 <screenalloc+1944>
+   0x0006fb36 <+474>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fb38 <+476>:	98 46	mov	r8, r3
+   0x0006fb3a <+478>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0006fb3e <+482>:	b3 42	cmp	r3, r6
+   0x0006fb40 <+484>:	00 f0 17 82	beq.w	0x6ff72 <screenalloc+1558>
+   0x0006fb44 <+488>:	37 69	ldr	r7, [r6, #16]
+   0x0006fb46 <+490>:	00 2f	cmp	r7, #0
+   0x0006fb48 <+492>:	38 d0	beq.n	0x6fbbc <screenalloc+608>
+   0x0006fb4a <+494>:	38 46	mov	r0, r7
+   0x0006fb4c <+496>:	12 f0 0a ff	bl	0x82964 <win_alloc_lines>
+   0x0006fb50 <+500>:	00 28	cmp	r0, #0
+   0x0006fb52 <+502>:	00 f0 06 81	beq.w	0x6fd62 <screenalloc+1030>
+   0x0006fb56 <+506>:	bf 68	ldr	r7, [r7, #8]
+   0x0006fb58 <+508>:	f5 e7	b.n	0x6fb46 <screenalloc+490>
+   0x0006fb5a <+510>:	df f8 60 35	ldr.w	r3, [pc, #1376]	; 0x700bc <screenalloc+1888>
+   0x0006fb5e <+514>:	e5 58	ldr	r5, [r4, r3]
+   0x0006fb60 <+516>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fb62 <+518>:	00 2b	cmp	r3, #0
+   0x0006fb64 <+520>:	3f f4 2f af	beq.w	0x6f9c6 <screenalloc+106>
+   0x0006fb68 <+524>:	18 e7	b.n	0x6f99c <screenalloc+64>
+   0x0006fb6a <+526>:	df f8 8c 35	ldr.w	r3, [pc, #1420]	; 0x700f8 <screenalloc+1948>
+   0x0006fb6e <+530>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fb70 <+532>:	1e 68	ldr	r6, [r3, #0]
+   0x0006fb72 <+534>:	89 e7	b.n	0x6fa88 <screenalloc+300>
+   0x0006fb74 <+536>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fb76 <+538>:	31 46	mov	r1, r6
+   0x0006fb78 <+540>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fb7c <+544>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006fb80 <+548>:	80 00	lsls	r0, r0, #2
+   0x0006fb82 <+550>:	ce f7 a1 fc	bl	0x3e4c8 <lalloc>
+   0x0006fb86 <+554>:	df f8 5c 35	ldr.w	r3, [pc, #1372]	; 0x700e4 <screenalloc+1928>
+   0x0006fb8a <+558>:	06 90	str	r0, [sp, #24]
+   0x0006fb8c <+560>:	54 f8 03 90	ldr.w	r9, [r4, r3]
+   0x0006fb90 <+564>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fb94 <+568>:	00 2b	cmp	r3, #0
+   0x0006fb96 <+570>:	a0 dd	ble.n	0x6fada <screenalloc+382>
+   0x0006fb98 <+572>:	0a 9f	ldr	r7, [sp, #40]	; 0x28
+   0x0006fb9a <+574>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fb9c <+576>:	00 21	movs	r1, #0
+   0x0006fb9e <+578>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fba2 <+582>:	01 36	adds	r6, #1
+   0x0006fba4 <+584>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006fba8 <+588>:	80 00	lsls	r0, r0, #2
+   0x0006fbaa <+590>:	cf f7 67 fa	bl	0x3f07c <lalloc_clear>
+   0x0006fbae <+594>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fbb2 <+598>:	b3 42	cmp	r3, r6
+   0x0006fbb4 <+600>:	47 f8 04 0b	str.w	r0, [r7], #4
+   0x0006fbb8 <+604>:	ef dc	bgt.n	0x6fb9a <screenalloc+574>
+   0x0006fbba <+606>:	8e e7	b.n	0x6fada <screenalloc+382>
+   0x0006fbbc <+608>:	36 68	ldr	r6, [r6, #0]
+   0x0006fbbe <+610>:	00 2e	cmp	r6, #0
+   0x0006fbc0 <+612>:	bb d1	bne.n	0x6fb3a <screenalloc+478>
+   0x0006fbc2 <+614>:	00 21	movs	r1, #0
+   0x0006fbc4 <+616>:	d9 f8 00 60	ldr.w	r6, [r9]
+   0x0006fbc8 <+620>:	00 2e	cmp	r6, #0
+   0x0006fbca <+622>:	40 f3 38 82	ble.w	0x7003e <screenalloc+1762>
+   0x0006fbce <+626>:	1d 9b	ldr	r3, [sp, #116]	; 0x74
+   0x0006fbd0 <+628>:	43 b1	cbz	r3, 0x6fbe4 <screenalloc+648>
+   0x0006fbd2 <+630>:	0a 9a	ldr	r2, [sp, #40]	; 0x28
+   0x0006fbd4 <+632>:	00 23	movs	r3, #0
+   0x0006fbd6 <+634>:	02 e0	b.n	0x6fbde <screenalloc+642>
+   0x0006fbd8 <+636>:	52 f8 04 0f	ldr.w	r0, [r2, #4]!
+   0x0006fbdc <+640>:	10 b1	cbz	r0, 0x6fbe4 <screenalloc+648>
+   0x0006fbde <+642>:	01 33	adds	r3, #1
+   0x0006fbe0 <+644>:	b3 42	cmp	r3, r6
+   0x0006fbe2 <+646>:	f9 d1	bne.n	0x6fbd8 <screenalloc+636>
+   0x0006fbe4 <+648>:	03 9a	ldr	r2, [sp, #12]
+   0x0006fbe6 <+650>:	7a b1	cbz	r2, 0x6fc08 <screenalloc+684>
+   0x0006fbe8 <+652>:	0f 9a	ldr	r2, [sp, #60]	; 0x3c
+   0x0006fbea <+654>:	12 68	ldr	r2, [r2, #0]
+   0x0006fbec <+656>:	00 2a	cmp	r2, #0
+   0x0006fbee <+658>:	00 f0 ba 80	beq.w	0x6fd66 <screenalloc+1034>
+   0x0006fbf2 <+662>:	9b 1b	subs	r3, r3, r6
+   0x0006fbf4 <+664>:	06 9a	ldr	r2, [sp, #24]
+   0x0006fbf6 <+666>:	18 bf	it	ne
+   0x0006fbf8 <+668>:	01 23	movne	r3, #1
+   0x0006fbfa <+670>:	00 2a	cmp	r2, #0
+   0x0006fbfc <+672>:	08 bf	it	eq
+   0x0006fbfe <+674>:	43 f0 01 03	orreq.w	r3, r3, #1
+   0x0006fc02 <+678>:	00 2b	cmp	r3, #0
+   0x0006fc04 <+680>:	00 f0 af 80	beq.w	0x6fd66 <screenalloc+1034>
+   0x0006fc08 <+684>:	02 9b	ldr	r3, [sp, #8]
+   0x0006fc0a <+686>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fc0c <+688>:	00 2b	cmp	r3, #0
+   0x0006fc0e <+690>:	00 f0 a9 81	beq.w	0x6ff64 <screenalloc+1544>
+   0x0006fc12 <+694>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fc14 <+696>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fc18 <+700>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006fc1c <+704>:	cf f7 8a fb	bl	0x3f334 <do_outofmem_msg>
+   0x0006fc20 <+708>:	df f8 d8 34	ldr.w	r3, [pc, #1240]	; 0x700fc <screenalloc+1952>
+   0x0006fc24 <+712>:	01 22	movs	r2, #1
+   0x0006fc26 <+714>:	7b 44	add	r3, pc
+   0x0006fc28 <+716>:	1a 61	str	r2, [r3, #16]
+   0x0006fc2a <+718>:	03 98	ldr	r0, [sp, #12]
+   0x0006fc2c <+720>:	cd f7 ba fb	bl	0x3d3a4 <vim_free>
+   0x0006fc30 <+724>:	06 98	ldr	r0, [sp, #24]
+   0x0006fc32 <+726>:	cd f7 b7 fb	bl	0x3d3a4 <vim_free>
+   0x0006fc36 <+730>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fc3a <+734>:	00 2b	cmp	r3, #0
+   0x0006fc3c <+736>:	c2 bf	ittt	gt
+   0x0006fc3e <+738>:	0d f1 70 08	addgt.w	r8, sp, #112	; 0x70
+   0x0006fc42 <+742>:	00 27	movgt	r7, #0
+   0x0006fc44 <+744>:	3e 46	movgt	r6, r7
+   0x0006fc46 <+746>:	0a dd	ble.n	0x6fc5e <screenalloc+770>
+   0x0006fc48 <+748>:	58 f8 04 0f	ldr.w	r0, [r8, #4]!
+   0x0006fc4c <+752>:	01 37	adds	r7, #1
+   0x0006fc4e <+754>:	cd f7 a9 fb	bl	0x3d3a4 <vim_free>
+   0x0006fc52 <+758>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fc56 <+762>:	bb 42	cmp	r3, r7
+   0x0006fc58 <+764>:	c8 f8 00 60	str.w	r6, [r8]
+   0x0006fc5c <+768>:	f4 dc	bgt.n	0x6fc48 <screenalloc+748>
+   0x0006fc5e <+770>:	04 98	ldr	r0, [sp, #16]
+   0x0006fc60 <+772>:	cd f7 a0 fb	bl	0x3d3a4 <vim_free>
+   0x0006fc64 <+776>:	05 98	ldr	r0, [sp, #20]
+   0x0006fc66 <+778>:	cd f7 9d fb	bl	0x3d3a4 <vim_free>
+   0x0006fc6a <+782>:	07 98	ldr	r0, [sp, #28]
+   0x0006fc6c <+784>:	cd f7 9a fb	bl	0x3d3a4 <vim_free>
+   0x0006fc70 <+788>:	08 98	ldr	r0, [sp, #32]
+   0x0006fc72 <+790>:	cd f7 97 fb	bl	0x3d3a4 <vim_free>
+   0x0006fc76 <+794>:	09 98	ldr	r0, [sp, #36]	; 0x24
+   0x0006fc78 <+796>:	cd f7 94 fb	bl	0x3d3a4 <vim_free>
+   0x0006fc7c <+800>:	df f8 40 64	ldr.w	r6, [pc, #1088]	; 0x700c0 <screenalloc+1892>
+   0x0006fc80 <+804>:	df f8 5c 04	ldr.w	r0, [pc, #1116]	; 0x700e0 <screenalloc+1924>
+   0x0006fc84 <+808>:	00 23	movs	r3, #0
+   0x0006fc86 <+810>:	df f8 48 e4	ldr.w	lr, [pc, #1096]	; 0x700d0 <screenalloc+1908>
+   0x0006fc8a <+814>:	09 93	str	r3, [sp, #36]	; 0x24
+   0x0006fc8c <+816>:	08 93	str	r3, [sp, #32]
+   0x0006fc8e <+818>:	07 93	str	r3, [sp, #28]
+   0x0006fc90 <+820>:	05 93	str	r3, [sp, #20]
+   0x0006fc92 <+822>:	04 93	str	r3, [sp, #16]
+   0x0006fc94 <+824>:	06 93	str	r3, [sp, #24]
+   0x0006fc96 <+826>:	df f8 3c 74	ldr.w	r7, [pc, #1084]	; 0x700d4 <screenalloc+1912>
+   0x0006fc9a <+830>:	a6 59	ldr	r6, [r4, r6]
+   0x0006fc9c <+832>:	df f8 48 14	ldr.w	r1, [pc, #1096]	; 0x700e8 <screenalloc+1932>
+   0x0006fca0 <+836>:	03 93	str	r3, [sp, #12]
+   0x0006fca2 <+838>:	23 58	ldr	r3, [r4, r0]
+   0x0006fca4 <+840>:	54 f8 0e 80	ldr.w	r8, [r4, lr]
+   0x0006fca8 <+844>:	e7 59	ldr	r7, [r4, r7]
+   0x0006fcaa <+846>:	df f8 54 24	ldr.w	r2, [pc, #1108]	; 0x70100 <screenalloc+1956>
+   0x0006fcae <+850>:	0e 93	str	r3, [sp, #56]	; 0x38
+   0x0006fcb0 <+852>:	63 58	ldr	r3, [r4, r1]
+   0x0006fcb2 <+854>:	df f8 50 c4	ldr.w	r12, [pc, #1104]	; 0x70104 <screenalloc+1960>
+   0x0006fcb6 <+858>:	0c 93	str	r3, [sp, #48]	; 0x30
+   0x0006fcb8 <+860>:	a3 58	ldr	r3, [r4, r2]
+   0x0006fcba <+862>:	0b 93	str	r3, [sp, #44]	; 0x2c
+   0x0006fcbc <+864>:	54 f8 0c 30	ldr.w	r3, [r4, r12]
+   0x0006fcc0 <+868>:	0d 93	str	r3, [sp, #52]	; 0x34
+   0x0006fcc2 <+870>:	ff f7 fd fd	bl	0x6f8c0 <free_screenlines>
+   0x0006fcc6 <+874>:	02 9b	ldr	r3, [sp, #8]
+   0x0006fcc8 <+876>:	d9 f8 00 00	ldr.w	r0, [r9]
+   0x0006fccc <+880>:	1a 46	mov	r2, r3
+   0x0006fcce <+882>:	03 9b	ldr	r3, [sp, #12]
+   0x0006fcd0 <+884>:	00 28	cmp	r0, #0
+   0x0006fcd2 <+886>:	13 60	str	r3, [r2, #0]
+   0x0006fcd4 <+888>:	06 9b	ldr	r3, [sp, #24]
+   0x0006fcd6 <+890>:	3b 60	str	r3, [r7, #0]
+   0x0006fcd8 <+892>:	0c dd	ble.n	0x6fcf4 <screenalloc+920>
+   0x0006fcda <+894>:	df f8 2c 24	ldr.w	r2, [pc, #1068]	; 0x70108 <screenalloc+1964>
+   0x0006fcde <+898>:	0a 9b	ldr	r3, [sp, #40]	; 0x28
+   0x0006fce0 <+900>:	a2 58	ldr	r2, [r4, r2]
+   0x0006fce2 <+902>:	03 eb 80 01	add.w	r1, r3, r0, lsl #2
+   0x0006fce6 <+906>:	04 3a	subs	r2, #4
+   0x0006fce8 <+908>:	53 f8 04 7b	ldr.w	r7, [r3], #4
+   0x0006fcec <+912>:	99 42	cmp	r1, r3
+   0x0006fcee <+914>:	42 f8 04 7f	str.w	r7, [r2, #4]!
+   0x0006fcf2 <+918>:	f9 d1	bne.n	0x6fce8 <screenalloc+908>
+   0x0006fcf4 <+920>:	0c 9a	ldr	r2, [sp, #48]	; 0x30
+   0x0006fcf6 <+922>:	0e 99	ldr	r1, [sp, #56]	; 0x38
+   0x0006fcf8 <+924>:	df f8 10 34	ldr.w	r3, [pc, #1040]	; 0x7010c <screenalloc+1968>
+   0x0006fcfc <+928>:	10 60	str	r0, [r2, #0]
+   0x0006fcfe <+930>:	32 22	movs	r2, #50	; 0x32
+   0x0006fd00 <+932>:	08 46	mov	r0, r1
+   0x0006fd02 <+934>:	04 99	ldr	r1, [sp, #16]
+   0x0006fd04 <+936>:	08 9f	ldr	r7, [sp, #32]
+   0x0006fd06 <+938>:	2d 68	ldr	r5, [r5, #0]
+   0x0006fd08 <+940>:	01 60	str	r1, [r0, #0]
+   0x0006fd0a <+942>:	0d 99	ldr	r1, [sp, #52]	; 0x34
+   0x0006fd0c <+944>:	08 46	mov	r0, r1
+   0x0006fd0e <+946>:	05 99	ldr	r1, [sp, #20]
+   0x0006fd10 <+948>:	01 60	str	r1, [r0, #0]
+   0x0006fd12 <+950>:	0b 99	ldr	r1, [sp, #44]	; 0x2c
+   0x0006fd14 <+952>:	08 46	mov	r0, r1
+   0x0006fd16 <+954>:	07 99	ldr	r1, [sp, #28]
+   0x0006fd18 <+956>:	01 60	str	r1, [r0, #0]
+   0x0006fd1a <+958>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006fd1e <+962>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fd20 <+964>:	fb 49	ldr	r1, [pc, #1004]	; (0x70110 <screenalloc+1972>)
+   0x0006fd22 <+966>:	1f 60	str	r7, [r3, #0]
+   0x0006fd24 <+968>:	fb 4b	ldr	r3, [pc, #1004]	; (0x70114 <screenalloc+1976>)
+   0x0006fd26 <+970>:	61 58	ldr	r1, [r4, r1]
+   0x0006fd28 <+972>:	c8 f8 00 00	str.w	r0, [r8]
+   0x0006fd2c <+976>:	09 98	ldr	r0, [sp, #36]	; 0x24
+   0x0006fd2e <+978>:	35 60	str	r5, [r6, #0]
+   0x0006fd30 <+980>:	08 60	str	r0, [r1, #0]
+   0x0006fd32 <+982>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fd34 <+984>:	1a 60	str	r2, [r3, #0]
+   0x0006fd36 <+986>:	ba f1 00 0f	cmp.w	r10, #0
+   0x0006fd3a <+990>:	09 d0	beq.n	0x6fd50 <screenalloc+1012>
+   0x0006fd3c <+992>:	f6 4b	ldr	r3, [pc, #984]	; (0x70118 <screenalloc+1980>)
+   0x0006fd3e <+994>:	03 9a	ldr	r2, [sp, #12]
+   0x0006fd40 <+996>:	e3 58	ldr	r3, [r4, r3]
+   0x0006fd42 <+998>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fd44 <+1000>:	00 2a	cmp	r2, #0
+   0x0006fd46 <+1002>:	18 bf	it	ne
+   0x0006fd48 <+1004>:	02 2b	cmpne	r3, #2
+   0x0006fd4a <+1006>:	01 d0	beq.n	0x6fd50 <screenalloc+1012>
+   0x0006fd4c <+1008>:	ff f7 78 fc	bl	0x6f640 <screenclear2>
+   0x0006fd50 <+1012>:	10 98	ldr	r0, [sp, #64]	; 0x40
+   0x0006fd52 <+1014>:	00 21	movs	r1, #0
+   0x0006fd54 <+1016>:	f1 4a	ldr	r2, [pc, #964]	; (0x7011c <screenalloc+1984>)
+   0x0006fd56 <+1018>:	03 68	ldr	r3, [r0, #0]
+   0x0006fd58 <+1020>:	7a 44	add	r2, pc
+   0x0006fd5a <+1022>:	01 3b	subs	r3, #1
+   0x0006fd5c <+1024>:	d1 60	str	r1, [r2, #12]
+   0x0006fd5e <+1026>:	03 60	str	r3, [r0, #0]
+   0x0006fd60 <+1028>:	31 e6	b.n	0x6f9c6 <screenalloc+106>
+   0x0006fd62 <+1030>:	01 21	movs	r1, #1
+   0x0006fd64 <+1032>:	2e e7	b.n	0x6fbc4 <screenalloc+616>
+   0x0006fd66 <+1034>:	11 9b	ldr	r3, [sp, #68]	; 0x44
+   0x0006fd68 <+1036>:	04 98	ldr	r0, [sp, #16]
+   0x0006fd6a <+1038>:	1a 68	ldr	r2, [r3, #0]
+   0x0006fd6c <+1040>:	42 f2 cc 63	movw	r3, #9932	; 0x26cc
+   0x0006fd70 <+1044>:	9a 42	cmp	r2, r3
+   0x0006fd72 <+1046>:	08 bf	it	eq
+   0x0006fd74 <+1048>:	00 28	cmpeq	r0, #0
+   0x0006fd76 <+1050>:	3f f4 47 af	beq.w	0x6fc08 <screenalloc+684>
+   0x0006fd7a <+1054>:	05 9b	ldr	r3, [sp, #20]
+   0x0006fd7c <+1056>:	07 9a	ldr	r2, [sp, #28]
+   0x0006fd7e <+1058>:	00 2a	cmp	r2, #0
+   0x0006fd80 <+1060>:	18 bf	it	ne
+   0x0006fd82 <+1062>:	00 2b	cmpne	r3, #0
+   0x0006fd84 <+1064>:	3f f4 40 af	beq.w	0x6fc08 <screenalloc+684>
+   0x0006fd88 <+1068>:	08 9b	ldr	r3, [sp, #32]
+   0x0006fd8a <+1070>:	09 9a	ldr	r2, [sp, #36]	; 0x24
+   0x0006fd8c <+1072>:	00 2a	cmp	r2, #0
+   0x0006fd8e <+1074>:	18 bf	it	ne
+   0x0006fd90 <+1076>:	00 2b	cmpne	r3, #0
+   0x0006fd92 <+1078>:	0c bf	ite	eq
+   0x0006fd94 <+1080>:	01 23	moveq	r3, #1
+   0x0006fd96 <+1082>:	00 23	movne	r3, #0
+   0x0006fd98 <+1084>:	19 43	orrs	r1, r3
+   0x0006fd9a <+1086>:	7f f4 35 af	bne.w	0x6fc08 <screenalloc+684>
+   0x0006fd9e <+1090>:	e0 4a	ldr	r2, [pc, #896]	; (0x70120 <screenalloc+1988>)
+   0x0006fda0 <+1092>:	2b 68	ldr	r3, [r5, #0]
+   0x0006fda2 <+1094>:	7a 44	add	r2, pc
+   0x0006fda4 <+1096>:	c6 4e	ldr	r6, [pc, #792]	; (0x700c0 <screenalloc+1892>)
+   0x0006fda6 <+1098>:	00 2b	cmp	r3, #0
+   0x0006fda8 <+1100>:	11 61	str	r1, [r2, #16]
+   0x0006fdaa <+1102>:	40 f3 67 81	ble.w	0x7007c <screenalloc+1824>
+   0x0006fdae <+1106>:	08 9a	ldr	r2, [sp, #32]
+   0x0006fdb0 <+1108>:	07 9b	ldr	r3, [sp, #28]
+   0x0006fdb2 <+1110>:	01 3a	subs	r2, #1
+   0x0006fdb4 <+1112>:	12 92	str	r2, [sp, #72]	; 0x48
+   0x0006fdb6 <+1114>:	ca 4a	ldr	r2, [pc, #808]	; (0x700e0 <screenalloc+1924>)
+   0x0006fdb8 <+1116>:	04 3b	subs	r3, #4
+   0x0006fdba <+1118>:	13 91	str	r1, [sp, #76]	; 0x4c
+   0x0006fdbc <+1120>:	17 93	str	r3, [sp, #92]	; 0x5c
+   0x0006fdbe <+1122>:	cd f8 50 b0	str.w	r11, [sp, #80]	; 0x50
+   0x0006fdc2 <+1126>:	c9 4b	ldr	r3, [pc, #804]	; (0x700e8 <screenalloc+1932>)
+   0x0006fdc4 <+1128>:	a2 58	ldr	r2, [r4, r2]
+   0x0006fdc6 <+1130>:	c2 48	ldr	r0, [pc, #776]	; (0x700d0 <screenalloc+1908>)
+   0x0006fdc8 <+1132>:	c2 49	ldr	r1, [pc, #776]	; (0x700d4 <screenalloc+1912>)
+   0x0006fdca <+1134>:	a6 59	ldr	r6, [r4, r6]
+   0x0006fdcc <+1136>:	54 f8 00 80	ldr.w	r8, [r4, r0]
+   0x0006fdd0 <+1140>:	67 58	ldr	r7, [r4, r1]
+   0x0006fdd2 <+1142>:	df f8 2c c3	ldr.w	r12, [pc, #812]	; 0x70100 <screenalloc+1956>
+   0x0006fdd6 <+1146>:	0e 92	str	r2, [sp, #56]	; 0x38
+   0x0006fdd8 <+1148>:	e2 58	ldr	r2, [r4, r3]
+   0x0006fdda <+1150>:	2b 46	mov	r3, r5
+   0x0006fddc <+1152>:	df f8 24 e3	ldr.w	lr, [pc, #804]	; 0x70104 <screenalloc+1960>
+   0x0006fde0 <+1156>:	55 46	mov	r5, r10
+   0x0006fde2 <+1158>:	9a 46	mov	r10, r3
+   0x0006fde4 <+1160>:	0c 92	str	r2, [sp, #48]	; 0x30
+   0x0006fde6 <+1162>:	54 f8 0c 20	ldr.w	r2, [r4, r12]
+   0x0006fdea <+1166>:	0b 92	str	r2, [sp, #44]	; 0x2c
+   0x0006fdec <+1168>:	54 f8 0e 20	ldr.w	r2, [r4, lr]
+   0x0006fdf0 <+1172>:	16 94	str	r4, [sp, #88]	; 0x58
+   0x0006fdf2 <+1174>:	15 97	str	r7, [sp, #84]	; 0x54
+   0x0006fdf4 <+1176>:	0d 92	str	r2, [sp, #52]	; 0x34
+   0x0006fdf6 <+1178>:	17 9f	ldr	r7, [sp, #92]	; 0x5c
+   0x0006fdf8 <+1180>:	13 9c	ldr	r4, [sp, #76]	; 0x4c
+   0x0006fdfa <+1182>:	cd f8 5c 80	str.w	r8, [sp, #92]	; 0x5c
+   0x0006fdfe <+1186>:	18 96	str	r6, [sp, #96]	; 0x60
+   0x0006fe00 <+1188>:	05 e0	b.n	0x6fe0e <screenalloc+1202>
+   0x0006fe02 <+1190>:	da f8 00 30	ldr.w	r3, [r10]
+   0x0006fe06 <+1194>:	01 34	adds	r4, #1
+   0x0006fe08 <+1196>:	9c 42	cmp	r4, r3
+   0x0006fe0a <+1198>:	80 f2 07 81	bge.w	0x7001c <screenalloc+1728>
+   0x0006fe0e <+1202>:	db f8 00 30	ldr.w	r3, [r11]
+   0x0006fe12 <+1206>:	4f f0 00 02	mov.w	r2, #0
+   0x0006fe16 <+1210>:	04 fb 03 f3	mul.w	r3, r4, r3
+   0x0006fe1a <+1214>:	47 f8 04 3f	str.w	r3, [r7, #4]!
+   0x0006fe1e <+1218>:	12 9b	ldr	r3, [sp, #72]	; 0x48
+   0x0006fe20 <+1220>:	03 f8 01 2f	strb.w	r2, [r3, #1]!
+   0x0006fe24 <+1224>:	12 93	str	r3, [sp, #72]	; 0x48
+   0x0006fe26 <+1226>:	00 2d	cmp	r5, #0
+   0x0006fe28 <+1228>:	eb d1	bne.n	0x6fe02 <screenalloc+1190>
+   0x0006fe2a <+1230>:	14 9b	ldr	r3, [sp, #80]	; 0x50
+   0x0006fe2c <+1232>:	20 21	movs	r1, #32
+   0x0006fe2e <+1234>:	1a 68	ldr	r2, [r3, #0]
+   0x0006fe30 <+1236>:	03 9b	ldr	r3, [sp, #12]
+   0x0006fe32 <+1238>:	04 fb 02 30	mla	r0, r4, r2, r3
+   0x0006fe36 <+1242>:	9d f7 aa e9	blx	0xd18c <memset@plt+4>
+   0x0006fe3a <+1246>:	0f 9b	ldr	r3, [sp, #60]	; 0x3c
+   0x0006fe3c <+1248>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fe3e <+1250>:	00 2b	cmp	r3, #0
+   0x0006fe40 <+1252>:	40 f0 a5 80	bne.w	0x6ff8e <screenalloc+1586>
+   0x0006fe44 <+1256>:	11 9b	ldr	r3, [sp, #68]	; 0x44
+   0x0006fe46 <+1258>:	1a 68	ldr	r2, [r3, #0]
+   0x0006fe48 <+1260>:	42 f2 cc 63	movw	r3, #9932	; 0x26cc
+   0x0006fe4c <+1264>:	9a 42	cmp	r2, r3
+   0x0006fe4e <+1266>:	00 f0 0c 81	beq.w	0x7006a <screenalloc+1806>
+   0x0006fe52 <+1270>:	db f8 00 20	ldr.w	r2, [r11]
+   0x0006fe56 <+1274>:	00 21	movs	r1, #0
+   0x0006fe58 <+1276>:	05 9b	ldr	r3, [sp, #20]
+   0x0006fe5a <+1278>:	04 fb 02 30	mla	r0, r4, r2, r3
+   0x0006fe5e <+1282>:	9d f7 96 e9	blx	0xd18c <memset@plt+4>
+   0x0006fe62 <+1286>:	18 9a	ldr	r2, [sp, #96]	; 0x60
+   0x0006fe64 <+1288>:	da f8 00 30	ldr.w	r3, [r10]
+   0x0006fe68 <+1292>:	16 68	ldr	r6, [r2, #0]
+   0x0006fe6a <+1294>:	f6 1a	subs	r6, r6, r3
+   0x0006fe6c <+1296>:	36 19	adds	r6, r6, r4
+   0x0006fe6e <+1298>:	ca d4	bmi.n	0x6fe06 <screenalloc+1194>
+   0x0006fe70 <+1300>:	02 9a	ldr	r2, [sp, #8]
+   0x0006fe72 <+1302>:	d2 f8 00 e0	ldr.w	lr, [r2]
+   0x0006fe76 <+1306>:	be f1 00 0f	cmp.w	lr, #0
+   0x0006fe7a <+1310>:	c4 d0	beq.n	0x6fe06 <screenalloc+1194>
+   0x0006fe7c <+1312>:	17 9a	ldr	r2, [sp, #92]	; 0x5c
+   0x0006fe7e <+1314>:	0f 9b	ldr	r3, [sp, #60]	; 0x3c
+   0x0006fe80 <+1316>:	11 68	ldr	r1, [r2, #0]
+   0x0006fe82 <+1318>:	14 9a	ldr	r2, [sp, #80]	; 0x50
+   0x0006fe84 <+1320>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fe86 <+1322>:	12 68	ldr	r2, [r2, #0]
+   0x0006fe88 <+1324>:	91 42	cmp	r1, r2
+   0x0006fe8a <+1326>:	a8 bf	it	ge
+   0x0006fe8c <+1328>:	11 46	movge	r1, r2
+   0x0006fe8e <+1330>:	13 91	str	r1, [sp, #76]	; 0x4c
+   0x0006fe90 <+1332>:	00 2b	cmp	r3, #0
+   0x0006fe92 <+1334>:	00 f0 a1 80	beq.w	0x6ffd8 <screenalloc+1660>
+   0x0006fe96 <+1338>:	15 9b	ldr	r3, [sp, #84]	; 0x54
+   0x0006fe98 <+1340>:	4f ea 86 08	mov.w	r8, r6, lsl #2
+   0x0006fe9c <+1344>:	19 68	ldr	r1, [r3, #0]
+   0x0006fe9e <+1346>:	71 b1	cbz	r1, 0x6febe <screenalloc+1378>
+   0x0006fea0 <+1348>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0006fea2 <+1350>:	1a 68	ldr	r2, [r3, #0]
+   0x0006fea4 <+1352>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006fea8 <+1356>:	9a 42	cmp	r2, r3
+   0x0006feaa <+1358>:	00 f0 9e 80	beq.w	0x6ffea <screenalloc+1678>
+   0x0006feae <+1362>:	4f ea 86 08	mov.w	r8, r6, lsl #2
+   0x0006feb2 <+1366>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0006feb4 <+1368>:	d9 f8 00 20	ldr.w	r2, [r9]
+   0x0006feb8 <+1372>:	1b 68	ldr	r3, [r3, #0]
+   0x0006feba <+1374>:	9a 42	cmp	r2, r3
+   0x0006febc <+1376>:	14 d0	beq.n	0x6fee8 <screenalloc+1420>
+   0x0006febe <+1378>:	46 46	mov	r6, r8
+   0x0006fec0 <+1380>:	11 9b	ldr	r3, [sp, #68]	; 0x44
+   0x0006fec2 <+1382>:	1a 68	ldr	r2, [r3, #0]
+   0x0006fec4 <+1384>:	42 f2 cc 63	movw	r3, #9932	; 0x26cc
+   0x0006fec8 <+1388>:	9a 42	cmp	r2, r3
+   0x0006feca <+1390>:	00 f0 ba 80	beq.w	0x70042 <screenalloc+1766>
+   0x0006fece <+1394>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x0006fed0 <+1396>:	38 68	ldr	r0, [r7, #0]
+   0x0006fed2 <+1398>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x0006fed4 <+1400>:	19 68	ldr	r1, [r3, #0]
+   0x0006fed6 <+1402>:	0d 9b	ldr	r3, [sp, #52]	; 0x34
+   0x0006fed8 <+1404>:	89 59	ldr	r1, [r1, r6]
+   0x0006feda <+1406>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fedc <+1408>:	19 44	add	r1, r3
+   0x0006fede <+1410>:	05 9b	ldr	r3, [sp, #20]
+   0x0006fee0 <+1412>:	18 44	add	r0, r3
+   0x0006fee2 <+1414>:	9c f7 40 ef	blx	0xcd64 <memmove@plt+4>
+   0x0006fee6 <+1418>:	8c e7	b.n	0x6fe02 <screenalloc+1190>
+   0x0006fee8 <+1420>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x0006feea <+1422>:	46 46	mov	r6, r8
+   0x0006feec <+1424>:	38 68	ldr	r0, [r7, #0]
+   0x0006feee <+1426>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x0006fef0 <+1428>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fef2 <+1430>:	1a 90	str	r0, [sp, #104]	; 0x68
+   0x0006fef4 <+1432>:	06 98	ldr	r0, [sp, #24]
+   0x0006fef6 <+1434>:	92 00	lsls	r2, r2, #2
+   0x0006fef8 <+1436>:	53 f8 08 e0	ldr.w	lr, [r3, r8]
+   0x0006fefc <+1440>:	1a 9b	ldr	r3, [sp, #104]	; 0x68
+   0x0006fefe <+1442>:	19 92	str	r2, [sp, #100]	; 0x64
+   0x0006ff00 <+1444>:	01 eb 8e 01	add.w	r1, r1, lr, lsl #2
+   0x0006ff04 <+1448>:	00 eb 83 00	add.w	r0, r0, r3, lsl #2
+   0x0006ff08 <+1452>:	9c f7 2c ef	blx	0xcd64 <memmove@plt+4>
+   0x0006ff0c <+1456>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006ff10 <+1460>:	00 2b	cmp	r3, #0
+   0x0006ff12 <+1462>:	d5 dd	ble.n	0x6fec0 <screenalloc+1380>
+   0x0006ff14 <+1464>:	7c 4a	ldr	r2, [pc, #496]	; (0x70108 <screenalloc+1964>)
+   0x0006ff16 <+1466>:	00 23	movs	r3, #0
+   0x0006ff18 <+1468>:	16 99	ldr	r1, [sp, #88]	; 0x58
+   0x0006ff1a <+1470>:	8a 58	ldr	r2, [r1, r2]
+   0x0006ff1c <+1472>:	cd f8 6c b0	str.w	r11, [sp, #108]	; 0x6c
+   0x0006ff20 <+1476>:	d3 46	mov	r11, r10
+   0x0006ff22 <+1478>:	aa 46	mov	r10, r5
+   0x0006ff24 <+1480>:	25 46	mov	r5, r4
+   0x0006ff26 <+1482>:	1c 46	mov	r4, r3
+   0x0006ff28 <+1484>:	1a 92	str	r2, [sp, #104]	; 0x68
+   0x0006ff2a <+1486>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x0006ff2c <+1488>:	1a 99	ldr	r1, [sp, #104]	; 0x68
+   0x0006ff2e <+1490>:	38 68	ldr	r0, [r7, #0]
+   0x0006ff30 <+1492>:	1b 68	ldr	r3, [r3, #0]
+   0x0006ff32 <+1494>:	51 f8 24 10	ldr.w	r1, [r1, r4, lsl #2]
+   0x0006ff36 <+1498>:	19 9a	ldr	r2, [sp, #100]	; 0x64
+   0x0006ff38 <+1500>:	53 f8 08 c0	ldr.w	r12, [r3, r8]
+   0x0006ff3c <+1504>:	0a 9b	ldr	r3, [sp, #40]	; 0x28
+   0x0006ff3e <+1506>:	01 eb 8c 01	add.w	r1, r1, r12, lsl #2
+   0x0006ff42 <+1510>:	53 f8 24 30	ldr.w	r3, [r3, r4, lsl #2]
+   0x0006ff46 <+1514>:	01 34	adds	r4, #1
+   0x0006ff48 <+1516>:	03 eb 80 00	add.w	r0, r3, r0, lsl #2
+   0x0006ff4c <+1520>:	9c f7 0a ef	blx	0xcd64 <memmove@plt+4>
+   0x0006ff50 <+1524>:	d9 f8 00 20	ldr.w	r2, [r9]
+   0x0006ff54 <+1528>:	a2 42	cmp	r2, r4
+   0x0006ff56 <+1530>:	e8 dc	bgt.n	0x6ff2a <screenalloc+1486>
+   0x0006ff58 <+1532>:	2c 46	mov	r4, r5
+   0x0006ff5a <+1534>:	55 46	mov	r5, r10
+   0x0006ff5c <+1536>:	da 46	mov	r10, r11
+   0x0006ff5e <+1538>:	dd f8 6c b0	ldr.w	r11, [sp, #108]	; 0x6c
+   0x0006ff62 <+1542>:	ad e7	b.n	0x6fec0 <screenalloc+1380>
+   0x0006ff64 <+1544>:	6f 4b	ldr	r3, [pc, #444]	; (0x70124 <screenalloc+1992>)
+   0x0006ff66 <+1546>:	7b 44	add	r3, pc
+   0x0006ff68 <+1548>:	1b 69	ldr	r3, [r3, #16]
+   0x0006ff6a <+1550>:	00 2b	cmp	r3, #0
+   0x0006ff6c <+1552>:	7f f4 5d ae	bne.w	0x6fc2a <screenalloc+718>
+   0x0006ff70 <+1556>:	4f e6	b.n	0x6fc12 <screenalloc+694>
+   0x0006ff72 <+1558>:	61 4b	ldr	r3, [pc, #388]	; (0x700f8 <screenalloc+1948>)
+   0x0006ff74 <+1560>:	e3 58	ldr	r3, [r4, r3]
+   0x0006ff76 <+1562>:	1f 68	ldr	r7, [r3, #0]
+   0x0006ff78 <+1564>:	e5 e5	b.n	0x6fb46 <screenalloc+490>
+   0x0006ff7a <+1566>:	2b 68	ldr	r3, [r5, #0]
+   0x0006ff7c <+1568>:	00 21	movs	r1, #0
+   0x0006ff7e <+1570>:	db f8 00 00	ldr.w	r0, [r11]
+   0x0006ff82 <+1574>:	03 fb 00 00	mla	r0, r3, r0, r0
+   0x0006ff86 <+1578>:	ce f7 9f fa	bl	0x3e4c8 <lalloc>
+   0x0006ff8a <+1582>:	04 90	str	r0, [sp, #16]
+   0x0006ff8c <+1584>:	b2 e5	b.n	0x6faf4 <screenalloc+408>
+   0x0006ff8e <+1586>:	14 9b	ldr	r3, [sp, #80]	; 0x50
+   0x0006ff90 <+1588>:	29 46	mov	r1, r5
+   0x0006ff92 <+1590>:	1a 68	ldr	r2, [r3, #0]
+   0x0006ff94 <+1592>:	06 9b	ldr	r3, [sp, #24]
+   0x0006ff96 <+1594>:	04 fb 02 f0	mul.w	r0, r4, r2
+   0x0006ff9a <+1598>:	92 00	lsls	r2, r2, #2
+   0x0006ff9c <+1600>:	03 eb 80 00	add.w	r0, r3, r0, lsl #2
+   0x0006ffa0 <+1604>:	9d f7 f4 e8	blx	0xd18c <memset@plt+4>
+   0x0006ffa4 <+1608>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006ffa8 <+1612>:	00 2b	cmp	r3, #0
+   0x0006ffaa <+1614>:	7f f7 4b af	ble.w	0x6fe44 <screenalloc+1256>
+   0x0006ffae <+1618>:	dd f8 28 80	ldr.w	r8, [sp, #40]	; 0x28
+   0x0006ffb2 <+1622>:	2e 46	mov	r6, r5
+   0x0006ffb4 <+1624>:	db f8 00 20	ldr.w	r2, [r11]
+   0x0006ffb8 <+1628>:	00 21	movs	r1, #0
+   0x0006ffba <+1630>:	58 f8 26 30	ldr.w	r3, [r8, r6, lsl #2]
+   0x0006ffbe <+1634>:	01 36	adds	r6, #1
+   0x0006ffc0 <+1636>:	04 fb 02 f0	mul.w	r0, r4, r2
+   0x0006ffc4 <+1640>:	92 00	lsls	r2, r2, #2
+   0x0006ffc6 <+1642>:	03 eb 80 00	add.w	r0, r3, r0, lsl #2
+   0x0006ffca <+1646>:	9d f7 e0 e8	blx	0xd18c <memset@plt+4>
+   0x0006ffce <+1650>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0006ffd2 <+1654>:	b3 42	cmp	r3, r6
+   0x0006ffd4 <+1656>:	ee dc	bgt.n	0x6ffb4 <screenalloc+1624>
+   0x0006ffd6 <+1658>:	35 e7	b.n	0x6fe44 <screenalloc+1256>
+   0x0006ffd8 <+1660>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0006ffda <+1662>:	d9 f8 00 20	ldr.w	r2, [r9]
+   0x0006ffde <+1666>:	1b 68	ldr	r3, [r3, #0]
+   0x0006ffe0 <+1668>:	9a 42	cmp	r2, r3
+   0x0006ffe2 <+1670>:	18 bf	it	ne
+   0x0006ffe4 <+1672>:	b6 00	lslne	r6, r6, #2
+   0x0006ffe6 <+1674>:	7f f4 6b af	bne.w	0x6fec0 <screenalloc+1380>
+   0x0006ffea <+1678>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x0006ffec <+1680>:	4f ea 86 08	mov.w	r8, r6, lsl #2
+   0x0006fff0 <+1684>:	38 68	ldr	r0, [r7, #0]
+   0x0006fff2 <+1686>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x0006fff4 <+1688>:	1b 68	ldr	r3, [r3, #0]
+   0x0006fff6 <+1690>:	53 f8 26 10	ldr.w	r1, [r3, r6, lsl #2]
+   0x0006fffa <+1694>:	46 46	mov	r6, r8
+   0x0006fffc <+1696>:	03 9b	ldr	r3, [sp, #12]
+   0x0006fffe <+1698>:	71 44	add	r1, lr
+   0x00070000 <+1700>:	18 44	add	r0, r3
+   0x00070002 <+1702>:	9c f7 b0 ee	blx	0xcd64 <memmove@plt+4>
+   0x00070006 <+1706>:	0f 9b	ldr	r3, [sp, #60]	; 0x3c
+   0x00070008 <+1708>:	1b 68	ldr	r3, [r3, #0]
+   0x0007000a <+1710>:	00 2b	cmp	r3, #0
+   0x0007000c <+1712>:	3f f4 58 af	beq.w	0x6fec0 <screenalloc+1380>
+   0x00070010 <+1716>:	15 9b	ldr	r3, [sp, #84]	; 0x54
+   0x00070012 <+1718>:	19 68	ldr	r1, [r3, #0]
+   0x00070014 <+1720>:	00 29	cmp	r1, #0
+   0x00070016 <+1722>:	7f f4 4c af	bne.w	0x6feb2 <screenalloc+1366>
+   0x0007001a <+1726>:	50 e7	b.n	0x6febe <screenalloc+1378>
+   0x0007001c <+1728>:	16 9c	ldr	r4, [sp, #88]	; 0x58
+   0x0007001e <+1730>:	52 46	mov	r2, r10
+   0x00070020 <+1732>:	15 9f	ldr	r7, [sp, #84]	; 0x54
+   0x00070022 <+1734>:	aa 46	mov	r10, r5
+   0x00070024 <+1736>:	dd f8 5c 80	ldr.w	r8, [sp, #92]	; 0x5c
+   0x00070028 <+1740>:	15 46	mov	r5, r2
+   0x0007002a <+1742>:	18 9e	ldr	r6, [sp, #96]	; 0x60
+   0x0007002c <+1744>:	db f8 00 10	ldr.w	r1, [r11]
+   0x00070030 <+1748>:	03 98	ldr	r0, [sp, #12]
+   0x00070032 <+1750>:	3d 4a	ldr	r2, [pc, #244]	; (0x70128 <screenalloc+1996>)
+   0x00070034 <+1752>:	01 fb 03 03	mla	r3, r1, r3, r0
+   0x00070038 <+1756>:	7a 44	add	r2, pc
+   0x0007003a <+1758>:	53 61	str	r3, [r2, #20]
+   0x0007003c <+1760>:	41 e6	b.n	0x6fcc2 <screenalloc+870>
+   0x0007003e <+1762>:	00 23	movs	r3, #0
+   0x00070040 <+1764>:	d0 e5	b.n	0x6fbe4 <screenalloc+648>
+   0x00070042 <+1766>:	0e 9b	ldr	r3, [sp, #56]	; 0x38
+   0x00070044 <+1768>:	d3 f8 00 e0	ldr.w	lr, [r3]
+   0x00070048 <+1772>:	be f1 00 0f	cmp.w	lr, #0
+   0x0007004c <+1776>:	3f f4 3f af	beq.w	0x6fece <screenalloc+1394>
+   0x00070050 <+1780>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x00070052 <+1782>:	04 98	ldr	r0, [sp, #16]
+   0x00070054 <+1784>:	39 68	ldr	r1, [r7, #0]
+   0x00070056 <+1786>:	1b 68	ldr	r3, [r3, #0]
+   0x00070058 <+1788>:	01 44	add	r1, r0
+   0x0007005a <+1790>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x0007005c <+1792>:	9b 59	ldr	r3, [r3, r6]
+   0x0007005e <+1794>:	08 46	mov	r0, r1
+   0x00070060 <+1796>:	0e eb 03 01	add.w	r1, lr, r3
+   0x00070064 <+1800>:	9c f7 7e ee	blx	0xcd64 <memmove@plt+4>
+   0x00070068 <+1804>:	31 e7	b.n	0x6fece <screenalloc+1394>
+   0x0007006a <+1806>:	db f8 00 20	ldr.w	r2, [r11]
+   0x0007006e <+1810>:	00 21	movs	r1, #0
+   0x00070070 <+1812>:	04 9b	ldr	r3, [sp, #16]
+   0x00070072 <+1814>:	04 fb 02 30	mla	r0, r4, r2, r3
+   0x00070076 <+1818>:	9d f7 8a e8	blx	0xd18c <memset@plt+4>
+   0x0007007a <+1822>:	ea e6	b.n	0x6fe52 <screenalloc+1270>
+   0x0007007c <+1824>:	18 49	ldr	r1, [pc, #96]	; (0x700e0 <screenalloc+1924>)
+   0x0007007e <+1826>:	14 4f	ldr	r7, [pc, #80]	; (0x700d0 <screenalloc+1908>)
+   0x00070080 <+1828>:	14 48	ldr	r0, [pc, #80]	; (0x700d4 <screenalloc+1912>)
+   0x00070082 <+1830>:	61 58	ldr	r1, [r4, r1]
+   0x00070084 <+1832>:	18 4a	ldr	r2, [pc, #96]	; (0x700e8 <screenalloc+1932>)
+   0x00070086 <+1834>:	54 f8 07 80	ldr.w	r8, [r4, r7]
+   0x0007008a <+1838>:	a6 59	ldr	r6, [r4, r6]
+   0x0007008c <+1840>:	27 58	ldr	r7, [r4, r0]
+   0x0007008e <+1842>:	df f8 70 e0	ldr.w	lr, [pc, #112]	; 0x70100 <screenalloc+1956>
+   0x00070092 <+1846>:	0e 91	str	r1, [sp, #56]	; 0x38
+   0x00070094 <+1848>:	a2 58	ldr	r2, [r4, r2]
+   0x00070096 <+1850>:	df f8 6c c0	ldr.w	r12, [pc, #108]	; 0x70104 <screenalloc+1960>
+   0x0007009a <+1854>:	0c 92	str	r2, [sp, #48]	; 0x30
+   0x0007009c <+1856>:	54 f8 0e 20	ldr.w	r2, [r4, lr]
+   0x000700a0 <+1860>:	0b 92	str	r2, [sp, #44]	; 0x2c
+   0x000700a2 <+1862>:	54 f8 0c 20	ldr.w	r2, [r4, r12]
+   0x000700a6 <+1866>:	0d 92	str	r2, [sp, #52]	; 0x34
+   0x000700a8 <+1868>:	c0 e7	b.n	0x7002c <screenalloc+1744>
+   0x000700aa <+1870>:	9c f7 da ee	blx	0xce60 <__stack_chk_fail@plt>
+   0x000700ae <+1874>:	00 bf	nop
+   0x000700b0 <+1876>:	2c 7d	ldrb	r4, [r5, #20]
+   0x000700b2 <+1878>:	03 00	movs	r3, r0
+   0x000700b4 <+1880>:	78 03	lsls	r0, r7, #13
+   0x000700b6 <+1882>:	00 00	movs	r0, r0
+   0x000700b8 <+1884>:	c4 05	lsls	r4, r0, #23
+   0x000700ba <+1886>:	00 00	movs	r0, r0
+   0x000700bc <+1888>:	c8 08	lsrs	r0, r1, #3
+   0x000700be <+1890>:	00 00	movs	r0, r0
+   0x000700c0 <+1892>:	04 03	lsls	r4, r0, #12
+   0x000700c2 <+1894>:	00 00	movs	r0, r0
+   0x000700c4 <+1896>:	fc 07	lsls	r4, r7, #31
+   0x000700c6 <+1898>:	00 00	movs	r0, r0
+   0x000700c8 <+1900>:	2c 07	lsls	r4, r5, #28
+   0x000700ca <+1902>:	00 00	movs	r0, r0
+   0x000700cc <+1904>:	9a 0c	lsrs	r2, r3, #18
+   0x000700ce <+1906>:	04 00	movs	r4, r0
+   0x000700d0 <+1908>:	4c 03	lsls	r4, r1, #13
+   0x000700d2 <+1910>:	00 00	movs	r0, r0
+   0x000700d4 <+1912>:	50 02	lsls	r0, r2, #9
+   0x000700d6 <+1914>:	00 00	movs	r0, r0
+   0x000700d8 <+1916>:	48 09	lsrs	r0, r1, #5
+   0x000700da <+1918>:	00 00	movs	r0, r0
+   0x000700dc <+1920>:	0c 07	lsls	r4, r1, #28
+   0x000700de <+1922>:	00 00	movs	r0, r0
+   0x000700e0 <+1924>:	a8 04	lsls	r0, r5, #18
+   0x000700e2 <+1926>:	00 00	movs	r0, r0
+   0x000700e4 <+1928>:	40 05	lsls	r0, r0, #21
+   0x000700e6 <+1930>:	00 00	movs	r0, r0
+   0x000700e8 <+1932>:	44 08	lsrs	r4, r0, #1
+   0x000700ea <+1934>:	00 00	movs	r0, r0
+   0x000700ec <+1936>:	c0 08	lsrs	r0, r0, #3
+   0x000700ee <+1938>:	00 00	movs	r0, r0
+   0x000700f0 <+1940>:	84 06	lsls	r4, r0, #26
+   0x000700f2 <+1942>:	00 00	movs	r0, r0
+   0x000700f4 <+1944>:	9c 06	lsls	r4, r3, #26
+   0x000700f6 <+1946>:	00 00	movs	r0, r0
+   0x000700f8 <+1948>:	38 09	lsrs	r0, r7, #4
+   0x000700fa <+1950>:	00 00	movs	r0, r0
+   0x000700fc <+1952>:	32 0a	lsrs	r2, r6, #8
+   0x000700fe <+1954>:	04 00	movs	r4, r0
+   0x00070100 <+1956>:	38 08	lsrs	r0, r7, #32
+   0x00070102 <+1958>:	00 00	movs	r0, r0
+   0x00070104 <+1960>:	18 03	lsls	r0, r3, #12
+   0x00070106 <+1962>:	00 00	movs	r0, r0
+   0x00070108 <+1964>:	b8 04	lsls	r0, r7, #18
+   0x0007010a <+1966>:	00 00	movs	r0, r0
+   0x0007010c <+1968>:	00 04	lsls	r0, r0, #16
+   0x0007010e <+1970>:	00 00	movs	r0, r0
+   0x00070110 <+1972>:	e4 02	lsls	r4, r4, #11
+   0x00070112 <+1974>:	00 00	movs	r0, r0
+   0x00070114 <+1976>:	cc 07	lsls	r4, r1, #31
+   0x00070116 <+1978>:	00 00	movs	r0, r0
+   0x00070118 <+1980>:	14 05	lsls	r4, r2, #20
+   0x0007011a <+1982>:	00 00	movs	r0, r0
+   0x0007011c <+1984>:	00 09	lsrs	r0, r0, #4
+   0x0007011e <+1986>:	04 00	movs	r4, r0
+   0x00070120 <+1988>:	b6 08	lsrs	r6, r6, #2
+   0x00070122 <+1990>:	04 00	movs	r4, r0
+   0x00070124 <+1992>:	f2 06	lsls	r2, r6, #27
+   0x00070126 <+1994>:	04 00	movs	r4, r0
+   0x00070128 <+1996>:	20 06	lsls	r0, r4, #24
+   0x0007012a <+1998>:	04 00	movs	r4, r0
+End of assembler dump.
+Dump of assembler code for function screenclear:
+   0x0007014c <+0>:	10 b5	push	{r4, lr}
+   0x0007014e <+2>:	00 20	movs	r0, #0
+   0x00070150 <+4>:	ff f7 88 fb	bl	0x6f864 <check_for_delay>
+   0x00070154 <+8>:	09 4c	ldr	r4, [pc, #36]	; (0x7017c <screenclear+48>)
+   0x00070156 <+10>:	00 20	movs	r0, #0
+   0x00070158 <+12>:	ff f7 00 fc	bl	0x6f95c <screenalloc>
+   0x0007015c <+16>:	08 4b	ldr	r3, [pc, #32]	; (0x70180 <screenclear+52>)
+   0x0007015e <+18>:	7c 44	add	r4, pc
+   0x00070160 <+20>:	e3 58	ldr	r3, [r4, r3]
+   0x00070162 <+22>:	1b 68	ldr	r3, [r3, #0]
+   0x00070164 <+24>:	02 2b	cmp	r3, #2
+   0x00070166 <+26>:	07 d0	beq.n	0x70178 <screenclear+44>
+   0x00070168 <+28>:	06 4b	ldr	r3, [pc, #24]	; (0x70184 <screenclear+56>)
+   0x0007016a <+30>:	e3 58	ldr	r3, [r4, r3]
+   0x0007016c <+32>:	1b 68	ldr	r3, [r3, #0]
+   0x0007016e <+34>:	1b b1	cbz	r3, 0x70178 <screenclear+44>
+   0x00070170 <+36>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x00070174 <+40>:	ff f7 64 ba	b.w	0x6f640 <screenclear2>
+   0x00070178 <+44>:	10 bd	pop	{r4, pc}
+   0x0007017a <+46>:	00 bf	nop
+   0x0007017c <+48>:	3a 75	strb	r2, [r7, #20]
+   0x0007017e <+50>:	03 00	movs	r3, r0
+   0x00070180 <+52>:	14 05	lsls	r4, r2, #20
+   0x00070182 <+54>:	00 00	movs	r0, r0
+   0x00070184 <+56>:	c4 05	lsls	r4, r0, #23
+   0x00070186 <+58>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function setcursor:
+   0x000715c4 <+0>:	08 b5	push	{r3, lr}
+   0x000715c6 <+2>:	ce f7 d7 ff	bl	0x40578 <validate_cursor>
+   0x000715ca <+6>:	06 4b	ldr	r3, [pc, #24]	; (0x715e4 <setcursor+32>)
+   0x000715cc <+8>:	06 4a	ldr	r2, [pc, #24]	; (0x715e8 <setcursor+36>)
+   0x000715ce <+10>:	7b 44	add	r3, pc
+   0x000715d0 <+12>:	9b 58	ldr	r3, [r3, r2]
+   0x000715d2 <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x000715d4 <+16>:	98 6c	ldr	r0, [r3, #72]	; 0x48
+   0x000715d6 <+18>:	1a 6f	ldr	r2, [r3, #112]	; 0x70
+   0x000715d8 <+20>:	59 6f	ldr	r1, [r3, #116]	; 0x74
+   0x000715da <+22>:	10 44	add	r0, r2
+   0x000715dc <+24>:	bd e8 08 40	ldmia.w	sp!, {r3, lr}
+   0x000715e0 <+28>:	fe f7 fc bd	b.w	0x701dc <windgoto>
+   0x000715e4 <+32>:	ca 60	str	r2, [r1, #12]
+   0x000715e6 <+34>:	03 00	movs	r3, r0
+   0x000715e8 <+36>:	24 04	lsls	r4, r4, #16
+   0x000715ea <+38>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function showmode:
+   0x000754b8 <+0>:	2d e9 f8 4f	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000754bc <+4>:	91 4c	ldr	r4, [pc, #580]	; (0x75704 <showmode+588>)
+   0x000754be <+6>:	92 4b	ldr	r3, [pc, #584]	; (0x75708 <showmode+592>)
+   0x000754c0 <+8>:	7c 44	add	r4, pc
+   0x000754c2 <+10>:	e3 58	ldr	r3, [r4, r3]
+   0x000754c4 <+12>:	1b 68	ldr	r3, [r3, #0]
+   0x000754c6 <+14>:	00 2b	cmp	r3, #0
+   0x000754c8 <+16>:	64 d0	beq.n	0x75594 <showmode+220>
+   0x000754ca <+18>:	90 4b	ldr	r3, [pc, #576]	; (0x7570c <showmode+596>)
+   0x000754cc <+20>:	e3 58	ldr	r3, [r4, r3]
+   0x000754ce <+22>:	1b 68	ldr	r3, [r3, #0]
+   0x000754d0 <+24>:	00 2b	cmp	r3, #0
+   0x000754d2 <+26>:	5f d1	bne.n	0x75594 <showmode+220>
+   0x000754d4 <+28>:	8e 4b	ldr	r3, [pc, #568]	; (0x75710 <showmode+600>)
+   0x000754d6 <+30>:	e3 58	ldr	r3, [r4, r3]
+   0x000754d8 <+32>:	1b 68	ldr	r3, [r3, #0]
+   0x000754da <+34>:	d8 06	lsls	r0, r3, #27
+   0x000754dc <+36>:	08 d4	bmi.n	0x754f0 <showmode+56>
+   0x000754de <+38>:	8d 4b	ldr	r3, [pc, #564]	; (0x75714 <showmode+604>)
+   0x000754e0 <+40>:	e3 58	ldr	r3, [r4, r3]
+   0x000754e2 <+42>:	1b 68	ldr	r3, [r3, #0]
+   0x000754e4 <+44>:	23 b9	cbnz	r3, 0x754f0 <showmode+56>
+   0x000754e6 <+46>:	8c 4b	ldr	r3, [pc, #560]	; (0x75718 <showmode+608>)
+   0x000754e8 <+48>:	e3 58	ldr	r3, [r4, r3]
+   0x000754ea <+50>:	1b 68	ldr	r3, [r3, #0]
+   0x000754ec <+52>:	00 2b	cmp	r3, #0
+   0x000754ee <+54>:	51 d0	beq.n	0x75594 <showmode+220>
+   0x000754f0 <+56>:	01 25	movs	r5, #1
+   0x000754f2 <+58>:	fd f7 69 f9	bl	0x727c8 <redrawing>
+   0x000754f6 <+62>:	00 28	cmp	r0, #0
+   0x000754f8 <+64>:	55 d0	beq.n	0x755a6 <showmode+238>
+   0x000754fa <+66>:	b8 f7 39 fe	bl	0x2e170 <char_avail>
+   0x000754fe <+70>:	20 b1	cbz	r0, 0x7550a <showmode+82>
+   0x00075500 <+72>:	86 4b	ldr	r3, [pc, #536]	; (0x7571c <showmode+612>)
+   0x00075502 <+74>:	e3 58	ldr	r3, [r4, r3]
+   0x00075504 <+76>:	1b 68	ldr	r3, [r3, #0]
+   0x00075506 <+78>:	00 2b	cmp	r3, #0
+   0x00075508 <+80>:	4d d0	beq.n	0x755a6 <showmode+238>
+   0x0007550a <+82>:	80 4b	ldr	r3, [pc, #512]	; (0x7570c <showmode+596>)
+   0x0007550c <+84>:	e3 58	ldr	r3, [r4, r3]
+   0x0007550e <+86>:	18 68	ldr	r0, [r3, #0]
+   0x00075510 <+88>:	00 28	cmp	r0, #0
+   0x00075512 <+90>:	48 d1	bne.n	0x755a6 <showmode+238>
+   0x00075514 <+92>:	82 4b	ldr	r3, [pc, #520]	; (0x75720 <showmode+616>)
+   0x00075516 <+94>:	54 f8 03 80	ldr.w	r8, [r4, r3]
+   0x0007551a <+98>:	d8 f8 00 90	ldr.w	r9, [r8]
+   0x0007551e <+102>:	fa f7 a1 f9	bl	0x6f864 <check_for_delay>
+   0x00075522 <+106>:	80 4b	ldr	r3, [pc, #512]	; (0x75724 <showmode+620>)
+   0x00075524 <+108>:	e6 58	ldr	r6, [r4, r3]
+   0x00075526 <+110>:	d6 f8 00 b0	ldr.w	r11, [r6]
+   0x0007552a <+114>:	bb f1 00 0f	cmp.w	r11, #0
+   0x0007552e <+118>:	50 d1	bne.n	0x755d2 <showmode+282>
+   0x00075530 <+120>:	7d 4b	ldr	r3, [pc, #500]	; (0x75728 <showmode+624>)
+   0x00075532 <+122>:	e3 58	ldr	r3, [r4, r3]
+   0x00075534 <+124>:	19 68	ldr	r1, [r3, #0]
+   0x00075536 <+126>:	01 39	subs	r1, #1
+   0x00075538 <+128>:	7c 4a	ldr	r2, [pc, #496]	; (0x7572c <showmode+628>)
+   0x0007553a <+130>:	00 20	movs	r0, #0
+   0x0007553c <+132>:	7c 4b	ldr	r3, [pc, #496]	; (0x75730 <showmode+632>)
+   0x0007553e <+134>:	a7 58	ldr	r7, [r4, r2]
+   0x00075540 <+136>:	38 60	str	r0, [r7, #0]
+   0x00075542 <+138>:	e3 58	ldr	r3, [r4, r3]
+   0x00075544 <+140>:	19 60	str	r1, [r3, #0]
+   0x00075546 <+142>:	08 f0 23 fb	bl	0x7db90 <cursor_off>
+   0x0007554a <+146>:	7a 4b	ldr	r3, [pc, #488]	; (0x75734 <showmode+636>)
+   0x0007554c <+148>:	e3 58	ldr	r3, [r4, r3]
+   0x0007554e <+150>:	d3 f8 20 a0	ldr.w	r10, [r3, #32]
+   0x00075552 <+154>:	00 2d	cmp	r5, #0
+   0x00075554 <+156>:	55 d1	bne.n	0x75602 <showmode+330>
+   0x00075556 <+158>:	78 4b	ldr	r3, [pc, #480]	; (0x75738 <showmode+640>)
+   0x00075558 <+160>:	e3 58	ldr	r3, [r4, r3]
+   0x0007555a <+162>:	1b 68	ldr	r3, [r3, #0]
+   0x0007555c <+164>:	00 2b	cmp	r3, #0
+   0x0007555e <+166>:	46 d1	bne.n	0x755ee <showmode+310>
+   0x00075560 <+168>:	76 4b	ldr	r3, [pc, #472]	; (0x7573c <showmode+644>)
+   0x00075562 <+170>:	01 22	movs	r2, #1
+   0x00075564 <+172>:	e3 58	ldr	r3, [r4, r3]
+   0x00075566 <+174>:	1a 60	str	r2, [r3, #0]
+   0x00075568 <+176>:	bb f1 00 0f	cmp.w	r11, #0
+   0x0007556c <+180>:	01 d1	bne.n	0x75572 <showmode+186>
+   0x0007556e <+182>:	33 68	ldr	r3, [r6, #0]
+   0x00075570 <+184>:	0b b1	cbz	r3, 0x75576 <showmode+190>
+   0x00075572 <+186>:	c1 f7 01 fc	bl	0x36d78 <msg_clr_eos>
+   0x00075576 <+190>:	72 4b	ldr	r3, [pc, #456]	; (0x75740 <showmode+648>)
+   0x00075578 <+192>:	00 22	movs	r2, #0
+   0x0007557a <+194>:	38 68	ldr	r0, [r7, #0]
+   0x0007557c <+196>:	e3 58	ldr	r3, [r4, r3]
+   0x0007557e <+198>:	c8 f8 00 90	str.w	r9, [r8]
+   0x00075582 <+202>:	3a 60	str	r2, [r7, #0]
+   0x00075584 <+204>:	1a 60	str	r2, [r3, #0]
+   0x00075586 <+206>:	6f 4b	ldr	r3, [pc, #444]	; (0x75744 <showmode+652>)
+   0x00075588 <+208>:	00 22	movs	r2, #0
+   0x0007558a <+210>:	e3 58	ldr	r3, [r4, r3]
+   0x0007558c <+212>:	32 60	str	r2, [r6, #0]
+   0x0007558e <+214>:	1a 60	str	r2, [r3, #0]
+   0x00075590 <+216>:	bd e8 f8 8f	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00075594 <+220>:	68 4b	ldr	r3, [pc, #416]	; (0x75738 <showmode+640>)
+   0x00075596 <+222>:	e3 58	ldr	r3, [r4, r3]
+   0x00075598 <+224>:	1b 68	ldr	r3, [r3, #0]
+   0x0007559a <+226>:	5b b1	cbz	r3, 0x755b4 <showmode+252>
+   0x0007559c <+228>:	00 25	movs	r5, #0
+   0x0007559e <+230>:	fd f7 13 f9	bl	0x727c8 <redrawing>
+   0x000755a2 <+234>:	00 28	cmp	r0, #0
+   0x000755a4 <+236>:	a9 d1	bne.n	0x754fa <showmode+66>
+   0x000755a6 <+238>:	67 4b	ldr	r3, [pc, #412]	; (0x75744 <showmode+652>)
+   0x000755a8 <+240>:	01 22	movs	r2, #1
+   0x000755aa <+242>:	00 20	movs	r0, #0
+   0x000755ac <+244>:	e3 58	ldr	r3, [r4, r3]
+   0x000755ae <+246>:	1a 60	str	r2, [r3, #0]
+   0x000755b0 <+248>:	bd e8 f8 8f	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000755b4 <+252>:	5b 4a	ldr	r2, [pc, #364]	; (0x75724 <showmode+620>)
+   0x000755b6 <+254>:	a6 58	ldr	r6, [r4, r2]
+   0x000755b8 <+256>:	30 68	ldr	r0, [r6, #0]
+   0x000755ba <+258>:	00 28	cmp	r0, #0
+   0x000755bc <+260>:	e3 d0	beq.n	0x75586 <showmode+206>
+   0x000755be <+262>:	53 4a	ldr	r2, [pc, #332]	; (0x7570c <showmode+596>)
+   0x000755c0 <+264>:	18 46	mov	r0, r3
+   0x000755c2 <+266>:	a2 58	ldr	r2, [r4, r2]
+   0x000755c4 <+268>:	15 68	ldr	r5, [r2, #0]
+   0x000755c6 <+270>:	00 2d	cmp	r5, #0
+   0x000755c8 <+272>:	dd d1	bne.n	0x75586 <showmode+206>
+   0x000755ca <+274>:	c1 f7 e3 fb	bl	0x36d94 <msg_clr_cmdline>
+   0x000755ce <+278>:	28 46	mov	r0, r5
+   0x000755d0 <+280>:	d9 e7	b.n	0x75586 <showmode+206>
+   0x000755d2 <+282>:	55 4a	ldr	r2, [pc, #340]	; (0x75728 <showmode+624>)
+   0x000755d4 <+284>:	5c 4b	ldr	r3, [pc, #368]	; (0x75748 <showmode+656>)
+   0x000755d6 <+286>:	a7 58	ldr	r7, [r4, r2]
+   0x000755d8 <+288>:	e3 58	ldr	r3, [r4, r3]
+   0x000755da <+290>:	39 68	ldr	r1, [r7, #0]
+   0x000755dc <+292>:	1b 68	ldr	r3, [r3, #0]
+   0x000755de <+294>:	01 39	subs	r1, #1
+   0x000755e0 <+296>:	99 42	cmp	r1, r3
+   0x000755e2 <+298>:	a9 dd	ble.n	0x75538 <showmode+128>
+   0x000755e4 <+300>:	c1 f7 d6 fb	bl	0x36d94 <msg_clr_cmdline>
+   0x000755e8 <+304>:	39 68	ldr	r1, [r7, #0]
+   0x000755ea <+306>:	01 39	subs	r1, #1
+   0x000755ec <+308>:	a4 e7	b.n	0x75538 <showmode+128>
+   0x000755ee <+310>:	57 48	ldr	r0, [pc, #348]	; (0x7574c <showmode+660>)
+   0x000755f0 <+312>:	51 46	mov	r1, r10
+   0x000755f2 <+314>:	78 44	add	r0, pc
+   0x000755f4 <+316>:	c1 f7 3a fe	bl	0x3726c <msg_puts_attr>
+   0x000755f8 <+320>:	50 4b	ldr	r3, [pc, #320]	; (0x7573c <showmode+644>)
+   0x000755fa <+322>:	01 22	movs	r2, #1
+   0x000755fc <+324>:	e3 58	ldr	r3, [r4, r3]
+   0x000755fe <+326>:	1a 60	str	r2, [r3, #0]
+   0x00075600 <+328>:	b7 e7	b.n	0x75572 <showmode+186>
+   0x00075602 <+330>:	53 48	ldr	r0, [pc, #332]	; (0x75750 <showmode+664>)
+   0x00075604 <+332>:	51 46	mov	r1, r10
+   0x00075606 <+334>:	78 44	add	r0, pc
+   0x00075608 <+336>:	c1 f7 30 fe	bl	0x3726c <msg_puts_attr>
+   0x0007560c <+340>:	40 4b	ldr	r3, [pc, #256]	; (0x75710 <showmode+600>)
+   0x0007560e <+342>:	e5 58	ldr	r5, [r4, r3]
+   0x00075610 <+344>:	2b 68	ldr	r3, [r5, #0]
+   0x00075612 <+346>:	59 06	lsls	r1, r3, #25
+   0x00075614 <+348>:	4a d4	bmi.n	0x756ac <showmode+500>
+   0x00075616 <+350>:	da 06	lsls	r2, r3, #27
+   0x00075618 <+352>:	5b d4	bmi.n	0x756d2 <showmode+538>
+   0x0007561a <+354>:	3e 4b	ldr	r3, [pc, #248]	; (0x75714 <showmode+604>)
+   0x0007561c <+356>:	e3 58	ldr	r3, [r4, r3]
+   0x0007561e <+358>:	1b 68	ldr	r3, [r3, #0]
+   0x00075620 <+360>:	49 2b	cmp	r3, #73	; 0x49
+   0x00075622 <+362>:	5c d0	beq.n	0x756de <showmode+550>
+   0x00075624 <+364>:	52 2b	cmp	r3, #82	; 0x52
+   0x00075626 <+366>:	60 d0	beq.n	0x756ea <showmode+562>
+   0x00075628 <+368>:	56 2b	cmp	r3, #86	; 0x56
+   0x0007562a <+370>:	64 d0	beq.n	0x756f6 <showmode+574>
+   0x0007562c <+372>:	3a 4b	ldr	r3, [pc, #232]	; (0x75718 <showmode+608>)
+   0x0007562e <+374>:	e3 58	ldr	r3, [r4, r3]
+   0x00075630 <+376>:	1b 68	ldr	r3, [r3, #0]
+   0x00075632 <+378>:	eb b1	cbz	r3, 0x75670 <showmode+440>
+   0x00075634 <+380>:	47 4b	ldr	r3, [pc, #284]	; (0x75754 <showmode+668>)
+   0x00075636 <+382>:	48 4a	ldr	r2, [pc, #288]	; (0x75758 <showmode+672>)
+   0x00075638 <+384>:	e3 58	ldr	r3, [r4, r3]
+   0x0007563a <+386>:	a2 58	ldr	r2, [r4, r2]
+   0x0007563c <+388>:	1b 68	ldr	r3, [r3, #0]
+   0x0007563e <+390>:	12 68	ldr	r2, [r2, #0]
+   0x00075640 <+392>:	00 2b	cmp	r3, #0
+   0x00075642 <+394>:	18 bf	it	ne
+   0x00075644 <+396>:	04 23	movne	r3, #4
+   0x00075646 <+398>:	16 2a	cmp	r2, #22
+   0x00075648 <+400>:	14 bf	ite	ne
+   0x0007564a <+402>:	00 20	movne	r0, #0
+   0x0007564c <+404>:	02 20	moveq	r0, #2
+   0x0007564e <+406>:	18 44	add	r0, r3
+   0x00075650 <+408>:	56 2a	cmp	r2, #86	; 0x56
+   0x00075652 <+410>:	14 bf	ite	ne
+   0x00075654 <+412>:	03 46	movne	r3, r0
+   0x00075656 <+414>:	43 1c	addeq	r3, r0, #1
+   0x00075658 <+416>:	05 2b	cmp	r3, #5
+   0x0007565a <+418>:	24 d8	bhi.n	0x756a6 <showmode+494>
+   0x0007565c <+420>:	df e8 03 f0	tbb	[pc, r3]
+   0x00075660 <+424>:	17 03	lsls	r7, r2, #12
+   0x00075662 <+426>:	20 23	movs	r3, #32
+   0x00075664 <+428>:	1d 1a	subs	r5, r3, r0
+   0x00075666 <+430>:	3d 48	ldr	r0, [pc, #244]	; (0x7575c <showmode+676>)
+   0x00075668 <+432>:	78 44	add	r0, pc
+   0x0007566a <+434>:	51 46	mov	r1, r10
+   0x0007566c <+436>:	c1 f7 fe fd	bl	0x3726c <msg_puts_attr>
+   0x00075670 <+440>:	3b 48	ldr	r0, [pc, #236]	; (0x75760 <showmode+680>)
+   0x00075672 <+442>:	51 46	mov	r1, r10
+   0x00075674 <+444>:	78 44	add	r0, pc
+   0x00075676 <+446>:	c1 f7 f9 fd	bl	0x3726c <msg_puts_attr>
+   0x0007567a <+450>:	2f 4b	ldr	r3, [pc, #188]	; (0x75738 <showmode+640>)
+   0x0007567c <+452>:	e3 58	ldr	r3, [r4, r3]
+   0x0007567e <+454>:	1b 68	ldr	r3, [r3, #0]
+   0x00075680 <+456>:	00 2b	cmp	r3, #0
+   0x00075682 <+458>:	b4 d1	bne.n	0x755ee <showmode+310>
+   0x00075684 <+460>:	2d 4b	ldr	r3, [pc, #180]	; (0x7573c <showmode+644>)
+   0x00075686 <+462>:	01 22	movs	r2, #1
+   0x00075688 <+464>:	e3 58	ldr	r3, [r4, r3]
+   0x0007568a <+466>:	1a 60	str	r2, [r3, #0]
+   0x0007568c <+468>:	71 e7	b.n	0x75572 <showmode+186>
+   0x0007568e <+470>:	35 48	ldr	r0, [pc, #212]	; (0x75764 <showmode+684>)
+   0x00075690 <+472>:	78 44	add	r0, pc
+   0x00075692 <+474>:	ea e7	b.n	0x7566a <showmode+434>
+   0x00075694 <+476>:	34 48	ldr	r0, [pc, #208]	; (0x75768 <showmode+688>)
+   0x00075696 <+478>:	78 44	add	r0, pc
+   0x00075698 <+480>:	e7 e7	b.n	0x7566a <showmode+434>
+   0x0007569a <+482>:	34 48	ldr	r0, [pc, #208]	; (0x7576c <showmode+692>)
+   0x0007569c <+484>:	78 44	add	r0, pc
+   0x0007569e <+486>:	e4 e7	b.n	0x7566a <showmode+434>
+   0x000756a0 <+488>:	33 48	ldr	r0, [pc, #204]	; (0x75770 <showmode+696>)
+   0x000756a2 <+490>:	78 44	add	r0, pc
+   0x000756a4 <+492>:	e1 e7	b.n	0x7566a <showmode+434>
+   0x000756a6 <+494>:	33 48	ldr	r0, [pc, #204]	; (0x75774 <showmode+700>)
+   0x000756a8 <+496>:	78 44	add	r0, pc
+   0x000756aa <+498>:	de e7	b.n	0x7566a <showmode+434>
+   0x000756ac <+500>:	32 48	ldr	r0, [pc, #200]	; (0x75778 <showmode+704>)
+   0x000756ae <+502>:	51 46	mov	r1, r10
+   0x000756b0 <+504>:	78 44	add	r0, pc
+   0x000756b2 <+506>:	c1 f7 db fd	bl	0x3726c <msg_puts_attr>
+   0x000756b6 <+510>:	2b 68	ldr	r3, [r5, #0]
+   0x000756b8 <+512>:	db 06	lsls	r3, r3, #27
+   0x000756ba <+514>:	b7 d5	bpl.n	0x7562c <showmode+372>
+   0x000756bc <+516>:	2f 4b	ldr	r3, [pc, #188]	; (0x7577c <showmode+708>)
+   0x000756be <+518>:	e3 58	ldr	r3, [r4, r3]
+   0x000756c0 <+520>:	1b 68	ldr	r3, [r3, #0]
+   0x000756c2 <+522>:	00 2b	cmp	r3, #0
+   0x000756c4 <+524>:	b2 d0	beq.n	0x7562c <showmode+372>
+   0x000756c6 <+526>:	2e 48	ldr	r0, [pc, #184]	; (0x75780 <showmode+712>)
+   0x000756c8 <+528>:	51 46	mov	r1, r10
+   0x000756ca <+530>:	78 44	add	r0, pc
+   0x000756cc <+532>:	c1 f7 ce fd	bl	0x3726c <msg_puts_attr>
+   0x000756d0 <+536>:	ac e7	b.n	0x7562c <showmode+372>
+   0x000756d2 <+538>:	2c 48	ldr	r0, [pc, #176]	; (0x75784 <showmode+716>)
+   0x000756d4 <+540>:	51 46	mov	r1, r10
+   0x000756d6 <+542>:	78 44	add	r0, pc
+   0x000756d8 <+544>:	c1 f7 c8 fd	bl	0x3726c <msg_puts_attr>
+   0x000756dc <+548>:	eb e7	b.n	0x756b6 <showmode+510>
+   0x000756de <+550>:	2a 48	ldr	r0, [pc, #168]	; (0x75788 <showmode+720>)
+   0x000756e0 <+552>:	51 46	mov	r1, r10
+   0x000756e2 <+554>:	78 44	add	r0, pc
+   0x000756e4 <+556>:	c1 f7 c2 fd	bl	0x3726c <msg_puts_attr>
+   0x000756e8 <+560>:	e5 e7	b.n	0x756b6 <showmode+510>
+   0x000756ea <+562>:	28 48	ldr	r0, [pc, #160]	; (0x7578c <showmode+724>)
+   0x000756ec <+564>:	51 46	mov	r1, r10
+   0x000756ee <+566>:	78 44	add	r0, pc
+   0x000756f0 <+568>:	c1 f7 bc fd	bl	0x3726c <msg_puts_attr>
+   0x000756f4 <+572>:	df e7	b.n	0x756b6 <showmode+510>
+   0x000756f6 <+574>:	26 48	ldr	r0, [pc, #152]	; (0x75790 <showmode+728>)
+   0x000756f8 <+576>:	51 46	mov	r1, r10
+   0x000756fa <+578>:	78 44	add	r0, pc
+   0x000756fc <+580>:	c1 f7 b6 fd	bl	0x3726c <msg_puts_attr>
+   0x00075700 <+584>:	d9 e7	b.n	0x756b6 <showmode+510>
+   0x00075702 <+586>:	00 bf	nop
+   0x00075704 <+588>:	d8 21	movs	r1, #216	; 0xd8
+   0x00075706 <+590>:	03 00	movs	r3, r0
+   0x00075708 <+592>:	cc 05	lsls	r4, r1, #23
+   0x0007570a <+594>:	00 00	movs	r0, r0
+   0x0007570c <+596>:	74 02	lsls	r4, r6, #9
+   0x0007570e <+598>:	00 00	movs	r0, r0
+   0x00075710 <+600>:	ac 08	lsrs	r4, r5, #2
+   0x00075712 <+602>:	00 00	movs	r0, r0
+   0x00075714 <+604>:	10 08	lsrs	r0, r2, #32
+   0x00075716 <+606>:	00 00	movs	r0, r0
+   0x00075718 <+608>:	68 07	lsls	r0, r5, #29
+   0x0007571a <+610>:	00 00	movs	r0, r0
+   0x0007571c <+612>:	04 06	lsls	r4, r0, #24
+   0x0007571e <+614>:	00 00	movs	r0, r0
+   0x00075720 <+616>:	58 08	lsrs	r0, r3, #1
+   0x00075722 <+618>:	00 00	movs	r0, r0
+   0x00075724 <+620>:	a0 06	lsls	r0, r4, #26
+   0x00075726 <+622>:	00 00	movs	r0, r0
+   0x00075728 <+624>:	c8 08	lsrs	r0, r1, #3
+   0x0007572a <+626>:	00 00	movs	r0, r0
+   0x0007572c <+628>:	e0 06	lsls	r0, r4, #27
+   0x0007572e <+630>:	00 00	movs	r0, r0
+   0x00075730 <+632>:	58 02	lsls	r0, r3, #9
+   0x00075732 <+634>:	00 00	movs	r0, r0
+   0x00075734 <+636>:	80 07	lsls	r0, r0, #30
+   0x00075736 <+638>:	00 00	movs	r0, r0
+   0x00075738 <+640>:	98 06	lsls	r0, r3, #26
+   0x0007573a <+642>:	00 00	movs	r0, r0
+   0x0007573c <+644>:	ec 08	lsrs	r4, r5, #3
+   0x0007573e <+646>:	00 00	movs	r0, r0
+   0x00075740 <+648>:	54 04	lsls	r4, r2, #17
+   0x00075742 <+650>:	00 00	movs	r0, r0
+   0x00075744 <+652>:	d4 02	lsls	r4, r2, #11
+   0x00075746 <+654>:	00 00	movs	r0, r0
+   0x00075748 <+656>:	d0 06	lsls	r0, r2, #27
+   0x0007574a <+658>:	00 00	movs	r0, r0
+   0x0007574c <+660>:	c2 a2	add	r2, pc, #776	; (adr r2, 0x75a58 <update_screen+708>)
+   0x0007574e <+662>:	01 00	movs	r1, r0
+   0x00075750 <+664>:	4a 61	str	r2, [r1, #20]
+   0x00075752 <+666>:	01 00	movs	r1, r0
+   0x00075754 <+668>:	3c 09	lsrs	r4, r7, #4
+   0x00075756 <+670>:	00 00	movs	r0, r0
+   0x00075758 <+672>:	04 04	lsls	r4, r0, #16
+   0x0007575a <+674>:	00 00	movs	r0, r0
+   0x0007575c <+676>:	bc a1	add	r1, pc, #752	; (adr r1, 0x75a50 <update_screen+700>)
+   0x0007575e <+678>:	01 00	movs	r1, r0
+   0x00075760 <+680>:	3c a2	add	r2, pc, #240	; (adr r2, 0x75854 <update_screen+192>)
+   0x00075762 <+682>:	01 00	movs	r1, r0
+   0x00075764 <+684>:	8c a1	add	r1, pc, #560	; (adr r1, 0x75998 <update_screen+516>)
+   0x00075766 <+686>:	01 00	movs	r1, r0
+   0x00075768 <+688>:	b6 a1	add	r1, pc, #728	; (adr r1, 0x75a44 <update_screen+688>)
+   0x0007576a <+690>:	01 00	movs	r1, r0
+   0x0007576c <+692>:	a8 a1	add	r1, pc, #672	; (adr r1, 0x75a10 <update_screen+636>)
+   0x0007576e <+694>:	01 00	movs	r1, r0
+   0x00075770 <+696>:	92 a1	add	r1, pc, #584	; (adr r1, 0x759bc <update_screen+552>)
+   0x00075772 <+698>:	01 00	movs	r1, r0
+   0x00075774 <+700>:	b4 a1	add	r1, pc, #720	; (adr r1, 0x75a48 <update_screen+692>)
+   0x00075776 <+702>:	01 00	movs	r1, r0
+   0x00075778 <+704>:	bc a1	add	r1, pc, #752	; (adr r1, 0x75a6c <update_screen+728>)
+   0x0007577a <+706>:	01 00	movs	r1, r0
+   0x0007577c <+708>:	6c 05	lsls	r4, r5, #21
+   0x0007577e <+710>:	00 00	movs	r0, r0
+   0x00075780 <+712>:	da a1	add	r1, pc, #872	; (adr r1, 0x75aec <update_curbuf+8>)
+   0x00075782 <+714>:	01 00	movs	r1, r0
+   0x00075784 <+716>:	a2 a1	add	r1, pc, #648	; (adr r1, 0x75a10 <update_screen+636>)
+   0x00075786 <+718>:	01 00	movs	r1, r0
+   0x00075788 <+720>:	9e a1	add	r1, pc, #632	; (adr r1, 0x75a04 <update_screen+624>)
+   0x0007578a <+722>:	01 00	movs	r1, r0
+   0x0007578c <+724>:	9e a1	add	r1, pc, #632	; (adr r1, 0x75a08 <update_screen+628>)
+   0x0007578e <+726>:	01 00	movs	r1, r0
+   0x00075790 <+728>:	9e a1	add	r1, pc, #632	; (adr r1, 0x75a0c <update_screen+632>)
+   0x00075792 <+730>:	01 00	movs	r1, r0
+End of assembler dump.
+Dump of assembler code for function showruler:
+   0x0007601c <+0>:	10 b5	push	{r4, lr}
+   0x0007601e <+2>:	08 4c	ldr	r4, [pc, #32]	; (0x76040 <showruler+36>)
+   0x00076020 <+4>:	7c 44	add	r4, pc
+   0x00076022 <+6>:	40 b1	cbz	r0, 0x76036 <showruler+26>
+   0x00076024 <+8>:	07 4b	ldr	r3, [pc, #28]	; (0x76044 <showruler+40>)
+   0x00076026 <+10>:	e3 58	ldr	r3, [r4, r3]
+   0x00076028 <+12>:	1b 68	ldr	r3, [r3, #0]
+   0x0007602a <+14>:	03 b9	cbnz	r3, 0x7602e <showruler+18>
+   0x0007602c <+16>:	10 bd	pop	{r4, pc}
+   0x0007602e <+18>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x00076032 <+22>:	fc f7 c9 b9	b.w	0x723c8 <draw_tabline>
+   0x00076036 <+26>:	fc f7 c7 fb	bl	0x727c8 <redrawing>
+   0x0007603a <+30>:	00 28	cmp	r0, #0
+   0x0007603c <+32>:	f2 d1	bne.n	0x76024 <showruler+8>
+   0x0007603e <+34>:	10 bd	pop	{r4, pc}
+   0x00076040 <+36>:	78 16	asrs	r0, r7, #25
+   0x00076042 <+38>:	03 00	movs	r3, r0
+   0x00076044 <+40>:	08 09	lsrs	r0, r1, #4
+   0x00076046 <+42>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function status_redraw_all:
+   0x0006f2d4 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0006f2d6 <+2>:	0e 4d	ldr	r5, [pc, #56]	; (0x6f310 <status_redraw_all+60>)
+   0x0006f2d8 <+4>:	0e 4b	ldr	r3, [pc, #56]	; (0x6f314 <status_redraw_all+64>)
+   0x0006f2da <+6>:	7d 44	add	r5, pc
+   0x0006f2dc <+8>:	eb 58	ldr	r3, [r5, r3]
+   0x0006f2de <+10>:	1c 68	ldr	r4, [r3, #0]
+   0x0006f2e0 <+12>:	ac b1	cbz	r4, 0x6f30e <status_redraw_all+58>
+   0x0006f2e2 <+14>:	01 26	movs	r6, #1
+   0x0006f2e4 <+16>:	01 e0	b.n	0x6f2ea <status_redraw_all+22>
+   0x0006f2e6 <+18>:	a4 68	ldr	r4, [r4, #8]
+   0x0006f2e8 <+20>:	8c b1	cbz	r4, 0x6f30e <status_redraw_all+58>
+   0x0006f2ea <+22>:	23 6d	ldr	r3, [r4, #80]	; 0x50
+   0x0006f2ec <+24>:	0a 4a	ldr	r2, [pc, #40]	; (0x6f318 <status_redraw_all+68>)
+   0x0006f2ee <+26>:	00 2b	cmp	r3, #0
+   0x0006f2f0 <+28>:	f9 d0	beq.n	0x6f2e6 <status_redraw_all+18>
+   0x0006f2f2 <+30>:	c4 f8 98 60	str.w	r6, [r4, #152]	; 0x98
+   0x0006f2f6 <+34>:	ab 58	ldr	r3, [r5, r2]
+   0x0006f2f8 <+36>:	18 68	ldr	r0, [r3, #0]
+   0x0006f2fa <+38>:	d0 f8 88 30	ldr.w	r3, [r0, #136]	; 0x88
+   0x0006f2fe <+42>:	09 2b	cmp	r3, #9
+   0x0006f300 <+44>:	f1 dc	bgt.n	0x6f2e6 <status_redraw_all+18>
+   0x0006f302 <+46>:	0a 21	movs	r1, #10
+   0x0006f304 <+48>:	ff f7 1a ff	bl	0x6f13c <redraw_win_later>
+   0x0006f308 <+52>:	a4 68	ldr	r4, [r4, #8]
+   0x0006f30a <+54>:	00 2c	cmp	r4, #0
+   0x0006f30c <+56>:	ed d1	bne.n	0x6f2ea <status_redraw_all+22>
+   0x0006f30e <+58>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0006f310 <+60>:	be 83	strh	r6, [r7, #28]
+   0x0006f312 <+62>:	03 00	movs	r3, r0
+   0x0006f314 <+64>:	38 09	lsrs	r0, r7, #4
+   0x0006f316 <+66>:	00 00	movs	r0, r0
+   0x0006f318 <+68>:	24 04	lsls	r4, r4, #16
+   0x0006f31a <+70>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function status_redraw_curbuf:
+   0x0006f31c <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0006f31e <+2>:	10 4d	ldr	r5, [pc, #64]	; (0x6f360 <status_redraw_curbuf+68>)
+   0x0006f320 <+4>:	10 4b	ldr	r3, [pc, #64]	; (0x6f364 <status_redraw_curbuf+72>)
+   0x0006f322 <+6>:	7d 44	add	r5, pc
+   0x0006f324 <+8>:	eb 58	ldr	r3, [r5, r3]
+   0x0006f326 <+10>:	1c 68	ldr	r4, [r3, #0]
+   0x0006f328 <+12>:	5c b1	cbz	r4, 0x6f342 <status_redraw_curbuf+38>
+   0x0006f32a <+14>:	01 26	movs	r6, #1
+   0x0006f32c <+16>:	23 6d	ldr	r3, [r4, #80]	; 0x50
+   0x0006f32e <+18>:	0e 4a	ldr	r2, [pc, #56]	; (0x6f368 <status_redraw_curbuf+76>)
+   0x0006f330 <+20>:	23 b1	cbz	r3, 0x6f33c <status_redraw_curbuf+32>
+   0x0006f332 <+22>:	ab 58	ldr	r3, [r5, r2]
+   0x0006f334 <+24>:	22 68	ldr	r2, [r4, #0]
+   0x0006f336 <+26>:	1b 68	ldr	r3, [r3, #0]
+   0x0006f338 <+28>:	9a 42	cmp	r2, r3
+   0x0006f33a <+30>:	03 d0	beq.n	0x6f344 <status_redraw_curbuf+40>
+   0x0006f33c <+32>:	a4 68	ldr	r4, [r4, #8]
+   0x0006f33e <+34>:	00 2c	cmp	r4, #0
+   0x0006f340 <+36>:	f4 d1	bne.n	0x6f32c <status_redraw_curbuf+16>
+   0x0006f342 <+38>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0006f344 <+40>:	09 4b	ldr	r3, [pc, #36]	; (0x6f36c <status_redraw_curbuf+80>)
+   0x0006f346 <+42>:	c4 f8 98 60	str.w	r6, [r4, #152]	; 0x98
+   0x0006f34a <+46>:	eb 58	ldr	r3, [r5, r3]
+   0x0006f34c <+48>:	18 68	ldr	r0, [r3, #0]
+   0x0006f34e <+50>:	d0 f8 88 30	ldr.w	r3, [r0, #136]	; 0x88
+   0x0006f352 <+54>:	09 2b	cmp	r3, #9
+   0x0006f354 <+56>:	f2 dc	bgt.n	0x6f33c <status_redraw_curbuf+32>
+   0x0006f356 <+58>:	0a 21	movs	r1, #10
+   0x0006f358 <+60>:	ff f7 f0 fe	bl	0x6f13c <redraw_win_later>
+   0x0006f35c <+64>:	ee e7	b.n	0x6f33c <status_redraw_curbuf+32>
+   0x0006f35e <+66>:	00 bf	nop
+   0x0006f360 <+68>:	76 83	strh	r6, [r6, #26]
+   0x0006f362 <+70>:	03 00	movs	r3, r0
+   0x0006f364 <+72>:	38 09	lsrs	r0, r7, #4
+   0x0006f366 <+74>:	00 00	movs	r0, r0
+   0x0006f368 <+76>:	b0 07	lsls	r0, r6, #30
+   0x0006f36a <+78>:	00 00	movs	r0, r0
+   0x0006f36c <+80>:	24 04	lsls	r4, r4, #16
+   0x0006f36e <+82>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function unshowmode:
+   0x00075f5c <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00075f5e <+2>:	05 46	mov	r5, r0
+   0x00075f60 <+4>:	18 4c	ldr	r4, [pc, #96]	; (0x75fc4 <unshowmode+104>)
+   0x00075f62 <+6>:	7c 44	add	r4, pc
+   0x00075f64 <+8>:	fc f7 30 fc	bl	0x727c8 <redrawing>
+   0x00075f68 <+12>:	e0 b1	cbz	r0, 0x75fa4 <unshowmode+72>
+   0x00075f6a <+14>:	95 b1	cbz	r5, 0x75f92 <unshowmode+54>
+   0x00075f6c <+16>:	16 4b	ldr	r3, [pc, #88]	; (0x75fc8 <unshowmode+108>)
+   0x00075f6e <+18>:	00 25	movs	r5, #0
+   0x00075f70 <+20>:	16 49	ldr	r1, [pc, #88]	; (0x75fcc <unshowmode+112>)
+   0x00075f72 <+22>:	17 4a	ldr	r2, [pc, #92]	; (0x75fd0 <unshowmode+116>)
+   0x00075f74 <+24>:	e0 58	ldr	r0, [r4, r3]
+   0x00075f76 <+26>:	17 4b	ldr	r3, [pc, #92]	; (0x75fd4 <unshowmode+120>)
+   0x00075f78 <+28>:	05 60	str	r5, [r0, #0]
+   0x00075f7a <+30>:	60 58	ldr	r0, [r4, r1]
+   0x00075f7c <+32>:	a1 58	ldr	r1, [r4, r2]
+   0x00075f7e <+34>:	02 68	ldr	r2, [r0, #0]
+   0x00075f80 <+36>:	01 3a	subs	r2, #1
+   0x00075f82 <+38>:	0a 60	str	r2, [r1, #0]
+   0x00075f84 <+40>:	e3 58	ldr	r3, [r4, r3]
+   0x00075f86 <+42>:	1b 68	ldr	r3, [r3, #0]
+   0x00075f88 <+44>:	8b b9	cbnz	r3, 0x75fae <unshowmode+82>
+   0x00075f8a <+46>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x00075f8e <+50>:	c0 f7 f3 be	b.w	0x36d78 <msg_clr_eos>
+   0x00075f92 <+54>:	b8 f7 ed f8	bl	0x2e170 <char_avail>
+   0x00075f96 <+58>:	00 28	cmp	r0, #0
+   0x00075f98 <+60>:	e8 d0	beq.n	0x75f6c <unshowmode+16>
+   0x00075f9a <+62>:	0f 4b	ldr	r3, [pc, #60]	; (0x75fd8 <unshowmode+124>)
+   0x00075f9c <+64>:	e3 58	ldr	r3, [r4, r3]
+   0x00075f9e <+66>:	1b 68	ldr	r3, [r3, #0]
+   0x00075fa0 <+68>:	00 2b	cmp	r3, #0
+   0x00075fa2 <+70>:	e3 d1	bne.n	0x75f6c <unshowmode+16>
+   0x00075fa4 <+72>:	0d 4b	ldr	r3, [pc, #52]	; (0x75fdc <unshowmode+128>)
+   0x00075fa6 <+74>:	01 22	movs	r2, #1
+   0x00075fa8 <+76>:	e3 58	ldr	r3, [r4, r3]
+   0x00075faa <+78>:	1a 60	str	r2, [r3, #0]
+   0x00075fac <+80>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00075fae <+82>:	0c 4b	ldr	r3, [pc, #48]	; (0x75fe0 <unshowmode+132>)
+   0x00075fb0 <+84>:	0c 48	ldr	r0, [pc, #48]	; (0x75fe4 <unshowmode+136>)
+   0x00075fb2 <+86>:	e3 58	ldr	r3, [r4, r3]
+   0x00075fb4 <+88>:	78 44	add	r0, pc
+   0x00075fb6 <+90>:	19 6a	ldr	r1, [r3, #32]
+   0x00075fb8 <+92>:	c1 f7 58 f9	bl	0x3726c <msg_puts_attr>
+   0x00075fbc <+96>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x00075fc0 <+100>:	c0 f7 da be	b.w	0x36d78 <msg_clr_eos>
+   0x00075fc4 <+104>:	36 17	asrs	r6, r6, #28
+   0x00075fc6 <+106>:	03 00	movs	r3, r0
+   0x00075fc8 <+108>:	e0 06	lsls	r0, r4, #27
+   0x00075fca <+110>:	00 00	movs	r0, r0
+   0x00075fcc <+112>:	c8 08	lsrs	r0, r1, #3
+   0x00075fce <+114>:	00 00	movs	r0, r0
+   0x00075fd0 <+116>:	58 02	lsls	r0, r3, #9
+   0x00075fd2 <+118>:	00 00	movs	r0, r0
+   0x00075fd4 <+120>:	98 06	lsls	r0, r3, #26
+   0x00075fd6 <+122>:	00 00	movs	r0, r0
+   0x00075fd8 <+124>:	04 06	lsls	r4, r0, #24
+   0x00075fda <+126>:	00 00	movs	r0, r0
+   0x00075fdc <+128>:	d4 02	lsls	r4, r2, #11
+   0x00075fde <+130>:	00 00	movs	r0, r0
+   0x00075fe0 <+132>:	80 07	lsls	r0, r0, #30
+   0x00075fe2 <+134>:	00 00	movs	r0, r0
+   0x00075fe4 <+136>:	00 99	ldr	r1, [sp, #0]
+   0x00075fe6 <+138>:	01 00	movs	r1, r0
+End of assembler dump.

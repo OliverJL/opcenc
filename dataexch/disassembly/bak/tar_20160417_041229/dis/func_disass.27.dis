@@ -1,0 +1,285 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function rpl_getopt_internal:
+   0x00031e44 <+0>:	2d e9 f0 42	stmdb	sp!, {r4, r5, r6, r7, r9, lr}
+   0x00031e48 <+4>:	84 b0	sub	sp, #16
+   0x00031e4a <+6>:	45 f2 50 79	movw	r9, #22352	; 0x5750
+   0x00031e4e <+10>:	c0 f2 04 09	movt	r9, #4
+   0x00031e52 <+14>:	0c 9d	ldr	r5, [sp, #48]	; 0x30
+   0x00031e54 <+16>:	46 f2 28 04	movw	r4, #24616	; 0x6028
+   0x00031e58 <+20>:	c0 f2 04 04	movt	r4, #4
+   0x00031e5c <+24>:	0a 9f	ldr	r7, [sp, #40]	; 0x28
+   0x00031e5e <+26>:	0b 9e	ldr	r6, [sp, #44]	; 0x2c
+   0x00031e60 <+28>:	03 95	str	r5, [sp, #12]
+   0x00031e62 <+30>:	d9 f8 00 50	ldr.w	r5, [r9]
+   0x00031e66 <+34>:	02 94	str	r4, [sp, #8]
+   0x00031e68 <+36>:	00 97	str	r7, [sp, #0]
+   0x00031e6a <+38>:	25 60	str	r5, [r4, #0]
+   0x00031e6c <+40>:	d9 f8 04 50	ldr.w	r5, [r9, #4]
+   0x00031e70 <+44>:	01 96	str	r6, [sp, #4]
+   0x00031e72 <+46>:	65 60	str	r5, [r4, #4]
+   0x00031e74 <+48>:	ff f7 2a fb	bl	0x314cc <_getopt_internal_r>
+   0x00031e78 <+52>:	25 68	ldr	r5, [r4, #0]
+   0x00031e7a <+54>:	46 f2 50 33	movw	r3, #25424	; 0x6350
+   0x00031e7e <+58>:	a1 68	ldr	r1, [r4, #8]
+   0x00031e80 <+60>:	c0 f2 04 03	movt	r3, #4
+   0x00031e84 <+64>:	e2 68	ldr	r2, [r4, #12]
+   0x00031e86 <+66>:	c9 f8 00 50	str.w	r5, [r9]
+   0x00031e8a <+70>:	c9 f8 08 10	str.w	r1, [r9, #8]
+   0x00031e8e <+74>:	1a 60	str	r2, [r3, #0]
+   0x00031e90 <+76>:	04 b0	add	sp, #16
+   0x00031e92 <+78>:	bd e8 f0 82	ldmia.w	sp!, {r4, r5, r6, r7, r9, pc}
+End of assembler dump.
+Dump of assembler code for function exchange:
+   0x0003142c <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00031430 <+4>:	89 46	mov	r9, r1
+   0x00031432 <+6>:	4d 6a	ldr	r5, [r1, #36]	; 0x24
+   0x00031434 <+8>:	d1 f8 20 80	ldr.w	r8, [r1, #32]
+   0x00031438 <+12>:	d1 f8 00 c0	ldr.w	r12, [r1]
+   0x0003143c <+16>:	00 eb 85 0e	add.w	lr, r0, r5, lsl #2
+   0x00031440 <+20>:	46 46	mov	r6, r8
+   0x00031442 <+22>:	67 46	mov	r7, r12
+   0x00031444 <+24>:	b5 42	cmp	r5, r6
+   0x00031446 <+26>:	c8 bf	it	gt
+   0x00031448 <+28>:	af 42	cmpgt	r7, r5
+   0x0003144a <+30>:	1d dd	ble.n	0x31488 <exchange+92>
+   0x0003144c <+32>:	c5 eb 07 0b	rsb	r11, r5, r7
+   0x00031450 <+36>:	c6 eb 05 0a	rsb	r10, r6, r5
+   0x00031454 <+40>:	d3 45	cmp	r11, r10
+   0x00031456 <+42>:	20 dc	bgt.n	0x3149a <exchange+110>
+   0x00031458 <+44>:	bb f1 00 0f	cmp.w	r11, #0
+   0x0003145c <+48>:	c1 bf	itttt	gt
+   0x0003145e <+50>:	05 eb 0b 0a	addgt.w	r10, r5, r11
+   0x00031462 <+54>:	00 eb 86 02	addgt.w	r2, r0, r6, lsl #2
+   0x00031466 <+58>:	73 46	movgt	r3, lr
+   0x00031468 <+60>:	00 eb 8a 0a	addgt.w	r10, r0, r10, lsl #2
+   0x0003146c <+64>:	07 dd	ble.n	0x3147e <exchange+82>
+   0x0003146e <+66>:	14 68	ldr	r4, [r2, #0]
+   0x00031470 <+68>:	19 68	ldr	r1, [r3, #0]
+   0x00031472 <+70>:	42 f8 04 1b	str.w	r1, [r2], #4
+   0x00031476 <+74>:	43 f8 04 4b	str.w	r4, [r3], #4
+   0x0003147a <+78>:	53 45	cmp	r3, r10
+   0x0003147c <+80>:	f7 d1	bne.n	0x3146e <exchange+66>
+   0x0003147e <+82>:	5e 44	add	r6, r11
+   0x00031480 <+84>:	b5 42	cmp	r5, r6
+   0x00031482 <+86>:	c8 bf	it	gt
+   0x00031484 <+88>:	af 42	cmpgt	r7, r5
+   0x00031486 <+90>:	e1 dc	bgt.n	0x3144c <exchange+32>
+   0x00031488 <+92>:	c5 eb 0c 05	rsb	r5, r5, r12
+   0x0003148c <+96>:	c9 f8 24 c0	str.w	r12, [r9, #36]	; 0x24
+   0x00031490 <+100>:	45 44	add	r5, r8
+   0x00031492 <+102>:	c9 f8 20 50	str.w	r5, [r9, #32]
+   0x00031496 <+106>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0003149a <+110>:	ba f1 00 0f	cmp.w	r10, #0
+   0x0003149e <+114>:	11 dd	ble.n	0x314c4 <exchange+152>
+   0x000314a0 <+116>:	73 1b	subs	r3, r6, r5
+   0x000314a2 <+118>:	00 eb 86 02	add.w	r2, r0, r6, lsl #2
+   0x000314a6 <+122>:	3b 44	add	r3, r7
+   0x000314a8 <+124>:	0a eb 03 0b	add.w	r11, r10, r3
+   0x000314ac <+128>:	00 eb 83 03	add.w	r3, r0, r3, lsl #2
+   0x000314b0 <+132>:	00 eb 8b 0b	add.w	r11, r0, r11, lsl #2
+   0x000314b4 <+136>:	14 68	ldr	r4, [r2, #0]
+   0x000314b6 <+138>:	19 68	ldr	r1, [r3, #0]
+   0x000314b8 <+140>:	42 f8 04 1b	str.w	r1, [r2], #4
+   0x000314bc <+144>:	43 f8 04 4b	str.w	r4, [r3], #4
+   0x000314c0 <+148>:	5b 45	cmp	r3, r11
+   0x000314c2 <+150>:	f7 d1	bne.n	0x314b4 <exchange+136>
+   0x000314c4 <+152>:	ca eb 07 07	rsb	r7, r10, r7
+   0x000314c8 <+156>:	bc e7	b.n	0x31444 <exchange+24>
+End of assembler dump.
+Dump of assembler code for function _getopt_long_only_r:
+   0x0002fd48 <+0>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0002fd4a <+2>:	85 b0	sub	sp, #20
+   0x0002fd4c <+4>:	01 27	movs	r7, #1
+   0x0002fd4e <+6>:	00 26	movs	r6, #0
+   0x0002fd50 <+8>:	0a 9d	ldr	r5, [sp, #40]	; 0x28
+   0x0002fd52 <+10>:	0b 9c	ldr	r4, [sp, #44]	; 0x2c
+   0x0002fd54 <+12>:	03 96	str	r6, [sp, #12]
+   0x0002fd56 <+14>:	8d e8 a0 00	stmia.w	sp, {r5, r7}
+   0x0002fd5a <+18>:	02 94	str	r4, [sp, #8]
+   0x0002fd5c <+20>:	01 f0 b6 fb	bl	0x314cc <_getopt_internal_r>
+   0x0002fd60 <+24>:	05 b0	add	sp, #20
+   0x0002fd62 <+26>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function _getopt_long_r:
+   0x0002fd14 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002fd16 <+2>:	84 b0	sub	sp, #16
+   0x0002fd18 <+4>:	00 24	movs	r4, #0
+   0x0002fd1a <+6>:	08 9e	ldr	r6, [sp, #32]
+   0x0002fd1c <+8>:	09 9d	ldr	r5, [sp, #36]	; 0x24
+   0x0002fd1e <+10>:	01 94	str	r4, [sp, #4]
+   0x0002fd20 <+12>:	00 96	str	r6, [sp, #0]
+   0x0002fd22 <+14>:	02 95	str	r5, [sp, #8]
+   0x0002fd24 <+16>:	03 94	str	r4, [sp, #12]
+   0x0002fd26 <+18>:	01 f0 d1 fb	bl	0x314cc <_getopt_internal_r>
+   0x0002fd2a <+22>:	04 b0	add	sp, #16
+   0x0002fd2c <+24>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function rpl_getopt_long:
+   0x0002fcfc <+0>:	30 b5	push	{r4, r5, lr}
+   0x0002fcfe <+2>:	85 b0	sub	sp, #20
+   0x0002fd00 <+4>:	00 24	movs	r4, #0
+   0x0002fd02 <+6>:	08 9d	ldr	r5, [sp, #32]
+   0x0002fd04 <+8>:	01 94	str	r4, [sp, #4]
+   0x0002fd06 <+10>:	02 94	str	r4, [sp, #8]
+   0x0002fd08 <+12>:	00 95	str	r5, [sp, #0]
+   0x0002fd0a <+14>:	02 f0 9b f8	bl	0x31e44 <rpl_getopt_internal>
+   0x0002fd0e <+18>:	05 b0	add	sp, #20
+   0x0002fd10 <+20>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function rpl_getopt_long_only:
+   0x0002fd30 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002fd32 <+2>:	84 b0	sub	sp, #16
+   0x0002fd34 <+4>:	01 26	movs	r6, #1
+   0x0002fd36 <+6>:	00 25	movs	r5, #0
+   0x0002fd38 <+8>:	08 9c	ldr	r4, [sp, #32]
+   0x0002fd3a <+10>:	01 96	str	r6, [sp, #4]
+   0x0002fd3c <+12>:	02 95	str	r5, [sp, #8]
+   0x0002fd3e <+14>:	00 94	str	r4, [sp, #0]
+   0x0002fd40 <+16>:	02 f0 80 f8	bl	0x31e44 <rpl_getopt_internal>
+   0x0002fd44 <+20>:	04 b0	add	sp, #16
+   0x0002fd46 <+22>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function gettime:
+   0x0002aa20 <+0>:	10 b5	push	{r4, lr}
+   0x0002aa22 <+2>:	04 46	mov	r4, r0
+   0x0002aa24 <+4>:	82 b0	sub	sp, #8
+   0x0002aa26 <+6>:	00 20	movs	r0, #0
+   0x0002aa28 <+8>:	21 46	mov	r1, r4
+   0x0002aa2a <+10>:	e0 f7 90 e8	blx	0xab4c <clock_gettime@plt>
+   0x0002aa2e <+14>:	58 b1	cbz	r0, 0x2aa48 <gettime+40>
+   0x0002aa30 <+16>:	00 21	movs	r1, #0
+   0x0002aa32 <+18>:	68 46	mov	r0, sp
+   0x0002aa34 <+20>:	e0 f7 a4 e9	blx	0xad80 <gettimeofday@plt>
+   0x0002aa38 <+24>:	01 9a	ldr	r2, [sp, #4]
+   0x0002aa3a <+26>:	4f f4 7a 71	mov.w	r1, #1000	; 0x3e8
+   0x0002aa3e <+30>:	00 9b	ldr	r3, [sp, #0]
+   0x0002aa40 <+32>:	01 fb 02 f2	mul.w	r2, r1, r2
+   0x0002aa44 <+36>:	23 60	str	r3, [r4, #0]
+   0x0002aa46 <+38>:	62 60	str	r2, [r4, #4]
+   0x0002aa48 <+40>:	02 b0	add	sp, #8
+   0x0002aa4a <+42>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function hash_clear:
+   0x0002b0a4 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x0002b0a8 <+4>:	05 46	mov	r5, r0
+   0x0002b0aa <+6>:	07 68	ldr	r7, [r0, #0]
+   0x0002b0ac <+8>:	43 68	ldr	r3, [r0, #4]
+   0x0002b0ae <+10>:	9f 42	cmp	r7, r3
+   0x0002b0b0 <+12>:	3c bf	itt	cc
+   0x0002b0b2 <+14>:	08 37	addcc	r7, #8
+   0x0002b0b4 <+16>:	00 26	movcc	r6, #0
+   0x0002b0b6 <+18>:	20 d2	bcs.n	0x2b0fa <hash_clear+86>
+   0x0002b0b8 <+20>:	57 f8 08 2c	ldr.w	r2, [r7, #-8]
+   0x0002b0bc <+24>:	b8 46	mov	r8, r7
+   0x0002b0be <+26>:	c2 b1	cbz	r2, 0x2b0f2 <hash_clear+78>
+   0x0002b0c0 <+28>:	57 f8 04 4c	ldr.w	r4, [r7, #-4]
+   0x0002b0c4 <+32>:	2a 6a	ldr	r2, [r5, #32]
+   0x0002b0c6 <+34>:	5c b1	cbz	r4, 0x2b0e0 <hash_clear+60>
+   0x0002b0c8 <+36>:	12 b1	cbz	r2, 0x2b0d0 <hash_clear+44>
+   0x0002b0ca <+38>:	20 68	ldr	r0, [r4, #0]
+   0x0002b0cc <+40>:	90 47	blx	r2
+   0x0002b0ce <+42>:	2a 6a	ldr	r2, [r5, #32]
+   0x0002b0d0 <+44>:	69 6a	ldr	r1, [r5, #36]	; 0x24
+   0x0002b0d2 <+46>:	63 68	ldr	r3, [r4, #4]
+   0x0002b0d4 <+48>:	26 60	str	r6, [r4, #0]
+   0x0002b0d6 <+50>:	61 60	str	r1, [r4, #4]
+   0x0002b0d8 <+52>:	6c 62	str	r4, [r5, #36]	; 0x24
+   0x0002b0da <+54>:	0b b1	cbz	r3, 0x2b0e0 <hash_clear+60>
+   0x0002b0dc <+56>:	1c 46	mov	r4, r3
+   0x0002b0de <+58>:	f3 e7	b.n	0x2b0c8 <hash_clear+36>
+   0x0002b0e0 <+60>:	12 b1	cbz	r2, 0x2b0e8 <hash_clear+68>
+   0x0002b0e2 <+62>:	57 f8 08 0c	ldr.w	r0, [r7, #-8]
+   0x0002b0e6 <+66>:	90 47	blx	r2
+   0x0002b0e8 <+68>:	6b 68	ldr	r3, [r5, #4]
+   0x0002b0ea <+70>:	47 f8 08 6c	str.w	r6, [r7, #-8]
+   0x0002b0ee <+74>:	47 f8 04 6c	str.w	r6, [r7, #-4]
+   0x0002b0f2 <+78>:	43 45	cmp	r3, r8
+   0x0002b0f4 <+80>:	07 f1 08 07	add.w	r7, r7, #8
+   0x0002b0f8 <+84>:	de d8	bhi.n	0x2b0b8 <hash_clear+20>
+   0x0002b0fa <+86>:	00 23	movs	r3, #0
+   0x0002b0fc <+88>:	eb 60	str	r3, [r5, #12]
+   0x0002b0fe <+90>:	2b 61	str	r3, [r5, #16]
+   0x0002b100 <+92>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.
+Dump of assembler code for function hash_delete:
+   0x0002b3a8 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002b3aa <+2>:	82 b0	sub	sp, #8
+   0x0002b3ac <+4>:	01 aa	add	r2, sp, #4
+   0x0002b3ae <+6>:	01 23	movs	r3, #1
+   0x0002b3b0 <+8>:	04 46	mov	r4, r0
+   0x0002b3b2 <+10>:	ff f7 9f fb	bl	0x2aaf4 <hash_find_entry>
+   0x0002b3b6 <+14>:	05 46	mov	r5, r0
+   0x0002b3b8 <+16>:	28 b1	cbz	r0, 0x2b3c6 <hash_delete+30>
+   0x0002b3ba <+18>:	01 9a	ldr	r2, [sp, #4]
+   0x0002b3bc <+20>:	23 69	ldr	r3, [r4, #16]
+   0x0002b3be <+22>:	12 68	ldr	r2, [r2, #0]
+   0x0002b3c0 <+24>:	01 3b	subs	r3, #1
+   0x0002b3c2 <+26>:	23 61	str	r3, [r4, #16]
+   0x0002b3c4 <+28>:	12 b1	cbz	r2, 0x2b3cc <hash_delete+36>
+   0x0002b3c6 <+30>:	28 46	mov	r0, r5
+   0x0002b3c8 <+32>:	02 b0	add	sp, #8
+   0x0002b3ca <+34>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002b3cc <+36>:	94 ed 02 6a	vldr	s12, [r4, #8]
+   0x0002b3d0 <+40>:	b8 ee 46 7a	vcvt.f32.u32	s14, s12
+   0x0002b3d4 <+44>:	63 69	ldr	r3, [r4, #20]
+   0x0002b3d6 <+46>:	d3 ed 00 7a	vldr	s15, [r3]
+   0x0002b3da <+50>:	e3 68	ldr	r3, [r4, #12]
+   0x0002b3dc <+52>:	01 3b	subs	r3, #1
+   0x0002b3de <+54>:	e3 60	str	r3, [r4, #12]
+   0x0002b3e0 <+56>:	06 ee 90 3a	vmov	s13, r3
+   0x0002b3e4 <+60>:	67 ee 27 7a	vmul.f32	s15, s14, s15
+   0x0002b3e8 <+64>:	b8 ee 66 7a	vcvt.f32.u32	s14, s13
+   0x0002b3ec <+68>:	b4 ee e7 7a	vcmpe.f32	s14, s15
+   0x0002b3f0 <+72>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b3f4 <+76>:	e7 d5	bpl.n	0x2b3c6 <hash_delete+30>
+   0x0002b3f6 <+78>:	04 f1 14 00	add.w	r0, r4, #20
+   0x0002b3fa <+82>:	ff f7 c1 fb	bl	0x2ab80 <check_tuning>
+   0x0002b3fe <+86>:	94 ed 02 6a	vldr	s12, [r4, #8]
+   0x0002b402 <+90>:	f8 ee 46 7a	vcvt.f32.u32	s15, s12
+   0x0002b406 <+94>:	63 69	ldr	r3, [r4, #20]
+   0x0002b408 <+96>:	93 ed 00 7a	vldr	s14, [r3]
+   0x0002b40c <+100>:	94 ed 03 6a	vldr	s12, [r4, #12]
+   0x0002b410 <+104>:	27 ee 87 7a	vmul.f32	s14, s15, s14
+   0x0002b414 <+108>:	f8 ee 46 6a	vcvt.f32.u32	s13, s12
+   0x0002b418 <+112>:	f4 ee c7 6a	vcmpe.f32	s13, s14
+   0x0002b41c <+116>:	f1 ee 10 fa	vmrs	APSR_nzcv, fpscr
+   0x0002b420 <+120>:	d1 d5	bpl.n	0x2b3c6 <hash_delete+30>
+   0x0002b422 <+122>:	1a 7c	ldrb	r2, [r3, #16]
+   0x0002b424 <+124>:	93 ed 01 7a	vldr	s14, [r3, #4]
+   0x0002b428 <+128>:	67 ee 87 7a	vmul.f32	s15, s15, s14
+   0x0002b42c <+132>:	1a b9	cbnz	r2, 0x2b436 <hash_delete+142>
+   0x0002b42e <+134>:	93 ed 02 7a	vldr	s14, [r3, #8]
+   0x0002b432 <+138>:	67 ee 87 7a	vmul.f32	s15, s15, s14
+   0x0002b436 <+142>:	20 46	mov	r0, r4
+   0x0002b438 <+144>:	fc ee e7 7a	vcvt.u32.f32	s15, s15
+   0x0002b43c <+148>:	17 ee 90 1a	vmov	r1, s15
+   0x0002b440 <+152>:	ff f7 a0 fe	bl	0x2b184 <hash_rehash>
+   0x0002b444 <+156>:	00 28	cmp	r0, #0
+   0x0002b446 <+158>:	be d1	bne.n	0x2b3c6 <hash_delete+30>
+   0x0002b448 <+160>:	60 6a	ldr	r0, [r4, #36]	; 0x24
+   0x0002b44a <+162>:	08 b9	cbnz	r0, 0x2b450 <hash_delete+168>
+   0x0002b44c <+164>:	05 e0	b.n	0x2b45a <hash_delete+178>
+   0x0002b44e <+166>:	30 46	mov	r0, r6
+   0x0002b450 <+168>:	46 68	ldr	r6, [r0, #4]
+   0x0002b452 <+170>:	df f7 64 eb	blx	0xab1c <free>
+   0x0002b456 <+174>:	00 2e	cmp	r6, #0
+   0x0002b458 <+176>:	f9 d1	bne.n	0x2b44e <hash_delete+166>
+   0x0002b45a <+178>:	00 23	movs	r3, #0
+   0x0002b45c <+180>:	63 62	str	r3, [r4, #36]	; 0x24
+   0x0002b45e <+182>:	b2 e7	b.n	0x2b3c6 <hash_delete+30>
+End of assembler dump.

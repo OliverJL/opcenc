@@ -1,0 +1,646 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function argmatch_invalid:
+   0x00026bb4 <+0>:	01 32	adds	r2, #1
+   0x00026bb6 <+2>:	4f f0 05 02	mov.w	r2, #5
+   0x00026bba <+6>:	70 b5	push	{r4, r5, r6, lr}
+   0x00026bbc <+8>:	0d 46	mov	r5, r1
+   0x00026bbe <+10>:	82 b0	sub	sp, #8
+   0x00026bc0 <+12>:	0b bf	itete	eq
+   0x00026bc2 <+14>:	49 f2 dc 41	movweq	r1, #38108	; 0x94dc
+   0x00026bc6 <+18>:	49 f2 f8 41	movwne	r1, #38136	; 0x94f8
+   0x00026bca <+22>:	c0 f2 03 01	movteq	r1, #3
+   0x00026bce <+26>:	c0 f2 03 01	movtne	r1, #3
+   0x00026bd2 <+30>:	04 46	mov	r4, r0
+   0x00026bd4 <+32>:	0c bf	ite	eq
+   0x00026bd6 <+34>:	00 20	moveq	r0, #0
+   0x00026bd8 <+36>:	00 20	movne	r0, #0
+   0x00026bda <+38>:	e4 f7 1e e8	blx	0xac18 <dcgettext@plt>
+   0x00026bde <+42>:	2a 46	mov	r2, r5
+   0x00026be0 <+44>:	06 21	movs	r1, #6
+   0x00026be2 <+46>:	06 46	mov	r6, r0
+   0x00026be4 <+48>:	00 20	movs	r0, #0
+   0x00026be6 <+50>:	08 f0 19 f8	bl	0x2ec1c <quotearg_n_style>
+   0x00026bea <+54>:	21 46	mov	r1, r4
+   0x00026bec <+56>:	05 46	mov	r5, r0
+   0x00026bee <+58>:	01 20	movs	r0, #1
+   0x00026bf0 <+60>:	08 f0 d8 f8	bl	0x2eda4 <quote_n>
+   0x00026bf4 <+64>:	2b 46	mov	r3, r5
+   0x00026bf6 <+66>:	32 46	mov	r2, r6
+   0x00026bf8 <+68>:	00 90	str	r0, [sp, #0]
+   0x00026bfa <+70>:	00 20	movs	r0, #0
+   0x00026bfc <+72>:	01 46	mov	r1, r0
+   0x00026bfe <+74>:	e4 f7 e0 e8	blx	0xadc0 <error@plt+4>
+   0x00026c02 <+78>:	02 b0	add	sp, #8
+   0x00026c04 <+80>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function argmatch_to_argument:
+   0x00026d04 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00026d08 <+4>:	0d 68	ldr	r5, [r1, #0]
+   0x00026d0a <+6>:	7d b1	cbz	r5, 0x26d2c <argmatch_to_argument+40>
+   0x00026d0c <+8>:	80 46	mov	r8, r0
+   0x00026d0e <+10>:	1e 46	mov	r6, r3
+   0x00026d10 <+12>:	14 46	mov	r4, r2
+   0x00026d12 <+14>:	0f 46	mov	r7, r1
+   0x00026d14 <+16>:	02 e0	b.n	0x26d1c <argmatch_to_argument+24>
+   0x00026d16 <+18>:	57 f8 04 5f	ldr.w	r5, [r7, #4]!
+   0x00026d1a <+22>:	3d b1	cbz	r5, 0x26d2c <argmatch_to_argument+40>
+   0x00026d1c <+24>:	21 46	mov	r1, r4
+   0x00026d1e <+26>:	40 46	mov	r0, r8
+   0x00026d20 <+28>:	32 46	mov	r2, r6
+   0x00026d22 <+30>:	34 44	add	r4, r6
+   0x00026d24 <+32>:	e3 f7 60 ef	blx	0xabe8 <memcmp@plt>
+   0x00026d28 <+36>:	00 28	cmp	r0, #0
+   0x00026d2a <+38>:	f4 d1	bne.n	0x26d16 <argmatch_to_argument+18>
+   0x00026d2c <+40>:	28 46	mov	r0, r5
+   0x00026d2e <+42>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.
+Dump of assembler code for function argmatch_valid:
+   0x00026c08 <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x00026c0c <+4>:	45 f2 78 7a	movw	r10, #22392	; 0x5778
+   0x00026c10 <+8>:	c0 f2 04 0a	movt	r10, #4
+   0x00026c14 <+12>:	80 46	mov	r8, r0
+   0x00026c16 <+14>:	0c 46	mov	r4, r1
+   0x00026c18 <+16>:	17 46	mov	r7, r2
+   0x00026c1a <+18>:	49 f2 18 51	movw	r1, #38168	; 0x9518
+   0x00026c1e <+22>:	05 22	movs	r2, #5
+   0x00026c20 <+24>:	c0 f2 03 01	movt	r1, #3
+   0x00026c24 <+28>:	00 20	movs	r0, #0
+   0x00026c26 <+30>:	e3 f7 f8 ef	blx	0xac18 <dcgettext@plt>
+   0x00026c2a <+34>:	da f8 00 10	ldr.w	r1, [r10]
+   0x00026c2e <+38>:	e3 f7 ec ee	blx	0xaa08 <fputs_unlocked@plt+4>
+   0x00026c32 <+42>:	d8 f8 00 50	ldr.w	r5, [r8]
+   0x00026c36 <+46>:	4f f0 00 09	mov.w	r9, #0
+   0x00026c3a <+50>:	4e 46	mov	r6, r9
+   0x00026c3c <+52>:	a5 b9	cbnz	r5, 0x26c68 <argmatch_valid+96>
+   0x00026c3e <+54>:	30 e0	b.n	0x26ca2 <argmatch_valid+154>
+   0x00026c40 <+56>:	28 46	mov	r0, r5
+   0x00026c42 <+58>:	da f8 00 50	ldr.w	r5, [r10]
+   0x00026c46 <+62>:	08 f0 b3 f8	bl	0x2edb0 <quote>
+   0x00026c4a <+66>:	49 f2 30 52	movw	r2, #38192	; 0x9530
+   0x00026c4e <+70>:	01 21	movs	r1, #1
+   0x00026c50 <+72>:	c0 f2 03 02	movt	r2, #3
+   0x00026c54 <+76>:	a1 46	mov	r9, r4
+   0x00026c56 <+78>:	01 36	adds	r6, #1
+   0x00026c58 <+80>:	3c 44	add	r4, r7
+   0x00026c5a <+82>:	03 46	mov	r3, r0
+   0x00026c5c <+84>:	28 46	mov	r0, r5
+   0x00026c5e <+86>:	e4 f7 1c ea	blx	0xb098 <__fprintf_chk@plt+4>
+   0x00026c62 <+90>:	58 f8 04 5f	ldr.w	r5, [r8, #4]!
+   0x00026c66 <+94>:	e5 b1	cbz	r5, 0x26ca2 <argmatch_valid+154>
+   0x00026c68 <+96>:	21 46	mov	r1, r4
+   0x00026c6a <+98>:	3a 46	mov	r2, r7
+   0x00026c6c <+100>:	48 46	mov	r0, r9
+   0x00026c6e <+102>:	00 2e	cmp	r6, #0
+   0x00026c70 <+104>:	e6 d0	beq.n	0x26c40 <argmatch_valid+56>
+   0x00026c72 <+106>:	e3 f7 ba ef	blx	0xabe8 <memcmp@plt>
+   0x00026c76 <+110>:	00 28	cmp	r0, #0
+   0x00026c78 <+112>:	e2 d1	bne.n	0x26c40 <argmatch_valid+56>
+   0x00026c7a <+114>:	28 46	mov	r0, r5
+   0x00026c7c <+116>:	da f8 00 50	ldr.w	r5, [r10]
+   0x00026c80 <+120>:	08 f0 96 f8	bl	0x2edb0 <quote>
+   0x00026c84 <+124>:	49 f2 38 52	movw	r2, #38200	; 0x9538
+   0x00026c88 <+128>:	01 21	movs	r1, #1
+   0x00026c8a <+130>:	c0 f2 03 02	movt	r2, #3
+   0x00026c8e <+134>:	01 36	adds	r6, #1
+   0x00026c90 <+136>:	3c 44	add	r4, r7
+   0x00026c92 <+138>:	03 46	mov	r3, r0
+   0x00026c94 <+140>:	28 46	mov	r0, r5
+   0x00026c96 <+142>:	e4 f7 00 ea	blx	0xb098 <__fprintf_chk@plt+4>
+   0x00026c9a <+146>:	58 f8 04 5f	ldr.w	r5, [r8, #4]!
+   0x00026c9e <+150>:	00 2d	cmp	r5, #0
+   0x00026ca0 <+152>:	e2 d1	bne.n	0x26c68 <argmatch_valid+96>
+   0x00026ca2 <+154>:	da f8 00 00	ldr.w	r0, [r10]
+   0x00026ca6 <+158>:	43 69	ldr	r3, [r0, #20]
+   0x00026ca8 <+160>:	82 69	ldr	r2, [r0, #24]
+   0x00026caa <+162>:	93 42	cmp	r3, r2
+   0x00026cac <+164>:	05 d2	bcs.n	0x26cba <argmatch_valid+178>
+   0x00026cae <+166>:	59 1c	adds	r1, r3, #1
+   0x00026cb0 <+168>:	0a 22	movs	r2, #10
+   0x00026cb2 <+170>:	41 61	str	r1, [r0, #20]
+   0x00026cb4 <+172>:	1a 70	strb	r2, [r3, #0]
+   0x00026cb6 <+174>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x00026cba <+178>:	0a 21	movs	r1, #10
+   0x00026cbc <+180>:	bd e8 f0 47	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x00026cc0 <+184>:	e4 f7 48 ba	b.w	0xb154 <__overflow@plt>
+End of assembler dump.
+Dump of assembler code for function __argmatch_die:
+   0x00026af8 <+0>:	08 b5	push	{r3, lr}
+   0x00026afa <+2>:	45 f2 08 73	movw	r3, #22280	; 0x5708
+   0x00026afe <+6>:	c0 f2 04 03	movt	r3, #4
+   0x00026b02 <+10>:	18 68	ldr	r0, [r3, #0]
+   0x00026b04 <+12>:	e4 f7 f8 e9	blx	0xaef8 <exit@plt>
+End of assembler dump.
+Dump of assembler code for function _argp_fmtstream_ensure:
+   0x00030b04 <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00030b06 <+2>:	04 46	mov	r4, r0
+   0x00030b08 <+4>:	02 6a	ldr	r2, [r0, #32]
+   0x00030b0a <+6>:	0d 46	mov	r5, r1
+   0x00030b0c <+8>:	c3 69	ldr	r3, [r0, #28]
+   0x00030b0e <+10>:	d3 1a	subs	r3, r2, r3
+   0x00030b10 <+12>:	8b 42	cmp	r3, r1
+   0x00030b12 <+14>:	02 d3	bcc.n	0x30b1a <_argp_fmtstream_ensure+22>
+   0x00030b14 <+16>:	01 23	movs	r3, #1
+   0x00030b16 <+18>:	18 46	mov	r0, r3
+   0x00030b18 <+20>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00030b1a <+22>:	ff f7 1b fe	bl	0x30754 <_argp_fmtstream_update>
+   0x00030b1e <+26>:	a0 69	ldr	r0, [r4, #24]
+   0x00030b20 <+28>:	e2 69	ldr	r2, [r4, #28]
+   0x00030b22 <+30>:	01 21	movs	r1, #1
+   0x00030b24 <+32>:	23 68	ldr	r3, [r4, #0]
+   0x00030b26 <+34>:	12 1a	subs	r2, r2, r0
+   0x00030b28 <+36>:	da f7 58 e8	blx	0xabdc <fwrite_unlocked@plt>
+   0x00030b2c <+40>:	e2 69	ldr	r2, [r4, #28]
+   0x00030b2e <+42>:	a3 69	ldr	r3, [r4, #24]
+   0x00030b30 <+44>:	01 46	mov	r1, r0
+   0x00030b32 <+46>:	d0 1a	subs	r0, r2, r3
+   0x00030b34 <+48>:	81 42	cmp	r1, r0
+   0x00030b36 <+50>:	0e d1	bne.n	0x30b56 <_argp_fmtstream_ensure+82>
+   0x00030b38 <+52>:	21 6a	ldr	r1, [r4, #32]
+   0x00030b3a <+54>:	00 22	movs	r2, #0
+   0x00030b3c <+56>:	e3 61	str	r3, [r4, #28]
+   0x00030b3e <+58>:	c9 1a	subs	r1, r1, r3
+   0x00030b40 <+60>:	22 61	str	r2, [r4, #16]
+   0x00030b42 <+62>:	8d 42	cmp	r5, r1
+   0x00030b44 <+64>:	e6 d9	bls.n	0x30b14 <_argp_fmtstream_ensure+16>
+   0x00030b46 <+66>:	4d 19	adds	r5, r1, r5
+   0x00030b48 <+68>:	12 d3	bcc.n	0x30b70 <_argp_fmtstream_ensure+108>
+   0x00030b4a <+70>:	da f7 36 ea	blx	0xafb8 <__errno_location@plt>
+   0x00030b4e <+74>:	0c 22	movs	r2, #12
+   0x00030b50 <+76>:	00 23	movs	r3, #0
+   0x00030b52 <+78>:	02 60	str	r2, [r0, #0]
+   0x00030b54 <+80>:	df e7	b.n	0x30b16 <_argp_fmtstream_ensure+18>
+   0x00030b56 <+82>:	25 69	ldr	r5, [r4, #16]
+   0x00030b58 <+84>:	52 1a	subs	r2, r2, r1
+   0x00030b5a <+86>:	18 46	mov	r0, r3
+   0x00030b5c <+88>:	e2 61	str	r2, [r4, #28]
+   0x00030b5e <+90>:	6d 1a	subs	r5, r5, r1
+   0x00030b60 <+92>:	d2 1a	subs	r2, r2, r3
+   0x00030b62 <+94>:	19 44	add	r1, r3
+   0x00030b64 <+96>:	25 61	str	r5, [r4, #16]
+   0x00030b66 <+98>:	d9 f7 c6 ef	blx	0xaaf4 <memmove@plt>
+   0x00030b6a <+102>:	00 23	movs	r3, #0
+   0x00030b6c <+104>:	18 46	mov	r0, r3
+   0x00030b6e <+106>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00030b70 <+108>:	18 46	mov	r0, r3
+   0x00030b72 <+110>:	29 46	mov	r1, r5
+   0x00030b74 <+112>:	da f7 6e e8	blx	0xac54 <realloc@plt>
+   0x00030b78 <+116>:	00 28	cmp	r0, #0
+   0x00030b7a <+118>:	e6 d0	beq.n	0x30b4a <_argp_fmtstream_ensure+70>
+   0x00030b7c <+120>:	05 44	add	r5, r0
+   0x00030b7e <+122>:	01 23	movs	r3, #1
+   0x00030b80 <+124>:	a0 61	str	r0, [r4, #24]
+   0x00030b82 <+126>:	25 62	str	r5, [r4, #32]
+   0x00030b84 <+128>:	e0 61	str	r0, [r4, #28]
+   0x00030b86 <+130>:	c6 e7	b.n	0x30b16 <_argp_fmtstream_ensure+18>
+End of assembler dump.
+Dump of assembler code for function _argp_fmtstream_update:
+   0x00030754 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00030758 <+4>:	05 46	mov	r5, r0
+   0x0003075a <+6>:	84 69	ldr	r4, [r0, #24]
+   0x0003075c <+8>:	83 b0	sub	sp, #12
+   0x0003075e <+10>:	03 69	ldr	r3, [r0, #16]
+   0x00030760 <+12>:	20 26	movs	r6, #32
+   0x00030762 <+14>:	d0 f8 1c 90	ldr.w	r9, [r0, #28]
+   0x00030766 <+18>:	1c 44	add	r4, r3
+   0x00030768 <+20>:	4c 45	cmp	r4, r9
+   0x0003076a <+22>:	3e d2	bcs.n	0x307ea <_argp_fmtstream_update+150>
+   0x0003076c <+24>:	6f 69	ldr	r7, [r5, #20]
+   0x0003076e <+26>:	ef b9	cbnz	r7, 0x307ac <_argp_fmtstream_update+88>
+   0x00030770 <+28>:	d5 f8 04 80	ldr.w	r8, [r5, #4]
+   0x00030774 <+32>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x00030778 <+36>:	00 f0 fc 80	beq.w	0x30974 <_argp_fmtstream_update+544>
+   0x0003077c <+40>:	2b 6a	ldr	r3, [r5, #32]
+   0x0003077e <+42>:	09 eb 08 02	add.w	r2, r9, r8
+   0x00030782 <+46>:	93 42	cmp	r3, r2
+   0x00030784 <+48>:	00 f2 52 81	bhi.w	0x30a2c <_argp_fmtstream_update+728>
+   0x00030788 <+52>:	28 68	ldr	r0, [r5, #0]
+   0x0003078a <+54>:	43 69	ldr	r3, [r0, #20]
+   0x0003078c <+56>:	82 69	ldr	r2, [r0, #24]
+   0x0003078e <+58>:	59 1c	adds	r1, r3, #1
+   0x00030790 <+60>:	93 42	cmp	r3, r2
+   0x00030792 <+62>:	3c bf	itt	cc
+   0x00030794 <+64>:	41 61	strcc	r1, [r0, #20]
+   0x00030796 <+66>:	1e 70	strbcc	r6, [r3, #0]
+   0x00030798 <+68>:	80 f0 96 81	bcs.w	0x30ac8 <_argp_fmtstream_update+884>
+   0x0003079c <+72>:	01 37	adds	r7, #1
+   0x0003079e <+74>:	47 45	cmp	r7, r8
+   0x000307a0 <+76>:	f2 d1	bne.n	0x30788 <_argp_fmtstream_update+52>
+   0x000307a2 <+78>:	d5 f8 1c 90	ldr.w	r9, [r5, #28]
+   0x000307a6 <+82>:	47 46	mov	r7, r8
+   0x000307a8 <+84>:	c5 f8 14 80	str.w	r8, [r5, #20]
+   0x000307ac <+88>:	c4 eb 09 0a	rsb	r10, r4, r9
+   0x000307b0 <+92>:	20 46	mov	r0, r4
+   0x000307b2 <+94>:	0a 21	movs	r1, #10
+   0x000307b4 <+96>:	52 46	mov	r2, r10
+   0x000307b6 <+98>:	da f7 76 ec	blx	0xb0a4 <memchr@plt>
+   0x000307ba <+102>:	00 2f	cmp	r7, #0
+   0x000307bc <+104>:	bc bf	itt	lt
+   0x000307be <+106>:	00 27	movlt	r7, #0
+   0x000307c0 <+108>:	6f 61	strlt	r7, [r5, #20]
+   0x000307c2 <+110>:	80 46	mov	r8, r0
+   0x000307c4 <+112>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x000307c8 <+116>:	00 f0 e0 80	beq.w	0x3098c <_argp_fmtstream_update+568>
+   0x000307cc <+120>:	c4 eb 08 02	rsb	r2, r4, r8
+   0x000307d0 <+124>:	d5 f8 08 b0	ldr.w	r11, [r5, #8]
+   0x000307d4 <+128>:	3a 44	add	r2, r7
+   0x000307d6 <+130>:	5a 45	cmp	r2, r11
+   0x000307d8 <+132>:	0e da	bge.n	0x307f8 <_argp_fmtstream_update+164>
+   0x000307da <+134>:	eb 69	ldr	r3, [r5, #28]
+   0x000307dc <+136>:	08 f1 01 04	add.w	r4, r8, #1
+   0x000307e0 <+140>:	00 21	movs	r1, #0
+   0x000307e2 <+142>:	69 61	str	r1, [r5, #20]
+   0x000307e4 <+144>:	99 46	mov	r9, r3
+   0x000307e6 <+146>:	4c 45	cmp	r4, r9
+   0x000307e8 <+148>:	c0 d3	bcc.n	0x3076c <_argp_fmtstream_update+24>
+   0x000307ea <+150>:	4b 46	mov	r3, r9
+   0x000307ec <+152>:	aa 69	ldr	r2, [r5, #24]
+   0x000307ee <+154>:	9b 1a	subs	r3, r3, r2
+   0x000307f0 <+156>:	2b 61	str	r3, [r5, #16]
+   0x000307f2 <+158>:	03 b0	add	sp, #12
+   0x000307f4 <+160>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000307f8 <+164>:	ea 68	ldr	r2, [r5, #12]
+   0x000307fa <+166>:	0b f1 ff 3c	add.w	r12, r11, #4294967295
+   0x000307fe <+170>:	00 2a	cmp	r2, #0
+   0x00030800 <+172>:	01 92	str	r2, [sp, #4]
+   0x00030802 <+174>:	c0 f2 f4 80	blt.w	0x309ee <_argp_fmtstream_update+666>
+   0x00030806 <+178>:	0c f1 01 0c	add.w	r12, r12, #1
+   0x0003080a <+182>:	c7 eb 0c 0c	rsb	r12, r7, r12
+   0x0003080e <+186>:	14 eb 0c 0b	adds.w	r11, r4, r12
+   0x00030812 <+190>:	80 f0 ca 80	bcs.w	0x309aa <_argp_fmtstream_update+598>
+   0x00030816 <+194>:	da f7 5e eb	blx	0xaed4 <__ctype_b_loc@plt>
+   0x0003081a <+198>:	5b 46	mov	r3, r11
+   0x0003081c <+200>:	01 68	ldr	r1, [r0, #0]
+   0x0003081e <+202>:	02 e0	b.n	0x30826 <_argp_fmtstream_update+210>
+   0x00030820 <+204>:	a3 42	cmp	r3, r4
+   0x00030822 <+206>:	c0 f0 c3 80	bcc.w	0x309ac <_argp_fmtstream_update+600>
+   0x00030826 <+210>:	18 46	mov	r0, r3
+   0x00030828 <+212>:	13 f8 01 29	ldrb.w	r2, [r3], #-1
+   0x0003082c <+216>:	31 f8 12 20	ldrh.w	r2, [r1, r2, lsl #1]
+   0x00030830 <+220>:	1f 46	mov	r7, r3
+   0x00030832 <+222>:	d2 07	lsls	r2, r2, #31
+   0x00030834 <+224>:	f4 d5	bpl.n	0x30820 <_argp_fmtstream_update+204>
+   0x00030836 <+226>:	47 1c	adds	r7, r0, #1
+   0x00030838 <+228>:	a7 42	cmp	r7, r4
+   0x0003083a <+230>:	40 f2 ba 80	bls.w	0x309b2 <_argp_fmtstream_update+606>
+   0x0003083e <+234>:	84 42	cmp	r4, r0
+   0x00030840 <+236>:	00 f2 f2 80	bhi.w	0x30a28 <_argp_fmtstream_update+724>
+   0x00030844 <+240>:	18 46	mov	r0, r3
+   0x00030846 <+242>:	62 1e	subs	r2, r4, #1
+   0x00030848 <+244>:	06 e0	b.n	0x30858 <_argp_fmtstream_update+260>
+   0x0003084a <+246>:	10 f8 01 39	ldrb.w	r3, [r0], #-1
+   0x0003084e <+250>:	31 f8 13 30	ldrh.w	r3, [r1, r3, lsl #1]
+   0x00030852 <+254>:	db 07	lsls	r3, r3, #31
+   0x00030854 <+256>:	40 f1 fe 80	bpl.w	0x30a54 <_argp_fmtstream_update+768>
+   0x00030858 <+260>:	90 42	cmp	r0, r2
+   0x0003085a <+262>:	84 46	mov	r12, r0
+   0x0003085c <+264>:	f5 d1	bne.n	0x3084a <_argp_fmtstream_update+246>
+   0x0003085e <+266>:	00 f1 01 0b	add.w	r11, r0, #1
+   0x00030862 <+270>:	0a f1 01 03	add.w	r3, r10, #1
+   0x00030866 <+274>:	23 44	add	r3, r4
+   0x00030868 <+276>:	bb 42	cmp	r3, r7
+   0x0003086a <+278>:	49 d0	beq.n	0x30900 <_argp_fmtstream_update+428>
+   0x0003086c <+280>:	0b f1 01 03	add.w	r3, r11, #1
+   0x00030870 <+284>:	01 99	ldr	r1, [sp, #4]
+   0x00030872 <+286>:	fa 1a	subs	r2, r7, r3
+   0x00030874 <+288>:	8a 42	cmp	r2, r1
+   0x00030876 <+290>:	4c da	bge.n	0x30912 <_argp_fmtstream_update+446>
+   0x00030878 <+292>:	4f 45	cmp	r7, r9
+   0x0003087a <+294>:	47 d2	bcs.n	0x3090c <_argp_fmtstream_update+440>
+   0x0003087c <+296>:	2b 6a	ldr	r3, [r5, #32]
+   0x0003087e <+298>:	01 98	ldr	r0, [sp, #4]
+   0x00030880 <+300>:	c9 eb 03 03	rsb	r3, r9, r3
+   0x00030884 <+304>:	01 30	adds	r0, #1
+   0x00030886 <+306>:	83 42	cmp	r3, r0
+   0x00030888 <+308>:	00 f3 f4 80	bgt.w	0x30a74 <_argp_fmtstream_update+800>
+   0x0003088c <+312>:	a8 69	ldr	r0, [r5, #24]
+   0x0003088e <+314>:	83 45	cmp	r11, r0
+   0x00030890 <+316>:	05 d9	bls.n	0x3089e <_argp_fmtstream_update+330>
+   0x00030892 <+318>:	01 21	movs	r1, #1
+   0x00030894 <+320>:	c0 eb 0b 02	rsb	r2, r0, r11
+   0x00030898 <+324>:	2b 68	ldr	r3, [r5, #0]
+   0x0003089a <+326>:	da f7 a0 e9	blx	0xabdc <fwrite_unlocked@plt>
+   0x0003089e <+330>:	28 68	ldr	r0, [r5, #0]
+   0x000308a0 <+332>:	43 69	ldr	r3, [r0, #20]
+   0x000308a2 <+334>:	82 69	ldr	r2, [r0, #24]
+   0x000308a4 <+336>:	93 42	cmp	r3, r2
+   0x000308a6 <+338>:	3f bf	itttt	cc
+   0x000308a8 <+340>:	5a 1c	addcc	r2, r3, #1
+   0x000308aa <+342>:	42 61	strcc	r2, [r0, #20]
+   0x000308ac <+344>:	0a 21	movcc	r1, #10
+   0x000308ae <+346>:	19 70	strbcc	r1, [r3, #0]
+   0x000308b0 <+348>:	80 f0 0e 81	bcs.w	0x30ad0 <_argp_fmtstream_update+892>
+   0x000308b4 <+352>:	d5 f8 18 c0	ldr.w	r12, [r5, #24]
+   0x000308b8 <+356>:	cc eb 04 04	rsb	r4, r12, r4
+   0x000308bc <+360>:	cc eb 07 02	rsb	r2, r12, r7
+   0x000308c0 <+364>:	a2 44	add	r10, r4
+   0x000308c2 <+366>:	e0 46	mov	r8, r12
+   0x000308c4 <+368>:	64 46	mov	r4, r12
+   0x000308c6 <+370>:	eb 68	ldr	r3, [r5, #12]
+   0x000308c8 <+372>:	93 42	cmp	r3, r2
+   0x000308ca <+374>:	2c dc	bgt.n	0x30926 <_argp_fmtstream_update+466>
+   0x000308cc <+376>:	00 2b	cmp	r3, #0
+   0x000308ce <+378>:	c8 bf	it	gt
+   0x000308d0 <+380>:	22 46	movgt	r2, r4
+   0x000308d2 <+382>:	06 dd	ble.n	0x308e2 <_argp_fmtstream_update+398>
+   0x000308d4 <+384>:	02 f8 01 6b	strb.w	r6, [r2], #1
+   0x000308d8 <+388>:	11 1b	subs	r1, r2, r4
+   0x000308da <+390>:	eb 68	ldr	r3, [r5, #12]
+   0x000308dc <+392>:	8b 42	cmp	r3, r1
+   0x000308de <+394>:	f9 dc	bgt.n	0x308d4 <_argp_fmtstream_update+384>
+   0x000308e0 <+396>:	14 46	mov	r4, r2
+   0x000308e2 <+398>:	bc 42	cmp	r4, r7
+   0x000308e4 <+400>:	3d d3	bcc.n	0x30962 <_argp_fmtstream_update+526>
+   0x000308e6 <+402>:	c7 eb 08 09	rsb	r9, r7, r8
+   0x000308ea <+406>:	00 2b	cmp	r3, #0
+   0x000308ec <+408>:	08 bf	it	eq
+   0x000308ee <+410>:	4f f0 ff 33	moveq.w	r3, #4294967295
+   0x000308f2 <+414>:	d1 44	add	r9, r10
+   0x000308f4 <+416>:	6b 61	str	r3, [r5, #20]
+   0x000308f6 <+418>:	04 eb 09 03	add.w	r3, r4, r9
+   0x000308fa <+422>:	eb 61	str	r3, [r5, #28]
+   0x000308fc <+424>:	99 46	mov	r9, r3
+   0x000308fe <+426>:	72 e7	b.n	0x307e6 <_argp_fmtstream_update+146>
+   0x00030900 <+428>:	2b 6a	ldr	r3, [r5, #32]
+   0x00030902 <+430>:	01 9a	ldr	r2, [sp, #4]
+   0x00030904 <+432>:	cb eb 03 03	rsb	r3, r11, r3
+   0x00030908 <+436>:	93 42	cmp	r3, r2
+   0x0003090a <+438>:	b5 dd	ble.n	0x30878 <_argp_fmtstream_update+292>
+   0x0003090c <+440>:	0b f1 01 03	add.w	r3, r11, #1
+   0x00030910 <+444>:	fa 1a	subs	r2, r7, r3
+   0x00030912 <+446>:	a0 46	mov	r8, r4
+   0x00030914 <+448>:	1c 46	mov	r4, r3
+   0x00030916 <+450>:	4f f0 0a 03	mov.w	r3, #10
+   0x0003091a <+454>:	8b f8 00 30	strb.w	r3, [r11]
+   0x0003091e <+458>:	eb 68	ldr	r3, [r5, #12]
+   0x00030920 <+460>:	c4 46	mov	r12, r8
+   0x00030922 <+462>:	93 42	cmp	r3, r2
+   0x00030924 <+464>:	d2 dd	ble.n	0x308cc <_argp_fmtstream_update+376>
+   0x00030926 <+466>:	0a f1 01 02	add.w	r2, r10, #1
+   0x0003092a <+470>:	62 44	add	r2, r12
+   0x0003092c <+472>:	97 42	cmp	r7, r2
+   0x0003092e <+474>:	00 f0 9b 80	beq.w	0x30a68 <_argp_fmtstream_update+788>
+   0x00030932 <+478>:	00 2b	cmp	r3, #0
+   0x00030934 <+480>:	c4 bf	itt	gt
+   0x00030936 <+482>:	4f f0 00 09	movgt.w	r9, #0
+   0x0003093a <+486>:	e3 46	movgt	r11, r12
+   0x0003093c <+488>:	d1 dd	ble.n	0x308e2 <_argp_fmtstream_update+398>
+   0x0003093e <+490>:	28 68	ldr	r0, [r5, #0]
+   0x00030940 <+492>:	43 69	ldr	r3, [r0, #20]
+   0x00030942 <+494>:	82 69	ldr	r2, [r0, #24]
+   0x00030944 <+496>:	59 1c	adds	r1, r3, #1
+   0x00030946 <+498>:	93 42	cmp	r3, r2
+   0x00030948 <+500>:	3c bf	itt	cc
+   0x0003094a <+502>:	41 61	strcc	r1, [r0, #20]
+   0x0003094c <+504>:	1e 70	strbcc	r6, [r3, #0]
+   0x0003094e <+506>:	80 f0 b7 80	bcs.w	0x30ac0 <_argp_fmtstream_update+876>
+   0x00030952 <+510>:	eb 68	ldr	r3, [r5, #12]
+   0x00030954 <+512>:	09 f1 01 09	add.w	r9, r9, #1
+   0x00030958 <+516>:	4b 45	cmp	r3, r9
+   0x0003095a <+518>:	f0 dc	bgt.n	0x3093e <_argp_fmtstream_update+490>
+   0x0003095c <+520>:	bc 42	cmp	r4, r7
+   0x0003095e <+522>:	dc 46	mov	r12, r11
+   0x00030960 <+524>:	c1 d2	bcs.n	0x308e6 <_argp_fmtstream_update+402>
+   0x00030962 <+526>:	0c eb 0a 02	add.w	r2, r12, r10
+   0x00030966 <+530>:	20 46	mov	r0, r4
+   0x00030968 <+532>:	d2 1b	subs	r2, r2, r7
+   0x0003096a <+534>:	39 46	mov	r1, r7
+   0x0003096c <+536>:	da f7 c2 e8	blx	0xaaf4 <memmove@plt>
+   0x00030970 <+540>:	eb 68	ldr	r3, [r5, #12]
+   0x00030972 <+542>:	b8 e7	b.n	0x308e6 <_argp_fmtstream_update+402>
+   0x00030974 <+544>:	c4 eb 09 0a	rsb	r10, r4, r9
+   0x00030978 <+548>:	20 46	mov	r0, r4
+   0x0003097a <+550>:	0a 21	movs	r1, #10
+   0x0003097c <+552>:	52 46	mov	r2, r10
+   0x0003097e <+554>:	da f7 92 eb	blx	0xb0a4 <memchr@plt>
+   0x00030982 <+558>:	80 46	mov	r8, r0
+   0x00030984 <+560>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x00030988 <+564>:	7f f4 20 af	bne.w	0x307cc <_argp_fmtstream_update+120>
+   0x0003098c <+568>:	aa 68	ldr	r2, [r5, #8]
+   0x0003098e <+570>:	07 eb 0a 03	add.w	r3, r7, r10
+   0x00030992 <+574>:	93 42	cmp	r3, r2
+   0x00030994 <+576>:	c0 f0 91 80	bcc.w	0x30aba <_argp_fmtstream_update+870>
+   0x00030998 <+580>:	e9 68	ldr	r1, [r5, #12]
+   0x0003099a <+582>:	02 f1 ff 3c	add.w	r12, r2, #4294967295
+   0x0003099e <+586>:	00 29	cmp	r1, #0
+   0x000309a0 <+588>:	01 91	str	r1, [sp, #4]
+   0x000309a2 <+590>:	c0 f2 83 80	blt.w	0x30aac <_argp_fmtstream_update+856>
+   0x000309a6 <+594>:	c8 46	mov	r8, r9
+   0x000309a8 <+596>:	2d e7	b.n	0x30806 <_argp_fmtstream_update+178>
+   0x000309aa <+598>:	5f 46	mov	r7, r11
+   0x000309ac <+600>:	01 37	adds	r7, #1
+   0x000309ae <+602>:	a7 42	cmp	r7, r4
+   0x000309b0 <+604>:	3a d8	bhi.n	0x30a28 <_argp_fmtstream_update+724>
+   0x000309b2 <+606>:	c3 45	cmp	r11, r8
+   0x000309b4 <+608>:	0e d2	bcs.n	0x309d4 <_argp_fmtstream_update+640>
+   0x000309b6 <+610>:	0b f1 01 07	add.w	r7, r11, #1
+   0x000309ba <+614>:	08 e0	b.n	0x309ce <_argp_fmtstream_update+634>
+   0x000309bc <+616>:	da f7 8a ea	blx	0xaed4 <__ctype_b_loc@plt>
+   0x000309c0 <+620>:	17 f8 01 3b	ldrb.w	r3, [r7], #1
+   0x000309c4 <+624>:	02 68	ldr	r2, [r0, #0]
+   0x000309c6 <+626>:	32 f8 13 30	ldrh.w	r3, [r2, r3, lsl #1]
+   0x000309ca <+630>:	da 07	lsls	r2, r3, #31
+   0x000309cc <+632>:	02 d4	bmi.n	0x309d4 <_argp_fmtstream_update+640>
+   0x000309ce <+634>:	47 45	cmp	r7, r8
+   0x000309d0 <+636>:	bb 46	mov	r11, r7
+   0x000309d2 <+638>:	f3 d1	bne.n	0x309bc <_argp_fmtstream_update+616>
+   0x000309d4 <+640>:	c3 45	cmp	r11, r8
+   0x000309d6 <+642>:	40 d0	beq.n	0x30a5a <_argp_fmtstream_update+774>
+   0x000309d8 <+644>:	da f7 7c ea	blx	0xaed4 <__ctype_b_loc@plt>
+   0x000309dc <+648>:	5f 46	mov	r7, r11
+   0x000309de <+650>:	02 68	ldr	r2, [r0, #0]
+   0x000309e0 <+652>:	17 f8 01 3f	ldrb.w	r3, [r7, #1]!
+   0x000309e4 <+656>:	32 f8 13 30	ldrh.w	r3, [r2, r3, lsl #1]
+   0x000309e8 <+660>:	db 07	lsls	r3, r3, #31
+   0x000309ea <+662>:	f9 d4	bmi.n	0x309e0 <_argp_fmtstream_update+652>
+   0x000309ec <+664>:	39 e7	b.n	0x30862 <_argp_fmtstream_update+270>
+   0x000309ee <+666>:	c1 45	cmp	r9, r8
+   0x000309f0 <+668>:	5a d9	bls.n	0x30aa8 <_argp_fmtstream_update+852>
+   0x000309f2 <+670>:	c7 eb 0c 00	rsb	r0, r7, r12
+   0x000309f6 <+674>:	c8 eb 09 02	rsb	r2, r8, r9
+   0x000309fa <+678>:	20 44	add	r0, r4
+   0x000309fc <+680>:	41 46	mov	r1, r8
+   0x000309fe <+682>:	cd f8 00 c0	str.w	r12, [sp]
+   0x00030a02 <+686>:	da f7 78 e8	blx	0xaaf4 <memmove@plt>
+   0x00030a06 <+690>:	dd f8 00 c0	ldr.w	r12, [sp]
+   0x00030a0a <+694>:	00 23	movs	r3, #0
+   0x00030a0c <+696>:	69 69	ldr	r1, [r5, #20]
+   0x00030a0e <+698>:	ea 69	ldr	r2, [r5, #28]
+   0x00030a10 <+700>:	c1 eb 0c 09	rsb	r9, r1, r12
+   0x00030a14 <+704>:	6b 61	str	r3, [r5, #20]
+   0x00030a16 <+706>:	a1 44	add	r9, r4
+   0x00030a18 <+708>:	5c 44	add	r4, r11
+   0x00030a1a <+710>:	c8 eb 09 09	rsb	r9, r8, r9
+   0x00030a1e <+714>:	c9 eb 02 03	rsb	r3, r9, r2
+   0x00030a22 <+718>:	eb 61	str	r3, [r5, #28]
+   0x00030a24 <+720>:	99 46	mov	r9, r3
+   0x00030a26 <+722>:	de e6	b.n	0x307e6 <_argp_fmtstream_update+146>
+   0x00030a28 <+724>:	bb 46	mov	r11, r7
+   0x00030a2a <+726>:	1a e7	b.n	0x30862 <_argp_fmtstream_update+270>
+   0x00030a2c <+728>:	04 eb 08 03	add.w	r3, r4, r8
+   0x00030a30 <+732>:	c4 eb 09 02	rsb	r2, r4, r9
+   0x00030a34 <+736>:	21 46	mov	r1, r4
+   0x00030a36 <+738>:	18 46	mov	r0, r3
+   0x00030a38 <+740>:	da f7 5c e8	blx	0xaaf4 <memmove@plt>
+   0x00030a3c <+744>:	ea 69	ldr	r2, [r5, #28]
+   0x00030a3e <+746>:	20 21	movs	r1, #32
+   0x00030a40 <+748>:	03 46	mov	r3, r0
+   0x00030a42 <+750>:	20 46	mov	r0, r4
+   0x00030a44 <+752>:	02 eb 08 04	add.w	r4, r2, r8
+   0x00030a48 <+756>:	42 46	mov	r2, r8
+   0x00030a4a <+758>:	ec 61	str	r4, [r5, #28]
+   0x00030a4c <+760>:	1c 46	mov	r4, r3
+   0x00030a4e <+762>:	da f7 e6 ea	blx	0xb01c <memset@plt+4>
+   0x00030a52 <+766>:	a6 e6	b.n	0x307a2 <_argp_fmtstream_update+78>
+   0x00030a54 <+768>:	0c f1 01 0b	add.w	r11, r12, #1
+   0x00030a58 <+772>:	03 e7	b.n	0x30862 <_argp_fmtstream_update+270>
+   0x00030a5a <+774>:	eb 69	ldr	r3, [r5, #28]
+   0x00030a5c <+776>:	00 21	movs	r1, #0
+   0x00030a5e <+778>:	0b f1 01 04	add.w	r4, r11, #1
+   0x00030a62 <+782>:	69 61	str	r1, [r5, #20]
+   0x00030a64 <+784>:	99 46	mov	r9, r3
+   0x00030a66 <+786>:	be e6	b.n	0x307e6 <_argp_fmtstream_update+146>
+   0x00030a68 <+788>:	2a 6a	ldr	r2, [r5, #32]
+   0x00030a6a <+790>:	d2 1b	subs	r2, r2, r7
+   0x00030a6c <+792>:	93 42	cmp	r3, r2
+   0x00030a6e <+794>:	7f f7 2d af	ble.w	0x308cc <_argp_fmtstream_update+376>
+   0x00030a72 <+798>:	5e e7	b.n	0x30932 <_argp_fmtstream_update+478>
+   0x00030a74 <+800>:	c7 eb 09 09	rsb	r9, r7, r9
+   0x00030a78 <+804>:	39 46	mov	r1, r7
+   0x00030a7a <+806>:	58 44	add	r0, r11
+   0x00030a7c <+808>:	00 94	str	r4, [sp, #0]
+   0x00030a7e <+810>:	4a 46	mov	r2, r9
+   0x00030a80 <+812>:	a0 46	mov	r8, r4
+   0x00030a82 <+814>:	da f7 38 e8	blx	0xaaf4 <memmove@plt>
+   0x00030a86 <+818>:	ef 68	ldr	r7, [r5, #12]
+   0x00030a88 <+820>:	0b f1 01 03	add.w	r3, r11, #1
+   0x00030a8c <+824>:	4f f0 0a 02	mov.w	r2, #10
+   0x00030a90 <+828>:	01 37	adds	r7, #1
+   0x00030a92 <+830>:	8b f8 00 20	strb.w	r2, [r11]
+   0x00030a96 <+834>:	5f 44	add	r7, r11
+   0x00030a98 <+836>:	dd f8 00 c0	ldr.w	r12, [sp]
+   0x00030a9c <+840>:	b9 44	add	r9, r7
+   0x00030a9e <+842>:	fa 1a	subs	r2, r7, r3
+   0x00030aa0 <+844>:	c4 eb 09 0a	rsb	r10, r4, r9
+   0x00030aa4 <+848>:	1c 46	mov	r4, r3
+   0x00030aa6 <+850>:	0e e7	b.n	0x308c6 <_argp_fmtstream_update+370>
+   0x00030aa8 <+852>:	07 eb 0a 03	add.w	r3, r7, r10
+   0x00030aac <+856>:	c3 eb 0c 0c	rsb	r12, r3, r12
+   0x00030ab0 <+860>:	6b 61	str	r3, [r5, #20]
+   0x00030ab2 <+862>:	09 eb 0c 03	add.w	r3, r9, r12
+   0x00030ab6 <+866>:	eb 61	str	r3, [r5, #28]
+   0x00030ab8 <+868>:	98 e6	b.n	0x307ec <_argp_fmtstream_update+152>
+   0x00030aba <+870>:	6b 61	str	r3, [r5, #20]
+   0x00030abc <+872>:	eb 69	ldr	r3, [r5, #28]
+   0x00030abe <+874>:	95 e6	b.n	0x307ec <_argp_fmtstream_update+152>
+   0x00030ac0 <+876>:	20 21	movs	r1, #32
+   0x00030ac2 <+878>:	da f7 4a eb	blx	0xb158 <__overflow@plt+4>
+   0x00030ac6 <+882>:	44 e7	b.n	0x30952 <_argp_fmtstream_update+510>
+   0x00030ac8 <+884>:	20 21	movs	r1, #32
+   0x00030aca <+886>:	da f7 46 eb	blx	0xb158 <__overflow@plt+4>
+   0x00030ace <+890>:	65 e6	b.n	0x3079c <_argp_fmtstream_update+72>
+   0x00030ad0 <+892>:	0a 21	movs	r1, #10
+   0x00030ad2 <+894>:	da f7 42 eb	blx	0xb158 <__overflow@plt+4>
+   0x00030ad6 <+898>:	ed e6	b.n	0x308b4 <_argp_fmtstream_update+352>
+End of assembler dump.
+Dump of assembler code for function argp_fmtstream_free:
+   0x00030ad8 <+0>:	10 b5	push	{r4, lr}
+   0x00030ada <+2>:	04 46	mov	r4, r0
+   0x00030adc <+4>:	ff f7 3a fe	bl	0x30754 <_argp_fmtstream_update>
+   0x00030ae0 <+8>:	e2 69	ldr	r2, [r4, #28]
+   0x00030ae2 <+10>:	a0 69	ldr	r0, [r4, #24]
+   0x00030ae4 <+12>:	82 42	cmp	r2, r0
+   0x00030ae6 <+14>:	05 d9	bls.n	0x30af4 <argp_fmtstream_free+28>
+   0x00030ae8 <+16>:	01 21	movs	r1, #1
+   0x00030aea <+18>:	12 1a	subs	r2, r2, r0
+   0x00030aec <+20>:	23 68	ldr	r3, [r4, #0]
+   0x00030aee <+22>:	da f7 76 e8	blx	0xabdc <fwrite_unlocked@plt>
+   0x00030af2 <+26>:	a0 69	ldr	r0, [r4, #24]
+   0x00030af4 <+28>:	da f7 12 e8	blx	0xab1c <free>
+   0x00030af8 <+32>:	20 46	mov	r0, r4
+   0x00030afa <+34>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x00030afe <+38>:	da f7 0b b8	b.w	0xab18 <free@plt>
+End of assembler dump.
+Dump of assembler code for function argp_fmtstream_printf:
+   0x00030b88 <+0>:	0e b4	push	{r1, r2, r3}
+   0x00030b8a <+2>:	96 21	movs	r1, #150	; 0x96
+   0x00030b8c <+4>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x00030b8e <+6>:	84 b0	sub	sp, #16
+   0x00030b90 <+8>:	09 ae	add	r6, sp, #36	; 0x24
+   0x00030b92 <+10>:	04 46	mov	r4, r0
+   0x00030b94 <+12>:	56 f8 04 7b	ldr.w	r7, [r6], #4
+   0x00030b98 <+16>:	20 46	mov	r0, r4
+   0x00030b9a <+18>:	ff f7 b3 ff	bl	0x30b04 <_argp_fmtstream_ensure>
+   0x00030b9e <+22>:	01 22	movs	r2, #1
+   0x00030ba0 <+24>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00030ba4 <+28>:	a0 b1	cbz	r0, 0x30bd0 <argp_fmtstream_printf+72>
+   0x00030ba6 <+30>:	e0 69	ldr	r0, [r4, #28]
+   0x00030ba8 <+32>:	25 6a	ldr	r5, [r4, #32]
+   0x00030baa <+34>:	00 97	str	r7, [sp, #0]
+   0x00030bac <+36>:	2d 1a	subs	r5, r5, r0
+   0x00030bae <+38>:	01 96	str	r6, [sp, #4]
+   0x00030bb0 <+40>:	03 96	str	r6, [sp, #12]
+   0x00030bb2 <+42>:	29 46	mov	r1, r5
+   0x00030bb4 <+44>:	d9 f7 d6 ef	blx	0xab64 <__vsnprintf_chk@plt>
+   0x00030bb8 <+48>:	85 42	cmp	r5, r0
+   0x00030bba <+50>:	00 f1 01 01	add.w	r1, r0, #1
+   0x00030bbe <+54>:	eb d9	bls.n	0x30b98 <argp_fmtstream_printf+16>
+   0x00030bc0 <+56>:	e3 69	ldr	r3, [r4, #28]
+   0x00030bc2 <+58>:	03 44	add	r3, r0
+   0x00030bc4 <+60>:	e3 61	str	r3, [r4, #28]
+   0x00030bc6 <+62>:	04 b0	add	sp, #16
+   0x00030bc8 <+64>:	bd e8 f0 40	ldmia.w	sp!, {r4, r5, r6, r7, lr}
+   0x00030bcc <+68>:	03 b0	add	sp, #12
+   0x00030bce <+70>:	70 47	bx	lr
+   0x00030bd0 <+72>:	18 46	mov	r0, r3
+   0x00030bd2 <+74>:	04 b0	add	sp, #16
+   0x00030bd4 <+76>:	bd e8 f0 40	ldmia.w	sp!, {r4, r5, r6, r7, lr}
+   0x00030bd8 <+80>:	03 b0	add	sp, #12
+   0x00030bda <+82>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function argp_make_fmtstream:
+   0x0003070c <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00030710 <+4>:	05 46	mov	r5, r0
+   0x00030712 <+6>:	24 20	movs	r0, #36	; 0x24
+   0x00030714 <+8>:	88 46	mov	r8, r1
+   0x00030716 <+10>:	17 46	mov	r7, r2
+   0x00030718 <+12>:	1e 46	mov	r6, r3
+   0x0003071a <+14>:	da f7 8e eb	blx	0xae38 <malloc@plt>
+   0x0003071e <+18>:	04 46	mov	r4, r0
+   0x00030720 <+20>:	80 b1	cbz	r0, 0x30744 <argp_make_fmtstream+56>
+   0x00030722 <+22>:	05 60	str	r5, [r0, #0]
+   0x00030724 <+24>:	00 25	movs	r5, #0
+   0x00030726 <+26>:	c0 f8 04 80	str.w	r8, [r0, #4]
+   0x0003072a <+30>:	c8 20	movs	r0, #200	; 0xc8
+   0x0003072c <+32>:	a7 60	str	r7, [r4, #8]
+   0x0003072e <+34>:	e6 60	str	r6, [r4, #12]
+   0x00030730 <+36>:	65 61	str	r5, [r4, #20]
+   0x00030732 <+38>:	25 61	str	r5, [r4, #16]
+   0x00030734 <+40>:	da f7 80 eb	blx	0xae38 <malloc@plt>
+   0x00030738 <+44>:	03 46	mov	r3, r0
+   0x0003073a <+46>:	a0 61	str	r0, [r4, #24]
+   0x0003073c <+48>:	28 b1	cbz	r0, 0x3074a <argp_make_fmtstream+62>
+   0x0003073e <+50>:	c8 33	adds	r3, #200	; 0xc8
+   0x00030740 <+52>:	e0 61	str	r0, [r4, #28]
+   0x00030742 <+54>:	23 62	str	r3, [r4, #32]
+   0x00030744 <+56>:	20 46	mov	r0, r4
+   0x00030746 <+58>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x0003074a <+62>:	20 46	mov	r0, r4
+   0x0003074c <+64>:	1c 46	mov	r4, r3
+   0x0003074e <+66>:	da f7 e6 e9	blx	0xab1c <free>
+   0x00030752 <+70>:	f7 e7	b.n	0x30744 <argp_make_fmtstream+56>
+End of assembler dump.

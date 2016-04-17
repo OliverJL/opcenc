@@ -1,0 +1,686 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function sys_exec_command:
+   0x0001f064 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x0001f068 <+4>:	45 f2 70 75	movw	r5, #22384	; 0x5770
+   0x0001f06c <+8>:	c0 f2 04 05	movt	r5, #4
+   0x0001f070 <+12>:	8a b0	sub	sp, #40	; 0x28
+   0x0001f072 <+14>:	07 46	mov	r7, r0
+   0x0001f074 <+16>:	03 a8	add	r0, sp, #12
+   0x0001f076 <+18>:	2b 68	ldr	r3, [r5, #0]
+   0x0001f078 <+20>:	16 46	mov	r6, r2
+   0x0001f07a <+22>:	88 46	mov	r8, r1
+   0x0001f07c <+24>:	45 f6 88 54	movw	r4, #23944	; 0x5d88
+   0x0001f080 <+28>:	c0 f2 04 04	movt	r4, #4
+   0x0001f084 <+32>:	09 93	str	r3, [sp, #36]	; 0x24
+   0x0001f086 <+34>:	fc f7 d5 fb	bl	0x1b834 <xpipe>
+   0x0001f08a <+38>:	01 21	movs	r1, #1
+   0x0001f08c <+40>:	0d 20	movs	r0, #13
+   0x0001f08e <+42>:	eb f7 98 ed	blx	0xabc0 <signal@plt+4>
+   0x0001f092 <+46>:	a0 66	str	r0, [r4, #104]	; 0x68
+   0x0001f094 <+48>:	fc f7 b8 fb	bl	0x1b808 <xfork>
+   0x0001f098 <+52>:	e0 66	str	r0, [r4, #108]	; 0x6c
+   0x0001f09a <+54>:	60 b1	cbz	r0, 0x1f0b6 <sys_exec_command+82>
+   0x0001f09c <+56>:	03 98	ldr	r0, [sp, #12]
+   0x0001f09e <+58>:	ed f7 8d fd	bl	0xcbbc <xclose>
+   0x0001f0a2 <+62>:	09 9a	ldr	r2, [sp, #36]	; 0x24
+   0x0001f0a4 <+64>:	2b 68	ldr	r3, [r5, #0]
+   0x0001f0a6 <+66>:	04 98	ldr	r0, [sp, #16]
+   0x0001f0a8 <+68>:	9a 42	cmp	r2, r3
+   0x0001f0aa <+70>:	02 d1	bne.n	0x1f0b2 <sys_exec_command+78>
+   0x0001f0ac <+72>:	0a b0	add	sp, #40	; 0x28
+   0x0001f0ae <+74>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x0001f0b2 <+78>:	eb f7 b8 ed	blx	0xac24 <__stack_chk_fail@plt>
+   0x0001f0b6 <+82>:	01 46	mov	r1, r0
+   0x0001f0b8 <+84>:	03 98	ldr	r0, [sp, #12]
+   0x0001f0ba <+86>:	ff f7 b9 fb	bl	0x1e830 <xdup2>
+   0x0001f0be <+90>:	46 f2 98 24	movw	r4, #25240	; 0x6298
+   0x0001f0c2 <+94>:	04 98	ldr	r0, [sp, #16]
+   0x0001f0c4 <+96>:	c0 f2 04 04	movt	r4, #4
+   0x0001f0c8 <+100>:	ed f7 78 fd	bl	0xcbbc <xclose>
+   0x0001f0cc <+104>:	45 f2 38 20	movw	r0, #21048	; 0x5238
+   0x0001f0d0 <+108>:	44 f2 5c 71	movw	r1, #18268	; 0x475c
+   0x0001f0d4 <+112>:	c0 f2 03 00	movt	r0, #3
+   0x0001f0d8 <+116>:	c0 f2 03 01	movt	r1, #3
+   0x0001f0dc <+120>:	5f fa 88 f8	uxtb.w	r8, r8
+   0x0001f0e0 <+124>:	ec f7 4e f9	bl	0xb380 <str_to_env>
+   0x0001f0e4 <+128>:	23 68	ldr	r3, [r4, #0]
+   0x0001f0e6 <+130>:	45 f2 44 20	movw	r0, #21060	; 0x5244
+   0x0001f0ea <+134>:	c0 f2 03 00	movt	r0, #3
+   0x0001f0ee <+138>:	19 68	ldr	r1, [r3, #0]
+   0x0001f0f0 <+140>:	ec f7 46 f9	bl	0xb380 <str_to_env>
+   0x0001f0f4 <+144>:	46 f2 78 23	movw	r3, #25208	; 0x6278
+   0x0001f0f8 <+148>:	c0 f2 04 03	movt	r3, #4
+   0x0001f0fc <+152>:	22 68	ldr	r2, [r4, #0]
+   0x0001f0fe <+154>:	45 f2 50 20	movw	r0, #21072	; 0x5250
+   0x0001f102 <+158>:	c0 f2 03 00	movt	r0, #3
+   0x0001f106 <+162>:	1b 68	ldr	r3, [r3, #0]
+   0x0001f108 <+164>:	d2 1a	subs	r2, r2, r3
+   0x0001f10a <+166>:	92 10	asrs	r2, r2, #2
+   0x0001f10c <+168>:	01 32	adds	r2, #1
+   0x0001f10e <+170>:	d3 17	asrs	r3, r2, #31
+   0x0001f110 <+172>:	ec f7 62 f9	bl	0xb3d8 <dec_to_env>
+   0x0001f114 <+176>:	46 f2 a0 23	movw	r3, #25248	; 0x62a0
+   0x0001f118 <+180>:	c0 f2 04 03	movt	r3, #4
+   0x0001f11c <+184>:	45 f2 5c 20	movw	r0, #21084	; 0x525c
+   0x0001f120 <+188>:	c0 f2 03 00	movt	r0, #3
+   0x0001f124 <+192>:	1a 68	ldr	r2, [r3, #0]
+   0x0001f126 <+194>:	d3 17	asrs	r3, r2, #31
+   0x0001f128 <+196>:	ec f7 56 f9	bl	0xb3d8 <dec_to_env>
+   0x0001f12c <+200>:	46 f2 b4 03	movw	r3, #24756	; 0x60b4
+   0x0001f130 <+204>:	c0 f2 04 03	movt	r3, #4
+   0x0001f134 <+208>:	18 68	ldr	r0, [r3, #0]
+   0x0001f136 <+210>:	20 b9	cbnz	r0, 0x1f142 <sys_exec_command+222>
+   0x0001f138 <+212>:	46 f2 d4 23	movw	r3, #25300	; 0x62d4
+   0x0001f13c <+216>:	c0 f2 04 03	movt	r3, #4
+   0x0001f140 <+220>:	18 68	ldr	r0, [r3, #0]
+   0x0001f142 <+222>:	00 f0 13 fd	bl	0x1fb6c <archive_format_string>
+   0x0001f146 <+226>:	01 46	mov	r1, r0
+   0x0001f148 <+228>:	45 f2 70 20	movw	r0, #21104	; 0x5270
+   0x0001f14c <+232>:	c0 f2 03 00	movt	r0, #3
+   0x0001f150 <+236>:	ec f7 16 f9	bl	0xb380 <str_to_env>
+   0x0001f154 <+240>:	45 f2 7c 20	movw	r0, #21116	; 0x527c
+   0x0001f158 <+244>:	02 a9	add	r1, sp, #8
+   0x0001f15a <+246>:	c0 f2 03 00	movt	r0, #3
+   0x0001f15e <+250>:	01 22	movs	r2, #1
+   0x0001f160 <+252>:	00 23	movs	r3, #0
+   0x0001f162 <+254>:	8d f8 08 80	strb.w	r8, [sp, #8]
+   0x0001f166 <+258>:	8d f8 09 30	strb.w	r3, [sp, #9]
+   0x0001f16a <+262>:	eb f7 e6 ee	blx	0xaf38 <setenv@plt>
+   0x0001f16e <+266>:	00 28	cmp	r0, #0
+   0x0001f170 <+268>:	40 f0 cc 80	bne.w	0x1f30c <sys_exec_command+680>
+   0x0001f174 <+272>:	33 6c	ldr	r3, [r6, #64]	; 0x40
+   0x0001f176 <+274>:	0d 21	movs	r1, #13
+   0x0001f178 <+276>:	45 f2 8c 22	movw	r2, #21132	; 0x528c
+   0x0001f17c <+280>:	05 a8	add	r0, sp, #20
+   0x0001f17e <+282>:	c0 f2 03 02	movt	r2, #3
+   0x0001f182 <+286>:	00 92	str	r2, [sp, #0]
+   0x0001f184 <+288>:	01 93	str	r3, [sp, #4]
+   0x0001f186 <+290>:	01 22	movs	r2, #1
+   0x0001f188 <+292>:	0b 46	mov	r3, r1
+   0x0001f18a <+294>:	ec f7 da e8	blx	0xb340 <__snprintf_chk@plt>
+   0x0001f18e <+298>:	05 a9	add	r1, sp, #20
+   0x0001f190 <+300>:	45 f2 94 20	movw	r0, #21140	; 0x5294
+   0x0001f194 <+304>:	01 22	movs	r2, #1
+   0x0001f196 <+306>:	c0 f2 03 00	movt	r0, #3
+   0x0001f19a <+310>:	eb f7 ce ee	blx	0xaf38 <setenv@plt>
+   0x0001f19e <+314>:	04 46	mov	r4, r0
+   0x0001f1a0 <+316>:	00 28	cmp	r0, #0
+   0x0001f1a2 <+318>:	40 f0 b3 80	bne.w	0x1f30c <sys_exec_command+680>
+   0x0001f1a6 <+322>:	39 46	mov	r1, r7
+   0x0001f1a8 <+324>:	45 f2 a0 20	movw	r0, #21152	; 0x52a0
+   0x0001f1ac <+328>:	c0 f2 03 00	movt	r0, #3
+   0x0001f1b0 <+332>:	a8 f1 62 08	sub.w	r8, r8, #98	; 0x62
+   0x0001f1b4 <+336>:	ec f7 e4 f8	bl	0xb380 <str_to_env>
+   0x0001f1b8 <+340>:	71 68	ldr	r1, [r6, #4]
+   0x0001f1ba <+342>:	45 f2 b0 20	movw	r0, #21168	; 0x52b0
+   0x0001f1be <+346>:	c0 f2 03 00	movt	r0, #3
+   0x0001f1c2 <+350>:	ec f7 dd f8	bl	0xb380 <str_to_env>
+   0x0001f1c6 <+354>:	31 69	ldr	r1, [r6, #16]
+   0x0001f1c8 <+356>:	45 f2 c0 20	movw	r0, #21184	; 0x52c0
+   0x0001f1cc <+360>:	c0 f2 03 00	movt	r0, #3
+   0x0001f1d0 <+364>:	ec f7 d6 f8	bl	0xb380 <str_to_env>
+   0x0001f1d4 <+368>:	71 69	ldr	r1, [r6, #20]
+   0x0001f1d6 <+370>:	45 f2 cc 20	movw	r0, #21196	; 0x52cc
+   0x0001f1da <+374>:	c0 f2 03 00	movt	r0, #3
+   0x0001f1de <+378>:	ec f7 cf f8	bl	0xb380 <str_to_env>
+   0x0001f1e2 <+382>:	06 f1 98 03	add.w	r3, r6, #152	; 0x98
+   0x0001f1e6 <+386>:	45 f2 d8 20	movw	r0, #21208	; 0x52d8
+   0x0001f1ea <+390>:	c0 f2 03 00	movt	r0, #3
+   0x0001f1ee <+394>:	93 e8 06 00	ldmia.w	r3, {r1, r2}
+   0x0001f1f2 <+398>:	ec f7 d1 f8	bl	0xb398 <time_to_env>
+   0x0001f1f6 <+402>:	06 f1 a0 03	add.w	r3, r6, #160	; 0xa0
+   0x0001f1fa <+406>:	45 f2 e4 20	movw	r0, #21220	; 0x52e4
+   0x0001f1fe <+410>:	c0 f2 03 00	movt	r0, #3
+   0x0001f202 <+414>:	93 e8 06 00	ldmia.w	r3, {r1, r2}
+   0x0001f206 <+418>:	ec f7 c7 f8	bl	0xb398 <time_to_env>
+   0x0001f20a <+422>:	06 f1 a8 03	add.w	r3, r6, #168	; 0xa8
+   0x0001f20e <+426>:	45 f2 f0 20	movw	r0, #21232	; 0x52f0
+   0x0001f212 <+430>:	c0 f2 03 00	movt	r0, #3
+   0x0001f216 <+434>:	93 e8 06 00	ldmia.w	r3, {r1, r2}
+   0x0001f21a <+438>:	ec f7 bd f8	bl	0xb398 <time_to_env>
+   0x0001f21e <+442>:	d6 e9 18 23	ldrd	r2, r3, [r6, #96]	; 0x60
+   0x0001f222 <+446>:	45 f2 fc 20	movw	r0, #21244	; 0x52fc
+   0x0001f226 <+450>:	c0 f2 03 00	movt	r0, #3
+   0x0001f22a <+454>:	ec f7 d5 f8	bl	0xb3d8 <dec_to_env>
+   0x0001f22e <+458>:	b2 6c	ldr	r2, [r6, #72]	; 0x48
+   0x0001f230 <+460>:	23 46	mov	r3, r4
+   0x0001f232 <+462>:	45 f2 08 30	movw	r0, #21256	; 0x5308
+   0x0001f236 <+466>:	c0 f2 03 00	movt	r0, #3
+   0x0001f23a <+470>:	ec f7 cd f8	bl	0xb3d8 <dec_to_env>
+   0x0001f23e <+474>:	23 46	mov	r3, r4
+   0x0001f240 <+476>:	45 f2 10 30	movw	r0, #21264	; 0x5310
+   0x0001f244 <+480>:	f2 6c	ldr	r2, [r6, #76]	; 0x4c
+   0x0001f246 <+482>:	c0 f2 03 00	movt	r0, #3
+   0x0001f24a <+486>:	ec f7 c5 f8	bl	0xb3d8 <dec_to_env>
+   0x0001f24e <+490>:	b8 f1 0a 0f	cmp.w	r8, #10
+   0x0001f252 <+494>:	48 d8	bhi.n	0x1f2e6 <sys_exec_command+642>
+   0x0001f254 <+496>:	df e8 08 f0	tbb	[pc, r8]
+   0x0001f258 <+500>:	20 20	movs	r0, #32
+   0x0001f25a <+502>:	47 47	bx	r8
+   0x0001f25c <+504>:	47 47	bx	r8
+   0x0001f25e <+506>:	06 47	bx	r0
+   0x0001f260 <+508>:	47 47	bx	r8
+   0x0001f262 <+510>:	06 00	movs	r6, r0
+   0x0001f264 <+512>:	45 f2 18 30	movw	r0, #21272	; 0x5318
+   0x0001f268 <+516>:	c0 f2 03 00	movt	r0, #3
+   0x0001f26c <+520>:	ec f7 26 e8	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f270 <+524>:	45 f2 24 30	movw	r0, #21284	; 0x5324
+   0x0001f274 <+528>:	c0 f2 03 00	movt	r0, #3
+   0x0001f278 <+532>:	ec f7 20 e8	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f27c <+536>:	45 f2 30 30	movw	r0, #21296	; 0x5330
+   0x0001f280 <+540>:	f1 68	ldr	r1, [r6, #12]
+   0x0001f282 <+542>:	c0 f2 03 00	movt	r0, #3
+   0x0001f286 <+546>:	ec f7 7b f8	bl	0xb380 <str_to_env>
+   0x0001f28a <+550>:	46 f2 48 23	movw	r3, #25160	; 0x6248
+   0x0001f28e <+554>:	c0 f2 04 03	movt	r3, #4
+   0x0001f292 <+558>:	18 68	ldr	r0, [r3, #0]
+   0x0001f294 <+560>:	ff f7 c6 f9	bl	0x1e624 <xexec>
+   0x0001f298 <+564>:	32 6d	ldr	r2, [r6, #80]	; 0x50
+   0x0001f29a <+566>:	00 23	movs	r3, #0
+   0x0001f29c <+568>:	74 6d	ldr	r4, [r6, #84]	; 0x54
+   0x0001f29e <+570>:	45 f2 18 30	movw	r0, #21272	; 0x5318
+   0x0001f2a2 <+574>:	c0 f2 03 00	movt	r0, #3
+   0x0001f2a6 <+578>:	11 0b	lsrs	r1, r2, #12
+   0x0001f2a8 <+580>:	d2 b2	uxtb	r2, r2
+   0x0001f2aa <+582>:	41 ea 04 51	orr.w	r1, r1, r4, lsl #20
+   0x0001f2ae <+586>:	21 f0 ff 01	bic.w	r1, r1, #255	; 0xff
+   0x0001f2b2 <+590>:	0a 43	orrs	r2, r1
+   0x0001f2b4 <+592>:	ec f7 90 f8	bl	0xb3d8 <dec_to_env>
+   0x0001f2b8 <+596>:	73 6d	ldr	r3, [r6, #84]	; 0x54
+   0x0001f2ba <+598>:	32 6d	ldr	r2, [r6, #80]	; 0x50
+   0x0001f2bc <+600>:	45 f2 24 30	movw	r0, #21284	; 0x5324
+   0x0001f2c0 <+604>:	23 f4 7f 63	bic.w	r3, r3, #4080	; 0xff0
+   0x0001f2c4 <+608>:	c0 f2 03 00	movt	r0, #3
+   0x0001f2c8 <+612>:	23 f0 0f 03	bic.w	r3, r3, #15
+   0x0001f2cc <+616>:	c2 f3 0b 22	ubfx	r2, r2, #8, #12
+   0x0001f2d0 <+620>:	1a 43	orrs	r2, r3
+   0x0001f2d2 <+622>:	00 23	movs	r3, #0
+   0x0001f2d4 <+624>:	ec f7 80 f8	bl	0xb3d8 <dec_to_env>
+   0x0001f2d8 <+628>:	45 f2 30 30	movw	r0, #21296	; 0x5330
+   0x0001f2dc <+632>:	c0 f2 03 00	movt	r0, #3
+   0x0001f2e0 <+636>:	eb f7 ec ef	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f2e4 <+640>:	d1 e7	b.n	0x1f28a <sys_exec_command+550>
+   0x0001f2e6 <+642>:	45 f2 18 30	movw	r0, #21272	; 0x5318
+   0x0001f2ea <+646>:	c0 f2 03 00	movt	r0, #3
+   0x0001f2ee <+650>:	eb f7 e6 ef	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f2f2 <+654>:	45 f2 24 30	movw	r0, #21284	; 0x5324
+   0x0001f2f6 <+658>:	c0 f2 03 00	movt	r0, #3
+   0x0001f2fa <+662>:	eb f7 e0 ef	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f2fe <+666>:	45 f2 30 30	movw	r0, #21296	; 0x5330
+   0x0001f302 <+670>:	c0 f2 03 00	movt	r0, #3
+   0x0001f306 <+674>:	eb f7 da ef	blx	0xb2bc <unsetenv@plt+4>
+   0x0001f30a <+678>:	be e7	b.n	0x1f28a <sys_exec_command+550>
+   0x0001f30c <+680>:	f3 f7 96 fd	bl	0x12e3c <xalloc_die>
+End of assembler dump.
+Dump of assembler code for function sys_exec_info_script:
+   0x0001f40c <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0001f410 <+4>:	45 f2 70 76	movw	r6, #22384	; 0x5770
+   0x0001f414 <+8>:	c0 f2 04 06	movt	r6, #4
+   0x0001f418 <+12>:	8c b0	sub	sp, #48	; 0x30
+   0x0001f41a <+14>:	81 46	mov	r9, r0
+   0x0001f41c <+16>:	03 a8	add	r0, sp, #12
+   0x0001f41e <+18>:	33 68	ldr	r3, [r6, #0]
+   0x0001f420 <+20>:	0c 46	mov	r4, r1
+   0x0001f422 <+22>:	45 f6 88 57	movw	r7, #23944	; 0x5d88
+   0x0001f426 <+26>:	c0 f2 04 07	movt	r7, #4
+   0x0001f42a <+30>:	0b 93	str	r3, [sp, #44]	; 0x2c
+   0x0001f42c <+32>:	fc f7 02 fa	bl	0x1b834 <xpipe>
+   0x0001f430 <+36>:	01 21	movs	r1, #1
+   0x0001f432 <+38>:	0d 20	movs	r0, #13
+   0x0001f434 <+40>:	eb f7 c4 eb	blx	0xabc0 <signal@plt+4>
+   0x0001f438 <+44>:	38 67	str	r0, [r7, #112]	; 0x70
+   0x0001f43a <+46>:	fc f7 e5 f9	bl	0x1b808 <xfork>
+   0x0001f43e <+50>:	05 46	mov	r5, r0
+   0x0001f440 <+52>:	00 28	cmp	r0, #0
+   0x0001f442 <+54>:	64 d0	beq.n	0x1f50e <sys_exec_info_script+258>
+   0x0001f444 <+56>:	04 98	ldr	r0, [sp, #16]
+   0x0001f446 <+58>:	00 24	movs	r4, #0
+   0x0001f448 <+60>:	01 94	str	r4, [sp, #4]
+   0x0001f44a <+62>:	02 94	str	r4, [sp, #8]
+   0x0001f44c <+64>:	ed f7 b6 fb	bl	0xcbbc <xclose>
+   0x0001f450 <+68>:	45 f6 f0 41	movw	r1, #23792	; 0x5cf0
+   0x0001f454 <+72>:	03 98	ldr	r0, [sp, #12]
+   0x0001f456 <+74>:	c0 f2 03 01	movt	r1, #3
+   0x0001f45a <+78>:	eb f7 c8 ea	blx	0xa9ec <fdopen@plt>
+   0x0001f45e <+82>:	02 a9	add	r1, sp, #8
+   0x0001f460 <+84>:	0a 22	movs	r2, #10
+   0x0001f462 <+86>:	03 46	mov	r3, r0
+   0x0001f464 <+88>:	82 46	mov	r10, r0
+   0x0001f466 <+90>:	01 a8	add	r0, sp, #4
+   0x0001f468 <+92>:	eb f7 e6 ea	blx	0xaa38 <__getdelim@plt>
+   0x0001f46c <+96>:	80 46	mov	r8, r0
+   0x0001f46e <+98>:	50 46	mov	r0, r10
+   0x0001f470 <+100>:	eb f7 32 ee	blx	0xb0d8 <fclose@plt+4>
+   0x0001f474 <+104>:	a0 45	cmp	r8, r4
+   0x0001f476 <+106>:	10 dd	ble.n	0x1f49a <sys_exec_info_script+142>
+   0x0001f478 <+108>:	01 9b	ldr	r3, [sp, #4]
+   0x0001f47a <+110>:	03 eb 08 02	add.w	r2, r3, r8
+   0x0001f47e <+114>:	12 f8 01 2c	ldrb.w	r2, [r2, #-1]
+   0x0001f482 <+118>:	0a 2a	cmp	r2, #10
+   0x0001f484 <+120>:	04 bf	itt	eq
+   0x0001f486 <+122>:	08 f1 ff 38	addeq.w	r8, r8, #4294967295
+   0x0001f48a <+126>:	03 f8 08 40	strbeq.w	r4, [r3, r8]
+   0x0001f48e <+130>:	04 e0	b.n	0x1f49a <sys_exec_info_script+142>
+   0x0001f490 <+132>:	eb f7 92 ed	blx	0xafb8 <__errno_location@plt>
+   0x0001f494 <+136>:	03 68	ldr	r3, [r0, #0]
+   0x0001f496 <+138>:	04 2b	cmp	r3, #4
+   0x0001f498 <+140>:	25 d1	bne.n	0x1f4e6 <sys_exec_info_script+218>
+   0x0001f49a <+142>:	00 22	movs	r2, #0
+   0x0001f49c <+144>:	28 46	mov	r0, r5
+   0x0001f49e <+146>:	69 46	mov	r1, sp
+   0x0001f4a0 <+148>:	eb f7 56 ec	blx	0xad50 <waitpid@plt>
+   0x0001f4a4 <+152>:	42 1c	adds	r2, r0, #1
+   0x0001f4a6 <+154>:	04 46	mov	r4, r0
+   0x0001f4a8 <+156>:	f2 d0	beq.n	0x1f490 <sys_exec_info_script+132>
+   0x0001f4aa <+158>:	39 6f	ldr	r1, [r7, #112]	; 0x70
+   0x0001f4ac <+160>:	0d 20	movs	r0, #13
+   0x0001f4ae <+162>:	eb f7 88 eb	blx	0xabc0 <signal@plt+4>
+   0x0001f4b2 <+166>:	00 9c	ldr	r4, [sp, #0]
+   0x0001f4b4 <+168>:	63 06	lsls	r3, r4, #25
+   0x0001f4b6 <+170>:	22 d1	bne.n	0x1f4fe <sys_exec_info_script+242>
+   0x0001f4b8 <+172>:	c4 f3 07 24	ubfx	r4, r4, #8, #8
+   0x0001f4bc <+176>:	6c b9	cbnz	r4, 0x1f4da <sys_exec_info_script+206>
+   0x0001f4be <+178>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x0001f4c2 <+182>:	0a dd	ble.n	0x1f4da <sys_exec_info_script+206>
+   0x0001f4c4 <+184>:	01 9b	ldr	r3, [sp, #4]
+   0x0001f4c6 <+186>:	c9 f8 00 30	str.w	r3, [r9]
+   0x0001f4ca <+190>:	0b 9a	ldr	r2, [sp, #44]	; 0x2c
+   0x0001f4cc <+192>:	20 46	mov	r0, r4
+   0x0001f4ce <+194>:	33 68	ldr	r3, [r6, #0]
+   0x0001f4d0 <+196>:	9a 42	cmp	r2, r3
+   0x0001f4d2 <+198>:	1a d1	bne.n	0x1f50a <sys_exec_info_script+254>
+   0x0001f4d4 <+200>:	0c b0	add	sp, #48	; 0x30
+   0x0001f4d6 <+202>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001f4da <+206>:	01 98	ldr	r0, [sp, #4]
+   0x0001f4dc <+208>:	eb f7 1e eb	blx	0xab1c <free>
+   0x0001f4e0 <+212>:	9d f8 01 40	ldrb.w	r4, [sp, #1]
+   0x0001f4e4 <+216>:	f1 e7	b.n	0x1f4ca <sys_exec_info_script+190>
+   0x0001f4e6 <+218>:	39 6f	ldr	r1, [r7, #112]	; 0x70
+   0x0001f4e8 <+220>:	0d 20	movs	r0, #13
+   0x0001f4ea <+222>:	eb f7 6a eb	blx	0xabc0 <signal@plt+4>
+   0x0001f4ee <+226>:	46 f2 b8 23	movw	r3, #25272	; 0x62b8
+   0x0001f4f2 <+230>:	c0 f2 04 03	movt	r3, #4
+   0x0001f4f6 <+234>:	18 68	ldr	r0, [r3, #0]
+   0x0001f4f8 <+236>:	04 f0 32 fc	bl	0x23d60 <waitpid_error>
+   0x0001f4fc <+240>:	e5 e7	b.n	0x1f4ca <sys_exec_info_script+190>
+   0x0001f4fe <+242>:	01 98	ldr	r0, [sp, #4]
+   0x0001f500 <+244>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x0001f504 <+248>:	eb f7 0a eb	blx	0xab1c <free>
+   0x0001f508 <+252>:	df e7	b.n	0x1f4ca <sys_exec_info_script+190>
+   0x0001f50a <+254>:	eb f7 8c eb	blx	0xac24 <__stack_chk_fail@plt>
+   0x0001f50e <+258>:	01 22	movs	r2, #1
+   0x0001f510 <+260>:	45 f2 38 20	movw	r0, #21048	; 0x5238
+   0x0001f514 <+264>:	44 f2 5c 71	movw	r1, #18268	; 0x475c
+   0x0001f518 <+268>:	c0 f2 03 00	movt	r0, #3
+   0x0001f51c <+272>:	c0 f2 03 01	movt	r1, #3
+   0x0001f520 <+276>:	eb f7 0a ed	blx	0xaf38 <setenv@plt>
+   0x0001f524 <+280>:	d9 f8 00 10	ldr.w	r1, [r9]
+   0x0001f528 <+284>:	01 22	movs	r2, #1
+   0x0001f52a <+286>:	45 f2 44 20	movw	r0, #21060	; 0x5244
+   0x0001f52e <+290>:	c0 f2 03 00	movt	r0, #3
+   0x0001f532 <+294>:	eb f7 02 ed	blx	0xaf38 <setenv@plt>
+   0x0001f536 <+298>:	05 aa	add	r2, sp, #20
+   0x0001f538 <+300>:	e1 17	asrs	r1, r4, #31
+   0x0001f53a <+302>:	20 46	mov	r0, r4
+   0x0001f53c <+304>:	0c f0 58 fc	bl	0x2bdf0 <umaxtostr>
+   0x0001f540 <+308>:	01 22	movs	r2, #1
+   0x0001f542 <+310>:	01 46	mov	r1, r0
+   0x0001f544 <+312>:	45 f2 50 20	movw	r0, #21072	; 0x5250
+   0x0001f548 <+316>:	c0 f2 03 00	movt	r0, #3
+   0x0001f54c <+320>:	eb f7 f4 ec	blx	0xaf38 <setenv@plt>
+   0x0001f550 <+324>:	46 f2 a0 23	movw	r3, #25248	; 0x62a0
+   0x0001f554 <+328>:	c0 f2 04 03	movt	r3, #4
+   0x0001f558 <+332>:	05 aa	add	r2, sp, #20
+   0x0001f55a <+334>:	18 68	ldr	r0, [r3, #0]
+   0x0001f55c <+336>:	c1 17	asrs	r1, r0, #31
+   0x0001f55e <+338>:	0c f0 47 fc	bl	0x2bdf0 <umaxtostr>
+   0x0001f562 <+342>:	01 22	movs	r2, #1
+   0x0001f564 <+344>:	01 46	mov	r1, r0
+   0x0001f566 <+346>:	45 f2 5c 20	movw	r0, #21084	; 0x525c
+   0x0001f56a <+350>:	c0 f2 03 00	movt	r0, #3
+   0x0001f56e <+354>:	eb f7 e4 ec	blx	0xaf38 <setenv@plt>
+   0x0001f572 <+358>:	46 f2 f0 23	movw	r3, #25328	; 0x62f0
+   0x0001f576 <+362>:	c0 f2 04 03	movt	r3, #4
+   0x0001f57a <+366>:	18 68	ldr	r0, [r3, #0]
+   0x0001f57c <+368>:	00 f0 10 fb	bl	0x1fba0 <subcommand_string>
+   0x0001f580 <+372>:	01 22	movs	r2, #1
+   0x0001f582 <+374>:	01 46	mov	r1, r0
+   0x0001f584 <+376>:	45 f2 ac 30	movw	r0, #21420	; 0x53ac
+   0x0001f588 <+380>:	c0 f2 03 00	movt	r0, #3
+   0x0001f58c <+384>:	eb f7 d4 ec	blx	0xaf38 <setenv@plt>
+   0x0001f590 <+388>:	46 f2 b4 03	movw	r3, #24756	; 0x60b4
+   0x0001f594 <+392>:	c0 f2 04 03	movt	r3, #4
+   0x0001f598 <+396>:	18 68	ldr	r0, [r3, #0]
+   0x0001f59a <+398>:	20 b9	cbnz	r0, 0x1f5a6 <sys_exec_info_script+410>
+   0x0001f59c <+400>:	46 f2 d4 23	movw	r3, #25300	; 0x62d4
+   0x0001f5a0 <+404>:	c0 f2 04 03	movt	r3, #4
+   0x0001f5a4 <+408>:	18 68	ldr	r0, [r3, #0]
+   0x0001f5a6 <+410>:	00 f0 e1 fa	bl	0x1fb6c <archive_format_string>
+   0x0001f5aa <+414>:	01 22	movs	r2, #1
+   0x0001f5ac <+416>:	01 46	mov	r1, r0
+   0x0001f5ae <+418>:	45 f2 70 20	movw	r0, #21104	; 0x5270
+   0x0001f5b2 <+422>:	c0 f2 03 00	movt	r0, #3
+   0x0001f5b6 <+426>:	eb f7 c0 ec	blx	0xaf38 <setenv@plt>
+   0x0001f5ba <+430>:	04 98	ldr	r0, [sp, #16]
+   0x0001f5bc <+432>:	05 aa	add	r2, sp, #20
+   0x0001f5be <+434>:	c1 17	asrs	r1, r0, #31
+   0x0001f5c0 <+436>:	0c f0 16 fc	bl	0x2bdf0 <umaxtostr>
+   0x0001f5c4 <+440>:	01 22	movs	r2, #1
+   0x0001f5c6 <+442>:	01 46	mov	r1, r0
+   0x0001f5c8 <+444>:	45 f2 bc 30	movw	r0, #21436	; 0x53bc
+   0x0001f5cc <+448>:	c0 f2 03 00	movt	r0, #3
+   0x0001f5d0 <+452>:	eb f7 b2 ec	blx	0xaf38 <setenv@plt>
+   0x0001f5d4 <+456>:	03 98	ldr	r0, [sp, #12]
+   0x0001f5d6 <+458>:	ed f7 f1 fa	bl	0xcbbc <xclose>
+   0x0001f5da <+462>:	46 f2 b8 23	movw	r3, #25272	; 0x62b8
+   0x0001f5de <+466>:	c0 f2 04 03	movt	r3, #4
+   0x0001f5e2 <+470>:	18 68	ldr	r0, [r3, #0]
+   0x0001f5e4 <+472>:	ff f7 1e f8	bl	0x1e624 <xexec>
+End of assembler dump.
+Dump of assembler code for function sys_file_is_archive:
+   0x0001e8d0 <+0>:	46 f2 10 23	movw	r3, #25104	; 0x6210
+   0x0001e8d4 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001e8d8 <+8>:	d3 e9 00 23	ldrd	r2, r3, [r3]
+   0x0001e8dc <+12>:	52 ea 03 01	orrs.w	r1, r2, r3
+   0x0001e8e0 <+16>:	09 d0	beq.n	0x1e8f6 <sys_file_is_archive+38>
+   0x0001e8e2 <+18>:	30 b4	push	{r4, r5}
+   0x0001e8e4 <+20>:	d0 e9 0c 45	ldrd	r4, r5, [r0, #48]	; 0x30
+   0x0001e8e8 <+24>:	ab 42	cmp	r3, r5
+   0x0001e8ea <+26>:	0c bf	ite	eq
+   0x0001e8ec <+28>:	a2 42	cmpeq	r2, r4
+   0x0001e8ee <+30>:	00 20	movne	r0, #0
+   0x0001e8f0 <+32>:	03 d0	beq.n	0x1e8fa <sys_file_is_archive+42>
+   0x0001e8f2 <+34>:	30 bc	pop	{r4, r5}
+   0x0001e8f4 <+36>:	70 47	bx	lr
+   0x0001e8f6 <+38>:	00 20	movs	r0, #0
+   0x0001e8f8 <+40>:	70 47	bx	lr
+   0x0001e8fa <+42>:	46 f2 00 33	movw	r3, #25344	; 0x6300
+   0x0001e8fe <+46>:	c0 f2 04 03	movt	r3, #4
+   0x0001e902 <+50>:	d0 e9 24 01	ldrd	r0, r1, [r0, #144]	; 0x90
+   0x0001e906 <+54>:	d3 e9 00 23	ldrd	r2, r3, [r3]
+   0x0001e90a <+58>:	30 bc	pop	{r4, r5}
+   0x0001e90c <+60>:	99 42	cmp	r1, r3
+   0x0001e90e <+62>:	06 bf	itte	eq
+   0x0001e910 <+64>:	90 42	cmpeq	r0, r2
+   0x0001e912 <+66>:	01 20	moveq	r0, #1
+   0x0001e914 <+68>:	00 20	movne	r0, #0
+   0x0001e916 <+70>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function sys_get_archive_stat:
+   0x0001e8ac <+0>:	08 b5	push	{r3, lr}
+   0x0001e8ae <+2>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001e8b2 <+6>:	c0 f2 04 03	movt	r3, #4
+   0x0001e8b6 <+10>:	45 f6 88 52	movw	r2, #23944	; 0x5d88
+   0x0001e8ba <+14>:	03 20	movs	r0, #3
+   0x0001e8bc <+16>:	c0 f2 04 02	movt	r2, #4
+   0x0001e8c0 <+20>:	19 68	ldr	r1, [r3, #0]
+   0x0001e8c2 <+22>:	ec f7 1c ea	blx	0xacfc <__fxstat64@plt>
+   0x0001e8c6 <+26>:	b0 fa 80 f0	clz	r0, r0
+   0x0001e8ca <+30>:	40 09	lsrs	r0, r0, #5
+   0x0001e8cc <+32>:	08 bd	pop	{r3, pc}
+End of assembler dump.
+Dump of assembler code for function sys_save_archive_dev_ino:
+   0x0001e918 <+0>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001e91c <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001e920 <+8>:	1b 68	ldr	r3, [r3, #0]
+   0x0001e922 <+10>:	b3 f1 80 4f	cmp.w	r3, #1073741824	; 0x40000000
+   0x0001e926 <+14>:	09 da	bge.n	0x1e93c <sys_save_archive_dev_ino+36>
+   0x0001e928 <+16>:	45 f6 88 53	movw	r3, #23944	; 0x5d88
+   0x0001e92c <+20>:	c0 f2 04 03	movt	r3, #4
+   0x0001e930 <+24>:	1a 69	ldr	r2, [r3, #16]
+   0x0001e932 <+26>:	02 f4 70 42	and.w	r2, r2, #61440	; 0xf000
+   0x0001e936 <+30>:	b2 f5 00 4f	cmp.w	r2, #32768	; 0x8000
+   0x0001e93a <+34>:	08 d0	beq.n	0x1e94e <sys_save_archive_dev_ino+54>
+   0x0001e93c <+36>:	46 f2 10 21	movw	r1, #25104	; 0x6210
+   0x0001e940 <+40>:	c0 f2 04 01	movt	r1, #4
+   0x0001e944 <+44>:	00 22	movs	r2, #0
+   0x0001e946 <+46>:	00 23	movs	r3, #0
+   0x0001e948 <+48>:	c1 e9 00 23	strd	r2, r3, [r1]
+   0x0001e94c <+52>:	70 47	bx	lr
+   0x0001e94e <+54>:	d3 e9 00 01	ldrd	r0, r1, [r3]
+   0x0001e952 <+58>:	d3 e9 18 23	ldrd	r2, r3, [r3, #96]	; 0x60
+   0x0001e956 <+62>:	30 b4	push	{r4, r5}
+   0x0001e958 <+64>:	46 f2 10 25	movw	r5, #25104	; 0x6210
+   0x0001e95c <+68>:	46 f2 00 34	movw	r4, #25344	; 0x6300
+   0x0001e960 <+72>:	c0 f2 04 05	movt	r5, #4
+   0x0001e964 <+76>:	c0 f2 04 04	movt	r4, #4
+   0x0001e968 <+80>:	c5 e9 00 01	strd	r0, r1, [r5]
+   0x0001e96c <+84>:	c4 e9 00 23	strd	r2, r3, [r4]
+   0x0001e970 <+88>:	30 bc	pop	{r4, r5}
+   0x0001e972 <+90>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function sys_spawn_shell:
+   0x0001ea9c <+0>:	30 b5	push	{r4, r5, lr}
+   0x0001ea9e <+2>:	45 f2 0c 20	movw	r0, #21004	; 0x520c
+   0x0001eaa2 <+6>:	83 b0	sub	sp, #12
+   0x0001eaa4 <+8>:	c0 f2 03 00	movt	r0, #3
+   0x0001eaa8 <+12>:	ec f7 a8 e9	blx	0xadfc <getenv@plt>
+   0x0001eaac <+16>:	45 f2 04 23	movw	r3, #20996	; 0x5204
+   0x0001eab0 <+20>:	c0 f2 03 03	movt	r3, #3
+   0x0001eab4 <+24>:	00 28	cmp	r0, #0
+   0x0001eab6 <+26>:	14 bf	ite	ne
+   0x0001eab8 <+28>:	05 46	movne	r5, r0
+   0x0001eaba <+30>:	1d 46	moveq	r5, r3
+   0x0001eabc <+32>:	fc f7 a4 fe	bl	0x1b808 <xfork>
+   0x0001eac0 <+36>:	04 46	mov	r4, r0
+   0x0001eac2 <+38>:	28 b9	cbnz	r0, 0x1ead0 <sys_spawn_shell+52>
+   0x0001eac4 <+40>:	12 e0	b.n	0x1eaec <sys_spawn_shell+80>
+   0x0001eac6 <+42>:	ec f7 78 ea	blx	0xafb8 <__errno_location@plt>
+   0x0001eaca <+46>:	02 68	ldr	r2, [r0, #0]
+   0x0001eacc <+48>:	04 2a	cmp	r2, #4
+   0x0001eace <+50>:	08 d1	bne.n	0x1eae2 <sys_spawn_shell+70>
+   0x0001ead0 <+52>:	20 46	mov	r0, r4
+   0x0001ead2 <+54>:	01 a9	add	r1, sp, #4
+   0x0001ead4 <+56>:	00 22	movs	r2, #0
+   0x0001ead6 <+58>:	ec f7 3c e9	blx	0xad50 <waitpid@plt>
+   0x0001eada <+62>:	01 30	adds	r0, #1
+   0x0001eadc <+64>:	f3 d0	beq.n	0x1eac6 <sys_spawn_shell+42>
+   0x0001eade <+66>:	03 b0	add	sp, #12
+   0x0001eae0 <+68>:	30 bd	pop	{r4, r5, pc}
+   0x0001eae2 <+70>:	28 46	mov	r0, r5
+   0x0001eae4 <+72>:	05 f0 3c f9	bl	0x23d60 <waitpid_error>
+   0x0001eae8 <+76>:	03 b0	add	sp, #12
+   0x0001eaea <+78>:	30 bd	pop	{r4, r5, pc}
+   0x0001eaec <+80>:	03 46	mov	r3, r0
+   0x0001eaee <+82>:	45 f2 14 21	movw	r1, #21012	; 0x5214
+   0x0001eaf2 <+86>:	42 f6 88 62	movw	r2, #11912	; 0x2e88
+   0x0001eaf6 <+90>:	c0 f2 03 01	movt	r1, #3
+   0x0001eafa <+94>:	c0 f2 03 02	movt	r2, #3
+   0x0001eafe <+98>:	28 46	mov	r0, r5
+   0x0001eb00 <+100>:	ec f7 44 e8	blx	0xab8c <execlp@plt>
+   0x0001eb04 <+104>:	28 46	mov	r0, r5
+   0x0001eb06 <+106>:	04 f0 07 ff	bl	0x23918 <exec_fatal>
+End of assembler dump.
+Dump of assembler code for function sys_truncate:
+   0x0001eb5c <+0>:	10 b5	push	{r4, lr}
+   0x0001eb5e <+2>:	82 b0	sub	sp, #8
+   0x0001eb60 <+4>:	01 21	movs	r1, #1
+   0x0001eb62 <+6>:	00 22	movs	r2, #0
+   0x0001eb64 <+8>:	00 23	movs	r3, #0
+   0x0001eb66 <+10>:	00 91	str	r1, [sp, #0]
+   0x0001eb68 <+12>:	04 46	mov	r4, r0
+   0x0001eb6a <+14>:	ec f7 e6 e8	blx	0xad38 <lseek64@plt>
+   0x0001eb6e <+18>:	00 28	cmp	r0, #0
+   0x0001eb70 <+20>:	0b 46	mov	r3, r1
+   0x0001eb72 <+22>:	73 f1 00 01	sbcs.w	r1, r3, #0
+   0x0001eb76 <+26>:	02 46	mov	r2, r0
+   0x0001eb78 <+28>:	05 db	blt.n	0x1eb86 <sys_truncate+42>
+   0x0001eb7a <+30>:	20 46	mov	r0, r4
+   0x0001eb7c <+32>:	02 b0	add	sp, #8
+   0x0001eb7e <+34>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x0001eb82 <+38>:	ec f7 23 b8	b.w	0xabcc <ftruncate64@plt>
+   0x0001eb86 <+42>:	4f f0 ff 30	mov.w	r0, #4294967295
+   0x0001eb8a <+46>:	02 b0	add	sp, #8
+   0x0001eb8c <+48>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function sys_wait_command:
+   0x0001f310 <+0>:	30 b5	push	{r4, r5, lr}
+   0x0001f312 <+2>:	45 f6 88 55	movw	r5, #23944	; 0x5d88
+   0x0001f316 <+6>:	c0 f2 04 05	movt	r5, #4
+   0x0001f31a <+10>:	85 b0	sub	sp, #20
+   0x0001f31c <+12>:	ec 6e	ldr	r4, [r5, #108]	; 0x6c
+   0x0001f31e <+14>:	00 2c	cmp	r4, #0
+   0x0001f320 <+16>:	30 db	blt.n	0x1f384 <sys_wait_command+116>
+   0x0001f322 <+18>:	0d 20	movs	r0, #13
+   0x0001f324 <+20>:	a9 6e	ldr	r1, [r5, #104]	; 0x68
+   0x0001f326 <+22>:	eb f7 4c ec	blx	0xabc0 <signal@plt+4>
+   0x0001f32a <+26>:	20 46	mov	r0, r4
+   0x0001f32c <+28>:	05 e0	b.n	0x1f33a <sys_wait_command+42>
+   0x0001f32e <+30>:	eb f7 44 ee	blx	0xafb8 <__errno_location@plt>
+   0x0001f332 <+34>:	03 68	ldr	r3, [r0, #0]
+   0x0001f334 <+36>:	04 2b	cmp	r3, #4
+   0x0001f336 <+38>:	27 d1	bne.n	0x1f388 <sys_wait_command+120>
+   0x0001f338 <+40>:	e8 6e	ldr	r0, [r5, #108]	; 0x6c
+   0x0001f33a <+42>:	03 a9	add	r1, sp, #12
+   0x0001f33c <+44>:	00 22	movs	r2, #0
+   0x0001f33e <+46>:	eb f7 08 ed	blx	0xad50 <waitpid@plt>
+   0x0001f342 <+50>:	43 1c	adds	r3, r0, #1
+   0x0001f344 <+52>:	04 46	mov	r4, r0
+   0x0001f346 <+54>:	f2 d0	beq.n	0x1f32e <sys_wait_command+30>
+   0x0001f348 <+56>:	03 9b	ldr	r3, [sp, #12]
+   0x0001f34a <+58>:	13 f0 7f 02	ands.w	r2, r3, #127	; 0x7f
+   0x0001f34e <+62>:	25 d0	beq.n	0x1f39c <sys_wait_command+140>
+   0x0001f350 <+64>:	01 32	adds	r2, #1
+   0x0001f352 <+66>:	42 f3 46 02	sbfx	r2, r2, #1, #7
+   0x0001f356 <+70>:	00 2a	cmp	r2, #0
+   0x0001f358 <+72>:	43 dd	ble.n	0x1f3e2 <sys_wait_command+210>
+   0x0001f35a <+74>:	05 22	movs	r2, #5
+   0x0001f35c <+76>:	45 f2 60 31	movw	r1, #21344	; 0x5360
+   0x0001f360 <+80>:	00 20	movs	r0, #0
+   0x0001f362 <+82>:	c0 f2 03 01	movt	r1, #3
+   0x0001f366 <+86>:	eb f7 58 ec	blx	0xac18 <dcgettext@plt>
+   0x0001f36a <+90>:	03 9c	ldr	r4, [sp, #12]
+   0x0001f36c <+92>:	eb 6e	ldr	r3, [r5, #108]	; 0x6c
+   0x0001f36e <+94>:	04 f0 7f 04	and.w	r4, r4, #127	; 0x7f
+   0x0001f372 <+98>:	00 94	str	r4, [sp, #0]
+   0x0001f374 <+100>:	02 46	mov	r2, r0
+   0x0001f376 <+102>:	00 20	movs	r0, #0
+   0x0001f378 <+104>:	01 46	mov	r1, r0
+   0x0001f37a <+106>:	eb f7 22 ed	blx	0xadc0 <error@plt+4>
+   0x0001f37e <+110>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x0001f382 <+114>:	eb 66	str	r3, [r5, #108]	; 0x6c
+   0x0001f384 <+116>:	05 b0	add	sp, #20
+   0x0001f386 <+118>:	30 bd	pop	{r4, r5, pc}
+   0x0001f388 <+120>:	46 f2 48 23	movw	r3, #25160	; 0x6248
+   0x0001f38c <+124>:	c0 f2 04 03	movt	r3, #4
+   0x0001f390 <+128>:	ec 66	str	r4, [r5, #108]	; 0x6c
+   0x0001f392 <+130>:	18 68	ldr	r0, [r3, #0]
+   0x0001f394 <+132>:	04 f0 e4 fc	bl	0x23d60 <waitpid_error>
+   0x0001f398 <+136>:	05 b0	add	sp, #20
+   0x0001f39a <+138>:	30 bd	pop	{r4, r5, pc}
+   0x0001f39c <+140>:	46 f2 30 22	movw	r2, #25136	; 0x6230
+   0x0001f3a0 <+144>:	c0 f2 04 02	movt	r2, #4
+   0x0001f3a4 <+148>:	14 78	ldrb	r4, [r2, #0]
+   0x0001f3a6 <+150>:	00 2c	cmp	r4, #0
+   0x0001f3a8 <+152>:	e9 d1	bne.n	0x1f37e <sys_wait_command+110>
+   0x0001f3aa <+154>:	c3 f3 07 23	ubfx	r3, r3, #8, #8
+   0x0001f3ae <+158>:	00 2b	cmp	r3, #0
+   0x0001f3b0 <+160>:	e5 d0	beq.n	0x1f37e <sys_wait_command+110>
+   0x0001f3b2 <+162>:	20 46	mov	r0, r4
+   0x0001f3b4 <+164>:	05 22	movs	r2, #5
+   0x0001f3b6 <+166>:	45 f2 40 31	movw	r1, #21312	; 0x5340
+   0x0001f3ba <+170>:	c0 f2 03 01	movt	r1, #3
+   0x0001f3be <+174>:	eb f7 2c ec	blx	0xac18 <dcgettext@plt>
+   0x0001f3c2 <+178>:	eb 6e	ldr	r3, [r5, #108]	; 0x6c
+   0x0001f3c4 <+180>:	02 46	mov	r2, r0
+   0x0001f3c6 <+182>:	20 46	mov	r0, r4
+   0x0001f3c8 <+184>:	9d f8 0d 40	ldrb.w	r4, [sp, #13]
+   0x0001f3cc <+188>:	01 46	mov	r1, r0
+   0x0001f3ce <+190>:	00 94	str	r4, [sp, #0]
+   0x0001f3d0 <+192>:	eb f7 f6 ec	blx	0xadc0 <error@plt+4>
+   0x0001f3d4 <+196>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x0001f3d8 <+200>:	c0 f2 04 03	movt	r3, #4
+   0x0001f3dc <+204>:	02 22	movs	r2, #2
+   0x0001f3de <+206>:	1a 60	str	r2, [r3, #0]
+   0x0001f3e0 <+208>:	cd e7	b.n	0x1f37e <sys_wait_command+110>
+   0x0001f3e2 <+210>:	05 22	movs	r2, #5
+   0x0001f3e4 <+212>:	45 f2 84 31	movw	r1, #21380	; 0x5384
+   0x0001f3e8 <+216>:	00 20	movs	r0, #0
+   0x0001f3ea <+218>:	c0 f2 03 01	movt	r1, #3
+   0x0001f3ee <+222>:	eb f7 14 ec	blx	0xac18 <dcgettext@plt>
+   0x0001f3f2 <+226>:	eb 6e	ldr	r3, [r5, #108]	; 0x6c
+   0x0001f3f4 <+228>:	02 46	mov	r2, r0
+   0x0001f3f6 <+230>:	00 20	movs	r0, #0
+   0x0001f3f8 <+232>:	01 46	mov	r1, r0
+   0x0001f3fa <+234>:	eb f7 e2 ec	blx	0xadc0 <error@plt+4>
+   0x0001f3fe <+238>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x0001f402 <+242>:	c0 f2 04 03	movt	r3, #4
+   0x0001f406 <+246>:	02 22	movs	r2, #2
+   0x0001f408 <+248>:	1a 60	str	r2, [r3, #0]
+   0x0001f40a <+250>:	b8 e7	b.n	0x1f37e <sys_wait_command+110>
+End of assembler dump.
+Dump of assembler code for function sys_wait_for_child:
+   0x0001ea00 <+0>:	30 b5	push	{r4, r5, lr}
+   0x0001ea02 <+2>:	0d 46	mov	r5, r1
+   0x0001ea04 <+4>:	83 b0	sub	sp, #12
+   0x0001ea06 <+6>:	04 46	mov	r4, r0
+   0x0001ea08 <+8>:	28 b9	cbnz	r0, 0x1ea16 <sys_wait_for_child+22>
+   0x0001ea0a <+10>:	18 e0	b.n	0x1ea3e <sys_wait_for_child+62>
+   0x0001ea0c <+12>:	ec f7 d4 ea	blx	0xafb8 <__errno_location@plt>
+   0x0001ea10 <+16>:	03 68	ldr	r3, [r0, #0]
+   0x0001ea12 <+18>:	04 2b	cmp	r3, #4
+   0x0001ea14 <+20>:	15 d1	bne.n	0x1ea42 <sys_wait_for_child+66>
+   0x0001ea16 <+22>:	20 46	mov	r0, r4
+   0x0001ea18 <+24>:	01 a9	add	r1, sp, #4
+   0x0001ea1a <+26>:	00 22	movs	r2, #0
+   0x0001ea1c <+28>:	ec f7 98 e9	blx	0xad50 <waitpid@plt>
+   0x0001ea20 <+32>:	01 30	adds	r0, #1
+   0x0001ea22 <+34>:	f3 d0	beq.n	0x1ea0c <sys_wait_for_child+12>
+   0x0001ea24 <+36>:	01 9b	ldr	r3, [sp, #4]
+   0x0001ea26 <+38>:	03 f0 7f 04	and.w	r4, r3, #127	; 0x7f
+   0x0001ea2a <+42>:	62 1c	adds	r2, r4, #1
+   0x0001ea2c <+44>:	42 f3 46 02	sbfx	r2, r2, #1, #7
+   0x0001ea30 <+48>:	00 2a	cmp	r2, #0
+   0x0001ea32 <+50>:	0e dd	ble.n	0x1ea52 <sys_wait_for_child+82>
+   0x0001ea34 <+52>:	0d 2c	cmp	r4, #13
+   0x0001ea36 <+54>:	18 bf	it	ne
+   0x0001ea38 <+56>:	45 f0 01 05	orrne.w	r5, r5, #1
+   0x0001ea3c <+60>:	f5 b9	cbnz	r5, 0x1ea7c <sys_wait_for_child+124>
+   0x0001ea3e <+62>:	03 b0	add	sp, #12
+   0x0001ea40 <+64>:	30 bd	pop	{r4, r5, pc}
+   0x0001ea42 <+66>:	46 f2 0c 33	movw	r3, #25356	; 0x630c
+   0x0001ea46 <+70>:	c0 f2 04 03	movt	r3, #4
+   0x0001ea4a <+74>:	18 68	ldr	r0, [r3, #0]
+   0x0001ea4c <+76>:	05 f0 88 f9	bl	0x23d60 <waitpid_error>
+   0x0001ea50 <+80>:	e8 e7	b.n	0x1ea24 <sys_wait_for_child+36>
+   0x0001ea52 <+82>:	c3 f3 07 23	ubfx	r3, r3, #8, #8
+   0x0001ea56 <+86>:	00 2b	cmp	r3, #0
+   0x0001ea58 <+88>:	f1 d0	beq.n	0x1ea3e <sys_wait_for_child+62>
+   0x0001ea5a <+90>:	05 22	movs	r2, #5
+   0x0001ea5c <+92>:	45 f2 e8 11	movw	r1, #20968	; 0x51e8
+   0x0001ea60 <+96>:	00 20	movs	r0, #0
+   0x0001ea62 <+98>:	c0 f2 03 01	movt	r1, #3
+   0x0001ea66 <+102>:	ec f7 d8 e8	blx	0xac18 <dcgettext@plt>
+   0x0001ea6a <+106>:	9d f8 05 30	ldrb.w	r3, [sp, #5]
+   0x0001ea6e <+110>:	02 46	mov	r2, r0
+   0x0001ea70 <+112>:	00 20	movs	r0, #0
+   0x0001ea72 <+114>:	01 46	mov	r1, r0
+   0x0001ea74 <+116>:	ec f7 a4 e9	blx	0xadc0 <error@plt+4>
+   0x0001ea78 <+120>:	f4 f7 c8 f9	bl	0x12e0c <fatal_exit>
+   0x0001ea7c <+124>:	05 22	movs	r2, #5
+   0x0001ea7e <+126>:	45 f2 cc 11	movw	r1, #20940	; 0x51cc
+   0x0001ea82 <+130>:	00 20	movs	r0, #0
+   0x0001ea84 <+132>:	c0 f2 03 01	movt	r1, #3
+   0x0001ea88 <+136>:	ec f7 c6 e8	blx	0xac18 <dcgettext@plt>
+   0x0001ea8c <+140>:	23 46	mov	r3, r4
+   0x0001ea8e <+142>:	02 46	mov	r2, r0
+   0x0001ea90 <+144>:	00 20	movs	r0, #0
+   0x0001ea92 <+146>:	01 46	mov	r1, r0
+   0x0001ea94 <+148>:	ec f7 94 e9	blx	0xadc0 <error@plt+4>
+   0x0001ea98 <+152>:	f4 f7 b8 f9	bl	0x12e0c <fatal_exit>
+End of assembler dump.

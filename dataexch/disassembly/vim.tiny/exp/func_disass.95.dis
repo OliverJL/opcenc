@@ -1,0 +1,731 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function vim_findfile:
+   0x0003ee04 <+0>:	8e 4b	ldr	r3, [pc, #568]	; (0x3f040 <vim_findfile+572>)
+   0x0003ee06 <+2>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0003ee0a <+6>:	7b 44	add	r3, pc
+   0x0003ee0c <+8>:	89 b0	sub	sp, #36	; 0x24
+   0x0003ee0e <+10>:	1a 46	mov	r2, r3
+   0x0003ee10 <+12>:	02 93	str	r3, [sp, #8]
+   0x0003ee12 <+14>:	8c 4b	ldr	r3, [pc, #560]	; (0x3f044 <vim_findfile+576>)
+   0x0003ee14 <+16>:	d3 58	ldr	r3, [r2, r3]
+   0x0003ee16 <+18>:	03 93	str	r3, [sp, #12]
+   0x0003ee18 <+20>:	1b 68	ldr	r3, [r3, #0]
+   0x0003ee1a <+22>:	07 93	str	r3, [sp, #28]
+   0x0003ee1c <+24>:	00 28	cmp	r0, #0
+   0x0003ee1e <+26>:	00 f0 a6 80	beq.w	0x3ef6e <vim_findfile+362>
+   0x0003ee22 <+30>:	80 46	mov	r8, r0
+   0x0003ee24 <+32>:	01 21	movs	r1, #1
+   0x0003ee26 <+34>:	4f f4 80 50	mov.w	r0, #4096	; 0x1000
+   0x0003ee2a <+38>:	ff f7 4d fb	bl	0x3e4c8 <lalloc>
+   0x0003ee2e <+42>:	05 46	mov	r5, r0
+   0x0003ee30 <+44>:	00 28	cmp	r0, #0
+   0x0003ee32 <+46>:	00 f0 9c 80	beq.w	0x3ef6e <vim_findfile+362>
+   0x0003ee36 <+50>:	84 4b	ldr	r3, [pc, #528]	; (0x3f048 <vim_findfile+580>)
+   0x0003ee38 <+52>:	4f f0 00 09	mov.w	r9, #0
+   0x0003ee3c <+56>:	02 9a	ldr	r2, [sp, #8]
+   0x0003ee3e <+58>:	52 f8 03 a0	ldr.w	r10, [r2, r3]
+   0x0003ee42 <+62>:	40 f0 5f fc	bl	0x7f704 <ui_breakcheck>
+   0x0003ee46 <+66>:	da f8 00 60	ldr.w	r6, [r10]
+   0x0003ee4a <+70>:	00 2e	cmp	r6, #0
+   0x0003ee4c <+72>:	40 f0 89 80	bne.w	0x3ef62 <vim_findfile+350>
+   0x0003ee50 <+76>:	d8 f8 00 40	ldr.w	r4, [r8]
+   0x0003ee54 <+80>:	00 2c	cmp	r4, #0
+   0x0003ee56 <+82>:	00 f0 84 80	beq.w	0x3ef62 <vim_findfile+350>
+   0x0003ee5a <+86>:	23 68	ldr	r3, [r4, #0]
+   0x0003ee5c <+88>:	c8 f8 00 30	str.w	r3, [r8]
+   0x0003ee60 <+92>:	a3 68	ldr	r3, [r4, #8]
+   0x0003ee62 <+94>:	00 2b	cmp	r3, #0
+   0x0003ee64 <+96>:	00 f0 85 80	beq.w	0x3ef72 <vim_findfile+366>
+   0x0003ee68 <+100>:	a3 69	ldr	r3, [r4, #24]
+   0x0003ee6a <+102>:	00 2b	cmp	r3, #0
+   0x0003ee6c <+104>:	6f dd	ble.n	0x3ef4e <vim_findfile+330>
+   0x0003ee6e <+106>:	85 f8 00 90	strb.w	r9, [r5]
+   0x0003ee72 <+110>:	a3 68	ldr	r3, [r4, #8]
+   0x0003ee74 <+112>:	00 2b	cmp	r3, #0
+   0x0003ee76 <+114>:	00 f0 8a 80	beq.w	0x3ef8e <vim_findfile+394>
+   0x0003ee7a <+118>:	63 69	ldr	r3, [r4, #20]
+   0x0003ee7c <+120>:	00 2b	cmp	r3, #0
+   0x0003ee7e <+122>:	66 d1	bne.n	0x3ef4e <vim_findfile+330>
+   0x0003ee80 <+124>:	e6 68	ldr	r6, [r4, #12]
+   0x0003ee82 <+126>:	27 7c	ldrb	r7, [r4, #16]
+   0x0003ee84 <+128>:	be 42	cmp	r6, r7
+   0x0003ee86 <+130>:	c8 bf	it	gt
+   0x0003ee88 <+132>:	be 00	lslgt	r6, r7, #2
+   0x0003ee8a <+134>:	19 dc	bgt.n	0x3eec0 <vim_findfile+188>
+   0x0003ee8c <+136>:	5b e0	b.n	0x3ef46 <vim_findfile+322>
+   0x0003ee8e <+138>:	28 46	mov	r0, r5
+   0x0003ee90 <+140>:	15 f0 04 fe	bl	0x54a9c <mch_getperm>
+   0x0003ee94 <+144>:	00 28	cmp	r0, #0
+   0x0003ee96 <+146>:	0e db	blt.n	0x3eeb6 <vim_findfile+178>
+   0x0003ee98 <+148>:	d8 f8 20 b0	ldr.w	r11, [r8, #32]
+   0x0003ee9c <+152>:	bb f1 02 0f	cmp.w	r11, #2
+   0x0003eea0 <+156>:	2b d0	beq.n	0x3eefa <vim_findfile+246>
+   0x0003eea2 <+158>:	28 46	mov	r0, r5
+   0x0003eea4 <+160>:	15 f0 b0 fe	bl	0x54c08 <mch_isdir>
+   0x0003eea8 <+164>:	ab f1 01 03	sub.w	r3, r11, #1
+   0x0003eeac <+168>:	b3 fa 83 f3	clz	r3, r3
+   0x0003eeb0 <+172>:	5b 09	lsrs	r3, r3, #5
+   0x0003eeb2 <+174>:	83 42	cmp	r3, r0
+   0x0003eeb4 <+176>:	21 d0	beq.n	0x3eefa <vim_findfile+246>
+   0x0003eeb6 <+178>:	e3 68	ldr	r3, [r4, #12]
+   0x0003eeb8 <+180>:	01 37	adds	r7, #1
+   0x0003eeba <+182>:	04 36	adds	r6, #4
+   0x0003eebc <+184>:	bb 42	cmp	r3, r7
+   0x0003eebe <+186>:	42 dd	ble.n	0x3ef46 <vim_findfile+322>
+   0x0003eec0 <+188>:	a3 68	ldr	r3, [r4, #8]
+   0x0003eec2 <+190>:	98 59	ldr	r0, [r3, r6]
+   0x0003eec4 <+192>:	45 f0 52 fe	bl	0x84b6c <path_with_url>
+   0x0003eec8 <+196>:	28 b9	cbnz	r0, 0x3eed6 <vim_findfile+210>
+   0x0003eeca <+198>:	a3 68	ldr	r3, [r4, #8]
+   0x0003eecc <+200>:	98 59	ldr	r0, [r3, r6]
+   0x0003eece <+202>:	15 f0 9b fe	bl	0x54c08 <mch_isdir>
+   0x0003eed2 <+206>:	00 28	cmp	r0, #0
+   0x0003eed4 <+208>:	ef d0	beq.n	0x3eeb6 <vim_findfile+178>
+   0x0003eed6 <+210>:	a3 68	ldr	r3, [r4, #8]
+   0x0003eed8 <+212>:	28 46	mov	r0, r5
+   0x0003eeda <+214>:	99 59	ldr	r1, [r3, r6]
+   0x0003eedc <+216>:	ce f7 52 e8	blx	0xcf84 <strcpy@plt+4>
+   0x0003eee0 <+220>:	28 46	mov	r0, r5
+   0x0003eee2 <+222>:	fc f7 01 fd	bl	0x3b8e8 <add_pathsep>
+   0x0003eee6 <+226>:	d8 f8 14 10	ldr.w	r1, [r8, #20]
+   0x0003eeea <+230>:	28 46	mov	r0, r5
+   0x0003eeec <+232>:	ce f7 24 e8	blx	0xcf38 <strcat@plt+4>
+   0x0003eef0 <+236>:	28 46	mov	r0, r5
+   0x0003eef2 <+238>:	45 f0 3b fe	bl	0x84b6c <path_with_url>
+   0x0003eef6 <+242>:	00 28	cmp	r0, #0
+   0x0003eef8 <+244>:	c9 d0	beq.n	0x3ee8e <vim_findfile+138>
+   0x0003eefa <+246>:	d8 f8 04 00	ldr.w	r0, [r8, #4]
+   0x0003eefe <+250>:	29 46	mov	r1, r5
+   0x0003ef00 <+252>:	08 30	adds	r0, #8
+   0x0003ef02 <+254>:	ff f7 f3 fe	bl	0x3ecec <ff_check_visited>
+   0x0003ef06 <+258>:	01 28	cmp	r0, #1
+   0x0003ef08 <+260>:	d5 d1	bne.n	0x3eeb6 <vim_findfile+178>
+   0x0003ef0a <+262>:	01 37	adds	r7, #1
+   0x0003ef0c <+264>:	27 74	strb	r7, [r4, #16]
+   0x0003ef0e <+266>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0003ef12 <+270>:	28 46	mov	r0, r5
+   0x0003ef14 <+272>:	23 60	str	r3, [r4, #0]
+   0x0003ef16 <+274>:	c8 f8 00 40	str.w	r4, [r8]
+   0x0003ef1a <+278>:	45 f0 27 fe	bl	0x84b6c <path_with_url>
+   0x0003ef1e <+282>:	00 28	cmp	r0, #0
+   0x0003ef20 <+284>:	31 d0	beq.n	0x3ef86 <vim_findfile+386>
+   0x0003ef22 <+286>:	4a 4c	ldr	r4, [pc, #296]	; (0x3f04c <vim_findfile+584>)
+   0x0003ef24 <+288>:	4f f4 80 51	mov.w	r1, #4096	; 0x1000
+   0x0003ef28 <+292>:	7c 44	add	r4, pc
+   0x0003ef2a <+294>:	60 6a	ldr	r0, [r4, #36]	; 0x24
+   0x0003ef2c <+296>:	15 f0 a8 fc	bl	0x54880 <mch_dirname>
+   0x0003ef30 <+300>:	01 28	cmp	r0, #1
+   0x0003ef32 <+302>:	71 d0	beq.n	0x3f018 <vim_findfile+532>
+   0x0003ef34 <+304>:	03 9b	ldr	r3, [sp, #12]
+   0x0003ef36 <+306>:	28 46	mov	r0, r5
+   0x0003ef38 <+308>:	07 9a	ldr	r2, [sp, #28]
+   0x0003ef3a <+310>:	1b 68	ldr	r3, [r3, #0]
+   0x0003ef3c <+312>:	9a 42	cmp	r2, r3
+   0x0003ef3e <+314>:	7d d1	bne.n	0x3f03c <vim_findfile+568>
+   0x0003ef40 <+316>:	09 b0	add	sp, #36	; 0x24
+   0x0003ef42 <+318>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0003ef46 <+322>:	01 23	movs	r3, #1
+   0x0003ef48 <+324>:	84 f8 10 90	strb.w	r9, [r4, #16]
+   0x0003ef4c <+328>:	63 61	str	r3, [r4, #20]
+   0x0003ef4e <+330>:	20 46	mov	r0, r4
+   0x0003ef50 <+332>:	fd f7 e8 fe	bl	0x3cd24 <ff_free_stack_element>
+   0x0003ef54 <+336>:	40 f0 d6 fb	bl	0x7f704 <ui_breakcheck>
+   0x0003ef58 <+340>:	da f8 00 60	ldr.w	r6, [r10]
+   0x0003ef5c <+344>:	00 2e	cmp	r6, #0
+   0x0003ef5e <+346>:	3f f4 77 af	beq.w	0x3ee50 <vim_findfile+76>
+   0x0003ef62 <+350>:	3b 4b	ldr	r3, [pc, #236]	; (0x3f050 <vim_findfile+588>)
+   0x0003ef64 <+352>:	02 9a	ldr	r2, [sp, #8]
+   0x0003ef66 <+354>:	d3 58	ldr	r3, [r2, r3]
+   0x0003ef68 <+356>:	1b 68	ldr	r3, [r3, #0]
+   0x0003ef6a <+358>:	00 2b	cmp	r3, #0
+   0x0003ef6c <+360>:	3f d0	beq.n	0x3efee <vim_findfile+490>
+   0x0003ef6e <+362>:	00 25	movs	r5, #0
+   0x0003ef70 <+364>:	e0 e7	b.n	0x3ef34 <vim_findfile+304>
+   0x0003ef72 <+366>:	d8 f8 08 00	ldr.w	r0, [r8, #8]
+   0x0003ef76 <+370>:	61 68	ldr	r1, [r4, #4]
+   0x0003ef78 <+372>:	08 30	adds	r0, #8
+   0x0003ef7a <+374>:	ff f7 b7 fe	bl	0x3ecec <ff_check_visited>
+   0x0003ef7e <+378>:	00 28	cmp	r0, #0
+   0x0003ef80 <+380>:	7f f4 72 af	bne.w	0x3ee68 <vim_findfile+100>
+   0x0003ef84 <+384>:	e3 e7	b.n	0x3ef4e <vim_findfile+330>
+   0x0003ef86 <+386>:	28 46	mov	r0, r5
+   0x0003ef88 <+388>:	3b f0 ae ff	bl	0x7aee8 <simplify_filename>
+   0x0003ef8c <+392>:	c9 e7	b.n	0x3ef22 <vim_findfile+286>
+   0x0003ef8e <+394>:	60 68	ldr	r0, [r4, #4]
+   0x0003ef90 <+396>:	05 95	str	r5, [sp, #20]
+   0x0003ef92 <+398>:	06 93	str	r3, [sp, #24]
+   0x0003ef94 <+400>:	45 f0 10 fe	bl	0x84bb8 <vim_isAbsName>
+   0x0003ef98 <+404>:	40 b9	cbnz	r0, 0x3efac <vim_findfile+424>
+   0x0003ef9a <+406>:	d8 f8 18 10	ldr.w	r1, [r8, #24]
+   0x0003ef9e <+410>:	29 b1	cbz	r1, 0x3efac <vim_findfile+424>
+   0x0003efa0 <+412>:	28 46	mov	r0, r5
+   0x0003efa2 <+414>:	cd f7 f0 ef	blx	0xcf84 <strcpy@plt+4>
+   0x0003efa6 <+418>:	28 46	mov	r0, r5
+   0x0003efa8 <+420>:	fc f7 9e fc	bl	0x3b8e8 <add_pathsep>
+   0x0003efac <+424>:	61 68	ldr	r1, [r4, #4]
+   0x0003efae <+426>:	28 46	mov	r0, r5
+   0x0003efb0 <+428>:	cd f7 c2 ef	blx	0xcf38 <strcat@plt+4>
+   0x0003efb4 <+432>:	28 46	mov	r0, r5
+   0x0003efb6 <+434>:	fc f7 97 fc	bl	0x3b8e8 <add_pathsep>
+   0x0003efba <+438>:	05 98	ldr	r0, [sp, #20]
+   0x0003efbc <+440>:	45 f0 d6 fd	bl	0x84b6c <path_with_url>
+   0x0003efc0 <+444>:	d0 b9	cbnz	r0, 0x3eff8 <vim_findfile+500>
+   0x0003efc2 <+446>:	06 9a	ldr	r2, [sp, #24]
+   0x0003efc4 <+448>:	40 f2 29 41	movw	r1, #1065	; 0x429
+   0x0003efc8 <+452>:	04 f1 08 03	add.w	r3, r4, #8
+   0x0003efcc <+456>:	00 91	str	r1, [sp, #0]
+   0x0003efce <+458>:	00 2a	cmp	r2, #0
+   0x0003efd0 <+460>:	05 a9	add	r1, sp, #20
+   0x0003efd2 <+462>:	04 f1 0c 02	add.w	r2, r4, #12
+   0x0003efd6 <+466>:	14 bf	ite	ne
+   0x0003efd8 <+468>:	02 20	movne	r0, #2
+   0x0003efda <+470>:	01 20	moveq	r0, #1
+   0x0003efdc <+472>:	fd f7 10 fd	bl	0x3ca00 <expand_wildcards>
+   0x0003efe0 <+476>:	e6 68	ldr	r6, [r4, #12]
+   0x0003efe2 <+478>:	84 f8 10 90	strb.w	r9, [r4, #16]
+   0x0003efe6 <+482>:	00 27	movs	r7, #0
+   0x0003efe8 <+484>:	c4 f8 14 90	str.w	r9, [r4, #20]
+   0x0003efec <+488>:	4a e7	b.n	0x3ee84 <vim_findfile+128>
+   0x0003efee <+490>:	28 46	mov	r0, r5
+   0x0003eff0 <+492>:	1d 46	mov	r5, r3
+   0x0003eff2 <+494>:	cd f7 c6 ee	blx	0xcd80 <free@plt+4>
+   0x0003eff6 <+498>:	9d e7	b.n	0x3ef34 <vim_findfile+304>
+   0x0003eff8 <+500>:	01 21	movs	r1, #1
+   0x0003effa <+502>:	04 20	movs	r0, #4
+   0x0003effc <+504>:	ff f7 64 fa	bl	0x3e4c8 <lalloc>
+   0x0003f000 <+508>:	07 46	mov	r7, r0
+   0x0003f002 <+510>:	a0 60	str	r0, [r4, #8]
+   0x0003f004 <+512>:	b8 b1	cbz	r0, 0x3f036 <vim_findfile+562>
+   0x0003f006 <+514>:	05 98	ldr	r0, [sp, #20]
+   0x0003f008 <+516>:	ff f7 ae fa	bl	0x3e568 <vim_strsave>
+   0x0003f00c <+520>:	38 60	str	r0, [r7, #0]
+   0x0003f00e <+522>:	90 b1	cbz	r0, 0x3f036 <vim_findfile+562>
+   0x0003f010 <+524>:	01 23	movs	r3, #1
+   0x0003f012 <+526>:	e3 60	str	r3, [r4, #12]
+   0x0003f014 <+528>:	1e 46	mov	r6, r3
+   0x0003f016 <+530>:	e4 e7	b.n	0x3efe2 <vim_findfile+478>
+   0x0003f018 <+532>:	61 6a	ldr	r1, [r4, #36]	; 0x24
+   0x0003f01a <+534>:	28 46	mov	r0, r5
+   0x0003f01c <+536>:	e7 f7 f4 fb	bl	0x26808 <shorten_fname>
+   0x0003f020 <+540>:	04 46	mov	r4, r0
+   0x0003f022 <+542>:	00 28	cmp	r0, #0
+   0x0003f024 <+544>:	86 d0	beq.n	0x3ef34 <vim_findfile+304>
+   0x0003f026 <+546>:	ce f7 56 e8	blx	0xd0d4 <strlen@plt>
+   0x0003f02a <+550>:	21 46	mov	r1, r4
+   0x0003f02c <+552>:	42 1c	adds	r2, r0, #1
+   0x0003f02e <+554>:	28 46	mov	r0, r5
+   0x0003f030 <+556>:	cd f7 98 ee	blx	0xcd64 <memmove@plt+4>
+   0x0003f034 <+560>:	7e e7	b.n	0x3ef34 <vim_findfile+304>
+   0x0003f036 <+562>:	c4 f8 0c 90	str.w	r9, [r4, #12]
+   0x0003f03a <+566>:	d2 e7	b.n	0x3efe2 <vim_findfile+478>
+   0x0003f03c <+568>:	cd f7 10 ef	blx	0xce60 <__stack_chk_fail@plt>
+   0x0003f040 <+572>:	8e 88	ldrh	r6, [r1, #4]
+   0x0003f042 <+574>:	06 00	movs	r6, r0
+   0x0003f044 <+576>:	78 03	lsls	r0, r7, #13
+   0x0003f046 <+578>:	00 00	movs	r0, r0
+   0x0003f048 <+580>:	44 04	lsls	r4, r0, #17
+   0x0003f04a <+582>:	00 00	movs	r0, r0
+   0x0003f04c <+584>:	84 0d	lsrs	r4, r0, #22
+   0x0003f04e <+586>:	07 00	movs	r7, r0
+   0x0003f050 <+588>:	2c 04	lsls	r4, r5, #16
+   0x0003f052 <+590>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_findfile_cleanup:
+   0x0003e1cc <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x0003e1ce <+2>:	0c 4d	ldr	r5, [pc, #48]	; (0x3e200 <vim_findfile_cleanup+52>)
+   0x0003e1d0 <+4>:	7d 44	add	r5, pc
+   0x0003e1d2 <+6>:	70 b1	cbz	r0, 0x3e1f2 <vim_findfile_cleanup+38>
+   0x0003e1d4 <+8>:	04 46	mov	r4, r0
+   0x0003e1d6 <+10>:	0c 30	adds	r0, #12
+   0x0003e1d8 <+12>:	fe f7 6c fd	bl	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003e1dc <+16>:	04 f1 10 00	add.w	r0, r4, #16
+   0x0003e1e0 <+20>:	fe f7 68 fd	bl	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003e1e4 <+24>:	20 46	mov	r0, r4
+   0x0003e1e6 <+26>:	fe f7 bf fd	bl	0x3cd68 <ff_clear>
+   0x0003e1ea <+30>:	06 4b	ldr	r3, [pc, #24]	; (0x3e204 <vim_findfile_cleanup+56>)
+   0x0003e1ec <+32>:	eb 58	ldr	r3, [r5, r3]
+   0x0003e1ee <+34>:	1b 68	ldr	r3, [r3, #0]
+   0x0003e1f0 <+36>:	03 b1	cbz	r3, 0x3e1f4 <vim_findfile_cleanup+40>
+   0x0003e1f2 <+38>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0003e1f4 <+40>:	20 46	mov	r0, r4
+   0x0003e1f6 <+42>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x0003e1fa <+46>:	ce f7 bf bd	b.w	0xcd7c <free@plt>
+   0x0003e1fe <+50>:	00 bf	nop
+   0x0003e200 <+52>:	c8 94	str	r4, [sp, #800]	; 0x320
+   0x0003e202 <+54>:	06 00	movs	r6, r0
+   0x0003e204 <+56>:	2c 04	lsls	r4, r5, #16
+   0x0003e206 <+58>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_findfile_free_visited:
+   0x0003e208 <+0>:	50 b1	cbz	r0, 0x3e220 <vim_findfile_free_visited+24>
+   0x0003e20a <+2>:	10 b5	push	{r4, lr}
+   0x0003e20c <+4>:	04 46	mov	r4, r0
+   0x0003e20e <+6>:	0c 30	adds	r0, #12
+   0x0003e210 <+8>:	fe f7 50 fd	bl	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003e214 <+12>:	04 f1 10 00	add.w	r0, r4, #16
+   0x0003e218 <+16>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x0003e21c <+20>:	fe f7 4a bd	b.w	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003e220 <+24>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function vim_findfile_init:
+   0x0003f094 <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0003f098 <+4>:	05 46	mov	r5, r0
+   0x0003f09a <+6>:	0a 9c	ldr	r4, [sp, #40]	; 0x28
+   0x0003f09c <+8>:	0e 46	mov	r6, r1
+   0x0003f09e <+10>:	df f8 6c 92	ldr.w	r9, [pc, #620]	; 0x3f30c <vim_findfile_init+632>
+   0x0003f0a2 <+14>:	98 46	mov	r8, r3
+   0x0003f0a4 <+16>:	0b 9f	ldr	r7, [sp, #44]	; 0x2c
+   0x0003f0a6 <+18>:	f9 44	add	r9, pc
+   0x0003f0a8 <+20>:	00 2c	cmp	r4, #0
+   0x0003f0aa <+22>:	00 f0 f3 80	beq.w	0x3f294 <vim_findfile_init+512>
+   0x0003f0ae <+26>:	09 9b	ldr	r3, [sp, #36]	; 0x24
+   0x0003f0b0 <+28>:	20 46	mov	r0, r4
+   0x0003f0b2 <+30>:	67 62	str	r7, [r4, #36]	; 0x24
+   0x0003f0b4 <+32>:	23 62	str	r3, [r4, #32]
+   0x0003f0b6 <+34>:	fd f7 57 fe	bl	0x3cd68 <ff_clear>
+   0x0003f0ba <+38>:	08 9b	ldr	r3, [sp, #32]
+   0x0003f0bc <+40>:	01 2b	cmp	r3, #1
+   0x0003f0be <+42>:	00 f0 a0 80	beq.w	0x3f202 <vim_findfile_init+366>
+   0x0003f0c2 <+46>:	04 f1 0c 01	add.w	r1, r4, #12
+   0x0003f0c6 <+50>:	30 46	mov	r0, r6
+   0x0003f0c8 <+52>:	ff f7 d6 fd	bl	0x3ec78 <ff_get_visited_list>
+   0x0003f0cc <+56>:	60 60	str	r0, [r4, #4]
+   0x0003f0ce <+58>:	00 28	cmp	r0, #0
+   0x0003f0d0 <+60>:	00 f0 91 80	beq.w	0x3f1f6 <vim_findfile_init+354>
+   0x0003f0d4 <+64>:	04 f1 10 01	add.w	r1, r4, #16
+   0x0003f0d8 <+68>:	30 46	mov	r0, r6
+   0x0003f0da <+70>:	ff f7 cd fd	bl	0x3ec78 <ff_get_visited_list>
+   0x0003f0de <+74>:	a0 60	str	r0, [r4, #8]
+   0x0003f0e0 <+76>:	00 28	cmp	r0, #0
+   0x0003f0e2 <+78>:	00 f0 88 80	beq.w	0x3f1f6 <vim_findfile_init+354>
+   0x0003f0e6 <+82>:	df f8 28 a2	ldr.w	r10, [pc, #552]	; 0x3f310 <vim_findfile_init+636>
+   0x0003f0ea <+86>:	fa 44	add	r10, pc
+   0x0003f0ec <+88>:	da f8 24 30	ldr.w	r3, [r10, #36]	; 0x24
+   0x0003f0f0 <+92>:	00 2b	cmp	r3, #0
+   0x0003f0f2 <+94>:	00 f0 e3 80	beq.w	0x3f2bc <vim_findfile_init+552>
+   0x0003f0f6 <+98>:	2b 78	ldrb	r3, [r5, #0]
+   0x0003f0f8 <+100>:	2e 2b	cmp	r3, #46	; 0x2e
+   0x0003f0fa <+102>:	00 f0 9d 80	beq.w	0x3f238 <vim_findfile_init+420>
+   0x0003f0fe <+106>:	1b b1	cbz	r3, 0x3f108 <vim_findfile_init+116>
+   0x0003f100 <+108>:	28 46	mov	r0, r5
+   0x0003f102 <+110>:	45 f0 59 fd	bl	0x84bb8 <vim_isAbsName>
+   0x0003f106 <+114>:	70 b9	cbnz	r0, 0x3f126 <vim_findfile_init+146>
+   0x0003f108 <+116>:	82 4f	ldr	r7, [pc, #520]	; (0x3f314 <vim_findfile_init+640>)
+   0x0003f10a <+118>:	4f f4 80 51	mov.w	r1, #4096	; 0x1000
+   0x0003f10e <+122>:	7f 44	add	r7, pc
+   0x0003f110 <+124>:	78 6a	ldr	r0, [r7, #36]	; 0x24
+   0x0003f112 <+126>:	15 f0 b5 fb	bl	0x54880 <mch_dirname>
+   0x0003f116 <+130>:	00 28	cmp	r0, #0
+   0x0003f118 <+132>:	6d d0	beq.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f11a <+134>:	78 6a	ldr	r0, [r7, #36]	; 0x24
+   0x0003f11c <+136>:	ff f7 24 fa	bl	0x3e568 <vim_strsave>
+   0x0003f120 <+140>:	a0 61	str	r0, [r4, #24]
+   0x0003f122 <+142>:	00 28	cmp	r0, #0
+   0x0003f124 <+144>:	67 d0	beq.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f126 <+146>:	28 46	mov	r0, r5
+   0x0003f128 <+148>:	ff f7 1e fa	bl	0x3e568 <vim_strsave>
+   0x0003f12c <+152>:	a5 69	ldr	r5, [r4, #24]
+   0x0003f12e <+154>:	07 46	mov	r7, r0
+   0x0003f130 <+156>:	e0 61	str	r0, [r4, #28]
+   0x0003f132 <+158>:	00 2d	cmp	r5, #0
+   0x0003f134 <+160>:	00 f0 cd 80	beq.w	0x3f2d2 <vim_findfile_init+574>
+   0x0003f138 <+164>:	28 46	mov	r0, r5
+   0x0003f13a <+166>:	cd f7 cc ef	blx	0xd0d4 <strlen@plt>
+   0x0003f13e <+170>:	82 46	mov	r10, r0
+   0x0003f140 <+172>:	38 46	mov	r0, r7
+   0x0003f142 <+174>:	cd f7 c8 ef	blx	0xd0d4 <strlen@plt>
+   0x0003f146 <+178>:	50 44	add	r0, r10
+   0x0003f148 <+180>:	03 30	adds	r0, #3
+   0x0003f14a <+182>:	b0 f5 80 5f	cmp.w	r0, #4096	; 0x1000
+   0x0003f14e <+186>:	80 f0 b0 80	bcs.w	0x3f2b2 <vim_findfile_init+542>
+   0x0003f152 <+190>:	71 4f	ldr	r7, [pc, #452]	; (0x3f318 <vim_findfile_init+644>)
+   0x0003f154 <+192>:	0a f1 01 02	add.w	r2, r10, #1
+   0x0003f158 <+196>:	29 46	mov	r1, r5
+   0x0003f15a <+198>:	7f 44	add	r7, pc
+   0x0003f15c <+200>:	7b 6a	ldr	r3, [r7, #36]	; 0x24
+   0x0003f15e <+202>:	18 46	mov	r0, r3
+   0x0003f160 <+204>:	cd f7 28 ee	blx	0xcdb4 <memcpy@plt+4>
+   0x0003f164 <+208>:	fc f7 c0 fb	bl	0x3b8e8 <add_pathsep>
+   0x0003f168 <+212>:	78 6a	ldr	r0, [r7, #36]	; 0x24
+   0x0003f16a <+214>:	cd f7 b4 ef	blx	0xd0d4 <strlen@plt>
+   0x0003f16e <+218>:	82 46	mov	r10, r0
+   0x0003f170 <+220>:	e0 69	ldr	r0, [r4, #28]
+   0x0003f172 <+222>:	cd f7 b0 ef	blx	0xd0d4 <strlen@plt>
+   0x0003f176 <+226>:	01 21	movs	r1, #1
+   0x0003f178 <+228>:	50 44	add	r0, r10
+   0x0003f17a <+230>:	08 44	add	r0, r1
+   0x0003f17c <+232>:	ff f7 a4 f9	bl	0x3e4c8 <lalloc>
+   0x0003f180 <+236>:	79 6a	ldr	r1, [r7, #36]	; 0x24
+   0x0003f182 <+238>:	05 46	mov	r5, r0
+   0x0003f184 <+240>:	cd f7 fe ee	blx	0xcf84 <strcpy@plt+4>
+   0x0003f188 <+244>:	05 eb 0a 00	add.w	r0, r5, r10
+   0x0003f18c <+248>:	e1 69	ldr	r1, [r4, #28]
+   0x0003f18e <+250>:	cd f7 fa ee	blx	0xcf84 <strcpy@plt+4>
+   0x0003f192 <+254>:	28 46	mov	r0, r5
+   0x0003f194 <+256>:	15 f0 38 fd	bl	0x54c08 <mch_isdir>
+   0x0003f198 <+260>:	00 28	cmp	r0, #0
+   0x0003f19a <+262>:	3b d1	bne.n	0x3f214 <vim_findfile_init+384>
+   0x0003f19c <+264>:	5f 4b	ldr	r3, [pc, #380]	; (0x3f31c <vim_findfile_init+648>)
+   0x0003f19e <+266>:	59 f8 03 30	ldr.w	r3, [r9, r3]
+   0x0003f1a2 <+270>:	1b 68	ldr	r3, [r3, #0]
+   0x0003f1a4 <+272>:	00 2b	cmp	r3, #0
+   0x0003f1a6 <+274>:	43 d0	beq.n	0x3f230 <vim_findfile_init+412>
+   0x0003f1a8 <+276>:	5d 4b	ldr	r3, [pc, #372]	; (0x3f320 <vim_findfile_init+652>)
+   0x0003f1aa <+278>:	01 21	movs	r1, #1
+   0x0003f1ac <+280>:	20 20	movs	r0, #32
+   0x0003f1ae <+282>:	7b 44	add	r3, pc
+   0x0003f1b0 <+284>:	5f 6a	ldr	r7, [r3, #36]	; 0x24
+   0x0003f1b2 <+286>:	ff f7 89 f9	bl	0x3e4c8 <lalloc>
+   0x0003f1b6 <+290>:	05 46	mov	r5, r0
+   0x0003f1b8 <+292>:	e8 b1	cbz	r0, 0x3f1f6 <vim_findfile_init+354>
+   0x0003f1ba <+294>:	00 23	movs	r3, #0
+   0x0003f1bc <+296>:	c0 f8 18 80	str.w	r8, [r0, #24]
+   0x0003f1c0 <+300>:	03 60	str	r3, [r0, #0]
+   0x0003f1c2 <+302>:	83 60	str	r3, [r0, #8]
+   0x0003f1c4 <+304>:	c3 60	str	r3, [r0, #12]
+   0x0003f1c6 <+306>:	03 74	strb	r3, [r0, #16]
+   0x0003f1c8 <+308>:	43 61	str	r3, [r0, #20]
+   0x0003f1ca <+310>:	c3 61	str	r3, [r0, #28]
+   0x0003f1cc <+312>:	00 2f	cmp	r7, #0
+   0x0003f1ce <+314>:	6d d0	beq.n	0x3f2ac <vim_findfile_init+536>
+   0x0003f1d0 <+316>:	38 46	mov	r0, r7
+   0x0003f1d2 <+318>:	ff f7 c9 f9	bl	0x3e568 <vim_strsave>
+   0x0003f1d6 <+322>:	68 60	str	r0, [r5, #4]
+   0x0003f1d8 <+324>:	50 b1	cbz	r0, 0x3f1f0 <vim_findfile_init+348>
+   0x0003f1da <+326>:	23 68	ldr	r3, [r4, #0]
+   0x0003f1dc <+328>:	30 46	mov	r0, r6
+   0x0003f1de <+330>:	2b 60	str	r3, [r5, #0]
+   0x0003f1e0 <+332>:	25 60	str	r5, [r4, #0]
+   0x0003f1e2 <+334>:	ff f7 c1 f9	bl	0x3e568 <vim_strsave>
+   0x0003f1e6 <+338>:	60 61	str	r0, [r4, #20]
+   0x0003f1e8 <+340>:	28 b1	cbz	r0, 0x3f1f6 <vim_findfile_init+354>
+   0x0003f1ea <+342>:	20 46	mov	r0, r4
+   0x0003f1ec <+344>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0003f1f0 <+348>:	28 46	mov	r0, r5
+   0x0003f1f2 <+350>:	fd f7 97 fd	bl	0x3cd24 <ff_free_stack_element>
+   0x0003f1f6 <+354>:	20 46	mov	r0, r4
+   0x0003f1f8 <+356>:	fe f7 e8 ff	bl	0x3e1cc <vim_findfile_cleanup>
+   0x0003f1fc <+360>:	00 20	movs	r0, #0
+   0x0003f1fe <+362>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0003f202 <+366>:	04 f1 0c 00	add.w	r0, r4, #12
+   0x0003f206 <+370>:	fd f7 55 fd	bl	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003f20a <+374>:	04 f1 10 00	add.w	r0, r4, #16
+   0x0003f20e <+378>:	fd f7 51 fd	bl	0x3ccb4 <vim_findfile_free_visited_list>
+   0x0003f212 <+382>:	68 e7	b.n	0x3f0e6 <vim_findfile_init+82>
+   0x0003f214 <+384>:	7f 6a	ldr	r7, [r7, #36]	; 0x24
+   0x0003f216 <+386>:	e1 69	ldr	r1, [r4, #28]
+   0x0003f218 <+388>:	38 46	mov	r0, r7
+   0x0003f21a <+390>:	cd f7 8e ee	blx	0xcf38 <strcat@plt+4>
+   0x0003f21e <+394>:	38 46	mov	r0, r7
+   0x0003f220 <+396>:	fc f7 62 fb	bl	0x3b8e8 <add_pathsep>
+   0x0003f224 <+400>:	3d 4b	ldr	r3, [pc, #244]	; (0x3f31c <vim_findfile_init+648>)
+   0x0003f226 <+402>:	59 f8 03 30	ldr.w	r3, [r9, r3]
+   0x0003f22a <+406>:	1b 68	ldr	r3, [r3, #0]
+   0x0003f22c <+408>:	00 2b	cmp	r3, #0
+   0x0003f22e <+410>:	bb d1	bne.n	0x3f1a8 <vim_findfile_init+276>
+   0x0003f230 <+412>:	28 46	mov	r0, r5
+   0x0003f232 <+414>:	cd f7 a6 ed	blx	0xcd80 <free@plt+4>
+   0x0003f236 <+418>:	b7 e7	b.n	0x3f1a8 <vim_findfile_init+276>
+   0x0003f238 <+420>:	68 78	ldrb	r0, [r5, #1]
+   0x0003f23a <+422>:	fc f7 9f f9	bl	0x3b57c <vim_ispathsep>
+   0x0003f23e <+426>:	08 b9	cbnz	r0, 0x3f244 <vim_findfile_init+432>
+   0x0003f240 <+428>:	6b 78	ldrb	r3, [r5, #1]
+   0x0003f242 <+430>:	2b bb	cbnz	r3, 0x3f290 <vim_findfile_init+508>
+   0x0003f244 <+432>:	df b9	cbnz	r7, 0x3f27e <vim_findfile_init+490>
+   0x0003f246 <+434>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0003f248 <+436>:	13 b3	cbz	r3, 0x3f290 <vim_findfile_init+508>
+   0x0003f24a <+438>:	0c 98	ldr	r0, [sp, #48]	; 0x30
+   0x0003f24c <+440>:	fc f7 16 f9	bl	0x3b47c <gettail>
+   0x0003f250 <+444>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0003f252 <+446>:	c7 1a	subs	r7, r0, r3
+   0x0003f254 <+448>:	18 46	mov	r0, r3
+   0x0003f256 <+450>:	45 f0 af fc	bl	0x84bb8 <vim_isAbsName>
+   0x0003f25a <+454>:	40 f6 fe 73	movw	r3, #4094	; 0xffe
+   0x0003f25e <+458>:	9f 42	cmp	r7, r3
+   0x0003f260 <+460>:	d8 bf	it	le
+   0x0003f262 <+462>:	00 28	cmple	r0, #0
+   0x0003f264 <+464>:	3f d0	beq.n	0x3f2e6 <vim_findfile_init+594>
+   0x0003f266 <+466>:	39 46	mov	r1, r7
+   0x0003f268 <+468>:	0c 98	ldr	r0, [sp, #48]	; 0x30
+   0x0003f26a <+470>:	ff f7 c1 f9	bl	0x3e5f0 <vim_strnsave>
+   0x0003f26e <+474>:	a0 61	str	r0, [r4, #24]
+   0x0003f270 <+476>:	00 28	cmp	r0, #0
+   0x0003f272 <+478>:	c0 d0	beq.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f274 <+480>:	6b 78	ldrb	r3, [r5, #1]
+   0x0003f276 <+482>:	00 2b	cmp	r3, #0
+   0x0003f278 <+484>:	46 d0	beq.n	0x3f308 <vim_findfile_init+628>
+   0x0003f27a <+486>:	02 35	adds	r5, #2
+   0x0003f27c <+488>:	53 e7	b.n	0x3f126 <vim_findfile_init+146>
+   0x0003f27e <+490>:	29 4b	ldr	r3, [pc, #164]	; (0x3f324 <vim_findfile_init+656>)
+   0x0003f280 <+492>:	64 21	movs	r1, #100	; 0x64
+   0x0003f282 <+494>:	59 f8 03 30	ldr.w	r3, [r9, r3]
+   0x0003f286 <+498>:	18 68	ldr	r0, [r3, #0]
+   0x0003f288 <+500>:	fe f7 9a f8	bl	0x3d3c0 <vim_strchr>
+   0x0003f28c <+504>:	00 28	cmp	r0, #0
+   0x0003f28e <+506>:	da d0	beq.n	0x3f246 <vim_findfile_init+434>
+   0x0003f290 <+508>:	2b 78	ldrb	r3, [r5, #0]
+   0x0003f292 <+510>:	34 e7	b.n	0x3f0fe <vim_findfile_init+106>
+   0x0003f294 <+512>:	01 21	movs	r1, #1
+   0x0003f296 <+514>:	28 20	movs	r0, #40	; 0x28
+   0x0003f298 <+516>:	ff f7 16 f9	bl	0x3e4c8 <lalloc>
+   0x0003f29c <+520>:	04 46	mov	r4, r0
+   0x0003f29e <+522>:	00 28	cmp	r0, #0
+   0x0003f2a0 <+524>:	a9 d0	beq.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f2a2 <+526>:	28 22	movs	r2, #40	; 0x28
+   0x0003f2a4 <+528>:	00 21	movs	r1, #0
+   0x0003f2a6 <+530>:	cd f7 72 ef	blx	0xd18c <memset@plt+4>
+   0x0003f2aa <+534>:	00 e7	b.n	0x3f0ae <vim_findfile_init+26>
+   0x0003f2ac <+536>:	1e 4f	ldr	r7, [pc, #120]	; (0x3f328 <vim_findfile_init+660>)
+   0x0003f2ae <+538>:	7f 44	add	r7, pc
+   0x0003f2b0 <+540>:	8e e7	b.n	0x3f1d0 <vim_findfile_init+316>
+   0x0003f2b2 <+542>:	1e 48	ldr	r0, [pc, #120]	; (0x3f32c <vim_findfile_init+664>)
+   0x0003f2b4 <+544>:	78 44	add	r0, pc
+   0x0003f2b6 <+546>:	f9 f7 b7 f8	bl	0x38428 <emsg>
+   0x0003f2ba <+550>:	9c e7	b.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f2bc <+552>:	01 21	movs	r1, #1
+   0x0003f2be <+554>:	4f f4 80 50	mov.w	r0, #4096	; 0x1000
+   0x0003f2c2 <+558>:	ff f7 01 f9	bl	0x3e4c8 <lalloc>
+   0x0003f2c6 <+562>:	ca f8 24 00	str.w	r0, [r10, #36]	; 0x24
+   0x0003f2ca <+566>:	00 28	cmp	r0, #0
+   0x0003f2cc <+568>:	7f f4 13 af	bne.w	0x3f0f6 <vim_findfile_init+98>
+   0x0003f2d0 <+572>:	91 e7	b.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f2d2 <+574>:	ff f7 49 f9	bl	0x3e568 <vim_strsave>
+   0x0003f2d6 <+578>:	a0 61	str	r0, [r4, #24]
+   0x0003f2d8 <+580>:	00 28	cmp	r0, #0
+   0x0003f2da <+582>:	8c d0	beq.n	0x3f1f6 <vim_findfile_init+354>
+   0x0003f2dc <+584>:	e3 69	ldr	r3, [r4, #28]
+   0x0003f2de <+586>:	1d 70	strb	r5, [r3, #0]
+   0x0003f2e0 <+588>:	a5 69	ldr	r5, [r4, #24]
+   0x0003f2e2 <+590>:	e7 69	ldr	r7, [r4, #28]
+   0x0003f2e4 <+592>:	28 e7	b.n	0x3f138 <vim_findfile_init+164>
+   0x0003f2e6 <+594>:	12 4b	ldr	r3, [pc, #72]	; (0x3f330 <vim_findfile_init+668>)
+   0x0003f2e8 <+596>:	3a 46	mov	r2, r7
+   0x0003f2ea <+598>:	0c 99	ldr	r1, [sp, #48]	; 0x30
+   0x0003f2ec <+600>:	7b 44	add	r3, pc
+   0x0003f2ee <+602>:	d3 f8 24 a0	ldr.w	r10, [r3, #36]	; 0x24
+   0x0003f2f2 <+606>:	50 46	mov	r0, r10
+   0x0003f2f4 <+608>:	cd f7 58 ef	blx	0xd1a8 <strncpy@plt>
+   0x0003f2f8 <+612>:	00 21	movs	r1, #0
+   0x0003f2fa <+614>:	50 46	mov	r0, r10
+   0x0003f2fc <+616>:	0a f8 07 10	strb.w	r1, [r10, r7]
+   0x0003f300 <+620>:	fc f7 a0 fe	bl	0x3c044 <FullName_save>
+   0x0003f304 <+624>:	a0 61	str	r0, [r4, #24]
+   0x0003f306 <+626>:	b3 e7	b.n	0x3f270 <vim_findfile_init+476>
+   0x0003f308 <+628>:	01 35	adds	r5, #1
+   0x0003f30a <+630>:	0c e7	b.n	0x3f126 <vim_findfile_init+146>
+   0x0003f30c <+632>:	f2 85	strh	r2, [r6, #46]	; 0x2e
+   0x0003f30e <+634>:	06 00	movs	r6, r0
+   0x0003f310 <+636>:	c2 0b	lsrs	r2, r0, #15
+   0x0003f312 <+638>:	07 00	movs	r7, r0
+   0x0003f314 <+640>:	9e 0b	lsrs	r6, r3, #14
+   0x0003f316 <+642>:	07 00	movs	r7, r0
+   0x0003f318 <+644>:	52 0b	lsrs	r2, r2, #13
+   0x0003f31a <+646>:	07 00	movs	r7, r0
+   0x0003f31c <+648>:	2c 04	lsls	r4, r5, #16
+   0x0003f31e <+650>:	00 00	movs	r0, r0
+   0x0003f320 <+652>:	fe 0a	lsrs	r6, r7, #11
+   0x0003f322 <+654>:	07 00	movs	r7, r0
+   0x0003f324 <+656>:	2c 09	lsrs	r4, r5, #4
+   0x0003f326 <+658>:	00 00	movs	r0, r0
+   0x0003f328 <+660>:	46 13	asrs	r6, r0, #13
+   0x0003f32a <+662>:	05 00	movs	r5, r0
+   0x0003f32c <+664>:	88 8d	ldrh	r0, [r1, #44]	; 0x2c
+   0x0003f32e <+666>:	06 00	movs	r6, r0
+   0x0003f330 <+668>:	c0 09	lsrs	r0, r0, #7
+   0x0003f332 <+670>:	07 00	movs	r7, r0
+End of assembler dump.
+Dump of assembler code for function vim_free:
+   0x0003d3a4 <+0>:	04 4b	ldr	r3, [pc, #16]	; (0x3d3b8 <vim_free+20>)
+   0x0003d3a6 <+2>:	7b 44	add	r3, pc
+   0x0003d3a8 <+4>:	18 b1	cbz	r0, 0x3d3b2 <vim_free+14>
+   0x0003d3aa <+6>:	04 4a	ldr	r2, [pc, #16]	; (0x3d3bc <vim_free+24>)
+   0x0003d3ac <+8>:	9b 58	ldr	r3, [r3, r2]
+   0x0003d3ae <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x0003d3b0 <+12>:	03 b1	cbz	r3, 0x3d3b4 <vim_free+16>
+   0x0003d3b2 <+14>:	70 47	bx	lr
+   0x0003d3b4 <+16>:	cf f7 e2 bc	b.w	0xcd7c <free@plt>
+   0x0003d3b8 <+20>:	f2 a2	add	r2, pc, #968	; (adr r2, 0x3d784 <handle_x_keys+96>)
+   0x0003d3ba <+22>:	06 00	movs	r6, r0
+   0x0003d3bc <+24>:	2c 04	lsls	r4, r5, #16
+   0x0003d3be <+26>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_isspace:
+   0x0003d5a0 <+0>:	a0 f1 09 03	sub.w	r3, r0, #9
+   0x0003d5a4 <+4>:	20 28	cmp	r0, #32
+   0x0003d5a6 <+6>:	18 bf	it	ne
+   0x0003d5a8 <+8>:	04 2b	cmpne	r3, #4
+   0x0003d5aa <+10>:	94 bf	ite	ls
+   0x0003d5ac <+12>:	01 20	movls	r0, #1
+   0x0003d5ae <+14>:	00 20	movhi	r0, #0
+   0x0003d5b0 <+16>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function vim_strbyte:
+   0x0003d524 <+0>:	02 78	ldrb	r2, [r0, #0]
+   0x0003d526 <+2>:	52 b1	cbz	r2, 0x3d53e <vim_strbyte+26>
+   0x0003d528 <+4>:	91 42	cmp	r1, r2
+   0x0003d52a <+6>:	02 d1	bne.n	0x3d532 <vim_strbyte+14>
+   0x0003d52c <+8>:	09 e0	b.n	0x3d542 <vim_strbyte+30>
+   0x0003d52e <+10>:	8b 42	cmp	r3, r1
+   0x0003d530 <+12>:	06 d0	beq.n	0x3d540 <vim_strbyte+28>
+   0x0003d532 <+14>:	10 f8 01 3f	ldrb.w	r3, [r0, #1]!
+   0x0003d536 <+18>:	00 2b	cmp	r3, #0
+   0x0003d538 <+20>:	f9 d1	bne.n	0x3d52e <vim_strbyte+10>
+   0x0003d53a <+22>:	18 46	mov	r0, r3
+   0x0003d53c <+24>:	70 47	bx	lr
+   0x0003d53e <+26>:	10 46	mov	r0, r2
+   0x0003d540 <+28>:	70 47	bx	lr
+   0x0003d542 <+30>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function vim_strcat:
+   0x0003d368 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0003d36a <+2>:	0e 46	mov	r6, r1
+   0x0003d36c <+4>:	14 46	mov	r4, r2
+   0x0003d36e <+6>:	07 46	mov	r7, r0
+   0x0003d370 <+8>:	cf f7 b0 ee	blx	0xd0d4 <strlen@plt>
+   0x0003d374 <+12>:	05 46	mov	r5, r0
+   0x0003d376 <+14>:	30 46	mov	r0, r6
+   0x0003d378 <+16>:	cf f7 ac ee	blx	0xd0d4 <strlen@plt>
+   0x0003d37c <+20>:	2b 18	adds	r3, r5, r0
+   0x0003d37e <+22>:	01 33	adds	r3, #1
+   0x0003d380 <+24>:	a3 42	cmp	r3, r4
+   0x0003d382 <+26>:	06 d8	bhi.n	0x3d392 <vim_strcat+42>
+   0x0003d384 <+28>:	42 1c	adds	r2, r0, #1
+   0x0003d386 <+30>:	31 46	mov	r1, r6
+   0x0003d388 <+32>:	78 19	adds	r0, r7, r5
+   0x0003d38a <+34>:	bd e8 f8 40	ldmia.w	sp!, {r3, r4, r5, r6, r7, lr}
+   0x0003d38e <+38>:	cf f7 0f bd	b.w	0xcdb0 <memcpy@plt>
+   0x0003d392 <+42>:	01 3c	subs	r4, #1
+   0x0003d394 <+44>:	31 46	mov	r1, r6
+   0x0003d396 <+46>:	62 1b	subs	r2, r4, r5
+   0x0003d398 <+48>:	78 19	adds	r0, r7, r5
+   0x0003d39a <+50>:	cf f7 e4 ec	blx	0xcd64 <memmove@plt+4>
+   0x0003d39e <+54>:	00 23	movs	r3, #0
+   0x0003d3a0 <+56>:	3b 55	strb	r3, [r7, r4]
+   0x0003d3a2 <+58>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function vim_strchr:
+   0x0003d3c0 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0003d3c2 <+2>:	04 46	mov	r4, r0
+   0x0003d3c4 <+4>:	31 4e	ldr	r6, [pc, #196]	; (0x3d48c <vim_strchr+204>)
+   0x0003d3c6 <+6>:	0d 46	mov	r5, r1
+   0x0003d3c8 <+8>:	31 4b	ldr	r3, [pc, #196]	; (0x3d490 <vim_strchr+208>)
+   0x0003d3ca <+10>:	7e 44	add	r6, pc
+   0x0003d3cc <+12>:	f3 58	ldr	r3, [r6, r3]
+   0x0003d3ce <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x0003d3d0 <+16>:	00 2b	cmp	r3, #0
+   0x0003d3d2 <+18>:	18 bf	it	ne
+   0x0003d3d4 <+20>:	7f 29	cmpne	r1, #127	; 0x7f
+   0x0003d3d6 <+22>:	1b dd	ble.n	0x3d410 <vim_strchr+80>
+   0x0003d3d8 <+24>:	03 78	ldrb	r3, [r0, #0]
+   0x0003d3da <+26>:	00 2b	cmp	r3, #0
+   0x0003d3dc <+28>:	33 d0	beq.n	0x3d446 <vim_strchr+134>
+   0x0003d3de <+30>:	2d 4b	ldr	r3, [pc, #180]	; (0x3d494 <vim_strchr+212>)
+   0x0003d3e0 <+32>:	f7 58	ldr	r7, [r6, r3]
+   0x0003d3e2 <+34>:	03 e0	b.n	0x3d3ec <vim_strchr+44>
+   0x0003d3e4 <+36>:	34 44	add	r4, r6
+   0x0003d3e6 <+38>:	23 78	ldrb	r3, [r4, #0]
+   0x0003d3e8 <+40>:	00 2b	cmp	r3, #0
+   0x0003d3ea <+42>:	2c d0	beq.n	0x3d446 <vim_strchr+134>
+   0x0003d3ec <+44>:	3b 68	ldr	r3, [r7, #0]
+   0x0003d3ee <+46>:	20 46	mov	r0, r4
+   0x0003d3f0 <+48>:	98 47	blx	r3
+   0x0003d3f2 <+50>:	06 46	mov	r6, r0
+   0x0003d3f4 <+52>:	20 46	mov	r0, r4
+   0x0003d3f6 <+54>:	03 f0 e1 fc	bl	0x40dbc <utf_ptr2char>
+   0x0003d3fa <+58>:	01 2e	cmp	r6, #1
+   0x0003d3fc <+60>:	d4 bf	ite	le
+   0x0003d3fe <+62>:	00 23	movle	r3, #0
+   0x0003d400 <+64>:	01 23	movgt	r3, #1
+   0x0003d402 <+66>:	85 42	cmp	r5, r0
+   0x0003d404 <+68>:	18 bf	it	ne
+   0x0003d406 <+70>:	00 23	movne	r3, #0
+   0x0003d408 <+72>:	00 2b	cmp	r3, #0
+   0x0003d40a <+74>:	eb d0	beq.n	0x3d3e4 <vim_strchr+36>
+   0x0003d40c <+76>:	20 46	mov	r0, r4
+   0x0003d40e <+78>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003d410 <+80>:	21 4b	ldr	r3, [pc, #132]	; (0x3d498 <vim_strchr+216>)
+   0x0003d412 <+82>:	f3 58	ldr	r3, [r6, r3]
+   0x0003d414 <+84>:	1b 68	ldr	r3, [r3, #0]
+   0x0003d416 <+86>:	00 2b	cmp	r3, #0
+   0x0003d418 <+88>:	18 bf	it	ne
+   0x0003d41a <+90>:	ff 29	cmpne	r1, #255	; 0xff
+   0x0003d41c <+92>:	20 dc	bgt.n	0x3d460 <vim_strchr+160>
+   0x0003d41e <+94>:	1f 4b	ldr	r3, [pc, #124]	; (0x3d49c <vim_strchr+220>)
+   0x0003d420 <+96>:	f3 58	ldr	r3, [r6, r3]
+   0x0003d422 <+98>:	1b 68	ldr	r3, [r3, #0]
+   0x0003d424 <+100>:	8b b1	cbz	r3, 0x3d44a <vim_strchr+138>
+   0x0003d426 <+102>:	03 78	ldrb	r3, [r0, #0]
+   0x0003d428 <+104>:	6b b1	cbz	r3, 0x3d446 <vim_strchr+134>
+   0x0003d42a <+106>:	99 42	cmp	r1, r3
+   0x0003d42c <+108>:	ee d0	beq.n	0x3d40c <vim_strchr+76>
+   0x0003d42e <+110>:	19 4b	ldr	r3, [pc, #100]	; (0x3d494 <vim_strchr+212>)
+   0x0003d430 <+112>:	f7 58	ldr	r7, [r6, r3]
+   0x0003d432 <+114>:	01 e0	b.n	0x3d438 <vim_strchr+120>
+   0x0003d434 <+116>:	9d 42	cmp	r5, r3
+   0x0003d436 <+118>:	e9 d0	beq.n	0x3d40c <vim_strchr+76>
+   0x0003d438 <+120>:	3b 68	ldr	r3, [r7, #0]
+   0x0003d43a <+122>:	20 46	mov	r0, r4
+   0x0003d43c <+124>:	98 47	blx	r3
+   0x0003d43e <+126>:	04 44	add	r4, r0
+   0x0003d440 <+128>:	23 78	ldrb	r3, [r4, #0]
+   0x0003d442 <+130>:	00 2b	cmp	r3, #0
+   0x0003d444 <+132>:	f6 d1	bne.n	0x3d434 <vim_strchr+116>
+   0x0003d446 <+134>:	00 20	movs	r0, #0
+   0x0003d448 <+136>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003d44a <+138>:	03 78	ldrb	r3, [r0, #0]
+   0x0003d44c <+140>:	23 b9	cbnz	r3, 0x3d458 <vim_strchr+152>
+   0x0003d44e <+142>:	fa e7	b.n	0x3d446 <vim_strchr+134>
+   0x0003d450 <+144>:	14 f8 01 3f	ldrb.w	r3, [r4, #1]!
+   0x0003d454 <+148>:	00 2b	cmp	r3, #0
+   0x0003d456 <+150>:	f6 d0	beq.n	0x3d446 <vim_strchr+134>
+   0x0003d458 <+152>:	9d 42	cmp	r5, r3
+   0x0003d45a <+154>:	f9 d1	bne.n	0x3d450 <vim_strchr+144>
+   0x0003d45c <+156>:	20 46	mov	r0, r4
+   0x0003d45e <+158>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003d460 <+160>:	03 78	ldrb	r3, [r0, #0]
+   0x0003d462 <+162>:	cf b2	uxtb	r7, r1
+   0x0003d464 <+164>:	c1 f3 07 25	ubfx	r5, r1, #8, #8
+   0x0003d468 <+168>:	00 2b	cmp	r3, #0
+   0x0003d46a <+170>:	ec d0	beq.n	0x3d446 <vim_strchr+134>
+   0x0003d46c <+172>:	9d 42	cmp	r5, r3
+   0x0003d46e <+174>:	09 4a	ldr	r2, [pc, #36]	; (0x3d494 <vim_strchr+212>)
+   0x0003d470 <+176>:	20 46	mov	r0, r4
+   0x0003d472 <+178>:	02 d1	bne.n	0x3d47a <vim_strchr+186>
+   0x0003d474 <+180>:	63 78	ldrb	r3, [r4, #1]
+   0x0003d476 <+182>:	9f 42	cmp	r7, r3
+   0x0003d478 <+184>:	c8 d0	beq.n	0x3d40c <vim_strchr+76>
+   0x0003d47a <+186>:	b3 58	ldr	r3, [r6, r2]
+   0x0003d47c <+188>:	1b 68	ldr	r3, [r3, #0]
+   0x0003d47e <+190>:	98 47	blx	r3
+   0x0003d480 <+192>:	04 44	add	r4, r0
+   0x0003d482 <+194>:	23 78	ldrb	r3, [r4, #0]
+   0x0003d484 <+196>:	00 2b	cmp	r3, #0
+   0x0003d486 <+198>:	f1 d1	bne.n	0x3d46c <vim_strchr+172>
+   0x0003d488 <+200>:	00 20	movs	r0, #0
+   0x0003d48a <+202>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003d48c <+204>:	ce a2	add	r2, pc, #824	; (adr r2, 0x3d7c8 <handle_x_keys+164>)
+   0x0003d48e <+206>:	06 00	movs	r6, r0
+   0x0003d490 <+208>:	48 09	lsrs	r0, r1, #5
+   0x0003d492 <+210>:	00 00	movs	r0, r0
+   0x0003d494 <+212>:	9c 03	lsls	r4, r3, #14
+   0x0003d496 <+214>:	00 00	movs	r0, r0
+   0x0003d498 <+216>:	0c 07	lsls	r4, r1, #28
+   0x0003d49a <+218>:	00 00	movs	r0, r0
+   0x0003d49c <+220>:	24 05	lsls	r4, r4, #20
+   0x0003d49e <+222>:	00 00	movs	r0, r0
+End of assembler dump.

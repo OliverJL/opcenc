@@ -1,0 +1,317 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function utf_fold:
+   0x00041f74 <+0>:	03 49	ldr	r1, [pc, #12]	; (0x41f84 <utf_fold+16>)
+   0x00041f76 <+2>:	4f f4 28 62	mov.w	r2, #2688	; 0xa80
+   0x00041f7a <+6>:	79 44	add	r1, pc
+   0x00041f7c <+8>:	01 f5 5f 61	add.w	r1, r1, #3568	; 0xdf0
+   0x00041f80 <+12>:	fe f7 d0 bf	b.w	0x40f24 <utf_convert>
+   0x00041f84 <+16>:	e6 60	str	r6, [r4, #12]
+   0x00041f86 <+18>:	06 00	movs	r6, r0
+End of assembler dump.
+Dump of assembler code for function utf_head_off:
+   0x000413dc <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x000413e0 <+4>:	81 46	mov	r9, r0
+   0x000413e2 <+6>:	08 78	ldrb	r0, [r1, #0]
+   0x000413e4 <+8>:	03 06	lsls	r3, r0, #24
+   0x000413e6 <+10>:	02 d4	bmi.n	0x413ee <utf_head_off+18>
+   0x000413e8 <+12>:	00 20	movs	r0, #0
+   0x000413ea <+14>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x000413ee <+18>:	2b 4b	ldr	r3, [pc, #172]	; (0x4149c <utf_head_off+192>)
+   0x000413f0 <+20>:	0d 46	mov	r5, r1
+   0x000413f2 <+22>:	2b 4f	ldr	r7, [pc, #172]	; (0x414a0 <utf_head_off+196>)
+   0x000413f4 <+24>:	7b 44	add	r3, pc
+   0x000413f6 <+26>:	df f8 ac 80	ldr.w	r8, [pc, #172]	; 0x414a4 <utf_head_off+200>
+   0x000413fa <+30>:	7f 44	add	r7, pc
+   0x000413fc <+32>:	1e 68	ldr	r6, [r3, #0]
+   0x000413fe <+34>:	f8 44	add	r8, pc
+   0x00041400 <+36>:	4b 78	ldrb	r3, [r1, #1]
+   0x00041402 <+38>:	03 f0 c0 03	and.w	r3, r3, #192	; 0xc0
+   0x00041406 <+42>:	80 2b	cmp	r3, #128	; 0x80
+   0x00041408 <+44>:	44 d1	bne.n	0x41494 <utf_head_off+184>
+   0x0004140a <+46>:	4a 1c	adds	r2, r1, #1
+   0x0004140c <+48>:	96 46	mov	lr, r2
+   0x0004140e <+50>:	12 f8 01 3f	ldrb.w	r3, [r2, #1]!
+   0x00041412 <+54>:	03 f0 c0 03	and.w	r3, r3, #192	; 0xc0
+   0x00041416 <+58>:	80 2b	cmp	r3, #128	; 0x80
+   0x00041418 <+60>:	f8 d0	beq.n	0x4140c <utf_head_off+48>
+   0x0004141a <+62>:	89 45	cmp	r9, r1
+   0x0004141c <+64>:	3c d2	bcs.n	0x41498 <utf_head_off+188>
+   0x0004141e <+66>:	00 f0 c0 03	and.w	r3, r0, #192	; 0xc0
+   0x00041422 <+70>:	80 2b	cmp	r3, #128	; 0x80
+   0x00041424 <+72>:	05 d0	beq.n	0x41432 <utf_head_off+86>
+   0x00041426 <+74>:	27 e0	b.n	0x41478 <utf_head_off+156>
+   0x00041428 <+76>:	00 f0 c0 03	and.w	r3, r0, #192	; 0xc0
+   0x0004142c <+80>:	21 46	mov	r1, r4
+   0x0004142e <+82>:	80 2b	cmp	r3, #128	; 0x80
+   0x00041430 <+84>:	23 d1	bne.n	0x4147a <utf_head_off+158>
+   0x00041432 <+86>:	4c 1e	subs	r4, r1, #1
+   0x00041434 <+88>:	11 f8 01 0c	ldrb.w	r0, [r1, #-1]
+   0x00041438 <+92>:	a1 45	cmp	r9, r4
+   0x0004143a <+94>:	f5 d1	bne.n	0x41428 <utf_head_off+76>
+   0x0004143c <+96>:	4c 46	mov	r4, r9
+   0x0004143e <+98>:	38 44	add	r0, r7
+   0x00041440 <+100>:	c4 eb 0e 0e	rsb	lr, r4, lr
+   0x00041444 <+104>:	0e f1 01 0e	add.w	lr, lr, #1
+   0x00041448 <+108>:	90 f8 00 31	ldrb.w	r3, [r0, #256]	; 0x100
+   0x0004144c <+112>:	73 45	cmp	r3, lr
+   0x0004144e <+114>:	1e d0	beq.n	0x4148e <utf_head_off+178>
+   0x00041450 <+116>:	28 1b	subs	r0, r5, r4
+   0x00041452 <+118>:	42 1c	adds	r2, r0, #1
+   0x00041454 <+120>:	9a 42	cmp	r2, r3
+   0x00041456 <+122>:	c7 d1	bne.n	0x413e8 <utf_head_off+12>
+   0x00041458 <+124>:	a1 45	cmp	r9, r4
+   0x0004145a <+126>:	0b d2	bcs.n	0x41474 <utf_head_off+152>
+   0x0004145c <+128>:	20 46	mov	r0, r4
+   0x0004145e <+130>:	ff f7 ad fc	bl	0x40dbc <utf_ptr2char>
+   0x00041462 <+134>:	b0 42	cmp	r0, r6
+   0x00041464 <+136>:	13 db	blt.n	0x4148e <utf_head_off+178>
+   0x00041466 <+138>:	ff f7 9d fe	bl	0x411a4 <utf_iscomposing>
+   0x0004146a <+142>:	80 b1	cbz	r0, 0x4148e <utf_head_off+178>
+   0x0004146c <+144>:	61 1e	subs	r1, r4, #1
+   0x0004146e <+146>:	14 f8 01 0c	ldrb.w	r0, [r4, #-1]
+   0x00041472 <+150>:	c5 e7	b.n	0x41400 <utf_head_off+36>
+   0x00041474 <+152>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x00041478 <+156>:	0c 46	mov	r4, r1
+   0x0004147a <+158>:	40 44	add	r0, r8
+   0x0004147c <+160>:	c4 eb 0e 0e	rsb	lr, r4, lr
+   0x00041480 <+164>:	0e f1 01 0e	add.w	lr, lr, #1
+   0x00041484 <+168>:	90 f8 00 31	ldrb.w	r3, [r0, #256]	; 0x100
+   0x00041488 <+172>:	73 45	cmp	r3, lr
+   0x0004148a <+174>:	e7 d0	beq.n	0x4145c <utf_head_off+128>
+   0x0004148c <+176>:	e0 e7	b.n	0x41450 <utf_head_off+116>
+   0x0004148e <+178>:	28 1b	subs	r0, r5, r4
+   0x00041490 <+180>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x00041494 <+184>:	8e 46	mov	lr, r1
+   0x00041496 <+186>:	c0 e7	b.n	0x4141a <utf_head_off+62>
+   0x00041498 <+188>:	0c 46	mov	r4, r1
+   0x0004149a <+190>:	d0 e7	b.n	0x4143e <utf_head_off+98>
+   0x0004149c <+192>:	6c 6c	ldr	r4, [r5, #68]	; 0x44
+   0x0004149e <+194>:	06 00	movs	r6, r0
+   0x000414a0 <+196>:	3e ab	add	r3, sp, #248	; 0xf8
+   0x000414a2 <+198>:	04 00	movs	r4, r0
+   0x000414a4 <+200>:	3a ab	add	r3, sp, #232	; 0xe8
+   0x000414a6 <+202>:	04 00	movs	r4, r0
+End of assembler dump.
+Dump of assembler code for function utf_iscomposing:
+   0x000411a4 <+0>:	02 46	mov	r2, r0
+   0x000411a6 <+2>:	02 48	ldr	r0, [pc, #8]	; (0x411b0 <utf_iscomposing+12>)
+   0x000411a8 <+4>:	4f f4 e5 61	mov.w	r1, #1832	; 0x728
+   0x000411ac <+8>:	78 44	add	r0, pc
+   0x000411ae <+10>:	03 e7	b.n	0x40fb8 <intable>
+   0x000411b0 <+12>:	b4 6e	ldr	r4, [r6, #104]	; 0x68
+   0x000411b2 <+14>:	06 00	movs	r6, r0
+End of assembler dump.
+Dump of assembler code for function utf_islower:
+   0x00041ff4 <+0>:	10 b5	push	{r4, lr}
+   0x00041ff6 <+2>:	04 46	mov	r4, r0
+   0x00041ff8 <+4>:	ff f7 c6 ff	bl	0x41f88 <utf_toupper>
+   0x00041ffc <+8>:	20 1a	subs	r0, r4, r0
+   0x00041ffe <+10>:	18 bf	it	ne
+   0x00042000 <+12>:	01 20	movne	r0, #1
+   0x00042002 <+14>:	df 2c	cmp	r4, #223	; 0xdf
+   0x00042004 <+16>:	08 bf	it	eq
+   0x00042006 <+18>:	40 f0 01 00	orreq.w	r0, r0, #1
+   0x0004200a <+22>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function utf_isupper:
+   0x00042074 <+0>:	10 b5	push	{r4, lr}
+   0x00042076 <+2>:	04 46	mov	r4, r0
+   0x00042078 <+4>:	ff f7 c8 ff	bl	0x4200c <utf_tolower>
+   0x0004207c <+8>:	20 1a	subs	r0, r4, r0
+   0x0004207e <+10>:	18 bf	it	ne
+   0x00042080 <+12>:	01 20	movne	r0, #1
+   0x00042082 <+14>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function utf_off2cells:
+   0x00040d6c <+0>:	01 30	adds	r0, #1
+   0x00040d6e <+2>:	07 4b	ldr	r3, [pc, #28]	; (0x40d8c <utf_off2cells+32>)
+   0x00040d70 <+4>:	88 42	cmp	r0, r1
+   0x00040d72 <+6>:	7b 44	add	r3, pc
+   0x00040d74 <+8>:	08 d2	bcs.n	0x40d88 <utf_off2cells+28>
+   0x00040d76 <+10>:	06 4a	ldr	r2, [pc, #24]	; (0x40d90 <utf_off2cells+36>)
+   0x00040d78 <+12>:	9b 58	ldr	r3, [r3, r2]
+   0x00040d7a <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x00040d7c <+16>:	1b 5c	ldrb	r3, [r3, r0]
+   0x00040d7e <+18>:	00 2b	cmp	r3, #0
+   0x00040d80 <+20>:	14 bf	ite	ne
+   0x00040d82 <+22>:	01 20	movne	r0, #1
+   0x00040d84 <+24>:	02 20	moveq	r0, #2
+   0x00040d86 <+26>:	70 47	bx	lr
+   0x00040d88 <+28>:	01 20	movs	r0, #1
+   0x00040d8a <+30>:	70 47	bx	lr
+   0x00040d8c <+32>:	26 69	ldr	r6, [r4, #16]
+   0x00040d8e <+34>:	06 00	movs	r6, r0
+   0x00040d90 <+36>:	c4 05	lsls	r4, r0, #23
+   0x00040d92 <+38>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function utf_printable:
+   0x00041e38 <+0>:	08 b5	push	{r3, lr}
+   0x00041e3a <+2>:	09 4b	ldr	r3, [pc, #36]	; (0x41e60 <utf_printable+40>)
+   0x00041e3c <+4>:	7b 44	add	r3, pc
+   0x00041e3e <+6>:	d3 f8 28 27	ldr.w	r2, [r3, #1832]	; 0x728
+   0x00041e42 <+10>:	90 42	cmp	r0, r2
+   0x00041e44 <+12>:	01 da	bge.n	0x41e4a <utf_printable+18>
+   0x00041e46 <+14>:	01 20	movs	r0, #1
+   0x00041e48 <+16>:	08 bd	pop	{r3, pc}
+   0x00041e4a <+18>:	02 46	mov	r2, r0
+   0x00041e4c <+20>:	48 21	movs	r1, #72	; 0x48
+   0x00041e4e <+22>:	03 f5 e5 60	add.w	r0, r3, #1832	; 0x728
+   0x00041e52 <+26>:	ff f7 b1 f8	bl	0x40fb8 <intable>
+   0x00041e56 <+30>:	b0 fa 80 f0	clz	r0, r0
+   0x00041e5a <+34>:	40 09	lsrs	r0, r0, #5
+   0x00041e5c <+36>:	08 bd	pop	{r3, pc}
+   0x00041e5e <+38>:	00 bf	nop
+   0x00041e60 <+40>:	24 62	str	r4, [r4, #32]
+   0x00041e62 <+42>:	06 00	movs	r6, r0
+End of assembler dump.
+Dump of assembler code for function utf_ptr2cells:
+   0x00041604 <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00041606 <+2>:	05 78	ldrb	r5, [r0, #0]
+   0x00041608 <+4>:	2b 06	lsls	r3, r5, #24
+   0x0004160a <+6>:	01 d4	bmi.n	0x41610 <utf_ptr2cells+12>
+   0x0004160c <+8>:	01 20	movs	r0, #1
+   0x0004160e <+10>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00041610 <+12>:	04 46	mov	r4, r0
+   0x00041612 <+14>:	ff f7 d3 fb	bl	0x40dbc <utf_ptr2char>
+   0x00041616 <+18>:	13 4b	ldr	r3, [pc, #76]	; (0x41664 <utf_ptr2cells+96>)
+   0x00041618 <+20>:	7b 44	add	r3, pc
+   0x0004161a <+22>:	1d 44	add	r5, r3
+   0x0004161c <+24>:	95 f8 00 51	ldrb.w	r5, [r5, #256]	; 0x100
+   0x00041620 <+28>:	01 2d	cmp	r5, #1
+   0x00041622 <+30>:	0f dd	ble.n	0x41644 <utf_ptr2cells+64>
+   0x00041624 <+32>:	63 78	ldrb	r3, [r4, #1]
+   0x00041626 <+34>:	03 f0 c0 03	and.w	r3, r3, #192	; 0xc0
+   0x0004162a <+38>:	80 2b	cmp	r3, #128	; 0x80
+   0x0004162c <+40>:	0e d1	bne.n	0x4164c <utf_ptr2cells+72>
+   0x0004162e <+42>:	a1 1c	adds	r1, r4, #2
+   0x00041630 <+44>:	62 19	adds	r2, r4, r5
+   0x00041632 <+46>:	05 e0	b.n	0x41640 <utf_ptr2cells+60>
+   0x00041634 <+48>:	11 f8 01 3b	ldrb.w	r3, [r1], #1
+   0x00041638 <+52>:	03 f0 c0 03	and.w	r3, r3, #192	; 0xc0
+   0x0004163c <+56>:	80 2b	cmp	r3, #128	; 0x80
+   0x0004163e <+58>:	05 d1	bne.n	0x4164c <utf_ptr2cells+72>
+   0x00041640 <+60>:	91 42	cmp	r1, r2
+   0x00041642 <+62>:	f7 d1	bne.n	0x41634 <utf_ptr2cells+48>
+   0x00041644 <+64>:	01 2d	cmp	r5, #1
+   0x00041646 <+66>:	18 bf	it	ne
+   0x00041648 <+68>:	00 28	cmpne	r0, #0
+   0x0004164a <+70>:	01 d1	bne.n	0x41650 <utf_ptr2cells+76>
+   0x0004164c <+72>:	04 20	movs	r0, #4
+   0x0004164e <+74>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00041650 <+76>:	7f 28	cmp	r0, #127	; 0x7f
+   0x00041652 <+78>:	03 dd	ble.n	0x4165c <utf_ptr2cells+88>
+   0x00041654 <+80>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x00041658 <+84>:	ff f7 26 bf	b.w	0x414a8 <utf_char2cells>
+   0x0004165c <+88>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x00041660 <+92>:	cf f7 2e bd	b.w	0x110c0 <char2cells>
+   0x00041664 <+96>:	20 a9	add	r1, sp, #128	; 0x80
+   0x00041666 <+98>:	04 00	movs	r4, r0
+End of assembler dump.
+Dump of assembler code for function utf_ptr2char:
+   0x00040dbc <+0>:	03 78	ldrb	r3, [r0, #0]
+   0x00040dbe <+2>:	1a 06	lsls	r2, r3, #24
+   0x00040dc0 <+4>:	02 d4	bmi.n	0x40dc8 <utf_ptr2char+12>
+   0x00040dc2 <+6>:	1a 46	mov	r2, r3
+   0x00040dc4 <+8>:	10 46	mov	r0, r2
+   0x00040dc6 <+10>:	70 47	bx	lr
+   0x00040dc8 <+12>:	3b 49	ldr	r1, [pc, #236]	; (0x40eb8 <utf_ptr2char+252>)
+   0x00040dca <+14>:	1a 46	mov	r2, r3
+   0x00040dcc <+16>:	79 44	add	r1, pc
+   0x00040dce <+18>:	c9 5c	ldrb	r1, [r1, r3]
+   0x00040dd0 <+20>:	01 29	cmp	r1, #1
+   0x00040dd2 <+22>:	f7 dd	ble.n	0x40dc4 <utf_ptr2char+8>
+   0x00040dd4 <+24>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x00040dd6 <+26>:	46 78	ldrb	r6, [r0, #1]
+   0x00040dd8 <+28>:	06 f0 c0 04	and.w	r4, r6, #192	; 0xc0
+   0x00040ddc <+32>:	80 2c	cmp	r4, #128	; 0x80
+   0x00040dde <+34>:	01 d0	beq.n	0x40de4 <utf_ptr2char+40>
+   0x00040de0 <+36>:	10 46	mov	r0, r2
+   0x00040de2 <+38>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x00040de4 <+40>:	02 29	cmp	r1, #2
+   0x00040de6 <+42>:	34 d0	beq.n	0x40e52 <utf_ptr2char+150>
+   0x00040de8 <+44>:	87 78	ldrb	r7, [r0, #2]
+   0x00040dea <+46>:	07 f0 c0 04	and.w	r4, r7, #192	; 0xc0
+   0x00040dee <+50>:	80 2c	cmp	r4, #128	; 0x80
+   0x00040df0 <+52>:	f6 d1	bne.n	0x40de0 <utf_ptr2char+36>
+   0x00040df2 <+54>:	03 29	cmp	r1, #3
+   0x00040df4 <+56>:	34 d0	beq.n	0x40e60 <utf_ptr2char+164>
+   0x00040df6 <+58>:	c4 78	ldrb	r4, [r0, #3]
+   0x00040df8 <+60>:	04 f0 c0 05	and.w	r5, r4, #192	; 0xc0
+   0x00040dfc <+64>:	80 2d	cmp	r5, #128	; 0x80
+   0x00040dfe <+66>:	ef d1	bne.n	0x40de0 <utf_ptr2char+36>
+   0x00040e00 <+68>:	04 29	cmp	r1, #4
+   0x00040e02 <+70>:	37 d0	beq.n	0x40e74 <utf_ptr2char+184>
+   0x00040e04 <+72>:	05 79	ldrb	r5, [r0, #4]
+   0x00040e06 <+74>:	05 f0 c0 0e	and.w	lr, r5, #192	; 0xc0
+   0x00040e0a <+78>:	be f1 80 0f	cmp.w	lr, #128	; 0x80
+   0x00040e0e <+82>:	e7 d1	bne.n	0x40de0 <utf_ptr2char+36>
+   0x00040e10 <+84>:	05 29	cmp	r1, #5
+   0x00040e12 <+86>:	3e d0	beq.n	0x40e92 <utf_ptr2char+214>
+   0x00040e14 <+88>:	90 f8 05 e0	ldrb.w	lr, [r0, #5]
+   0x00040e18 <+92>:	0e f0 c0 00	and.w	r0, lr, #192	; 0xc0
+   0x00040e1c <+96>:	80 28	cmp	r0, #128	; 0x80
+   0x00040e1e <+98>:	08 bf	it	eq
+   0x00040e20 <+100>:	06 29	cmpeq	r1, #6
+   0x00040e22 <+102>:	dd d1	bne.n	0x40de0 <utf_ptr2char+36>
+   0x00040e24 <+104>:	06 f0 3f 01	and.w	r1, r6, #63	; 0x3f
+   0x00040e28 <+108>:	03 f0 01 03	and.w	r3, r3, #1
+   0x00040e2c <+112>:	07 f0 3f 00	and.w	r0, r7, #63	; 0x3f
+   0x00040e30 <+116>:	04 f0 3f 04	and.w	r4, r4, #63	; 0x3f
+   0x00040e34 <+120>:	09 06	lsls	r1, r1, #24
+   0x00040e36 <+122>:	05 f0 3f 05	and.w	r5, r5, #63	; 0x3f
+   0x00040e3a <+126>:	01 eb 83 71	add.w	r1, r1, r3, lsl #30
+   0x00040e3e <+130>:	0e f0 3f 02	and.w	r2, lr, #63	; 0x3f
+   0x00040e42 <+134>:	01 eb 80 41	add.w	r1, r1, r0, lsl #18
+   0x00040e46 <+138>:	01 eb 04 33	add.w	r3, r1, r4, lsl #12
+   0x00040e4a <+142>:	03 eb 85 13	add.w	r3, r3, r5, lsl #6
+   0x00040e4e <+146>:	1a 44	add	r2, r3
+   0x00040e50 <+148>:	c6 e7	b.n	0x40de0 <utf_ptr2char+36>
+   0x00040e52 <+150>:	03 f0 1f 02	and.w	r2, r3, #31
+   0x00040e56 <+154>:	06 f0 3f 01	and.w	r1, r6, #63	; 0x3f
+   0x00040e5a <+158>:	01 eb 82 12	add.w	r2, r1, r2, lsl #6
+   0x00040e5e <+162>:	bf e7	b.n	0x40de0 <utf_ptr2char+36>
+   0x00040e60 <+164>:	1b 03	lsls	r3, r3, #12
+   0x00040e62 <+166>:	06 f0 3f 01	and.w	r1, r6, #63	; 0x3f
+   0x00040e66 <+170>:	07 f0 3f 00	and.w	r0, r7, #63	; 0x3f
+   0x00040e6a <+174>:	9b b2	uxth	r3, r3
+   0x00040e6c <+176>:	03 eb 81 13	add.w	r3, r3, r1, lsl #6
+   0x00040e70 <+180>:	1a 18	adds	r2, r3, r0
+   0x00040e72 <+182>:	b5 e7	b.n	0x40de0 <utf_ptr2char+36>
+   0x00040e74 <+184>:	06 f0 3f 01	and.w	r1, r6, #63	; 0x3f
+   0x00040e78 <+188>:	03 f0 07 03	and.w	r3, r3, #7
+   0x00040e7c <+192>:	07 f0 3f 00	and.w	r0, r7, #63	; 0x3f
+   0x00040e80 <+196>:	04 f0 3f 04	and.w	r4, r4, #63	; 0x3f
+   0x00040e84 <+200>:	09 03	lsls	r1, r1, #12
+   0x00040e86 <+202>:	01 eb 83 43	add.w	r3, r1, r3, lsl #18
+   0x00040e8a <+206>:	03 eb 80 13	add.w	r3, r3, r0, lsl #6
+   0x00040e8e <+210>:	1a 19	adds	r2, r3, r4
+   0x00040e90 <+212>:	a6 e7	b.n	0x40de0 <utf_ptr2char+36>
+   0x00040e92 <+214>:	06 f0 3f 01	and.w	r1, r6, #63	; 0x3f
+   0x00040e96 <+218>:	03 f0 03 03	and.w	r3, r3, #3
+   0x00040e9a <+222>:	07 f0 3f 00	and.w	r0, r7, #63	; 0x3f
+   0x00040e9e <+226>:	04 f0 3f 02	and.w	r2, r4, #63	; 0x3f
+   0x00040ea2 <+230>:	89 04	lsls	r1, r1, #18
+   0x00040ea4 <+232>:	05 f0 3f 05	and.w	r5, r5, #63	; 0x3f
+   0x00040ea8 <+236>:	01 eb 03 61	add.w	r1, r1, r3, lsl #24
+   0x00040eac <+240>:	01 eb 00 33	add.w	r3, r1, r0, lsl #12
+   0x00040eb0 <+244>:	03 eb 82 13	add.w	r3, r3, r2, lsl #6
+   0x00040eb4 <+248>:	5a 19	adds	r2, r3, r5
+   0x00040eb6 <+250>:	93 e7	b.n	0x40de0 <utf_ptr2char+36>
+   0x00040eb8 <+252>:	6c b1	cbz	r4, 0x40ed6 <utf_safe_read_char_adv+26>
+   0x00040eba <+254>:	04 00	movs	r4, r0
+End of assembler dump.

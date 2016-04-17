@@ -1,0 +1,1826 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+All defined functions:
+
+File buffer.c:
+char_u *alist_name(aentry_T *);
+void buf_clear_file(buf_T *);
+int buf_contents_changed(buf_T *);
+void buf_freeall(buf_T *, int);
+void buf_name_changed(buf_T *);
+void buf_set_name(int, char_u *);
+void buf_setino(buf_T *);
+char_u *buf_spname(buf_T *);
+int buf_valid(buf_T *);
+int buflist_add(char_u *, int);
+void buflist_altfpos(win_T *);
+pos_T *buflist_findfpos(buf_T *);
+linenr_T buflist_findlnum(buf_T *);
+buf_T *buflist_findname(char_u *);
+buf_T *buflist_findnr(int);
+int buflist_getfile(int, linenr_T, int, int);
+void buflist_getfpos(void);
+int buflist_name_nr(int, char_u **, linenr_T *);
+buf_T *buflist_new(char_u *, char_u *, linenr_T, int);
+char_u *buflist_nr2name(int, int, int);
+void close_buffer(win_T *, buf_T *, int, int);
+void col_print(char_u *, size_t, int, int);
+void do_arg_all(int, int, int);
+void do_modelines(int);
+void enter_buffer(buf_T *);
+void fileinfo(int, int, int);
+char_u *fix_fname(char_u *);
+void fname_expand(buf_T *, char_u **, char_u **);
+void free_buf_options(buf_T *, int);
+void get_winopts(buf_T *);
+char_u *getaltfname(int);
+int open_buffer(int, exarg_T *, int);
+int otherfile(char_u *);
+void set_buflisted(int);
+void set_curbuf(buf_T *, int);
+buf_T *setaltfname(char_u *, char_u *, linenr_T);
+int setfname(buf_T *, char_u *, char_u *, int);
+void wipe_buffer(buf_T *, int);
+static buf_T *buflist_findname_stat(char_u *, struct stat *);
+static void buflist_setfpos(win_T *, linenr_T, colnr_T, int, buf_T *);
+static int chk_modeline(linenr_T, int);
+static void clear_wininfo(buf_T *);
+static void free_buffer_stuff(buf_T *, int);
+static int otherfile_buf(buf_T *, char_u *, struct stat *);
+
+File charset.c:
+void backslash_halve(char_u *);
+char_u *backslash_halve_save(char_u *);
+int buf_init_chartab(buf_T *, int);
+int byte2cells(int);
+int char2cells(int);
+long getdigits(char_u **);
+void getvcol(win_T *, pos_T *, colnr_T *, colnr_T *, colnr_T *);
+colnr_T getvcol_nolist(pos_T *);
+void getvcols(win_T *, pos_T *, pos_T *, colnr_T *, colnr_T *);
+int hex2nr(int);
+int in_win_border(win_T *, colnr_T);
+int init_chartab(void);
+int lbr_chartabsize(char_u *, unsigned char *, colnr_T);
+int lbr_chartabsize_adv(char_u *, char_u **, colnr_T);
+int linetabsize(char_u *);
+int linetabsize_col(int, char_u *);
+int ptr2cells(char_u *);
+int rem_backslash(char_u *);
+char_u *skipdigits(char_u *);
+char_u *skiptowhite(char_u *);
+char_u *skipwhite(char_u *);
+void trans_characters(char_u *, int);
+char_u *transchar(int);
+char_u *transchar_byte(int);
+void transchar_hex(char_u *, int);
+void transchar_nonprint(char_u *, int);
+int vim_isIDc(int);
+int vim_isblankline(char_u *);
+int vim_isdigit(int);
+int vim_isfilec(int);
+int vim_isfilec_or_wc(int);
+int vim_islower(int);
+int vim_isprintc(int);
+int vim_isprintc_strict(int);
+int vim_isupper(int);
+int vim_iswordc(int);
+int vim_iswordc_buf(int, buf_T *);
+int vim_iswordp(char_u *);
+int vim_iswordp_buf(char_u *, buf_T *);
+int vim_isxdigit(int);
+void vim_str2nr(char_u *, int *, int *, int, int, long *, unsigned long *);
+int vim_strnsize(char_u *, int);
+int vim_strsize(char_u *);
+int vim_tolower(int);
+int vim_toupper(int);
+int win_lbr_chartabsize(win_T *, char_u *, char_u *, colnr_T, int *);
+int win_linetabsize(win_T *, char_u *, colnr_T);
+static int win_nolbr_chartabsize(win_T *, char_u *, colnr_T, int *);
+
+File edit.c:
+char_u *add_char2buf(int, char_u *);
+void auto_format(int, int);
+void beginline(int);
+void change_indent(int, int, int, int, int);
+int comp_textwidth(int);
+int cursor_down(long, int);
+int cursor_up(long, int);
+void display_dollar(colnr_T);
+int edit(int, int, long);
+void edit_putchar(int, int);
+void edit_unputchar(void);
+char_u *get_last_insert(void);
+char_u *get_last_insert_save(void);
+int get_literal(void);
+int ins_copychar(linenr_T);
+void insertchar(int, int, int);
+int oneleft(void);
+int oneright(void);
+void replace_push(int);
+int replace_push_mb(char_u *);
+void set_last_insert(int);
+int stop_arrow(void);
+int stuff_inserted(int, long, int);
+void truncate_spaces(char_u *);
+static void check_auto_format(int);
+static int echeck_abbr(int);
+static colnr_T get_nolist_virtcol(void);
+static int ins_bs(int, int, int *);
+static void ins_bs_one(colnr_T *);
+static void ins_ctrl_o(void);
+static void ins_down(int);
+static void ins_pagedown(void);
+static void ins_pageup(void);
+static void ins_redraw(int);
+static void ins_s_left(void);
+static void ins_s_right(void);
+static void ins_up(int);
+static void insert_special(int, int, int);
+static void mb_replace_pop_ins(int);
+static void redo_literal(int);
+static void replace_do_bs(int);
+static void replace_join(int);
+static void replace_pop_ins(void);
+static void start_arrow(pos_T *);
+static void stop_insert(pos_T *, int, int);
+static void undisplay_dollar(void);
+
+File ex_cmds.c:
+void append_redir(char_u *, int, char_u *, char_u *);
+int check_overwrite(exarg_T *, buf_T *, char_u *, char_u *, int);
+int check_restricted(void);
+int check_secure(void);
+void do_ascii(exarg_T *);
+void do_bang(int, exarg_T *, int, int, int);
+int do_ecmd(int, char_u *, char_u *, exarg_T *, linenr_T, int, win_T *);
+void do_fixdel(exarg_T *);
+int do_move(linenr_T, linenr_T, linenr_T);
+void do_shell(char_u *, int);
+void do_sub(exarg_T *);
+int do_sub_msg(int);
+void do_wqall(exarg_T *);
+int do_write(exarg_T *);
+void ex_append(exarg_T *);
+void ex_change(exarg_T *);
+void ex_copy(linenr_T, linenr_T, linenr_T);
+void ex_exusage(exarg_T *);
+void ex_file(exarg_T *);
+void ex_global(exarg_T *);
+void ex_help(exarg_T *);
+void ex_helpclose(exarg_T *);
+void ex_update(exarg_T *);
+void ex_viusage(exarg_T *);
+void ex_wnext(exarg_T *);
+void ex_write(exarg_T *);
+void ex_z(exarg_T *);
+int find_help_tags(char_u *, int *, char_u ***, int);
+void fix_help_buffer(void);
+int getfile(int, char_u *, char_u *, int, linenr_T, int);
+void global_exe(char_u *);
+int help_heuristic(char_u *, int, int);
+char_u *make_filter_cmd(char_u *, char_u *, char_u *);
+int not_writing(void);
+void print_line(linenr_T, int, int);
+void print_line_no_prefix(linenr_T, int, int);
+int rename_buffer(char_u *);
+static int check_readonly(buf_T *, int *);
+static int help_compare(const void *, const void *);
+
+File ex_cmds2.c:
+int autowrite(buf_T *, int);
+void autowrite_all(void);
+int buf_write_all(buf_T *, int);
+int can_abandon(buf_T *, int);
+void check_arg_idx(win_T *);
+int check_changed(buf_T *, int);
+int check_changed_any(int);
+int check_fname(void);
+void do_argfile(exarg_T *, int);
+int do_in_runtimepath(char_u *, int, void (*)(char_u *, void *), void *);
+int do_source(char_u *, int, int);
+void ex_args(exarg_T *);
+void ex_argument(exarg_T *);
+void ex_language(exarg_T *);
+void ex_last(exarg_T *);
+void ex_next(exarg_T *);
+void ex_previous(exarg_T *);
+void ex_rewind(exarg_T *);
+void ex_runtime(exarg_T *);
+void ex_scriptencoding(exarg_T *);
+void ex_source(exarg_T *);
+int get_arglist(garray_T *, char_u *);
+char_u *getsourceline(int, void *, int);
+int source_runtime(char_u *, int);
+static FILE *fopen_noinh_readbin(char *);
+static char_u *get_one_sourceline(struct source_cookie *);
+static void source_callback(char_u *, void *);
+
+File ex_docmd.c:
+void alist_add(alist_T *, char_u *, int);
+void alist_clear(alist_T *);
+void alist_init(alist_T *);
+void alist_set(alist_T *, int, char_u **, int, int *, int);
+void alist_unlink(alist_T *);
+char_u *check_nextcmd(char_u *);
+int checkforcmd(char_u **, char *, int);
+int do_cmdline(char_u *, char_u *(*)(int, void *, int), void *, int);
+int do_cmdline_cmd(char_u *);
+void do_exedit(exarg_T *, win_T *);
+void do_exmode(int);
+void do_sleep(long);
+int ends_excmd(int);
+char_u *eval_vars(char_u *, char_u *, int *, linenr_T *, char_u **, int *);
+void ex_all(exarg_T *);
+void ex_cd(exarg_T *);
+void ex_may_print(exarg_T *);
+void ex_ni(exarg_T *);
+void ex_splitview(exarg_T *);
+int expand_filename(exarg_T *, char_u **, char_u **);
+int find_cmdline_var(char_u *, int *);
+void *getline_cookie(char_u *(*)(int, void *, int), void *);
+int getline_equal(char_u *(*)(int, void *, int), void *, char_u *(*)(int, void *, int));
+void not_exiting(void);
+FILE *open_exfile(char_u *, int, char *);
+void post_chdir(int);
+int put_eol(FILE *);
+int put_line(FILE *, char *);
+void separate_nextcmd(exarg_T *);
+char_u *set_one_cmd_context(expand_T *, char_u *);
+char_u *skip_range(char_u *, int *);
+void tabpage_close(int);
+void tabpage_close_other(tabpage_T *, int);
+void tabpage_new(void);
+void update_topline_cursor(void);
+static void append_command(char_u *);
+static int check_more(int, int);
+static void do_exmap(exarg_T *, int);
+static void ex_abbreviate(exarg_T *);
+static void ex_abclear(exarg_T *);
+static void ex_at(exarg_T *);
+static void ex_bang(exarg_T *);
+static void ex_behave(exarg_T *);
+static void ex_close(exarg_T *);
+static void ex_colorscheme(exarg_T *);
+static void ex_copymove(exarg_T *);
+static void ex_cquit(exarg_T *);
+static void ex_digraphs(exarg_T *);
+static void ex_edit(exarg_T *);
+static void ex_equal(exarg_T *);
+static void ex_exit(exarg_T *);
+static void ex_hide(exarg_T *);
+static void ex_highlight(exarg_T *);
+static void ex_join(exarg_T *);
+static void ex_later(exarg_T *);
+static void ex_map(exarg_T *);
+static void ex_mapclear(exarg_T *);
+static void ex_mark(exarg_T *);
+static void ex_mkrc(exarg_T *);
+static void ex_mode(exarg_T *);
+static void ex_nogui(exarg_T *);
+static void ex_only(exarg_T *);
+static void ex_open(exarg_T *);
+static void ex_operators(exarg_T *);
+static void ex_preserve(exarg_T *);
+static void ex_print(exarg_T *);
+static void ex_put(exarg_T *);
+static void ex_pwd(exarg_T *);
+static void ex_quit(exarg_T *);
+static void ex_quit_all(exarg_T *);
+static void ex_read(exarg_T *);
+static void ex_recover(exarg_T *);
+static void ex_redir(exarg_T *);
+static void ex_redo(exarg_T *);
+static void ex_redraw(exarg_T *);
+static void ex_redrawstatus(exarg_T *);
+static void ex_resize(exarg_T *);
+static void ex_script_ni(exarg_T *);
+static void ex_set(exarg_T *);
+static void ex_shell(exarg_T *);
+static void ex_sleep(exarg_T *);
+static void ex_stag(exarg_T *);
+static void ex_stop(exarg_T *);
+static void ex_submagic(exarg_T *);
+static void ex_swapname(exarg_T *);
+static void ex_syncbind(exarg_T *);
+static void ex_tabclose(exarg_T *);
+static void ex_tabmove(exarg_T *);
+static void ex_tabnext(exarg_T *);
+static void ex_tabonly(exarg_T *);
+static void ex_tabs(exarg_T *);
+static void ex_tag(exarg_T *);
+static void ex_tag_cmd(exarg_T *, char_u *);
+static void ex_undo(exarg_T *);
+static void ex_unmap(exarg_T *);
+static void ex_win_close(int, win_T *, tabpage_T *);
+static void ex_wincmd(exarg_T *);
+static void ex_winpos(exarg_T *);
+static void ex_winsize(exarg_T *);
+static void ex_wrongmodifier(exarg_T *);
+static linenr_T get_address(char_u **, int, int, int);
+static void get_flags(exarg_T *, exarg_T *);
+static char_u *invalid_range(exarg_T *);
+static char_u *repl_cmdline(exarg_T *, char_u *, int, char_u *, char_u **);
+static char_u *skip_cmd_arg(char_u *, int);
+
+File ex_getln.c:
+void ExpandCleanup(expand_T *);
+void ExpandEscape(expand_T *, char_u *, int, char_u **, int);
+void ExpandInit(expand_T *);
+char_u *ExpandOne(expand_T *, char_u *, char_u *, int, int);
+void add_to_history(int, char_u *, int, int);
+char_u *addstar(char_u *, int, int);
+void cmdline_paste_str(char_u *, int);
+void compute_cmdrow(void);
+void ex_history(exarg_T *);
+int expand_cmdline(expand_T *, char_u *, int, int *, char_u ***);
+int get_histtype(char_u *);
+int get_list_range(char_u **, int *, int *);
+char_u *getcmdline(int, long, int);
+char_u *getexline(int, void *, int);
+char_u *getexmodeline(int, void *, int);
+void gotocmdline(int);
+void init_history(void);
+int put_on_cmdline(char_u *, int, int);
+void putcmdline(int, int);
+void redrawcmd(void);
+void redrawcmdline(void);
+char_u *script_get(exarg_T *, char_u *);
+void set_cmd_context(expand_T *, char_u *, int, int);
+char_u *sm_gettail(char_u *);
+int text_locked(void);
+void text_locked_msg(void);
+void tilde_replace(char_u *, int, char_u **);
+void unputcmdline(void);
+char_u *vim_strsave_fnameescape(char_u *, int);
+static int ExpandFromContext(char_u *, int *, char_u ***, int, expand_T *, expand_T *);
+static void correct_cmdspos(int, int);
+static void cursorcmd(void);
+static void escape_fname(char_u **);
+static int expand_showtail(expand_T *, expand_T *);
+static int nextwild(expand_T *, int, int, int);
+static int realloc_cmdbuff(int);
+static void redrawcmdprompt(void);
+static void set_cmdspos_cursor(void);
+static void set_expand_context(expand_T *);
+static int showmatches(expand_T *, int);
+
+File fileio.c:
+void aucmd_prepbuf(aco_save_T *, buf_T *);
+void aucmd_restbuf(aco_save_T *);
+int buf_check_timestamp(buf_T *, int);
+char_u *buf_modname(int, char_u *, char_u *, int);
+void buf_reload(buf_T *, int);
+void buf_store_time(buf_T *, struct stat *, char_u *);
+int buf_write(buf_T *, char_u *, char_u *, linenr_T, linenr_T, exarg_T *, int, int, int, int);
+int check_file_readonly(char_u *, int);
+int check_timestamps(int);
+char_u *file_pat_to_reg_pat(char_u *, char_u *, char *, int);
+void filemess(buf_T *, char_u *, char_u *, int);
+int match_file_list(char_u *, char_u *, char_u *);
+char_u *modname(char_u *, char_u *, int);
+void msg_add_fname(buf_T *, char_u *);
+void msg_add_lines(int, long, off_t);
+int prep_exarg(exarg_T *, buf_T *);
+long read_eintr(int, void *, size_t);
+int readfile(char_u *, char_u *, linenr_T, linenr_T, linenr_T, exarg_T *, int);
+void set_file_options(int, exarg_T *);
+void set_forced_fenc(exarg_T *);
+char_u *shorten_fname(char_u *, char_u *);
+void shorten_fnames(int);
+void vim_deltempdir(void);
+int vim_fgets(char_u *, int, FILE *);
+int vim_rename(char_u *, char_u *);
+char_u *vim_tempname(int, int);
+long write_eintr(int, void *, size_t);
+void write_lnum_adjust(linenr_T);
+static int buf_write_bytes(struct bw_info *);
+static int get_fio_flags(char_u *);
+static int move_lines(buf_T *, buf_T *);
+static void msg_add_eol(void);
+static int msg_add_fileformat(int);
+static int need_conversion(char_u *);
+static char_u *next_fenc(char_u **);
+static int set_rw_fname(char_u *, char_u *);
+static int ucs2bytes(unsigned int, char_u **, int);
+
+File getchar.c:
+void AppendCharToRedobuff(int);
+void AppendNumberToRedobuff(long);
+void AppendToRedobuff(char_u *);
+void AppendToRedobuffLit(char_u *, int);
+void CancelRedo(void);
+void ResetRedobuff(void);
+int alloc_typebuf(void);
+void before_blocking(void);
+int char_avail(void);
+int check_abbr(int, char_u *, int, int);
+void check_map_keycodes(void);
+void del_typebuf(int, int);
+int do_map(int, char_u *, int, int);
+int fix_input_buffer(char_u *, int, int);
+void flush_buffers(int);
+void free_buff(buffheader_T *);
+void free_typebuf(void);
+char_u *get_inserted(void);
+int get_map_mode(char_u **, int);
+char_u *get_recorded(void);
+int inchar(char_u *, int, long, int);
+void init_mappings(void);
+int input_available(void);
+void ins_char_typebuf(int);
+int ins_typebuf(char_u *, int, int, int, int);
+int makemap(FILE *, buf_T *);
+void map_clear(char_u *, char_u *, int, int);
+void map_clear_int(buf_T *, int, int, int);
+char_u *map_mode_to_chars(int);
+int map_to_exists_mode(char_u *, int, int);
+void openscript(char_u *, int);
+int plain_vgetc(void);
+int put_escstr(FILE *, char_u *, int);
+int readbuf1_empty(void);
+int safe_vgetc(void);
+int save_typebuf(void);
+int start_redo(long, int);
+int start_redo_ins(void);
+void stop_redo_ins(void);
+void stuffReadbuff(char_u *);
+void stuffReadbuffLen(char_u *, long);
+void stuffRedoReadbuff(char_u *);
+int stuff_empty(void);
+void stuffcharReadbuff(int);
+void stuffnumReadbuff(long);
+void typeahead_noflush(int);
+int typebuf_changed(int);
+int typebuf_maplen(void);
+int typebuf_typed(void);
+void updatescript(int);
+int vgetc(void);
+char_u *vim_strsave_escape_csi(char_u *);
+void vim_unescape_csi(char_u *);
+int vpeekc(void);
+void vungetc(int);
+static void add_buff(buffheader_T *, char_u *, long);
+static void add_char_buff(buffheader_T *, int);
+static void add_num_buff(buffheader_T *, long);
+static void closescript(void);
+static void copy_redo(int);
+static char_u *get_buffcont(int, buffheader_T *);
+static void gotchars(char_u *, int);
+static void init_typebuf(void);
+static void map_free(mapblock_T **);
+static int read_readbuffers(int);
+static int read_redo(int, int);
+static void showmap(mapblock_T *, int);
+static void validate_maphash(void);
+static int vgetorpeek(int);
+
+File main.c:
+void getout(int);
+int main(int, char **);
+void main_loop(int, int);
+void mainerr_arg_missing(char_u *);
+int process_env(char_u *, int);
+static int file_owned(char *);
+static int get_number_arg(char_u *, int *, int);
+static void main_msg(char *);
+static void main_start_gui(void);
+static void mainerr(int, char_u *);
+static void usage(void);
+
+File mark.c:
+int check_mark(pos_T *);
+void checkpcmark(void);
+void clrallmarks(buf_T *);
+void copy_jumplist(win_T *, win_T *);
+void do_marks(exarg_T *);
+void ex_changes(exarg_T *);
+void ex_delmarks(exarg_T *);
+void ex_jumps(exarg_T *);
+char_u *fm_getname(fmark_T *, int);
+void fmarks_check_names(buf_T *);
+void free_jumplist(win_T *);
+pos_T *getmark(int, int);
+pos_T *getmark_buf(buf_T *, int, int);
+pos_T *getmark_buf_fnum(buf_T *, int, int, int *);
+pos_T *getnextmark(pos_T *, int, int);
+void mark_adjust(linenr_T, linenr_T, long, long);
+void mark_col_adjust(linenr_T, colnr_T, long, long);
+pos_T *movechangelist(int);
+pos_T *movemark(int);
+void set_last_cursor(win_T *);
+int setmark(int);
+int setmark_pos(int, pos_T *, int);
+void setpcmark(void);
+static void cleanup_jumplist(void);
+static void fmarks_check_one(char_u *, buf_T *, xfmark_T *, xfmark_T *);
+static void fname2fnum(xfmark_T *);
+static char_u *mark_line(int, pos_T *);
+static void show_one_mark(int, char_u *, pos_T *, char_u *, int);
+
+File mbyte.c:
+int bomb_size(void);
+int convert_input_safe(char_u *, int, int, char_u **, int *);
+int convert_setup(vimconv_T *, char_u *, char_u *);
+int convert_setup_ext(vimconv_T *, char_u *, int, char_u *, int);
+int dbcs_class(unsigned int, unsigned int);
+int dbcs_head_off(char_u *, char_u *);
+int dbcs_off2cells(unsigned int, unsigned int);
+int dbcs_ptr2cells(char_u *);
+int dbcs_screen_head_off(char_u *, char_u *);
+int enc_canon_props(char_u *);
+char_u *enc_canonize(char_u *);
+char_u *enc_locale(void);
+char_u *enc_skip(char_u *);
+int latin_char2bytes(int, char_u *);
+int latin_char2cells(int);
+int latin_head_off(char_u *, char_u *);
+int latin_off2cells(unsigned int, unsigned int);
+int latin_ptr2cells(char_u *);
+int latin_ptr2cells_len(char_u *, int);
+int latin_ptr2char(char_u *);
+int latin_ptr2len(char_u *);
+int latin_ptr2len_len(char_u *, int);
+void mb_adjust_cursor(void);
+void mb_adjustpos(buf_T *, pos_T *);
+int mb_charlen(char_u *);
+void mb_copy_char(char_u **, char_u **);
+int mb_cptr2char_adv(char_u **);
+int mb_fix_col(int, int);
+int mb_get_class(char_u *);
+int mb_get_class_buf(char_u *, buf_T *);
+char_u *mb_init(void);
+int mb_lefthalve(int, int);
+int mb_off_next(char_u *, char_u *);
+char_u *mb_prevptr(char_u *, char_u *);
+int mb_ptr2char_adv(char_u **);
+int mb_string2cells(char_u *, int);
+int mb_strnicmp(char_u *, char_u *, size_t);
+int mb_tail_off(char_u *, char_u *);
+char_u *mb_unescape(char_u **);
+void *my_iconv_open(char_u *, char_u *);
+void remove_bom(char_u *);
+void show_utf8(void);
+char_u *string_convert(vimconv_T *, char_u *, int *);
+char_u *string_convert_ext(vimconv_T *, char_u *, int *, int *);
+int utf_byte2len(int);
+int utf_char2bytes(int, char_u *);
+int utf_char2cells(int);
+int utf_char2len(int);
+int utf_class(int);
+void utf_find_illegal(void);
+int utf_fold(int);
+int utf_head_off(char_u *, char_u *);
+int utf_iscomposing(int);
+int utf_islower(int);
+int utf_isupper(int);
+int utf_off2cells(unsigned int, unsigned int);
+int utf_printable(int);
+int utf_ptr2cells(char_u *);
+int utf_ptr2char(char_u *);
+int utf_ptr2len(char_u *);
+int utf_ptr2len_len(char_u *, int);
+int utf_tolower(int);
+int utf_toupper(int);
+int utfc_char2bytes(int, char_u *);
+int utfc_ptr2char(char_u *, int *);
+int utfc_ptr2char_len(char_u *, int *, int);
+int utfc_ptr2len(char_u *);
+int utfc_ptr2len_len(char_u *, int);
+static int dbcs_char2bytes(int, char_u *);
+static int dbcs_char2cells(int);
+static int dbcs_char2len(int);
+static int dbcs_ptr2cells_len(char_u *, int);
+static int dbcs_ptr2char(char_u *);
+static int dbcs_ptr2len(char_u *);
+static int dbcs_ptr2len_len(char_u *, int);
+static int intable(struct interval *, size_t, int);
+static int utf_convert(int, convertStruct *, int);
+static int utf_ptr2cells_len(char_u *, int);
+static int utf_safe_read_char_adv(char_u **, size_t *);
+
+File memfile.c:
+void mf_close(memfile_T *, int);
+void mf_close_file(buf_T *, int);
+void mf_free(memfile_T *, bhdr_T *);
+void mf_fullname(memfile_T *);
+bhdr_T *mf_get(memfile_T *, blocknr_T, int);
+int mf_need_trans(memfile_T *);
+bhdr_T *mf_new(memfile_T *, int, int);
+void mf_new_page_size(memfile_T *, unsigned int);
+memfile_T *mf_open(char_u *, int);
+int mf_open_file(memfile_T *, char_u *);
+void mf_put(memfile_T *, bhdr_T *, int, int);
+int mf_release_all(void);
+void mf_set_dirty(memfile_T *);
+void mf_set_ffname(memfile_T *);
+int mf_sync(memfile_T *, int);
+blocknr_T mf_trans_del(memfile_T *, blocknr_T);
+static bhdr_T *mf_alloc_bhdr(int, memfile_T *);
+static void mf_do_open(memfile_T *, char_u *, int);
+static void mf_hash_add_item(mf_hashtab_T *, mf_hashitem_T *);
+static bhdr_T *mf_release(memfile_T *, int);
+static int mf_trans_add(memfile_T *, bhdr_T *);
+static int mf_write(memfile_T *, bhdr_T *);
+
+File memline.c:
+void check_need_swap(int);
+char_u *get_file_in_dir(char_u *, char_u *);
+char_u *makeswapname(char_u *, char_u *, buf_T *, char_u *);
+int ml_append(linenr_T, char_u *, colnr_T, int);
+void ml_clearmarked(void);
+void ml_close(buf_T *, int);
+void ml_close_all(int);
+void ml_close_notmod(void);
+int ml_delete(linenr_T, int);
+linenr_T ml_firstmarked(void);
+char_u *ml_get(linenr_T);
+char_u *ml_get_buf(buf_T *, linenr_T, int);
+char_u *ml_get_curline(void);
+char_u *ml_get_cursor(void);
+char_u *ml_get_pos(pos_T *);
+int ml_line_alloced(void);
+int ml_open(buf_T *);
+void ml_open_file(buf_T *);
+void ml_open_files(void);
+void ml_preserve(buf_T *, int);
+void ml_recover(void);
+int ml_replace(linenr_T, char_u *, int);
+void ml_setflags(buf_T *);
+void ml_setmarked(linenr_T);
+void ml_setname(buf_T *);
+void ml_sync_all(int, int);
+void ml_timestamp(buf_T *);
+int recover_names(char_u *, int, int, char_u **);
+int resolve_symlink(char_u *, char_u *);
+static void add_b0_fenc(ZERO_BL *, buf_T *);
+static char_u *findswapname(buf_T *, char_u **, char_u *);
+static int fnamecmp_ino(char_u *, char_u *, long);
+static char_u *make_percent_swname(char_u *, char_u *);
+static int ml_add_stack(buf_T *);
+static int ml_append_int(buf_T *, linenr_T, char_u *, colnr_T, int, int);
+static int ml_check_b0_id(ZERO_BL *, ZERO_BL *);
+static int ml_delete_int(buf_T *, linenr_T, int);
+static bhdr_T *ml_find_line(buf_T *, linenr_T, int);
+static void ml_flush_line(buf_T *);
+static void ml_lineadd(buf_T *, int);
+static bhdr_T *ml_new_data(memfile_T *, int, int);
+static bhdr_T *ml_new_ptr(memfile_T *);
+static void ml_upd_block0(buf_T *, upd_block0_T);
+static int recov_file_names(char_u **, char_u *, int);
+static void set_b0_fname(ZERO_BL *, buf_T *);
+static time_t swapfile_info(char_u *);
+
+File message.c:
+void clear_sb_text(void);
+int delete_first_msg(void);
+int emsg(char_u *);
+int emsg2(char_u *, char_u *);
+void emsg_invreg(int);
+int emsg_not_now(void);
+void ex_messages(exarg_T *);
+void give_warning(char_u *, int);
+void may_clear_sb_text(void);
+int msg(char_u *);
+void msg_advance(int);
+int msg_attr(char_u *, int);
+int msg_attr_keep(char_u *, int, int);
+void msg_check(void);
+void msg_clr_cmdline(void);
+void msg_clr_eos(void);
+void msg_clr_eos_force(void);
+int msg_end(void);
+void msg_home_replace(char_u *);
+char_u *msg_may_trunc(int, char_u *);
+void msg_moremsg(int);
+void msg_outnum(long);
+int msg_outtrans(char_u *);
+int msg_outtrans_attr(char_u *, int);
+int msg_outtrans_len(char_u *, int);
+int msg_outtrans_len_attr(char_u *, int, int);
+char_u *msg_outtrans_one(char_u *, int);
+int msg_outtrans_special(char_u *, int);
+void msg_prt_line(char_u *, int);
+void msg_putchar(int);
+void msg_putchar_attr(int, int);
+void msg_puts(char_u *);
+void msg_puts_attr(char_u *, int);
+void msg_puts_long_attr(char_u *, int);
+void msg_puts_long_len_attr(char_u *, int, int);
+void msg_puts_title(char_u *);
+void msg_sb_eol(void);
+void msg_source(int);
+void msg_start(void);
+void msg_starthere(void);
+char_u *msg_strtrunc(char_u *, int);
+char_u *msg_trunc_attr(char_u *, int, int);
+int msg_use_printf(void);
+int redirecting(void);
+void repeat_message(void);
+void reset_last_sourcing(void);
+void set_keep_msg(char_u *, int);
+void show_sb_text(void);
+int smsg(char_u *, ...);
+int smsg_attr(int, char_u *, ...);
+char_u *str2special(char_u **, int);
+void str2specialbuf(char_u *, char_u *, int);
+void trunc_string(char_u *, char_u *, int, int);
+void verbose_enter(void);
+void verbose_enter_scroll(void);
+void verbose_leave(void);
+void verbose_leave_scroll(void);
+int verbose_open(void);
+void verbose_stop(void);
+int vim_snprintf(char *, size_t, char *, ...);
+int vim_snprintf_add(char *, size_t, char *, ...);
+int vim_vsnprintf(char *, size_t, char *, va_list, typval_T *);
+void wait_return(int);
+static void add_msg_hist(char_u *, int, int);
+static msgchunk_T *disp_sb_line(int, msgchunk_T *);
+static int do_more_prompt(int);
+static char_u *get_emsg_lnum(void);
+static char_u *get_emsg_source(void);
+static void hit_return_msg(void);
+static void msg_puts_attr_len(char_u *, int, int);
+static void msg_puts_display(char_u *, int, int, int);
+static void msg_screen_putchar(int, int);
+static void msg_scroll_up(void);
+static int other_sourcing_name(void);
+static void redir_write(char_u *, int);
+static char_u *screen_puts_mbyte(char_u *, int, int);
+static void store_sb_text(char_u **, char_u *, int, int *, int);
+static void t_puts(int *, char_u *, char_u *, int);
+
+File misc1.c:
+void FreeWild(int, char_u **);
+char_u *FullName_save(char_u *, int);
+void add_pathsep(char_u *);
+void addfile(garray_T *, char_u *, int);
+void appended_lines(linenr_T, long);
+void appended_lines_mark(linenr_T, long);
+int ask_yesno(char_u *, int);
+void beep_flush(void);
+void change_warning(int);
+void changed(void);
+void changed_bytes(linenr_T, colnr_T);
+void changed_int(void);
+void changed_lines(linenr_T, colnr_T, linenr_T, long);
+void check_status(buf_T *);
+char_u *concat_fnames(char_u *, char_u *, int);
+char_u *concat_str(char_u *, char_u *);
+int del_bytes(long, int, int);
+int del_char(int);
+int del_chars(long, int);
+void del_lines(long, int);
+void deleted_lines(linenr_T, long);
+void deleted_lines_mark(linenr_T, long);
+int dir_of_file_exists(char_u *);
+void expand_env(char_u *, char_u *, int);
+void expand_env_esc(char_u *, char_u *, int, int, int, char_u *);
+char_u *expand_env_save(char_u *);
+char_u *expand_env_save_opt(char_u *, int);
+int expand_wildcards(int, char_u **, int *, char_u ***, int);
+int expand_wildcards_eval(char_u **, int *, char_u ***, int);
+void fast_breakcheck(void);
+int fullpathcmp(char_u *, char_u *, int);
+int gchar_cursor(void);
+int gchar_pos(pos_T *);
+int gen_expand_wildcards(int, char_u **, int *, char_u ***, int);
+int get_indent(void);
+int get_indent_lnum(linenr_T);
+int get_indent_str(char_u *, int, int);
+char_u *get_isolated_shell_name(void);
+int get_keystroke(void);
+int get_number(int, int *);
+int get_number_indent(linenr_T);
+char_u *get_past_head(char_u *);
+char_u *getnextcomp(char_u *);
+char_u *gettail(char_u *);
+char_u *gettail_sep(char_u *);
+int goto_im(void);
+void home_replace(buf_T *, char_u *, char_u *, int, int);
+char_u *home_replace_save(buf_T *, char_u *);
+int inindent(int);
+void init_homedir(void);
+void ins_bytes_len(char_u *, int);
+void ins_char(int);
+void ins_char_bytes(char_u *, int);
+void ins_str(char_u *);
+void line_breakcheck(void);
+int match_suffix(char_u *);
+void msgmore(long);
+int open_line(int, int, int);
+void pchar_cursor(int);
+int plines(linenr_T);
+int plines_m_win(win_T *, linenr_T, linenr_T);
+int plines_win(win_T *, linenr_T, int);
+int plines_win_col(win_T *, linenr_T, long);
+int plines_win_nofold(win_T *, linenr_T);
+void prepare_to_exit(void);
+void preserve_exit(void);
+int prompt_for_number(int *);
+int set_indent(int, int);
+void shorten_dir(char_u *);
+char_u *skip_to_option_part(char_u *);
+int truncate_line(int);
+void unchanged(buf_T *, int);
+int unix_expandpath(garray_T *, char_u *, int, int, int);
+void vim_beep(void);
+int vim_fexists(char_u *);
+int vim_fnamecmp(char_u *, char_u *);
+int vim_fnamencmp(char_u *, char_u *, size_t);
+char_u *vim_getenv(char_u *, int *);
+int vim_ispathsep_nocolon(int);
+void vim_setenv(char_u *, char_u *);
+static void changed_common(linenr_T, colnr_T, linenr_T, long);
+static int has_env_var(char_u *);
+static int pstrcmp(const void *, const void *);
+static char_u *remove_tail(char_u *, char_u *, char_u *);
+static char_u *vim_version_dir(char_u *);
+
+File misc2.c:
+int after_pathsep(char_u *, char_u *);
+char_u *alloc_check(unsigned int);
+char_u *alloc_clear(unsigned int);
+void append_ga_line(garray_T *);
+int call_shell(char_u *, int);
+void check_cursor(void);
+void check_cursor_col(void);
+void check_cursor_col_win(win_T *);
+void check_cursor_lnum(void);
+int coladvance(colnr_T);
+int copy_option_part(char_u **, char_u *, int, char *);
+void copy_spaces(char_u *, size_t);
+int csh_like_shell(void);
+int dec(pos_T *);
+int dec_cursor(void);
+int decl(pos_T *);
+int default_fileformat(void);
+void del_trailing_spaces(char_u *);
+void do_outofmem_msg(long_u);
+int emsg3(char_u *, char_u *, char_u *);
+int emsgn(char_u *, long);
+int extract_modifiers(int, int *);
+int find_special_key(char_u **, int *, int, int);
+int find_special_key_in_table(int);
+void ga_append(garray_T *, int);
+void ga_clear(garray_T *);
+void ga_clear_strings(garray_T *);
+void ga_concat(garray_T *, char_u *);
+char_u *ga_concat_strings(garray_T *, char *);
+int ga_grow(garray_T *, int);
+void ga_init(garray_T *);
+void ga_init2(garray_T *, int, int);
+linenr_T get_cursor_rel_lnum(win_T *, linenr_T);
+int get_fileformat(buf_T *);
+int get_fileformat_force(buf_T *, exarg_T *);
+int get_real_state(void);
+int get_special_key_code(char_u *);
+char_u *get_special_key_name(int, int);
+int get_user_name(char_u *, int);
+int getvpos(pos_T *, colnr_T);
+int handle_x_keys(int);
+int inc(pos_T *);
+int inc_cursor(void);
+int incl(pos_T *);
+char_u *lalloc(long_u, int);
+char_u *lalloc_clear(long_u, int);
+int leftcol_changed(void);
+int name_to_mod_mask(int);
+int pathcmp(const char *, const char *, int);
+int same_directory(char_u *, char_u *);
+void set_fileformat(int, int);
+int simplify_key(int, int *);
+void sort_strings(char_u **, int);
+int trans_special(char_u **, char_u *, int);
+int vim_chdir(char_u *);
+char_u *vim_findfile(void *);
+void vim_findfile_cleanup(void *);
+void vim_findfile_free_visited(void *);
+void *vim_findfile_init(char_u *, char_u *, char_u *, int, int, int, void *, int, char_u *);
+void vim_free(void *);
+int vim_isspace(int);
+char_u *vim_strbyte(char_u *, int);
+void vim_strcat(char_u *, char_u *, size_t);
+char_u *vim_strchr(char_u *, int);
+void vim_strncpy(char_u *, char_u *, size_t);
+char_u *vim_strnsave(char_u *, int);
+char_u *vim_strnsave_up(char_u *, int);
+char_u *vim_strrchr(char_u *, int);
+char_u *vim_strsave(char_u *);
+char_u *vim_strsave_escaped(char_u *, char_u *);
+char_u *vim_strsave_escaped_ext(char_u *, char_u *, int, int);
+char_u *vim_strsave_shellescape(char_u *, int, int);
+char_u *vim_strsave_up(char_u *);
+void vim_strup(char_u *);
+static int ff_check_visited(ff_visited_T **, char_u *);
+static void ff_clear(ff_search_ctx_T *);
+static void ff_free_stack_element(ff_stack_T *);
+static ff_visited_list_hdr_T *ff_get_visited_list(char_u *, ff_visited_list_hdr_T **);
+static int sort_compare(const void *, const void *);
+static void vim_findfile_free_visited_list(ff_visited_list_hdr_T **);
+
+File move.c:
+void approximate_botline_win(win_T *);
+void changed_cline_bef_curs(void);
+void changed_cline_bef_curs_win(win_T *);
+void changed_line_abv_curs(void);
+void changed_line_abv_curs_win(win_T *);
+void changed_window_setting(void);
+void changed_window_setting_win(win_T *);
+void check_cursor_moved(win_T *);
+void curs_columns(int);
+void cursor_correct(void);
+int cursor_valid(void);
+int curwin_col_off(void);
+int curwin_col_off2(void);
+void halfpage(int, linenr_T);
+void invalidate_botline(void);
+void invalidate_botline_win(win_T *);
+int onepage(int, long);
+void scroll_cursor_bot(int, int);
+void scroll_cursor_halfway(int);
+void scroll_cursor_top(int, int);
+void scrolldown(long, int);
+void scrollup(long, int);
+void set_empty_rows(win_T *, int);
+void set_topline(win_T *, linenr_T);
+void update_curswant(void);
+void update_topline(void);
+void update_topline_redraw(void);
+void validate_botline(void);
+void validate_cursor(void);
+void validate_cursor_col(void);
+void validate_virtcol(void);
+void validate_virtcol_win(win_T *);
+int win_col_off(win_T *);
+int win_col_off2(win_T *);
+static void botline_forw(lineoff_T *);
+static int check_top_offset(void);
+static void comp_botline(win_T *);
+static void get_scroll_overlap(lineoff_T *, int);
+static void validate_cheight(void);
+
+File normal.c:
+void check_visual_highlight(void);
+void do_nv_ident(int, int);
+void do_pending_operator(cmdarg_T *, int, int);
+void end_visual_mode(void);
+int find_decl(char_u *, int, int, int, int);
+int find_ident_at_pos(win_T *, linenr_T, colnr_T, char_u **, int);
+int find_ident_under_cursor(char_u **, int);
+int get_visual_text(cmdarg_T *, char_u **, int *);
+void init_normal_cmds(void);
+void may_start_select(int);
+void normal_cmd(oparg_T *, int);
+void reset_VIsual(void);
+void reset_VIsual_and_resel(void);
+void scroll_redraw(int, long);
+void start_selection(void);
+static void adjust_cursor(oparg_T *);
+static void adjust_for_sel(cmdarg_T *);
+static int find_command(int);
+static void invoke_edit(int, int, int, cmdarg_T *, cmdarg_T *);
+static void n_start_visual_mode(int);
+static int normal_search(int, char_u *, int, cmdarg_T *, cmdarg_T *);
+static void nv_Replace(cmdarg_T *);
+static void nv_Undo(cmdarg_T *);
+static void nv_Zet(cmdarg_T *);
+static void nv_abbrev(cmdarg_T *);
+static void nv_addsub(cmdarg_T *);
+static void nv_at(cmdarg_T *);
+static void nv_bck_word(cmdarg_T *);
+static void nv_beginline(cmdarg_T *);
+static void nv_brace(cmdarg_T *);
+static void nv_brackets(cmdarg_T *);
+static void nv_clear(cmdarg_T *);
+static void nv_colon(cmdarg_T *);
+static int nv_compare(const void *, const void *);
+static void nv_csearch(cmdarg_T *);
+static void nv_ctrlg(cmdarg_T *);
+static void nv_ctrlh(cmdarg_T *);
+static void nv_ctrlo(cmdarg_T *);
+static void nv_cursormark(int, pos_T *, cmdarg_T *, cmdarg_T *);
+static void nv_dollar(cmdarg_T *);
+static void nv_dot(cmdarg_T *);
+static void nv_down(cmdarg_T *);
+static void nv_edit(cmdarg_T *);
+static void nv_end(cmdarg_T *);
+static void nv_error(cmdarg_T *);
+static void nv_esc(cmdarg_T *);
+static void nv_exmode(cmdarg_T *);
+static void nv_findpar(cmdarg_T *);
+static void nv_g_cmd(cmdarg_T *);
+static void nv_gomark(cmdarg_T *);
+static void nv_goto(cmdarg_T *);
+static void nv_halfpage(cmdarg_T *);
+static void nv_hat(cmdarg_T *);
+static void nv_help(cmdarg_T *);
+static void nv_home(cmdarg_T *);
+static void nv_ident(cmdarg_T *);
+static void nv_ignore(cmdarg_T *);
+static void nv_join(cmdarg_T *);
+static void nv_kundo(cmdarg_T *);
+static void nv_left(cmdarg_T *);
+static void nv_lineop(cmdarg_T *);
+static void nv_mark(cmdarg_T *);
+static void nv_next(cmdarg_T *);
+static void nv_nop(cmdarg_T *);
+static void nv_normal(cmdarg_T *);
+static void nv_open(cmdarg_T *);
+static void nv_operator(cmdarg_T *);
+static void nv_optrans(cmdarg_T *);
+static void nv_page(cmdarg_T *);
+static void nv_pcmark(cmdarg_T *);
+static void nv_percent(cmdarg_T *);
+static void nv_pipe(cmdarg_T *);
+static void nv_put(cmdarg_T *);
+static void nv_record(cmdarg_T *);
+static void nv_redo(cmdarg_T *);
+static void nv_regname(cmdarg_T *);
+static void nv_replace(cmdarg_T *);
+static void nv_right(cmdarg_T *);
+static int nv_screengo(int, long, oparg_T *, oparg_T *);
+static void nv_scroll(cmdarg_T *);
+static void nv_scroll_line(cmdarg_T *);
+static void nv_search(cmdarg_T *);
+static void nv_select(cmdarg_T *);
+static void nv_subst(cmdarg_T *);
+static void nv_suspend(cmdarg_T *);
+static void nv_tagpop(cmdarg_T *);
+static void nv_tilde(cmdarg_T *);
+static void nv_undo(cmdarg_T *);
+static void nv_up(cmdarg_T *);
+static void nv_visual(cmdarg_T *);
+static void nv_window(cmdarg_T *);
+static void nv_wordcmd(cmdarg_T *);
+static void nv_zet(cmdarg_T *);
+static void op_colon(oparg_T *);
+static void prep_redo(int, long, int, int, int, int, int);
+static void prep_redo_cmd(cmdarg_T *);
+static int unadjust_for_sel(void);
+static void unshift_special(cmdarg_T *);
+static void v_visop(cmdarg_T *);
+
+File ops.c:
+void adjust_cursor_eol(void);
+void clear_oparg(oparg_T *);
+int cmdline_paste_reg(int, int, int);
+void cursor_pos_info(void);
+int do_addsub(int, linenr_T);
+int do_execreg(int, int, int, int);
+int do_join(long, int, int, int, int);
+void do_put(int, int, long, int);
+int do_record(int);
+void ex_display(exarg_T *);
+void format_lines(linenr_T, int);
+void free_register(void *);
+int get_extra_op_char(int);
+int get_op_char(int);
+int get_op_type(int, int);
+void *get_register(int, int);
+int get_register_name(int);
+int get_spec_reg(int, char_u **, int *, int);
+void get_yank_register(int, int);
+void init_yank(void);
+int insert_reg(int, int);
+int op_change(oparg_T *);
+int op_delete(oparg_T *);
+void op_format(oparg_T *, int);
+int op_on_lines(int);
+void op_shift(oparg_T *, int, int);
+void op_tilde(oparg_T *);
+int op_yank(oparg_T *, int, int);
+int paragraph_start(linenr_T);
+void put_register(int, void *);
+void shift_line(int, int, int, int);
+int swapchar(int, pos_T *);
+int valid_yank_reg(int, int);
+static void block_prep(oparg_T *, struct block_def *, linenr_T, int);
+static void dis_msg(char_u *, int);
+static int ends_in_white(linenr_T);
+static int fmt_check_par(linenr_T);
+static void free_yank(long);
+static long line_count_info(char_u *, long *, long *, long, int);
+static int put_in_typebuf(char_u *, int, int, int);
+static void put_reedit_in_typebuf(int);
+static void stuffescaped(char_u *, int);
+static int swapchars(int, pos_T *, int);
+static int yank_copy_line(struct block_def *, long);
+
+File option.c:
+void buf_copy_options(buf_T *, int);
+int can_bs(int);
+void change_compatible(int);
+void check_buf_options(buf_T *);
+int check_ff_value(char_u *);
+void check_options(void);
+void clear_string_option(char_u **);
+void clear_termoptions(void);
+void clear_winopt(winopt_T *);
+void comp_col(void);
+void copy_winopt(winopt_T *, winopt_T *);
+int do_set(char_u *, int);
+int file_ff_differs(buf_T *, int);
+void find_mps_values(int *, int *, int *, int);
+void free_one_termoption(char_u *);
+void free_string_option(char_u *);
+void free_termoptions(void);
+unsigned int get_bkc_value(buf_T *);
+char_u *get_encoding_default(void);
+char_u *get_equalprg(void);
+char_u *get_highlight_default(void);
+long get_sts_value(void);
+long get_sw_value(buf_T *);
+char_u *get_term_code(char_u *);
+int has_format_option(int);
+int makeset(FILE *, int, int);
+int option_was_set(char_u *);
+void reset_modifiable(void);
+void reset_option_was_set(char_u *);
+void save_file_ff(buf_T *);
+void set_iminsert_global(void);
+void set_imsearch_global(void);
+void set_init_1(void);
+void set_init_2(void);
+void set_init_3(void);
+void set_number_default(char *, long);
+char_u *set_option_value(char_u *, long, char_u *, int);
+void set_options_bin(int, int, int);
+void set_string_default(char *, char_u *);
+void set_string_option_direct(char_u *, int, char_u *, int, int);
+void set_term_defaults(void);
+void set_term_option_alloced(char_u **);
+int shortmess(int);
+void unset_global_local_option(char_u *, void *);
+void vimrc_found(char_u *, char_u *);
+void win_copy_options(win_T *, win_T *);
+static int check_opt_wim(void);
+static void check_redraw(long_u);
+static void compatible_set(void);
+static char_u *did_set_string_option(int, char_u **, char_u *, char_u *, int, int);
+static void didset_options(void);
+static int find_key_option(char_u *);
+static int findoption(char_u *);
+static char_u *get_varp(struct vimoption *, struct vimoption *);
+static char_u *get_varp_scope(struct vimoption *, int);
+static int opt_strings_flags(char_u *, char **, unsigned int *, int);
+static char_u *option_expand(int, char_u *);
+static void option_value2string(struct vimoption *, int);
+static int optval_default(struct vimoption *, char_u *);
+static char_u *set_bool_option(int, char_u *, int, int);
+static char_u *set_chars_option(char_u **);
+static char_u *set_num_option(int, char_u *, long, char_u *, size_t, int);
+static void set_option_default(int, int, int);
+static void set_options_default(int);
+static void set_string_option_global(int, char_u **);
+static void showoneopt(struct vimoption *, int);
+static void showoptions(int, int);
+static char_u *term_bg_default(void);
+
+File os_unix.c:
+void get_stty(void);
+int mch_FullName(char_u *, char_u *, int, int);
+void mch_breakcheck(void);
+int mch_call_shell(char_u *, int);
+int mch_can_exe(char_u *, char_u **, int);
+int mch_char_avail(void);
+int mch_chdir(char *);
+int mch_check_win(int, char **);
+void mch_copy_sec(char_u *, char_u *);
+void mch_delay(long, int);
+int mch_dirname(char_u *, int);
+void mch_early_init(void);
+void mch_exit(int);
+int mch_expand_wildcards(int, char_u **, int *, char_u ***, int);
+int mch_expandpath(garray_T *, char_u *, int);
+void mch_free_acl(vim_acl_T);
+vim_acl_T mch_get_acl(char_u *);
+void mch_get_host_name(char_u *, int);
+long mch_get_pid(void);
+int mch_get_shellsize(void);
+int mch_get_uname(uid_t, char_u *, int);
+int mch_get_user_name(char_u *, int);
+long mch_getperm(char_u *);
+int mch_has_exp_wildcard(char_u *);
+int mch_has_wildcard(char_u *);
+void mch_hide(char_u *);
+int mch_inchar(char_u *, int, long, int);
+void mch_init(void);
+int mch_input_isatty(void);
+int mch_isFullName(char_u *);
+int mch_isdir(char_u *);
+void mch_new_shellsize(void);
+int mch_nodetype(char_u *);
+int mch_screenmode(char_u *);
+void mch_set_acl(char_u *, vim_acl_T);
+void mch_set_shellsize(void);
+int mch_setperm(char_u *, long);
+void mch_settmode(int);
+void mch_suspend(void);
+long_u mch_total_mem(int);
+void mch_write(char_u *, int);
+void reset_signals(void);
+int vim_handle_signal(int);
+int vim_is_fastterm(char_u *);
+int vim_is_iris(char_u *);
+int vim_is_vt300(char_u *);
+int vim_is_xterm(char_u *);
+static int RealWaitForChar(int, long, int *);
+static int WaitForChar(long);
+static void catch_sigint(int);
+static void catch_signals(void (*)(), void (*)());
+static void catch_sigpwr(int);
+static void deathtrap(int);
+static int executable_file(char_u *);
+static void exit_scroll(void);
+static void may_core_dump(void);
+static int save_patterns(int, char_u **, int *, char_u ***);
+static void set_signals(void);
+static void sig_winch(int);
+static pid_t wait4pid(pid_t, waitstatus *);
+
+File regexp.c:
+int re_lookbehind(regprog_T *);
+int re_multiline(regprog_T *);
+char_u *regtilde(char_u *, int);
+char_u *skip_regexp(char_u *, int, int, char_u **);
+regprog_T *vim_regcomp(char_u *, int);
+int vim_regexec(regmatch_T *, char_u *, colnr_T);
+long vim_regexec_multi(regmmatch_T *, win_T *, buf_T *, linenr_T, colnr_T, proftime_T *);
+int vim_regexec_prog(regprog_T **, int, char_u *, colnr_T);
+void vim_regfree(regprog_T *);
+int vim_regsub_multi(regmmatch_T *, linenr_T, char_u *, char_u *, int, int, int);
+static regprog_T *bt_regcomp(char_u *, int);
+static long bt_regexec_both(char_u *, colnr_T, proftime_T *);
+static long bt_regexec_multi(regmmatch_T *, win_T *, buf_T *, linenr_T, colnr_T, proftime_T *);
+static int bt_regexec_nl(regmatch_T *, char_u *, colnr_T, int);
+static void bt_regfree(regprog_T *);
+static void cleanup_subexpr(void);
+static int coll_get_char(void);
+static char_u *cstrchr(char_u *, int);
+static int cstrncmp(char_u *, char_u *, int *);
+static fptr_T do_Lower(int *, int);
+static fptr_T do_Upper(int *, int);
+static fptr_T do_lower(int *, int);
+static fptr_T do_upper(int *, int);
+static int get_char_class(char_u **);
+static int get_coll_element(char_u **);
+static void get_cpo_flags(void);
+static int get_equi_class(char_u **);
+static int gethexchrs(int);
+static int getoctchrs(void);
+static void init_class_tab(void);
+static int match_with_backref(linenr_T, colnr_T, linenr_T, colnr_T, int *);
+static int peekchr(void);
+static int prog_magic_wrong(void);
+static int re_mult_next(char *);
+static int re_multi_type(int);
+static int read_limits(long *, long *);
+static char_u *reg(int, int *);
+static char_u *reg_getline(linenr_T);
+static int reg_match_visual(void);
+static void reg_nextline(void);
+static int reg_prev_class(void);
+static void reg_restore(regsave_T *, garray_T *);
+static char_u *regatom(int *);
+static char_u *regbranch(int *);
+static void regc(int);
+static void regcomp_start(char_u *, int);
+static void reginsert(int, char_u *);
+static void reginsert_limits(long, long, char_u *, int);
+static void regmbc(int);
+static char_u *regnode(int);
+static void regoptail(char_u *, char_u *);
+static int regrepeat(char_u *, long);
+static regitem_T *regstack_push(regstate_T, char_u *);
+static void regtail(char_u *, char_u *);
+static long regtry(bt_regprog_T *, colnr_T);
+static void restore_subexpr(regbehind_T *);
+static char_u *skip_anyof(char_u *);
+static void skipchr(void);
+static int use_multibytecode(int);
+static int vim_regexec_both(regmatch_T *, char_u *, colnr_T, int);
+
+File regexp_nfa.c:
+static regsubs_T *addstate(nfa_list_T *, nfa_state_T *, regsubs_T *, nfa_pim_T *, int);
+static void addstate_here(nfa_list_T *, nfa_state_T *, regsubs_T *, nfa_pim_T *, int *);
+static void clear_sub(regsub_T *);
+static void copy_sub(regsub_T *, regsub_T *);
+static void copy_sub_off(regsub_T *, regsub_T *);
+static int failure_chance(nfa_state_T *, int);
+static int has_state_with_pos(regsubs_T *, nfa_pim_T *, nfa_state_T *, nfa_list_T *, nfa_list_T *);
+static int match_follows(nfa_state_T *, int);
+static int nfa_get_reganch(nfa_state_T *, int);
+static int nfa_get_regstart(nfa_state_T *, int);
+static int nfa_max_width(nfa_state_T *, int);
+static int nfa_reg(int);
+static int nfa_regatom(void);
+static int nfa_regbranch(void);
+static regprog_T *nfa_regcomp(char_u *, int);
+static int nfa_regconcat(void);
+static long nfa_regexec_both(char_u *, colnr_T, proftime_T *);
+static long nfa_regexec_multi(regmmatch_T *, win_T *, buf_T *, linenr_T, colnr_T, proftime_T *);
+static int nfa_regexec_nl(regmatch_T *, char_u *, colnr_T, int);
+static void nfa_regfree(regprog_T *);
+static int nfa_regmatch(nfa_regprog_T *, nfa_state_T *, regsubs_T *, regsubs_T *);
+static long nfa_regtry(nfa_regprog_T *, colnr_T, proftime_T *);
+static nfa_state_T *post2nfa(int *, int *, int);
+static int realloc_post_list(void);
+static int recursive_regmatch(nfa_state_T *, nfa_pim_T *, nfa_regprog_T *, regsubs_T *, regsubs_T *, int **);
+static int skip_to_start(int, colnr_T *);
+static Frag_T st_pop(Frag_T *, Frag_T **);
+static int state_in_list(nfa_list_T *, nfa_state_T *, regsubs_T *);
+
+File screen.c:
+int can_clear(char_u *);
+void check_for_delay(int);
+void free_screenlines(void);
+int get_keymap_str(win_T *, char_u *, int);
+void get_trans_bufname(buf_T *);
+int messaging(void);
+void redrawWinline(linenr_T, int);
+void redraw_all_later(int);
+int redraw_asap(int);
+void redraw_buf_later(buf_T *, int);
+void redraw_curbuf_later(int);
+void redraw_later(int);
+void redraw_later_clear(void);
+void redraw_statuslines(void);
+void redraw_win_later(win_T *, int);
+int redrawing(void);
+void reset_cterm_colors(void);
+int screen_del_lines(int, int, int, int, int, win_T *);
+void screen_fill(int, int, int, int, int, int, int);
+void screen_getbytes(int, int, char_u *, int *);
+int screen_ins_lines(int, int, int, int, win_T *);
+void screen_putchar(int, int, int, int);
+void screen_puts(char_u *, int, int, int);
+void screen_puts_len(char_u *, int, int, int, int);
+int screen_screencol(void);
+int screen_screenrow(void);
+void screen_start(void);
+void screen_stop_highlight(void);
+int screen_valid(int);
+void screenalloc(int);
+void screenclear(void);
+void setcursor(void);
+int showmode(void);
+void showruler(int);
+void status_redraw_all(void);
+void status_redraw_curbuf(void);
+void unshowmode(int);
+void update_curbuf(int);
+void update_screen(int);
+int win_del_lines(win_T *, int, int, int, int);
+int win_ins_lines(win_T *, int, int, int, int);
+void win_redr_status(win_T *);
+void windgoto(int, int);
+static int char_needs_redraw(int, int, int);
+static void draw_tabline(void);
+static void lineclear(unsigned int, int);
+static void screen_char(unsigned int, int, int);
+static void screen_char_2(unsigned int, int, int);
+static void screen_line(int, int, int, int);
+static void screenclear2(void);
+static int win_do_lines(win_T *, int, int, int, int);
+static void win_draw_end(win_T *, int, int, int, hlf_T, int);
+static void win_rest_invalid(win_T *);
+static void win_update(win_T *);
+
+File search.c:
+int bck_word(long, int, int);
+int bckend_word(long, int, int);
+int current_search(long, int);
+int do_search(oparg_T *, int, char_u *, long, int, proftime_T *);
+int end_word(long, int, int, int);
+pos_T *findmatch(oparg_T *, int);
+pos_T *findmatchlimit(oparg_T *, int, int, int);
+int findpar(int *, int, long, int, int);
+int findsent(int, long);
+int fwd_word(long, int, int);
+char_u *get_search_pat(void);
+int ignorecase(char_u *);
+char_u *last_search_pat(void);
+int pat_has_uppercase(char_u *);
+void reset_search_dir(void);
+void save_re_pat(int, char_u *, int);
+int search_regcomp(char_u *, int, int, int, regmmatch_T *);
+int searchc(cmdarg_T *, int);
+int searchit(win_T *, buf_T *, pos_T *, int, char_u *, long, int, int, linenr_T, proftime_T *);
+void showmatch(int);
+int startPS(linenr_T, int, int);
+static int check_linecomment(char_u *);
+static int check_prevcol(char_u *, int, int *, int);
+static int cls(void);
+static int inmacro(char_u *, char_u *);
+static int is_one_char(char_u *, int);
+
+File syntax.c:
+void clear_hl_tables(void);
+void do_highlight(char_u *, int, int);
+int highlight_changed(void);
+void init_highlight(int, int);
+int load_colors(char_u *);
+void restore_cterm_colors(void);
+int syn_attr2attr(int);
+int syn_check_group(char_u *, int);
+attrentry_T *syn_cterm_attr2entry(int);
+int syn_get_final_id(int);
+int syn_id2attr(int);
+int syn_name2id(char_u *);
+int syn_namen2id(char_u *, int);
+attrentry_T *syn_term_attr2entry(int);
+static int get_attr_entry(garray_T *, attrentry_T *);
+static void highlight_clear(int);
+static int highlight_list_arg(int, int, int, int, char_u *, char *);
+static void highlight_list_one(int);
+static int hl_has_settings(int, int);
+static void set_hl_attr(int);
+static int syn_list_header(int, int, int);
+
+File tag.c:
+int do_tag(char_u *, int, int, int, int);
+void do_tags(exarg_T *);
+int find_tags(char_u *, int *, char_u ***, int, int, char_u *);
+int get_tagfname(tagname_T *, int, char_u *);
+void simplify_filename(char_u *);
+void tag_freematch(void);
+void tagname_free(tagname_T *);
+static char_u *expand_tag_fname(char_u *, char_u *, int);
+static int find_extra(char_u **);
+static void found_tagfile_cb(char_u *, void *);
+static int parse_match(char_u *, tagptrs_T *);
+static int parse_tag_line(char_u *, tagptrs_T *);
+static int test_for_static(tagptrs_T *);
+
+File term.c:
+int add_termcap_entry(char_u *, int);
+void add_termcode(char_u *, char_u *, int);
+void check_shellsize(void);
+int check_termcode(int, char_u *, int, int *);
+void clear_termcodes(void);
+void cursor_off(void);
+void cursor_on(void);
+void del_termcode(char_u *);
+int find_term_bykeys(char_u *);
+char_u *find_termcode(char_u *);
+void getlinecol(long *, long *);
+void limit_screen_size(void);
+void out_char(unsigned int);
+void out_flush(void);
+void out_flush_check(void);
+void out_str(char_u *);
+char_u *replace_termcodes(char_u *, char_u **, int, int, int);
+void scroll_region_reset(void);
+void scroll_region_set(win_T *, int);
+void scroll_start(void);
+void set_shellsize(int, int, int);
+int set_termname(char_u *);
+void settmode(int);
+void shell_resized(void);
+void shell_resized_check(void);
+int show_one_termcode(char_u *, char_u *, int);
+void show_termcodes(void);
+void starttermcap(void);
+void stoptermcap(void);
+int swapping_screen(void);
+void term_append_lines(int);
+void term_bg_color(int);
+void term_cursor_right(int);
+void term_delete_lines(int);
+void term_fg_color(int);
+int term_is_8bit(char_u *);
+void term_set_winpos(int, int);
+void term_set_winsize(int, int);
+void term_windgoto(int, int);
+void termcapinit(char_u *);
+void ttest(int);
+void win_new_shellsize(void);
+static struct builtin_term *find_builtin_term(char_u *);
+static void out_char_nf(unsigned int);
+static void term_color(char_u *, int);
+static int termcode_star(char_u *, int);
+static char_u *tgetent_error(char_u *, char_u *);
+
+File ui.c:
+int check_col(int);
+int check_row(int);
+void fill_input_buf(int);
+void read_error_exit(void);
+int read_from_input_buf(char_u *, long);
+void ui_breakcheck(void);
+int ui_char_avail(void);
+void ui_delay(long, int);
+int ui_get_shellsize(void);
+int ui_inchar(char_u *, int, long, int);
+void ui_inchar_undo(char_u *, int);
+void ui_new_shellsize(void);
+void ui_set_shellsize(int);
+void ui_suspend(void);
+void ui_write(char_u *, int);
+int vim_is_input_buf_empty(void);
+int vim_is_input_buf_full(void);
+
+File undo.c:
+int bufIsChanged(buf_T *);
+int curbufIsChanged(void);
+void ex_undojoin(exarg_T *);
+void ex_undolist(exarg_T *);
+void u_blockfree(buf_T *);
+void u_clearall(buf_T *);
+void u_clearline(void);
+void u_find_first_changed(void);
+int u_inssub(linenr_T);
+void u_redo(int);
+int u_save(linenr_T, linenr_T);
+int u_save_cursor(void);
+int u_savecommon(linenr_T, linenr_T, linenr_T, int);
+int u_savedel(linenr_T, long);
+void u_saveline(linenr_T);
+int u_savesub(linenr_T);
+void u_sync(int);
+void u_unchanged(buf_T *);
+void u_undo(int);
+void u_undoline(void);
+void u_update_save_nr(buf_T *);
+int undo_allowed(void);
+void undo_time(long, int, int, int);
+static void u_add_time(char_u *, size_t, time_t);
+static void u_doit(int);
+static void u_freebranch(buf_T *, u_header_T *, u_header_T **);
+static void u_freeentries(buf_T *, u_header_T *, u_header_T **);
+static void u_freeentry(u_entry_T *, long);
+static void u_freeheader(buf_T *, u_header_T *, u_header_T **);
+static void u_getbot(void);
+static void u_unch_branch(u_header_T *);
+static void u_undo_end(int, int);
+static void u_undoredo(int);
+
+File version.c:
+void ex_intro(exarg_T *);
+void ex_version(exarg_T *);
+int highest_patch(void);
+void intro_message(int);
+void list_version(void);
+void maybe_intro_message(void);
+static void version_msg(char *);
+
+File window.c:
+win_T *buf_jump_open_tab(buf_T *);
+win_T *buf_jump_open_win(buf_T *);
+void check_lnums(int);
+void close_others(int, int);
+void close_windows(buf_T *, int);
+void command_height(void);
+void curwin_init(void);
+void do_window(int, long, int);
+tabpage_T *find_tabpage(int);
+void free_tabpage(tabpage_T *);
+void get_wincmd_addr_type(char_u *, exarg_T *);
+void goto_tabpage(int);
+void goto_tabpage_tp(tabpage_T *, int, int);
+void goto_tabpage_win(tabpage_T *, win_T *);
+void last_status(int);
+void make_snapshot(int);
+int make_tabpages(int);
+int make_windows(int, int);
+int may_open_tabpage(void);
+int min_rows(void);
+int one_window(void);
+int only_one_window(void);
+int path_with_url(char_u *);
+void restore_snapshot(int, int);
+void shell_new_rows(void);
+int tabline_height(void);
+int tabpage_index(tabpage_T *);
+void tabpage_move(int);
+int valid_tabpage(tabpage_T *);
+int vim_FullName(char_u *, char_u *, int, int);
+int vim_isAbsName(char_u *);
+int win_alloc_first(void);
+int win_alloc_lines(win_T *);
+void win_append(win_T *, win_T *);
+int win_close(win_T *, int);
+void win_close_othertab(win_T *, int, tabpage_T *);
+int win_comp_pos(void);
+void win_comp_scroll(win_T *);
+int win_count(void);
+void win_enter(win_T *, int);
+void win_equal(win_T *, int, int);
+void win_free_lsize(win_T *);
+void win_goto(win_T *);
+void win_init_empty(win_T *);
+void win_init_size(void);
+void win_move_after(win_T *, win_T *);
+void win_new_height(win_T *, int);
+int win_new_tabpage(int);
+void win_remove(win_T *, tabpage_T *);
+void win_setheight(int);
+void win_setheight_win(int, win_T *);
+void win_setminheight(void);
+int win_split(int, int);
+int win_split_ins(int, int, win_T *, int);
+int win_valid(win_T *);
+win_T *winframe_remove(win_T *, int *, tabpage_T *);
+static int check_snapshot_rec(frame_T *, frame_T *);
+static void clear_snapshot_rec(frame_T *);
+static int close_last_window_tabpage(win_T *, int, tabpage_T *);
+static void cmd_with_count(char *, char_u *, long, size_t);
+static void enter_tabpage(tabpage_T *, int, int, buf_T *);
+static void frame_add_height(frame_T *, int);
+static void frame_comp_pos(int *, int *, frame_T *, frame_T *);
+static int frame_fixed_height(frame_T *);
+static int frame_has_win(frame_T *, win_T *);
+static int frame_minheight(win_T *, frame_T *, frame_T *);
+static void frame_new_height(frame_T *, int, int, int);
+static void last_status_rec(frame_T *, int);
+static int leave_tabpage(int, buf_T *);
+static void make_snapshot_rec(frame_T *, frame_T **);
+static win_T *restore_snapshot_rec(frame_T *, frame_T *);
+static win_T *win_alloc(win_T *, int);
+static int win_alloc_firstwin(win_T *);
+static void win_enter_ext(win_T *, int, int, int, int);
+static void win_equal_rec(win_T *, int, frame_T *, int, int, int, int, int);
+static void win_free(win_T *, tabpage_T *);
+static void win_init(win_T *, win_T *, int);
+static void win_rotate(int, int);
+
+Non-debugging symbols:
+0x0000cc5c  _init
+0x00086f90  .udivsi3_skip_div0_test
+0x00086f90  __aeabi_uidiv
+0x00086f90  __udivsi3
+0x000871ec  __aeabi_uidivmod
+0x00087208  __aeabi_idiv
+0x00087208  __divsi3
+0x0008720e  .divsi3_skip_div0_test
+0x0008749c  __aeabi_idivmod
+0x000874b8  __aeabi_ldivmod
+0x00087558  __aeabi_idiv0
+0x00087558  __aeabi_ldiv0
+0x00087564  __udivmoddi4
+0x00087678  __libc_csu_init
+0x000876b4  __libc_csu_fini
+0x000876b8  _fini
+0x0000cc5c  _init
+0x0000cc7c  fdopen@plt
+0x0000cc8c  strstr@plt
+0x0000cc98  raise@plt
+0x0000cca4  getpwnam@plt
+0x0000ccb0  fsync@plt
+0x0000ccbc  is_selinux_enabled@plt
+0x0000ccc8  iconv_close@plt
+0x0000ccd4  sigset@plt
+0x0000cce0  iconv@plt
+0x0000ccec  strcmp@plt
+0x0000ccfc  __cxa_finalize@plt
+0x0000cd08  strtol@plt
+0x0000cd14  getpwuid@plt
+0x0000cd20  printf@plt
+0x0000cd2c  read@plt
+0x0000cd38  tputs@plt
+0x0000cd44  fflush@plt
+0x0000cd54  getuid@plt
+0x0000cd60  memmove@plt
+0x0000cd70  __memmove_chk@plt
+0x0000cd7c  free@plt
+0x0000cd8c  fgets@plt
+0x0000cd98  nanosleep@plt
+0x0000cda4  _exit@plt
+0x0000cdb0  memcpy@plt
+0x0000cdc0  execvp@plt
+0x0000cdcc  towlower@plt
+0x0000cddc  signal@plt
+0x0000cde8  time@plt
+0x0000cdf4  rmdir@plt
+0x0000ce00  tgoto@plt
+0x0000ce0c  _IO_getc@plt
+0x0000ce18  ftell@plt
+0x0000ce24  memcmp@plt
+0x0000ce30  select@plt
+0x0000ce3c  stpcpy@plt
+0x0000ce48  uname@plt
+0x0000ce54  ctime@plt
+0x0000ce60  __stack_chk_fail@plt
+0x0000ce6c  sysconf@plt
+0x0000ce78  unlink@plt
+0x0000ce84  getrlimit64@plt
+0x0000ce90  realloc@plt
+0x0000ce9c  dup@plt
+0x0000cea8  __fdelt_chk@plt
+0x0000ceb4  chdir@plt
+0x0000cec4  strcasecmp@plt
+0x0000ced0  mblen@plt
+0x0000cedc  __fxstat64@plt
+0x0000cee8  readlink@plt
+0x0000cef4  tgetflag@plt
+0x0000cf00  sigaction@plt
+0x0000cf0c  __memcpy_chk@plt
+0x0000cf18  _IO_putc@plt
+0x0000cf24  fwrite@plt
+0x0000cf34  strcat@plt
+0x0000cf44  ioctl@plt
+0x0000cf50  lseek64@plt
+0x0000cf5c  waitpid@plt
+0x0000cf68  tgetent@plt
+0x0000cf74  tcsetattr@plt
+0x0000cf80  strcpy@plt
+0x0000cf90  gettimeofday@plt
+0x0000cf9c  __strcpy_chk@plt
+0x0000cfa8  fread@plt
+0x0000cfb4  opendir@plt
+0x0000cfc0  tgetnum@plt
+0x0000cfcc  open64@plt
+0x0000cfd8  getenv@plt
+0x0000cfe4  acl_set_file@plt
+0x0000cff4  puts@plt
+0x0000d000  sysinfo@plt
+0x0000d00c  malloc@plt
+0x0000d018  iconv_open@plt
+0x0000d024  __libc_start_main@plt
+0x0000d030  strerror@plt
+0x0000d03c  strftime@plt
+0x0000d048  localtime@plt
+0x0000d054  __ctype_tolower_loc@plt
+0x0000d060  __ctype_toupper_loc@plt
+0x0000d06c  __gmon_start__@plt
+0x0000d078  rename@plt
+0x0000d084  kill@plt
+0x0000d094  __ctype_b_loc@plt
+0x0000d0a0  getcwd@plt
+0x0000d0ac  getpid@plt
+0x0000d0bc  exit@plt
+0x0000d0c8  getfilecon@plt
+0x0000d0d4  strlen@plt
+0x0000d0e0  setsid@plt
+0x0000d0ec  strchr@plt
+0x0000d0f8  setenv@plt
+0x0000d108  fchown@plt
+0x0000d114  fprintf@plt
+0x0000d120  fcntl@plt
+0x0000d12c  acl_get_file@plt
+0x0000d13c  __errno_location@plt
+0x0000d148  __strcat_chk@plt
+0x0000d154  strncasecmp@plt
+0x0000d160  __sprintf_chk@plt
+0x0000d16c  iswupper@plt
+0x0000d17c  getgid@plt
+0x0000d188  memset@plt
+0x0000d198  putchar@plt
+0x0000d1a8  strncpy@plt
+0x0000d1b4  write@plt
+0x0000d1c0  memchr@plt
+0x0000d1cc  setfilecon@plt
+0x0000d1d8  access@plt
+0x0000d1e4  fclose@plt
+0x0000d1f0  pipe@plt
+0x0000d1fc  __longjmp_chk@plt
+0x0000d208  setlocale@plt
+0x0000d214  sigemptyset@plt
+0x0000d220  fork@plt
+0x0000d22c  utime@plt
+0x0000d238  nl_langinfo@plt
+0x0000d244  fputc@plt
+0x0000d250  sprintf@plt
+0x0000d260  readdir64@plt
+0x0000d26c  mkdtemp@plt
+0x0000d278  tgetstr@plt
+0x0000d284  fchdir@plt
+0x0000d290  fopen64@plt
+0x0000d29c  qsort@plt
+0x0000d2ac  freecon@plt
+0x0000d2b8  strpbrk@plt
+0x0000d2c4  sync@plt
+0x0000d2d0  chmod@plt
+0x0000d2dc  fseek@plt
+0x0000d2e8  __xstat64@plt
+0x0000d2f4  isatty@plt
+0x0000d300  towupper@plt
+0x0000d310  fputs@plt
+0x0000d31c  strncmp@plt
+0x0000d32c  abort@plt
+0x0000d338  close@plt
+0x0000d344  __lxstat64@plt
+0x0000d350  closedir@plt
+0x0000d35c  acl_free@plt
+0x0000d36c  tcgetattr@plt
+0x0000d378  sigaltstack@plt
+0x0000d388  ftello64@plt
+0x00087678  __libc_csu_init
+0x000876b4  __libc_csu_fini
+0x000876b8  _fini

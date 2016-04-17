@@ -1,0 +1,821 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function shorten_dir:
+   0x0003b594 <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x0003b598 <+4>:	04 46	mov	r4, r0
+   0x0003b59a <+6>:	ff f7 6f ff	bl	0x3b47c <gettail>
+   0x0003b59e <+10>:	df f8 84 80	ldr.w	r8, [pc, #132]	; 0x3b624 <shorten_dir+144>
+   0x0003b5a2 <+14>:	00 26	movs	r6, #0
+   0x0003b5a4 <+16>:	25 46	mov	r5, r4
+   0x0003b5a6 <+18>:	f8 44	add	r8, pc
+   0x0003b5a8 <+20>:	07 46	mov	r7, r0
+   0x0003b5aa <+22>:	06 e0	b.n	0x3b5ba <shorten_dir+38>
+   0x0003b5ac <+24>:	2b 70	strb	r3, [r5, #0]
+   0x0003b5ae <+26>:	6a 1c	adds	r2, r5, #1
+   0x0003b5b0 <+28>:	23 78	ldrb	r3, [r4, #0]
+   0x0003b5b2 <+30>:	00 2b	cmp	r3, #0
+   0x0003b5b4 <+32>:	33 d0	beq.n	0x3b61e <shorten_dir+138>
+   0x0003b5b6 <+34>:	15 46	mov	r5, r2
+   0x0003b5b8 <+36>:	01 34	adds	r4, #1
+   0x0003b5ba <+38>:	bc 42	cmp	r4, r7
+   0x0003b5bc <+40>:	23 78	ldrb	r3, [r4, #0]
+   0x0003b5be <+42>:	f5 d2	bcs.n	0x3b5ac <shorten_dir+24>
+   0x0003b5c0 <+44>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0003b5c2 <+46>:	02 bf	ittt	eq
+   0x0003b5c4 <+48>:	2b 70	strbeq	r3, [r5, #0]
+   0x0003b5c6 <+50>:	01 35	addeq	r5, #1
+   0x0003b5c8 <+52>:	00 26	moveq	r6, #0
+   0x0003b5ca <+54>:	f5 d0	beq.n	0x3b5b8 <shorten_dir+36>
+   0x0003b5cc <+56>:	00 2e	cmp	r6, #0
+   0x0003b5ce <+58>:	f3 d1	bne.n	0x3b5b8 <shorten_dir+36>
+   0x0003b5d0 <+60>:	15 4a	ldr	r2, [pc, #84]	; (0x3b628 <shorten_dir+148>)
+   0x0003b5d2 <+62>:	05 f1 01 09	add.w	r9, r5, #1
+   0x0003b5d6 <+66>:	2b 70	strb	r3, [r5, #0]
+   0x0003b5d8 <+68>:	26 78	ldrb	r6, [r4, #0]
+   0x0003b5da <+70>:	58 f8 02 30	ldr.w	r3, [r8, r2]
+   0x0003b5de <+74>:	7e 2e	cmp	r6, #126	; 0x7e
+   0x0003b5e0 <+76>:	18 bf	it	ne
+   0x0003b5e2 <+78>:	2e 2e	cmpne	r6, #46	; 0x2e
+   0x0003b5e4 <+80>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b5e6 <+82>:	14 bf	ite	ne
+   0x0003b5e8 <+84>:	01 26	movne	r6, #1
+   0x0003b5ea <+86>:	00 26	moveq	r6, #0
+   0x0003b5ec <+88>:	0b b9	cbnz	r3, 0x3b5f2 <shorten_dir+94>
+   0x0003b5ee <+90>:	4d 46	mov	r5, r9
+   0x0003b5f0 <+92>:	e2 e7	b.n	0x3b5b8 <shorten_dir+36>
+   0x0003b5f2 <+94>:	0e 4b	ldr	r3, [pc, #56]	; (0x3b62c <shorten_dir+152>)
+   0x0003b5f4 <+96>:	20 46	mov	r0, r4
+   0x0003b5f6 <+98>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003b5fa <+102>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b5fc <+104>:	98 47	blx	r3
+   0x0003b5fe <+106>:	01 28	cmp	r0, #1
+   0x0003b600 <+108>:	f5 dd	ble.n	0x3b5ee <shorten_dir+90>
+   0x0003b602 <+110>:	05 44	add	r5, r0
+   0x0003b604 <+112>:	4b 46	mov	r3, r9
+   0x0003b606 <+114>:	22 46	mov	r2, r4
+   0x0003b608 <+116>:	12 f8 01 1f	ldrb.w	r1, [r2, #1]!
+   0x0003b60c <+120>:	03 f8 01 1b	strb.w	r1, [r3], #1
+   0x0003b610 <+124>:	ab 42	cmp	r3, r5
+   0x0003b612 <+126>:	f9 d1	bne.n	0x3b608 <shorten_dir+116>
+   0x0003b614 <+128>:	01 38	subs	r0, #1
+   0x0003b616 <+130>:	09 eb 00 05	add.w	r5, r9, r0
+   0x0003b61a <+134>:	04 44	add	r4, r0
+   0x0003b61c <+136>:	cc e7	b.n	0x3b5b8 <shorten_dir+36>
+   0x0003b61e <+138>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x0003b622 <+142>:	00 bf	nop
+   0x0003b624 <+144>:	f2 c0	stmia	r0!, {r1, r4, r5, r6, r7}
+   0x0003b626 <+146>:	06 00	movs	r6, r0
+   0x0003b628 <+148>:	24 05	lsls	r4, r4, #20
+   0x0003b62a <+150>:	00 00	movs	r0, r0
+   0x0003b62c <+152>:	9c 03	lsls	r4, r3, #14
+   0x0003b62e <+154>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function skip_to_option_part:
+   0x000398c0 <+0>:	03 78	ldrb	r3, [r0, #0]
+   0x000398c2 <+2>:	2c 2b	cmp	r3, #44	; 0x2c
+   0x000398c4 <+4>:	04 bf	itt	eq
+   0x000398c6 <+6>:	43 78	ldrbeq	r3, [r0, #1]
+   0x000398c8 <+8>:	01 30	addeq	r0, #1
+   0x000398ca <+10>:	01 e0	b.n	0x398d0 <skip_to_option_part+16>
+   0x000398cc <+12>:	10 f8 01 3f	ldrb.w	r3, [r0, #1]!
+   0x000398d0 <+16>:	20 2b	cmp	r3, #32
+   0x000398d2 <+18>:	fb d0	beq.n	0x398cc <skip_to_option_part+12>
+   0x000398d4 <+20>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function truncate_line:
+   0x0003a790 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0003a792 <+2>:	06 46	mov	r6, r0
+   0x0003a794 <+4>:	14 4b	ldr	r3, [pc, #80]	; (0x3a7e8 <truncate_line+88>)
+   0x0003a796 <+6>:	15 4a	ldr	r2, [pc, #84]	; (0x3a7ec <truncate_line+92>)
+   0x0003a798 <+8>:	7b 44	add	r3, pc
+   0x0003a79a <+10>:	9c 58	ldr	r4, [r3, r2]
+   0x0003a79c <+12>:	23 68	ldr	r3, [r4, #0]
+   0x0003a79e <+14>:	5f 69	ldr	r7, [r3, #20]
+   0x0003a7a0 <+16>:	1d 69	ldr	r5, [r3, #16]
+   0x0003a7a2 <+18>:	cf b9	cbnz	r7, 0x3a7d8 <truncate_line+72>
+   0x0003a7a4 <+20>:	12 48	ldr	r0, [pc, #72]	; (0x3a7f0 <truncate_line+96>)
+   0x0003a7a6 <+22>:	78 44	add	r0, pc
+   0x0003a7a8 <+24>:	03 f0 de fe	bl	0x3e568 <vim_strsave>
+   0x0003a7ac <+28>:	98 b1	cbz	r0, 0x3a7d6 <truncate_line+70>
+   0x0003a7ae <+30>:	01 46	mov	r1, r0
+   0x0003a7b0 <+32>:	00 22	movs	r2, #0
+   0x0003a7b2 <+34>:	28 46	mov	r0, r5
+   0x0003a7b4 <+36>:	f8 f7 84 fc	bl	0x330c0 <ml_replace>
+   0x0003a7b8 <+40>:	23 68	ldr	r3, [r4, #0]
+   0x0003a7ba <+42>:	28 46	mov	r0, r5
+   0x0003a7bc <+44>:	59 69	ldr	r1, [r3, #20]
+   0x0003a7be <+46>:	ff f7 55 fb	bl	0x39e6c <changed_bytes>
+   0x0003a7c2 <+50>:	3e b1	cbz	r6, 0x3a7d4 <truncate_line+68>
+   0x0003a7c4 <+52>:	22 68	ldr	r2, [r4, #0]
+   0x0003a7c6 <+54>:	53 69	ldr	r3, [r2, #20]
+   0x0003a7c8 <+56>:	00 2b	cmp	r3, #0
+   0x0003a7ca <+58>:	03 dd	ble.n	0x3a7d4 <truncate_line+68>
+   0x0003a7cc <+60>:	01 3b	subs	r3, #1
+   0x0003a7ce <+62>:	01 20	movs	r0, #1
+   0x0003a7d0 <+64>:	53 61	str	r3, [r2, #20]
+   0x0003a7d2 <+66>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003a7d4 <+68>:	01 20	movs	r0, #1
+   0x0003a7d6 <+70>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x0003a7d8 <+72>:	28 46	mov	r0, r5
+   0x0003a7da <+74>:	f8 f7 c5 ff	bl	0x33768 <ml_get>
+   0x0003a7de <+78>:	39 46	mov	r1, r7
+   0x0003a7e0 <+80>:	03 f0 06 ff	bl	0x3e5f0 <vim_strnsave>
+   0x0003a7e4 <+84>:	e2 e7	b.n	0x3a7ac <truncate_line+28>
+   0x0003a7e6 <+86>:	00 bf	nop
+   0x0003a7e8 <+88>:	00 cf	ldmia	r7!, {}
+   0x0003a7ea <+90>:	06 00	movs	r6, r0
+   0x0003a7ec <+92>:	24 04	lsls	r4, r4, #16
+   0x0003a7ee <+94>:	00 00	movs	r0, r0
+   0x0003a7f0 <+96>:	4e 5e	ldrsh	r6, [r1, r1]
+   0x0003a7f2 <+98>:	05 00	movs	r5, r0
+End of assembler dump.
+Dump of assembler code for function unchanged:
+   0x00039948 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0003994a <+2>:	04 46	mov	r4, r0
+   0x0003994c <+4>:	46 6e	ldr	r6, [r0, #100]	; 0x64
+   0x0003994e <+6>:	0f 46	mov	r7, r1
+   0x00039950 <+8>:	20 4d	ldr	r5, [pc, #128]	; (0x399d4 <unchanged+140>)
+   0x00039952 <+10>:	7d 44	add	r5, pc
+   0x00039954 <+12>:	8e b9	cbnz	r6, 0x3997a <unchanged+50>
+   0x00039956 <+14>:	19 b9	cbnz	r1, 0x39960 <unchanged+24>
+   0x00039958 <+16>:	a3 6e	ldr	r3, [r4, #104]	; 0x68
+   0x0003995a <+18>:	01 33	adds	r3, #1
+   0x0003995c <+20>:	a3 66	str	r3, [r4, #104]	; 0x68
+   0x0003995e <+22>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x00039960 <+24>:	31 46	mov	r1, r6
+   0x00039962 <+26>:	1a f0 49 f8	bl	0x539f8 <file_ff_differs>
+   0x00039966 <+30>:	00 28	cmp	r0, #0
+   0x00039968 <+32>:	f6 d0	beq.n	0x39958 <unchanged+16>
+   0x0003996a <+34>:	66 66	str	r6, [r4, #100]	; 0x64
+   0x0003996c <+36>:	20 46	mov	r0, r4
+   0x0003996e <+38>:	fb f7 f9 fd	bl	0x35564 <ml_setflags>
+   0x00039972 <+42>:	20 46	mov	r0, r4
+   0x00039974 <+44>:	18 f0 e6 fa	bl	0x51f44 <save_file_ff>
+   0x00039978 <+48>:	05 e0	b.n	0x39986 <unchanged+62>
+   0x0003997a <+50>:	00 23	movs	r3, #0
+   0x0003997c <+52>:	43 66	str	r3, [r0, #100]	; 0x64
+   0x0003997e <+54>:	fb f7 f1 fd	bl	0x35564 <ml_setflags>
+   0x00039982 <+58>:	00 2f	cmp	r7, #0
+   0x00039984 <+60>:	f5 d1	bne.n	0x39972 <unchanged+42>
+   0x00039986 <+62>:	14 4b	ldr	r3, [pc, #80]	; (0x399d8 <unchanged+144>)
+   0x00039988 <+64>:	eb 58	ldr	r3, [r5, r3]
+   0x0003998a <+66>:	1b 68	ldr	r3, [r3, #0]
+   0x0003998c <+68>:	bb b1	cbz	r3, 0x399be <unchanged+118>
+   0x0003998e <+70>:	13 4a	ldr	r2, [pc, #76]	; (0x399dc <unchanged+148>)
+   0x00039990 <+72>:	00 21	movs	r1, #0
+   0x00039992 <+74>:	01 27	movs	r7, #1
+   0x00039994 <+76>:	ae 58	ldr	r6, [r5, r2]
+   0x00039996 <+78>:	30 68	ldr	r0, [r6, #0]
+   0x00039998 <+80>:	01 e0	b.n	0x3999e <unchanged+86>
+   0x0003999a <+82>:	9b 68	ldr	r3, [r3, #8]
+   0x0003999c <+84>:	73 b1	cbz	r3, 0x399bc <unchanged+116>
+   0x0003999e <+86>:	1a 68	ldr	r2, [r3, #0]
+   0x000399a0 <+88>:	94 42	cmp	r4, r2
+   0x000399a2 <+90>:	fa d1	bne.n	0x3999a <unchanged+82>
+   0x000399a4 <+92>:	1a 6d	ldr	r2, [r3, #80]	; 0x50
+   0x000399a6 <+94>:	00 2a	cmp	r2, #0
+   0x000399a8 <+96>:	f7 d0	beq.n	0x3999a <unchanged+82>
+   0x000399aa <+98>:	c3 f8 98 70	str.w	r7, [r3, #152]	; 0x98
+   0x000399ae <+102>:	09 28	cmp	r0, #9
+   0x000399b0 <+104>:	9b 68	ldr	r3, [r3, #8]
+   0x000399b2 <+106>:	dc bf	itt	le
+   0x000399b4 <+108>:	01 21	movle	r1, #1
+   0x000399b6 <+110>:	0a 20	movle	r0, #10
+   0x000399b8 <+112>:	00 2b	cmp	r3, #0
+   0x000399ba <+114>:	f0 d1	bne.n	0x3999e <unchanged+86>
+   0x000399bc <+116>:	39 b9	cbnz	r1, 0x399ce <unchanged+134>
+   0x000399be <+118>:	08 4b	ldr	r3, [pc, #32]	; (0x399e0 <unchanged+152>)
+   0x000399c0 <+120>:	01 22	movs	r2, #1
+   0x000399c2 <+122>:	eb 58	ldr	r3, [r5, r3]
+   0x000399c4 <+124>:	1a 60	str	r2, [r3, #0]
+   0x000399c6 <+126>:	a3 6e	ldr	r3, [r4, #104]	; 0x68
+   0x000399c8 <+128>:	01 33	adds	r3, #1
+   0x000399ca <+130>:	a3 66	str	r3, [r4, #104]	; 0x68
+   0x000399cc <+132>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x000399ce <+134>:	30 60	str	r0, [r6, #0]
+   0x000399d0 <+136>:	f5 e7	b.n	0x399be <unchanged+118>
+   0x000399d2 <+138>:	00 bf	nop
+   0x000399d4 <+140>:	46 dd	ble.n	0x39a64 <change_warning+44>
+   0x000399d6 <+142>:	06 00	movs	r6, r0
+   0x000399d8 <+144>:	38 09	lsrs	r0, r7, #4
+   0x000399da <+146>:	00 00	movs	r0, r0
+   0x000399dc <+148>:	cc 07	lsls	r4, r1, #31
+   0x000399de <+150>:	00 00	movs	r0, r0
+   0x000399e0 <+152>:	08 09	lsrs	r0, r1, #4
+   0x000399e2 <+154>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function unix_expandpath:
+   0x0003c324 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0003c328 <+4>:	bf b0	sub	sp, #252	; 0xfc
+   0x0003c32a <+6>:	df f8 a0 84	ldr.w	r8, [pc, #1184]	; 0x3c7cc <unix_expandpath+1192>
+   0x0003c32e <+10>:	04 46	mov	r4, r0
+   0x0003c330 <+12>:	05 90	str	r0, [sp, #20]
+   0x0003c332 <+14>:	df f8 9c 04	ldr.w	r0, [pc, #1180]	; 0x3c7d0 <unix_expandpath+1196>
+   0x0003c336 <+18>:	f8 44	add	r8, pc
+   0x0003c338 <+20>:	04 91	str	r1, [sp, #16]
+   0x0003c33a <+22>:	df f8 98 14	ldr.w	r1, [pc, #1176]	; 0x3c7d4 <unix_expandpath+1200>
+   0x0003c33e <+26>:	03 92	str	r2, [sp, #12]
+   0x0003c340 <+28>:	02 93	str	r3, [sp, #8]
+   0x0003c342 <+30>:	79 44	add	r1, pc
+   0x0003c344 <+32>:	58 f8 00 30	ldr.w	r3, [r8, r0]
+   0x0003c348 <+36>:	1a 46	mov	r2, r3
+   0x0003c34a <+38>:	06 93	str	r3, [sp, #24]
+   0x0003c34c <+40>:	8b 68	ldr	r3, [r1, #8]
+   0x0003c34e <+42>:	12 68	ldr	r2, [r2, #0]
+   0x0003c350 <+44>:	21 68	ldr	r1, [r4, #0]
+   0x0003c352 <+46>:	00 2b	cmp	r3, #0
+   0x0003c354 <+48>:	3d 92	str	r2, [sp, #244]	; 0xf4
+   0x0003c356 <+50>:	09 91	str	r1, [sp, #36]	; 0x24
+   0x0003c358 <+52>:	09 dd	ble.n	0x3c36e <unix_expandpath+74>
+   0x0003c35a <+54>:	43 f0 d3 f9	bl	0x7f704 <ui_breakcheck>
+   0x0003c35e <+58>:	df f8 78 34	ldr.w	r3, [pc, #1144]	; 0x3c7d8 <unix_expandpath+1204>
+   0x0003c362 <+62>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c366 <+66>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c368 <+68>:	00 2b	cmp	r3, #0
+   0x0003c36a <+70>:	40 f0 7c 81	bne.w	0x3c666 <unix_expandpath+834>
+   0x0003c36e <+74>:	04 98	ldr	r0, [sp, #16]
+   0x0003c370 <+76>:	d0 f7 b0 ee	blx	0xd0d4 <strlen@plt>
+   0x0003c374 <+80>:	ff 30	adds	r0, #255	; 0xff
+   0x0003c376 <+82>:	02 f0 7f fe	bl	0x3f078 <alloc>
+   0x0003c37a <+86>:	07 46	mov	r7, r0
+   0x0003c37c <+88>:	00 28	cmp	r0, #0
+   0x0003c37e <+90>:	00 f0 72 81	beq.w	0x3c666 <unix_expandpath+834>
+   0x0003c382 <+94>:	04 9b	ldr	r3, [sp, #16]
+   0x0003c384 <+96>:	06 46	mov	r6, r0
+   0x0003c386 <+98>:	03 9a	ldr	r2, [sp, #12]
+   0x0003c388 <+100>:	05 46	mov	r5, r0
+   0x0003c38a <+102>:	df f8 50 b4	ldr.w	r11, [pc, #1104]	; 0x3c7dc <unix_expandpath+1208>
+   0x0003c38e <+106>:	4f f0 00 0a	mov.w	r10, #0
+   0x0003c392 <+110>:	1c 46	mov	r4, r3
+   0x0003c394 <+112>:	03 eb 02 09	add.w	r9, r3, r2
+   0x0003c398 <+116>:	fb 44	add	r11, pc
+   0x0003c39a <+118>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c39c <+120>:	03 f4 80 73	and.w	r3, r3, #256	; 0x100
+   0x0003c3a0 <+124>:	07 93	str	r3, [sp, #28]
+   0x0003c3a2 <+126>:	23 78	ldrb	r3, [r4, #0]
+   0x0003c3a4 <+128>:	ab b1	cbz	r3, 0x3c3d2 <unix_expandpath+174>
+   0x0003c3a6 <+130>:	4c 45	cmp	r4, r9
+   0x0003c3a8 <+132>:	80 f0 14 81	bcs.w	0x3c5d4 <unix_expandpath+688>
+   0x0003c3ac <+136>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0003c3ae <+138>:	00 f0 2f 81	beq.w	0x3c610 <unix_expandpath+748>
+   0x0003c3b2 <+142>:	df f8 2c 34	ldr.w	r3, [pc, #1068]	; 0x3c7e0 <unix_expandpath+1212>
+   0x0003c3b6 <+146>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c3ba <+150>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c3bc <+152>:	00 2b	cmp	r3, #0
+   0x0003c3be <+154>:	40 f0 19 81	bne.w	0x3c5f4 <unix_expandpath+720>
+   0x0003c3c2 <+158>:	23 78	ldrb	r3, [r4, #0]
+   0x0003c3c4 <+160>:	2a 46	mov	r2, r5
+   0x0003c3c6 <+162>:	01 34	adds	r4, #1
+   0x0003c3c8 <+164>:	13 70	strb	r3, [r2, #0]
+   0x0003c3ca <+166>:	01 35	adds	r5, #1
+   0x0003c3cc <+168>:	23 78	ldrb	r3, [r4, #0]
+   0x0003c3ce <+170>:	00 2b	cmp	r3, #0
+   0x0003c3d0 <+172>:	e9 d1	bne.n	0x3c3a6 <unix_expandpath+130>
+   0x0003c3d2 <+174>:	03 9b	ldr	r3, [sp, #12]
+   0x0003c3d4 <+176>:	a3 46	mov	r11, r4
+   0x0003c3d6 <+178>:	3b 44	add	r3, r7
+   0x0003c3d8 <+180>:	9a 46	mov	r10, r3
+   0x0003c3da <+182>:	56 45	cmp	r6, r10
+   0x0003c3dc <+184>:	4f f0 00 03	mov.w	r3, #0
+   0x0003c3e0 <+188>:	88 bf	it	hi
+   0x0003c3e2 <+190>:	0a f1 01 0a	addhi.w	r10, r10, #1
+   0x0003c3e6 <+194>:	2b 70	strb	r3, [r5, #0]
+   0x0003c3e8 <+196>:	05 d8	bhi.n	0x3c3f6 <unix_expandpath+210>
+   0x0003c3ea <+198>:	1b e0	b.n	0x3c424 <unix_expandpath+256>
+   0x0003c3ec <+200>:	53 46	mov	r3, r10
+   0x0003c3ee <+202>:	b3 42	cmp	r3, r6
+   0x0003c3f0 <+204>:	0a f1 01 0a	add.w	r10, r10, #1
+   0x0003c3f4 <+208>:	15 d2	bcs.n	0x3c422 <unix_expandpath+254>
+   0x0003c3f6 <+210>:	0a f1 ff 39	add.w	r9, r10, #4294967295
+   0x0003c3fa <+214>:	48 46	mov	r0, r9
+   0x0003c3fc <+216>:	d6 f7 7a f8	bl	0x124f4 <rem_backslash>
+   0x0003c400 <+220>:	00 28	cmp	r0, #0
+   0x0003c402 <+222>:	f3 d0	beq.n	0x3c3ec <unix_expandpath+200>
+   0x0003c404 <+224>:	50 46	mov	r0, r10
+   0x0003c406 <+226>:	01 3e	subs	r6, #1
+   0x0003c408 <+228>:	d0 f7 64 ee	blx	0xd0d4 <strlen@plt>
+   0x0003c40c <+232>:	51 46	mov	r1, r10
+   0x0003c40e <+234>:	01 3d	subs	r5, #1
+   0x0003c410 <+236>:	42 1c	adds	r2, r0, #1
+   0x0003c412 <+238>:	48 46	mov	r0, r9
+   0x0003c414 <+240>:	d0 f7 a6 ec	blx	0xcd64 <memmove@plt+4>
+   0x0003c418 <+244>:	53 46	mov	r3, r10
+   0x0003c41a <+246>:	b3 42	cmp	r3, r6
+   0x0003c41c <+248>:	0a f1 01 0a	add.w	r10, r10, #1
+   0x0003c420 <+252>:	e9 d3	bcc.n	0x3c3f6 <unix_expandpath+210>
+   0x0003c422 <+254>:	a3 46	mov	r11, r4
+   0x0003c424 <+256>:	b5 42	cmp	r5, r6
+   0x0003c426 <+258>:	40 f2 b8 81	bls.w	0x3c79a <unix_expandpath+1142>
+   0x0003c42a <+262>:	33 46	mov	r3, r6
+   0x0003c42c <+264>:	4f f0 00 09	mov.w	r9, #0
+   0x0003c430 <+268>:	5c 46	mov	r4, r11
+   0x0003c432 <+270>:	01 e0	b.n	0x3c438 <unix_expandpath+276>
+   0x0003c434 <+272>:	9d 42	cmp	r5, r3
+   0x0003c436 <+274>:	0a d0	beq.n	0x3c44e <unix_expandpath+298>
+   0x0003c438 <+276>:	13 f8 01 2b	ldrb.w	r2, [r3], #1
+   0x0003c43c <+280>:	2a 2a	cmp	r2, #42	; 0x2a
+   0x0003c43e <+282>:	f9 d1	bne.n	0x3c434 <unix_expandpath+272>
+   0x0003c440 <+284>:	1a 78	ldrb	r2, [r3, #0]
+   0x0003c442 <+286>:	2a 2a	cmp	r2, #42	; 0x2a
+   0x0003c444 <+288>:	08 bf	it	eq
+   0x0003c446 <+290>:	4f f0 01 09	moveq.w	r9, #1
+   0x0003c44a <+294>:	9d 42	cmp	r5, r3
+   0x0003c44c <+296>:	f4 d1	bne.n	0x3c438 <unix_expandpath+276>
+   0x0003c44e <+298>:	a3 46	mov	r11, r4
+   0x0003c450 <+300>:	34 78	ldrb	r4, [r6, #0]
+   0x0003c452 <+302>:	00 23	movs	r3, #0
+   0x0003c454 <+304>:	29 46	mov	r1, r5
+   0x0003c456 <+306>:	1a 46	mov	r2, r3
+   0x0003c458 <+308>:	30 46	mov	r0, r6
+   0x0003c45a <+310>:	03 94	str	r4, [sp, #12]
+   0x0003c45c <+312>:	ea f7 ec fc	bl	0x26e38 <file_pat_to_reg_pat>
+   0x0003c460 <+316>:	82 46	mov	r10, r0
+   0x0003c462 <+318>:	00 28	cmp	r0, #0
+   0x0003c464 <+320>:	00 f0 95 81	beq.w	0x3c792 <unix_expandpath+1134>
+   0x0003c468 <+324>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c46a <+326>:	da 05	lsls	r2, r3, #23
+   0x0003c46c <+328>:	44 bf	itt	mi
+   0x0003c46e <+330>:	01 23	movmi	r3, #1
+   0x0003c470 <+332>:	3c 93	strmi	r3, [sp, #240]	; 0xf0
+   0x0003c472 <+334>:	04 d4	bmi.n	0x3c47e <unix_expandpath+346>
+   0x0003c474 <+336>:	db 4b	ldr	r3, [pc, #876]	; (0x3c7e4 <unix_expandpath+1216>)
+   0x0003c476 <+338>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c47a <+342>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c47c <+344>:	3c 93	str	r3, [sp, #240]	; 0xf0
+   0x0003c47e <+346>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c480 <+348>:	13 f4 c0 6f	tst.w	r3, #1536	; 0x600
+   0x0003c484 <+352>:	40 f0 dc 80	bne.w	0x3c640 <unix_expandpath+796>
+   0x0003c488 <+356>:	01 21	movs	r1, #1
+   0x0003c48a <+358>:	50 46	mov	r0, r10
+   0x0003c48c <+360>:	32 f0 4e fc	bl	0x6ed2c <vim_regcomp>
+   0x0003c490 <+364>:	27 90	str	r0, [sp, #156]	; 0x9c
+   0x0003c492 <+366>:	50 46	mov	r0, r10
+   0x0003c494 <+368>:	00 f0 86 ff	bl	0x3d3a4 <vim_free>
+   0x0003c498 <+372>:	27 9b	ldr	r3, [sp, #156]	; 0x9c
+   0x0003c49a <+374>:	00 2b	cmp	r3, #0
+   0x0003c49c <+376>:	00 f0 74 81	beq.w	0x3c788 <unix_expandpath+1124>
+   0x0003c4a0 <+380>:	48 9b	ldr	r3, [sp, #288]	; 0x120
+   0x0003c4a2 <+382>:	6b b9	cbnz	r3, 0x3c4c0 <unix_expandpath+412>
+   0x0003c4a4 <+384>:	df f8 40 83	ldr.w	r8, [pc, #832]	; 0x3c7e8 <unix_expandpath+1220>
+   0x0003c4a8 <+388>:	f8 44	add	r8, pc
+   0x0003c4aa <+390>:	d8 f8 08 a0	ldr.w	r10, [r8, #8]
+   0x0003c4ae <+394>:	ba f1 63 0f	cmp.w	r10, #99	; 0x63
+   0x0003c4b2 <+398>:	cc bf	ite	gt
+   0x0003c4b4 <+400>:	00 23	movgt	r3, #0
+   0x0003c4b6 <+402>:	09 f0 01 03	andle.w	r3, r9, #1
+   0x0003c4ba <+406>:	00 2b	cmp	r3, #0
+   0x0003c4bc <+408>:	40 f0 44 81	bne.w	0x3c748 <unix_expandpath+1060>
+   0x0003c4c0 <+412>:	00 23	movs	r3, #0
+   0x0003c4c2 <+414>:	33 70	strb	r3, [r6, #0]
+   0x0003c4c4 <+416>:	3b 78	ldrb	r3, [r7, #0]
+   0x0003c4c6 <+418>:	38 46	mov	r0, r7
+   0x0003c4c8 <+420>:	0b b9	cbnz	r3, 0x3c4ce <unix_expandpath+426>
+   0x0003c4ca <+422>:	c8 48	ldr	r0, [pc, #800]	; (0x3c7ec <unix_expandpath+1224>)
+   0x0003c4cc <+424>:	78 44	add	r0, pc
+   0x0003c4ce <+426>:	d0 f7 72 ed	blx	0xcfb4 <opendir@plt>
+   0x0003c4d2 <+430>:	80 46	mov	r8, r0
+   0x0003c4d4 <+432>:	00 28	cmp	r0, #0
+   0x0003c4d6 <+434>:	65 d0	beq.n	0x3c5a4 <unix_expandpath+640>
+   0x0003c4d8 <+436>:	c5 4b	ldr	r3, [pc, #788]	; (0x3c7f0 <unix_expandpath+1228>)
+   0x0003c4da <+438>:	5c 46	mov	r4, r11
+   0x0003c4dc <+440>:	7b 44	add	r3, pc
+   0x0003c4de <+442>:	07 93	str	r3, [sp, #28]
+   0x0003c4e0 <+444>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c4e2 <+446>:	03 f4 80 53	and.w	r3, r3, #4096	; 0x1000
+   0x0003c4e6 <+450>:	08 93	str	r3, [sp, #32]
+   0x0003c4e8 <+452>:	c2 4b	ldr	r3, [pc, #776]	; (0x3c7f4 <unix_expandpath+1232>)
+   0x0003c4ea <+454>:	7b 44	add	r3, pc
+   0x0003c4ec <+456>:	0a 93	str	r3, [sp, #40]	; 0x28
+   0x0003c4ee <+458>:	40 46	mov	r0, r8
+   0x0003c4f0 <+460>:	d0 f7 b6 ee	blx	0xd260 <readdir64@plt>
+   0x0003c4f4 <+464>:	82 46	mov	r10, r0
+   0x0003c4f6 <+466>:	00 28	cmp	r0, #0
+   0x0003c4f8 <+468>:	51 d0	beq.n	0x3c59e <unix_expandpath+634>
+   0x0003c4fa <+470>:	03 9b	ldr	r3, [sp, #12]
+   0x0003c4fc <+472>:	c2 7c	ldrb	r2, [r0, #19]
+   0x0003c4fe <+474>:	a3 f1 2e 03	sub.w	r3, r3, #46	; 0x2e
+   0x0003c502 <+478>:	b3 fa 83 f3	clz	r3, r3
+   0x0003c506 <+482>:	5b 09	lsrs	r3, r3, #5
+   0x0003c508 <+484>:	2e 2a	cmp	r2, #46	; 0x2e
+   0x0003c50a <+486>:	18 bf	it	ne
+   0x0003c50c <+488>:	43 f0 01 03	orrne.w	r3, r3, #1
+   0x0003c510 <+492>:	00 2b	cmp	r3, #0
+   0x0003c512 <+494>:	ec d0	beq.n	0x3c4ee <unix_expandpath+458>
+   0x0003c514 <+496>:	27 9b	ldr	r3, [sp, #156]	; 0x9c
+   0x0003c516 <+498>:	00 2b	cmp	r3, #0
+   0x0003c518 <+500>:	00 f0 b1 80	beq.w	0x3c67e <unix_expandpath+858>
+   0x0003c51c <+504>:	00 f1 13 0b	add.w	r11, r0, #19
+   0x0003c520 <+508>:	00 22	movs	r2, #0
+   0x0003c522 <+510>:	27 a8	add	r0, sp, #156	; 0x9c
+   0x0003c524 <+512>:	59 46	mov	r1, r11
+   0x0003c526 <+514>:	32 f0 e7 fc	bl	0x6eef8 <vim_regexec>
+   0x0003c52a <+518>:	00 28	cmp	r0, #0
+   0x0003c52c <+520>:	00 f0 a7 80	beq.w	0x3c67e <unix_expandpath+858>
+   0x0003c530 <+524>:	59 46	mov	r1, r11
+   0x0003c532 <+526>:	30 46	mov	r0, r6
+   0x0003c534 <+528>:	d0 f7 26 ed	blx	0xcf84 <strcpy@plt+4>
+   0x0003c538 <+532>:	38 46	mov	r0, r7
+   0x0003c53a <+534>:	d0 f7 cc ed	blx	0xd0d4 <strlen@plt>
+   0x0003c53e <+538>:	82 46	mov	r10, r0
+   0x0003c540 <+540>:	b9 f1 00 0f	cmp.w	r9, #0
+   0x0003c544 <+544>:	04 d0	beq.n	0x3c550 <unix_expandpath+556>
+   0x0003c546 <+546>:	07 9b	ldr	r3, [sp, #28]
+   0x0003c548 <+548>:	9b 68	ldr	r3, [r3, #8]
+   0x0003c54a <+550>:	63 2b	cmp	r3, #99	; 0x63
+   0x0003c54c <+552>:	40 f3 dc 80	ble.w	0x3c708 <unix_expandpath+996>
+   0x0003c550 <+556>:	07 eb 0a 00	add.w	r0, r7, r10
+   0x0003c554 <+560>:	21 46	mov	r1, r4
+   0x0003c556 <+562>:	d0 f7 16 ed	blx	0xcf84 <strcpy@plt+4>
+   0x0003c55a <+566>:	20 46	mov	r0, r4
+   0x0003c55c <+568>:	19 f0 f8 fb	bl	0x55d50 <mch_has_exp_wildcard>
+   0x0003c560 <+572>:	00 28	cmp	r0, #0
+   0x0003c562 <+574>:	40 f0 a3 80	bne.w	0x3c6ac <unix_expandpath+904>
+   0x0003c566 <+578>:	23 78	ldrb	r3, [r4, #0]
+   0x0003c568 <+580>:	00 2b	cmp	r3, #0
+   0x0003c56a <+582>:	40 f0 a9 80	bne.w	0x3c6c0 <unix_expandpath+924>
+   0x0003c56e <+586>:	08 9b	ldr	r3, [sp, #32]
+   0x0003c570 <+588>:	00 2b	cmp	r3, #0
+   0x0003c572 <+590>:	00 f0 95 80	beq.w	0x3c6a0 <unix_expandpath+892>
+   0x0003c576 <+594>:	0c aa	add	r2, sp, #48	; 0x30
+   0x0003c578 <+596>:	39 46	mov	r1, r7
+   0x0003c57a <+598>:	03 20	movs	r0, #3
+   0x0003c57c <+600>:	d0 f7 e2 ee	blx	0xd344 <__lxstat64@plt>
+   0x0003c580 <+604>:	c0 43	mvns	r0, r0
+   0x0003c582 <+606>:	c0 0f	lsrs	r0, r0, #31
+   0x0003c584 <+608>:	00 28	cmp	r0, #0
+   0x0003c586 <+610>:	b2 d0	beq.n	0x3c4ee <unix_expandpath+458>
+   0x0003c588 <+612>:	02 9a	ldr	r2, [sp, #8]
+   0x0003c58a <+614>:	39 46	mov	r1, r7
+   0x0003c58c <+616>:	05 98	ldr	r0, [sp, #20]
+   0x0003c58e <+618>:	ff f7 67 fe	bl	0x3c260 <addfile>
+   0x0003c592 <+622>:	40 46	mov	r0, r8
+   0x0003c594 <+624>:	d0 f7 64 ee	blx	0xd260 <readdir64@plt>
+   0x0003c598 <+628>:	82 46	mov	r10, r0
+   0x0003c59a <+630>:	00 28	cmp	r0, #0
+   0x0003c59c <+632>:	ad d1	bne.n	0x3c4fa <unix_expandpath+470>
+   0x0003c59e <+634>:	40 46	mov	r0, r8
+   0x0003c5a0 <+636>:	d0 f7 d6 ee	blx	0xd350 <closedir@plt>
+   0x0003c5a4 <+640>:	38 46	mov	r0, r7
+   0x0003c5a6 <+642>:	00 f0 fd fe	bl	0x3d3a4 <vim_free>
+   0x0003c5aa <+646>:	27 98	ldr	r0, [sp, #156]	; 0x9c
+   0x0003c5ac <+648>:	32 f0 7c fc	bl	0x6eea8 <vim_regfree>
+   0x0003c5b0 <+652>:	05 9a	ldr	r2, [sp, #20]
+   0x0003c5b2 <+654>:	09 9c	ldr	r4, [sp, #36]	; 0x24
+   0x0003c5b4 <+656>:	11 68	ldr	r1, [r2, #0]
+   0x0003c5b6 <+658>:	09 1b	subs	r1, r1, r4
+   0x0003c5b8 <+660>:	00 29	cmp	r1, #0
+   0x0003c5ba <+662>:	d8 bf	it	le
+   0x0003c5bc <+664>:	8a 46	movle	r10, r1
+   0x0003c5be <+666>:	54 dd	ble.n	0x3c66a <unix_expandpath+838>
+   0x0003c5c0 <+668>:	10 69	ldr	r0, [r2, #16]
+   0x0003c5c2 <+670>:	04 22	movs	r2, #4
+   0x0003c5c4 <+672>:	8c 4b	ldr	r3, [pc, #560]	; (0x3c7f8 <unix_expandpath+1236>)
+   0x0003c5c6 <+674>:	8a 46	mov	r10, r1
+   0x0003c5c8 <+676>:	00 eb 84 00	add.w	r0, r0, r4, lsl #2
+   0x0003c5cc <+680>:	7b 44	add	r3, pc
+   0x0003c5ce <+682>:	d0 f7 68 ee	blx	0xd2a0 <qsort@plt+4>
+   0x0003c5d2 <+686>:	4a e0	b.n	0x3c66a <unix_expandpath+838>
+   0x0003c5d4 <+688>:	20 46	mov	r0, r4
+   0x0003c5d6 <+690>:	d5 f7 8d ff	bl	0x124f4 <rem_backslash>
+   0x0003c5da <+694>:	18 b3	cbz	r0, 0x3c624 <unix_expandpath+768>
+   0x0003c5dc <+696>:	22 78	ldrb	r2, [r4, #0]
+   0x0003c5de <+698>:	01 35	adds	r5, #1
+   0x0003c5e0 <+700>:	7f 4b	ldr	r3, [pc, #508]	; (0x3c7e0 <unix_expandpath+1212>)
+   0x0003c5e2 <+702>:	01 34	adds	r4, #1
+   0x0003c5e4 <+704>:	05 f8 01 2c	strb.w	r2, [r5, #-1]
+   0x0003c5e8 <+708>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c5ec <+712>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c5ee <+714>:	00 2b	cmp	r3, #0
+   0x0003c5f0 <+716>:	3f f4 e7 ae	beq.w	0x3c3c2 <unix_expandpath+158>
+   0x0003c5f4 <+720>:	81 4b	ldr	r3, [pc, #516]	; (0x3c7fc <unix_expandpath+1240>)
+   0x0003c5f6 <+722>:	20 46	mov	r0, r4
+   0x0003c5f8 <+724>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c5fc <+728>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c5fe <+730>:	98 47	blx	r3
+   0x0003c600 <+732>:	21 46	mov	r1, r4
+   0x0003c602 <+734>:	02 46	mov	r2, r0
+   0x0003c604 <+736>:	28 46	mov	r0, r5
+   0x0003c606 <+738>:	14 44	add	r4, r2
+   0x0003c608 <+740>:	15 44	add	r5, r2
+   0x0003c60a <+742>:	d0 f7 ce ed	blx	0xd1a8 <strncpy@plt>
+   0x0003c60e <+746>:	c8 e6	b.n	0x3c3a2 <unix_expandpath+126>
+   0x0003c610 <+748>:	ba f1 00 0f	cmp.w	r10, #0
+   0x0003c614 <+752>:	7f f4 dd ae	bne.w	0x3c3d2 <unix_expandpath+174>
+   0x0003c618 <+756>:	71 4b	ldr	r3, [pc, #452]	; (0x3c7e0 <unix_expandpath+1212>)
+   0x0003c61a <+758>:	6e 1c	adds	r6, r5, #1
+   0x0003c61c <+760>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c620 <+764>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c622 <+766>:	cb e6	b.n	0x3c3bc <unix_expandpath+152>
+   0x0003c624 <+768>:	21 78	ldrb	r1, [r4, #0]
+   0x0003c626 <+770>:	2f 29	cmp	r1, #47	; 0x2f
+   0x0003c628 <+772>:	f2 d0	beq.n	0x3c610 <unix_expandpath+748>
+   0x0003c62a <+774>:	58 46	mov	r0, r11
+   0x0003c62c <+776>:	00 f0 c8 fe	bl	0x3d3c0 <vim_strchr>
+   0x0003c630 <+780>:	00 28	cmp	r0, #0
+   0x0003c632 <+782>:	4b d0	beq.n	0x3c6cc <unix_expandpath+936>
+   0x0003c634 <+784>:	6a 4b	ldr	r3, [pc, #424]	; (0x3c7e0 <unix_expandpath+1212>)
+   0x0003c636 <+786>:	aa 46	mov	r10, r5
+   0x0003c638 <+788>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c63c <+792>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c63e <+794>:	bd e6	b.n	0x3c3bc <unix_expandpath+152>
+   0x0003c640 <+796>:	6f 4b	ldr	r3, [pc, #444]	; (0x3c800 <unix_expandpath+1244>)
+   0x0003c642 <+798>:	01 21	movs	r1, #1
+   0x0003c644 <+800>:	50 46	mov	r0, r10
+   0x0003c646 <+802>:	58 f8 03 80	ldr.w	r8, [r8, r3]
+   0x0003c64a <+806>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0003c64e <+810>:	0b 44	add	r3, r1
+   0x0003c650 <+812>:	c8 f8 00 30	str.w	r3, [r8]
+   0x0003c654 <+816>:	32 f0 6a fb	bl	0x6ed2c <vim_regcomp>
+   0x0003c658 <+820>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0003c65c <+824>:	01 3b	subs	r3, #1
+   0x0003c65e <+826>:	c8 f8 00 30	str.w	r3, [r8]
+   0x0003c662 <+830>:	27 90	str	r0, [sp, #156]	; 0x9c
+   0x0003c664 <+832>:	15 e7	b.n	0x3c492 <unix_expandpath+366>
+   0x0003c666 <+834>:	4f f0 00 0a	mov.w	r10, #0
+   0x0003c66a <+838>:	06 9b	ldr	r3, [sp, #24]
+   0x0003c66c <+840>:	50 46	mov	r0, r10
+   0x0003c66e <+842>:	3d 9a	ldr	r2, [sp, #244]	; 0xf4
+   0x0003c670 <+844>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c672 <+846>:	9a 42	cmp	r2, r3
+   0x0003c674 <+848>:	40 f0 a7 80	bne.w	0x3c7c6 <unix_expandpath+1186>
+   0x0003c678 <+852>:	3f b0	add	sp, #252	; 0xfc
+   0x0003c67a <+854>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0003c67e <+858>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c680 <+860>:	5b 05	lsls	r3, r3, #21
+   0x0003c682 <+862>:	7f f5 34 af	bpl.w	0x3c4ee <unix_expandpath+458>
+   0x0003c686 <+866>:	0a f1 13 0b	add.w	r11, r10, #19
+   0x0003c68a <+870>:	04 9b	ldr	r3, [sp, #16]
+   0x0003c68c <+872>:	f0 1b	subs	r0, r6, r7
+   0x0003c68e <+874>:	aa 1b	subs	r2, r5, r6
+   0x0003c690 <+876>:	18 44	add	r0, r3
+   0x0003c692 <+878>:	59 46	mov	r1, r11
+   0x0003c694 <+880>:	fe f7 ee ff	bl	0x3b674 <vim_fnamencmp>
+   0x0003c698 <+884>:	00 28	cmp	r0, #0
+   0x0003c69a <+886>:	7f f4 28 af	bne.w	0x3c4ee <unix_expandpath+458>
+   0x0003c69e <+890>:	47 e7	b.n	0x3c530 <unix_expandpath+524>
+   0x0003c6a0 <+892>:	38 46	mov	r0, r7
+   0x0003c6a2 <+894>:	18 f0 fb f9	bl	0x54a9c <mch_getperm>
+   0x0003c6a6 <+898>:	c0 43	mvns	r0, r0
+   0x0003c6a8 <+900>:	c0 0f	lsrs	r0, r0, #31
+   0x0003c6aa <+902>:	6b e7	b.n	0x3c584 <unix_expandpath+608>
+   0x0003c6ac <+904>:	00 21	movs	r1, #0
+   0x0003c6ae <+906>:	0a f1 01 02	add.w	r2, r10, #1
+   0x0003c6b2 <+910>:	00 91	str	r1, [sp, #0]
+   0x0003c6b4 <+912>:	39 46	mov	r1, r7
+   0x0003c6b6 <+914>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c6b8 <+916>:	05 98	ldr	r0, [sp, #20]
+   0x0003c6ba <+918>:	ff f7 33 fe	bl	0x3c324 <unix_expandpath>
+   0x0003c6be <+922>:	16 e7	b.n	0x3c4ee <unix_expandpath+458>
+   0x0003c6c0 <+924>:	0a f1 01 00	add.w	r0, r10, #1
+   0x0003c6c4 <+928>:	38 44	add	r0, r7
+   0x0003c6c6 <+930>:	d5 f7 1f ff	bl	0x12508 <backslash_halve>
+   0x0003c6ca <+934>:	50 e7	b.n	0x3c56e <unix_expandpath+586>
+   0x0003c6cc <+936>:	45 4b	ldr	r3, [pc, #276]	; (0x3c7e4 <unix_expandpath+1216>)
+   0x0003c6ce <+938>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c6d2 <+942>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c6d4 <+944>:	00 2b	cmp	r3, #0
+   0x0003c6d6 <+946>:	7f f4 6c ae	bne.w	0x3c3b2 <unix_expandpath+142>
+   0x0003c6da <+950>:	07 9b	ldr	r3, [sp, #28]
+   0x0003c6dc <+952>:	00 2b	cmp	r3, #0
+   0x0003c6de <+954>:	3f f4 68 ae	beq.w	0x3c3b2 <unix_expandpath+142>
+   0x0003c6e2 <+958>:	d0 f7 d8 ec	blx	0xd094 <__ctype_b_loc@plt>
+   0x0003c6e6 <+962>:	3e 4b	ldr	r3, [pc, #248]	; (0x3c7e0 <unix_expandpath+1212>)
+   0x0003c6e8 <+964>:	58 f8 03 10	ldr.w	r1, [r8, r3]
+   0x0003c6ec <+968>:	0b 68	ldr	r3, [r1, #0]
+   0x0003c6ee <+970>:	02 68	ldr	r2, [r0, #0]
+   0x0003c6f0 <+972>:	00 2b	cmp	r3, #0
+   0x0003c6f2 <+974>:	55 d1	bne.n	0x3c7a0 <unix_expandpath+1148>
+   0x0003c6f4 <+976>:	23 78	ldrb	r3, [r4, #0]
+   0x0003c6f6 <+978>:	32 f8 13 20	ldrh.w	r2, [r2, r3, lsl #1]
+   0x0003c6fa <+982>:	51 05	lsls	r1, r2, #21
+   0x0003c6fc <+984>:	44 bf	itt	mi
+   0x0003c6fe <+986>:	aa 46	movmi	r10, r5
+   0x0003c700 <+988>:	2a 46	movmi	r2, r5
+   0x0003c702 <+990>:	3f f5 60 ae	bmi.w	0x3c3c6 <unix_expandpath+162>
+   0x0003c706 <+994>:	5c e6	b.n	0x3c3c2 <unix_expandpath+158>
+   0x0003c708 <+996>:	0b 93	str	r3, [sp, #44]	; 0x2c
+   0x0003c70a <+998>:	0a f1 03 02	add.w	r2, r10, #3
+   0x0003c70e <+1002>:	0a 9b	ldr	r3, [sp, #40]	; 0x28
+   0x0003c710 <+1004>:	21 46	mov	r1, r4
+   0x0003c712 <+1006>:	07 eb 0a 0b	add.w	r11, r7, r10
+   0x0003c716 <+1010>:	18 68	ldr	r0, [r3, #0]
+   0x0003c718 <+1012>:	47 f8 0a 00	str.w	r0, [r7, r10]
+   0x0003c71c <+1016>:	10 46	mov	r0, r2
+   0x0003c71e <+1018>:	38 44	add	r0, r7
+   0x0003c720 <+1020>:	d0 f7 30 ec	blx	0xcf84 <strcpy@plt+4>
+   0x0003c724 <+1024>:	07 99	ldr	r1, [sp, #28]
+   0x0003c726 <+1026>:	0b 9b	ldr	r3, [sp, #44]	; 0x2c
+   0x0003c728 <+1028>:	01 22	movs	r2, #1
+   0x0003c72a <+1030>:	05 98	ldr	r0, [sp, #20]
+   0x0003c72c <+1032>:	01 33	adds	r3, #1
+   0x0003c72e <+1034>:	8b 60	str	r3, [r1, #8]
+   0x0003c730 <+1036>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c732 <+1038>:	39 46	mov	r1, r7
+   0x0003c734 <+1040>:	00 92	str	r2, [sp, #0]
+   0x0003c736 <+1042>:	52 44	add	r2, r10
+   0x0003c738 <+1044>:	ff f7 f4 fd	bl	0x3c324 <unix_expandpath>
+   0x0003c73c <+1048>:	07 99	ldr	r1, [sp, #28]
+   0x0003c73e <+1050>:	58 46	mov	r0, r11
+   0x0003c740 <+1052>:	8b 68	ldr	r3, [r1, #8]
+   0x0003c742 <+1054>:	01 3b	subs	r3, #1
+   0x0003c744 <+1056>:	8b 60	str	r3, [r1, #8]
+   0x0003c746 <+1058>:	05 e7	b.n	0x3c554 <unix_expandpath+560>
+   0x0003c748 <+1060>:	ab 1b	subs	r3, r5, r6
+   0x0003c74a <+1062>:	02 2b	cmp	r3, #2
+   0x0003c74c <+1064>:	7f f4 b8 ae	bne.w	0x3c4c0 <unix_expandpath+412>
+   0x0003c750 <+1068>:	9b f8 00 30	ldrb.w	r3, [r11]
+   0x0003c754 <+1072>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0003c756 <+1074>:	7f f4 b3 ae	bne.w	0x3c4c0 <unix_expandpath+412>
+   0x0003c75a <+1078>:	5b 46	mov	r3, r11
+   0x0003c75c <+1080>:	30 46	mov	r0, r6
+   0x0003c75e <+1082>:	59 1c	adds	r1, r3, #1
+   0x0003c760 <+1084>:	0a f1 01 0a	add.w	r10, r10, #1
+   0x0003c764 <+1088>:	d0 f7 0e ec	blx	0xcf84 <strcpy@plt+4>
+   0x0003c768 <+1092>:	01 22	movs	r2, #1
+   0x0003c76a <+1094>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c76c <+1096>:	39 46	mov	r1, r7
+   0x0003c76e <+1098>:	00 92	str	r2, [sp, #0]
+   0x0003c770 <+1100>:	f2 1b	subs	r2, r6, r7
+   0x0003c772 <+1102>:	05 98	ldr	r0, [sp, #20]
+   0x0003c774 <+1104>:	c8 f8 08 a0	str.w	r10, [r8, #8]
+   0x0003c778 <+1108>:	ff f7 d4 fd	bl	0x3c324 <unix_expandpath>
+   0x0003c77c <+1112>:	d8 f8 08 30	ldr.w	r3, [r8, #8]
+   0x0003c780 <+1116>:	01 3b	subs	r3, #1
+   0x0003c782 <+1118>:	c8 f8 08 30	str.w	r3, [r8, #8]
+   0x0003c786 <+1122>:	9b e6	b.n	0x3c4c0 <unix_expandpath+412>
+   0x0003c788 <+1124>:	02 9b	ldr	r3, [sp, #8]
+   0x0003c78a <+1126>:	13 f4 80 6a	ands.w	r10, r3, #1024	; 0x400
+   0x0003c78e <+1130>:	7f f4 87 ae	bne.w	0x3c4a0 <unix_expandpath+380>
+   0x0003c792 <+1134>:	38 46	mov	r0, r7
+   0x0003c794 <+1136>:	00 f0 06 fe	bl	0x3d3a4 <vim_free>
+   0x0003c798 <+1140>:	67 e7	b.n	0x3c66a <unix_expandpath+838>
+   0x0003c79a <+1142>:	4f f0 00 09	mov.w	r9, #0
+   0x0003c79e <+1146>:	57 e6	b.n	0x3c450 <unix_expandpath+300>
+   0x0003c7a0 <+1148>:	18 4b	ldr	r3, [pc, #96]	; (0x3c804 <unix_expandpath+1248>)
+   0x0003c7a2 <+1150>:	20 46	mov	r0, r4
+   0x0003c7a4 <+1152>:	0a 91	str	r1, [sp, #40]	; 0x28
+   0x0003c7a6 <+1154>:	08 92	str	r2, [sp, #32]
+   0x0003c7a8 <+1156>:	58 f8 03 30	ldr.w	r3, [r8, r3]
+   0x0003c7ac <+1160>:	1b 68	ldr	r3, [r3, #0]
+   0x0003c7ae <+1162>:	98 47	blx	r3
+   0x0003c7b0 <+1164>:	08 9a	ldr	r2, [sp, #32]
+   0x0003c7b2 <+1166>:	0a 99	ldr	r1, [sp, #40]	; 0x28
+   0x0003c7b4 <+1168>:	32 f8 10 30	ldrh.w	r3, [r2, r0, lsl #1]
+   0x0003c7b8 <+1172>:	13 f4 80 6f	tst.w	r3, #1024	; 0x400
+   0x0003c7bc <+1176>:	0b 68	ldr	r3, [r1, #0]
+   0x0003c7be <+1178>:	3f f4 fd ad	beq.w	0x3c3bc <unix_expandpath+152>
+   0x0003c7c2 <+1182>:	aa 46	mov	r10, r5
+   0x0003c7c4 <+1184>:	fa e5	b.n	0x3c3bc <unix_expandpath+152>
+   0x0003c7c6 <+1186>:	d0 f7 4c eb	blx	0xce60 <__stack_chk_fail@plt>
+   0x0003c7ca <+1190>:	00 bf	nop
+   0x0003c7cc <+1192>:	62 b3	cbz	r2, 0x3c828 <gen_expand_wildcards+32>
+   0x0003c7ce <+1194>:	06 00	movs	r6, r0
+   0x0003c7d0 <+1196>:	78 03	lsls	r0, r7, #13
+   0x0003c7d2 <+1198>:	00 00	movs	r0, r0
+   0x0003c7d4 <+1200>:	5a 39	subs	r1, #90	; 0x5a
+   0x0003c7d6 <+1202>:	07 00	movs	r7, r0
+   0x0003c7d8 <+1204>:	44 04	lsls	r4, r0, #17
+   0x0003c7da <+1206>:	00 00	movs	r0, r0
+   0x0003c7dc <+1208>:	e4 f5 04 00			; <UNDEFINED> instruction: 0xf5e40004
+   0x0003c7e0 <+1212>:	24 05	lsls	r4, r4, #20
+   0x0003c7e2 <+1214>:	00 00	movs	r0, r0
+   0x0003c7e4 <+1216>:	74 05	lsls	r4, r6, #21
+   0x0003c7e6 <+1218>:	00 00	movs	r0, r0
+   0x0003c7e8 <+1220>:	f4 37	adds	r7, #244	; 0xf4
+   0x0003c7ea <+1222>:	07 00	movs	r7, r0
+   0x0003c7ec <+1224>:	f8 ed 04 00	ldcl	0, cr0, [r8, #16]!
+   0x0003c7f0 <+1228>:	c0 37	adds	r7, #192	; 0xc0
+   0x0003c7f2 <+1230>:	07 00	movs	r7, r0
+   0x0003c7f4 <+1232>:	9a f4 04 00	eors.w	r0, r10, #8650752	; 0x840000
+   0x0003c7f8 <+1236>:	f1 cc	ldmia	r4, {r0, r4, r5, r6, r7}
+   0x0003c7fa <+1238>:	ff ff 9c 03	vrsra.u64	d16, d12, #1
+   0x0003c7fe <+1242>:	00 00	movs	r0, r0
+   0x0003c800 <+1244>:	d8 08	lsrs	r0, r3, #3
+   0x0003c802 <+1246>:	00 00	movs	r0, r0
+   0x0003c804 <+1248>:	88 03	lsls	r0, r1, #14
+   0x0003c806 <+1250>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_beep:
+   0x0003b344 <+0>:	10 b5	push	{r4, lr}
+   0x0003b346 <+2>:	13 4c	ldr	r4, [pc, #76]	; (0x3b394 <vim_beep+80>)
+   0x0003b348 <+4>:	13 4b	ldr	r3, [pc, #76]	; (0x3b398 <vim_beep+84>)
+   0x0003b34a <+6>:	7c 44	add	r4, pc
+   0x0003b34c <+8>:	e3 58	ldr	r3, [r4, r3]
+   0x0003b34e <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b350 <+12>:	cb b9	cbnz	r3, 0x3b386 <vim_beep+66>
+   0x0003b352 <+14>:	12 4b	ldr	r3, [pc, #72]	; (0x3b39c <vim_beep+88>)
+   0x0003b354 <+16>:	e3 58	ldr	r3, [r4, r3]
+   0x0003b356 <+18>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b358 <+20>:	b3 b9	cbnz	r3, 0x3b388 <vim_beep+68>
+   0x0003b35a <+22>:	07 20	movs	r0, #7
+   0x0003b35c <+24>:	41 f0 1a ff	bl	0x7d194 <out_char>
+   0x0003b360 <+28>:	0f 4b	ldr	r3, [pc, #60]	; (0x3b3a0 <vim_beep+92>)
+   0x0003b362 <+30>:	65 21	movs	r1, #101	; 0x65
+   0x0003b364 <+32>:	e3 58	ldr	r3, [r4, r3]
+   0x0003b366 <+34>:	18 68	ldr	r0, [r3, #0]
+   0x0003b368 <+36>:	02 f0 2a f8	bl	0x3d3c0 <vim_strchr>
+   0x0003b36c <+40>:	58 b1	cbz	r0, 0x3b386 <vim_beep+66>
+   0x0003b36e <+42>:	0d 4b	ldr	r3, [pc, #52]	; (0x3b3a4 <vim_beep+96>)
+   0x0003b370 <+44>:	e4 58	ldr	r4, [r4, r3]
+   0x0003b372 <+46>:	a0 6c	ldr	r0, [r4, #72]	; 0x48
+   0x0003b374 <+48>:	fc f7 a4 ff	bl	0x382c0 <msg_source>
+   0x0003b378 <+52>:	0b 48	ldr	r0, [pc, #44]	; (0x3b3a8 <vim_beep+100>)
+   0x0003b37a <+54>:	a1 6c	ldr	r1, [r4, #72]	; 0x48
+   0x0003b37c <+56>:	78 44	add	r0, pc
+   0x0003b37e <+58>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x0003b382 <+62>:	fc f7 99 bf	b.w	0x382b8 <msg_attr>
+   0x0003b386 <+66>:	10 bd	pop	{r4, pc}
+   0x0003b388 <+68>:	08 4b	ldr	r3, [pc, #32]	; (0x3b3ac <vim_beep+104>)
+   0x0003b38a <+70>:	e3 58	ldr	r3, [r4, r3]
+   0x0003b38c <+72>:	98 6f	ldr	r0, [r3, #120]	; 0x78
+   0x0003b38e <+74>:	41 f0 2f ff	bl	0x7d1f0 <out_str>
+   0x0003b392 <+78>:	e5 e7	b.n	0x3b360 <vim_beep+28>
+   0x0003b394 <+80>:	4e c3	stmia	r3!, {r1, r2, r3, r6}
+   0x0003b396 <+82>:	06 00	movs	r6, r0
+   0x0003b398 <+84>:	d8 08	lsrs	r0, r3, #3
+   0x0003b39a <+86>:	00 00	movs	r0, r0
+   0x0003b39c <+88>:	bc 03	lsls	r4, r7, #14
+   0x0003b39e <+90>:	00 00	movs	r0, r0
+   0x0003b3a0 <+92>:	9c 04	lsls	r4, r3, #18
+   0x0003b3a2 <+94>:	00 00	movs	r0, r0
+   0x0003b3a4 <+96>:	80 07	lsls	r0, r0, #30
+   0x0003b3a6 <+98>:	00 00	movs	r0, r0
+   0x0003b3a8 <+100>:	a0 05	lsls	r0, r4, #22
+   0x0003b3aa <+102>:	05 00	movs	r5, r0
+   0x0003b3ac <+104>:	b4 03	lsls	r4, r6, #14
+   0x0003b3ae <+106>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_fexists:
+   0x0003c154 <+0>:	0b 4b	ldr	r3, [pc, #44]	; (0x3c184 <vim_fexists+48>)
+   0x0003c156 <+2>:	01 46	mov	r1, r0
+   0x0003c158 <+4>:	10 b5	push	{r4, lr}
+   0x0003c15a <+6>:	7b 44	add	r3, pc
+   0x0003c15c <+8>:	0a 4c	ldr	r4, [pc, #40]	; (0x3c188 <vim_fexists+52>)
+   0x0003c15e <+10>:	9c b0	sub	sp, #112	; 0x70
+   0x0003c160 <+12>:	03 20	movs	r0, #3
+   0x0003c162 <+14>:	6a 46	mov	r2, sp
+   0x0003c164 <+16>:	1c 59	ldr	r4, [r3, r4]
+   0x0003c166 <+18>:	23 68	ldr	r3, [r4, #0]
+   0x0003c168 <+20>:	1b 93	str	r3, [sp, #108]	; 0x6c
+   0x0003c16a <+22>:	d1 f7 be e8	blx	0xd2e8 <__xstat64@plt>
+   0x0003c16e <+26>:	1b 9a	ldr	r2, [sp, #108]	; 0x6c
+   0x0003c170 <+28>:	23 68	ldr	r3, [r4, #0]
+   0x0003c172 <+30>:	9a 42	cmp	r2, r3
+   0x0003c174 <+32>:	04 d1	bne.n	0x3c180 <vim_fexists+44>
+   0x0003c176 <+34>:	b0 fa 80 f0	clz	r0, r0
+   0x0003c17a <+38>:	40 09	lsrs	r0, r0, #5
+   0x0003c17c <+40>:	1c b0	add	sp, #112	; 0x70
+   0x0003c17e <+42>:	10 bd	pop	{r4, pc}
+   0x0003c180 <+44>:	d0 f7 6e ee	blx	0xce60 <__stack_chk_fail@plt>
+   0x0003c184 <+48>:	3e b5	push	{r1, r2, r3, r4, r5, lr}
+   0x0003c186 <+50>:	06 00	movs	r6, r0
+   0x0003c188 <+52>:	78 03	lsls	r0, r7, #13
+   0x0003c18a <+54>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_fnamecmp:
+   0x0003b654 <+0>:	05 4b	ldr	r3, [pc, #20]	; (0x3b66c <vim_fnamecmp+24>)
+   0x0003b656 <+2>:	06 4a	ldr	r2, [pc, #24]	; (0x3b670 <vim_fnamecmp+28>)
+   0x0003b658 <+4>:	7b 44	add	r3, pc
+   0x0003b65a <+6>:	9b 58	ldr	r3, [r3, r2]
+   0x0003b65c <+8>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b65e <+10>:	0b b9	cbnz	r3, 0x3b664 <vim_fnamecmp+16>
+   0x0003b660 <+12>:	d1 f7 44 bb	b.w	0xccec <strcmp@plt>
+   0x0003b664 <+16>:	6f f0 00 42	mvn.w	r2, #2147483648	; 0x80000000
+   0x0003b668 <+20>:	06 f0 0c bd	b.w	0x42084 <mb_strnicmp>
+   0x0003b66c <+24>:	40 c0	stmia	r0!, {r6}
+   0x0003b66e <+26>:	06 00	movs	r6, r0
+   0x0003b670 <+28>:	74 05	lsls	r4, r6, #21
+   0x0003b672 <+30>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vim_fnamencmp:
+   0x0003b674 <+0>:	07 4b	ldr	r3, [pc, #28]	; (0x3b694 <vim_fnamencmp+32>)
+   0x0003b676 <+2>:	10 b4	push	{r4}
+   0x0003b678 <+4>:	7b 44	add	r3, pc
+   0x0003b67a <+6>:	07 4c	ldr	r4, [pc, #28]	; (0x3b698 <vim_fnamencmp+36>)
+   0x0003b67c <+8>:	1b 59	ldr	r3, [r3, r4]
+   0x0003b67e <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x0003b680 <+12>:	1b b9	cbnz	r3, 0x3b68a <vim_fnamencmp+22>
+   0x0003b682 <+14>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0003b686 <+18>:	d1 f7 49 be	b.w	0xd31c <strncmp@plt>
+   0x0003b68a <+22>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0003b68e <+26>:	06 f0 f9 bc	b.w	0x42084 <mb_strnicmp>
+   0x0003b692 <+30>:	00 bf	nop
+   0x0003b694 <+32>:	20 c0	stmia	r0!, {r5}
+   0x0003b696 <+34>:	06 00	movs	r6, r0
+   0x0003b698 <+36>:	74 05	lsls	r4, r6, #21
+   0x0003b69a <+38>:	00 00	movs	r0, r0
+End of assembler dump.

@@ -1,0 +1,526 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function buflist_add:
+   0x00010264 <+0>:	00 22	movs	r2, #0
+   0x00010266 <+2>:	08 b5	push	{r3, lr}
+   0x00010268 <+4>:	0b 46	mov	r3, r1
+   0x0001026a <+6>:	11 46	mov	r1, r2
+   0x0001026c <+8>:	ff f7 46 fe	bl	0xfefc <buflist_new>
+   0x00010270 <+12>:	00 b1	cbz	r0, 0x10274 <buflist_add+16>
+   0x00010272 <+14>:	00 6e	ldr	r0, [r0, #96]	; 0x60
+   0x00010274 <+16>:	08 bd	pop	{r3, pc}
+End of assembler dump.
+Dump of assembler code for function buflist_altfpos:
+   0x0000fd2c <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0000fd2e <+2>:	01 46	mov	r1, r0
+   0x0000fd30 <+4>:	07 4c	ldr	r4, [pc, #28]	; (0xfd50 <buflist_altfpos+36>)
+   0x0000fd32 <+6>:	82 b0	sub	sp, #8
+   0x0000fd34 <+8>:	07 4d	ldr	r5, [pc, #28]	; (0xfd54 <buflist_altfpos+40>)
+   0x0000fd36 <+10>:	01 26	movs	r6, #1
+   0x0000fd38 <+12>:	7c 44	add	r4, pc
+   0x0000fd3a <+14>:	43 69	ldr	r3, [r0, #20]
+   0x0000fd3c <+16>:	02 69	ldr	r2, [r0, #16]
+   0x0000fd3e <+18>:	20 46	mov	r0, r4
+   0x0000fd40 <+20>:	40 59	ldr	r0, [r0, r5]
+   0x0000fd42 <+22>:	00 96	str	r6, [sp, #0]
+   0x0000fd44 <+24>:	00 68	ldr	r0, [r0, #0]
+   0x0000fd46 <+26>:	80 30	adds	r0, #128	; 0x80
+   0x0000fd48 <+28>:	ff f7 06 f9	bl	0xef58 <buflist_setfpos>
+   0x0000fd4c <+32>:	02 b0	add	sp, #8
+   0x0000fd4e <+34>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0000fd50 <+36>:	60 79	ldrb	r0, [r4, #5]
+   0x0000fd52 <+38>:	09 00	movs	r1, r1
+   0x0000fd54 <+40>:	b0 07	lsls	r0, r6, #30
+   0x0000fd56 <+42>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function buflist_findfpos:
+   0x0000fb10 <+0>:	d0 f8 80 00	ldr.w	r0, [r0, #128]	; 0x80
+   0x0000fb14 <+4>:	0e 4a	ldr	r2, [pc, #56]	; (0xfb50 <buflist_findfpos+64>)
+   0x0000fb16 <+6>:	7a 44	add	r2, pc
+   0x0000fb18 <+8>:	b8 b1	cbz	r0, 0xfb4a <buflist_findfpos+58>
+   0x0000fb1a <+10>:	0e 4b	ldr	r3, [pc, #56]	; (0xfb54 <buflist_findfpos+68>)
+   0x0000fb1c <+12>:	10 b4	push	{r4}
+   0x0000fb1e <+14>:	d3 58	ldr	r3, [r2, r3]
+   0x0000fb20 <+16>:	84 68	ldr	r4, [r0, #8]
+   0x0000fb22 <+18>:	19 68	ldr	r1, [r3, #0]
+   0x0000fb24 <+20>:	8c 42	cmp	r4, r1
+   0x0000fb26 <+22>:	07 d0	beq.n	0xfb38 <buflist_findfpos+40>
+   0x0000fb28 <+24>:	03 46	mov	r3, r0
+   0x0000fb2a <+26>:	02 e0	b.n	0xfb32 <buflist_findfpos+34>
+   0x0000fb2c <+28>:	9a 68	ldr	r2, [r3, #8]
+   0x0000fb2e <+30>:	8a 42	cmp	r2, r1
+   0x0000fb30 <+32>:	06 d0	beq.n	0xfb40 <buflist_findfpos+48>
+   0x0000fb32 <+34>:	1b 68	ldr	r3, [r3, #0]
+   0x0000fb34 <+36>:	00 2b	cmp	r3, #0
+   0x0000fb36 <+38>:	f9 d1	bne.n	0xfb2c <buflist_findfpos+28>
+   0x0000fb38 <+40>:	0c 30	adds	r0, #12
+   0x0000fb3a <+42>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0000fb3e <+46>:	70 47	bx	lr
+   0x0000fb40 <+48>:	18 46	mov	r0, r3
+   0x0000fb42 <+50>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0000fb46 <+54>:	0c 30	adds	r0, #12
+   0x0000fb48 <+56>:	70 47	bx	lr
+   0x0000fb4a <+58>:	03 48	ldr	r0, [pc, #12]	; (0xfb58 <buflist_findfpos+72>)
+   0x0000fb4c <+60>:	78 44	add	r0, pc
+   0x0000fb4e <+62>:	70 47	bx	lr
+   0x0000fb50 <+64>:	82 7b	ldrb	r2, [r0, #14]
+   0x0000fb52 <+66>:	09 00	movs	r1, r1
+   0x0000fb54 <+68>:	24 04	lsls	r4, r4, #16
+   0x0000fb56 <+70>:	00 00	movs	r0, r0
+   0x0000fb58 <+72>:	b8 84	strh	r0, [r7, #36]	; 0x24
+   0x0000fb5a <+74>:	09 00	movs	r1, r1
+End of assembler dump.
+Dump of assembler code for function buflist_findlnum:
+   0x0000fb5c <+0>:	d0 f8 80 00	ldr.w	r0, [r0, #128]	; 0x80
+   0x0000fb60 <+4>:	10 4a	ldr	r2, [pc, #64]	; (0xfba4 <buflist_findlnum+72>)
+   0x0000fb62 <+6>:	7a 44	add	r2, pc
+   0x0000fb64 <+8>:	c8 b1	cbz	r0, 0xfb9a <buflist_findlnum+62>
+   0x0000fb66 <+10>:	10 4b	ldr	r3, [pc, #64]	; (0xfba8 <buflist_findlnum+76>)
+   0x0000fb68 <+12>:	10 b4	push	{r4}
+   0x0000fb6a <+14>:	d3 58	ldr	r3, [r2, r3]
+   0x0000fb6c <+16>:	84 68	ldr	r4, [r0, #8]
+   0x0000fb6e <+18>:	19 68	ldr	r1, [r3, #0]
+   0x0000fb70 <+20>:	8c 42	cmp	r4, r1
+   0x0000fb72 <+22>:	07 d0	beq.n	0xfb84 <buflist_findlnum+40>
+   0x0000fb74 <+24>:	03 46	mov	r3, r0
+   0x0000fb76 <+26>:	02 e0	b.n	0xfb7e <buflist_findlnum+34>
+   0x0000fb78 <+28>:	9a 68	ldr	r2, [r3, #8]
+   0x0000fb7a <+30>:	8a 42	cmp	r2, r1
+   0x0000fb7c <+32>:	07 d0	beq.n	0xfb8e <buflist_findlnum+50>
+   0x0000fb7e <+34>:	1b 68	ldr	r3, [r3, #0]
+   0x0000fb80 <+36>:	00 2b	cmp	r3, #0
+   0x0000fb82 <+38>:	f9 d1	bne.n	0xfb78 <buflist_findlnum+28>
+   0x0000fb84 <+40>:	0c 30	adds	r0, #12
+   0x0000fb86 <+42>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0000fb8a <+46>:	00 68	ldr	r0, [r0, #0]
+   0x0000fb8c <+48>:	70 47	bx	lr
+   0x0000fb8e <+50>:	18 46	mov	r0, r3
+   0x0000fb90 <+52>:	0c 30	adds	r0, #12
+   0x0000fb92 <+54>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0000fb96 <+58>:	00 68	ldr	r0, [r0, #0]
+   0x0000fb98 <+60>:	70 47	bx	lr
+   0x0000fb9a <+62>:	04 48	ldr	r0, [pc, #16]	; (0xfbac <buflist_findlnum+80>)
+   0x0000fb9c <+64>:	78 44	add	r0, pc
+   0x0000fb9e <+66>:	00 68	ldr	r0, [r0, #0]
+   0x0000fba0 <+68>:	70 47	bx	lr
+   0x0000fba2 <+70>:	00 bf	nop
+   0x0000fba4 <+72>:	36 7b	ldrb	r6, [r6, #12]
+   0x0000fba6 <+74>:	09 00	movs	r1, r1
+   0x0000fba8 <+76>:	24 04	lsls	r4, r4, #16
+   0x0000fbaa <+78>:	00 00	movs	r0, r0
+   0x0000fbac <+80>:	68 84	strh	r0, [r5, #34]	; 0x22
+   0x0000fbae <+82>:	09 00	movs	r1, r1
+End of assembler dump.
+Dump of assembler code for function buflist_findname:
+   0x0000feac <+0>:	11 4b	ldr	r3, [pc, #68]	; (0xfef4 <buflist_findname+72>)
+   0x0000feae <+2>:	01 46	mov	r1, r0
+   0x0000feb0 <+4>:	30 b5	push	{r4, r5, lr}
+   0x0000feb2 <+6>:	7b 44	add	r3, pc
+   0x0000feb4 <+8>:	10 4c	ldr	r4, [pc, #64]	; (0xfef8 <buflist_findname+76>)
+   0x0000feb6 <+10>:	9f b0	sub	sp, #124	; 0x7c
+   0x0000feb8 <+12>:	02 aa	add	r2, sp, #8
+   0x0000feba <+14>:	05 46	mov	r5, r0
+   0x0000febc <+16>:	01 92	str	r2, [sp, #4]
+   0x0000febe <+18>:	03 20	movs	r0, #3
+   0x0000fec0 <+20>:	1c 59	ldr	r4, [r3, r4]
+   0x0000fec2 <+22>:	23 68	ldr	r3, [r4, #0]
+   0x0000fec4 <+24>:	1d 93	str	r3, [sp, #116]	; 0x74
+   0x0000fec6 <+26>:	fd f7 10 ea	blx	0xd2e8 <__xstat64@plt>
+   0x0000feca <+30>:	01 99	ldr	r1, [sp, #4]
+   0x0000fecc <+32>:	00 28	cmp	r0, #0
+   0x0000fece <+34>:	28 46	mov	r0, r5
+   0x0000fed0 <+36>:	be bf	ittt	lt
+   0x0000fed2 <+38>:	4f f0 ff 32	movlt.w	r2, #4294967295
+   0x0000fed6 <+42>:	4f f0 ff 33	movlt.w	r3, #4294967295
+   0x0000feda <+46>:	cd e9 02 23	strdlt	r2, r3, [sp, #8]
+   0x0000fede <+50>:	ff f7 c7 ff	bl	0xfe70 <buflist_findname_stat>
+   0x0000fee2 <+54>:	1d 9a	ldr	r2, [sp, #116]	; 0x74
+   0x0000fee4 <+56>:	23 68	ldr	r3, [r4, #0]
+   0x0000fee6 <+58>:	9a 42	cmp	r2, r3
+   0x0000fee8 <+60>:	01 d1	bne.n	0xfeee <buflist_findname+66>
+   0x0000feea <+62>:	1f b0	add	sp, #124	; 0x7c
+   0x0000feec <+64>:	30 bd	pop	{r4, r5, pc}
+   0x0000feee <+66>:	fc f7 b8 ef	blx	0xce60 <__stack_chk_fail@plt>
+   0x0000fef2 <+70>:	00 bf	nop
+   0x0000fef4 <+72>:	e6 77	strb	r6, [r4, #31]
+   0x0000fef6 <+74>:	09 00	movs	r1, r1
+   0x0000fef8 <+76>:	78 03	lsls	r0, r7, #13
+   0x0000fefa <+78>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function buflist_findnr:
+   0x0000f5bc <+0>:	09 4b	ldr	r3, [pc, #36]	; (0xf5e4 <buflist_findnr+40>)
+   0x0000f5be <+2>:	7b 44	add	r3, pc
+   0x0000f5c0 <+4>:	20 b9	cbnz	r0, 0xf5cc <buflist_findnr+16>
+   0x0000f5c2 <+6>:	09 4a	ldr	r2, [pc, #36]	; (0xf5e8 <buflist_findnr+44>)
+   0x0000f5c4 <+8>:	9a 58	ldr	r2, [r3, r2]
+   0x0000f5c6 <+10>:	12 68	ldr	r2, [r2, #0]
+   0x0000f5c8 <+12>:	d2 f8 9c 00	ldr.w	r0, [r2, #156]	; 0x9c
+   0x0000f5cc <+16>:	07 4a	ldr	r2, [pc, #28]	; (0xf5ec <buflist_findnr+48>)
+   0x0000f5ce <+18>:	9b 58	ldr	r3, [r3, r2]
+   0x0000f5d0 <+20>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f5d2 <+22>:	13 b9	cbnz	r3, 0xf5da <buflist_findnr+30>
+   0x0000f5d4 <+24>:	04 e0	b.n	0xf5e0 <buflist_findnr+36>
+   0x0000f5d6 <+26>:	1b 6b	ldr	r3, [r3, #48]	; 0x30
+   0x0000f5d8 <+28>:	13 b1	cbz	r3, 0xf5e0 <buflist_findnr+36>
+   0x0000f5da <+30>:	1a 6e	ldr	r2, [r3, #96]	; 0x60
+   0x0000f5dc <+32>:	90 42	cmp	r0, r2
+   0x0000f5de <+34>:	fa d1	bne.n	0xf5d6 <buflist_findnr+26>
+   0x0000f5e0 <+36>:	18 46	mov	r0, r3
+   0x0000f5e2 <+38>:	70 47	bx	lr
+   0x0000f5e4 <+40>:	da 80	strh	r2, [r3, #6]
+   0x0000f5e6 <+42>:	09 00	movs	r1, r1
+   0x0000f5e8 <+44>:	24 04	lsls	r4, r4, #16
+   0x0000f5ea <+46>:	00 00	movs	r0, r0
+   0x0000f5ec <+48>:	68 05	lsls	r0, r5, #21
+   0x0000f5ee <+50>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function buflist_getfile:
+   0x0000f358 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0000f35c <+4>:	88 46	mov	r8, r1
+   0x0000f35e <+6>:	6d 4d	ldr	r5, [pc, #436]	; (0xf514 <buflist_getfile+444>)
+   0x0000f360 <+8>:	85 b0	sub	sp, #20
+   0x0000f362 <+10>:	93 46	mov	r11, r2
+   0x0000f364 <+12>:	9a 46	mov	r10, r3
+   0x0000f366 <+14>:	7d 44	add	r5, pc
+   0x0000f368 <+16>:	00 28	cmp	r0, #0
+   0x0000f36a <+18>:	64 d1	bne.n	0xf436 <buflist_getfile+222>
+   0x0000f36c <+20>:	6a 4b	ldr	r3, [pc, #424]	; (0xf518 <buflist_getfile+448>)
+   0x0000f36e <+22>:	6b 49	ldr	r1, [pc, #428]	; (0xf51c <buflist_getfile+452>)
+   0x0000f370 <+24>:	ec 58	ldr	r4, [r5, r3]
+   0x0000f372 <+26>:	69 58	ldr	r1, [r5, r1]
+   0x0000f374 <+28>:	24 68	ldr	r4, [r4, #0]
+   0x0000f376 <+30>:	0b 68	ldr	r3, [r1, #0]
+   0x0000f378 <+32>:	d3 f8 9c 60	ldr.w	r6, [r3, #156]	; 0x9c
+   0x0000f37c <+36>:	4c b1	cbz	r4, 0xf392 <buflist_getfile+58>
+   0x0000f37e <+38>:	23 6e	ldr	r3, [r4, #96]	; 0x60
+   0x0000f380 <+40>:	9e 42	cmp	r6, r3
+   0x0000f382 <+42>:	03 d1	bne.n	0xf38c <buflist_getfile+52>
+   0x0000f384 <+44>:	16 e0	b.n	0xf3b4 <buflist_getfile+92>
+   0x0000f386 <+46>:	23 6e	ldr	r3, [r4, #96]	; 0x60
+   0x0000f388 <+48>:	b3 42	cmp	r3, r6
+   0x0000f38a <+50>:	13 d0	beq.n	0xf3b4 <buflist_getfile+92>
+   0x0000f38c <+52>:	24 6b	ldr	r4, [r4, #48]	; 0x30
+   0x0000f38e <+54>:	00 2c	cmp	r4, #0
+   0x0000f390 <+56>:	f9 d1	bne.n	0xf386 <buflist_getfile+46>
+   0x0000f392 <+58>:	b0 fa 80 f3	clz	r3, r0
+   0x0000f396 <+62>:	5b 09	lsrs	r3, r3, #5
+   0x0000f398 <+64>:	13 ea 5b 03	ands.w	r3, r3, r11, lsr #1
+   0x0000f39c <+68>:	40 f0 a2 80	bne.w	0xf4e4 <buflist_getfile+396>
+   0x0000f3a0 <+72>:	01 46	mov	r1, r0
+   0x0000f3a2 <+74>:	5f 48	ldr	r0, [pc, #380]	; (0xf520 <buflist_getfile+456>)
+   0x0000f3a4 <+76>:	00 26	movs	r6, #0
+   0x0000f3a6 <+78>:	78 44	add	r0, pc
+   0x0000f3a8 <+80>:	2f f0 72 f8	bl	0x3e490 <emsgn>
+   0x0000f3ac <+84>:	30 46	mov	r0, r6
+   0x0000f3ae <+86>:	05 b0	add	sp, #20
+   0x0000f3b0 <+88>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0000f3b4 <+92>:	5b 4b	ldr	r3, [pc, #364]	; (0xf524 <buflist_getfile+460>)
+   0x0000f3b6 <+94>:	55 f8 03 90	ldr.w	r9, [r5, r3]
+   0x0000f3ba <+98>:	d9 f8 00 30	ldr.w	r3, [r9]
+   0x0000f3be <+102>:	a3 42	cmp	r3, r4
+   0x0000f3c0 <+104>:	68 d0	beq.n	0xf494 <buflist_getfile+316>
+   0x0000f3c2 <+106>:	12 f0 6f ff	bl	0x222a4 <text_locked>
+   0x0000f3c6 <+110>:	06 46	mov	r6, r0
+   0x0000f3c8 <+112>:	00 28	cmp	r0, #0
+   0x0000f3ca <+114>:	68 d1	bne.n	0xf49e <buflist_getfile+326>
+   0x0000f3cc <+116>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x0000f3d0 <+120>:	38 d1	bne.n	0xf444 <buflist_getfile+236>
+   0x0000f3d2 <+122>:	d4 f8 80 70	ldr.w	r7, [r4, #128]	; 0x80
+   0x0000f3d6 <+126>:	00 2f	cmp	r7, #0
+   0x0000f3d8 <+128>:	00 f0 91 80	beq.w	0xf4fe <buflist_getfile+422>
+   0x0000f3dc <+132>:	4f 49	ldr	r1, [pc, #316]	; (0xf51c <buflist_getfile+452>)
+   0x0000f3de <+134>:	bb 68	ldr	r3, [r7, #8]
+   0x0000f3e0 <+136>:	69 58	ldr	r1, [r5, r1]
+   0x0000f3e2 <+138>:	08 68	ldr	r0, [r1, #0]
+   0x0000f3e4 <+140>:	98 42	cmp	r0, r3
+   0x0000f3e6 <+142>:	07 d0	beq.n	0xf3f8 <buflist_getfile+160>
+   0x0000f3e8 <+144>:	3b 46	mov	r3, r7
+   0x0000f3ea <+146>:	02 e0	b.n	0xf3f2 <buflist_getfile+154>
+   0x0000f3ec <+148>:	99 68	ldr	r1, [r3, #8]
+   0x0000f3ee <+150>:	81 42	cmp	r1, r0
+   0x0000f3f0 <+152>:	5c d0	beq.n	0xf4ac <buflist_getfile+340>
+   0x0000f3f2 <+154>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f3f4 <+156>:	00 2b	cmp	r3, #0
+   0x0000f3f6 <+158>:	f9 d1	bne.n	0xf3ec <buflist_getfile+148>
+   0x0000f3f8 <+160>:	0c 37	adds	r7, #12
+   0x0000f3fa <+162>:	7b 68	ldr	r3, [r7, #4]
+   0x0000f3fc <+164>:	1b f0 04 0f	tst.w	r11, #4
+   0x0000f400 <+168>:	d7 f8 00 80	ldr.w	r8, [r7]
+   0x0000f404 <+172>:	03 93	str	r3, [sp, #12]
+   0x0000f406 <+174>:	21 d1	bne.n	0xf44c <buflist_getfile+244>
+   0x0000f408 <+176>:	47 49	ldr	r1, [pc, #284]	; (0xf528 <buflist_getfile+464>)
+   0x0000f40a <+178>:	00 22	movs	r2, #0
+   0x0000f40c <+180>:	20 6e	ldr	r0, [r4, #96]	; 0x60
+   0x0000f40e <+182>:	0b f0 01 03	and.w	r3, r11, #1
+   0x0000f412 <+186>:	6f 58	ldr	r7, [r5, r1]
+   0x0000f414 <+188>:	11 46	mov	r1, r2
+   0x0000f416 <+190>:	8d e8 00 05	stmia.w	sp, {r8, r10}
+   0x0000f41a <+194>:	3c 68	ldr	r4, [r7, #0]
+   0x0000f41c <+196>:	01 34	adds	r4, #1
+   0x0000f41e <+198>:	3c 60	str	r4, [r7, #0]
+   0x0000f420 <+200>:	09 f0 00 f8	bl	0x18424 <getfile>
+   0x0000f424 <+204>:	00 28	cmp	r0, #0
+   0x0000f426 <+206>:	26 dd	ble.n	0xf476 <buflist_getfile+286>
+   0x0000f428 <+208>:	3b 68	ldr	r3, [r7, #0]
+   0x0000f42a <+210>:	30 46	mov	r0, r6
+   0x0000f42c <+212>:	01 3b	subs	r3, #1
+   0x0000f42e <+214>:	3b 60	str	r3, [r7, #0]
+   0x0000f430 <+216>:	05 b0	add	sp, #20
+   0x0000f432 <+218>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0000f436 <+222>:	38 4b	ldr	r3, [pc, #224]	; (0xf518 <buflist_getfile+448>)
+   0x0000f438 <+224>:	06 46	mov	r6, r0
+   0x0000f43a <+226>:	eb 58	ldr	r3, [r5, r3]
+   0x0000f43c <+228>:	1c 68	ldr	r4, [r3, #0]
+   0x0000f43e <+230>:	00 2c	cmp	r4, #0
+   0x0000f440 <+232>:	9d d1	bne.n	0xf37e <buflist_getfile+38>
+   0x0000f442 <+234>:	ad e7	b.n	0xf3a0 <buflist_getfile+72>
+   0x0000f444 <+236>:	1b f0 04 0f	tst.w	r11, #4
+   0x0000f448 <+240>:	03 90	str	r0, [sp, #12]
+   0x0000f44a <+242>:	dd d0	beq.n	0xf408 <buflist_getfile+176>
+   0x0000f44c <+244>:	37 4b	ldr	r3, [pc, #220]	; (0xf52c <buflist_getfile+468>)
+   0x0000f44e <+246>:	ef 58	ldr	r7, [r5, r3]
+   0x0000f450 <+248>:	3b 68	ldr	r3, [r7, #0]
+   0x0000f452 <+250>:	d9 07	lsls	r1, r3, #31
+   0x0000f454 <+252>:	2c d4	bmi.n	0xf4b0 <buflist_getfile+344>
+   0x0000f456 <+254>:	9a 07	lsls	r2, r3, #30
+   0x0000f458 <+256>:	3d d4	bmi.n	0xf4d6 <buflist_getfile+382>
+   0x0000f45a <+258>:	13 f0 0c 0f	tst.w	r3, #12
+   0x0000f45e <+262>:	d3 d0	beq.n	0xf408 <buflist_getfile+176>
+   0x0000f460 <+264>:	d9 f8 00 10	ldr.w	r1, [r9]
+   0x0000f464 <+268>:	08 68	ldr	r0, [r1, #0]
+   0x0000f466 <+270>:	01 28	cmp	r0, #1
+   0x0000f468 <+272>:	4c d0	beq.n	0xf504 <buflist_getfile+428>
+   0x0000f46a <+274>:	13 f0 08 01	ands.w	r1, r3, #8
+   0x0000f46e <+278>:	3f d0	beq.n	0xf4f0 <buflist_getfile+408>
+   0x0000f470 <+280>:	12 f0 82 fb	bl	0x21b78 <tabpage_new>
+   0x0000f474 <+284>:	c8 e7	b.n	0xf408 <buflist_getfile+176>
+   0x0000f476 <+286>:	2e 4b	ldr	r3, [pc, #184]	; (0xf530 <buflist_getfile+472>)
+   0x0000f478 <+288>:	3a 68	ldr	r2, [r7, #0]
+   0x0000f47a <+290>:	01 3a	subs	r2, #1
+   0x0000f47c <+292>:	3a 60	str	r2, [r7, #0]
+   0x0000f47e <+294>:	eb 58	ldr	r3, [r5, r3]
+   0x0000f480 <+296>:	03 9a	ldr	r2, [sp, #12]
+   0x0000f482 <+298>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f484 <+300>:	00 2a	cmp	r2, #0
+   0x0000f486 <+302>:	b3 fa 83 f3	clz	r3, r3
+   0x0000f48a <+306>:	4f ea 53 13	mov.w	r3, r3, lsr #5
+   0x0000f48e <+310>:	08 bf	it	eq
+   0x0000f490 <+312>:	00 23	moveq	r3, #0
+   0x0000f492 <+314>:	a3 b9	cbnz	r3, 0xf4be <buflist_getfile+358>
+   0x0000f494 <+316>:	01 26	movs	r6, #1
+   0x0000f496 <+318>:	30 46	mov	r0, r6
+   0x0000f498 <+320>:	05 b0	add	sp, #20
+   0x0000f49a <+322>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0000f49e <+326>:	12 f0 0f ff	bl	0x222c0 <text_locked_msg>
+   0x0000f4a2 <+330>:	00 26	movs	r6, #0
+   0x0000f4a4 <+332>:	30 46	mov	r0, r6
+   0x0000f4a6 <+334>:	05 b0	add	sp, #20
+   0x0000f4a8 <+336>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0000f4ac <+340>:	1f 46	mov	r7, r3
+   0x0000f4ae <+342>:	a3 e7	b.n	0xf3f8 <buflist_getfile+160>
+   0x0000f4b0 <+344>:	20 46	mov	r0, r4
+   0x0000f4b2 <+346>:	74 f0 33 fa	bl	0x8391c <buf_jump_open_win>
+   0x0000f4b6 <+350>:	00 28	cmp	r0, #0
+   0x0000f4b8 <+352>:	a6 d1	bne.n	0xf408 <buflist_getfile+176>
+   0x0000f4ba <+354>:	3b 68	ldr	r3, [r7, #0]
+   0x0000f4bc <+356>:	cb e7	b.n	0xf456 <buflist_getfile+254>
+   0x0000f4be <+358>:	17 4b	ldr	r3, [pc, #92]	; (0xf51c <buflist_getfile+452>)
+   0x0000f4c0 <+360>:	03 9a	ldr	r2, [sp, #12]
+   0x0000f4c2 <+362>:	ec 58	ldr	r4, [r5, r3]
+   0x0000f4c4 <+364>:	23 68	ldr	r3, [r4, #0]
+   0x0000f4c6 <+366>:	5a 61	str	r2, [r3, #20]
+   0x0000f4c8 <+368>:	2d f0 64 fe	bl	0x3d194 <check_cursor_col>
+   0x0000f4cc <+372>:	22 68	ldr	r2, [r4, #0]
+   0x0000f4ce <+374>:	01 23	movs	r3, #1
+   0x0000f4d0 <+376>:	1e 46	mov	r6, r3
+   0x0000f4d2 <+378>:	d3 61	str	r3, [r2, #28]
+   0x0000f4d4 <+380>:	6a e7	b.n	0xf3ac <buflist_getfile+84>
+   0x0000f4d6 <+382>:	20 46	mov	r0, r4
+   0x0000f4d8 <+384>:	75 f0 44 fa	bl	0x84964 <buf_jump_open_tab>
+   0x0000f4dc <+388>:	00 28	cmp	r0, #0
+   0x0000f4de <+390>:	93 d1	bne.n	0xf408 <buflist_getfile+176>
+   0x0000f4e0 <+392>:	3b 68	ldr	r3, [r7, #0]
+   0x0000f4e2 <+394>:	ba e7	b.n	0xf45a <buflist_getfile+258>
+   0x0000f4e4 <+396>:	13 4b	ldr	r3, [pc, #76]	; (0xf534 <buflist_getfile+476>)
+   0x0000f4e6 <+398>:	00 26	movs	r6, #0
+   0x0000f4e8 <+400>:	e8 58	ldr	r0, [r5, r3]
+   0x0000f4ea <+402>:	28 f0 9d ff	bl	0x38428 <emsg>
+   0x0000f4ee <+406>:	5d e7	b.n	0xf3ac <buflist_getfile+84>
+   0x0000f4f0 <+408>:	08 46	mov	r0, r1
+   0x0000f4f2 <+410>:	75 f0 2d fc	bl	0x84d50 <win_split>
+   0x0000f4f6 <+414>:	00 28	cmp	r0, #0
+   0x0000f4f8 <+416>:	86 d1	bne.n	0xf408 <buflist_getfile+176>
+   0x0000f4fa <+418>:	06 46	mov	r6, r0
+   0x0000f4fc <+420>:	56 e7	b.n	0xf3ac <buflist_getfile+84>
+   0x0000f4fe <+422>:	0e 4f	ldr	r7, [pc, #56]	; (0xf538 <buflist_getfile+480>)
+   0x0000f500 <+424>:	7f 44	add	r7, pc
+   0x0000f502 <+426>:	7a e7	b.n	0xf3fa <buflist_getfile+162>
+   0x0000f504 <+428>:	24 f0 30 f9	bl	0x33768 <ml_get>
+   0x0000f508 <+432>:	03 78	ldrb	r3, [r0, #0]
+   0x0000f50a <+434>:	00 2b	cmp	r3, #0
+   0x0000f50c <+436>:	3f f4 7c af	beq.w	0xf408 <buflist_getfile+176>
+   0x0000f510 <+440>:	3b 68	ldr	r3, [r7, #0]
+   0x0000f512 <+442>:	aa e7	b.n	0xf46a <buflist_getfile+274>
+   0x0000f514 <+444>:	32 83	strh	r2, [r6, #24]
+   0x0000f516 <+446>:	09 00	movs	r1, r1
+   0x0000f518 <+448>:	68 05	lsls	r0, r5, #21
+   0x0000f51a <+450>:	00 00	movs	r0, r0
+   0x0000f51c <+452>:	24 04	lsls	r4, r4, #16
+   0x0000f51e <+454>:	00 00	movs	r0, r0
+   0x0000f520 <+456>:	3e 83	strh	r6, [r7, #24]
+   0x0000f522 <+458>:	07 00	movs	r7, r0
+   0x0000f524 <+460>:	b0 07	lsls	r0, r6, #30
+   0x0000f526 <+462>:	00 00	movs	r0, r0
+   0x0000f528 <+464>:	c0 08	lsrs	r0, r0, #3
+   0x0000f52a <+466>:	00 00	movs	r0, r0
+   0x0000f52c <+468>:	5c 02	lsls	r4, r3, #9
+   0x0000f52e <+470>:	00 00	movs	r0, r0
+   0x0000f530 <+472>:	74 06	lsls	r4, r6, #25
+   0x0000f532 <+474>:	00 00	movs	r0, r0
+   0x0000f534 <+476>:	90 02	lsls	r0, r2, #10
+   0x0000f536 <+478>:	00 00	movs	r0, r0
+   0x0000f538 <+480>:	04 8b	ldrh	r4, [r0, #24]
+   0x0000f53a <+482>:	09 00	movs	r1, r1
+End of assembler dump.
+Dump of assembler code for function buflist_getfpos:
+   0x0000f53c <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0000f53e <+2>:	1a 4d	ldr	r5, [pc, #104]	; (0xf5a8 <buflist_getfpos+108>)
+   0x0000f540 <+4>:	1a 4b	ldr	r3, [pc, #104]	; (0xf5ac <buflist_getfpos+112>)
+   0x0000f542 <+6>:	7d 44	add	r5, pc
+   0x0000f544 <+8>:	eb 58	ldr	r3, [r5, r3]
+   0x0000f546 <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f548 <+12>:	d3 f8 80 00	ldr.w	r0, [r3, #128]	; 0x80
+   0x0000f54c <+16>:	18 4b	ldr	r3, [pc, #96]	; (0xf5b0 <buflist_getfpos+116>)
+   0x0000f54e <+18>:	28 b3	cbz	r0, 0xf59c <buflist_getfpos+96>
+   0x0000f550 <+20>:	ee 58	ldr	r6, [r5, r3]
+   0x0000f552 <+22>:	82 68	ldr	r2, [r0, #8]
+   0x0000f554 <+24>:	31 68	ldr	r1, [r6, #0]
+   0x0000f556 <+26>:	8a 42	cmp	r2, r1
+   0x0000f558 <+28>:	07 d0	beq.n	0xf56a <buflist_getfpos+46>
+   0x0000f55a <+30>:	03 46	mov	r3, r0
+   0x0000f55c <+32>:	02 e0	b.n	0xf564 <buflist_getfpos+40>
+   0x0000f55e <+34>:	9a 68	ldr	r2, [r3, #8]
+   0x0000f560 <+36>:	8a 42	cmp	r2, r1
+   0x0000f562 <+38>:	10 d0	beq.n	0xf586 <buflist_getfpos+74>
+   0x0000f564 <+40>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f566 <+42>:	00 2b	cmp	r3, #0
+   0x0000f568 <+44>:	f9 d1	bne.n	0xf55e <buflist_getfpos+34>
+   0x0000f56a <+46>:	00 f1 0c 04	add.w	r4, r0, #12
+   0x0000f56e <+50>:	23 68	ldr	r3, [r4, #0]
+   0x0000f570 <+52>:	0b 61	str	r3, [r1, #16]
+   0x0000f572 <+54>:	2d f0 b1 fd	bl	0x3d0d8 <check_cursor_lnum>
+   0x0000f576 <+58>:	0f 4b	ldr	r3, [pc, #60]	; (0xf5b4 <buflist_getfpos+120>)
+   0x0000f578 <+60>:	eb 58	ldr	r3, [r5, r3]
+   0x0000f57a <+62>:	1b 68	ldr	r3, [r3, #0]
+   0x0000f57c <+64>:	2b b1	cbz	r3, 0xf58a <buflist_getfpos+78>
+   0x0000f57e <+66>:	33 68	ldr	r3, [r6, #0]
+   0x0000f580 <+68>:	00 22	movs	r2, #0
+   0x0000f582 <+70>:	5a 61	str	r2, [r3, #20]
+   0x0000f584 <+72>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0000f586 <+74>:	18 46	mov	r0, r3
+   0x0000f588 <+76>:	ef e7	b.n	0xf56a <buflist_getfpos+46>
+   0x0000f58a <+78>:	62 68	ldr	r2, [r4, #4]
+   0x0000f58c <+80>:	33 68	ldr	r3, [r6, #0]
+   0x0000f58e <+82>:	5a 61	str	r2, [r3, #20]
+   0x0000f590 <+84>:	2d f0 00 fe	bl	0x3d194 <check_cursor_col>
+   0x0000f594 <+88>:	33 68	ldr	r3, [r6, #0]
+   0x0000f596 <+90>:	01 22	movs	r2, #1
+   0x0000f598 <+92>:	da 61	str	r2, [r3, #28]
+   0x0000f59a <+94>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0000f59c <+96>:	ee 58	ldr	r6, [r5, r3]
+   0x0000f59e <+98>:	06 4c	ldr	r4, [pc, #24]	; (0xf5b8 <buflist_getfpos+124>)
+   0x0000f5a0 <+100>:	31 68	ldr	r1, [r6, #0]
+   0x0000f5a2 <+102>:	7c 44	add	r4, pc
+   0x0000f5a4 <+104>:	e3 e7	b.n	0xf56e <buflist_getfpos+50>
+   0x0000f5a6 <+106>:	00 bf	nop
+   0x0000f5a8 <+108>:	56 81	strh	r6, [r2, #10]
+   0x0000f5aa <+110>:	09 00	movs	r1, r1
+   0x0000f5ac <+112>:	b0 07	lsls	r0, r6, #30
+   0x0000f5ae <+114>:	00 00	movs	r0, r0
+   0x0000f5b0 <+116>:	24 04	lsls	r4, r4, #16
+   0x0000f5b2 <+118>:	00 00	movs	r0, r0
+   0x0000f5b4 <+120>:	74 06	lsls	r4, r6, #25
+   0x0000f5b6 <+122>:	00 00	movs	r0, r0
+   0x0000f5b8 <+124>:	62 8a	ldrh	r2, [r4, #18]
+   0x0000f5ba <+126>:	09 00	movs	r1, r1
+End of assembler dump.
+Dump of assembler code for function buflist_name_nr:
+   0x0000fbb0 <+0>:	30 b4	push	{r4, r5}
+   0x0000fbb2 <+2>:	1c 4d	ldr	r5, [pc, #112]	; (0xfc24 <buflist_name_nr+116>)
+   0x0000fbb4 <+4>:	7d 44	add	r5, pc
+   0x0000fbb6 <+6>:	20 b9	cbnz	r0, 0xfbc2 <buflist_name_nr+18>
+   0x0000fbb8 <+8>:	1b 4b	ldr	r3, [pc, #108]	; (0xfc28 <buflist_name_nr+120>)
+   0x0000fbba <+10>:	eb 58	ldr	r3, [r5, r3]
+   0x0000fbbc <+12>:	1b 68	ldr	r3, [r3, #0]
+   0x0000fbbe <+14>:	d3 f8 9c 00	ldr.w	r0, [r3, #156]	; 0x9c
+   0x0000fbc2 <+18>:	1a 4b	ldr	r3, [pc, #104]	; (0xfc2c <buflist_name_nr+124>)
+   0x0000fbc4 <+20>:	eb 58	ldr	r3, [r5, r3]
+   0x0000fbc6 <+22>:	1b 68	ldr	r3, [r3, #0]
+   0x0000fbc8 <+24>:	4b b1	cbz	r3, 0xfbde <buflist_name_nr+46>
+   0x0000fbca <+26>:	1c 6e	ldr	r4, [r3, #96]	; 0x60
+   0x0000fbcc <+28>:	a0 42	cmp	r0, r4
+   0x0000fbce <+30>:	03 d1	bne.n	0xfbd8 <buflist_name_nr+40>
+   0x0000fbd0 <+32>:	08 e0	b.n	0xfbe4 <buflist_name_nr+52>
+   0x0000fbd2 <+34>:	1c 6e	ldr	r4, [r3, #96]	; 0x60
+   0x0000fbd4 <+36>:	84 42	cmp	r4, r0
+   0x0000fbd6 <+38>:	05 d0	beq.n	0xfbe4 <buflist_name_nr+52>
+   0x0000fbd8 <+40>:	1b 6b	ldr	r3, [r3, #48]	; 0x30
+   0x0000fbda <+42>:	00 2b	cmp	r3, #0
+   0x0000fbdc <+44>:	f9 d1	bne.n	0xfbd2 <buflist_name_nr+34>
+   0x0000fbde <+46>:	18 46	mov	r0, r3
+   0x0000fbe0 <+48>:	30 bc	pop	{r4, r5}
+   0x0000fbe2 <+50>:	70 47	bx	lr
+   0x0000fbe4 <+52>:	98 6c	ldr	r0, [r3, #72]	; 0x48
+   0x0000fbe6 <+54>:	00 28	cmp	r0, #0
+   0x0000fbe8 <+56>:	fa d0	beq.n	0xfbe0 <buflist_name_nr+48>
+   0x0000fbea <+58>:	08 60	str	r0, [r1, #0]
+   0x0000fbec <+60>:	d3 f8 80 40	ldr.w	r4, [r3, #128]	; 0x80
+   0x0000fbf0 <+64>:	ac b1	cbz	r4, 0xfc1e <buflist_name_nr+110>
+   0x0000fbf2 <+66>:	0d 4b	ldr	r3, [pc, #52]	; (0xfc28 <buflist_name_nr+120>)
+   0x0000fbf4 <+68>:	a1 68	ldr	r1, [r4, #8]
+   0x0000fbf6 <+70>:	eb 58	ldr	r3, [r5, r3]
+   0x0000fbf8 <+72>:	18 68	ldr	r0, [r3, #0]
+   0x0000fbfa <+74>:	88 42	cmp	r0, r1
+   0x0000fbfc <+76>:	07 d0	beq.n	0xfc0e <buflist_name_nr+94>
+   0x0000fbfe <+78>:	23 46	mov	r3, r4
+   0x0000fc00 <+80>:	02 e0	b.n	0xfc08 <buflist_name_nr+88>
+   0x0000fc02 <+82>:	99 68	ldr	r1, [r3, #8]
+   0x0000fc04 <+84>:	81 42	cmp	r1, r0
+   0x0000fc06 <+86>:	08 d0	beq.n	0xfc1a <buflist_name_nr+106>
+   0x0000fc08 <+88>:	1b 68	ldr	r3, [r3, #0]
+   0x0000fc0a <+90>:	00 2b	cmp	r3, #0
+   0x0000fc0c <+92>:	f9 d1	bne.n	0xfc02 <buflist_name_nr+82>
+   0x0000fc0e <+94>:	0c 34	adds	r4, #12
+   0x0000fc10 <+96>:	23 68	ldr	r3, [r4, #0]
+   0x0000fc12 <+98>:	01 20	movs	r0, #1
+   0x0000fc14 <+100>:	30 bc	pop	{r4, r5}
+   0x0000fc16 <+102>:	13 60	str	r3, [r2, #0]
+   0x0000fc18 <+104>:	70 47	bx	lr
+   0x0000fc1a <+106>:	1c 46	mov	r4, r3
+   0x0000fc1c <+108>:	f7 e7	b.n	0xfc0e <buflist_name_nr+94>
+   0x0000fc1e <+110>:	04 4c	ldr	r4, [pc, #16]	; (0xfc30 <buflist_name_nr+128>)
+   0x0000fc20 <+112>:	7c 44	add	r4, pc
+   0x0000fc22 <+114>:	f5 e7	b.n	0xfc10 <buflist_name_nr+96>
+   0x0000fc24 <+116>:	e4 7a	ldrb	r4, [r4, #11]
+   0x0000fc26 <+118>:	09 00	movs	r1, r1
+   0x0000fc28 <+120>:	24 04	lsls	r4, r4, #16
+   0x0000fc2a <+122>:	00 00	movs	r0, r0
+   0x0000fc2c <+124>:	68 05	lsls	r0, r5, #21
+   0x0000fc2e <+126>:	00 00	movs	r0, r0
+   0x0000fc30 <+128>:	e4 83	strh	r4, [r4, #30]
+   0x0000fc32 <+130>:	09 00	movs	r1, r1
+End of assembler dump.

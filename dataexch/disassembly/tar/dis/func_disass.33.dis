@@ -1,0 +1,306 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function dirlist_replace_prefix:
+   0x0001681c <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00016820 <+4>:	82 b0	sub	sp, #8
+   0x00016822 <+6>:	0d 46	mov	r5, r1
+   0x00016824 <+8>:	80 46	mov	r8, r0
+   0x00016826 <+10>:	f4 f7 7c eb	blx	0xaf20 <strlen@plt+4>
+   0x0001682a <+14>:	07 46	mov	r7, r0
+   0x0001682c <+16>:	28 46	mov	r0, r5
+   0x0001682e <+18>:	f4 f7 78 eb	blx	0xaf20 <strlen@plt+4>
+   0x00016832 <+22>:	45 f6 80 13	movw	r3, #22912	; 0x5980
+   0x00016836 <+26>:	c0 f2 04 03	movt	r3, #4
+   0x0001683a <+30>:	1c 68	ldr	r4, [r3, #0]
+   0x0001683c <+32>:	06 46	mov	r6, r0
+   0x0001683e <+34>:	54 b1	cbz	r4, 0x16856 <dirlist_replace_prefix+58>
+   0x00016840 <+36>:	04 f1 3c 00	add.w	r0, r4, #60	; 0x3c
+   0x00016844 <+40>:	00 96	str	r6, [sp, #0]
+   0x00016846 <+42>:	41 46	mov	r1, r8
+   0x00016848 <+44>:	3a 46	mov	r2, r7
+   0x0001684a <+46>:	2b 46	mov	r3, r5
+   0x0001684c <+48>:	04 f0 06 fb	bl	0x1ae5c <replace_prefix>
+   0x00016850 <+52>:	24 68	ldr	r4, [r4, #0]
+   0x00016852 <+54>:	00 2c	cmp	r4, #0
+   0x00016854 <+56>:	f4 d1	bne.n	0x16840 <dirlist_replace_prefix+36>
+   0x00016856 <+58>:	02 b0	add	sp, #8
+   0x00016858 <+60>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.
+Dump of assembler code for function dumpdir_create0:
+   0x000169a4 <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x000169a8 <+4>:	82 46	mov	r10, r0
+   0x000169aa <+6>:	06 78	ldrb	r6, [r0, #0]
+   0x000169ac <+8>:	0d 46	mov	r5, r1
+   0x000169ae <+10>:	00 2e	cmp	r6, #0
+   0x000169b0 <+12>:	4a d0	beq.n	0x16a48 <dumpdir_create0+164>
+   0x000169b2 <+14>:	00 27	movs	r7, #0
+   0x000169b4 <+16>:	04 46	mov	r4, r0
+   0x000169b6 <+18>:	b9 46	mov	r9, r7
+   0x000169b8 <+20>:	4f f0 01 08	mov.w	r8, #1
+   0x000169bc <+24>:	20 46	mov	r0, r4
+   0x000169be <+26>:	01 37	adds	r7, #1
+   0x000169c0 <+28>:	f4 f7 ae ea	blx	0xaf20 <strlen@plt+4>
+   0x000169c4 <+32>:	31 46	mov	r1, r6
+   0x000169c6 <+34>:	43 1c	adds	r3, r0, #1
+   0x000169c8 <+36>:	28 46	mov	r0, r5
+   0x000169ca <+38>:	1c 44	add	r4, r3
+   0x000169cc <+40>:	98 44	add	r8, r3
+   0x000169ce <+42>:	15 b1	cbz	r5, 0x169d6 <dumpdir_create0+50>
+   0x000169d0 <+44>:	f4 f7 ac ea	blx	0xaf2c <strchr@plt>
+   0x000169d4 <+48>:	08 b1	cbz	r0, 0x169da <dumpdir_create0+54>
+   0x000169d6 <+50>:	09 f1 01 09	add.w	r9, r9, #1
+   0x000169da <+54>:	26 78	ldrb	r6, [r4, #0]
+   0x000169dc <+56>:	00 2e	cmp	r6, #0
+   0x000169de <+58>:	ed d1	bne.n	0x169bc <dumpdir_create0+24>
+   0x000169e0 <+60>:	08 f1 10 00	add.w	r0, r8, #16
+   0x000169e4 <+64>:	09 f1 01 04	add.w	r4, r9, #1
+   0x000169e8 <+68>:	18 f0 a6 fc	bl	0x2f338 <xmalloc>
+   0x000169ec <+72>:	42 46	mov	r2, r8
+   0x000169ee <+74>:	51 46	mov	r1, r10
+   0x000169f0 <+76>:	06 46	mov	r6, r0
+   0x000169f2 <+78>:	10 30	adds	r0, #16
+   0x000169f4 <+80>:	30 60	str	r0, [r6, #0]
+   0x000169f6 <+82>:	f4 f7 be e8	blx	0xab74 <memcpy@plt+4>
+   0x000169fa <+86>:	20 46	mov	r0, r4
+   0x000169fc <+88>:	04 21	movs	r1, #4
+   0x000169fe <+90>:	77 60	str	r7, [r6, #4]
+   0x00016a00 <+92>:	c6 f8 08 90	str.w	r9, [r6, #8]
+   0x00016a04 <+96>:	18 f0 38 fd	bl	0x2f478 <xcalloc>
+   0x00016a08 <+100>:	34 68	ldr	r4, [r6, #0]
+   0x00016a0a <+102>:	f0 60	str	r0, [r6, #12]
+   0x00016a0c <+104>:	80 46	mov	r8, r0
+   0x00016a0e <+106>:	21 78	ldrb	r1, [r4, #0]
+   0x00016a10 <+108>:	01 b3	cbz	r1, 0x16a54 <dumpdir_create0+176>
+   0x00016a12 <+110>:	00 27	movs	r7, #0
+   0x00016a14 <+112>:	28 46	mov	r0, r5
+   0x00016a16 <+114>:	15 b1	cbz	r5, 0x16a1e <dumpdir_create0+122>
+   0x00016a18 <+116>:	f4 f7 88 ea	blx	0xaf2c <strchr@plt>
+   0x00016a1c <+120>:	28 b1	cbz	r0, 0x16a2a <dumpdir_create0+134>
+   0x00016a1e <+122>:	63 1c	adds	r3, r4, #1
+   0x00016a20 <+124>:	48 f8 27 30	str.w	r3, [r8, r7, lsl #2]
+   0x00016a24 <+128>:	d6 f8 0c 80	ldr.w	r8, [r6, #12]
+   0x00016a28 <+132>:	01 37	adds	r7, #1
+   0x00016a2a <+134>:	20 46	mov	r0, r4
+   0x00016a2c <+136>:	f4 f7 78 ea	blx	0xaf20 <strlen@plt+4>
+   0x00016a30 <+140>:	01 30	adds	r0, #1
+   0x00016a32 <+142>:	04 44	add	r4, r0
+   0x00016a34 <+144>:	21 78	ldrb	r1, [r4, #0]
+   0x00016a36 <+146>:	00 29	cmp	r1, #0
+   0x00016a38 <+148>:	ec d1	bne.n	0x16a14 <dumpdir_create0+112>
+   0x00016a3a <+150>:	bf 00	lsls	r7, r7, #2
+   0x00016a3c <+152>:	00 23	movs	r3, #0
+   0x00016a3e <+154>:	30 46	mov	r0, r6
+   0x00016a40 <+156>:	48 f8 07 30	str.w	r3, [r8, r7]
+   0x00016a44 <+160>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x00016a48 <+164>:	01 24	movs	r4, #1
+   0x00016a4a <+166>:	37 46	mov	r7, r6
+   0x00016a4c <+168>:	b1 46	mov	r9, r6
+   0x00016a4e <+170>:	a0 46	mov	r8, r4
+   0x00016a50 <+172>:	11 20	movs	r0, #17
+   0x00016a52 <+174>:	c9 e7	b.n	0x169e8 <dumpdir_create0+68>
+   0x00016a54 <+176>:	0f 46	mov	r7, r1
+   0x00016a56 <+178>:	f1 e7	b.n	0x16a3c <dumpdir_create0+152>
+End of assembler dump.
+Dump of assembler code for function dumpdir_locate:
+   0x00016940 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00016944 <+4>:	82 b0	sub	sp, #8
+   0x00016946 <+6>:	01 91	str	r1, [sp, #4]
+   0x00016948 <+8>:	b0 b1	cbz	r0, 0x16978 <dumpdir_locate+56>
+   0x0001694a <+10>:	d0 f8 0c 80	ldr.w	r8, [r0, #12]
+   0x0001694e <+14>:	00 25	movs	r5, #0
+   0x00016950 <+16>:	86 68	ldr	r6, [r0, #8]
+   0x00016952 <+18>:	01 e0	b.n	0x16958 <dumpdir_locate+24>
+   0x00016954 <+20>:	13 d0	beq.n	0x1697e <dumpdir_locate+62>
+   0x00016956 <+22>:	65 1c	adds	r5, r4, #1
+   0x00016958 <+24>:	b5 42	cmp	r5, r6
+   0x0001695a <+26>:	0c d2	bcs.n	0x16976 <dumpdir_locate+54>
+   0x0001695c <+28>:	74 19	adds	r4, r6, r5
+   0x0001695e <+30>:	01 a8	add	r0, sp, #4
+   0x00016960 <+32>:	64 08	lsrs	r4, r4, #1
+   0x00016962 <+34>:	08 eb 84 07	add.w	r7, r8, r4, lsl #2
+   0x00016966 <+38>:	39 46	mov	r1, r7
+   0x00016968 <+40>:	ff f7 e6 ff	bl	0x16938 <compare_dirnames>
+   0x0001696c <+44>:	00 28	cmp	r0, #0
+   0x0001696e <+46>:	f1 da	bge.n	0x16954 <dumpdir_locate+20>
+   0x00016970 <+48>:	ac 42	cmp	r4, r5
+   0x00016972 <+50>:	26 46	mov	r6, r4
+   0x00016974 <+52>:	f2 d8	bhi.n	0x1695c <dumpdir_locate+28>
+   0x00016976 <+54>:	00 20	movs	r0, #0
+   0x00016978 <+56>:	02 b0	add	sp, #8
+   0x0001697a <+58>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x0001697e <+62>:	38 46	mov	r0, r7
+   0x00016980 <+64>:	00 2f	cmp	r7, #0
+   0x00016982 <+66>:	f9 d0	beq.n	0x16978 <dumpdir_locate+56>
+   0x00016984 <+68>:	38 68	ldr	r0, [r7, #0]
+   0x00016986 <+70>:	01 38	subs	r0, #1
+   0x00016988 <+72>:	02 b0	add	sp, #8
+   0x0001698a <+74>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.
+Dump of assembler code for function dumpdir_next:
+   0x000167bc <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x000167be <+2>:	04 46	mov	r4, r0
+   0x000167c0 <+4>:	40 68	ldr	r0, [r0, #4]
+   0x000167c2 <+6>:	a5 68	ldr	r5, [r4, #8]
+   0x000167c4 <+8>:	23 68	ldr	r3, [r4, #0]
+   0x000167c6 <+10>:	60 b1	cbz	r0, 0x167e2 <dumpdir_next+38>
+   0x000167c8 <+12>:	1a 68	ldr	r2, [r3, #0]
+   0x000167ca <+14>:	56 19	adds	r6, r2, r5
+   0x000167cc <+16>:	53 5d	ldrb	r3, [r2, r5]
+   0x000167ce <+18>:	33 b1	cbz	r3, 0x167de <dumpdir_next+34>
+   0x000167d0 <+20>:	30 46	mov	r0, r6
+   0x000167d2 <+22>:	01 35	adds	r5, #1
+   0x000167d4 <+24>:	f4 f7 a4 eb	blx	0xaf20 <strlen@plt+4>
+   0x000167d8 <+28>:	33 46	mov	r3, r6
+   0x000167da <+30>:	28 44	add	r0, r5
+   0x000167dc <+32>:	a0 60	str	r0, [r4, #8]
+   0x000167de <+34>:	18 46	mov	r0, r3
+   0x000167e0 <+36>:	70 bd	pop	{r4, r5, r6, pc}
+   0x000167e2 <+38>:	9a 68	ldr	r2, [r3, #8]
+   0x000167e4 <+40>:	95 42	cmp	r5, r2
+   0x000167e6 <+42>:	3b bf	ittet	cc
+   0x000167e8 <+44>:	6a 1c	addcc	r2, r5, #1
+   0x000167ea <+46>:	db 68	ldrcc	r3, [r3, #12]
+   0x000167ec <+48>:	03 46	movcs	r3, r0
+   0x000167ee <+50>:	53 f8 25 30	ldrcc.w	r3, [r3, r5, lsl #2]
+   0x000167f2 <+54>:	3c bf	itt	cc
+   0x000167f4 <+56>:	a2 60	strcc	r2, [r4, #8]
+   0x000167f6 <+58>:	03 f1 ff 33	addcc.w	r3, r3, #4294967295
+   0x000167fa <+62>:	18 46	mov	r0, r3
+   0x000167fc <+64>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.
+Dump of assembler code for function find_directory:
+   0x000168ac <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x000168ae <+2>:	45 f6 80 14	movw	r4, #22912	; 0x5980
+   0x000168b2 <+6>:	c0 f2 04 04	movt	r4, #4
+   0x000168b6 <+10>:	05 46	mov	r5, r0
+   0x000168b8 <+12>:	60 68	ldr	r0, [r4, #4]
+   0x000168ba <+14>:	a8 b1	cbz	r0, 0x168e8 <find_directory+60>
+   0x000168bc <+16>:	46 f2 cc 03	movw	r3, #24780	; 0x60cc
+   0x000168c0 <+20>:	c0 f2 04 03	movt	r3, #4
+   0x000168c4 <+24>:	29 46	mov	r1, r5
+   0x000168c6 <+26>:	18 68	ldr	r0, [r3, #0]
+   0x000168c8 <+28>:	04 f0 7a fa	bl	0x1adc0 <normalize_filename>
+   0x000168cc <+32>:	01 46	mov	r1, r0
+   0x000168ce <+34>:	28 46	mov	r0, r5
+   0x000168d0 <+36>:	ff f7 c4 ff	bl	0x1685c <make_directory>
+   0x000168d4 <+40>:	01 46	mov	r1, r0
+   0x000168d6 <+42>:	05 46	mov	r5, r0
+   0x000168d8 <+44>:	60 68	ldr	r0, [r4, #4]
+   0x000168da <+46>:	14 f0 c5 fa	bl	0x2ae68 <hash_lookup>
+   0x000168de <+50>:	04 46	mov	r4, r0
+   0x000168e0 <+52>:	28 46	mov	r0, r5
+   0x000168e2 <+54>:	ff f7 8d ff	bl	0x16800 <free_directory>
+   0x000168e6 <+58>:	20 46	mov	r0, r4
+   0x000168e8 <+60>:	38 bd	pop	{r3, r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function find_directory_meta:
+   0x000168ec <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x000168f0 <+4>:	45 f6 80 18	movw	r8, #22912	; 0x5980
+   0x000168f4 <+8>:	c0 f2 04 08	movt	r8, #4
+   0x000168f8 <+12>:	04 46	mov	r4, r0
+   0x000168fa <+14>:	d8 f8 08 00	ldr.w	r0, [r8, #8]
+   0x000168fe <+18>:	c0 b1	cbz	r0, 0x16932 <find_directory_meta+70>
+   0x00016900 <+20>:	0d 46	mov	r5, r1
+   0x00016902 <+22>:	4b f2 b0 20	movw	r0, #45744	; 0xb2b0
+   0x00016906 <+26>:	00 21	movs	r1, #0
+   0x00016908 <+28>:	c0 f2 03 00	movt	r0, #3
+   0x0001690c <+32>:	16 46	mov	r6, r2
+   0x0001690e <+34>:	1f 46	mov	r7, r3
+   0x00016910 <+36>:	ff f7 a4 ff	bl	0x1685c <make_directory>
+   0x00016914 <+40>:	c0 e9 04 45	strd	r4, r5, [r0, #16]
+   0x00016918 <+44>:	01 46	mov	r1, r0
+   0x0001691a <+46>:	81 46	mov	r9, r0
+   0x0001691c <+48>:	c0 e9 06 67	strd	r6, r7, [r0, #24]
+   0x00016920 <+52>:	d8 f8 08 00	ldr.w	r0, [r8, #8]
+   0x00016924 <+56>:	14 f0 a0 fa	bl	0x2ae68 <hash_lookup>
+   0x00016928 <+60>:	04 46	mov	r4, r0
+   0x0001692a <+62>:	48 46	mov	r0, r9
+   0x0001692c <+64>:	ff f7 68 ff	bl	0x16800 <free_directory>
+   0x00016930 <+68>:	20 46	mov	r0, r4
+   0x00016932 <+70>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+End of assembler dump.
+Dump of assembler code for function free_directory:
+   0x00016800 <+0>:	10 b5	push	{r4, lr}
+   0x00016802 <+2>:	04 46	mov	r4, r0
+   0x00016804 <+4>:	80 6b	ldr	r0, [r0, #56]	; 0x38
+   0x00016806 <+6>:	f4 f7 8a e9	blx	0xab1c <free>
+   0x0001680a <+10>:	e0 6b	ldr	r0, [r4, #60]	; 0x3c
+   0x0001680c <+12>:	f4 f7 86 e9	blx	0xab1c <free>
+   0x00016810 <+16>:	20 46	mov	r0, r4
+   0x00016812 <+18>:	bd e8 10 40	ldmia.w	sp!, {r4, lr}
+   0x00016816 <+22>:	f4 f7 7f b9	b.w	0xab18 <free@plt>
+End of assembler dump.
+Dump of assembler code for function get_gnu_dumpdir:
+   0x00017554 <+0>:	2d e9 f8 4f	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00017558 <+4>:	80 46	mov	r8, r0
+   0x0001755a <+6>:	05 6e	ldr	r5, [r0, #96]	; 0x60
+   0x0001755c <+8>:	45 f6 ac 69	movw	r9, #24236	; 0x5eac
+   0x00017560 <+12>:	4f f0 02 0b	mov.w	r11, #2
+   0x00017564 <+16>:	c0 f2 04 09	movt	r9, #4
+   0x00017568 <+20>:	28 46	mov	r0, r5
+   0x0001756a <+22>:	17 f0 e5 fe	bl	0x2f338 <xmalloc>
+   0x0001756e <+26>:	46 f2 c0 03	movw	r3, #24768	; 0x60c0
+   0x00017572 <+30>:	c0 f2 04 03	movt	r3, #4
+   0x00017576 <+34>:	82 46	mov	r10, r0
+   0x00017578 <+36>:	18 68	ldr	r0, [r3, #0]
+   0x0001757a <+38>:	f5 f7 d1 fa	bl	0xcb20 <set_next_block_after>
+   0x0001757e <+42>:	40 46	mov	r0, r8
+   0x00017580 <+44>:	f5 f7 be f8	bl	0xc700 <mv_begin_read>
+   0x00017584 <+48>:	57 46	mov	r7, r10
+   0x00017586 <+50>:	d5 b1	cbz	r5, 0x175be <get_gnu_dumpdir+106>
+   0x00017588 <+52>:	28 46	mov	r0, r5
+   0x0001758a <+54>:	00 21	movs	r1, #0
+   0x0001758c <+56>:	f5 f7 d0 f8	bl	0xc730 <mv_size_left>
+   0x00017590 <+60>:	f5 f7 b8 fd	bl	0xd104 <find_next_block>
+   0x00017594 <+64>:	06 46	mov	r6, r0
+   0x00017596 <+66>:	d8 b1	cbz	r0, 0x175d0 <get_gnu_dumpdir+124>
+   0x00017598 <+68>:	30 46	mov	r0, r6
+   0x0001759a <+70>:	f5 f7 07 fb	bl	0xcbac <available_space_after>
+   0x0001759e <+74>:	31 46	mov	r1, r6
+   0x000175a0 <+76>:	a8 42	cmp	r0, r5
+   0x000175a2 <+78>:	04 46	mov	r4, r0
+   0x000175a4 <+80>:	38 46	mov	r0, r7
+   0x000175a6 <+82>:	28 bf	it	cs
+   0x000175a8 <+84>:	2c 46	movcs	r4, r5
+   0x000175aa <+86>:	27 44	add	r7, r4
+   0x000175ac <+88>:	22 46	mov	r2, r4
+   0x000175ae <+90>:	f3 f7 e2 ea	blx	0xab74 <memcpy@plt+4>
+   0x000175b2 <+94>:	60 1e	subs	r0, r4, #1
+   0x000175b4 <+96>:	30 44	add	r0, r6
+   0x000175b6 <+98>:	f5 f7 b3 fa	bl	0xcb20 <set_next_block_after>
+   0x000175ba <+102>:	2d 1b	subs	r5, r5, r4
+   0x000175bc <+104>:	e4 d1	bne.n	0x17588 <get_gnu_dumpdir+52>
+   0x000175be <+106>:	f5 f7 ad f8	bl	0xc71c <mv_end>
+   0x000175c2 <+110>:	01 23	movs	r3, #1
+   0x000175c4 <+112>:	c8 f8 f4 a0	str.w	r10, [r8, #244]	; 0xf4
+   0x000175c8 <+116>:	88 f8 f1 30	strb.w	r3, [r8, #241]	; 0xf1
+   0x000175cc <+120>:	bd e8 f8 8f	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x000175d0 <+124>:	05 22	movs	r2, #5
+   0x000175d2 <+126>:	43 f2 38 41	movw	r1, #13368	; 0x3438
+   0x000175d6 <+130>:	c0 f2 03 01	movt	r1, #3
+   0x000175da <+134>:	f3 f7 1e eb	blx	0xac18 <dcgettext@plt>
+   0x000175de <+138>:	31 46	mov	r1, r6
+   0x000175e0 <+140>:	02 46	mov	r2, r0
+   0x000175e2 <+142>:	01 20	movs	r0, #1
+   0x000175e4 <+144>:	f3 f7 ec eb	blx	0xadc0 <error@plt+4>
+   0x000175e8 <+148>:	c9 f8 00 b0	str.w	r11, [r9]
+   0x000175ec <+152>:	d4 e7	b.n	0x17598 <get_gnu_dumpdir+68>
+End of assembler dump.
+Dump of assembler code for function hash_directory_canonical_name:
+   0x00016fbc <+0>:	80 6b	ldr	r0, [r0, #56]	; 0x38
+   0x00016fbe <+2>:	13 f0 ed bf	b.w	0x2af9c <hash_string>
+End of assembler dump.

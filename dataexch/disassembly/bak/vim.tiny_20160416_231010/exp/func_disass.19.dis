@@ -1,0 +1,375 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function not_writing:
+   0x00017dd4 <+0>:	08 b5	push	{r3, lr}
+   0x00017dd6 <+2>:	07 4b	ldr	r3, [pc, #28]	; (0x17df4 <not_writing+32>)
+   0x00017dd8 <+4>:	07 4a	ldr	r2, [pc, #28]	; (0x17df8 <not_writing+36>)
+   0x00017dda <+6>:	7b 44	add	r3, pc
+   0x00017ddc <+8>:	9b 58	ldr	r3, [r3, r2]
+   0x00017dde <+10>:	1b 68	ldr	r3, [r3, #0]
+   0x00017de0 <+12>:	0b b1	cbz	r3, 0x17de6 <not_writing+18>
+   0x00017de2 <+14>:	00 20	movs	r0, #0
+   0x00017de4 <+16>:	08 bd	pop	{r3, pc}
+   0x00017de6 <+18>:	05 48	ldr	r0, [pc, #20]	; (0x17dfc <not_writing+40>)
+   0x00017de8 <+20>:	78 44	add	r0, pc
+   0x00017dea <+22>:	20 f0 1d fb	bl	0x38428 <emsg>
+   0x00017dee <+26>:	01 20	movs	r0, #1
+   0x00017df0 <+28>:	08 bd	pop	{r3, pc}
+   0x00017df2 <+30>:	00 bf	nop
+   0x00017df4 <+32>:	be f8 08 00	ldrh.w	r0, [lr, #8]
+   0x00017df8 <+36>:	7c 03	lsls	r4, r7, #13
+   0x00017dfa <+38>:	00 00	movs	r0, r0
+   0x00017dfc <+40>:	94 ff 06 00	vaddl.u16	q0, d4, d6
+End of assembler dump.
+Dump of assembler code for function print_line:
+   0x00017764 <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x00017768 <+4>:	91 46	mov	r9, r2
+   0x0001776a <+6>:	10 4c	ldr	r4, [pc, #64]	; (0x177ac <print_line+72>)
+   0x0001776c <+8>:	07 46	mov	r7, r0
+   0x0001776e <+10>:	10 4b	ldr	r3, [pc, #64]	; (0x177b0 <print_line+76>)
+   0x00017770 <+12>:	88 46	mov	r8, r1
+   0x00017772 <+14>:	7c 44	add	r4, pc
+   0x00017774 <+16>:	e5 58	ldr	r5, [r4, r3]
+   0x00017776 <+18>:	2e 68	ldr	r6, [r5, #0]
+   0x00017778 <+20>:	20 f0 7e fc	bl	0x38078 <msg_start>
+   0x0001777c <+24>:	0d 4b	ldr	r3, [pc, #52]	; (0x177b4 <print_line+80>)
+   0x0001777e <+26>:	00 22	movs	r2, #0
+   0x00017780 <+28>:	2a 60	str	r2, [r5, #0]
+   0x00017782 <+30>:	41 46	mov	r1, r8
+   0x00017784 <+32>:	4a 46	mov	r2, r9
+   0x00017786 <+34>:	38 46	mov	r0, r7
+   0x00017788 <+36>:	e4 58	ldr	r4, [r4, r3]
+   0x0001778a <+38>:	01 23	movs	r3, #1
+   0x0001778c <+40>:	23 60	str	r3, [r4, #0]
+   0x0001778e <+42>:	ff f7 ad ff	bl	0x176ec <print_line_no_prefix>
+   0x00017792 <+46>:	3e b1	cbz	r6, 0x177a4 <print_line+64>
+   0x00017794 <+48>:	0a 20	movs	r0, #10
+   0x00017796 <+50>:	1f f0 a5 fd	bl	0x372e4 <msg_putchar>
+   0x0001779a <+54>:	66 f0 ef f9	bl	0x7db7c <cursor_on>
+   0x0001779e <+58>:	65 f0 d3 fc	bl	0x7d148 <out_flush>
+   0x000177a2 <+62>:	2e 60	str	r6, [r5, #0]
+   0x000177a4 <+64>:	00 23	movs	r3, #0
+   0x000177a6 <+66>:	23 60	str	r3, [r4, #0]
+   0x000177a8 <+68>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x000177ac <+72>:	26 ff 08 00	vhadd.u32	d0, d6, d8
+   0x000177b0 <+76>:	08 04	lsls	r0, r1, #16
+   0x000177b2 <+78>:	00 00	movs	r0, r0
+   0x000177b4 <+80>:	a0 04	lsls	r0, r4, #18
+   0x000177b6 <+82>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function print_line_no_prefix:
+   0x000176ec <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x000176f0 <+4>:	06 46	mov	r6, r0
+   0x000176f2 <+6>:	17 4c	ldr	r4, [pc, #92]	; (0x17750 <print_line_no_prefix+100>)
+   0x000176f4 <+8>:	17 46	mov	r7, r2
+   0x000176f6 <+10>:	17 48	ldr	r0, [pc, #92]	; (0x17754 <print_line_no_prefix+104>)
+   0x000176f8 <+12>:	8c b0	sub	sp, #48	; 0x30
+   0x000176fa <+14>:	7c 44	add	r4, pc
+   0x000176fc <+16>:	16 4b	ldr	r3, [pc, #88]	; (0x17758 <print_line_no_prefix+108>)
+   0x000176fe <+18>:	25 58	ldr	r5, [r4, r0]
+   0x00017700 <+20>:	2a 68	ldr	r2, [r5, #0]
+   0x00017702 <+22>:	0b 92	str	r2, [sp, #44]	; 0x2c
+   0x00017704 <+24>:	e3 58	ldr	r3, [r4, r3]
+   0x00017706 <+26>:	1b 68	ldr	r3, [r3, #0]
+   0x00017708 <+28>:	d3 f8 b4 30	ldr.w	r3, [r3, #180]	; 0xb4
+   0x0001770c <+32>:	0b 43	orrs	r3, r1
+   0x0001770e <+34>:	0f d0	beq.n	0x17730 <print_line_no_prefix+68>
+   0x00017710 <+36>:	0d f1 0c 08	add.w	r8, sp, #12
+   0x00017714 <+40>:	11 4a	ldr	r2, [pc, #68]	; (0x1775c <print_line_no_prefix+112>)
+   0x00017716 <+42>:	07 23	movs	r3, #7
+   0x00017718 <+44>:	1e 21	movs	r1, #30
+   0x0001771a <+46>:	00 96	str	r6, [sp, #0]
+   0x0001771c <+48>:	7a 44	add	r2, pc
+   0x0001771e <+50>:	40 46	mov	r0, r8
+   0x00017720 <+52>:	21 f0 7a fd	bl	0x39218 <vim_snprintf>
+   0x00017724 <+56>:	0e 4b	ldr	r3, [pc, #56]	; (0x17760 <print_line_no_prefix+116>)
+   0x00017726 <+58>:	40 46	mov	r0, r8
+   0x00017728 <+60>:	e3 58	ldr	r3, [r4, r3]
+   0x0001772a <+62>:	59 6a	ldr	r1, [r3, #36]	; 0x24
+   0x0001772c <+64>:	1f f0 9e fd	bl	0x3726c <msg_puts_attr>
+   0x00017730 <+68>:	30 46	mov	r0, r6
+   0x00017732 <+70>:	1c f0 19 f8	bl	0x33768 <ml_get>
+   0x00017736 <+74>:	39 46	mov	r1, r7
+   0x00017738 <+76>:	20 f0 a0 fa	bl	0x37c7c <msg_prt_line>
+   0x0001773c <+80>:	0b 9a	ldr	r2, [sp, #44]	; 0x2c
+   0x0001773e <+82>:	2b 68	ldr	r3, [r5, #0]
+   0x00017740 <+84>:	9a 42	cmp	r2, r3
+   0x00017742 <+86>:	02 d1	bne.n	0x1774a <print_line_no_prefix+94>
+   0x00017744 <+88>:	0c b0	add	sp, #48	; 0x30
+   0x00017746 <+90>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x0001774a <+94>:	f5 f7 8a eb	blx	0xce60 <__stack_chk_fail@plt>
+   0x0001774e <+98>:	00 bf	nop
+   0x00017750 <+100>:	9e ff 08 00	vaddl.u16	q0, d14, d8
+   0x00017754 <+104>:	78 03	lsls	r0, r7, #13
+   0x00017756 <+106>:	00 00	movs	r0, r0
+   0x00017758 <+108>:	24 04	lsls	r4, r4, #16
+   0x0001775a <+110>:	00 00	movs	r0, r0
+   0x0001775c <+112>:	24 06	lsls	r4, r4, #24
+   0x0001775e <+114>:	07 00	movs	r7, r0
+   0x00017760 <+116>:	80 07	lsls	r0, r0, #30
+   0x00017762 <+118>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function rename_buffer:
+   0x000177b8 <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x000177bc <+4>:	00 25	movs	r5, #0
+   0x000177be <+6>:	20 4e	ldr	r6, [pc, #128]	; (0x17840 <rename_buffer+136>)
+   0x000177c0 <+8>:	01 46	mov	r1, r0
+   0x000177c2 <+10>:	20 4c	ldr	r4, [pc, #128]	; (0x17844 <rename_buffer+140>)
+   0x000177c4 <+12>:	2a 46	mov	r2, r5
+   0x000177c6 <+14>:	7e 44	add	r6, pc
+   0x000177c8 <+16>:	01 23	movs	r3, #1
+   0x000177ca <+18>:	37 59	ldr	r7, [r6, r4]
+   0x000177cc <+20>:	3c 68	ldr	r4, [r7, #0]
+   0x000177ce <+22>:	d4 f8 40 80	ldr.w	r8, [r4, #64]	; 0x40
+   0x000177d2 <+26>:	20 46	mov	r0, r4
+   0x000177d4 <+28>:	d4 f8 44 90	ldr.w	r9, [r4, #68]	; 0x44
+   0x000177d8 <+32>:	25 64	str	r5, [r4, #64]	; 0x40
+   0x000177da <+34>:	65 64	str	r5, [r4, #68]	; 0x44
+   0x000177dc <+36>:	a4 6c	ldr	r4, [r4, #72]	; 0x48
+   0x000177de <+38>:	f8 f7 4b fd	bl	0x10278 <setfname>
+   0x000177e2 <+42>:	80 b1	cbz	r0, 0x17806 <rename_buffer+78>
+   0x000177e4 <+44>:	3a 68	ldr	r2, [r7, #0]
+   0x000177e6 <+46>:	d3 6b	ldr	r3, [r2, #60]	; 0x3c
+   0x000177e8 <+48>:	43 f0 08 03	orr.w	r3, r3, #8
+   0x000177ec <+52>:	d3 63	str	r3, [r2, #60]	; 0x3c
+   0x000177ee <+54>:	0c b1	cbz	r4, 0x177f4 <rename_buffer+60>
+   0x000177f0 <+56>:	23 78	ldrb	r3, [r4, #0]
+   0x000177f2 <+58>:	7b b9	cbnz	r3, 0x17814 <rename_buffer+92>
+   0x000177f4 <+60>:	40 46	mov	r0, r8
+   0x000177f6 <+62>:	25 f0 d5 fd	bl	0x3d3a4 <vim_free>
+   0x000177fa <+66>:	48 46	mov	r0, r9
+   0x000177fc <+68>:	25 f0 d2 fd	bl	0x3d3a4 <vim_free>
+   0x00017800 <+72>:	01 20	movs	r0, #1
+   0x00017802 <+74>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x00017806 <+78>:	3b 68	ldr	r3, [r7, #0]
+   0x00017808 <+80>:	c3 f8 40 80	str.w	r8, [r3, #64]	; 0x40
+   0x0001780c <+84>:	c3 f8 44 90	str.w	r9, [r3, #68]	; 0x44
+   0x00017810 <+88>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x00017814 <+92>:	0c 4a	ldr	r2, [pc, #48]	; (0x17848 <rename_buffer+144>)
+   0x00017816 <+94>:	21 46	mov	r1, r4
+   0x00017818 <+96>:	2b 46	mov	r3, r5
+   0x0001781a <+98>:	40 46	mov	r0, r8
+   0x0001781c <+100>:	b4 58	ldr	r4, [r6, r2]
+   0x0001781e <+102>:	22 68	ldr	r2, [r4, #0]
+   0x00017820 <+104>:	12 69	ldr	r2, [r2, #16]
+   0x00017822 <+106>:	f8 f7 6b fb	bl	0xfefc <buflist_new>
+   0x00017826 <+110>:	00 28	cmp	r0, #0
+   0x00017828 <+112>:	e4 d0	beq.n	0x177f4 <rename_buffer+60>
+   0x0001782a <+114>:	08 4b	ldr	r3, [pc, #32]	; (0x1784c <rename_buffer+148>)
+   0x0001782c <+116>:	f3 58	ldr	r3, [r6, r3]
+   0x0001782e <+118>:	db 68	ldr	r3, [r3, #12]
+   0x00017830 <+120>:	00 2b	cmp	r3, #0
+   0x00017832 <+122>:	df d1	bne.n	0x177f4 <rename_buffer+60>
+   0x00017834 <+124>:	23 68	ldr	r3, [r4, #0]
+   0x00017836 <+126>:	02 6e	ldr	r2, [r0, #96]	; 0x60
+   0x00017838 <+128>:	c3 f8 9c 20	str.w	r2, [r3, #156]	; 0x9c
+   0x0001783c <+132>:	da e7	b.n	0x177f4 <rename_buffer+60>
+   0x0001783e <+134>:	00 bf	nop
+   0x00017840 <+136>:	d2 fe 08 00	cdp2	0, 13, cr0, cr2, cr8, {0}
+   0x00017844 <+140>:	b0 07	lsls	r0, r6, #30
+   0x00017846 <+142>:	00 00	movs	r0, r0
+   0x00017848 <+144>:	24 04	lsls	r4, r4, #16
+   0x0001784a <+146>:	00 00	movs	r0, r0
+   0x0001784c <+148>:	d8 05	lsls	r0, r3, #23
+   0x0001784e <+150>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function check_readonly:
+   0x00016630 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x00016632 <+2>:	9c b0	sub	sp, #112	; 0x70
+   0x00016634 <+4>:	19 4c	ldr	r4, [pc, #100]	; (0x1669c <check_readonly+108>)
+   0x00016636 <+6>:	1a 4b	ldr	r3, [pc, #104]	; (0x166a0 <check_readonly+112>)
+   0x00016638 <+8>:	7c 44	add	r4, pc
+   0x0001663a <+10>:	e5 58	ldr	r5, [r4, r3]
+   0x0001663c <+12>:	2b 68	ldr	r3, [r5, #0]
+   0x0001663e <+14>:	1b 93	str	r3, [sp, #108]	; 0x6c
+   0x00016640 <+16>:	70 b9	cbnz	r0, 0x16660 <check_readonly+48>
+   0x00016642 <+18>:	d1 f8 9c 35	ldr.w	r3, [r1, #1436]	; 0x59c
+   0x00016646 <+22>:	0e 46	mov	r6, r1
+   0x00016648 <+24>:	63 b1	cbz	r3, 0x16664 <check_readonly+52>
+   0x0001664a <+26>:	16 4b	ldr	r3, [pc, #88]	; (0x166a4 <check_readonly+116>)
+   0x0001664c <+28>:	e0 58	ldr	r0, [r4, r3]
+   0x0001664e <+30>:	21 f0 eb fe	bl	0x38428 <emsg>
+   0x00016652 <+34>:	01 20	movs	r0, #1
+   0x00016654 <+36>:	1b 9a	ldr	r2, [sp, #108]	; 0x6c
+   0x00016656 <+38>:	2b 68	ldr	r3, [r5, #0]
+   0x00016658 <+40>:	9a 42	cmp	r2, r3
+   0x0001665a <+42>:	1c d1	bne.n	0x16696 <check_readonly+102>
+   0x0001665c <+44>:	1c b0	add	sp, #112	; 0x70
+   0x0001665e <+46>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00016660 <+48>:	00 20	movs	r0, #0
+   0x00016662 <+50>:	f7 e7	b.n	0x16654 <check_readonly+36>
+   0x00016664 <+52>:	6a 46	mov	r2, sp
+   0x00016666 <+54>:	09 6c	ldr	r1, [r1, #64]	; 0x40
+   0x00016668 <+56>:	03 20	movs	r0, #3
+   0x0001666a <+58>:	f6 f7 3e ee	blx	0xd2e8 <__xstat64@plt>
+   0x0001666e <+62>:	00 28	cmp	r0, #0
+   0x00016670 <+64>:	f6 db	blt.n	0x16660 <check_readonly+48>
+   0x00016672 <+66>:	40 f2 ff 11	movw	r1, #511	; 0x1ff
+   0x00016676 <+70>:	30 6c	ldr	r0, [r6, #64]	; 0x40
+   0x00016678 <+72>:	0f f0 c6 ff	bl	0x26608 <check_file_readonly>
+   0x0001667c <+76>:	00 28	cmp	r0, #0
+   0x0001667e <+78>:	ef d0	beq.n	0x16660 <check_readonly+48>
+   0x00016680 <+80>:	d6 f8 9c 35	ldr.w	r3, [r6, #1436]	; 0x59c
+   0x00016684 <+84>:	00 2b	cmp	r3, #0
+   0x00016686 <+86>:	e0 d1	bne.n	0x1664a <check_readonly+26>
+   0x00016688 <+88>:	07 48	ldr	r0, [pc, #28]	; (0x166a8 <check_readonly+120>)
+   0x0001668a <+90>:	b1 6c	ldr	r1, [r6, #72]	; 0x48
+   0x0001668c <+92>:	78 44	add	r0, pc
+   0x0001668e <+94>:	1f f0 75 fb	bl	0x35d7c <emsg2>
+   0x00016692 <+98>:	01 20	movs	r0, #1
+   0x00016694 <+100>:	de e7	b.n	0x16654 <check_readonly+36>
+   0x00016696 <+102>:	f6 f7 e4 eb	blx	0xce60 <__stack_chk_fail@plt>
+   0x0001669a <+106>:	00 bf	nop
+   0x0001669c <+108>:	60 10	asrs	r0, r4, #1
+   0x0001669e <+110>:	09 00	movs	r1, r1
+   0x000166a0 <+112>:	78 03	lsls	r0, r7, #13
+   0x000166a2 <+114>:	00 00	movs	r0, r0
+   0x000166a4 <+116>:	88 02	lsls	r0, r1, #10
+   0x000166a6 <+118>:	00 00	movs	r0, r0
+   0x000166a8 <+120>:	2c 15	asrs	r4, r5, #20
+   0x000166aa <+122>:	07 00	movs	r7, r0
+End of assembler dump.
+Dump of assembler code for function help_compare:
+   0x00016608 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0001660a <+2>:	0d 46	mov	r5, r1
+   0x0001660c <+4>:	06 68	ldr	r6, [r0, #0]
+   0x0001660e <+6>:	30 46	mov	r0, r6
+   0x00016610 <+8>:	f6 f7 60 ed	blx	0xd0d4 <strlen@plt>
+   0x00016614 <+12>:	2d 68	ldr	r5, [r5, #0]
+   0x00016616 <+14>:	04 46	mov	r4, r0
+   0x00016618 <+16>:	28 46	mov	r0, r5
+   0x0001661a <+18>:	f6 f7 5c ed	blx	0xd0d4 <strlen@plt>
+   0x0001661e <+22>:	01 34	adds	r4, #1
+   0x00016620 <+24>:	41 1c	adds	r1, r0, #1
+   0x00016622 <+26>:	30 19	adds	r0, r6, r4
+   0x00016624 <+28>:	29 44	add	r1, r5
+   0x00016626 <+30>:	bd e8 70 40	ldmia.w	sp!, {r4, r5, r6, lr}
+   0x0001662a <+34>:	f6 f7 5f bb	b.w	0xccec <strcmp@plt>
+End of assembler dump.
+Dump of assembler code for function autowrite:
+   0x0001b22c <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x0001b22e <+2>:	12 4b	ldr	r3, [pc, #72]	; (0x1b278 <autowrite+76>)
+   0x0001b230 <+4>:	12 4a	ldr	r2, [pc, #72]	; (0x1b27c <autowrite+80>)
+   0x0001b232 <+6>:	7b 44	add	r3, pc
+   0x0001b234 <+8>:	9a 58	ldr	r2, [r3, r2]
+   0x0001b236 <+10>:	12 68	ldr	r2, [r2, #0]
+   0x0001b238 <+12>:	1a b9	cbnz	r2, 0x1b242 <autowrite+22>
+   0x0001b23a <+14>:	11 4a	ldr	r2, [pc, #68]	; (0x1b280 <autowrite+84>)
+   0x0001b23c <+16>:	9a 58	ldr	r2, [r3, r2]
+   0x0001b23e <+18>:	12 68	ldr	r2, [r2, #0]
+   0x0001b240 <+20>:	c2 b1	cbz	r2, 0x1b274 <autowrite+72>
+   0x0001b242 <+22>:	10 4a	ldr	r2, [pc, #64]	; (0x1b284 <autowrite+88>)
+   0x0001b244 <+24>:	9b 58	ldr	r3, [r3, r2]
+   0x0001b246 <+26>:	1b 68	ldr	r3, [r3, #0]
+   0x0001b248 <+28>:	a3 b1	cbz	r3, 0x1b274 <autowrite+72>
+   0x0001b24a <+30>:	11 b9	cbnz	r1, 0x1b252 <autowrite+38>
+   0x0001b24c <+32>:	d0 f8 9c 35	ldr.w	r3, [r0, #1436]	; 0x59c
+   0x0001b250 <+36>:	83 b9	cbnz	r3, 0x1b274 <autowrite+72>
+   0x0001b252 <+38>:	03 6c	ldr	r3, [r0, #64]	; 0x40
+   0x0001b254 <+40>:	73 b1	cbz	r3, 0x1b274 <autowrite+72>
+   0x0001b256 <+42>:	04 46	mov	r4, r0
+   0x0001b258 <+44>:	ff f7 d4 ff	bl	0x1b204 <buf_write_all>
+   0x0001b25c <+48>:	05 46	mov	r5, r0
+   0x0001b25e <+50>:	20 46	mov	r0, r4
+   0x0001b260 <+52>:	f3 f7 2e ff	bl	0xf0c0 <buf_valid>
+   0x0001b264 <+56>:	08 b9	cbnz	r0, 0x1b26a <autowrite+62>
+   0x0001b266 <+58>:	28 46	mov	r0, r5
+   0x0001b268 <+60>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0001b26a <+62>:	20 46	mov	r0, r4
+   0x0001b26c <+64>:	66 f0 94 f9	bl	0x81598 <bufIsChanged>
+   0x0001b270 <+68>:	00 28	cmp	r0, #0
+   0x0001b272 <+70>:	f8 d0	beq.n	0x1b266 <autowrite+58>
+   0x0001b274 <+72>:	00 20	movs	r0, #0
+   0x0001b276 <+74>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0001b278 <+76>:	66 c4	stmia	r4!, {r1, r2, r5, r6}
+   0x0001b27a <+78>:	08 00	movs	r0, r1
+   0x0001b27c <+80>:	68 08	lsrs	r0, r5, #1
+   0x0001b27e <+82>:	00 00	movs	r0, r0
+   0x0001b280 <+84>:	80 03	lsls	r0, r0, #14
+   0x0001b282 <+86>:	00 00	movs	r0, r0
+   0x0001b284 <+88>:	7c 03	lsls	r4, r7, #13
+   0x0001b286 <+90>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function autowrite_all:
+   0x0001b598 <+0>:	13 4b	ldr	r3, [pc, #76]	; (0x1b5e8 <autowrite_all+80>)
+   0x0001b59a <+2>:	14 4a	ldr	r2, [pc, #80]	; (0x1b5ec <autowrite_all+84>)
+   0x0001b59c <+4>:	7b 44	add	r3, pc
+   0x0001b59e <+6>:	9a 58	ldr	r2, [r3, r2]
+   0x0001b5a0 <+8>:	12 68	ldr	r2, [r2, #0]
+   0x0001b5a2 <+10>:	1a b9	cbnz	r2, 0x1b5ac <autowrite_all+20>
+   0x0001b5a4 <+12>:	12 4a	ldr	r2, [pc, #72]	; (0x1b5f0 <autowrite_all+88>)
+   0x0001b5a6 <+14>:	9a 58	ldr	r2, [r3, r2]
+   0x0001b5a8 <+16>:	12 68	ldr	r2, [r2, #0]
+   0x0001b5aa <+18>:	da b1	cbz	r2, 0x1b5e4 <autowrite_all+76>
+   0x0001b5ac <+20>:	11 4a	ldr	r2, [pc, #68]	; (0x1b5f4 <autowrite_all+92>)
+   0x0001b5ae <+22>:	9a 58	ldr	r2, [r3, r2]
+   0x0001b5b0 <+24>:	12 68	ldr	r2, [r2, #0]
+   0x0001b5b2 <+26>:	ba b1	cbz	r2, 0x1b5e4 <autowrite_all+76>
+   0x0001b5b4 <+28>:	10 4a	ldr	r2, [pc, #64]	; (0x1b5f8 <autowrite_all+96>)
+   0x0001b5b6 <+30>:	10 b5	push	{r4, lr}
+   0x0001b5b8 <+32>:	9b 58	ldr	r3, [r3, r2]
+   0x0001b5ba <+34>:	1c 68	ldr	r4, [r3, #0]
+   0x0001b5bc <+36>:	14 b9	cbnz	r4, 0x1b5c4 <autowrite_all+44>
+   0x0001b5be <+38>:	10 e0	b.n	0x1b5e2 <autowrite_all+74>
+   0x0001b5c0 <+40>:	24 6b	ldr	r4, [r4, #48]	; 0x30
+   0x0001b5c2 <+42>:	74 b1	cbz	r4, 0x1b5e2 <autowrite_all+74>
+   0x0001b5c4 <+44>:	20 46	mov	r0, r4
+   0x0001b5c6 <+46>:	65 f0 e7 ff	bl	0x81598 <bufIsChanged>
+   0x0001b5ca <+50>:	00 28	cmp	r0, #0
+   0x0001b5cc <+52>:	f8 d0	beq.n	0x1b5c0 <autowrite_all+40>
+   0x0001b5ce <+54>:	d4 f8 9c 15	ldr.w	r1, [r4, #1436]	; 0x59c
+   0x0001b5d2 <+58>:	00 29	cmp	r1, #0
+   0x0001b5d4 <+60>:	f4 d1	bne.n	0x1b5c0 <autowrite_all+40>
+   0x0001b5d6 <+62>:	20 46	mov	r0, r4
+   0x0001b5d8 <+64>:	ff f7 14 fe	bl	0x1b204 <buf_write_all>
+   0x0001b5dc <+68>:	24 6b	ldr	r4, [r4, #48]	; 0x30
+   0x0001b5de <+70>:	00 2c	cmp	r4, #0
+   0x0001b5e0 <+72>:	f0 d1	bne.n	0x1b5c4 <autowrite_all+44>
+   0x0001b5e2 <+74>:	10 bd	pop	{r4, pc}
+   0x0001b5e4 <+76>:	70 47	bx	lr
+   0x0001b5e6 <+78>:	00 bf	nop
+   0x0001b5e8 <+80>:	fc c0	stmia	r0!, {r2, r3, r4, r5, r6, r7}
+   0x0001b5ea <+82>:	08 00	movs	r0, r1
+   0x0001b5ec <+84>:	68 08	lsrs	r0, r5, #1
+   0x0001b5ee <+86>:	00 00	movs	r0, r0
+   0x0001b5f0 <+88>:	80 03	lsls	r0, r0, #14
+   0x0001b5f2 <+90>:	00 00	movs	r0, r0
+   0x0001b5f4 <+92>:	7c 03	lsls	r4, r7, #13
+   0x0001b5f6 <+94>:	00 00	movs	r0, r0
+   0x0001b5f8 <+96>:	68 05	lsls	r0, r5, #21
+   0x0001b5fa <+98>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function buf_write_all:
+   0x0001b204 <+0>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0001b206 <+2>:	87 b0	sub	sp, #28
+   0x0001b208 <+4>:	07 6c	ldr	r7, [r0, #64]	; 0x40
+   0x0001b20a <+6>:	01 26	movs	r6, #1
+   0x0001b20c <+8>:	05 68	ldr	r5, [r0, #0]
+   0x0001b20e <+10>:	00 24	movs	r4, #0
+   0x0001b210 <+12>:	82 6c	ldr	r2, [r0, #72]	; 0x48
+   0x0001b212 <+14>:	33 46	mov	r3, r6
+   0x0001b214 <+16>:	03 91	str	r1, [sp, #12]
+   0x0001b216 <+18>:	39 46	mov	r1, r7
+   0x0001b218 <+20>:	04 96	str	r6, [sp, #16]
+   0x0001b21a <+22>:	00 95	str	r5, [sp, #0]
+   0x0001b21c <+24>:	05 94	str	r4, [sp, #20]
+   0x0001b21e <+26>:	02 94	str	r4, [sp, #8]
+   0x0001b220 <+28>:	01 94	str	r4, [sp, #4]
+   0x0001b222 <+30>:	0e f0 6f fe	bl	0x29f04 <buf_write>
+   0x0001b226 <+34>:	07 b0	add	sp, #28
+   0x0001b228 <+36>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+End of assembler dump.

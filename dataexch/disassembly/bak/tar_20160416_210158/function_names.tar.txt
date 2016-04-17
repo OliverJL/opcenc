@@ -1,0 +1,1237 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+All defined functions:
+
+File ../gnu/at-func.c:
+ssize_t getxattrat(int, const char *, const char *, void *, size_t);
+ssize_t lgetxattrat(int, const char *, const char *, void *, size_t);
+ssize_t listxattrat(int, const char *, char *, size_t);
+ssize_t llistxattrat(int, const char *, char *, size_t);
+int lsetxattrat(int, const char *, const char *, const void *, size_t, int);
+int setxattrat(int, const char *, const char *, const void *, size_t, int);
+static acl_t acl_get_file_at(int, const char *, acl_type_t);
+static int acl_set_file_at(int, const char *, acl_type_t, acl_t);
+static int file_has_acl_at(int, const char *, const struct stat *);
+
+File ./fcntl.h:
+int rpl_fcntl(int, int, ...);
+
+File ./parse-datetime.y:
+_Bool parse_datetime(struct timespec *, const char *, const struct timespec *);
+static void apply_relative_time(parser_control *, relative_time, int);
+static void digits_to_date_time(parser_control *, textint);
+static char *get_tz(char *);
+static const table *lookup_zone(const parser_control *, const char *);
+static _Bool mktime_ok(const struct tm *, const struct tm *, time_t);
+static long time_zone_hhmm(long, parser_control *);
+
+File ./string.h:
+int mbscasecmp(const char *, const char *);
+
+File ./sys/stat.h:
+int rpl_utimensat(int, const char *, const struct timespec *, int);
+
+File ./unistd.h:
+int rpl_linkat(int, const char *, int, const char *, int);
+
+File acl-errno-valid.c:
+_Bool acl_errno_valid(int);
+
+File anytostr.c:
+char *imaxtostr(intmax_t, char *);
+char *offtostr(off_t, char *);
+char *umaxtostr(uintmax_t, char *);
+
+File areadlinkat.c:
+char *areadlinkat(int, const char *);
+
+File argmatch.c:
+ptrdiff_t __xargmatch_internal(const char *, const char *, const char * const *, const char *, size_t, argmatch_exit_fn);
+ptrdiff_t argmatch(const char *, const char * const *, const char *, size_t);
+void argmatch_invalid(const char *, const char *, ptrdiff_t);
+const char *argmatch_to_argument(const char *, const char * const *, const char *, size_t);
+void argmatch_valid(const char * const *, const char *, size_t);
+static void __argmatch_die(void);
+
+File argp-fmtstream.c:
+int _argp_fmtstream_ensure(struct argp_fmtstream *, size_t);
+void _argp_fmtstream_update(argp_fmtstream_t);
+void argp_fmtstream_free(argp_fmtstream_t);
+ssize_t argp_fmtstream_printf(struct argp_fmtstream *, const char *, ...);
+argp_fmtstream_t argp_make_fmtstream(FILE *, size_t, size_t, ssize_t);
+
+File argp-help.c:
+void argp_error(const struct argp_state *, const char *, ...);
+void argp_failure(const struct argp_state *, int, int, const char *, ...);
+void argp_help(const struct argp *, FILE *, unsigned int, char *);
+void argp_state_help(const struct argp_state *, FILE *, unsigned int);
+static void _help(const struct argp *, const struct argp_state *, FILE *, unsigned int, char *);
+static int add_argless_short_opt(const struct argp_option *, const struct argp_option *, const char *, void *);
+static void arg(const char *, const char *, const char *, argp_fmtstream_t, const struct argp_option *, const struct argp_option *);
+static size_t argp_args_levels(const struct argp *, const struct argp *);
+static int argp_args_usage(const struct argp *, const struct argp_state *, char **, int, argp_fmtstream_t);
+static int argp_doc(const struct argp *, const struct argp_state *, int, int, int, argp_fmtstream_t);
+static struct hol *argp_hol(const struct argp *, struct hol_cluster *);
+static int canon_doc_option(const char **);
+static void comma(unsigned int, struct pentry_state *);
+static const char *filter_doc(const char *, int, const struct argp *, const struct argp_state *);
+static int hol_entry_qcmp(const void *, const void *);
+static int hol_entry_short_iterate(const struct hol_entry *, int (*)(const struct argp_option *, const struct argp_option *, const char *, 
+    void *), const char *, void *);
+static struct hol_entry *hol_find_entry(const char *, struct hol *, struct hol *);
+static void hol_free(struct hol *);
+static void hol_usage(struct hol *, argp_fmtstream_t);
+static void indent_to(argp_fmtstream_t, unsigned int);
+static void print_header(const char *, const struct argp *, struct pentry_state *);
+static void space(argp_fmtstream_t, size_t);
+static int until_short(const struct argp_option *, const struct argp_option *, const char *, void *);
+static int usage_argful_short_opt(const struct argp_option *, const struct argp_option *, const char *, void *);
+
+File argp-parse.c:
+void *_argp_input(const struct argp *, const struct argp_state *);
+error_t argp_parse(const struct argp *, int, char **, unsigned int, int *, void *);
+static error_t argp_default_parser(int, char *, struct argp_state *);
+static error_t argp_version_parser(int, char *, struct argp_state *);
+static void calc_sizes(const struct argp *, struct parser_sizes *);
+static struct group *convert_options(const struct argp *, struct group *, unsigned int, struct group *, struct parser_convert_state *);
+
+File argp-version-etc.c:
+void argp_version_setup(const char *, const char * const *);
+static void version_etc_hook(FILE *, struct argp_state *);
+
+File at-func.c:
+int getfileconat(int, const char *, security_context_t *);
+int lgetfileconat(int, const char *, security_context_t *);
+int lsetfileconat(int, const char *, security_context_t);
+int setfileconat(int, const char *, security_context_t);
+static int local_utimensat(int, const char *, const struct timespec *, int);
+
+File backupfile.c:
+char *find_backup_file_name(const char *, enum backup_type);
+enum backup_type get_version(const char *, const char *);
+enum backup_type xget_version(const char *, const char *);
+
+File basename-lgpl.c:
+size_t base_len(const char *);
+char *last_component(const char *);
+
+File buffer.c:
+void archive_read_error(void);
+void archive_write_error(ssize_t);
+size_t available_space_after(union block *);
+void buffer_write_global_xheader(void);
+void clear_read_error_count(void);
+void close_archive(void);
+void closeout_volume_number(void);
+void compute_duration(void);
+off_t current_block_ordinal(void);
+char *drop_volume_label_suffix(const char *);
+union block *find_next_block(void);
+const char *first_decompress_program(int *);
+void flush_archive(void);
+void flush_read(void);
+void flush_write(void);
+void init_volume_number(void);
+void mv_begin_read(struct tar_stat_info *);
+void mv_begin_write(const char *, off_t, off_t);
+void mv_end(void);
+void mv_size_left(off_t);
+const char *next_decompress_program(int *);
+void open_archive(enum access_mode);
+void print_total_stats(void);
+void reset_eof(void);
+off_t seek_archive(off_t);
+void set_next_block_after(union block *);
+void set_start_time(void);
+void xclose(int);
+static ssize_t _flush_write(void);
+static void _write_volume_label(const char *);
+static void add_chunk_header(struct bufmap *, struct bufmap *);
+static void add_volume_label(void);
+static void bufmap_free(struct bufmap *);
+static void bufmap_reset(struct bufmap *, ssize_t);
+static enum compress_type check_compressed_archive(_Bool *);
+static void gnu_flush_read(void);
+static void gnu_flush_write(size_t);
+static void guess_seekable_archive(void);
+static void increase_volume_number(void);
+static void init_buffer(void);
+static void match_volume_label(void);
+static _Bool new_volume(enum access_mode);
+static void print_stats(FILE *, const char *, tarlong);
+static _Bool read_header0(struct tar_stat_info *);
+static void short_read(size_t);
+static void simple_flush_read(void);
+static void simple_flush_write(size_t);
+
+File careadlinkat.c:
+char *careadlinkat(int, const char *, char *, size_t, const struct allocator *, ssize_t (*)(int, const char *, char *, size_t));
+
+File chdir-long.c:
+int chdir_long(char *);
+static int cdb_advance_fd(struct cd_buf *, const char *);
+static void cdb_free(const struct cd_buf *);
+
+File checkpoint.c:
+void checkpoint_compile_action(const char *);
+void checkpoint_finish_compile(void);
+void checkpoint_run(_Bool);
+static struct checkpoint_action *alloc_action(enum checkpoint_opcode);
+static char *copy_string_unquote(const char *);
+static char *expand_checkpoint_string(const char *, _Bool, unsigned int);
+
+File cloexec.c:
+int dup_cloexec(int);
+int set_cloexec_flag(int, _Bool);
+
+File close-stream.c:
+int close_stream(FILE *);
+
+File closeout.c:
+void close_stdout(void);
+void close_stdout_set_file_name(const char *);
+void close_stdout_set_ignore_EPIPE(_Bool);
+
+File common.h:
+intmax_t represent_uintmax(uintmax_t);
+_Bool valid_timespec(struct timespec);
+
+File compare.c:
+void diff_archive(void);
+void diff_init(void);
+void report_difference(struct tar_stat_info *, const char *, ...);
+void verify_volume(void);
+static void diff_dir(void);
+static void diff_symlink(void);
+static int get_stat_data(const char *, struct stat *);
+static int process_noop(size_t, char *);
+static int process_rawdata(size_t, char *);
+static void read_and_process(int (*)(size_t, char *), struct tar_stat_info *);
+
+File create.c:
+void add_exclusion_tag(const char *, enum exclusion_tag_type, _Bool (*)(int));
+_Bool cachedir_file_p(int);
+enum exclusion_tag_type check_exclusion_tags(const struct tar_stat_info *, const char **);
+void check_links(void);
+void create_archive(void);
+void dump_file(struct tar_stat_info *, const char *, const char *);
+void exclusion_tag_warning(const char *, const char *, const char *);
+void finish_header(struct tar_stat_info *, union block *, off_t);
+char *get_directory_entries(struct tar_stat_info *);
+_Bool off_to_chars(off_t, char *, size_t);
+void pad_archive(off_t);
+void restore_parent_fd(const struct tar_stat_info *);
+void simple_finish_header(union block *);
+union block *start_header(struct tar_stat_info *);
+union block *start_private_header(const char *, size_t, time_t);
+int subfile_open(const struct tar_stat_info *, const char *, int);
+_Bool time_to_chars(time_t, char *, size_t);
+void write_eot(void);
+union block *write_extended(_Bool, struct tar_stat_info *, union block *);
+static _Bool compare_links(const void *, const void *);
+static void dump_file0(struct tar_stat_info *, const char *, const char *);
+static enum dump_status dump_regular_file(int, struct tar_stat_info *);
+static void ensure_slash(char **);
+static void file_count_links(struct tar_stat_info *);
+static uintmax_t gid_substitute(int *);
+static size_t hash_link(const void *, size_t);
+static _Bool major_to_chars(int, char *, size_t);
+static _Bool minor_to_chars(int, char *, size_t);
+static _Bool mode_to_chars(mode_t, char *, size_t);
+static _Bool open_failure_recover(const struct tar_stat_info *);
+static _Bool to_chars(int, uintmax_t, size_t, uintmax_t (*)(int *), char *, size_t, const char *);
+static uintmax_t uid_substitute(int *);
+static void unknown_file_error(const char *);
+static void write_gnu_long_link(struct tar_stat_info *, const char *, char);
+static void write_long_link(struct tar_stat_info *);
+static union block *write_short_name(struct tar_stat_info *);
+
+File delete.c:
+void delete_archive_members(void);
+static void move_archive(off_t);
+static void write_recent_blocks(union block *, size_t);
+static void write_record(int);
+
+File dirname-lgpl.c:
+size_t dir_len(const char *);
+char *mdir_name(const char *);
+
+File dirname.c:
+char *dir_name(const char *);
+
+File dup-safer.c:
+int dup_safer(int);
+
+File exclude.c:
+void add_exclude(struct exclude *, const char *, int);
+int add_exclude_file(void (*)(struct exclude *, const char *, int), struct exclude *, const char *, int, char);
+_Bool exclude_fnmatch(const char *, const char *, int);
+_Bool excluded_file_name(const struct exclude *, const char *);
+_Bool fnmatch_pattern_has_wildcards(const char *, int);
+void free_exclude(struct exclude *);
+struct exclude *new_exclude(void);
+static int fnmatch_no_wildcards(const char *, const char *, int);
+static _Bool string_compare(const void *, const void *);
+static _Bool string_compare_ci(const void *, const void *);
+static void string_free(void *);
+static size_t string_hasher(const void *, size_t);
+static size_t string_hasher_ci(const void *, size_t);
+
+File exit.c:
+void fatal_exit(void);
+void xalloc_die(void);
+
+File extract.c:
+void extr_init(void);
+void extract_archive(void);
+void extract_finish(void);
+_Bool rename_directory(char *, char *);
+static void apply_delayed_links(void);
+static void apply_nonancestor_delayed_set_stat(const char *, _Bool);
+static void check_time(const char *, struct timespec);
+static int create_placeholder_file(char *, _Bool, _Bool *);
+static void delay_set_stat(const char *, const struct tar_stat_info *, mode_t, mode_t, mode_t, int);
+static int extract_dir(char *, int);
+static int extract_failure(char *, int);
+static int extract_fifo(char *, int);
+static int extract_file(char *, int);
+static int extract_link(char *, int);
+static int extract_node(char *, int);
+static int extract_skip(char *, int);
+static int extract_symlink(char *, int);
+static int extract_volhdr(char *, int);
+static int fd_chmod(int, const char *, mode_t, int);
+static _Bool file_newer_p(const char *, const struct stat *, struct tar_stat_info *);
+static int make_directories(char *, _Bool *);
+static void mark_after_links(struct delayed_set_stat *);
+static int maybe_recoverable(char *, _Bool, _Bool *);
+static void set_stat(const char *, const struct tar_stat_info *, int, mode_t, mode_t, char, _Bool, int);
+
+File fd-safer.c:
+int fd_safer(int);
+
+File fdutimensat.c:
+int fdutimensat(int, int, const char *, const struct timespec *, int);
+
+File file-has-acl.c:
+int acl_access_nontrivial(acl_t);
+int file_has_acl(const char *, const struct stat *);
+
+File filenamecat-lgpl.c:
+char *mfile_name_concat(const char *, const char *, char **);
+
+File full-write.c:
+size_t full_write(int, const void *, size_t);
+
+File futimens.c:
+int rpl_futimens(int, const struct timespec *);
+
+File getfilecon.c:
+int rpl_fgetfilecon(int, security_context_t *);
+int rpl_getfilecon(const char *, security_context_t *);
+int rpl_lgetfilecon(const char *, security_context_t *);
+static int map_to_failure(int, security_context_t *);
+
+File getopt.c:
+int _getopt_internal_r(int, char **, const char *, const struct rpl_option *, int *, int, struct _getopt_data *, int);
+int rpl_getopt(int, char * const *, const char *);
+int rpl_getopt_internal(int, char **, const char *, const struct rpl_option *, int *, int, int);
+static void exchange(char **, struct _getopt_data *);
+
+File getopt1.c:
+int _getopt_long_only_r(int, char **, const char *, const struct rpl_option *, int *, struct _getopt_data *);
+int _getopt_long_r(int, char **, const char *, const struct rpl_option *, int *, struct _getopt_data *);
+int rpl_getopt_long(int, char **, const char *, const struct rpl_option *, int *);
+int rpl_getopt_long_only(int, char **, const char *, const struct rpl_option *, int *);
+
+File gettime.c:
+void gettime(struct timespec *);
+
+File hash.c:
+void hash_clear(Hash_table *);
+void *hash_delete(Hash_table *, const void *);
+size_t hash_do_for_each(const Hash_table *, Hash_processor, void *);
+void hash_free(Hash_table *);
+size_t hash_get_entries(const Hash_table *, void **, size_t);
+void *hash_get_first(const Hash_table *);
+size_t hash_get_max_bucket_length(const Hash_table *);
+size_t hash_get_n_buckets(const Hash_table *);
+size_t hash_get_n_buckets_used(const Hash_table *);
+size_t hash_get_n_entries(const Hash_table *);
+void *hash_get_next(const Hash_table *, const void *);
+Hash_table *hash_initialize(size_t, const Hash_tuning *, Hash_hasher, Hash_comparator, Hash_data_freer);
+void *hash_insert(Hash_table *, const void *);
+int hash_insert0(Hash_table *, const void *, const void **);
+int hash_insert_if_absent(Hash_table *, const void *, const void **);
+void *hash_lookup(const Hash_table *, const void *);
+void hash_print_statistics(const Hash_table *, FILE *);
+_Bool hash_rehash(Hash_table *, size_t);
+void hash_reset_tuning(Hash_tuning *);
+size_t hash_string(const char *, size_t);
+_Bool hash_table_ok(const Hash_table *);
+static _Bool check_tuning(Hash_table *);
+static void *hash_find_entry(Hash_table *, const void *, struct hash_entry **, _Bool);
+static size_t next_prime(size_t);
+static _Bool raw_comparator(const void *, const void *);
+static size_t raw_hasher(const void *, size_t);
+static struct hash_entry *safe_hasher(const Hash_table *, const void *);
+static _Bool transfer_entries(Hash_table *, Hash_table *, _Bool);
+
+File human.c:
+enum strtol_error human_options(const char *, int *, uintmax_t *);
+char *human_readable(uintmax_t, char *, int, uintmax_t, uintmax_t);
+
+File incremen.c:
+void append_incremental_renames(struct directory *);
+void clear_directory_table(void);
+const char *directory_contents(struct directory *);
+size_t dumpdir_size(const char *);
+_Bool is_dumpdir(struct tar_stat_info *);
+void list_dumpdir(char *, size_t);
+void purge_directory(const char *);
+void read_directory_file(void);
+void rebase_directory(struct directory *, const char *, size_t, const char *, size_t);
+const char *safe_directory_contents(struct directory *);
+struct directory *scan_directory(struct tar_stat_info *);
+void show_snapshot_field_ranges(void);
+void update_parent_directory(struct tar_stat_info *);
+void write_directory_file(void);
+static _Bool compare_directory_canonical_names(const void *, const void *);
+static _Bool compare_directory_meta(const void *, const void *);
+static int compare_dirnames(const void *, const void *);
+static void dirlist_replace_prefix(const char *, const char *);
+static struct dumpdir *dumpdir_create0(const char *, const char *);
+static char *dumpdir_locate(struct dumpdir *, const char *);
+static char *dumpdir_next(struct dumpdir_iter *);
+static struct directory *find_directory(const char *);
+static struct directory *find_directory_meta(dev_t, ino_t);
+static void free_directory(struct directory *);
+static void get_gnu_dumpdir(struct tar_stat_info *);
+static size_t hash_directory_canonical_name(const void *, size_t);
+static size_t hash_directory_meta(const void *, size_t);
+static struct directory *make_directory(const char *, char *);
+static struct directory *note_directory(const char *, struct timespec, dev_t, ino_t, _Bool, _Bool, const char *);
+static void obstack_code_rename(struct obstack *, const char *, const char *);
+static struct directory *procdir(const char *, struct tar_stat_info *, int, char *);
+static _Bool read_num(FILE *, const char *, intmax_t, uintmax_t, intmax_t *);
+static int read_obstack(FILE *, struct obstack *, size_t *);
+static void read_timespec(FILE *, struct timespec *);
+static _Bool write_directory_file_entry(void *, void *);
+
+File list.c:
+void decode_header(union block *, struct tar_stat_info *, enum archive_format *, int);
+void list_archive(void);
+off_t off_from_header(const char *, size_t);
+void print_for_mkdir(char *, int, mode_t);
+void print_header(struct tar_stat_info *, union block *, off_t);
+void read_and(void (*)(void));
+enum read_header read_header(union block **, struct tar_stat_info *, enum read_header_mode);
+void skip_file(off_t);
+void skip_member(void);
+enum read_header tar_checksum(union block *, _Bool);
+const char *tartime(struct timespec, _Bool);
+void test_archive_label(void);
+void transform_stat_info(int, struct tar_stat_info *);
+uintmax_t uintmax_from_header(const char *, size_t);
+static void base64_init(void);
+static char *decode_xform(char *, void *);
+static intmax_t from_header(const char *, size_t, const char *, intmax_t, uintmax_t, _Bool, _Bool);
+static gid_t gid_from_header(const char *, size_t);
+static void print_volume_label(void);
+static void simple_print_header(struct tar_stat_info *, union block *, off_t);
+static time_t time_from_header(const char *, size_t);
+static uid_t uid_from_header(const char *, size_t);
+
+File localcharset.c:
+const char *locale_charset(void);
+
+File mbchar.h:
+_Bool is_basic(char);
+void mb_copy(mbchar_t *, const mbchar_t *);
+int mb_width_aux(wint_t);
+
+File misc.c:
+void assign_string(char **, const char *);
+size_t blocking_read(int, void *, size_t);
+size_t blocking_write(int, const void *, size_t);
+int chdir_arg(const char *);
+int chdir_count(void);
+void chdir_do(int);
+void close_diag(const char *);
+void code_ns_fraction(int, char *);
+const char *code_timespec(struct timespec, char *);
+struct timespec decode_timespec(const char *, char **, _Bool);
+int deref_stat(const char *, struct stat *);
+void file_removed_diag(const char *, _Bool, void (*)(const char *));
+_Bool maybe_backup_file(const char *, _Bool);
+_Bool must_be_dot_or_slash(const char *);
+void namebuf_add_dir(namebuf_t, const char *);
+namebuf_t namebuf_create(const char *);
+char *namebuf_finish(namebuf_t);
+void namebuf_free(namebuf_t);
+char *namebuf_name(namebuf_t, const char *);
+char *normalize_filename(int, const char *);
+void normalize_filename_x(char *);
+void open_diag(const char *);
+void *page_aligned_alloc(void **, size_t);
+void read_diag_details(const char *, off_t, size_t);
+void readlink_diag(const char *);
+int remove_any_file(const char *, enum remove_option);
+void replace_prefix(char **, const char *, size_t, const char *, size_t);
+void savedir_diag(const char *);
+void seek_diag_details(const char *, off_t);
+int set_file_atime(int, int, const char *, struct timespec);
+void stat_diag(const char *);
+intmax_t strtosysint(const char *, char **, intmax_t, uintmax_t);
+char *sysinttostr(uintmax_t, intmax_t, uintmax_t, char *);
+const char *tar_dirname(void);
+char *tar_savedir(const char *, int);
+void undo_last_backup(void);
+int unquote_string(char *);
+void write_fatal_details(const char *, ssize_t, size_t);
+pid_t xfork(void);
+void xpipe(int *);
+char *zap_slashes(char *);
+static int safer_rmdir(const char *);
+
+File modechange.c:
+mode_t mode_adjust(mode_t, _Bool, mode_t, const struct mode_change *, mode_t *);
+struct mode_change *mode_compile(const char *);
+struct mode_change *mode_create_from_ref(const char *);
+
+File names.c:
+struct name *addname(const char *, int, _Bool, struct name *);
+_Bool all_names_found(struct tar_stat_info *);
+void blank_name_list(void);
+void collect_and_sort_names(void);
+_Bool contains_dot_dot(const char *);
+_Bool excluded_name(const char *);
+void gid_to_gname(gid_t, char **);
+int gname_to_gid(const char *, gid_t *);
+void label_notfound(void);
+void name_add_dir(const char *);
+void name_add_file(const char *, int);
+void name_add_name(const char *, int);
+const struct name *name_from_list(void);
+void name_gather(void);
+void name_init(void);
+_Bool name_match(const char *);
+const char *name_next(int);
+struct name *name_scan(const char *);
+void name_term(void);
+void names_notfound(void);
+char *new_name(const char *, const char *);
+void remname(struct name *);
+size_t stripped_prefix_len(const char *, size_t);
+void uid_to_uname(uid_t, char **);
+int uname_to_uid(const char *, uid_t *);
+static void add_hierarchy_to_namelist(struct tar_stat_info *, struct name *);
+static int compare_names(const struct name *, const struct name *);
+static int compare_names_found(const struct name *, const struct name *);
+static void free_name(struct name *);
+static struct name *make_name(const char *);
+static struct name *merge_sort_sll(struct name *, int, int (*)(const struct name *, const struct name *));
+static _Bool name_compare(const void *, const void *);
+static struct name_elt *name_elt_alloc(void);
+static size_t name_hash(const void *, size_t);
+static void name_list_advance(void);
+static struct name_elt *name_next_elt(int);
+static struct name *namelist_match(const char *, size_t);
+static void rebase_child_list(struct name *, struct name *, struct name *);
+static int regex_usage_warning(const char *);
+
+File openat-die.c:
+void openat_restore_fail(int);
+void openat_save_fail(int);
+
+File openat-proc.c:
+char *openat_proc_name(char *, int, const char *);
+
+File opendir-safer.c:
+DIR *opendir_safer(const char *);
+
+File parse-datetime.c:
+int yyparse(parser_control *);
+
+File paxerror.c:
+void call_arg_error(const char *, const char *);
+void call_arg_fatal(const char *, const char *);
+void call_arg_warn(const char *, const char *);
+void chdir_fatal(const char *);
+void chmod_error_details(const char *, mode_t);
+void chown_error_details(const char *, uid_t, gid_t);
+void close_error(const char *);
+void close_warn(const char *);
+void exec_fatal(const char *);
+void link_error(const char *, const char *);
+void mkdir_error(const char *);
+void mkfifo_error(const char *);
+void mknod_error(const char *);
+void open_error(const char *);
+void open_fatal(const char *);
+void open_warn(const char *);
+void pax_decode_mode(mode_t, char *);
+void read_error(const char *);
+void read_error_details(const char *, off_t, size_t);
+void read_fatal(const char *);
+void read_fatal_details(const char *, off_t, size_t);
+void read_warn_details(const char *, off_t, size_t);
+void readlink_error(const char *);
+void readlink_warn(const char *);
+void rmdir_error(const char *);
+void savedir_error(const char *);
+void savedir_warn(const char *);
+void seek_error(const char *);
+void seek_error_details(const char *, off_t);
+void seek_warn(const char *);
+void seek_warn_details(const char *, off_t);
+void stat_error(const char *);
+void stat_fatal(const char *);
+void stat_warn(const char *);
+void symlink_error(const char *, const char *);
+void truncate_error(const char *);
+void truncate_warn(const char *);
+void unlink_error(const char *);
+void utime_error(const char *);
+void waitpid_error(const char *);
+void write_error(const char *);
+void write_error_details(const char *, size_t, size_t);
+
+File paxnames.c:
+_Bool removed_prefixes_p(void);
+char *safer_name_suffix(const char *, _Bool, _Bool);
+static _Bool hash_string_compare(const void *, const void *);
+static size_t hash_string_hasher(const void *, size_t);
+
+File prepargs.c:
+void prepend_default_options(const char *, int *, char ***);
+static int prepend_args(const char *, char *, char **);
+
+File progname.c:
+void set_program_name(const char *);
+
+File quotearg.c:
+struct quoting_options *clone_quoting_options(struct quoting_options *);
+enum quoting_style get_quoting_style(struct quoting_options *);
+const char *quote(const char *);
+const char *quote_mem(const char *, size_t);
+const char *quote_n(int, const char *);
+const char *quote_n_mem(int, const char *, size_t);
+char *quotearg(const char *);
+char *quotearg_alloc(const char *, size_t, const struct quoting_options *);
+char *quotearg_alloc_mem(const char *, size_t, size_t *, const struct quoting_options *);
+size_t quotearg_buffer(char *, size_t, const char *, size_t, const struct quoting_options *);
+char *quotearg_char(const char *, char);
+char *quotearg_char_mem(const char *, size_t, char);
+char *quotearg_colon(const char *);
+char *quotearg_colon_mem(const char *, size_t);
+char *quotearg_custom(const char *, const char *, const char *);
+char *quotearg_custom_mem(const char *, const char *, const char *, size_t);
+void quotearg_free(void);
+char *quotearg_mem(const char *, size_t);
+char *quotearg_n(int, const char *);
+char *quotearg_n_custom(int, const char *, const char *, const char *);
+char *quotearg_n_custom_mem(int, const char *, const char *, const char *, size_t);
+char *quotearg_n_mem(int, const char *, size_t);
+char *quotearg_n_style(int, enum quoting_style, const char *);
+char *quotearg_n_style_mem(int, enum quoting_style, const char *, size_t);
+char *quotearg_style(enum quoting_style, const char *);
+char *quotearg_style_mem(enum quoting_style, const char *, size_t);
+int set_char_quoting(struct quoting_options *, char, int);
+void set_custom_quoting(struct quoting_options *, const char *, const char *);
+int set_quoting_flags(struct quoting_options *, int);
+void set_quoting_style(struct quoting_options *, enum quoting_style);
+static const char *gettext_quote(const char *, enum quoting_style);
+static size_t quotearg_buffer_restyled(char *, size_t, const char *, size_t, enum quoting_style, int, const unsigned int *, const char *, 
+    const char *);
+static char *quotearg_n_options(int, const char *, size_t, const struct quoting_options *);
+static struct quoting_options quoting_options_from_style(enum quoting_style);
+
+File rtapelib.c:
+int rmt_close__(int);
+int rmt_ioctl__(int, int, char *);
+off_t rmt_lseek__(int, off_t, int);
+int rmt_open__(const char *, int, int, const char *);
+size_t rmt_read__(int, char *, size_t);
+size_t rmt_write__(int, char *, size_t);
+static void _rmt_shutdown(int, int);
+static int do_command(int, const char *);
+static long get_status(int);
+static char *get_status_string(int, char *);
+
+File safe-read.c:
+size_t safe_read(int, void *, size_t);
+size_t safe_write(int, const void *, size_t);
+
+File save-cwd.c:
+void free_cwd(struct saved_cwd *);
+int restore_cwd(const struct saved_cwd *);
+int save_cwd(struct saved_cwd *);
+
+File savedir.c:
+char *fdsavedir(int);
+char *savedir(const char *);
+char *streamsavedir(DIR *);
+static char *savedirstream(DIR *);
+
+File sparse.c:
+_Bool sparse_diff_file(int, struct tar_stat_info *);
+enum dump_status sparse_dump_file(int, struct tar_stat_info *);
+enum dump_status sparse_extract_file(int, struct tar_stat_info *, off_t *);
+_Bool sparse_fixup_header(struct tar_stat_info *);
+_Bool sparse_member_p(struct tar_stat_info *);
+enum dump_status sparse_skip_file(struct tar_stat_info *);
+static _Bool check_data_region(struct tar_sparse_file *, size_t);
+static _Bool check_sparse_region(struct tar_sparse_file *, off_t, off_t);
+static _Bool decode_num(uintmax_t *, const char *, uintmax_t);
+static _Bool lseek_or_error(struct tar_sparse_file *, off_t);
+static enum oldgnu_add_status oldgnu_add_sparse(struct sparse *, struct tar_sparse_file *);
+static _Bool oldgnu_dump_header(struct tar_sparse_file *);
+static _Bool oldgnu_fixup_header(struct tar_sparse_file *);
+static _Bool oldgnu_get_sparse_info(struct tar_sparse_file *);
+static _Bool oldgnu_sparse_member_p(struct tar_sparse_file *);
+static void oldgnu_store_sparse_info(size_t *, struct sparse *, size_t, struct tar_sparse_file *);
+static _Bool pax_decode_header(struct tar_sparse_file *);
+static _Bool pax_dump_header(struct tar_sparse_file *);
+static _Bool pax_sparse_member_p(struct tar_sparse_file *);
+static void sparse_add_map(struct tar_stat_info *, const struct sp_array *);
+static _Bool sparse_dump_region(struct tar_sparse_file *, size_t);
+static _Bool sparse_extract_region(struct tar_sparse_file *, size_t);
+static _Bool sparse_scan_file(struct tar_sparse_file *);
+static _Bool star_fixup_header(struct tar_sparse_file *);
+static _Bool star_get_sparse_info(struct tar_sparse_file *);
+static _Bool star_sparse_member_p(struct tar_sparse_file *);
+static _Bool tar_sparse_init(struct tar_sparse_file *);
+
+File stdopen.c:
+_Bool stdopen(void);
+
+File stripslash.c:
+_Bool strip_trailing_slashes(char *);
+
+File strnlen1.c:
+size_t strnlen1(const char *, size_t);
+
+File suffix.c:
+void set_compression_program_by_suffix(const char *, const char *);
+
+File system.c:
+pid_t sys_child_open_for_compress(void);
+pid_t sys_child_open_for_uncompress(void);
+_Bool sys_compare_gid(struct stat *, struct stat *);
+_Bool sys_compare_links(struct stat *, struct stat *);
+_Bool sys_compare_uid(struct stat *, struct stat *);
+void sys_detect_dev_null_output(void);
+void sys_exec_checkpoint_script(const char *, const char *, int);
+int sys_exec_command(char *, int, struct tar_stat_info *);
+int sys_exec_info_script(const char **, int);
+_Bool sys_file_is_archive(struct tar_stat_info *);
+_Bool sys_get_archive_stat(void);
+void sys_save_archive_dev_ino(void);
+void sys_spawn_shell(void);
+int sys_truncate(int);
+void sys_wait_command(void);
+void sys_wait_for_child(pid_t, _Bool);
+size_t sys_write_archive_buffer(void);
+static void dec_to_env(const char *, uintmax_t);
+static int is_regular_file(const char *);
+static void run_decompress_program(void);
+static void str_to_env(const char *, const char *);
+static void time_to_env(const char *, struct timespec);
+static void wait_for_grandchild(pid_t);
+static void xdup2(int, int);
+static void xexec(const char *);
+
+File tar.c:
+const char *archive_format_string(enum archive_format);
+int confirm(const char *, const char *);
+void debian_longlink_hack_init(void);
+int main(int, char **);
+void more_options(int, char **);
+void pristine_tar_compat_init(void);
+void request_stdin(const char *);
+void set_exit_status(int);
+const char *subcommand_string(enum subcommand);
+_Bool tar_stat_close(struct tar_stat_info *);
+void tar_stat_destroy(struct tar_stat_info *);
+void tar_stat_init(struct tar_stat_info *);
+int tar_timespec_cmp(struct timespec, struct timespec);
+void usage(int);
+static void add_exclude_array(const char * const *, int);
+static char *format_default_settings(void);
+static int get_date_or_file(const char *, const char *, struct timespec *, struct tar_args *);
+static error_t parse_opt(int, char *, struct argp_state *);
+static uintmax_t parse_owner_group(char *, const char **, uintmax_t);
+static void set_archive_format(const char *);
+static void set_subcommand_option(enum subcommand);
+static void set_use_compress_program_option(const char *);
+static void sigstat(int);
+static char *tar_help_filter(int, const char *, void *);
+
+File transform.c:
+void set_transform_expr(const char *);
+_Bool transform_name(char **, int);
+_Bool transform_name_fp(char **, int, char *(*)(char *, void *), void *);
+_Bool transform_program_p(void);
+static void add_char_segment(struct transform *, int);
+static void add_literal_segment(struct transform *, char *, char *);
+static struct replace_segm *add_segment(struct transform *);
+static const char *parse_transform_expr(const char *);
+static int parse_xform_flags(int *, int);
+static char *run_case_conv(enum case_ctl_type, char *, size_t);
+
+File unlink.c:
+void finish_deferred_unlinks(void);
+void queue_deferred_unlink(const char *, _Bool);
+static void flush_deferred_unlinks(_Bool);
+
+File update.c:
+void update_archive(void);
+
+File utf8.c:
+_Bool string_ascii_p(const char *);
+_Bool utf8_convert(_Bool, const char *, char **);
+
+File utimens.c:
+int fdutimens(int, const char *, const struct timespec *);
+int lutimens(const char *, const struct timespec *);
+int utimens(const char *, const struct timespec *);
+static _Bool update_timespec(const struct stat *, struct timespec **);
+static int validate_timespec(struct timespec *);
+
+File utimens.h:
+int lutimensat(int, const char *, const struct timespec *);
+
+File version-etc.c:
+void emit_bug_reporting_address(void);
+void version_etc(FILE *, const char *, const char *, const char *, ...);
+void version_etc_ar(FILE *, const char *, const char *, const char *, const char * const *);
+void version_etc_arn(FILE *, const char *, const char *, const char *, const char * const *, size_t);
+void version_etc_va(FILE *, const char *, const char *, const char *, va_list);
+
+File warning.c:
+void set_warning_option(const char *);
+
+File wordsplit.c:
+int wordsplit(const char *, struct wordsplit *, int);
+int wordsplit_c_quote_char(int);
+void wordsplit_c_quote_copy(char *, const char *, int);
+size_t wordsplit_c_quoted_length(const char *, int, int *);
+int wordsplit_c_unquote_char(int);
+void wordsplit_c_unquote_copy(char *, const char *, size_t);
+void wordsplit_free(struct wordsplit *);
+void wordsplit_free_words(struct wordsplit *);
+void wordsplit_general_unquote_copy(char *, const char *, size_t, const char *);
+int wordsplit_len(const char *, size_t, struct wordsplit *, int);
+void wordsplit_perror(struct wordsplit *);
+void wordsplit_sh_unquote_copy(char *, const char *, size_t);
+const char *wordsplit_strerror(struct wordsplit *);
+static void _wsplt_alloc_die(struct wordsplit *);
+static void _wsplt_error(const char *, ...);
+static int _wsplt_nomem(struct wordsplit *);
+static int node_split_prefix(struct wordsplit *, struct wordsplit_node **, struct wordsplit_node *, size_t, size_t, int);
+static size_t skip_delim(struct wordsplit *);
+static int wordsplit_add_segm(struct wordsplit *, size_t, size_t, int);
+static void wordsplit_dump_nodes(struct wordsplit *);
+static void wordsplit_init0(struct wordsplit *);
+static int wordsplit_process_list(struct wordsplit *, size_t);
+static const char *wsnode_flagstr(int);
+static void wsnode_free(struct wordsplit_node *);
+static void wsnode_insert(struct wordsplit *, struct wordsplit_node *, struct wordsplit_node *, int);
+static size_t wsnode_len(struct wordsplit_node *);
+static int wsnode_new(struct wordsplit *, struct wordsplit_node **);
+static void wsnode_nullelim(struct wordsplit *);
+static int xtonum(int *, const char *, int, int);
+
+File xalloc.h:
+void *x2nrealloc(void *, size_t *, size_t);
+char *xcharalloc(size_t);
+void *xnmalloc(size_t, size_t);
+void *xnrealloc(void *, size_t, size_t);
+
+File xasprintf.c:
+char *xasprintf(const char *, ...);
+
+File xattrs.c:
+void xattrs_acls_get(int, const char *, struct tar_stat_info *, int, int);
+void xattrs_acls_set(const struct tar_stat_info *, const char *, char);
+void xattrs_clear_setup(void);
+void xattrs_mask_add(const char *, _Bool);
+void xattrs_print(const struct tar_stat_info *);
+void xattrs_print_char(const struct tar_stat_info *, char *);
+void xattrs_selinux_get(int, const char *, struct tar_stat_info *, int);
+void xattrs_selinux_set(const struct tar_stat_info *, const char *, char);
+void xattrs_xattrs_get(int, const char *, struct tar_stat_info *, int);
+void xattrs_xattrs_set(const struct tar_stat_info *, const char *, char, int);
+static void acls_one_line(const char *, const char *, size_t, char);
+static void xattrs__acls_set(const char *, int, char *, _Bool, size_t, const struct tar_stat_info *);
+static _Bool xattrs_masked_out(const char *, _Bool);
+static _Bool xattrs_matches_mask(const char *, struct xattrs_mask_map *);
+
+File xgetcwd.c:
+char *xgetcwd(void);
+
+File xheader.c:
+void xheader_decode(struct tar_stat_info *);
+void xheader_decode_global(struct xheader *);
+void xheader_destroy(struct xheader *);
+void xheader_finish(struct xheader *);
+char *xheader_format_name(struct tar_stat_info *, const char *, size_t);
+char *xheader_ghdr_name(void);
+_Bool xheader_keyword_deleted_p(const char *);
+void xheader_read(struct xheader *, union block *, off_t);
+void xheader_set_option(char *);
+void xheader_store(const char *, struct tar_stat_info *, const void *);
+void xheader_string_add(struct xheader *, const char *);
+void xheader_string_begin(struct xheader *);
+_Bool xheader_string_end(struct xheader *, const char *);
+void xheader_write(char, char *, time_t, struct xheader *);
+void xheader_write_global(struct xheader *);
+void xheader_xattr_add(struct tar_stat_info *, const char *, const char *, size_t);
+void xheader_xattr_copy(const struct tar_stat_info *, struct xattr_array **, size_t *);
+void xheader_xattr_free(struct xattr_array *, size_t);
+void xheader_xattr_init(struct tar_stat_info *);
+char *xheader_xhdr_name(struct tar_stat_info *);
+static void assign_time_option(char **, time_t *, const char *);
+static void atime_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void atime_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void code_signed_num(uintmax_t, const char *, uintmax_t, struct xheader *, intmax_t);
+static void code_string(const char *, const char *, struct xheader *);
+static void ctime_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void ctime_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void decg(void *, const char *, const char *, size_t);
+static _Bool decode_num(uintmax_t *, const char *, uintmax_t, const char *);
+static _Bool decode_record(char **, void (*)(void *, const char *, const char *, size_t), void *, struct xheader *, struct xheader *);
+static _Bool decode_signed_num(intmax_t *, const char *, uintmax_t, const char *, intmax_t);
+static void decode_string(char **, const char *);
+static _Bool decode_time(struct timespec *, const char *, const char *);
+static void decx(void *, const char *, const char *, size_t);
+static void dummy_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void dummy_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void dumpdir_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void dumpdir_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void gid_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void gid_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void gname_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void gname_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void linkpath_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void linkpath_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static const struct xhdr_tab *locate_handler(const char *);
+static void mtime_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void mtime_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void out_of_range_header(const char *, const char *, intmax_t, uintmax_t);
+static void path_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void path_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void run_override_list(struct keyword_list *, struct tar_stat_info *);
+static void size_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void size_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_major_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_major_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_map_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_minor_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_minor_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_numblocks_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_numblocks_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_numbytes_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_numbytes_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_offset_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_offset_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void sparse_size_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void sparse_size_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void uid_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void uid_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void uname_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void uname_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void volume_filename_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void volume_label_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void volume_label_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void volume_offset_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void volume_offset_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void volume_size_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void volume_size_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void x_obstack_1grow(char, struct xheader *, struct xheader *);
+static void x_obstack_grow(const char *, size_t, struct xheader *, struct xheader *);
+static void xattr_acls_a_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void xattr_acls_a_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void xattr_acls_d_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void xattr_acls_d_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void xattr_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void xattr_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void xattr_selinux_coder(const struct tar_stat_info *, const char *, struct xheader *, const void *);
+static void xattr_selinux_decoder(struct tar_stat_info *, const char *, const char *, size_t);
+static void xheader_init(struct xheader *);
+static _Bool xheader_keyword_override_p(const char *);
+static void xheader_list_append(struct keyword_list **, const char *, const char *);
+static void xheader_print(struct xheader *, const char *, const char *);
+static void xheader_print_n(struct xheader *, const char *, const char *, size_t);
+static void xheader_xattr__add(struct xattr_array **, size_t *, const char *, const char *, size_t);
+
+File xmalloc.c:
+void *x2realloc(void *, size_t *);
+void *xcalloc(size_t, size_t);
+void *xmalloc(size_t);
+void *xmemdup(const void *, size_t);
+void *xrealloc(void *, size_t);
+char *xstrdup(const char *);
+void *xzalloc(size_t);
+
+File xstrtol.c:
+strtol_error xstrtoumax(const char *, char **, int, uintmax_t *, const char *);
+
+File xvasprintf.c:
+char *xvasprintf(const char *, va_list);
+static char *xstrcat(size_t, va_list);
+
+Non-debugging symbols:
+0x0000a9cc  _init
+0x00031eb0  .udivsi3_skip_div0_test
+0x00031eb0  __aeabi_uidiv
+0x00031eb0  __udivsi3
+0x0003210c  __aeabi_uidivmod
+0x00032128  __aeabi_drsub
+0x00032130  __aeabi_dsub
+0x00032130  __subdf3
+0x00032134  __adddf3
+0x00032134  __aeabi_dadd
+0x000323ac  __aeabi_ui2d
+0x000323ac  __floatunsidf
+0x000323cc  __aeabi_i2d
+0x000323cc  __floatsidf
+0x000323f0  __aeabi_f2d
+0x000323f0  __extendsfdf2
+0x0003242c  __aeabi_ul2d
+0x0003242c  __floatundidf
+0x0003243c  __aeabi_l2d
+0x0003243c  __floatdidf
+0x00032498  __aeabi_ldivmod
+0x000324d0  __aeabi_uldivmod
+0x000324fc  __aeabi_idiv0
+0x000324fc  __aeabi_ldiv0
+0x00032508  __aeabi_d2ulz
+0x00032508  __fixunsdfdi
+0x00032548  __gnu_ldivmod_helper
+0x00032578  __gnu_uldivmod_helper
+0x000325a8  __divdi3
+0x00032904  __udivdi3
+0x00032c00  __libc_csu_init
+0x00032c40  __libc_csu_fini
+0x00032c44  _fini
+0x0000a9cc  _init
+0x0000a9ec  fdopen@plt
+0x0000a9f8  calloc@plt
+0x0000aa04  fputs_unlocked@plt
+0x0000aa14  raise@plt
+0x0000aa20  mkfifoat@plt
+0x0000aa2c  utimensat@plt
+0x0000aa38  __getdelim@plt
+0x0000aa44  getpwnam@plt
+0x0000aa50  fsync@plt
+0x0000aa5c  iconv@plt
+0x0000aa68  strcmp@plt
+0x0000aa78  pathconf@plt
+0x0000aa84  strtol@plt
+0x0000aa90  getpwuid@plt
+0x0000aa9c  regerror@plt
+0x0000aaa8  read@plt
+0x0000aab4  mktime@plt
+0x0000aac0  unlinkat@plt
+0x0000aad0  wcwidth@plt
+0x0000aadc  getuid@plt
+0x0000aae8  lsetfilecon@plt
+0x0000aaf4  memmove@plt
+0x0000ab00  lsetxattr@plt
+0x0000ab0c  strchrnul@plt
+0x0000ab18  free@plt
+0x0000ab1c  free
+0x0000ab28  fgetxattr@plt
+0x0000ab34  strndup@plt
+0x0000ab40  __openat64_2@plt
+0x0000ab4c  clock_gettime@plt
+0x0000ab58  _exit@plt
+0x0000ab64  __vsnprintf_chk@plt
+0x0000ab70  memcpy@plt
+0x0000ab80  execvp@plt
+0x0000ab8c  execlp@plt
+0x0000ab98  __strtoull_internal@plt
+0x0000aba4  towlower@plt
+0x0000abb0  mbsinit@plt
+0x0000abbc  signal@plt
+0x0000abcc  ftruncate64@plt
+0x0000abdc  fwrite_unlocked@plt
+0x0000abe8  memcmp@plt
+0x0000abf4  _obstack_newchunk@plt
+0x0000ac00  sleep@plt
+0x0000ac0c  stpcpy@plt
+0x0000ac18  dcgettext@plt
+0x0000ac24  __stack_chk_fail@plt
+0x0000ac30  obstack_free@plt
+0x0000ac3c  _obstack_begin@plt
+0x0000ac48  dup2@plt
+0x0000ac54  realloc
+0x0000ac54  realloc@plt
+0x0000ac60  dup@plt
+0x0000ac6c  regexec@plt
+0x0000ac78  fgetfilecon@plt
+0x0000ac84  textdomain@plt
+0x0000ac90  iswcntrl@plt
+0x0000ac9c  chdir@plt
+0x0000aca8  strcasecmp@plt
+0x0000acb4  funlockfile@plt
+0x0000acc0  geteuid@plt
+0x0000accc  __fxstatat64@plt
+0x0000acd8  fflush_unlocked@plt
+0x0000ace4  iswprint@plt
+0x0000acf0  acl_get_tag_type@plt
+0x0000acfc  __fxstat64@plt
+0x0000ad08  __memcpy_chk@plt
+0x0000ad14  fwrite@plt
+0x0000ad20  ioctl@plt
+0x0000ad2c  getxattr@plt
+0x0000ad38  lseek64@plt
+0x0000ad44  __stpcpy_chk@plt
+0x0000ad50  waitpid@plt
+0x0000ad5c  acl_extended_file@plt
+0x0000ad68  __ctype_get_mb_cur_max@plt
+0x0000ad74  strcpy@plt
+0x0000ad80  gettimeofday@plt
+0x0000ad8c  __strcpy_chk@plt
+0x0000ad98  __fpending@plt
+0x0000ada4  mbrtowc@plt
+0x0000adb0  creat64@plt
+0x0000adbc  error@plt
+0x0000adcc  opendir@plt
+0x0000add8  setxattr@plt
+0x0000ade4  fnmatch
+0x0000ade4  fnmatch@plt
+0x0000adf0  open64@plt
+0x0000adfc  getenv@plt
+0x0000ae08  lgetfilecon@plt
+0x0000ae14  acl_set_file@plt
+0x0000ae20  puts@plt
+0x0000ae2c  setgid@plt
+0x0000ae38  malloc
+0x0000ae38  malloc@plt
+0x0000ae44  iconv_open@plt
+0x0000ae50  __libc_start_main@plt
+0x0000ae5c  readlinkat
+0x0000ae5c  readlinkat@plt
+0x0000ae68  strerror@plt
+0x0000ae74  __vfprintf_chk@plt
+0x0000ae80  localtime@plt
+0x0000ae8c  mkdirat@plt
+0x0000ae98  acl_to_text@plt
+0x0000aea4  __ctype_tolower_loc@plt
+0x0000aeb0  __ctype_toupper_loc@plt
+0x0000aebc  __gmon_start__@plt
+0x0000aec8  mempcpy@plt
+0x0000aed4  __ctype_b_loc@plt
+0x0000aee0  getcwd@plt
+0x0000aeec  getpid@plt
+0x0000aef8  exit@plt
+0x0000af04  getfilecon@plt
+0x0000af10  strtoul@plt
+0x0000af1c  strlen@plt
+0x0000af2c  strchr@plt
+0x0000af38  setenv@plt
+0x0000af44  openat64@plt
+0x0000af50  memrchr@plt
+0x0000af5c  fchown@plt
+0x0000af68  getpagesize@plt
+0x0000af74  ungetc@plt
+0x0000af80  fcntl@plt
+0x0000af8c  __open64_2@plt
+0x0000af98  acl_get_file@plt
+0x0000afa8  fchmodat@plt
+0x0000afb8  __errno_location@plt
+0x0000afc4  __strcat_chk@plt
+0x0000afd0  __sprintf_chk@plt
+0x0000afdc  __vasprintf_chk@plt
+0x0000afe8  __strdup@plt
+0x0000aff4  strerror_r@plt
+0x0000b000  getgid@plt
+0x0000b00c  flistxattr@plt
+0x0000b018  memset@plt
+0x0000b028  putchar@plt
+0x0000b034  utimes@plt
+0x0000b040  strncpy@plt
+0x0000b04c  fscanf@plt
+0x0000b058  gmtime@plt
+0x0000b064  __printf_chk@plt
+0x0000b070  write@plt
+0x0000b07c  fileno@plt
+0x0000b088  acl_get_entry@plt
+0x0000b094  __fprintf_chk@plt
+0x0000b0a4  memchr@plt
+0x0000b0b0  setfilecon@plt
+0x0000b0bc  access@plt
+0x0000b0c8  __xmknodat@plt
+0x0000b0d4  fclose@plt
+0x0000b0e4  llistxattr@plt
+0x0000b0f0  linkat@plt
+0x0000b100  pipe@plt
+0x0000b10c  fseeko64@plt
+0x0000b118  lgetxattr@plt
+0x0000b124  listxattr@plt
+0x0000b130  strtok@plt
+0x0000b13c  rpmatch@plt
+0x0000b148  __uflow@plt
+0x0000b154  __overflow@plt
+0x0000b164  setlocale@plt
+0x0000b170  fork@plt
+0x0000b17c  execl@plt
+0x0000b188  strrchr@plt
+0x0000b194  nl_langinfo@plt
+0x0000b1a0  fputc@plt
+0x0000b1ac  setuid@plt
+0x0000b1b8  localeconv@plt
+0x0000b1c4  readdir64@plt
+0x0000b1d0  fdopendir@plt
+0x0000b1dc  mkdtemp@plt
+0x0000b1e8  futimens@plt
+0x0000b1f4  regcomp@plt
+0x0000b200  dirfd@plt
+0x0000b20c  flockfile@plt
+0x0000b218  fchdir@plt
+0x0000b228  __strtoll_internal@plt
+0x0000b234  fopen64@plt
+0x0000b240  qsort@plt
+0x0000b24c  fchownat@plt
+0x0000b258  renameat@plt
+0x0000b264  freecon@plt
+0x0000b270  acl_from_text@plt
+0x0000b27c  bindtextdomain@plt
+0x0000b288  umask@plt
+0x0000b294  symlinkat@plt
+0x0000b2a0  gethostbyname@plt
+0x0000b2ac  __xstat64@plt
+0x0000b2b8  unsetenv@plt
+0x0000b2c8  fputs@plt
+0x0000b2d4  strncmp@plt
+0x0000b2e0  abort@plt
+0x0000b2ec  close@plt
+0x0000b2f8  __lxstat64@plt
+0x0000b304  dcngettext@plt
+0x0000b310  futimesat@plt
+0x0000b31c  closedir@plt
+0x0000b328  getgrgid@plt
+0x0000b334  getgrnam@plt
+0x0000b340  __snprintf_chk@plt
+0x0000b34c  __assert_fail@plt
+0x0000b358  acl_free@plt
+0x0000b364  fchmod@plt
+0x0000b370  ftello64@plt
+0x00032c44  _fini

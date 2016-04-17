@@ -3,6 +3,9 @@ DROP TABLE opcodeSet;
 DROP TABLE instruction;
 DROP TABLE execFunction;
 DROP TABLE binaryFile;
+DROP TABLE opcodeTransformation;
+DROP TABLE opcodeBlock;
+DROP TABLE transformationResult;
 
 
 CREATE TABLE binaryFile ( 
@@ -62,5 +65,42 @@ CREATE TABLE opcode (
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='opcode - one byte of an instruction (plain/compressed/encrypted)';
 
 ALTER TABLE opcode ADD CONSTRAINT FK_opcode_opcodeSetId FOREIGN KEY (opcodeSetId) REFERENCES opcodeSet(id);
+
+CREATE TABLE opcodeTransformation ( 
+ id bigint NOT NULL AUTO_INCREMENT,
+ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ opcodeSetId bigint NOT NULL,
+ transformation varchar(200),
+ encryptionKeyLength int NULL,
+ encryptionMode varchar(10)
+ PRIMARY KEY (id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='opcodeTransformation - en/decryption compression etc.';
+
+ALTER TABLE opcodeTransformation ADD CONSTRAINT FK_opcodeTransformation_opcodeSetId FOREIGN KEY (opcodeSetId) REFERENCES opcodeSet(id);
+
+CREATE TABLE opcodeBlock ( 
+ id bigint NOT NULL AUTO_INCREMENT,
+ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ opcodeTransformationId bigint NOT NULL,
+ sequenceIndex INT NOT NULL,
+ PRIMARY KEY (id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='opcodeBlock - data is handeld in 16 Byte blocks';
+
+ALTER TABLE opcodeBlock ADD CONSTRAINT FK_opcodeBlock_opcodeTransformationId FOREIGN KEY (opcodeTransformationId) REFERENCES opcodeTransformation(id);
+
+CREATE TABLE transformationResult ( 
+ id bigint NOT NULL AUTO_INCREMENT,
+ createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ opcodeBlockId bigint NOT NULL,
+ sequenceIndex INT NOT NULL,
+ rawCodeIn TINYINT UNSIGNED NULL, 
+ rawCodeHexStringIn varchar(4) NULL,
+ rawCodeOut TINYINT UNSIGNED NULL, 
+ rawCodeHexStringOut varchar(4) NULL, 
+ hammingDistance INT NULL,
+ PRIMARY KEY (id)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='transformationResult - in- & output of the transformation';
+
+ALTER TABLE transformationResult ADD CONSTRAINT FK_transformationResult_opcodeBlockId FOREIGN KEY (opcodeBlockId) REFERENCES opcodeBlock(id);
 
 

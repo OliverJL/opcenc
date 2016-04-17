@@ -1,0 +1,679 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function strnlen1:
+   0x0002efc4 <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x0002efc6 <+2>:	0c 46	mov	r4, r1
+   0x0002efc8 <+4>:	22 46	mov	r2, r4
+   0x0002efca <+6>:	00 21	movs	r1, #0
+   0x0002efcc <+8>:	05 46	mov	r5, r0
+   0x0002efce <+10>:	dc f7 6a e8	blx	0xb0a4 <memchr@plt>
+   0x0002efd2 <+14>:	10 b1	cbz	r0, 0x2efda <strnlen1+22>
+   0x0002efd4 <+16>:	40 1b	subs	r0, r0, r5
+   0x0002efd6 <+18>:	01 30	adds	r0, #1
+   0x0002efd8 <+20>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0002efda <+22>:	20 46	mov	r0, r4
+   0x0002efdc <+24>:	38 bd	pop	{r3, r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function set_compression_program_by_suffix:
+   0x0001e5b4 <+0>:	2d e9 f8 4f	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0001e5b8 <+4>:	89 46	mov	r9, r1
+   0x0001e5ba <+6>:	2e 21	movs	r1, #46	; 0x2e
+   0x0001e5bc <+8>:	ec f7 e4 ed	blx	0xb188 <strrchr@plt>
+   0x0001e5c0 <+12>:	70 b3	cbz	r0, 0x1e620 <set_compression_program_by_suffix+108>
+   0x0001e5c2 <+14>:	47 1c	adds	r7, r0, #1
+   0x0001e5c4 <+16>:	45 f2 70 0b	movw	r11, #20592	; 0x5070
+   0x0001e5c8 <+20>:	c0 f2 03 0b	movt	r11, #3
+   0x0001e5cc <+24>:	00 24	movs	r4, #0
+   0x0001e5ce <+26>:	38 46	mov	r0, r7
+   0x0001e5d0 <+28>:	26 46	mov	r6, r4
+   0x0001e5d2 <+30>:	ec f7 a6 ec	blx	0xaf20 <strlen@plt+4>
+   0x0001e5d6 <+34>:	d8 46	mov	r8, r11
+   0x0001e5d8 <+36>:	82 46	mov	r10, r0
+   0x0001e5da <+38>:	03 e0	b.n	0x1e5e4 <set_compression_program_by_suffix+48>
+   0x0001e5dc <+40>:	0c 34	adds	r4, #12
+   0x0001e5de <+42>:	01 36	adds	r6, #1
+   0x0001e5e0 <+44>:	b4 2c	cmp	r4, #180	; 0xb4
+   0x0001e5e2 <+46>:	1d d0	beq.n	0x1e620 <set_compression_program_by_suffix+108>
+   0x0001e5e4 <+48>:	0b eb 04 03	add.w	r3, r11, r4
+   0x0001e5e8 <+52>:	45 f2 70 05	movw	r5, #20592	; 0x5070
+   0x0001e5ec <+56>:	c0 f2 03 05	movt	r5, #3
+   0x0001e5f0 <+60>:	5b 68	ldr	r3, [r3, #4]
+   0x0001e5f2 <+62>:	9a 45	cmp	r10, r3
+   0x0001e5f4 <+64>:	f2 d1	bne.n	0x1e5dc <set_compression_program_by_suffix+40>
+   0x0001e5f6 <+66>:	58 f8 04 00	ldr.w	r0, [r8, r4]
+   0x0001e5fa <+70>:	39 46	mov	r1, r7
+   0x0001e5fc <+72>:	52 46	mov	r2, r10
+   0x0001e5fe <+74>:	ec f7 f4 ea	blx	0xabe8 <memcmp@plt>
+   0x0001e602 <+78>:	00 28	cmp	r0, #0
+   0x0001e604 <+80>:	ea d1	bne.n	0x1e5dc <set_compression_program_by_suffix+40>
+   0x0001e606 <+82>:	06 eb 46 06	add.w	r6, r6, r6, lsl #1
+   0x0001e60a <+86>:	05 eb 86 05	add.w	r5, r5, r6, lsl #2
+   0x0001e60e <+90>:	aa 68	ldr	r2, [r5, #8]
+   0x0001e610 <+92>:	22 b1	cbz	r2, 0x1e61c <set_compression_program_by_suffix+104>
+   0x0001e612 <+94>:	46 f2 0c 33	movw	r3, #25356	; 0x630c
+   0x0001e616 <+98>:	c0 f2 04 03	movt	r3, #4
+   0x0001e61a <+102>:	1a 60	str	r2, [r3, #0]
+   0x0001e61c <+104>:	bd e8 f8 8f	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0001e620 <+108>:	4a 46	mov	r2, r9
+   0x0001e622 <+110>:	f5 e7	b.n	0x1e610 <set_compression_program_by_suffix+92>
+End of assembler dump.
+Dump of assembler code for function sys_child_open_for_compress:
+   0x0001ebc4 <+0>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x0001ebc8 <+4>:	85 b0	sub	sp, #20
+   0x0001ebca <+6>:	68 46	mov	r0, sp
+   0x0001ebcc <+8>:	fc f7 32 fe	bl	0x1b834 <xpipe>
+   0x0001ebd0 <+12>:	fc f7 1a fe	bl	0x1b808 <xfork>
+   0x0001ebd4 <+16>:	04 1e	subs	r4, r0, #0
+   0x0001ebd6 <+18>:	0c dd	ble.n	0x1ebf2 <sys_child_open_for_compress+46>
+   0x0001ebd8 <+20>:	01 9a	ldr	r2, [sp, #4]
+   0x0001ebda <+22>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001ebde <+26>:	c0 f2 04 03	movt	r3, #4
+   0x0001ebe2 <+30>:	00 98	ldr	r0, [sp, #0]
+   0x0001ebe4 <+32>:	1a 60	str	r2, [r3, #0]
+   0x0001ebe6 <+34>:	ed f7 e9 ff	bl	0xcbbc <xclose>
+   0x0001ebea <+38>:	20 46	mov	r0, r4
+   0x0001ebec <+40>:	05 b0	add	sp, #20
+   0x0001ebee <+42>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x0001ebf2 <+46>:	05 22	movs	r2, #5
+   0x0001ebf4 <+48>:	45 f2 18 21	movw	r1, #21016	; 0x5218
+   0x0001ebf8 <+52>:	00 20	movs	r0, #0
+   0x0001ebfa <+54>:	c0 f2 03 01	movt	r1, #3
+   0x0001ebfe <+58>:	ec f7 0c e8	blx	0xac18 <dcgettext@plt>
+   0x0001ec02 <+62>:	46 f2 48 35	movw	r5, #25416	; 0x6348
+   0x0001ec06 <+66>:	0f f0 4b f9	bl	0x2dea0 <set_program_name>
+   0x0001ec0a <+70>:	00 21	movs	r1, #0
+   0x0001ec0c <+72>:	0d 20	movs	r0, #13
+   0x0001ec0e <+74>:	c0 f2 04 05	movt	r5, #4
+   0x0001ec12 <+78>:	eb f7 d6 ef	blx	0xabc0 <signal@plt+4>
+   0x0001ec16 <+82>:	00 98	ldr	r0, [sp, #0]
+   0x0001ec18 <+84>:	00 21	movs	r1, #0
+   0x0001ec1a <+86>:	46 f2 78 24	movw	r4, #25208	; 0x6278
+   0x0001ec1e <+90>:	ff f7 07 fe	bl	0x1e830 <xdup2>
+   0x0001ec22 <+94>:	01 98	ldr	r0, [sp, #4]
+   0x0001ec24 <+96>:	ed f7 ca ff	bl	0xcbbc <xclose>
+   0x0001ec28 <+100>:	2b 78	ldrb	r3, [r5, #0]
+   0x0001ec2a <+102>:	c0 f2 04 04	movt	r4, #4
+   0x0001ec2e <+106>:	00 2b	cmp	r3, #0
+   0x0001ec30 <+108>:	42 d1	bne.n	0x1ecb8 <sys_child_open_for_compress+244>
+   0x0001ec32 <+110>:	26 68	ldr	r6, [r4, #0]
+   0x0001ec34 <+112>:	3a 21	movs	r1, #58	; 0x3a
+   0x0001ec36 <+114>:	30 68	ldr	r0, [r6, #0]
+   0x0001ec38 <+116>:	ec f7 78 e9	blx	0xaf2c <strchr@plt>
+   0x0001ec3c <+120>:	46 f2 4c 33	movw	r3, #25420	; 0x634c
+   0x0001ec40 <+124>:	c0 f2 04 03	movt	r3, #4
+   0x0001ec44 <+128>:	18 60	str	r0, [r3, #0]
+   0x0001ec46 <+130>:	36 68	ldr	r6, [r6, #0]
+   0x0001ec48 <+132>:	40 b1	cbz	r0, 0x1ec5c <sys_child_open_for_compress+152>
+   0x0001ec4a <+134>:	b0 42	cmp	r0, r6
+   0x0001ec4c <+136>:	06 d9	bls.n	0x1ec5c <sys_child_open_for_compress+152>
+   0x0001ec4e <+138>:	82 1b	subs	r2, r0, r6
+   0x0001ec50 <+140>:	2f 21	movs	r1, #47	; 0x2f
+   0x0001ec52 <+142>:	30 46	mov	r0, r6
+   0x0001ec54 <+144>:	ec f7 26 ea	blx	0xb0a4 <memchr@plt>
+   0x0001ec58 <+148>:	00 28	cmp	r0, #0
+   0x0001ec5a <+150>:	30 d0	beq.n	0x1ecbe <sys_child_open_for_compress+250>
+   0x0001ec5c <+152>:	30 46	mov	r0, r6
+   0x0001ec5e <+154>:	ff f7 c9 fd	bl	0x1e7f4 <is_regular_file>
+   0x0001ec62 <+158>:	60 b3	cbz	r0, 0x1ecbe <sys_child_open_for_compress+250>
+   0x0001ec64 <+160>:	46 f2 a9 25	movw	r5, #25257	; 0x62a9
+   0x0001ec68 <+164>:	c0 f2 04 05	movt	r5, #4
+   0x0001ec6c <+168>:	2b 78	ldrb	r3, [r5, #0]
+   0x0001ec6e <+170>:	00 2b	cmp	r3, #0
+   0x0001ec70 <+172>:	40 f0 cc 80	bne.w	0x1ee0c <sys_child_open_for_compress+584>
+   0x0001ec74 <+176>:	23 68	ldr	r3, [r4, #0]
+   0x0001ec76 <+178>:	18 68	ldr	r0, [r3, #0]
+   0x0001ec78 <+180>:	03 78	ldrb	r3, [r0, #0]
+   0x0001ec7a <+182>:	2d 2b	cmp	r3, #45	; 0x2d
+   0x0001ec7c <+184>:	03 d1	bne.n	0x1ec86 <sys_child_open_for_compress+194>
+   0x0001ec7e <+186>:	43 78	ldrb	r3, [r0, #1]
+   0x0001ec80 <+188>:	00 2b	cmp	r3, #0
+   0x0001ec82 <+190>:	00 f0 b8 80	beq.w	0x1edf6 <sys_child_open_for_compress+562>
+   0x0001ec86 <+194>:	4f f4 db 71	mov.w	r1, #438	; 0x1b6
+   0x0001ec8a <+198>:	ec f7 92 e8	blx	0xadb0 <creat64@plt>
+   0x0001ec8e <+202>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001ec92 <+206>:	c0 f2 04 03	movt	r3, #4
+   0x0001ec96 <+210>:	00 28	cmp	r0, #0
+   0x0001ec98 <+212>:	18 60	str	r0, [r3, #0]
+   0x0001ec9a <+214>:	80 f2 b3 80	bge.w	0x1ee04 <sys_child_open_for_compress+576>
+   0x0001ec9e <+218>:	ec f7 8c e9	blx	0xafb8 <__errno_location@plt>
+   0x0001eca2 <+222>:	2b 78	ldrb	r3, [r5, #0]
+   0x0001eca4 <+224>:	06 46	mov	r6, r0
+   0x0001eca6 <+226>:	05 68	ldr	r5, [r0, #0]
+   0x0001eca8 <+228>:	00 2b	cmp	r3, #0
+   0x0001ecaa <+230>:	40 f0 bc 80	bne.w	0x1ee26 <sys_child_open_for_compress+610>
+   0x0001ecae <+234>:	23 68	ldr	r3, [r4, #0]
+   0x0001ecb0 <+236>:	35 60	str	r5, [r6, #0]
+   0x0001ecb2 <+238>:	18 68	ldr	r0, [r3, #0]
+   0x0001ecb4 <+240>:	04 f0 80 fe	bl	0x239b8 <open_fatal>
+   0x0001ecb8 <+244>:	23 68	ldr	r3, [r4, #0]
+   0x0001ecba <+246>:	1e 68	ldr	r6, [r3, #0]
+   0x0001ecbc <+248>:	ce e7	b.n	0x1ec5c <sys_child_open_for_compress+152>
+   0x0001ecbe <+250>:	02 a8	add	r0, sp, #8
+   0x0001ecc0 <+252>:	fc f7 b8 fd	bl	0x1b834 <xpipe>
+   0x0001ecc4 <+256>:	fc f7 a0 fd	bl	0x1b808 <xfork>
+   0x0001ecc8 <+260>:	81 46	mov	r9, r0
+   0x0001ecca <+262>:	00 28	cmp	r0, #0
+   0x0001eccc <+264>:	00 f0 83 80	beq.w	0x1edd6 <sys_child_open_for_compress+530>
+   0x0001ecd0 <+268>:	02 98	ldr	r0, [sp, #8]
+   0x0001ecd2 <+270>:	00 21	movs	r1, #0
+   0x0001ecd4 <+272>:	ff f7 ac fd	bl	0x1e830 <xdup2>
+   0x0001ecd8 <+276>:	03 98	ldr	r0, [sp, #12]
+   0x0001ecda <+278>:	ed f7 6f ff	bl	0xcbbc <xclose>
+   0x0001ecde <+282>:	26 68	ldr	r6, [r4, #0]
+   0x0001ece0 <+284>:	30 68	ldr	r0, [r6, #0]
+   0x0001ece2 <+286>:	03 78	ldrb	r3, [r0, #0]
+   0x0001ece4 <+288>:	2d 2b	cmp	r3, #45	; 0x2d
+   0x0001ece6 <+290>:	45 d1	bne.n	0x1ed74 <sys_child_open_for_compress+432>
+   0x0001ece8 <+292>:	43 78	ldrb	r3, [r0, #1]
+   0x0001ecea <+294>:	00 2b	cmp	r3, #0
+   0x0001ecec <+296>:	42 d1	bne.n	0x1ed74 <sys_child_open_for_compress+432>
+   0x0001ecee <+298>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001ecf2 <+302>:	c0 f2 04 03	movt	r3, #4
+   0x0001ecf6 <+306>:	01 22	movs	r2, #1
+   0x0001ecf8 <+308>:	1a 60	str	r2, [r3, #0]
+   0x0001ecfa <+310>:	46 f2 14 37	movw	r7, #25364	; 0x6314
+   0x0001ecfe <+314>:	c0 f2 04 07	movt	r7, #4
+   0x0001ed02 <+318>:	46 f2 7c 08	movw	r8, #24700	; 0x607c
+   0x0001ed06 <+322>:	c0 f2 04 08	movt	r8, #4
+   0x0001ed0a <+326>:	3a 68	ldr	r2, [r7, #0]
+   0x0001ed0c <+328>:	d8 f8 00 50	ldr.w	r5, [r8]
+   0x0001ed10 <+332>:	6a b3	cbz	r2, 0x1ed6e <sys_child_open_for_compress+426>
+   0x0001ed12 <+334>:	00 24	movs	r4, #0
+   0x0001ed14 <+336>:	08 e0	b.n	0x1ed28 <sys_child_open_for_compress+356>
+   0x0001ed16 <+338>:	3a 68	ldr	r2, [r7, #0]
+   0x0001ed18 <+340>:	04 44	add	r4, r0
+   0x0001ed1a <+342>:	46 f2 14 36	movw	r6, #25364	; 0x6314
+   0x0001ed1e <+346>:	05 44	add	r5, r0
+   0x0001ed20 <+348>:	a2 42	cmp	r2, r4
+   0x0001ed22 <+350>:	c0 f2 04 06	movt	r6, #4
+   0x0001ed26 <+354>:	18 d9	bls.n	0x1ed5a <sys_child_open_for_compress+406>
+   0x0001ed28 <+356>:	12 1b	subs	r2, r2, r4
+   0x0001ed2a <+358>:	00 20	movs	r0, #0
+   0x0001ed2c <+360>:	29 46	mov	r1, r5
+   0x0001ed2e <+362>:	10 f0 47 f8	bl	0x2edc0 <safe_read>
+   0x0001ed32 <+366>:	43 1c	adds	r3, r0, #1
+   0x0001ed34 <+368>:	70 d0	beq.n	0x1ee18 <sys_child_open_for_compress+596>
+   0x0001ed36 <+370>:	00 28	cmp	r0, #0
+   0x0001ed38 <+372>:	ed d1	bne.n	0x1ed16 <sys_child_open_for_compress+338>
+   0x0001ed3a <+374>:	c4 b1	cbz	r4, 0x1ed6e <sys_child_open_for_compress+426>
+   0x0001ed3c <+376>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0001ed40 <+380>:	01 46	mov	r1, r0
+   0x0001ed42 <+382>:	3a 68	ldr	r2, [r7, #0]
+   0x0001ed44 <+384>:	18 19	adds	r0, r3, r4
+   0x0001ed46 <+386>:	12 1b	subs	r2, r2, r4
+   0x0001ed48 <+388>:	ec f7 68 e9	blx	0xb01c <memset@plt+4>
+   0x0001ed4c <+392>:	ff f7 20 ff	bl	0x1eb90 <sys_write_archive_buffer>
+   0x0001ed50 <+396>:	3b 68	ldr	r3, [r7, #0]
+   0x0001ed52 <+398>:	98 42	cmp	r0, r3
+   0x0001ed54 <+400>:	0b d0	beq.n	0x1ed6e <sys_child_open_for_compress+426>
+   0x0001ed56 <+402>:	ed f7 43 ff	bl	0xcbe0 <archive_write_error>
+   0x0001ed5a <+406>:	ff f7 19 ff	bl	0x1eb90 <sys_write_archive_buffer>
+   0x0001ed5e <+410>:	33 68	ldr	r3, [r6, #0]
+   0x0001ed60 <+412>:	98 42	cmp	r0, r3
+   0x0001ed62 <+414>:	02 46	mov	r2, r0
+   0x0001ed64 <+416>:	f7 d1	bne.n	0x1ed56 <sys_child_open_for_compress+402>
+   0x0001ed66 <+418>:	d8 f8 00 50	ldr.w	r5, [r8]
+   0x0001ed6a <+422>:	00 2a	cmp	r2, #0
+   0x0001ed6c <+424>:	d1 d1	bne.n	0x1ed12 <sys_child_open_for_compress+334>
+   0x0001ed6e <+426>:	48 46	mov	r0, r9
+   0x0001ed70 <+428>:	ff f7 86 fc	bl	0x1e680 <wait_for_grandchild>
+   0x0001ed74 <+432>:	2b 78	ldrb	r3, [r5, #0]
+   0x0001ed76 <+434>:	eb b9	cbnz	r3, 0x1edb4 <sys_child_open_for_compress+496>
+   0x0001ed78 <+436>:	3a 21	movs	r1, #58	; 0x3a
+   0x0001ed7a <+438>:	ec f7 d8 e8	blx	0xaf2c <strchr@plt>
+   0x0001ed7e <+442>:	46 f2 4c 33	movw	r3, #25420	; 0x634c
+   0x0001ed82 <+446>:	c0 f2 04 03	movt	r3, #4
+   0x0001ed86 <+450>:	18 60	str	r0, [r3, #0]
+   0x0001ed88 <+452>:	35 68	ldr	r5, [r6, #0]
+   0x0001ed8a <+454>:	a0 b1	cbz	r0, 0x1edb6 <sys_child_open_for_compress+498>
+   0x0001ed8c <+456>:	a8 42	cmp	r0, r5
+   0x0001ed8e <+458>:	12 d9	bls.n	0x1edb6 <sys_child_open_for_compress+498>
+   0x0001ed90 <+460>:	42 1b	subs	r2, r0, r5
+   0x0001ed92 <+462>:	2f 21	movs	r1, #47	; 0x2f
+   0x0001ed94 <+464>:	28 46	mov	r0, r5
+   0x0001ed96 <+466>:	ec f7 86 e9	blx	0xb0a4 <memchr@plt>
+   0x0001ed9a <+470>:	60 b9	cbnz	r0, 0x1edb6 <sys_child_open_for_compress+498>
+   0x0001ed9c <+472>:	46 f2 d0 23	movw	r3, #25296	; 0x62d0
+   0x0001eda0 <+476>:	c0 f2 04 03	movt	r3, #4
+   0x0001eda4 <+480>:	28 46	mov	r0, r5
+   0x0001eda6 <+482>:	41 21	movs	r1, #65	; 0x41
+   0x0001eda8 <+484>:	1b 68	ldr	r3, [r3, #0]
+   0x0001edaa <+486>:	4f f0 80 42	mov.w	r2, #1073741824	; 0x40000000
+   0x0001edae <+490>:	05 f0 17 fa	bl	0x241e0 <rmt_open__>
+   0x0001edb2 <+494>:	05 e0	b.n	0x1edc0 <sys_child_open_for_compress+508>
+   0x0001edb4 <+496>:	05 46	mov	r5, r0
+   0x0001edb6 <+498>:	28 46	mov	r0, r5
+   0x0001edb8 <+500>:	4f f4 db 71	mov.w	r1, #438	; 0x1b6
+   0x0001edbc <+504>:	eb f7 f8 ef	blx	0xadb0 <creat64@plt>
+   0x0001edc0 <+508>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001edc4 <+512>:	00 28	cmp	r0, #0
+   0x0001edc6 <+514>:	c0 f2 04 03	movt	r3, #4
+   0x0001edca <+518>:	18 60	str	r0, [r3, #0]
+   0x0001edcc <+520>:	95 da	bge.n	0x1ecfa <sys_child_open_for_compress+310>
+   0x0001edce <+522>:	23 68	ldr	r3, [r4, #0]
+   0x0001edd0 <+524>:	18 68	ldr	r0, [r3, #0]
+   0x0001edd2 <+526>:	04 f0 f1 fd	bl	0x239b8 <open_fatal>
+   0x0001edd6 <+530>:	05 22	movs	r2, #5
+   0x0001edd8 <+532>:	45 f2 24 21	movw	r1, #21028	; 0x5224
+   0x0001eddc <+536>:	c0 f2 03 01	movt	r1, #3
+   0x0001ede0 <+540>:	eb f7 1a ef	blx	0xac18 <dcgettext@plt>
+   0x0001ede4 <+544>:	0f f0 5c f8	bl	0x2dea0 <set_program_name>
+   0x0001ede8 <+548>:	03 98	ldr	r0, [sp, #12]
+   0x0001edea <+550>:	01 21	movs	r1, #1
+   0x0001edec <+552>:	ff f7 20 fd	bl	0x1e830 <xdup2>
+   0x0001edf0 <+556>:	02 98	ldr	r0, [sp, #8]
+   0x0001edf2 <+558>:	ed f7 e3 fe	bl	0xcbbc <xclose>
+   0x0001edf6 <+562>:	46 f2 0c 33	movw	r3, #25356	; 0x630c
+   0x0001edfa <+566>:	c0 f2 04 03	movt	r3, #4
+   0x0001edfe <+570>:	18 68	ldr	r0, [r3, #0]
+   0x0001ee00 <+572>:	ff f7 10 fc	bl	0x1e624 <xexec>
+   0x0001ee04 <+576>:	01 21	movs	r1, #1
+   0x0001ee06 <+578>:	ff f7 13 fd	bl	0x1e830 <xdup2>
+   0x0001ee0a <+582>:	f4 e7	b.n	0x1edf6 <sys_child_open_for_compress+562>
+   0x0001ee0c <+584>:	23 68	ldr	r3, [r4, #0]
+   0x0001ee0e <+586>:	01 21	movs	r1, #1
+   0x0001ee10 <+588>:	18 68	ldr	r0, [r3, #0]
+   0x0001ee12 <+590>:	fc f7 23 fa	bl	0x1b25c <maybe_backup_file>
+   0x0001ee16 <+594>:	2d e7	b.n	0x1ec74 <sys_child_open_for_compress+176>
+   0x0001ee18 <+596>:	46 f2 0c 33	movw	r3, #25356	; 0x630c
+   0x0001ee1c <+600>:	c0 f2 04 03	movt	r3, #4
+   0x0001ee20 <+604>:	18 68	ldr	r0, [r3, #0]
+   0x0001ee22 <+606>:	04 f0 5f fe	bl	0x23ae4 <read_fatal>
+   0x0001ee26 <+610>:	fc f7 db fa	bl	0x1b3e0 <undo_last_backup>
+   0x0001ee2a <+614>:	40 e7	b.n	0x1ecae <sys_child_open_for_compress+234>
+End of assembler dump.
+Dump of assembler code for function sys_child_open_for_uncompress:
+   0x0001ee2c <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x0001ee30 <+4>:	85 b0	sub	sp, #20
+   0x0001ee32 <+6>:	68 46	mov	r0, sp
+   0x0001ee34 <+8>:	fc f7 fe fc	bl	0x1b834 <xpipe>
+   0x0001ee38 <+12>:	fc f7 e6 fc	bl	0x1b808 <xfork>
+   0x0001ee3c <+16>:	04 1e	subs	r4, r0, #0
+   0x0001ee3e <+18>:	0c dd	ble.n	0x1ee5a <sys_child_open_for_uncompress+46>
+   0x0001ee40 <+20>:	00 9a	ldr	r2, [sp, #0]
+   0x0001ee42 <+22>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001ee46 <+26>:	c0 f2 04 03	movt	r3, #4
+   0x0001ee4a <+30>:	01 98	ldr	r0, [sp, #4]
+   0x0001ee4c <+32>:	1a 60	str	r2, [r3, #0]
+   0x0001ee4e <+34>:	ed f7 b5 fe	bl	0xcbbc <xclose>
+   0x0001ee52 <+38>:	20 46	mov	r0, r4
+   0x0001ee54 <+40>:	05 b0	add	sp, #20
+   0x0001ee56 <+42>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0001ee5a <+46>:	05 22	movs	r2, #5
+   0x0001ee5c <+48>:	45 f2 18 21	movw	r1, #21016	; 0x5218
+   0x0001ee60 <+52>:	00 20	movs	r0, #0
+   0x0001ee62 <+54>:	c0 f2 03 01	movt	r1, #3
+   0x0001ee66 <+58>:	eb f7 d8 ee	blx	0xac18 <dcgettext@plt>
+   0x0001ee6a <+62>:	46 f2 78 24	movw	r4, #25208	; 0x6278
+   0x0001ee6e <+66>:	0f f0 17 f8	bl	0x2dea0 <set_program_name>
+   0x0001ee72 <+70>:	00 21	movs	r1, #0
+   0x0001ee74 <+72>:	0d 20	movs	r0, #13
+   0x0001ee76 <+74>:	c0 f2 04 04	movt	r4, #4
+   0x0001ee7a <+78>:	eb f7 a2 ee	blx	0xabc0 <signal@plt+4>
+   0x0001ee7e <+82>:	01 98	ldr	r0, [sp, #4]
+   0x0001ee80 <+84>:	01 21	movs	r1, #1
+   0x0001ee82 <+86>:	ff f7 d5 fc	bl	0x1e830 <xdup2>
+   0x0001ee86 <+90>:	00 98	ldr	r0, [sp, #0]
+   0x0001ee88 <+92>:	ed f7 98 fe	bl	0xcbbc <xclose>
+   0x0001ee8c <+96>:	25 68	ldr	r5, [r4, #0]
+   0x0001ee8e <+98>:	28 68	ldr	r0, [r5, #0]
+   0x0001ee90 <+100>:	03 78	ldrb	r3, [r0, #0]
+   0x0001ee92 <+102>:	2d 2b	cmp	r3, #45	; 0x2d
+   0x0001ee94 <+104>:	7b d0	beq.n	0x1ef8e <sys_child_open_for_uncompress+354>
+   0x0001ee96 <+106>:	46 f2 48 33	movw	r3, #25416	; 0x6348
+   0x0001ee9a <+110>:	c0 f2 04 03	movt	r3, #4
+   0x0001ee9e <+114>:	1b 78	ldrb	r3, [r3, #0]
+   0x0001eea0 <+116>:	00 2b	cmp	r3, #0
+   0x0001eea2 <+118>:	40 f0 b4 80	bne.w	0x1f00e <sys_child_open_for_uncompress+482>
+   0x0001eea6 <+122>:	3a 21	movs	r1, #58	; 0x3a
+   0x0001eea8 <+124>:	ec f7 40 e8	blx	0xaf2c <strchr@plt>
+   0x0001eeac <+128>:	46 f2 4c 33	movw	r3, #25420	; 0x634c
+   0x0001eeb0 <+132>:	c0 f2 04 03	movt	r3, #4
+   0x0001eeb4 <+136>:	18 60	str	r0, [r3, #0]
+   0x0001eeb6 <+138>:	2d 68	ldr	r5, [r5, #0]
+   0x0001eeb8 <+140>:	38 b1	cbz	r0, 0x1eeca <sys_child_open_for_uncompress+158>
+   0x0001eeba <+142>:	a8 42	cmp	r0, r5
+   0x0001eebc <+144>:	05 d9	bls.n	0x1eeca <sys_child_open_for_uncompress+158>
+   0x0001eebe <+146>:	42 1b	subs	r2, r0, r5
+   0x0001eec0 <+148>:	2f 21	movs	r1, #47	; 0x2f
+   0x0001eec2 <+150>:	28 46	mov	r0, r5
+   0x0001eec4 <+152>:	ec f7 ee e8	blx	0xb0a4 <memchr@plt>
+   0x0001eec8 <+156>:	28 b1	cbz	r0, 0x1eed6 <sys_child_open_for_uncompress+170>
+   0x0001eeca <+158>:	28 46	mov	r0, r5
+   0x0001eecc <+160>:	ff f7 92 fc	bl	0x1e7f4 <is_regular_file>
+   0x0001eed0 <+164>:	00 28	cmp	r0, #0
+   0x0001eed2 <+166>:	40 f0 9e 80	bne.w	0x1f012 <sys_child_open_for_uncompress+486>
+   0x0001eed6 <+170>:	02 a8	add	r0, sp, #8
+   0x0001eed8 <+172>:	fc f7 ac fc	bl	0x1b834 <xpipe>
+   0x0001eedc <+176>:	fc f7 94 fc	bl	0x1b808 <xfork>
+   0x0001eee0 <+180>:	82 46	mov	r10, r0
+   0x0001eee2 <+182>:	00 28	cmp	r0, #0
+   0x0001eee4 <+184>:	00 f0 ac 80	beq.w	0x1f040 <sys_child_open_for_uncompress+532>
+   0x0001eee8 <+188>:	03 98	ldr	r0, [sp, #12]
+   0x0001eeea <+190>:	01 21	movs	r1, #1
+   0x0001eeec <+192>:	ff f7 a0 fc	bl	0x1e830 <xdup2>
+   0x0001eef0 <+196>:	02 98	ldr	r0, [sp, #8]
+   0x0001eef2 <+198>:	ed f7 63 fe	bl	0xcbbc <xclose>
+   0x0001eef6 <+202>:	25 68	ldr	r5, [r4, #0]
+   0x0001eef8 <+204>:	28 68	ldr	r0, [r5, #0]
+   0x0001eefa <+206>:	03 78	ldrb	r3, [r0, #0]
+   0x0001eefc <+208>:	2d 2b	cmp	r3, #45	; 0x2d
+   0x0001eefe <+210>:	50 d1	bne.n	0x1efa2 <sys_child_open_for_uncompress+374>
+   0x0001ef00 <+212>:	43 78	ldrb	r3, [r0, #1]
+   0x0001ef02 <+214>:	00 2b	cmp	r3, #0
+   0x0001ef04 <+216>:	4d d1	bne.n	0x1efa2 <sys_child_open_for_uncompress+374>
+   0x0001ef06 <+218>:	46 f2 34 37	movw	r7, #25396	; 0x6334
+   0x0001ef0a <+222>:	c0 f2 04 07	movt	r7, #4
+   0x0001ef0e <+226>:	3b 60	str	r3, [r7, #0]
+   0x0001ef10 <+228>:	46 f2 7c 06	movw	r6, #24700	; 0x607c
+   0x0001ef14 <+232>:	46 f2 14 38	movw	r8, #25364	; 0x6314
+   0x0001ef18 <+236>:	46 f2 0c 39	movw	r9, #25356	; 0x630c
+   0x0001ef1c <+240>:	c0 f2 04 06	movt	r6, #4
+   0x0001ef20 <+244>:	c0 f2 04 08	movt	r8, #4
+   0x0001ef24 <+248>:	c0 f2 04 09	movt	r9, #4
+   0x0001ef28 <+252>:	ed f7 0c fc	bl	0xc744 <clear_read_error_count>
+   0x0001ef2c <+256>:	0b e0	b.n	0x1ef46 <sys_child_open_for_uncompress+282>
+   0x0001ef2e <+258>:	00 f1 40 40	add.w	r0, r0, #3221225472	; 0xc0000000
+   0x0001ef32 <+262>:	31 68	ldr	r1, [r6, #0]
+   0x0001ef34 <+264>:	d8 f8 00 20	ldr.w	r2, [r8]
+   0x0001ef38 <+268>:	05 f0 f2 fb	bl	0x24720 <rmt_read__>
+   0x0001ef3c <+272>:	04 46	mov	r4, r0
+   0x0001ef3e <+274>:	63 1c	adds	r3, r4, #1
+   0x0001ef40 <+276>:	0d d1	bne.n	0x1ef5e <sys_child_open_for_uncompress+306>
+   0x0001ef42 <+278>:	ed f7 91 fe	bl	0xcc68 <archive_read_error>
+   0x0001ef46 <+282>:	38 68	ldr	r0, [r7, #0]
+   0x0001ef48 <+284>:	b0 f1 80 4f	cmp.w	r0, #1073741824	; 0x40000000
+   0x0001ef4c <+288>:	ef da	bge.n	0x1ef2e <sys_child_open_for_uncompress+258>
+   0x0001ef4e <+290>:	31 68	ldr	r1, [r6, #0]
+   0x0001ef50 <+292>:	d8 f8 00 20	ldr.w	r2, [r8]
+   0x0001ef54 <+296>:	0f f0 34 ff	bl	0x2edc0 <safe_read>
+   0x0001ef58 <+300>:	04 46	mov	r4, r0
+   0x0001ef5a <+302>:	63 1c	adds	r3, r4, #1
+   0x0001ef5c <+304>:	f1 d0	beq.n	0x1ef42 <sys_child_open_for_uncompress+278>
+   0x0001ef5e <+306>:	d4 b1	cbz	r4, 0x1ef96 <sys_child_open_for_uncompress+362>
+   0x0001ef60 <+308>:	d6 f8 00 b0	ldr.w	r11, [r6]
+   0x0001ef64 <+312>:	4f f4 00 75	mov.w	r5, #512	; 0x200
+   0x0001ef68 <+316>:	a5 42	cmp	r5, r4
+   0x0001ef6a <+318>:	4f f0 01 00	mov.w	r0, #1
+   0x0001ef6e <+322>:	59 46	mov	r1, r11
+   0x0001ef70 <+324>:	28 bf	it	cs
+   0x0001ef72 <+326>:	25 46	movcs	r5, r4
+   0x0001ef74 <+328>:	2a 46	mov	r2, r5
+   0x0001ef76 <+330>:	0b f0 35 fd	bl	0x2a9e4 <full_write>
+   0x0001ef7a <+334>:	a8 42	cmp	r0, r5
+   0x0001ef7c <+336>:	03 d0	beq.n	0x1ef86 <sys_child_open_for_uncompress+346>
+   0x0001ef7e <+338>:	d9 f8 00 00	ldr.w	r0, [r9]
+   0x0001ef82 <+342>:	04 f0 f5 fe	bl	0x23d70 <write_error>
+   0x0001ef86 <+346>:	64 1b	subs	r4, r4, r5
+   0x0001ef88 <+348>:	ab 44	add	r11, r5
+   0x0001ef8a <+350>:	eb d1	bne.n	0x1ef64 <sys_child_open_for_uncompress+312>
+   0x0001ef8c <+352>:	cc e7	b.n	0x1ef28 <sys_child_open_for_uncompress+252>
+   0x0001ef8e <+354>:	43 78	ldrb	r3, [r0, #1]
+   0x0001ef90 <+356>:	00 2b	cmp	r3, #0
+   0x0001ef92 <+358>:	a0 d0	beq.n	0x1eed6 <sys_child_open_for_uncompress+170>
+   0x0001ef94 <+360>:	7f e7	b.n	0x1ee96 <sys_child_open_for_uncompress+106>
+   0x0001ef96 <+362>:	01 20	movs	r0, #1
+   0x0001ef98 <+364>:	ed f7 10 fe	bl	0xcbbc <xclose>
+   0x0001ef9c <+368>:	50 46	mov	r0, r10
+   0x0001ef9e <+370>:	ff f7 6f fb	bl	0x1e680 <wait_for_grandchild>
+   0x0001efa2 <+374>:	46 f2 48 33	movw	r3, #25416	; 0x6348
+   0x0001efa6 <+378>:	c0 f2 04 03	movt	r3, #4
+   0x0001efaa <+382>:	1b 78	ldrb	r3, [r3, #0]
+   0x0001efac <+384>:	eb b9	cbnz	r3, 0x1efea <sys_child_open_for_uncompress+446>
+   0x0001efae <+386>:	3a 21	movs	r1, #58	; 0x3a
+   0x0001efb0 <+388>:	eb f7 bc ef	blx	0xaf2c <strchr@plt>
+   0x0001efb4 <+392>:	46 f2 4c 33	movw	r3, #25420	; 0x634c
+   0x0001efb8 <+396>:	c0 f2 04 03	movt	r3, #4
+   0x0001efbc <+400>:	18 60	str	r0, [r3, #0]
+   0x0001efbe <+402>:	2d 68	ldr	r5, [r5, #0]
+   0x0001efc0 <+404>:	a0 b1	cbz	r0, 0x1efec <sys_child_open_for_uncompress+448>
+   0x0001efc2 <+406>:	a8 42	cmp	r0, r5
+   0x0001efc4 <+408>:	12 d9	bls.n	0x1efec <sys_child_open_for_uncompress+448>
+   0x0001efc6 <+410>:	42 1b	subs	r2, r0, r5
+   0x0001efc8 <+412>:	2f 21	movs	r1, #47	; 0x2f
+   0x0001efca <+414>:	28 46	mov	r0, r5
+   0x0001efcc <+416>:	ec f7 6a e8	blx	0xb0a4 <memchr@plt>
+   0x0001efd0 <+420>:	01 46	mov	r1, r0
+   0x0001efd2 <+422>:	58 b9	cbnz	r0, 0x1efec <sys_child_open_for_uncompress+448>
+   0x0001efd4 <+424>:	46 f2 d0 23	movw	r3, #25296	; 0x62d0
+   0x0001efd8 <+428>:	c0 f2 04 03	movt	r3, #4
+   0x0001efdc <+432>:	28 46	mov	r0, r5
+   0x0001efde <+434>:	4f f0 80 42	mov.w	r2, #1073741824	; 0x40000000
+   0x0001efe2 <+438>:	1b 68	ldr	r3, [r3, #0]
+   0x0001efe4 <+440>:	05 f0 fc f8	bl	0x241e0 <rmt_open__>
+   0x0001efe8 <+444>:	06 e0	b.n	0x1eff8 <sys_child_open_for_uncompress+460>
+   0x0001efea <+446>:	05 46	mov	r5, r0
+   0x0001efec <+448>:	28 46	mov	r0, r5
+   0x0001efee <+450>:	00 21	movs	r1, #0
+   0x0001eff0 <+452>:	4f f4 db 72	mov.w	r2, #438	; 0x1b6
+   0x0001eff4 <+456>:	eb f7 fc ee	blx	0xadf0 <open64@plt>
+   0x0001eff8 <+460>:	46 f2 34 37	movw	r7, #25396	; 0x6334
+   0x0001effc <+464>:	00 28	cmp	r0, #0
+   0x0001effe <+466>:	c0 f2 04 07	movt	r7, #4
+   0x0001f002 <+470>:	38 60	str	r0, [r7, #0]
+   0x0001f004 <+472>:	84 da	bge.n	0x1ef10 <sys_child_open_for_uncompress+228>
+   0x0001f006 <+474>:	23 68	ldr	r3, [r4, #0]
+   0x0001f008 <+476>:	18 68	ldr	r0, [r3, #0]
+   0x0001f00a <+478>:	04 f0 d5 fc	bl	0x239b8 <open_fatal>
+   0x0001f00e <+482>:	05 46	mov	r5, r0
+   0x0001f010 <+484>:	5b e7	b.n	0x1eeca <sys_child_open_for_uncompress+158>
+   0x0001f012 <+486>:	23 68	ldr	r3, [r4, #0]
+   0x0001f014 <+488>:	00 21	movs	r1, #0
+   0x0001f016 <+490>:	4f f4 db 72	mov.w	r2, #438	; 0x1b6
+   0x0001f01a <+494>:	46 f2 78 24	movw	r4, #25208	; 0x6278
+   0x0001f01e <+498>:	c0 f2 04 04	movt	r4, #4
+   0x0001f022 <+502>:	18 68	ldr	r0, [r3, #0]
+   0x0001f024 <+504>:	eb f7 e4 ee	blx	0xadf0 <open64@plt>
+   0x0001f028 <+508>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001f02c <+512>:	c0 f2 04 03	movt	r3, #4
+   0x0001f030 <+516>:	00 28	cmp	r0, #0
+   0x0001f032 <+518>:	18 60	str	r0, [r3, #0]
+   0x0001f034 <+520>:	e7 db	blt.n	0x1f006 <sys_child_open_for_uncompress+474>
+   0x0001f036 <+522>:	00 21	movs	r1, #0
+   0x0001f038 <+524>:	ff f7 fa fb	bl	0x1e830 <xdup2>
+   0x0001f03c <+528>:	ff f7 48 fb	bl	0x1e6d0 <run_decompress_program>
+   0x0001f040 <+532>:	05 22	movs	r2, #5
+   0x0001f042 <+534>:	45 f2 24 21	movw	r1, #21028	; 0x5224
+   0x0001f046 <+538>:	c0 f2 03 01	movt	r1, #3
+   0x0001f04a <+542>:	eb f7 e6 ed	blx	0xac18 <dcgettext@plt>
+   0x0001f04e <+546>:	0e f0 27 ff	bl	0x2dea0 <set_program_name>
+   0x0001f052 <+550>:	51 46	mov	r1, r10
+   0x0001f054 <+552>:	02 98	ldr	r0, [sp, #8]
+   0x0001f056 <+554>:	ff f7 eb fb	bl	0x1e830 <xdup2>
+   0x0001f05a <+558>:	03 98	ldr	r0, [sp, #12]
+   0x0001f05c <+560>:	ed f7 ae fd	bl	0xcbbc <xclose>
+   0x0001f060 <+564>:	ff f7 36 fb	bl	0x1e6d0 <run_decompress_program>
+End of assembler dump.
+Dump of assembler code for function sys_compare_gid:
+   0x0001eb1c <+0>:	c3 69	ldr	r3, [r0, #28]
+   0x0001eb1e <+2>:	c8 69	ldr	r0, [r1, #28]
+   0x0001eb20 <+4>:	18 1a	subs	r0, r3, r0
+   0x0001eb22 <+6>:	b0 fa 80 f0	clz	r0, r0
+   0x0001eb26 <+10>:	40 09	lsrs	r0, r0, #5
+   0x0001eb28 <+12>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function sys_compare_links:
+   0x0001eb2c <+0>:	d0 e9 00 23	ldrd	r2, r3, [r0]
+   0x0001eb30 <+4>:	30 b4	push	{r4, r5}
+   0x0001eb32 <+6>:	d1 e9 00 45	ldrd	r4, r5, [r1]
+   0x0001eb36 <+10>:	9d 42	cmp	r5, r3
+   0x0001eb38 <+12>:	0c bf	ite	eq
+   0x0001eb3a <+14>:	94 42	cmpeq	r4, r2
+   0x0001eb3c <+16>:	00 20	movne	r0, #0
+   0x0001eb3e <+18>:	01 d0	beq.n	0x1eb44 <sys_compare_links+24>
+   0x0001eb40 <+20>:	30 bc	pop	{r4, r5}
+   0x0001eb42 <+22>:	70 47	bx	lr
+   0x0001eb44 <+24>:	d0 e9 18 23	ldrd	r2, r3, [r0, #96]	; 0x60
+   0x0001eb48 <+28>:	d1 e9 18 45	ldrd	r4, r5, [r1, #96]	; 0x60
+   0x0001eb4c <+32>:	9d 42	cmp	r5, r3
+   0x0001eb4e <+34>:	08 bf	it	eq
+   0x0001eb50 <+36>:	94 42	cmpeq	r4, r2
+   0x0001eb52 <+38>:	30 bc	pop	{r4, r5}
+   0x0001eb54 <+40>:	0c bf	ite	eq
+   0x0001eb56 <+42>:	01 20	moveq	r0, #1
+   0x0001eb58 <+44>:	00 20	movne	r0, #0
+   0x0001eb5a <+46>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function sys_compare_uid:
+   0x0001eb0c <+0>:	83 69	ldr	r3, [r0, #24]
+   0x0001eb0e <+2>:	88 69	ldr	r0, [r1, #24]
+   0x0001eb10 <+4>:	18 1a	subs	r0, r3, r0
+   0x0001eb12 <+6>:	b0 fa 80 f0	clz	r0, r0
+   0x0001eb16 <+10>:	40 09	lsrs	r0, r0, #5
+   0x0001eb18 <+12>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function sys_detect_dev_null_output:
+   0x0001e974 <+0>:	46 f2 78 23	movw	r3, #25208	; 0x6278
+   0x0001e978 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001e97c <+8>:	10 b5	push	{r4, lr}
+   0x0001e97e <+10>:	45 f2 60 11	movw	r1, #20832	; 0x5160
+   0x0001e982 <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x0001e984 <+16>:	9a b0	sub	sp, #104	; 0x68
+   0x0001e986 <+18>:	c0 f2 03 01	movt	r1, #3
+   0x0001e98a <+22>:	18 68	ldr	r0, [r3, #0]
+   0x0001e98c <+24>:	ec f7 6e e8	blx	0xaa6c <strcmp@plt+4>
+   0x0001e990 <+28>:	01 22	movs	r2, #1
+   0x0001e992 <+30>:	90 b1	cbz	r0, 0x1e9ba <sys_detect_dev_null_output+70>
+   0x0001e994 <+32>:	46 f2 34 33	movw	r3, #25396	; 0x6334
+   0x0001e998 <+36>:	c0 f2 04 03	movt	r3, #4
+   0x0001e99c <+40>:	1b 68	ldr	r3, [r3, #0]
+   0x0001e99e <+42>:	b3 f1 80 4f	cmp.w	r3, #1073741824	; 0x40000000
+   0x0001e9a2 <+46>:	09 da	bge.n	0x1e9b8 <sys_detect_dev_null_output+68>
+   0x0001e9a4 <+48>:	45 f6 88 54	movw	r4, #23944	; 0x5d88
+   0x0001e9a8 <+52>:	c0 f2 04 04	movt	r4, #4
+   0x0001e9ac <+56>:	23 69	ldr	r3, [r4, #16]
+   0x0001e9ae <+58>:	03 f4 70 43	and.w	r3, r3, #61440	; 0xf000
+   0x0001e9b2 <+62>:	b3 f5 00 5f	cmp.w	r3, #8192	; 0x2000
+   0x0001e9b6 <+66>:	07 d0	beq.n	0x1e9c8 <sys_detect_dev_null_output+84>
+   0x0001e9b8 <+68>:	00 22	movs	r2, #0
+   0x0001e9ba <+70>:	46 f2 0c 23	movw	r3, #25100	; 0x620c
+   0x0001e9be <+74>:	c0 f2 04 03	movt	r3, #4
+   0x0001e9c2 <+78>:	1a 70	strb	r2, [r3, #0]
+   0x0001e9c4 <+80>:	1a b0	add	sp, #104	; 0x68
+   0x0001e9c6 <+82>:	10 bd	pop	{r4, pc}
+   0x0001e9c8 <+84>:	45 f2 60 11	movw	r1, #20832	; 0x5160
+   0x0001e9cc <+88>:	03 20	movs	r0, #3
+   0x0001e9ce <+90>:	c0 f2 03 01	movt	r1, #3
+   0x0001e9d2 <+94>:	6a 46	mov	r2, sp
+   0x0001e9d4 <+96>:	ec f7 6a ec	blx	0xb2ac <__xstat64@plt>
+   0x0001e9d8 <+100>:	00 28	cmp	r0, #0
+   0x0001e9da <+102>:	ed d1	bne.n	0x1e9b8 <sys_detect_dev_null_output+68>
+   0x0001e9dc <+104>:	d4 e9 00 01	ldrd	r0, r1, [r4]
+   0x0001e9e0 <+108>:	dd e9 00 23	ldrd	r2, r3, [sp]
+   0x0001e9e4 <+112>:	99 42	cmp	r1, r3
+   0x0001e9e6 <+114>:	08 bf	it	eq
+   0x0001e9e8 <+116>:	90 42	cmpeq	r0, r2
+   0x0001e9ea <+118>:	e5 d1	bne.n	0x1e9b8 <sys_detect_dev_null_output+68>
+   0x0001e9ec <+120>:	dd e9 18 23	ldrd	r2, r3, [sp, #96]	; 0x60
+   0x0001e9f0 <+124>:	d4 e9 18 01	ldrd	r0, r1, [r4, #96]	; 0x60
+   0x0001e9f4 <+128>:	99 42	cmp	r1, r3
+   0x0001e9f6 <+130>:	06 bf	itte	eq
+   0x0001e9f8 <+132>:	90 42	cmpeq	r0, r2
+   0x0001e9fa <+134>:	01 22	moveq	r2, #1
+   0x0001e9fc <+136>:	00 22	movne	r2, #0
+   0x0001e9fe <+138>:	dc e7	b.n	0x1e9ba <sys_detect_dev_null_output+70>
+End of assembler dump.
+Dump of assembler code for function sys_exec_checkpoint_script:
+   0x0001f5e8 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x0001f5ec <+4>:	45 f2 70 75	movw	r5, #22384	; 0x5770
+   0x0001f5f0 <+8>:	c0 f2 04 05	movt	r5, #4
+   0x0001f5f4 <+12>:	88 b0	sub	sp, #32
+   0x0001f5f6 <+14>:	06 46	mov	r6, r0
+   0x0001f5f8 <+16>:	88 46	mov	r8, r1
+   0x0001f5fa <+18>:	2b 68	ldr	r3, [r5, #0]
+   0x0001f5fc <+20>:	17 46	mov	r7, r2
+   0x0001f5fe <+22>:	07 93	str	r3, [sp, #28]
+   0x0001f600 <+24>:	fc f7 02 f9	bl	0x1b808 <xfork>
+   0x0001f604 <+28>:	04 46	mov	r4, r0
+   0x0001f606 <+30>:	28 b9	cbnz	r0, 0x1f614 <sys_exec_checkpoint_script+44>
+   0x0001f608 <+32>:	16 e0	b.n	0x1f638 <sys_exec_checkpoint_script+80>
+   0x0001f60a <+34>:	eb f7 d6 ec	blx	0xafb8 <__errno_location@plt>
+   0x0001f60e <+38>:	03 68	ldr	r3, [r0, #0]
+   0x0001f610 <+40>:	04 2b	cmp	r3, #4
+   0x0001f612 <+42>:	0d d1	bne.n	0x1f630 <sys_exec_checkpoint_script+72>
+   0x0001f614 <+44>:	20 46	mov	r0, r4
+   0x0001f616 <+46>:	69 46	mov	r1, sp
+   0x0001f618 <+48>:	00 22	movs	r2, #0
+   0x0001f61a <+50>:	eb f7 9a eb	blx	0xad50 <waitpid@plt>
+   0x0001f61e <+54>:	01 30	adds	r0, #1
+   0x0001f620 <+56>:	f3 d0	beq.n	0x1f60a <sys_exec_checkpoint_script+34>
+   0x0001f622 <+58>:	07 9a	ldr	r2, [sp, #28]
+   0x0001f624 <+60>:	2b 68	ldr	r3, [r5, #0]
+   0x0001f626 <+62>:	9a 42	cmp	r2, r3
+   0x0001f628 <+64>:	5e d1	bne.n	0x1f6e8 <sys_exec_checkpoint_script+256>
+   0x0001f62a <+66>:	08 b0	add	sp, #32
+   0x0001f62c <+68>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x0001f630 <+72>:	30 46	mov	r0, r6
+   0x0001f632 <+74>:	04 f0 95 fb	bl	0x23d60 <waitpid_error>
+   0x0001f636 <+78>:	f4 e7	b.n	0x1f622 <sys_exec_checkpoint_script+58>
+   0x0001f638 <+80>:	01 22	movs	r2, #1
+   0x0001f63a <+82>:	45 f2 38 20	movw	r0, #21048	; 0x5238
+   0x0001f63e <+86>:	44 f2 5c 71	movw	r1, #18268	; 0x475c
+   0x0001f642 <+90>:	c0 f2 03 00	movt	r0, #3
+   0x0001f646 <+94>:	c0 f2 03 01	movt	r1, #3
+   0x0001f64a <+98>:	eb f7 76 ec	blx	0xaf38 <setenv@plt>
+   0x0001f64e <+102>:	41 46	mov	r1, r8
+   0x0001f650 <+104>:	01 22	movs	r2, #1
+   0x0001f652 <+106>:	45 f2 44 20	movw	r0, #21060	; 0x5244
+   0x0001f656 <+110>:	c0 f2 03 00	movt	r0, #3
+   0x0001f65a <+114>:	eb f7 6e ec	blx	0xaf38 <setenv@plt>
+   0x0001f65e <+118>:	01 aa	add	r2, sp, #4
+   0x0001f660 <+120>:	f9 17	asrs	r1, r7, #31
+   0x0001f662 <+122>:	38 46	mov	r0, r7
+   0x0001f664 <+124>:	0c f0 c4 fb	bl	0x2bdf0 <umaxtostr>
+   0x0001f668 <+128>:	01 22	movs	r2, #1
+   0x0001f66a <+130>:	01 46	mov	r1, r0
+   0x0001f66c <+132>:	45 f2 c4 30	movw	r0, #21444	; 0x53c4
+   0x0001f670 <+136>:	c0 f2 03 00	movt	r0, #3
+   0x0001f674 <+140>:	eb f7 60 ec	blx	0xaf38 <setenv@plt>
+   0x0001f678 <+144>:	46 f2 a0 23	movw	r3, #25248	; 0x62a0
+   0x0001f67c <+148>:	c0 f2 04 03	movt	r3, #4
+   0x0001f680 <+152>:	01 aa	add	r2, sp, #4
+   0x0001f682 <+154>:	18 68	ldr	r0, [r3, #0]
+   0x0001f684 <+156>:	c1 17	asrs	r1, r0, #31
+   0x0001f686 <+158>:	0c f0 b3 fb	bl	0x2bdf0 <umaxtostr>
+   0x0001f68a <+162>:	01 22	movs	r2, #1
+   0x0001f68c <+164>:	01 46	mov	r1, r0
+   0x0001f68e <+166>:	45 f2 5c 20	movw	r0, #21084	; 0x525c
+   0x0001f692 <+170>:	c0 f2 03 00	movt	r0, #3
+   0x0001f696 <+174>:	eb f7 50 ec	blx	0xaf38 <setenv@plt>
+   0x0001f69a <+178>:	46 f2 f0 23	movw	r3, #25328	; 0x62f0
+   0x0001f69e <+182>:	c0 f2 04 03	movt	r3, #4
+   0x0001f6a2 <+186>:	18 68	ldr	r0, [r3, #0]
+   0x0001f6a4 <+188>:	00 f0 7c fa	bl	0x1fba0 <subcommand_string>
+   0x0001f6a8 <+192>:	01 22	movs	r2, #1
+   0x0001f6aa <+194>:	01 46	mov	r1, r0
+   0x0001f6ac <+196>:	45 f2 ac 30	movw	r0, #21420	; 0x53ac
+   0x0001f6b0 <+200>:	c0 f2 03 00	movt	r0, #3
+   0x0001f6b4 <+204>:	eb f7 40 ec	blx	0xaf38 <setenv@plt>
+   0x0001f6b8 <+208>:	46 f2 b4 03	movw	r3, #24756	; 0x60b4
+   0x0001f6bc <+212>:	c0 f2 04 03	movt	r3, #4
+   0x0001f6c0 <+216>:	18 68	ldr	r0, [r3, #0]
+   0x0001f6c2 <+218>:	20 b9	cbnz	r0, 0x1f6ce <sys_exec_checkpoint_script+230>
+   0x0001f6c4 <+220>:	46 f2 d4 23	movw	r3, #25300	; 0x62d4
+   0x0001f6c8 <+224>:	c0 f2 04 03	movt	r3, #4
+   0x0001f6cc <+228>:	18 68	ldr	r0, [r3, #0]
+   0x0001f6ce <+230>:	00 f0 4d fa	bl	0x1fb6c <archive_format_string>
+   0x0001f6d2 <+234>:	01 22	movs	r2, #1
+   0x0001f6d4 <+236>:	01 46	mov	r1, r0
+   0x0001f6d6 <+238>:	45 f2 70 20	movw	r0, #21104	; 0x5270
+   0x0001f6da <+242>:	c0 f2 03 00	movt	r0, #3
+   0x0001f6de <+246>:	eb f7 2c ec	blx	0xaf38 <setenv@plt>
+   0x0001f6e2 <+250>:	30 46	mov	r0, r6
+   0x0001f6e4 <+252>:	fe f7 9e ff	bl	0x1e624 <xexec>
+   0x0001f6e8 <+256>:	eb f7 9c ea	blx	0xac24 <__stack_chk_fail@plt>
+End of assembler dump.

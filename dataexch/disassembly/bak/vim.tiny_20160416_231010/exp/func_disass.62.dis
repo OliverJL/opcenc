@@ -1,0 +1,243 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function dbcs_char2bytes:
+   0x00040f90 <+0>:	ff 28	cmp	r0, #255	; 0xff
+   0x00040f92 <+2>:	03 46	mov	r3, r0
+   0x00040f94 <+4>:	0c dd	ble.n	0x40fb0 <dbcs_char2bytes+32>
+   0x00040f96 <+6>:	10 f0 ff 03	ands.w	r3, r0, #255	; 0xff
+   0x00040f9a <+10>:	4f ea 10 22	mov.w	r2, r0, lsr #8
+   0x00040f9e <+14>:	1a bf	itte	ne
+   0x00040fa0 <+16>:	4b 70	strbne	r3, [r1, #1]
+   0x00040fa2 <+18>:	02 20	movne	r0, #2
+   0x00040fa4 <+20>:	0a 23	moveq	r3, #10
+   0x00040fa6 <+22>:	0a 70	strb	r2, [r1, #0]
+   0x00040fa8 <+24>:	04 bf	itt	eq
+   0x00040faa <+26>:	02 20	moveq	r0, #2
+   0x00040fac <+28>:	4b 70	strbeq	r3, [r1, #1]
+   0x00040fae <+30>:	70 47	bx	lr
+   0x00040fb0 <+32>:	01 20	movs	r0, #1
+   0x00040fb2 <+34>:	0b 70	strb	r3, [r1, #0]
+   0x00040fb4 <+36>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function dbcs_char2cells:
+   0x00040d38 <+0>:	08 4a	ldr	r2, [pc, #32]	; (0x40d5c <dbcs_char2cells+36>)
+   0x00040d3a <+2>:	42 f2 cc 61	movw	r1, #9932	; 0x26cc
+   0x00040d3e <+6>:	08 4b	ldr	r3, [pc, #32]	; (0x40d60 <dbcs_char2cells+40>)
+   0x00040d40 <+8>:	00 0a	lsrs	r0, r0, #8
+   0x00040d42 <+10>:	7a 44	add	r2, pc
+   0x00040d44 <+12>:	d3 58	ldr	r3, [r2, r3]
+   0x00040d46 <+14>:	1b 68	ldr	r3, [r3, #0]
+   0x00040d48 <+16>:	8b 42	cmp	r3, r1
+   0x00040d4a <+18>:	03 d0	beq.n	0x40d54 <dbcs_char2cells+28>
+   0x00040d4c <+20>:	05 4b	ldr	r3, [pc, #20]	; (0x40d64 <dbcs_char2cells+44>)
+   0x00040d4e <+22>:	d3 58	ldr	r3, [r2, r3]
+   0x00040d50 <+24>:	18 5c	ldrb	r0, [r3, r0]
+   0x00040d52 <+26>:	70 47	bx	lr
+   0x00040d54 <+28>:	8e 28	cmp	r0, #142	; 0x8e
+   0x00040d56 <+30>:	f9 d1	bne.n	0x40d4c <dbcs_char2cells+20>
+   0x00040d58 <+32>:	01 20	movs	r0, #1
+   0x00040d5a <+34>:	70 47	bx	lr
+   0x00040d5c <+36>:	56 69	ldr	r6, [r2, #20]
+   0x00040d5e <+38>:	06 00	movs	r6, r0
+   0x00040d60 <+40>:	0c 07	lsls	r4, r1, #28
+   0x00040d62 <+42>:	00 00	movs	r0, r0
+   0x00040d64 <+44>:	54 06	lsls	r4, r2, #25
+   0x00040d66 <+46>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function dbcs_char2len:
+   0x00040c28 <+0>:	ff 28	cmp	r0, #255	; 0xff
+   0x00040c2a <+2>:	cc bf	ite	gt
+   0x00040c2c <+4>:	02 20	movgt	r0, #2
+   0x00040c2e <+6>:	01 20	movle	r0, #1
+   0x00040c30 <+8>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function dbcs_ptr2cells_len:
+   0x00040d00 <+0>:	09 4b	ldr	r3, [pc, #36]	; (0x40d28 <dbcs_ptr2cells_len+40>)
+   0x00040d02 <+2>:	01 29	cmp	r1, #1
+   0x00040d04 <+4>:	7b 44	add	r3, pc
+   0x00040d06 <+6>:	0d dd	ble.n	0x40d24 <dbcs_ptr2cells_len+36>
+   0x00040d08 <+8>:	08 4a	ldr	r2, [pc, #32]	; (0x40d2c <dbcs_ptr2cells_len+44>)
+   0x00040d0a <+10>:	42 f2 cc 61	movw	r1, #9932	; 0x26cc
+   0x00040d0e <+14>:	9a 58	ldr	r2, [r3, r2]
+   0x00040d10 <+16>:	12 68	ldr	r2, [r2, #0]
+   0x00040d12 <+18>:	8a 42	cmp	r2, r1
+   0x00040d14 <+20>:	02 78	ldrb	r2, [r0, #0]
+   0x00040d16 <+22>:	03 d0	beq.n	0x40d20 <dbcs_ptr2cells_len+32>
+   0x00040d18 <+24>:	05 49	ldr	r1, [pc, #20]	; (0x40d30 <dbcs_ptr2cells_len+48>)
+   0x00040d1a <+26>:	5b 58	ldr	r3, [r3, r1]
+   0x00040d1c <+28>:	98 5c	ldrb	r0, [r3, r2]
+   0x00040d1e <+30>:	70 47	bx	lr
+   0x00040d20 <+32>:	8e 2a	cmp	r2, #142	; 0x8e
+   0x00040d22 <+34>:	f9 d1	bne.n	0x40d18 <dbcs_ptr2cells_len+24>
+   0x00040d24 <+36>:	01 20	movs	r0, #1
+   0x00040d26 <+38>:	70 47	bx	lr
+   0x00040d28 <+40>:	94 69	ldr	r4, [r2, #24]
+   0x00040d2a <+42>:	06 00	movs	r6, r0
+   0x00040d2c <+44>:	0c 07	lsls	r4, r1, #28
+   0x00040d2e <+46>:	00 00	movs	r0, r0
+   0x00040d30 <+48>:	54 06	lsls	r4, r2, #25
+   0x00040d32 <+50>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function dbcs_ptr2char:
+   0x00040d98 <+0>:	06 4b	ldr	r3, [pc, #24]	; (0x40db4 <dbcs_ptr2char+28>)
+   0x00040d9a <+2>:	07 4a	ldr	r2, [pc, #28]	; (0x40db8 <dbcs_ptr2char+32>)
+   0x00040d9c <+4>:	7b 44	add	r3, pc
+   0x00040d9e <+6>:	01 78	ldrb	r1, [r0, #0]
+   0x00040da0 <+8>:	9b 58	ldr	r3, [r3, r2]
+   0x00040da2 <+10>:	5b 5c	ldrb	r3, [r3, r1]
+   0x00040da4 <+12>:	01 2b	cmp	r3, #1
+   0x00040da6 <+14>:	03 d9	bls.n	0x40db0 <dbcs_ptr2char+24>
+   0x00040da8 <+16>:	43 78	ldrb	r3, [r0, #1]
+   0x00040daa <+18>:	0b b1	cbz	r3, 0x40db0 <dbcs_ptr2char+24>
+   0x00040dac <+20>:	03 eb 01 21	add.w	r1, r3, r1, lsl #8
+   0x00040db0 <+24>:	08 46	mov	r0, r1
+   0x00040db2 <+26>:	70 47	bx	lr
+   0x00040db4 <+28>:	fc 68	ldr	r4, [r7, #12]
+   0x00040db6 <+30>:	06 00	movs	r6, r0
+   0x00040db8 <+32>:	54 06	lsls	r4, r2, #25
+   0x00040dba <+34>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function dbcs_ptr2len:
+   0x00040c54 <+0>:	06 4b	ldr	r3, [pc, #24]	; (0x40c70 <dbcs_ptr2len+28>)
+   0x00040c56 <+2>:	07 4a	ldr	r2, [pc, #28]	; (0x40c74 <dbcs_ptr2len+32>)
+   0x00040c58 <+4>:	7b 44	add	r3, pc
+   0x00040c5a <+6>:	01 78	ldrb	r1, [r0, #0]
+   0x00040c5c <+8>:	9b 58	ldr	r3, [r3, r2]
+   0x00040c5e <+10>:	5b 5c	ldrb	r3, [r3, r1]
+   0x00040c60 <+12>:	02 2b	cmp	r3, #2
+   0x00040c62 <+14>:	03 d1	bne.n	0x40c6c <dbcs_ptr2len+24>
+   0x00040c64 <+16>:	42 78	ldrb	r2, [r0, #1]
+   0x00040c66 <+18>:	00 2a	cmp	r2, #0
+   0x00040c68 <+20>:	08 bf	it	eq
+   0x00040c6a <+22>:	01 23	moveq	r3, #1
+   0x00040c6c <+24>:	18 46	mov	r0, r3
+   0x00040c6e <+26>:	70 47	bx	lr
+   0x00040c70 <+28>:	40 6a	ldr	r0, [r0, #36]	; 0x24
+   0x00040c72 <+30>:	06 00	movs	r6, r0
+   0x00040c74 <+32>:	54 06	lsls	r4, r2, #25
+   0x00040c76 <+34>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function dbcs_ptr2len_len:
+   0x00040c8c <+0>:	0c 4a	ldr	r2, [pc, #48]	; (0x40cc0 <dbcs_ptr2len_len+52>)
+   0x00040c8e <+2>:	00 29	cmp	r1, #0
+   0x00040c90 <+4>:	7a 44	add	r2, pc
+   0x00040c92 <+6>:	10 dd	ble.n	0x40cb6 <dbcs_ptr2len_len+42>
+   0x00040c94 <+8>:	03 78	ldrb	r3, [r0, #0]
+   0x00040c96 <+10>:	33 b1	cbz	r3, 0x40ca6 <dbcs_ptr2len_len+26>
+   0x00040c98 <+12>:	01 29	cmp	r1, #1
+   0x00040c9a <+14>:	0e d0	beq.n	0x40cba <dbcs_ptr2len_len+46>
+   0x00040c9c <+16>:	09 49	ldr	r1, [pc, #36]	; (0x40cc4 <dbcs_ptr2len_len+56>)
+   0x00040c9e <+18>:	52 58	ldr	r2, [r2, r1]
+   0x00040ca0 <+20>:	d3 5c	ldrb	r3, [r2, r3]
+   0x00040ca2 <+22>:	02 2b	cmp	r3, #2
+   0x00040ca4 <+24>:	01 d0	beq.n	0x40caa <dbcs_ptr2len_len+30>
+   0x00040ca6 <+26>:	18 46	mov	r0, r3
+   0x00040ca8 <+28>:	70 47	bx	lr
+   0x00040caa <+30>:	43 78	ldrb	r3, [r0, #1]
+   0x00040cac <+32>:	00 2b	cmp	r3, #0
+   0x00040cae <+34>:	0c bf	ite	eq
+   0x00040cb0 <+36>:	01 20	moveq	r0, #1
+   0x00040cb2 <+38>:	02 20	movne	r0, #2
+   0x00040cb4 <+40>:	70 47	bx	lr
+   0x00040cb6 <+42>:	00 20	movs	r0, #0
+   0x00040cb8 <+44>:	70 47	bx	lr
+   0x00040cba <+46>:	08 46	mov	r0, r1
+   0x00040cbc <+48>:	70 47	bx	lr
+   0x00040cbe <+50>:	00 bf	nop
+   0x00040cc0 <+52>:	08 6a	ldr	r0, [r1, #32]
+   0x00040cc2 <+54>:	06 00	movs	r6, r0
+   0x00040cc4 <+56>:	54 06	lsls	r4, r2, #25
+   0x00040cc6 <+58>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function intable:
+   0x00040fb8 <+0>:	c9 08	lsrs	r1, r1, #3
+   0x00040fba <+2>:	c1 b1	cbz	r1, 0x40fee <intable+54>
+   0x00040fbc <+4>:	30 b4	push	{r4, r5}
+   0x00040fbe <+6>:	4c 1e	subs	r4, r1, #1
+   0x00040fc0 <+8>:	00 21	movs	r1, #0
+   0x00040fc2 <+10>:	63 18	adds	r3, r4, r1
+   0x00040fc4 <+12>:	5b 10	asrs	r3, r3, #1
+   0x00040fc6 <+14>:	00 eb c3 05	add.w	r5, r0, r3, lsl #3
+   0x00040fca <+18>:	6d 68	ldr	r5, [r5, #4]
+   0x00040fcc <+20>:	95 42	cmp	r5, r2
+   0x00040fce <+22>:	b8 bf	it	lt
+   0x00040fd0 <+24>:	59 1c	addlt	r1, r3, #1
+   0x00040fd2 <+26>:	04 db	blt.n	0x40fde <intable+38>
+   0x00040fd4 <+28>:	50 f8 33 50	ldr.w	r5, [r0, r3, lsl #3]
+   0x00040fd8 <+32>:	5c 1e	subs	r4, r3, #1
+   0x00040fda <+34>:	aa 42	cmp	r2, r5
+   0x00040fdc <+36>:	04 da	bge.n	0x40fe8 <intable+48>
+   0x00040fde <+38>:	8c 42	cmp	r4, r1
+   0x00040fe0 <+40>:	ef da	bge.n	0x40fc2 <intable+10>
+   0x00040fe2 <+42>:	00 20	movs	r0, #0
+   0x00040fe4 <+44>:	30 bc	pop	{r4, r5}
+   0x00040fe6 <+46>:	70 47	bx	lr
+   0x00040fe8 <+48>:	01 20	movs	r0, #1
+   0x00040fea <+50>:	30 bc	pop	{r4, r5}
+   0x00040fec <+52>:	70 47	bx	lr
+   0x00040fee <+54>:	00 20	movs	r0, #0
+   0x00040ff0 <+56>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function utf_convert:
+   0x00040f24 <+0>:	12 09	lsrs	r2, r2, #4
+   0x00040f26 <+2>:	70 b5	push	{r4, r5, r6, lr}
+   0x00040f28 <+4>:	00 25	movs	r5, #0
+   0x00040f2a <+6>:	16 46	mov	r6, r2
+   0x00040f2c <+8>:	b5 42	cmp	r5, r6
+   0x00040f2e <+10>:	12 da	bge.n	0x40f56 <utf_convert+50>
+   0x00040f30 <+12>:	ac 19	adds	r4, r5, r6
+   0x00040f32 <+14>:	64 10	asrs	r4, r4, #1
+   0x00040f34 <+16>:	01 eb 04 13	add.w	r3, r1, r4, lsl #4
+   0x00040f38 <+20>:	5b 68	ldr	r3, [r3, #4]
+   0x00040f3a <+22>:	98 42	cmp	r0, r3
+   0x00040f3c <+24>:	06 dd	ble.n	0x40f4c <utf_convert+40>
+   0x00040f3e <+26>:	1f e0	b.n	0x40f80 <utf_convert+92>
+   0x00040f40 <+28>:	01 eb 03 16	add.w	r6, r1, r3, lsl #4
+   0x00040f44 <+32>:	76 68	ldr	r6, [r6, #4]
+   0x00040f46 <+34>:	86 42	cmp	r6, r0
+   0x00040f48 <+36>:	1c db	blt.n	0x40f84 <utf_convert+96>
+   0x00040f4a <+38>:	1c 46	mov	r4, r3
+   0x00040f4c <+40>:	2b 19	adds	r3, r5, r4
+   0x00040f4e <+42>:	a5 42	cmp	r5, r4
+   0x00040f50 <+44>:	4f ea 63 03	mov.w	r3, r3, asr #1
+   0x00040f54 <+48>:	f4 db	blt.n	0x40f40 <utf_convert+28>
+   0x00040f56 <+50>:	aa 42	cmp	r2, r5
+   0x00040f58 <+52>:	11 dd	ble.n	0x40f7e <utf_convert+90>
+   0x00040f5a <+54>:	2d 01	lsls	r5, r5, #4
+   0x00040f5c <+56>:	4e 19	adds	r6, r1, r5
+   0x00040f5e <+58>:	4b 59	ldr	r3, [r1, r5]
+   0x00040f60 <+60>:	98 42	cmp	r0, r3
+   0x00040f62 <+62>:	0c db	blt.n	0x40f7e <utf_convert+90>
+   0x00040f64 <+64>:	72 68	ldr	r2, [r6, #4]
+   0x00040f66 <+66>:	90 42	cmp	r0, r2
+   0x00040f68 <+68>:	09 dc	bgt.n	0x40f7e <utf_convert+90>
+   0x00040f6a <+70>:	04 46	mov	r4, r0
+   0x00040f6c <+72>:	b1 68	ldr	r1, [r6, #8]
+   0x00040f6e <+74>:	c0 1a	subs	r0, r0, r3
+   0x00040f70 <+76>:	46 f0 94 fa	bl	0x8749c <__aeabi_idivmod>
+   0x00040f74 <+80>:	11 b9	cbnz	r1, 0x40f7c <utf_convert+88>
+   0x00040f76 <+82>:	f0 68	ldr	r0, [r6, #12]
+   0x00040f78 <+84>:	20 44	add	r0, r4
+   0x00040f7a <+86>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00040f7c <+88>:	20 46	mov	r0, r4
+   0x00040f7e <+90>:	70 bd	pop	{r4, r5, r6, pc}
+   0x00040f80 <+92>:	23 46	mov	r3, r4
+   0x00040f82 <+94>:	34 46	mov	r4, r6
+   0x00040f84 <+96>:	5d 1c	adds	r5, r3, #1
+   0x00040f86 <+98>:	26 46	mov	r6, r4
+   0x00040f88 <+100>:	d0 e7	b.n	0x40f2c <utf_convert+8>
+End of assembler dump.

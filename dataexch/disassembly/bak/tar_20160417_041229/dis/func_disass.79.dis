@@ -1,0 +1,252 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function ctime_decoder:
+   0x000155a8 <+0>:	30 b5	push	{r4, r5, lr}
+   0x000155aa <+2>:	83 b0	sub	sp, #12
+   0x000155ac <+4>:	0b 46	mov	r3, r1
+   0x000155ae <+6>:	05 46	mov	r5, r0
+   0x000155b0 <+8>:	11 46	mov	r1, r2
+   0x000155b2 <+10>:	68 46	mov	r0, sp
+   0x000155b4 <+12>:	1a 46	mov	r2, r3
+   0x000155b6 <+14>:	ff f7 9f ff	bl	0x154f8 <decode_time>
+   0x000155ba <+18>:	28 b1	cbz	r0, 0x155c8 <ctime_decoder+32>
+   0x000155bc <+20>:	9d e8 03 00	ldmia.w	sp, {r0, r1}
+   0x000155c0 <+24>:	05 f1 a8 03	add.w	r3, r5, #168	; 0xa8
+   0x000155c4 <+28>:	83 e8 03 00	stmia.w	r3, {r0, r1}
+   0x000155c8 <+32>:	03 b0	add	sp, #12
+   0x000155ca <+34>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function decg:
+   0x00014e38 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00014e3c <+4>:	06 46	mov	r6, r0
+   0x00014e3e <+6>:	08 46	mov	r0, r1
+   0x00014e40 <+8>:	0d 46	mov	r5, r1
+   0x00014e42 <+10>:	17 46	mov	r7, r2
+   0x00014e44 <+12>:	98 46	mov	r8, r3
+   0x00014e46 <+14>:	ff f7 bb ff	bl	0x14dc0 <locate_handler>
+   0x00014e4a <+18>:	10 b1	cbz	r0, 0x14e52 <decg+26>
+   0x00014e4c <+20>:	c2 68	ldr	r2, [r0, #12]
+   0x00014e4e <+22>:	93 07	lsls	r3, r2, #30
+   0x00014e50 <+24>:	05 d4	bmi.n	0x14e5e <decg+38>
+   0x00014e52 <+26>:	30 46	mov	r0, r6
+   0x00014e54 <+28>:	29 46	mov	r1, r5
+   0x00014e56 <+30>:	3a 46	mov	r2, r7
+   0x00014e58 <+32>:	bd e8 f0 41	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00014e5c <+36>:	20 e7	b.n	0x14ca0 <xheader_list_append>
+   0x00014e5e <+38>:	84 68	ldr	r4, [r0, #8]
+   0x00014e60 <+40>:	29 46	mov	r1, r5
+   0x00014e62 <+42>:	30 46	mov	r0, r6
+   0x00014e64 <+44>:	3a 46	mov	r2, r7
+   0x00014e66 <+46>:	43 46	mov	r3, r8
+   0x00014e68 <+48>:	a4 46	mov	r12, r4
+   0x00014e6a <+50>:	bd e8 f0 41	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00014e6e <+54>:	60 47	bx	r12
+End of assembler dump.
+Dump of assembler code for function decode_num:
+   0x000156c4 <+0>:	30 b5	push	{r4, r5, lr}
+   0x000156c6 <+2>:	85 b0	sub	sp, #20
+   0x000156c8 <+4>:	05 46	mov	r5, r0
+   0x000156ca <+6>:	02 a8	add	r0, sp, #8
+   0x000156cc <+8>:	08 9c	ldr	r4, [sp, #32]
+   0x000156ce <+10>:	00 94	str	r4, [sp, #0]
+   0x000156d0 <+12>:	ff f7 8e ff	bl	0x155f0 <decode_signed_num>
+   0x000156d4 <+16>:	18 b1	cbz	r0, 0x156de <decode_num+26>
+   0x000156d6 <+18>:	dd e9 02 23	ldrd	r2, r3, [sp, #8]
+   0x000156da <+22>:	c5 e9 00 23	strd	r2, r3, [r5]
+   0x000156de <+26>:	05 b0	add	sp, #20
+   0x000156e0 <+28>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function decode_signed_num:
+   0x000155f0 <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x000155f4 <+4>:	84 b0	sub	sp, #16
+   0x000155f6 <+6>:	14 46	mov	r4, r2
+   0x000155f8 <+8>:	1d 46	mov	r5, r3
+   0x000155fa <+10>:	00 22	movs	r2, #0
+   0x000155fc <+12>:	00 23	movs	r3, #0
+   0x000155fe <+14>:	88 46	mov	r8, r1
+   0x00015600 <+16>:	81 46	mov	r9, r0
+   0x00015602 <+18>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015606 <+22>:	08 46	mov	r0, r1
+   0x00015608 <+24>:	03 a9	add	r1, sp, #12
+   0x0001560a <+26>:	05 f0 6b fc	bl	0x1aee4 <strtosysint>
+   0x0001560e <+30>:	06 46	mov	r6, r0
+   0x00015610 <+32>:	0f 46	mov	r7, r1
+   0x00015612 <+34>:	f5 f7 d2 ec	blx	0xafb8 <__errno_location@plt>
+   0x00015616 <+38>:	03 68	ldr	r3, [r0, #0]
+   0x00015618 <+40>:	16 2b	cmp	r3, #22
+   0x0001561a <+42>:	0e d0	beq.n	0x1563a <decode_signed_num+74>
+   0x0001561c <+44>:	03 9a	ldr	r2, [sp, #12]
+   0x0001561e <+46>:	92 f8 00 a0	ldrb.w	r10, [r2]
+   0x00015622 <+50>:	ba f1 00 0f	cmp.w	r10, #0
+   0x00015626 <+54>:	08 d1	bne.n	0x1563a <decode_signed_num+74>
+   0x00015628 <+56>:	22 2b	cmp	r3, #34	; 0x22
+   0x0001562a <+58>:	1c bf	itt	ne
+   0x0001562c <+60>:	c9 e9 00 67	strdne	r6, r7, [r9]
+   0x00015630 <+64>:	01 20	movne	r0, #1
+   0x00015632 <+66>:	1c d0	beq.n	0x1566e <decode_signed_num+126>
+   0x00015634 <+68>:	04 b0	add	sp, #16
+   0x00015636 <+70>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001563a <+74>:	05 22	movs	r2, #5
+   0x0001563c <+76>:	43 f6 9c 71	movw	r1, #16284	; 0x3f9c
+   0x00015640 <+80>:	00 20	movs	r0, #0
+   0x00015642 <+82>:	c0 f2 03 01	movt	r1, #3
+   0x00015646 <+86>:	f5 f7 e8 ea	blx	0xac18 <dcgettext@plt>
+   0x0001564a <+90>:	0c 9b	ldr	r3, [sp, #48]	; 0x30
+   0x0001564c <+92>:	cd f8 00 80	str.w	r8, [sp]
+   0x00015650 <+96>:	02 46	mov	r2, r0
+   0x00015652 <+98>:	00 20	movs	r0, #0
+   0x00015654 <+100>:	01 46	mov	r1, r0
+   0x00015656 <+102>:	f5 f7 b4 eb	blx	0xadc0 <error@plt+4>
+   0x0001565a <+106>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x0001565e <+110>:	c0 f2 04 03	movt	r3, #4
+   0x00015662 <+114>:	02 22	movs	r2, #2
+   0x00015664 <+116>:	00 20	movs	r0, #0
+   0x00015666 <+118>:	1a 60	str	r2, [r3, #0]
+   0x00015668 <+120>:	04 b0	add	sp, #16
+   0x0001566a <+122>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001566e <+126>:	0c 98	ldr	r0, [sp, #48]	; 0x30
+   0x00015670 <+128>:	41 46	mov	r1, r8
+   0x00015672 <+130>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015676 <+134>:	00 22	movs	r2, #0
+   0x00015678 <+136>:	00 23	movs	r3, #0
+   0x0001567a <+138>:	ff f7 f9 fb	bl	0x14e70 <out_of_range_header>
+   0x0001567e <+142>:	50 46	mov	r0, r10
+   0x00015680 <+144>:	d8 e7	b.n	0x15634 <decode_signed_num+68>
+End of assembler dump.
+Dump of assembler code for function decode_string:
+   0x00014cec <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00014cee <+2>:	04 46	mov	r4, r0
+   0x00014cf0 <+4>:	00 68	ldr	r0, [r0, #0]
+   0x00014cf2 <+6>:	0d 46	mov	r5, r1
+   0x00014cf4 <+8>:	18 b1	cbz	r0, 0x14cfe <decode_string+18>
+   0x00014cf6 <+10>:	f5 f7 12 ef	blx	0xab1c <free>
+   0x00014cfa <+14>:	00 23	movs	r3, #0
+   0x00014cfc <+16>:	23 60	str	r3, [r4, #0]
+   0x00014cfe <+18>:	00 20	movs	r0, #0
+   0x00014d00 <+20>:	29 46	mov	r1, r5
+   0x00014d02 <+22>:	22 46	mov	r2, r4
+   0x00014d04 <+24>:	0d f0 a4 fc	bl	0x22650 <utf8_convert>
+   0x00014d08 <+28>:	00 b1	cbz	r0, 0x14d0c <decode_string+32>
+   0x00014d0a <+30>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00014d0c <+32>:	20 46	mov	r0, r4
+   0x00014d0e <+34>:	29 46	mov	r1, r5
+   0x00014d10 <+36>:	bd e8 38 40	ldmia.w	sp!, {r3, r4, r5, lr}
+   0x00014d14 <+40>:	05 f0 f8 be	b.w	0x1ab08 <assign_string>
+End of assembler dump.
+Dump of assembler code for function decode_time:
+   0x000154f8 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x000154fc <+4>:	86 b0	sub	sp, #24
+   0x000154fe <+6>:	04 ac	add	r4, sp, #16
+   0x00015500 <+8>:	05 46	mov	r5, r0
+   0x00015502 <+10>:	90 46	mov	r8, r2
+   0x00015504 <+12>:	01 23	movs	r3, #1
+   0x00015506 <+14>:	20 46	mov	r0, r4
+   0x00015508 <+16>:	03 aa	add	r2, sp, #12
+   0x0001550a <+18>:	0f 46	mov	r7, r1
+   0x0001550c <+20>:	05 f0 c8 fd	bl	0x1b0a0 <decode_timespec>
+   0x00015510 <+24>:	05 9e	ldr	r6, [sp, #20]
+   0x00015512 <+26>:	00 2e	cmp	r6, #0
+   0x00015514 <+28>:	08 db	blt.n	0x15528 <decode_time+48>
+   0x00015516 <+30>:	94 e8 03 00	ldmia.w	r4, {r0, r1}
+   0x0001551a <+34>:	01 23	movs	r3, #1
+   0x0001551c <+36>:	85 e8 03 00	stmia.w	r5, {r0, r1}
+   0x00015520 <+40>:	18 46	mov	r0, r3
+   0x00015522 <+42>:	06 b0	add	sp, #24
+   0x00015524 <+44>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x00015528 <+48>:	03 9b	ldr	r3, [sp, #12]
+   0x0001552a <+50>:	9f 42	cmp	r7, r3
+   0x0001552c <+52>:	01 d2	bcs.n	0x15532 <decode_time+58>
+   0x0001552e <+54>:	1e 78	ldrb	r6, [r3, #0]
+   0x00015530 <+56>:	ce b1	cbz	r6, 0x15566 <decode_time+110>
+   0x00015532 <+58>:	05 22	movs	r2, #5
+   0x00015534 <+60>:	43 f6 9c 71	movw	r1, #16284	; 0x3f9c
+   0x00015538 <+64>:	00 20	movs	r0, #0
+   0x0001553a <+66>:	c0 f2 03 01	movt	r1, #3
+   0x0001553e <+70>:	f5 f7 6c eb	blx	0xac18 <dcgettext@plt>
+   0x00015542 <+74>:	43 46	mov	r3, r8
+   0x00015544 <+76>:	00 97	str	r7, [sp, #0]
+   0x00015546 <+78>:	02 46	mov	r2, r0
+   0x00015548 <+80>:	00 20	movs	r0, #0
+   0x0001554a <+82>:	01 46	mov	r1, r0
+   0x0001554c <+84>:	f5 f7 38 ec	blx	0xadc0 <error@plt+4>
+   0x00015550 <+88>:	45 f6 ac 62	movw	r2, #24236	; 0x5eac
+   0x00015554 <+92>:	c0 f2 04 02	movt	r2, #4
+   0x00015558 <+96>:	00 23	movs	r3, #0
+   0x0001555a <+98>:	02 21	movs	r1, #2
+   0x0001555c <+100>:	18 46	mov	r0, r3
+   0x0001555e <+102>:	11 60	str	r1, [r2, #0]
+   0x00015560 <+104>:	06 b0	add	sp, #24
+   0x00015562 <+106>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x00015566 <+110>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x0001556a <+114>:	40 46	mov	r0, r8
+   0x0001556c <+116>:	39 46	mov	r1, r7
+   0x0001556e <+118>:	6f f0 00 44	mvn.w	r4, #2147483648	; 0x80000000
+   0x00015572 <+122>:	00 25	movs	r5, #0
+   0x00015574 <+124>:	4f f0 00 42	mov.w	r2, #2147483648	; 0x80000000
+   0x00015578 <+128>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x0001557c <+132>:	ff f7 78 fc	bl	0x14e70 <out_of_range_header>
+   0x00015580 <+136>:	33 46	mov	r3, r6
+   0x00015582 <+138>:	cd e7	b.n	0x15520 <decode_time+40>
+End of assembler dump.
+Dump of assembler code for function decx:
+   0x00015b84 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00015b88 <+4>:	07 46	mov	r7, r0
+   0x00015b8a <+6>:	08 46	mov	r0, r1
+   0x00015b8c <+8>:	0c 46	mov	r4, r1
+   0x00015b8e <+10>:	16 46	mov	r6, r2
+   0x00015b90 <+12>:	1d 46	mov	r5, r3
+   0x00015b92 <+14>:	ff f7 e1 ff	bl	0x15b58 <xheader_keyword_deleted_p>
+   0x00015b96 <+18>:	08 b1	cbz	r0, 0x15b9c <decx+24>
+   0x00015b98 <+20>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+   0x00015b9c <+24>:	20 46	mov	r0, r4
+   0x00015b9e <+26>:	ff f7 69 f8	bl	0x14c74 <xheader_keyword_override_p>
+   0x00015ba2 <+30>:	00 28	cmp	r0, #0
+   0x00015ba4 <+32>:	f8 d1	bne.n	0x15b98 <decx+20>
+   0x00015ba6 <+34>:	20 46	mov	r0, r4
+   0x00015ba8 <+36>:	ff f7 0a f9	bl	0x14dc0 <locate_handler>
+   0x00015bac <+40>:	80 46	mov	r8, r0
+   0x00015bae <+42>:	48 b1	cbz	r0, 0x15bc4 <decx+64>
+   0x00015bb0 <+44>:	d0 f8 08 e0	ldr.w	lr, [r0, #8]
+   0x00015bb4 <+48>:	21 46	mov	r1, r4
+   0x00015bb6 <+50>:	38 46	mov	r0, r7
+   0x00015bb8 <+52>:	32 46	mov	r2, r6
+   0x00015bba <+54>:	2b 46	mov	r3, r5
+   0x00015bbc <+56>:	f4 46	mov	r12, lr
+   0x00015bbe <+58>:	bd e8 f0 41	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00015bc2 <+62>:	60 47	bx	r12
+   0x00015bc4 <+64>:	45 f2 f0 53	movw	r3, #22000	; 0x55f0
+   0x00015bc8 <+68>:	c0 f2 04 03	movt	r3, #4
+   0x00015bcc <+72>:	1b 68	ldr	r3, [r3, #0]
+   0x00015bce <+74>:	9b 03	lsls	r3, r3, #14
+   0x00015bd0 <+76>:	e2 d5	bpl.n	0x15b98 <decx+20>
+   0x00015bd2 <+78>:	05 22	movs	r2, #5
+   0x00015bd4 <+80>:	44 f2 98 11	movw	r1, #16792	; 0x4198
+   0x00015bd8 <+84>:	c0 f2 03 01	movt	r1, #3
+   0x00015bdc <+88>:	f5 f7 1c e8	blx	0xac18 <dcgettext@plt>
+   0x00015be0 <+92>:	41 46	mov	r1, r8
+   0x00015be2 <+94>:	23 46	mov	r3, r4
+   0x00015be4 <+96>:	02 46	mov	r2, r0
+   0x00015be6 <+98>:	40 46	mov	r0, r8
+   0x00015be8 <+100>:	bd e8 f0 41	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+   0x00015bec <+104>:	f5 f7 e6 b8	b.w	0xadbc <error@plt>
+End of assembler dump.
+Dump of assembler code for function dummy_coder:
+   0x00014c6c <+0>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function dummy_decoder:
+   0x00014c70 <+0>:	70 47	bx	lr
+End of assembler dump.

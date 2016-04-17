@@ -1,0 +1,230 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function open_diag:
+   0x0001b718 <+0>:	46 f2 25 33	movw	r3, #25381	; 0x6325
+   0x0001b71c <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001b720 <+8>:	1b 78	ldrb	r3, [r3, #0]
+   0x0001b722 <+10>:	0b b9	cbnz	r3, 0x1b728 <open_diag+16>
+   0x0001b724 <+12>:	08 f0 40 b9	b.w	0x239a8 <open_error>
+   0x0001b728 <+16>:	08 f0 4e b9	b.w	0x239c8 <open_warn>
+End of assembler dump.
+Dump of assembler code for function page_aligned_alloc:
+   0x0001b860 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0001b862 <+2>:	0d 46	mov	r5, r1
+   0x0001b864 <+4>:	06 46	mov	r6, r0
+   0x0001b866 <+6>:	ef f7 80 eb	blx	0xaf68 <getpagesize@plt>
+   0x0001b86a <+10>:	04 46	mov	r4, r0
+   0x0001b86c <+12>:	40 19	adds	r0, r0, r5
+   0x0001b86e <+14>:	0a d2	bcs.n	0x1b886 <page_aligned_alloc+38>
+   0x0001b870 <+16>:	13 f0 62 fd	bl	0x2f338 <xmalloc>
+   0x0001b874 <+20>:	65 1e	subs	r5, r4, #1
+   0x0001b876 <+22>:	21 46	mov	r1, r4
+   0x0001b878 <+24>:	05 44	add	r5, r0
+   0x0001b87a <+26>:	30 60	str	r0, [r6, #0]
+   0x0001b87c <+28>:	28 46	mov	r0, r5
+   0x0001b87e <+30>:	16 f0 45 fc	bl	0x3210c <__aeabi_uidivmod>
+   0x0001b882 <+34>:	68 1a	subs	r0, r5, r1
+   0x0001b884 <+36>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0001b886 <+38>:	f7 f7 d9 fa	bl	0x12e3c <xalloc_die>
+End of assembler dump.
+Dump of assembler code for function read_diag_details:
+   0x0001b72c <+0>:	46 f2 25 31	movw	r1, #25381	; 0x6325
+   0x0001b730 <+4>:	c0 f2 04 01	movt	r1, #4
+   0x0001b734 <+8>:	10 b4	push	{r4}
+   0x0001b736 <+10>:	09 78	ldrb	r1, [r1, #0]
+   0x0001b738 <+12>:	01 9c	ldr	r4, [sp, #4]
+   0x0001b73a <+14>:	21 b9	cbnz	r1, 0x1b746 <read_diag_details+26>
+   0x0001b73c <+16>:	01 94	str	r4, [sp, #4]
+   0x0001b73e <+18>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0001b742 <+22>:	08 f0 51 b9	b.w	0x239e8 <read_error_details>
+   0x0001b746 <+26>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0001b74a <+30>:	08 f0 8f b9	b.w	0x23a6c <read_warn_details>
+End of assembler dump.
+Dump of assembler code for function readlink_diag:
+   0x0001b750 <+0>:	46 f2 25 33	movw	r3, #25381	; 0x6325
+   0x0001b754 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001b758 <+8>:	1b 78	ldrb	r3, [r3, #0]
+   0x0001b75a <+10>:	0b b9	cbnz	r3, 0x1b760 <readlink_diag+16>
+   0x0001b75c <+12>:	08 f0 fe b9	b.w	0x23b5c <readlink_error>
+   0x0001b760 <+16>:	08 f0 04 ba	b.w	0x23b6c <readlink_warn>
+End of assembler dump.
+Dump of assembler code for function remove_any_file:
+   0x0001bb3c <+0>:	44 f2 c4 33	movw	r3, #17348	; 0x43c4
+   0x0001bb40 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001bb44 <+8>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0001bb48 <+12>:	04 46	mov	r4, r0
+   0x0001bb4a <+14>:	0e 46	mov	r6, r1
+   0x0001bb4c <+16>:	18 68	ldr	r0, [r3, #0]
+   0x0001bb4e <+18>:	21 46	mov	r1, r4
+   0x0001bb50 <+20>:	00 22	movs	r2, #0
+   0x0001bb52 <+22>:	ee f7 b8 ef	blx	0xaac4 <unlinkat@plt+4>
+   0x0001bb56 <+26>:	f0 b1	cbz	r0, 0x1bb96 <remove_any_file+90>
+   0x0001bb58 <+28>:	ef f7 2e ea	blx	0xafb8 <__errno_location@plt>
+   0x0001bb5c <+32>:	03 68	ldr	r3, [r0, #0]
+   0x0001bb5e <+34>:	05 46	mov	r5, r0
+   0x0001bb60 <+36>:	15 2b	cmp	r3, #21
+   0x0001bb62 <+38>:	18 bf	it	ne
+   0x0001bb64 <+40>:	01 2b	cmpne	r3, #1
+   0x0001bb66 <+42>:	02 d0	beq.n	0x1bb6e <remove_any_file+50>
+   0x0001bb68 <+44>:	00 20	movs	r0, #0
+   0x0001bb6a <+46>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001bb6e <+50>:	20 46	mov	r0, r4
+   0x0001bb70 <+52>:	ff f7 5c fb	bl	0x1b22c <safer_rmdir>
+   0x0001bb74 <+56>:	78 b1	cbz	r0, 0x1bb96 <remove_any_file+90>
+   0x0001bb76 <+58>:	2b 68	ldr	r3, [r5, #0]
+   0x0001bb78 <+60>:	11 2b	cmp	r3, #17
+   0x0001bb7a <+62>:	03 d0	beq.n	0x1bb84 <remove_any_file+72>
+   0x0001bb7c <+64>:	27 2b	cmp	r3, #39	; 0x27
+   0x0001bb7e <+66>:	01 d0	beq.n	0x1bb84 <remove_any_file+72>
+   0x0001bb80 <+68>:	00 2b	cmp	r3, #0
+   0x0001bb82 <+70>:	f1 d1	bne.n	0x1bb68 <remove_any_file+44>
+   0x0001bb84 <+72>:	01 2e	cmp	r6, #1
+   0x0001bb86 <+74>:	09 d0	beq.n	0x1bb9c <remove_any_file+96>
+   0x0001bb88 <+76>:	02 2e	cmp	r6, #2
+   0x0001bb8a <+78>:	0c bf	ite	eq
+   0x0001bb8c <+80>:	4f f0 ff 30	moveq.w	r0, #4294967295
+   0x0001bb90 <+84>:	00 20	movne	r0, #0
+   0x0001bb92 <+86>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001bb96 <+90>:	01 20	movs	r0, #1
+   0x0001bb98 <+92>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001bb9c <+96>:	20 46	mov	r0, r4
+   0x0001bb9e <+98>:	00 21	movs	r1, #0
+   0x0001bba0 <+100>:	ff f7 86 ff	bl	0x1bab0 <tar_savedir>
+   0x0001bba4 <+104>:	82 46	mov	r10, r0
+   0x0001bba6 <+106>:	00 28	cmp	r0, #0
+   0x0001bba8 <+108>:	de d0	beq.n	0x1bb68 <remove_any_file+44>
+   0x0001bbaa <+110>:	06 46	mov	r6, r0
+   0x0001bbac <+112>:	10 e0	b.n	0x1bbd0 <remove_any_file+148>
+   0x0001bbae <+114>:	01 f0 9d f9	bl	0x1ceec <new_name>
+   0x0001bbb2 <+118>:	01 21	movs	r1, #1
+   0x0001bbb4 <+120>:	01 37	adds	r7, #1
+   0x0001bbb6 <+122>:	81 46	mov	r9, r0
+   0x0001bbb8 <+124>:	ff f7 c0 ff	bl	0x1bb3c <remove_any_file>
+   0x0001bbbc <+128>:	80 46	mov	r8, r0
+   0x0001bbbe <+130>:	48 46	mov	r0, r9
+   0x0001bbc0 <+132>:	d5 f8 00 90	ldr.w	r9, [r5]
+   0x0001bbc4 <+136>:	ee f7 aa ef	blx	0xab1c <free>
+   0x0001bbc8 <+140>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x0001bbcc <+144>:	13 d0	beq.n	0x1bbf6 <remove_any_file+186>
+   0x0001bbce <+146>:	3e 44	add	r6, r7
+   0x0001bbd0 <+148>:	30 46	mov	r0, r6
+   0x0001bbd2 <+150>:	ef f7 a6 e9	blx	0xaf20 <strlen@plt+4>
+   0x0001bbd6 <+154>:	31 46	mov	r1, r6
+   0x0001bbd8 <+156>:	07 46	mov	r7, r0
+   0x0001bbda <+158>:	20 46	mov	r0, r4
+   0x0001bbdc <+160>:	00 2f	cmp	r7, #0
+   0x0001bbde <+162>:	e6 d1	bne.n	0x1bbae <remove_any_file+114>
+   0x0001bbe0 <+164>:	50 46	mov	r0, r10
+   0x0001bbe2 <+166>:	ee f7 9c ef	blx	0xab1c <free>
+   0x0001bbe6 <+170>:	20 46	mov	r0, r4
+   0x0001bbe8 <+172>:	ff f7 20 fb	bl	0x1b22c <safer_rmdir>
+   0x0001bbec <+176>:	b0 fa 80 f0	clz	r0, r0
+   0x0001bbf0 <+180>:	40 09	lsrs	r0, r0, #5
+   0x0001bbf2 <+182>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001bbf6 <+186>:	50 46	mov	r0, r10
+   0x0001bbf8 <+188>:	ee f7 90 ef	blx	0xab1c <free>
+   0x0001bbfc <+192>:	c5 f8 00 90	str.w	r9, [r5]
+   0x0001bc00 <+196>:	40 46	mov	r0, r8
+   0x0001bc02 <+198>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+End of assembler dump.
+Dump of assembler code for function replace_prefix:
+   0x0001ae5c <+0>:	2d e9 f0 47	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0001ae60 <+4>:	07 46	mov	r7, r0
+   0x0001ae62 <+6>:	04 68	ldr	r4, [r0, #0]
+   0x0001ae64 <+8>:	15 46	mov	r5, r2
+   0x0001ae66 <+10>:	88 46	mov	r8, r1
+   0x0001ae68 <+12>:	9a 46	mov	r10, r3
+   0x0001ae6a <+14>:	dd f8 20 90	ldr.w	r9, [sp, #32]
+   0x0001ae6e <+18>:	20 46	mov	r0, r4
+   0x0001ae70 <+20>:	f0 f7 56 e8	blx	0xaf20 <strlen@plt+4>
+   0x0001ae74 <+24>:	a8 42	cmp	r0, r5
+   0x0001ae76 <+26>:	06 46	mov	r6, r0
+   0x0001ae78 <+28>:	09 d9	bls.n	0x1ae8e <replace_prefix+50>
+   0x0001ae7a <+30>:	41 46	mov	r1, r8
+   0x0001ae7c <+32>:	20 46	mov	r0, r4
+   0x0001ae7e <+34>:	2a 46	mov	r2, r5
+   0x0001ae80 <+36>:	ef f7 b2 ee	blx	0xabe8 <memcmp@plt>
+   0x0001ae84 <+40>:	18 b9	cbnz	r0, 0x1ae8e <replace_prefix+50>
+   0x0001ae86 <+42>:	63 5d	ldrb	r3, [r4, r5]
+   0x0001ae88 <+44>:	61 19	adds	r1, r4, r5
+   0x0001ae8a <+46>:	2f 2b	cmp	r3, #47	; 0x2f
+   0x0001ae8c <+48>:	01 d0	beq.n	0x1ae92 <replace_prefix+54>
+   0x0001ae8e <+50>:	bd e8 f0 87	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, pc}
+   0x0001ae92 <+54>:	4d 45	cmp	r5, r9
+   0x0001ae94 <+56>:	0d d3	bcc.n	0x1aeb2 <replace_prefix+86>
+   0x0001ae96 <+58>:	c5 f1 01 02	rsb	r2, r5, #1
+   0x0001ae9a <+62>:	04 eb 09 00	add.w	r0, r4, r9
+   0x0001ae9e <+66>:	32 44	add	r2, r6
+   0x0001aea0 <+68>:	ef f7 28 ee	blx	0xaaf4 <memmove@plt>
+   0x0001aea4 <+72>:	20 46	mov	r0, r4
+   0x0001aea6 <+74>:	51 46	mov	r1, r10
+   0x0001aea8 <+76>:	4a 46	mov	r2, r9
+   0x0001aeaa <+78>:	bd e8 f0 47	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, lr}
+   0x0001aeae <+82>:	ef f7 5f be	b.w	0xab70 <memcpy@plt>
+   0x0001aeb2 <+86>:	09 f1 01 01	add.w	r1, r9, #1
+   0x0001aeb6 <+90>:	20 46	mov	r0, r4
+   0x0001aeb8 <+92>:	49 1b	subs	r1, r1, r5
+   0x0001aeba <+94>:	31 44	add	r1, r6
+   0x0001aebc <+96>:	14 f0 60 fa	bl	0x2f380 <xrealloc>
+   0x0001aec0 <+100>:	04 46	mov	r4, r0
+   0x0001aec2 <+102>:	41 19	adds	r1, r0, r5
+   0x0001aec4 <+104>:	38 60	str	r0, [r7, #0]
+   0x0001aec6 <+106>:	e6 e7	b.n	0x1ae96 <replace_prefix+58>
+End of assembler dump.
+Dump of assembler code for function savedir_diag:
+   0x0001b764 <+0>:	46 f2 25 33	movw	r3, #25381	; 0x6325
+   0x0001b768 <+4>:	c0 f2 04 03	movt	r3, #4
+   0x0001b76c <+8>:	1b 78	ldrb	r3, [r3, #0]
+   0x0001b76e <+10>:	0b b9	cbnz	r3, 0x1b774 <savedir_diag+16>
+   0x0001b770 <+12>:	08 f0 0c ba	b.w	0x23b8c <savedir_error>
+   0x0001b774 <+16>:	08 f0 12 ba	b.w	0x23b9c <savedir_warn>
+End of assembler dump.
+Dump of assembler code for function seek_diag_details:
+   0x0001b778 <+0>:	46 f2 25 31	movw	r1, #25381	; 0x6325
+   0x0001b77c <+4>:	c0 f2 04 01	movt	r1, #4
+   0x0001b780 <+8>:	09 78	ldrb	r1, [r1, #0]
+   0x0001b782 <+10>:	09 b9	cbnz	r1, 0x1b788 <seek_diag_details+16>
+   0x0001b784 <+12>:	08 f0 1a ba	b.w	0x23bbc <seek_error_details>
+   0x0001b788 <+16>:	08 f0 58 ba	b.w	0x23c3c <seek_warn_details>
+End of assembler dump.
+Dump of assembler code for function set_file_atime:
+   0x0001b574 <+0>:	82 b0	sub	sp, #8
+   0x0001b576 <+2>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0001b578 <+4>:	87 b0	sub	sp, #28
+   0x0001b57a <+6>:	0c ac	add	r4, sp, #48	; 0x30
+   0x0001b57c <+8>:	46 f2 24 25	movw	r5, #25124	; 0x6224
+   0x0001b580 <+12>:	c0 f2 04 05	movt	r5, #4
+   0x0001b584 <+16>:	86 46	mov	lr, r0
+   0x0001b586 <+18>:	44 f8 04 3f	str.w	r3, [r4, #4]!
+   0x0001b58a <+22>:	0f 46	mov	r7, r1
+   0x0001b58c <+24>:	2e 68	ldr	r6, [r5, #0]
+   0x0001b58e <+26>:	02 ad	add	r5, sp, #8
+   0x0001b590 <+28>:	94 e8 03 00	ldmia.w	r4, {r0, r1}
+   0x0001b594 <+32>:	4f f6 fe 74	movw	r4, #65534	; 0xfffe
+   0x0001b598 <+36>:	2b 46	mov	r3, r5
+   0x0001b59a <+38>:	c3 f6 ff 74	movt	r4, #16383	; 0x3fff
+   0x0001b59e <+42>:	00 96	str	r6, [sp, #0]
+   0x0001b5a0 <+44>:	85 e8 03 00	stmia.w	r5, {r0, r1}
+   0x0001b5a4 <+48>:	70 46	mov	r0, lr
+   0x0001b5a6 <+50>:	39 46	mov	r1, r7
+   0x0001b5a8 <+52>:	05 94	str	r4, [sp, #20]
+   0x0001b5aa <+54>:	0f f0 f3 f9	bl	0x2a994 <fdutimensat>
+   0x0001b5ae <+58>:	07 b0	add	sp, #28
+   0x0001b5b0 <+60>:	bd e8 f0 40	ldmia.w	sp!, {r4, r5, r6, r7, lr}
+   0x0001b5b4 <+64>:	02 b0	add	sp, #8
+   0x0001b5b6 <+66>:	70 47	bx	lr
+End of assembler dump.

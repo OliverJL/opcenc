@@ -1,0 +1,16 @@
+#!/bin/bash 
+KEY_CURR_LENGTH_BYTE=4 # Key length starts at 32b
+KEY_MAX_LENGTH_BYTE=56 # Blowfish Max = 448b/56B ..
+KEY_BASE_FILE_NAME=sk
+KEY_BASE_FILE_SUFFIX='.key'
+
+while [ $KEY_CURR_LENGTH_BYTE -le $KEY_MAX_LENGTH_BYTE ]; do
+ 
+ KEY_LEN_BIT=$(($KEY_CURR_LENGTH_BYTE*8))
+ KEY_CURR_FILE_NAME=$KEY_BASE_FILE_NAME'.'$KEY_LEN_BIT'.key'
+ 
+ echo 'generating random key - length ' $KEY_LEN_BIT 'bit ('$KEY_CURR_LENGTH_BYTE 'Byte) -> '$KEY_CURR_FILE_NAME
+ openssl rand -out key/$KEY_CURR_FILE_NAME $KEY_CURR_LENGTH_BYTE
+ 
+ let KEY_CURR_LENGTH_BYTE=KEY_CURR_LENGTH_BYTE+1 
+done

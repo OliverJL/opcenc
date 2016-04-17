@@ -1,0 +1,239 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function hash_do_for_each:
+   0x0002af54 <+0>:	2d e9 f8 43	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+   0x0002af58 <+4>:	17 46	mov	r7, r2
+   0x0002af5a <+6>:	d0 f8 00 80	ldr.w	r8, [r0]
+   0x0002af5e <+10>:	81 46	mov	r9, r0
+   0x0002af60 <+12>:	42 68	ldr	r2, [r0, #4]
+   0x0002af62 <+14>:	42 45	cmp	r2, r8
+   0x0002af64 <+16>:	18 d9	bls.n	0x2af98 <hash_do_for_each+68>
+   0x0002af66 <+18>:	0e 46	mov	r6, r1
+   0x0002af68 <+20>:	00 25	movs	r5, #0
+   0x0002af6a <+22>:	d8 f8 00 30	ldr.w	r3, [r8]
+   0x0002af6e <+26>:	63 b1	cbz	r3, 0x2af8a <hash_do_for_each+54>
+   0x0002af70 <+28>:	18 46	mov	r0, r3
+   0x0002af72 <+30>:	44 46	mov	r4, r8
+   0x0002af74 <+32>:	00 e0	b.n	0x2af78 <hash_do_for_each+36>
+   0x0002af76 <+34>:	20 68	ldr	r0, [r4, #0]
+   0x0002af78 <+36>:	39 46	mov	r1, r7
+   0x0002af7a <+38>:	b0 47	blx	r6
+   0x0002af7c <+40>:	48 b1	cbz	r0, 0x2af92 <hash_do_for_each+62>
+   0x0002af7e <+42>:	64 68	ldr	r4, [r4, #4]
+   0x0002af80 <+44>:	01 35	adds	r5, #1
+   0x0002af82 <+46>:	00 2c	cmp	r4, #0
+   0x0002af84 <+48>:	f7 d1	bne.n	0x2af76 <hash_do_for_each+34>
+   0x0002af86 <+50>:	d9 f8 04 20	ldr.w	r2, [r9, #4]
+   0x0002af8a <+54>:	08 f1 08 08	add.w	r8, r8, #8
+   0x0002af8e <+58>:	42 45	cmp	r2, r8
+   0x0002af90 <+60>:	eb d8	bhi.n	0x2af6a <hash_do_for_each+22>
+   0x0002af92 <+62>:	28 46	mov	r0, r5
+   0x0002af94 <+64>:	bd e8 f8 83	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+   0x0002af98 <+68>:	00 25	movs	r5, #0
+   0x0002af9a <+70>:	fa e7	b.n	0x2af92 <hash_do_for_each+62>
+End of assembler dump.
+Dump of assembler code for function hash_free:
+   0x0002b104 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0002b106 <+2>:	05 46	mov	r5, r0
+   0x0002b108 <+4>:	03 6a	ldr	r3, [r0, #32]
+   0x0002b10a <+6>:	0b b1	cbz	r3, 0x2b110 <hash_free+12>
+   0x0002b10c <+8>:	03 69	ldr	r3, [r0, #16]
+   0x0002b10e <+10>:	2b bb	cbnz	r3, 0x2b15c <hash_free+88>
+   0x0002b110 <+12>:	6b 68	ldr	r3, [r5, #4]
+   0x0002b112 <+14>:	2e 68	ldr	r6, [r5, #0]
+   0x0002b114 <+16>:	9e 42	cmp	r6, r3
+   0x0002b116 <+18>:	10 d2	bcs.n	0x2b13a <hash_free+54>
+   0x0002b118 <+20>:	08 36	adds	r6, #8
+   0x0002b11a <+22>:	56 f8 04 0c	ldr.w	r0, [r6, #-4]
+   0x0002b11e <+26>:	37 46	mov	r7, r6
+   0x0002b120 <+28>:	08 b9	cbnz	r0, 0x2b126 <hash_free+34>
+   0x0002b122 <+30>:	06 e0	b.n	0x2b132 <hash_free+46>
+   0x0002b124 <+32>:	20 46	mov	r0, r4
+   0x0002b126 <+34>:	44 68	ldr	r4, [r0, #4]
+   0x0002b128 <+36>:	df f7 f8 ec	blx	0xab1c <free>
+   0x0002b12c <+40>:	00 2c	cmp	r4, #0
+   0x0002b12e <+42>:	f9 d1	bne.n	0x2b124 <hash_free+32>
+   0x0002b130 <+44>:	6b 68	ldr	r3, [r5, #4]
+   0x0002b132 <+46>:	9f 42	cmp	r7, r3
+   0x0002b134 <+48>:	06 f1 08 06	add.w	r6, r6, #8
+   0x0002b138 <+52>:	ef d3	bcc.n	0x2b11a <hash_free+22>
+   0x0002b13a <+54>:	68 6a	ldr	r0, [r5, #36]	; 0x24
+   0x0002b13c <+56>:	08 b9	cbnz	r0, 0x2b142 <hash_free+62>
+   0x0002b13e <+58>:	05 e0	b.n	0x2b14c <hash_free+72>
+   0x0002b140 <+60>:	20 46	mov	r0, r4
+   0x0002b142 <+62>:	44 68	ldr	r4, [r0, #4]
+   0x0002b144 <+64>:	df f7 ea ec	blx	0xab1c <free>
+   0x0002b148 <+68>:	00 2c	cmp	r4, #0
+   0x0002b14a <+70>:	f9 d1	bne.n	0x2b140 <hash_free+60>
+   0x0002b14c <+72>:	28 68	ldr	r0, [r5, #0]
+   0x0002b14e <+74>:	df f7 e6 ec	blx	0xab1c <free>
+   0x0002b152 <+78>:	28 46	mov	r0, r5
+   0x0002b154 <+80>:	bd e8 f8 40	ldmia.w	sp!, {r3, r4, r5, r6, r7, lr}
+   0x0002b158 <+84>:	df f7 de bc	b.w	0xab18 <free@plt>
+   0x0002b15c <+88>:	06 68	ldr	r6, [r0, #0]
+   0x0002b15e <+90>:	43 68	ldr	r3, [r0, #4]
+   0x0002b160 <+92>:	9e 42	cmp	r6, r3
+   0x0002b162 <+94>:	ea d2	bcs.n	0x2b13a <hash_free+54>
+   0x0002b164 <+96>:	30 68	ldr	r0, [r6, #0]
+   0x0002b166 <+98>:	34 46	mov	r4, r6
+   0x0002b168 <+100>:	08 b9	cbnz	r0, 0x2b16e <hash_free+106>
+   0x0002b16a <+102>:	06 e0	b.n	0x2b17a <hash_free+118>
+   0x0002b16c <+104>:	20 68	ldr	r0, [r4, #0]
+   0x0002b16e <+106>:	2b 6a	ldr	r3, [r5, #32]
+   0x0002b170 <+108>:	98 47	blx	r3
+   0x0002b172 <+110>:	64 68	ldr	r4, [r4, #4]
+   0x0002b174 <+112>:	00 2c	cmp	r4, #0
+   0x0002b176 <+114>:	f9 d1	bne.n	0x2b16c <hash_free+104>
+   0x0002b178 <+116>:	6b 68	ldr	r3, [r5, #4]
+   0x0002b17a <+118>:	08 36	adds	r6, #8
+   0x0002b17c <+120>:	b3 42	cmp	r3, r6
+   0x0002b17e <+122>:	f1 d8	bhi.n	0x2b164 <hash_free+96>
+   0x0002b180 <+124>:	c7 e7	b.n	0x2b112 <hash_free+14>
+End of assembler dump.
+Dump of assembler code for function hash_get_entries:
+   0x0002aefc <+0>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0002aefe <+2>:	07 46	mov	r7, r0
+   0x0002af00 <+4>:	06 68	ldr	r6, [r0, #0]
+   0x0002af02 <+6>:	44 68	ldr	r4, [r0, #4]
+   0x0002af04 <+8>:	b4 42	cmp	r4, r6
+   0x0002af06 <+10>:	23 d9	bls.n	0x2af50 <hash_get_entries+84>
+   0x0002af08 <+12>:	08 36	adds	r6, #8
+   0x0002af0a <+14>:	00 20	movs	r0, #0
+   0x0002af0c <+16>:	56 f8 08 3c	ldr.w	r3, [r6, #-8]
+   0x0002af10 <+20>:	b6 46	mov	lr, r6
+   0x0002af12 <+22>:	a3 b1	cbz	r3, 0x2af3e <hash_get_entries+66>
+   0x0002af14 <+24>:	82 42	cmp	r2, r0
+   0x0002af16 <+26>:	17 d9	bls.n	0x2af48 <hash_get_entries+76>
+   0x0002af18 <+28>:	41 f8 20 30	str.w	r3, [r1, r0, lsl #2]
+   0x0002af1c <+32>:	45 1c	adds	r5, r0, #1
+   0x0002af1e <+34>:	56 f8 04 3c	ldr.w	r3, [r6, #-4]
+   0x0002af22 <+38>:	01 eb 80 04	add.w	r4, r1, r0, lsl #2
+   0x0002af26 <+42>:	83 b1	cbz	r3, 0x2af4a <hash_get_entries+78>
+   0x0002af28 <+44>:	28 46	mov	r0, r5
+   0x0002af2a <+46>:	90 42	cmp	r0, r2
+   0x0002af2c <+48>:	0c d0	beq.n	0x2af48 <hash_get_entries+76>
+   0x0002af2e <+50>:	1d 68	ldr	r5, [r3, #0]
+   0x0002af30 <+52>:	01 30	adds	r0, #1
+   0x0002af32 <+54>:	44 f8 04 5f	str.w	r5, [r4, #4]!
+   0x0002af36 <+58>:	5b 68	ldr	r3, [r3, #4]
+   0x0002af38 <+60>:	00 2b	cmp	r3, #0
+   0x0002af3a <+62>:	f6 d1	bne.n	0x2af2a <hash_get_entries+46>
+   0x0002af3c <+64>:	7c 68	ldr	r4, [r7, #4]
+   0x0002af3e <+66>:	74 45	cmp	r4, lr
+   0x0002af40 <+68>:	06 f1 08 06	add.w	r6, r6, #8
+   0x0002af44 <+72>:	e2 d8	bhi.n	0x2af0c <hash_get_entries+16>
+   0x0002af46 <+74>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002af48 <+76>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+   0x0002af4a <+78>:	7c 68	ldr	r4, [r7, #4]
+   0x0002af4c <+80>:	28 46	mov	r0, r5
+   0x0002af4e <+82>:	f6 e7	b.n	0x2af3e <hash_get_entries+66>
+   0x0002af50 <+84>:	00 20	movs	r0, #0
+   0x0002af52 <+86>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function hash_get_first:
+   0x0002ae9c <+0>:	08 b5	push	{r3, lr}
+   0x0002ae9e <+2>:	03 69	ldr	r3, [r0, #16]
+   0x0002aea0 <+4>:	63 b1	cbz	r3, 0x2aebc <hash_get_first+32>
+   0x0002aea2 <+6>:	03 68	ldr	r3, [r0, #0]
+   0x0002aea4 <+8>:	42 68	ldr	r2, [r0, #4]
+   0x0002aea6 <+10>:	93 42	cmp	r3, r2
+   0x0002aea8 <+12>:	0b d2	bcs.n	0x2aec2 <hash_get_first+38>
+   0x0002aeaa <+14>:	18 68	ldr	r0, [r3, #0]
+   0x0002aeac <+16>:	40 b9	cbnz	r0, 0x2aec0 <hash_get_first+36>
+   0x0002aeae <+18>:	08 33	adds	r3, #8
+   0x0002aeb0 <+20>:	93 42	cmp	r3, r2
+   0x0002aeb2 <+22>:	06 d2	bcs.n	0x2aec2 <hash_get_first+38>
+   0x0002aeb4 <+24>:	18 68	ldr	r0, [r3, #0]
+   0x0002aeb6 <+26>:	00 28	cmp	r0, #0
+   0x0002aeb8 <+28>:	f9 d0	beq.n	0x2aeae <hash_get_first+18>
+   0x0002aeba <+30>:	08 bd	pop	{r3, pc}
+   0x0002aebc <+32>:	18 46	mov	r0, r3
+   0x0002aebe <+34>:	08 bd	pop	{r3, pc}
+   0x0002aec0 <+36>:	08 bd	pop	{r3, pc}
+   0x0002aec2 <+38>:	e0 f7 0e ea	blx	0xb2e0 <abort@plt>
+End of assembler dump.
+Dump of assembler code for function hash_get_max_bucket_length:
+   0x0002acf8 <+0>:	03 68	ldr	r3, [r0, #0]
+   0x0002acfa <+2>:	42 68	ldr	r2, [r0, #4]
+   0x0002acfc <+4>:	93 42	cmp	r3, r2
+   0x0002acfe <+6>:	1d d2	bcs.n	0x2ad3c <hash_get_max_bucket_length+68>
+   0x0002ad00 <+8>:	03 f1 08 01	add.w	r1, r3, #8
+   0x0002ad04 <+12>:	07 32	adds	r2, #7
+   0x0002ad06 <+14>:	52 1a	subs	r2, r2, r1
+   0x0002ad08 <+16>:	10 33	adds	r3, #16
+   0x0002ad0a <+18>:	22 f0 07 02	bic.w	r2, r2, #7
+   0x0002ad0e <+22>:	00 20	movs	r0, #0
+   0x0002ad10 <+24>:	10 b4	push	{r4}
+   0x0002ad12 <+26>:	9c 18	adds	r4, r3, r2
+   0x0002ad14 <+28>:	51 f8 08 3c	ldr.w	r3, [r1, #-8]
+   0x0002ad18 <+32>:	53 b1	cbz	r3, 0x2ad30 <hash_get_max_bucket_length+56>
+   0x0002ad1a <+34>:	51 f8 04 3c	ldr.w	r3, [r1, #-4]
+   0x0002ad1e <+38>:	01 22	movs	r2, #1
+   0x0002ad20 <+40>:	1b b1	cbz	r3, 0x2ad2a <hash_get_max_bucket_length+50>
+   0x0002ad22 <+42>:	5b 68	ldr	r3, [r3, #4]
+   0x0002ad24 <+44>:	01 32	adds	r2, #1
+   0x0002ad26 <+46>:	00 2b	cmp	r3, #0
+   0x0002ad28 <+48>:	fb d1	bne.n	0x2ad22 <hash_get_max_bucket_length+42>
+   0x0002ad2a <+50>:	90 42	cmp	r0, r2
+   0x0002ad2c <+52>:	38 bf	it	cc
+   0x0002ad2e <+54>:	10 46	movcc	r0, r2
+   0x0002ad30 <+56>:	08 31	adds	r1, #8
+   0x0002ad32 <+58>:	a1 42	cmp	r1, r4
+   0x0002ad34 <+60>:	ee d1	bne.n	0x2ad14 <hash_get_max_bucket_length+28>
+   0x0002ad36 <+62>:	5d f8 04 4b	ldr.w	r4, [sp], #4
+   0x0002ad3a <+66>:	70 47	bx	lr
+   0x0002ad3c <+68>:	00 20	movs	r0, #0
+   0x0002ad3e <+70>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function hash_get_n_buckets:
+   0x0002acec <+0>:	80 68	ldr	r0, [r0, #8]
+   0x0002acee <+2>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function hash_get_n_buckets_used:
+   0x0002acf0 <+0>:	c0 68	ldr	r0, [r0, #12]
+   0x0002acf2 <+2>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function hash_get_n_entries:
+   0x0002acf4 <+0>:	00 69	ldr	r0, [r0, #16]
+   0x0002acf6 <+2>:	70 47	bx	lr
+End of assembler dump.
+Dump of assembler code for function hash_get_next:
+   0x0002aec8 <+0>:	70 b5	push	{r4, r5, r6, lr}
+   0x0002aeca <+2>:	06 46	mov	r6, r0
+   0x0002aecc <+4>:	0d 46	mov	r5, r1
+   0x0002aece <+6>:	ff f7 01 fe	bl	0x2aad4 <safe_hasher>
+   0x0002aed2 <+10>:	02 46	mov	r2, r0
+   0x0002aed4 <+12>:	03 46	mov	r3, r0
+   0x0002aed6 <+14>:	00 e0	b.n	0x2aeda <hash_get_next+18>
+   0x0002aed8 <+16>:	23 b1	cbz	r3, 0x2aee4 <hash_get_next+28>
+   0x0002aeda <+18>:	1c 68	ldr	r4, [r3, #0]
+   0x0002aedc <+20>:	5b 68	ldr	r3, [r3, #4]
+   0x0002aede <+22>:	ac 42	cmp	r4, r5
+   0x0002aee0 <+24>:	fa d1	bne.n	0x2aed8 <hash_get_next+16>
+   0x0002aee2 <+26>:	43 b9	cbnz	r3, 0x2aef6 <hash_get_next+46>
+   0x0002aee4 <+28>:	73 68	ldr	r3, [r6, #4]
+   0x0002aee6 <+30>:	01 e0	b.n	0x2aeec <hash_get_next+36>
+   0x0002aee8 <+32>:	10 68	ldr	r0, [r2, #0]
+   0x0002aeea <+34>:	18 b9	cbnz	r0, 0x2aef4 <hash_get_next+44>
+   0x0002aeec <+36>:	08 32	adds	r2, #8
+   0x0002aeee <+38>:	9a 42	cmp	r2, r3
+   0x0002aef0 <+40>:	fa d3	bcc.n	0x2aee8 <hash_get_next+32>
+   0x0002aef2 <+42>:	00 20	movs	r0, #0
+   0x0002aef4 <+44>:	70 bd	pop	{r4, r5, r6, pc}
+   0x0002aef6 <+46>:	18 68	ldr	r0, [r3, #0]
+   0x0002aef8 <+48>:	70 bd	pop	{r4, r5, r6, pc}
+End of assembler dump.

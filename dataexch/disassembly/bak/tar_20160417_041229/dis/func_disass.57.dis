@@ -1,0 +1,803 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function rmt_open__:
+   0x000241e0 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000241e4 <+4>:	45 f2 5c 65	movw	r5, #22108	; 0x565c
+   0x000241e8 <+8>:	c0 f2 04 05	movt	r5, #4
+   0x000241ec <+12>:	8b b0	sub	sp, #44	; 0x2c
+   0x000241ee <+14>:	4f f0 00 0e	mov.w	lr, #0
+   0x000241f2 <+18>:	05 f1 20 0c	add.w	r12, r5, #32
+   0x000241f6 <+22>:	0f 46	mov	r7, r1
+   0x000241f8 <+24>:	99 46	mov	r9, r3
+   0x000241fa <+26>:	74 46	mov	r4, lr
+   0x000241fc <+28>:	05 92	str	r2, [sp, #20]
+   0x000241fe <+30>:	55 f8 0e 30	ldr.w	r3, [r5, lr]
+   0x00024202 <+34>:	01 33	adds	r3, #1
+   0x00024204 <+36>:	0e d0	beq.n	0x24224 <rmt_open__+68>
+   0x00024206 <+38>:	01 34	adds	r4, #1
+   0x00024208 <+40>:	0e f1 08 0e	add.w	lr, lr, #8
+   0x0002420c <+44>:	04 2c	cmp	r4, #4
+   0x0002420e <+46>:	f6 d1	bne.n	0x241fe <rmt_open__+30>
+   0x00024210 <+48>:	e6 f7 d2 ee	blx	0xafb8 <__errno_location@plt>
+   0x00024214 <+52>:	4f f0 ff 36	mov.w	r6, #4294967295
+   0x00024218 <+56>:	18 23	movs	r3, #24
+   0x0002421a <+58>:	03 60	str	r3, [r0, #0]
+   0x0002421c <+60>:	30 46	mov	r0, r6
+   0x0002421e <+62>:	0b b0	add	sp, #44	; 0x2c
+   0x00024220 <+64>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00024224 <+68>:	0c eb 0e 03	add.w	r3, r12, lr
+   0x00024228 <+72>:	df f8 c4 b4	ldr.w	r11, [pc, #1220]	; 0x246f0 <rmt_open__+1296>
+   0x0002422c <+76>:	5e 68	ldr	r6, [r3, #4]
+   0x0002422e <+78>:	72 1c	adds	r2, r6, #1
+   0x00024230 <+80>:	e9 d1	bne.n	0x24206 <rmt_open__+38>
+   0x00024232 <+82>:	0b f0 35 f9	bl	0x2f4a0 <xstrdup>
+   0x00024236 <+86>:	03 78	ldrb	r3, [r0, #0]
+   0x00024238 <+88>:	82 46	mov	r10, r0
+   0x0002423a <+90>:	00 2b	cmp	r3, #0
+   0x0002423c <+92>:	00 f0 53 82	beq.w	0x246e6 <rmt_open__+1286>
+   0x00024240 <+96>:	4f f0 00 08	mov.w	r8, #0
+   0x00024244 <+100>:	42 1c	adds	r2, r0, #1
+   0x00024246 <+102>:	41 46	mov	r1, r8
+   0x00024248 <+104>:	08 90	str	r0, [sp, #32]
+   0x0002424a <+106>:	86 46	mov	lr, r0
+   0x0002424c <+108>:	a4 46	mov	r12, r4
+   0x0002424e <+110>:	40 46	mov	r0, r8
+   0x00024250 <+112>:	0c 46	mov	r4, r1
+   0x00024252 <+114>:	cd f8 1c 80	str.w	r8, [sp, #28]
+   0x00024256 <+118>:	3a 2b	cmp	r3, #58	; 0x3a
+   0x00024258 <+120>:	00 f0 0b 81	beq.w	0x24472 <rmt_open__+658>
+   0x0002425c <+124>:	40 2b	cmp	r3, #64	; 0x40
+   0x0002425e <+126>:	00 f0 00 81	beq.w	0x24462 <rmt_open__+642>
+   0x00024262 <+130>:	0a 2b	cmp	r3, #10
+   0x00024264 <+132>:	00 f0 f2 80	beq.w	0x2444c <rmt_open__+620>
+   0x00024268 <+136>:	12 f8 01 3b	ldrb.w	r3, [r2], #1
+   0x0002426c <+140>:	00 2b	cmp	r3, #0
+   0x0002426e <+142>:	f2 d1	bne.n	0x24256 <rmt_open__+118>
+   0x00024270 <+144>:	07 94	str	r4, [sp, #28]
+   0x00024272 <+146>:	80 46	mov	r8, r0
+   0x00024274 <+148>:	64 46	mov	r4, r12
+   0x00024276 <+150>:	cd f8 20 e0	str.w	lr, [sp, #32]
+   0x0002427a <+154>:	08 98	ldr	r0, [sp, #32]
+   0x0002427c <+156>:	e7 f7 10 e8	blx	0xb2a0 <gethostbyname@plt>
+   0x00024280 <+160>:	00 28	cmp	r0, #0
+   0x00024282 <+162>:	00 f0 d3 80	beq.w	0x2442c <rmt_open__+588>
+   0x00024286 <+166>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x0002428a <+170>:	05 d0	beq.n	0x24298 <rmt_open__+184>
+   0x0002428c <+172>:	98 f8 00 30	ldrb.w	r3, [r8]
+   0x00024290 <+176>:	00 2b	cmp	r3, #0
+   0x00024292 <+178>:	08 bf	it	eq
+   0x00024294 <+180>:	4f f0 00 08	moveq.w	r8, #0
+   0x00024298 <+184>:	45 f6 28 03	movw	r3, #22568	; 0x5828
+   0x0002429c <+188>:	c0 f2 03 03	movt	r3, #3
+   0x000242a0 <+192>:	b9 f1 00 0f	cmp.w	r9, #0
+   0x000242a4 <+196>:	08 bf	it	eq
+   0x000242a6 <+198>:	99 46	moveq	r9, r3
+   0x000242a8 <+200>:	e3 00	lsls	r3, r4, #3
+   0x000242aa <+202>:	06 93	str	r3, [sp, #24]
+   0x000242ac <+204>:	45 f2 5c 63	movw	r3, #22108	; 0x565c
+   0x000242b0 <+208>:	48 46	mov	r0, r9
+   0x000242b2 <+210>:	c0 f2 04 03	movt	r3, #4
+   0x000242b6 <+214>:	04 93	str	r3, [sp, #16]
+   0x000242b8 <+216>:	05 f0 aa ff	bl	0x2a210 <last_component>
+   0x000242bc <+220>:	09 90	str	r0, [sp, #36]	; 0x24
+   0x000242be <+222>:	06 98	ldr	r0, [sp, #24]
+   0x000242c0 <+224>:	58 44	add	r0, r11
+   0x000242c2 <+226>:	e6 f7 1e ef	blx	0xb100 <pipe@plt>
+   0x000242c6 <+230>:	04 9b	ldr	r3, [sp, #16]
+   0x000242c8 <+232>:	01 30	adds	r0, #1
+   0x000242ca <+234>:	00 f0 ed 81	beq.w	0x246a8 <rmt_open__+1224>
+   0x000242ce <+238>:	dd f8 18 b0	ldr.w	r11, [sp, #24]
+   0x000242d2 <+242>:	9b 44	add	r11, r3
+   0x000242d4 <+244>:	58 46	mov	r0, r11
+   0x000242d6 <+246>:	e6 f7 14 ef	blx	0xb100 <pipe@plt>
+   0x000242da <+250>:	01 30	adds	r0, #1
+   0x000242dc <+252>:	00 f0 e4 81	beq.w	0x246a8 <rmt_open__+1224>
+   0x000242e0 <+256>:	e6 f7 46 ef	blx	0xb170 <fork@plt>
+   0x000242e4 <+260>:	43 1c	adds	r3, r0, #1
+   0x000242e6 <+262>:	00 f0 df 81	beq.w	0x246a8 <rmt_open__+1224>
+   0x000242ea <+266>:	00 28	cmp	r0, #0
+   0x000242ec <+268>:	6a d1	bne.n	0x243c4 <rmt_open__+484>
+   0x000242ee <+270>:	01 46	mov	r1, r0
+   0x000242f0 <+272>:	db f8 20 00	ldr.w	r0, [r11, #32]
+   0x000242f4 <+276>:	e6 f7 a8 ec	blx	0xac48 <dup2@plt>
+   0x000242f8 <+280>:	00 28	cmp	r0, #0
+   0x000242fa <+282>:	22 db	blt.n	0x24342 <rmt_open__+354>
+   0x000242fc <+284>:	db f8 20 00	ldr.w	r0, [r11, #32]
+   0x00024300 <+288>:	00 28	cmp	r0, #0
+   0x00024302 <+290>:	40 f0 c7 81	bne.w	0x24694 <rmt_open__+1204>
+   0x00024306 <+294>:	06 9b	ldr	r3, [sp, #24]
+   0x00024308 <+296>:	2b 44	add	r3, r5
+   0x0002430a <+298>:	58 6a	ldr	r0, [r3, #36]	; 0x24
+   0x0002430c <+300>:	10 b1	cbz	r0, 0x24314 <rmt_open__+308>
+   0x0002430e <+302>:	e6 f7 ee ef	blx	0xb2ec <close@plt>
+   0x00024312 <+306>:	b0 b9	cbnz	r0, 0x24342 <rmt_open__+354>
+   0x00024314 <+308>:	dd f8 18 b0	ldr.w	r11, [sp, #24]
+   0x00024318 <+312>:	01 21	movs	r1, #1
+   0x0002431a <+314>:	45 f2 5c 63	movw	r3, #22108	; 0x565c
+   0x0002431e <+318>:	c0 f2 04 03	movt	r3, #4
+   0x00024322 <+322>:	ab 44	add	r11, r5
+   0x00024324 <+324>:	db f8 04 00	ldr.w	r0, [r11, #4]
+   0x00024328 <+328>:	04 93	str	r3, [sp, #16]
+   0x0002432a <+330>:	e6 f7 8e ec	blx	0xac48 <dup2@plt>
+   0x0002432e <+334>:	04 9b	ldr	r3, [sp, #16]
+   0x00024330 <+336>:	00 28	cmp	r0, #0
+   0x00024332 <+338>:	06 db	blt.n	0x24342 <rmt_open__+354>
+   0x00024334 <+340>:	53 f8 34 00	ldr.w	r0, [r3, r4, lsl #3]
+   0x00024338 <+344>:	e6 f7 d8 ef	blx	0xb2ec <close@plt>
+   0x0002433c <+348>:	00 28	cmp	r0, #0
+   0x0002433e <+350>:	00 f0 bc 81	beq.w	0x246ba <rmt_open__+1242>
+   0x00024342 <+354>:	e6 f7 3a ee	blx	0xafb8 <__errno_location@plt>
+   0x00024346 <+358>:	05 22	movs	r2, #5
+   0x00024348 <+360>:	49 f2 b4 11	movw	r1, #37300	; 0x91b4
+   0x0002434c <+364>:	c0 f2 03 01	movt	r1, #3
+   0x00024350 <+368>:	d0 f8 00 b0	ldr.w	r11, [r0]
+   0x00024354 <+372>:	00 20	movs	r0, #0
+   0x00024356 <+374>:	e6 f7 60 ec	blx	0xac18 <dcgettext@plt>
+   0x0002435a <+378>:	59 46	mov	r1, r11
+   0x0002435c <+380>:	02 46	mov	r2, r0
+   0x0002435e <+382>:	80 20	movs	r0, #128	; 0x80
+   0x00024360 <+384>:	e6 f7 2e ed	blx	0xadc0 <error@plt+4>
+   0x00024364 <+388>:	e6 f7 ba eb	blx	0xaadc <getuid@plt>
+   0x00024368 <+392>:	e6 f7 20 ef	blx	0xb1ac <setuid@plt>
+   0x0002436c <+396>:	00 28	cmp	r0, #0
+   0x0002436e <+398>:	5b d1	bne.n	0x24428 <rmt_open__+584>
+   0x00024370 <+400>:	e6 f7 46 ee	blx	0xb000 <getgid@plt>
+   0x00024374 <+404>:	e6 f7 5a ed	blx	0xae2c <setgid@plt>
+   0x00024378 <+408>:	02 46	mov	r2, r0
+   0x0002437a <+410>:	00 28	cmp	r0, #0
+   0x0002437c <+412>:	54 d1	bne.n	0x24428 <rmt_open__+584>
+   0x0002437e <+414>:	2b 6c	ldr	r3, [r5, #64]	; 0x40
+   0x00024380 <+416>:	48 46	mov	r0, r9
+   0x00024382 <+418>:	cd f8 00 80	str.w	r8, [sp]
+   0x00024386 <+422>:	09 99	ldr	r1, [sp, #36]	; 0x24
+   0x00024388 <+424>:	b8 f1 00 0f	cmp.w	r8, #0
+   0x0002438c <+428>:	00 f0 88 81	beq.w	0x246a0 <rmt_open__+1216>
+   0x00024390 <+432>:	02 92	str	r2, [sp, #8]
+   0x00024392 <+434>:	01 93	str	r3, [sp, #4]
+   0x00024394 <+436>:	49 f2 dc 13	movw	r3, #37340	; 0x91dc
+   0x00024398 <+440>:	08 9a	ldr	r2, [sp, #32]
+   0x0002439a <+442>:	c0 f2 03 03	movt	r3, #3
+   0x0002439e <+446>:	e6 f7 ee ee	blx	0xb17c <execl@plt>
+   0x000243a2 <+450>:	e6 f7 0a ee	blx	0xafb8 <__errno_location@plt>
+   0x000243a6 <+454>:	05 22	movs	r2, #5
+   0x000243a8 <+456>:	49 f2 e0 11	movw	r1, #37344	; 0x91e0
+   0x000243ac <+460>:	c0 f2 03 01	movt	r1, #3
+   0x000243b0 <+464>:	d0 f8 00 80	ldr.w	r8, [r0]
+   0x000243b4 <+468>:	00 20	movs	r0, #0
+   0x000243b6 <+470>:	e6 f7 30 ec	blx	0xac18 <dcgettext@plt>
+   0x000243ba <+474>:	41 46	mov	r1, r8
+   0x000243bc <+476>:	02 46	mov	r2, r0
+   0x000243be <+478>:	80 20	movs	r0, #128	; 0x80
+   0x000243c0 <+480>:	e6 f7 fe ec	blx	0xadc0 <error@plt+4>
+   0x000243c4 <+484>:	06 9b	ldr	r3, [sp, #24]
+   0x000243c6 <+486>:	1d 44	add	r5, r3
+   0x000243c8 <+488>:	68 68	ldr	r0, [r5, #4]
+   0x000243ca <+490>:	e6 f7 90 ef	blx	0xb2ec <close@plt>
+   0x000243ce <+494>:	28 6a	ldr	r0, [r5, #32]
+   0x000243d0 <+496>:	e6 f7 8c ef	blx	0xb2ec <close@plt>
+   0x000243d4 <+500>:	07 98	ldr	r0, [sp, #28]
+   0x000243d6 <+502>:	e6 f7 a4 ed	blx	0xaf20 <strlen@plt+4>
+   0x000243da <+506>:	05 46	mov	r5, r0
+   0x000243dc <+508>:	00 f5 7a 70	add.w	r0, r0, #1000	; 0x3e8
+   0x000243e0 <+512>:	0a f0 aa ff	bl	0x2f338 <xmalloc>
+   0x000243e4 <+516>:	07 9b	ldr	r3, [sp, #28]
+   0x000243e6 <+518>:	02 35	adds	r5, #2
+   0x000243e8 <+520>:	01 21	movs	r1, #1
+   0x000243ea <+522>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x000243ee <+526>:	00 93	str	r3, [sp, #0]
+   0x000243f0 <+528>:	49 f2 fc 13	movw	r3, #37372	; 0x91fc
+   0x000243f4 <+532>:	c0 f2 03 03	movt	r3, #3
+   0x000243f8 <+536>:	80 46	mov	r8, r0
+   0x000243fa <+538>:	45 44	add	r5, r8
+   0x000243fc <+540>:	e6 f7 e8 ed	blx	0xafd0 <__sprintf_chk@plt>
+   0x00024400 <+544>:	00 97	str	r7, [sp, #0]
+   0x00024402 <+546>:	49 f2 04 23	movw	r3, #37380	; 0x9204
+   0x00024406 <+550>:	01 21	movs	r1, #1
+   0x00024408 <+552>:	c0 f2 03 03	movt	r3, #3
+   0x0002440c <+556>:	28 46	mov	r0, r5
+   0x0002440e <+558>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x00024412 <+562>:	e6 f7 de ed	blx	0xafd0 <__sprintf_chk@plt>
+   0x00024416 <+566>:	07 f0 03 03	and.w	r3, r7, #3
+   0x0002441a <+570>:	01 2b	cmp	r3, #1
+   0x0002441c <+572>:	00 f0 9f 80	beq.w	0x2455e <rmt_open__+894>
+   0x00024420 <+576>:	02 2b	cmp	r3, #2
+   0x00024422 <+578>:	00 f0 8a 80	beq.w	0x2453a <rmt_open__+858>
+   0x00024426 <+582>:	5b b3	cbz	r3, 0x24480 <rmt_open__+672>
+   0x00024428 <+584>:	e6 f7 5a ef	blx	0xb2e0 <abort@plt>
+   0x0002442c <+588>:	05 22	movs	r2, #5
+   0x0002442e <+590>:	49 f2 8c 11	movw	r1, #37260	; 0x918c
+   0x00024432 <+594>:	c0 f2 03 01	movt	r1, #3
+   0x00024436 <+598>:	04 90	str	r0, [sp, #16]
+   0x00024438 <+600>:	e6 f7 ee eb	blx	0xac18 <dcgettext@plt>
+   0x0002443c <+604>:	04 9b	ldr	r3, [sp, #16]
+   0x0002443e <+606>:	19 46	mov	r1, r3
+   0x00024440 <+608>:	08 9b	ldr	r3, [sp, #32]
+   0x00024442 <+610>:	02 46	mov	r2, r0
+   0x00024444 <+612>:	80 20	movs	r0, #128	; 0x80
+   0x00024446 <+614>:	e6 f7 bc ec	blx	0xadc0 <error@plt+4>
+   0x0002444a <+618>:	1c e7	b.n	0x24286 <rmt_open__+166>
+   0x0002444c <+620>:	50 46	mov	r0, r10
+   0x0002444e <+622>:	e6 f7 66 eb	blx	0xab1c <free>
+   0x00024452 <+626>:	e6 f7 b2 ed	blx	0xafb8 <__errno_location@plt>
+   0x00024456 <+630>:	02 23	movs	r3, #2
+   0x00024458 <+632>:	03 60	str	r3, [r0, #0]
+   0x0002445a <+634>:	30 46	mov	r0, r6
+   0x0002445c <+636>:	0b b0	add	sp, #44	; 0x2c
+   0x0002445e <+638>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00024462 <+642>:	00 28	cmp	r0, #0
+   0x00024464 <+644>:	7f f4 00 af	bne.w	0x24268 <rmt_open__+136>
+   0x00024468 <+648>:	02 f8 01 0c	strb.w	r0, [r2, #-1]
+   0x0002446c <+652>:	70 46	mov	r0, lr
+   0x0002446e <+654>:	96 46	mov	lr, r2
+   0x00024470 <+656>:	fa e6	b.n	0x24268 <rmt_open__+136>
+   0x00024472 <+658>:	00 2c	cmp	r4, #0
+   0x00024474 <+660>:	7f f4 f8 ae	bne.w	0x24268 <rmt_open__+136>
+   0x00024478 <+664>:	14 46	mov	r4, r2
+   0x0002447a <+666>:	02 f8 01 1c	strb.w	r1, [r2, #-1]
+   0x0002447e <+670>:	f3 e6	b.n	0x24268 <rmt_open__+136>
+   0x00024480 <+672>:	28 46	mov	r0, r5
+   0x00024482 <+674>:	e6 f7 4e ed	blx	0xaf20 <strlen@plt+4>
+   0x00024486 <+678>:	49 f2 08 23	movw	r3, #37384	; 0x9208
+   0x0002448a <+682>:	c0 f2 03 03	movt	r3, #3
+   0x0002448e <+686>:	86 46	mov	lr, r0
+   0x00024490 <+688>:	03 cb	ldmia	r3!, {r0, r1}
+   0x00024492 <+690>:	05 eb 0e 02	add.w	r2, r5, lr
+   0x00024496 <+694>:	1b 78	ldrb	r3, [r3, #0]
+   0x00024498 <+696>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x0002449c <+700>:	51 60	str	r1, [r2, #4]
+   0x0002449e <+702>:	13 72	strb	r3, [r2, #8]
+   0x000244a0 <+704>:	78 05	lsls	r0, r7, #21
+   0x000244a2 <+706>:	00 f1 e7 80	bmi.w	0x24674 <rmt_open__+1172>
+   0x000244a6 <+710>:	79 06	lsls	r1, r7, #25
+   0x000244a8 <+712>:	00 f1 b8 80	bmi.w	0x2461c <rmt_open__+1084>
+   0x000244ac <+716>:	fa 04	lsls	r2, r7, #19
+   0x000244ae <+718>:	00 f1 a5 80	bmi.w	0x245fc <rmt_open__+1052>
+   0x000244b2 <+722>:	3b 06	lsls	r3, r7, #24
+   0x000244b4 <+724>:	00 f1 93 80	bmi.w	0x245de <rmt_open__+1022>
+   0x000244b8 <+728>:	b8 03	lsls	r0, r7, #14
+   0x000244ba <+730>:	7b d4	bmi.n	0x245b4 <rmt_open__+980>
+   0x000244bc <+732>:	f9 05	lsls	r1, r7, #23
+   0x000244be <+734>:	69 d4	bmi.n	0x24594 <rmt_open__+948>
+   0x000244c0 <+736>:	3a 05	lsls	r2, r7, #20
+   0x000244c2 <+738>:	55 d4	bmi.n	0x24570 <rmt_open__+912>
+   0x000244c4 <+740>:	4f f4 80 53	mov.w	r3, #4096	; 0x1000
+   0x000244c8 <+744>:	c0 f2 10 03	movt	r3, #16
+   0x000244cc <+748>:	3b 40	ands	r3, r7
+   0x000244ce <+750>:	00 2b	cmp	r3, #0
+   0x000244d0 <+752>:	40 f0 b4 80	bne.w	0x2463c <rmt_open__+1116>
+   0x000244d4 <+756>:	bb 05	lsls	r3, r7, #22
+   0x000244d6 <+758>:	0d d5	bpl.n	0x244f4 <rmt_open__+788>
+   0x000244d8 <+760>:	28 46	mov	r0, r5
+   0x000244da <+762>:	e6 f7 22 ed	blx	0xaf20 <strlen@plt+4>
+   0x000244de <+766>:	49 f2 90 23	movw	r3, #37520	; 0x9290
+   0x000244e2 <+770>:	c0 f2 03 03	movt	r3, #3
+   0x000244e6 <+774>:	2a 18	adds	r2, r5, r0
+   0x000244e8 <+776>:	07 46	mov	r7, r0
+   0x000244ea <+778>:	03 cb	ldmia	r3!, {r0, r1}
+   0x000244ec <+780>:	1b 78	ldrb	r3, [r3, #0]
+   0x000244ee <+782>:	e8 51	str	r0, [r5, r7]
+   0x000244f0 <+784>:	51 60	str	r1, [r2, #4]
+   0x000244f2 <+786>:	13 72	strb	r3, [r2, #8]
+   0x000244f4 <+788>:	40 46	mov	r0, r8
+   0x000244f6 <+790>:	e6 f7 14 ed	blx	0xaf20 <strlen@plt+4>
+   0x000244fa <+794>:	44 f2 2c 63	movw	r3, #17964	; 0x462c
+   0x000244fe <+798>:	c0 f2 03 03	movt	r3, #3
+   0x00024502 <+802>:	41 46	mov	r1, r8
+   0x00024504 <+804>:	1b 88	ldrh	r3, [r3, #0]
+   0x00024506 <+806>:	28 f8 00 30	strh.w	r3, [r8, r0]
+   0x0002450a <+810>:	20 46	mov	r0, r4
+   0x0002450c <+812>:	ff f7 ba fd	bl	0x24084 <do_command>
+   0x00024510 <+816>:	01 30	adds	r0, #1
+   0x00024512 <+818>:	00 f0 da 80	beq.w	0x246ca <rmt_open__+1258>
+   0x00024516 <+822>:	20 46	mov	r0, r4
+   0x00024518 <+824>:	ff f7 3c fe	bl	0x24194 <get_status>
+   0x0002451c <+828>:	01 30	adds	r0, #1
+   0x0002451e <+830>:	00 f0 d4 80	beq.w	0x246ca <rmt_open__+1258>
+   0x00024522 <+834>:	40 46	mov	r0, r8
+   0x00024524 <+836>:	05 9e	ldr	r6, [sp, #20]
+   0x00024526 <+838>:	e6 f7 fa ea	blx	0xab1c <free>
+   0x0002452a <+842>:	50 46	mov	r0, r10
+   0x0002452c <+844>:	e6 f7 f6 ea	blx	0xab1c <free>
+   0x00024530 <+848>:	26 44	add	r6, r4
+   0x00024532 <+850>:	30 46	mov	r0, r6
+   0x00024534 <+852>:	0b b0	add	sp, #44	; 0x2c
+   0x00024536 <+854>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x0002453a <+858>:	28 46	mov	r0, r5
+   0x0002453c <+860>:	e6 f7 f0 ec	blx	0xaf20 <strlen@plt+4>
+   0x00024540 <+864>:	49 f2 14 23	movw	r3, #37396	; 0x9214
+   0x00024544 <+868>:	c0 f2 03 03	movt	r3, #3
+   0x00024548 <+872>:	b3 f8 04 e0	ldrh.w	lr, [r3, #4]
+   0x0002454c <+876>:	2a 18	adds	r2, r5, r0
+   0x0002454e <+878>:	01 46	mov	r1, r0
+   0x00024550 <+880>:	18 68	ldr	r0, [r3, #0]
+   0x00024552 <+882>:	9b 79	ldrb	r3, [r3, #6]
+   0x00024554 <+884>:	68 50	str	r0, [r5, r1]
+   0x00024556 <+886>:	a2 f8 04 e0	strh.w	lr, [r2, #4]
+   0x0002455a <+890>:	93 71	strb	r3, [r2, #6]
+   0x0002455c <+892>:	a0 e7	b.n	0x244a0 <rmt_open__+704>
+   0x0002455e <+894>:	28 46	mov	r0, r5
+   0x00024560 <+896>:	e6 f7 de ec	blx	0xaf20 <strlen@plt+4>
+   0x00024564 <+900>:	49 f2 1c 23	movw	r3, #37404	; 0x921c
+   0x00024568 <+904>:	c0 f2 03 03	movt	r3, #3
+   0x0002456c <+908>:	86 46	mov	lr, r0
+   0x0002456e <+910>:	8f e7	b.n	0x24490 <rmt_open__+688>
+   0x00024570 <+912>:	28 46	mov	r0, r5
+   0x00024572 <+914>:	e6 f7 d6 ec	blx	0xaf20 <strlen@plt+4>
+   0x00024576 <+918>:	49 f2 70 23	movw	r3, #37488	; 0x9270
+   0x0002457a <+922>:	c0 f2 03 03	movt	r3, #3
+   0x0002457e <+926>:	05 eb 00 0e	add.w	lr, r5, r0
+   0x00024582 <+930>:	84 46	mov	r12, r0
+   0x00024584 <+932>:	07 cb	ldmia	r3!, {r0, r1, r2}
+   0x00024586 <+934>:	45 f8 0c 00	str.w	r0, [r5, r12]
+   0x0002458a <+938>:	ce f8 04 10	str.w	r1, [lr, #4]
+   0x0002458e <+942>:	ce f8 08 20	str.w	r2, [lr, #8]
+   0x00024592 <+946>:	97 e7	b.n	0x244c4 <rmt_open__+740>
+   0x00024594 <+948>:	28 46	mov	r0, r5
+   0x00024596 <+950>:	e6 f7 c4 ec	blx	0xaf20 <strlen@plt+4>
+   0x0002459a <+954>:	49 f2 64 23	movw	r3, #37476	; 0x9264
+   0x0002459e <+958>:	c0 f2 03 03	movt	r3, #3
+   0x000245a2 <+962>:	2a 18	adds	r2, r5, r0
+   0x000245a4 <+964>:	86 46	mov	lr, r0
+   0x000245a6 <+966>:	03 cb	ldmia	r3!, {r0, r1}
+   0x000245a8 <+968>:	1b 88	ldrh	r3, [r3, #0]
+   0x000245aa <+970>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x000245ae <+974>:	51 60	str	r1, [r2, #4]
+   0x000245b0 <+976>:	13 81	strh	r3, [r2, #8]
+   0x000245b2 <+978>:	85 e7	b.n	0x244c0 <rmt_open__+736>
+   0x000245b4 <+980>:	28 46	mov	r0, r5
+   0x000245b6 <+982>:	e6 f7 b4 ec	blx	0xaf20 <strlen@plt+4>
+   0x000245ba <+986>:	49 f2 54 23	movw	r3, #37460	; 0x9254
+   0x000245be <+990>:	c0 f2 03 03	movt	r3, #3
+   0x000245c2 <+994>:	05 eb 00 0e	add.w	lr, r5, r0
+   0x000245c6 <+998>:	84 46	mov	r12, r0
+   0x000245c8 <+1000>:	07 cb	ldmia	r3!, {r0, r1, r2}
+   0x000245ca <+1002>:	1b 78	ldrb	r3, [r3, #0]
+   0x000245cc <+1004>:	45 f8 0c 00	str.w	r0, [r5, r12]
+   0x000245d0 <+1008>:	ce f8 04 10	str.w	r1, [lr, #4]
+   0x000245d4 <+1012>:	8e f8 0c 30	strb.w	r3, [lr, #12]
+   0x000245d8 <+1016>:	ce f8 08 20	str.w	r2, [lr, #8]
+   0x000245dc <+1020>:	6e e7	b.n	0x244bc <rmt_open__+732>
+   0x000245de <+1022>:	28 46	mov	r0, r5
+   0x000245e0 <+1024>:	e6 f7 9e ec	blx	0xaf20 <strlen@plt+4>
+   0x000245e4 <+1028>:	49 f2 4c 23	movw	r3, #37452	; 0x924c
+   0x000245e8 <+1032>:	c0 f2 03 03	movt	r3, #3
+   0x000245ec <+1036>:	02 46	mov	r2, r0
+   0x000245ee <+1038>:	05 eb 00 0e	add.w	lr, r5, r0
+   0x000245f2 <+1042>:	03 cb	ldmia	r3!, {r0, r1}
+   0x000245f4 <+1044>:	a8 50	str	r0, [r5, r2]
+   0x000245f6 <+1046>:	ce f8 04 10	str.w	r1, [lr, #4]
+   0x000245fa <+1050>:	5d e7	b.n	0x244b8 <rmt_open__+728>
+   0x000245fc <+1052>:	28 46	mov	r0, r5
+   0x000245fe <+1054>:	e6 f7 90 ec	blx	0xaf20 <strlen@plt+4>
+   0x00024602 <+1058>:	49 f2 40 23	movw	r3, #37440	; 0x9240
+   0x00024606 <+1062>:	c0 f2 03 03	movt	r3, #3
+   0x0002460a <+1066>:	2a 18	adds	r2, r5, r0
+   0x0002460c <+1068>:	86 46	mov	lr, r0
+   0x0002460e <+1070>:	03 cb	ldmia	r3!, {r0, r1}
+   0x00024610 <+1072>:	1b 78	ldrb	r3, [r3, #0]
+   0x00024612 <+1074>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x00024616 <+1078>:	51 60	str	r1, [r2, #4]
+   0x00024618 <+1080>:	13 72	strb	r3, [r2, #8]
+   0x0002461a <+1082>:	4a e7	b.n	0x244b2 <rmt_open__+722>
+   0x0002461c <+1084>:	28 46	mov	r0, r5
+   0x0002461e <+1086>:	e6 f7 80 ec	blx	0xaf20 <strlen@plt+4>
+   0x00024622 <+1090>:	49 f2 34 23	movw	r3, #37428	; 0x9234
+   0x00024626 <+1094>:	c0 f2 03 03	movt	r3, #3
+   0x0002462a <+1098>:	2a 18	adds	r2, r5, r0
+   0x0002462c <+1100>:	86 46	mov	lr, r0
+   0x0002462e <+1102>:	03 cb	ldmia	r3!, {r0, r1}
+   0x00024630 <+1104>:	1b 78	ldrb	r3, [r3, #0]
+   0x00024632 <+1106>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x00024636 <+1110>:	51 60	str	r1, [r2, #4]
+   0x00024638 <+1112>:	13 72	strb	r3, [r2, #8]
+   0x0002463a <+1114>:	37 e7	b.n	0x244ac <rmt_open__+716>
+   0x0002463c <+1116>:	28 46	mov	r0, r5
+   0x0002463e <+1118>:	e6 f7 70 ec	blx	0xaf20 <strlen@plt+4>
+   0x00024642 <+1122>:	49 f2 7c 22	movw	r2, #37500	; 0x927c
+   0x00024646 <+1126>:	c0 f2 03 02	movt	r2, #3
+   0x0002464a <+1130>:	49 f2 88 23	movw	r3, #37512	; 0x9288
+   0x0002464e <+1134>:	c0 f2 03 03	movt	r3, #3
+   0x00024652 <+1138>:	86 46	mov	lr, r0
+   0x00024654 <+1140>:	05 eb 00 0c	add.w	r12, r5, r0
+   0x00024658 <+1144>:	03 ca	ldmia	r2!, {r0, r1}
+   0x0002465a <+1146>:	0e f1 08 02	add.w	r2, lr, #8
+   0x0002465e <+1150>:	05 eb 02 09	add.w	r9, r5, r2
+   0x00024662 <+1154>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x00024666 <+1158>:	cc f8 04 10	str.w	r1, [r12, #4]
+   0x0002466a <+1162>:	03 cb	ldmia	r3!, {r0, r1}
+   0x0002466c <+1164>:	a8 50	str	r0, [r5, r2]
+   0x0002466e <+1166>:	c9 f8 04 10	str.w	r1, [r9, #4]
+   0x00024672 <+1170>:	2f e7	b.n	0x244d4 <rmt_open__+756>
+   0x00024674 <+1172>:	28 46	mov	r0, r5
+   0x00024676 <+1174>:	e6 f7 54 ec	blx	0xaf20 <strlen@plt+4>
+   0x0002467a <+1178>:	49 f2 28 23	movw	r3, #37416	; 0x9228
+   0x0002467e <+1182>:	c0 f2 03 03	movt	r3, #3
+   0x00024682 <+1186>:	2a 18	adds	r2, r5, r0
+   0x00024684 <+1188>:	86 46	mov	lr, r0
+   0x00024686 <+1190>:	03 cb	ldmia	r3!, {r0, r1}
+   0x00024688 <+1192>:	1b 88	ldrh	r3, [r3, #0]
+   0x0002468a <+1194>:	45 f8 0e 00	str.w	r0, [r5, lr]
+   0x0002468e <+1198>:	51 60	str	r1, [r2, #4]
+   0x00024690 <+1200>:	13 81	strh	r3, [r2, #8]
+   0x00024692 <+1202>:	08 e7	b.n	0x244a6 <rmt_open__+710>
+   0x00024694 <+1204>:	e6 f7 2a ee	blx	0xb2ec <close@plt>
+   0x00024698 <+1208>:	00 28	cmp	r0, #0
+   0x0002469a <+1210>:	7f f4 52 ae	bne.w	0x24342 <rmt_open__+354>
+   0x0002469e <+1214>:	32 e6	b.n	0x24306 <rmt_open__+294>
+   0x000246a0 <+1216>:	08 9a	ldr	r2, [sp, #32]
+   0x000246a2 <+1218>:	e6 f7 6c ed	blx	0xb17c <execl@plt>
+   0x000246a6 <+1222>:	7c e6	b.n	0x243a2 <rmt_open__+450>
+   0x000246a8 <+1224>:	e6 f7 86 ec	blx	0xafb8 <__errno_location@plt>
+   0x000246ac <+1228>:	05 68	ldr	r5, [r0, #0]
+   0x000246ae <+1230>:	04 46	mov	r4, r0
+   0x000246b0 <+1232>:	50 46	mov	r0, r10
+   0x000246b2 <+1234>:	e6 f7 34 ea	blx	0xab1c <free>
+   0x000246b6 <+1238>:	25 60	str	r5, [r4, #0]
+   0x000246b8 <+1240>:	b0 e5	b.n	0x2421c <rmt_open__+60>
+   0x000246ba <+1242>:	db f8 04 00	ldr.w	r0, [r11, #4]
+   0x000246be <+1246>:	e6 f7 16 ee	blx	0xb2ec <close@plt>
+   0x000246c2 <+1250>:	00 28	cmp	r0, #0
+   0x000246c4 <+1252>:	7f f4 3d ae	bne.w	0x24342 <rmt_open__+354>
+   0x000246c8 <+1256>:	4c e6	b.n	0x24364 <rmt_open__+388>
+   0x000246ca <+1258>:	e6 f7 76 ec	blx	0xafb8 <__errno_location@plt>
+   0x000246ce <+1262>:	05 68	ldr	r5, [r0, #0]
+   0x000246d0 <+1264>:	40 46	mov	r0, r8
+   0x000246d2 <+1266>:	e6 f7 24 ea	blx	0xab1c <free>
+   0x000246d6 <+1270>:	50 46	mov	r0, r10
+   0x000246d8 <+1272>:	e6 f7 20 ea	blx	0xab1c <free>
+   0x000246dc <+1276>:	20 46	mov	r0, r4
+   0x000246de <+1278>:	29 46	mov	r1, r5
+   0x000246e0 <+1280>:	ff f7 b6 fc	bl	0x24050 <_rmt_shutdown>
+   0x000246e4 <+1284>:	9a e5	b.n	0x2421c <rmt_open__+60>
+   0x000246e6 <+1286>:	98 46	mov	r8, r3
+   0x000246e8 <+1288>:	cd f8 20 a0	str.w	r10, [sp, #32]
+   0x000246ec <+1292>:	07 93	str	r3, [sp, #28]
+   0x000246ee <+1294>:	c4 e5	b.n	0x2427a <rmt_open__+154>
+   0x000246f0 <+1296>:	7c 56	ldrsb	r4, [r7, r1]
+   0x000246f2 <+1298>:	04 00	movs	r4, r0
+End of assembler dump.
+Dump of assembler code for function rmt_read__:
+   0x00024720 <+0>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x00024724 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x00024728 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x0002472c <+12>:	95 b0	sub	sp, #84	; 0x54
+   0x0002472e <+14>:	05 46	mov	r5, r0
+   0x00024730 <+16>:	0e 46	mov	r6, r1
+   0x00024732 <+18>:	d4 f8 00 e0	ldr.w	lr, [r4]
+   0x00024736 <+22>:	01 21	movs	r1, #1
+   0x00024738 <+24>:	00 92	str	r2, [sp, #0]
+   0x0002473a <+26>:	17 46	mov	r7, r2
+   0x0002473c <+28>:	03 a8	add	r0, sp, #12
+   0x0002473e <+30>:	40 22	movs	r2, #64	; 0x40
+   0x00024740 <+32>:	49 f2 a0 23	movw	r3, #37536	; 0x92a0
+   0x00024744 <+36>:	c0 f2 03 03	movt	r3, #3
+   0x00024748 <+40>:	cd f8 4c e0	str.w	lr, [sp, #76]	; 0x4c
+   0x0002474c <+44>:	e6 f7 40 ec	blx	0xafd0 <__sprintf_chk@plt>
+   0x00024750 <+48>:	28 46	mov	r0, r5
+   0x00024752 <+50>:	03 a9	add	r1, sp, #12
+   0x00024754 <+52>:	ff f7 96 fc	bl	0x24084 <do_command>
+   0x00024758 <+56>:	01 30	adds	r0, #1
+   0x0002475a <+58>:	08 d1	bne.n	0x2476e <rmt_read__+78>
+   0x0002475c <+60>:	4f f0 ff 30	mov.w	r0, #4294967295
+   0x00024760 <+64>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x00024762 <+66>:	23 68	ldr	r3, [r4, #0]
+   0x00024764 <+68>:	9a 42	cmp	r2, r3
+   0x00024766 <+70>:	27 d1	bne.n	0x247b8 <rmt_read__+152>
+   0x00024768 <+72>:	15 b0	add	sp, #84	; 0x54
+   0x0002476a <+74>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x0002476e <+78>:	28 46	mov	r0, r5
+   0x00024770 <+80>:	ff f7 10 fd	bl	0x24194 <get_status>
+   0x00024774 <+84>:	b0 f1 ff 3f	cmp.w	r0, #4294967295
+   0x00024778 <+88>:	80 46	mov	r8, r0
+   0x0002477a <+90>:	ef d0	beq.n	0x2475c <rmt_read__+60>
+   0x0002477c <+92>:	87 42	cmp	r7, r0
+   0x0002477e <+94>:	ed d3	bcc.n	0x2475c <rmt_read__+60>
+   0x00024780 <+96>:	c0 b1	cbz	r0, 0x247b4 <rmt_read__+148>
+   0x00024782 <+98>:	45 f2 5c 69	movw	r9, #22108	; 0x565c
+   0x00024786 <+102>:	00 27	movs	r7, #0
+   0x00024788 <+104>:	c0 f2 04 09	movt	r9, #4
+   0x0002478c <+108>:	03 e0	b.n	0x24796 <rmt_read__+118>
+   0x0002478e <+110>:	07 44	add	r7, r0
+   0x00024790 <+112>:	06 44	add	r6, r0
+   0x00024792 <+114>:	b8 45	cmp	r8, r7
+   0x00024794 <+116>:	0e d9	bls.n	0x247b4 <rmt_read__+148>
+   0x00024796 <+118>:	59 f8 35 00	ldr.w	r0, [r9, r5, lsl #3]
+   0x0002479a <+122>:	31 46	mov	r1, r6
+   0x0002479c <+124>:	c7 eb 08 02	rsb	r2, r7, r8
+   0x000247a0 <+128>:	0a f0 0e fb	bl	0x2edc0 <safe_read>
+   0x000247a4 <+132>:	43 1e	subs	r3, r0, #1
+   0x000247a6 <+134>:	03 33	adds	r3, #3
+   0x000247a8 <+136>:	f1 d9	bls.n	0x2478e <rmt_read__+110>
+   0x000247aa <+138>:	28 46	mov	r0, r5
+   0x000247ac <+140>:	05 21	movs	r1, #5
+   0x000247ae <+142>:	ff f7 4f fc	bl	0x24050 <_rmt_shutdown>
+   0x000247b2 <+146>:	d3 e7	b.n	0x2475c <rmt_read__+60>
+   0x000247b4 <+148>:	40 46	mov	r0, r8
+   0x000247b6 <+150>:	d3 e7	b.n	0x24760 <rmt_read__+64>
+   0x000247b8 <+152>:	e6 f7 34 ea	blx	0xac24 <__stack_chk_fail@plt>
+End of assembler dump.
+Dump of assembler code for function rmt_write__:
+   0x000247bc <+0>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x000247c0 <+4>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x000247c4 <+8>:	c0 f2 04 04	movt	r4, #4
+   0x000247c8 <+12>:	95 b0	sub	sp, #84	; 0x54
+   0x000247ca <+14>:	05 46	mov	r5, r0
+   0x000247cc <+16>:	88 46	mov	r8, r1
+   0x000247ce <+18>:	27 68	ldr	r7, [r4, #0]
+   0x000247d0 <+20>:	01 21	movs	r1, #1
+   0x000247d2 <+22>:	00 92	str	r2, [sp, #0]
+   0x000247d4 <+24>:	16 46	mov	r6, r2
+   0x000247d6 <+26>:	03 a8	add	r0, sp, #12
+   0x000247d8 <+28>:	40 22	movs	r2, #64	; 0x40
+   0x000247da <+30>:	49 f2 a8 23	movw	r3, #37544	; 0x92a8
+   0x000247de <+34>:	c0 f2 03 03	movt	r3, #3
+   0x000247e2 <+38>:	13 97	str	r7, [sp, #76]	; 0x4c
+   0x000247e4 <+40>:	e6 f7 f4 eb	blx	0xafd0 <__sprintf_chk@plt>
+   0x000247e8 <+44>:	28 46	mov	r0, r5
+   0x000247ea <+46>:	03 a9	add	r1, sp, #12
+   0x000247ec <+48>:	ff f7 4a fc	bl	0x24084 <do_command>
+   0x000247f0 <+52>:	01 30	adds	r0, #1
+   0x000247f2 <+54>:	22 d0	beq.n	0x2483a <rmt_write__+126>
+   0x000247f4 <+56>:	01 21	movs	r1, #1
+   0x000247f6 <+58>:	0d 20	movs	r0, #13
+   0x000247f8 <+60>:	e6 f7 e2 e9	blx	0xabc0 <signal@plt+4>
+   0x000247fc <+64>:	45 f2 5c 63	movw	r3, #22108	; 0x565c
+   0x00024800 <+68>:	c0 f2 04 03	movt	r3, #4
+   0x00024804 <+72>:	41 46	mov	r1, r8
+   0x00024806 <+74>:	03 eb c5 03	add.w	r3, r3, r5, lsl #3
+   0x0002480a <+78>:	32 46	mov	r2, r6
+   0x0002480c <+80>:	81 46	mov	r9, r0
+   0x0002480e <+82>:	58 6a	ldr	r0, [r3, #36]	; 0x24
+   0x00024810 <+84>:	06 f0 e8 f8	bl	0x2a9e4 <full_write>
+   0x00024814 <+88>:	49 46	mov	r1, r9
+   0x00024816 <+90>:	07 46	mov	r7, r0
+   0x00024818 <+92>:	0d 20	movs	r0, #13
+   0x0002481a <+94>:	e6 f7 d2 e9	blx	0xabc0 <signal@plt+4>
+   0x0002481e <+98>:	b7 42	cmp	r7, r6
+   0x00024820 <+100>:	0d d0	beq.n	0x2483e <rmt_write__+130>
+   0x00024822 <+102>:	28 46	mov	r0, r5
+   0x00024824 <+104>:	05 21	movs	r1, #5
+   0x00024826 <+106>:	ff f7 13 fc	bl	0x24050 <_rmt_shutdown>
+   0x0002482a <+110>:	38 46	mov	r0, r7
+   0x0002482c <+112>:	13 9a	ldr	r2, [sp, #76]	; 0x4c
+   0x0002482e <+114>:	23 68	ldr	r3, [r4, #0]
+   0x00024830 <+116>:	9a 42	cmp	r2, r3
+   0x00024832 <+118>:	0f d1	bne.n	0x24854 <rmt_write__+152>
+   0x00024834 <+120>:	15 b0	add	sp, #84	; 0x54
+   0x00024836 <+122>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x0002483a <+126>:	00 20	movs	r0, #0
+   0x0002483c <+128>:	f6 e7	b.n	0x2482c <rmt_write__+112>
+   0x0002483e <+130>:	28 46	mov	r0, r5
+   0x00024840 <+132>:	ff f7 a8 fc	bl	0x24194 <get_status>
+   0x00024844 <+136>:	00 28	cmp	r0, #0
+   0x00024846 <+138>:	f8 db	blt.n	0x2483a <rmt_write__+126>
+   0x00024848 <+140>:	87 42	cmp	r7, r0
+   0x0002484a <+142>:	08 bf	it	eq
+   0x0002484c <+144>:	38 46	moveq	r0, r7
+   0x0002484e <+146>:	ed d0	beq.n	0x2482c <rmt_write__+112>
+   0x00024850 <+148>:	07 46	mov	r7, r0
+   0x00024852 <+150>:	e6 e7	b.n	0x24822 <rmt_write__+102>
+   0x00024854 <+152>:	e6 f7 e6 e9	blx	0xac24 <__stack_chk_fail@plt>
+End of assembler dump.
+Dump of assembler code for function _rmt_shutdown:
+   0x00024050 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x00024052 <+2>:	45 f2 5c 64	movw	r4, #22108	; 0x565c
+   0x00024056 <+6>:	c0 f2 04 04	movt	r4, #4
+   0x0002405a <+10>:	05 46	mov	r5, r0
+   0x0002405c <+12>:	04 eb c0 06	add.w	r6, r4, r0, lsl #3
+   0x00024060 <+16>:	0f 46	mov	r7, r1
+   0x00024062 <+18>:	54 f8 30 00	ldr.w	r0, [r4, r0, lsl #3]
+   0x00024066 <+22>:	e7 f7 42 e9	blx	0xb2ec <close@plt>
+   0x0002406a <+26>:	70 6a	ldr	r0, [r6, #36]	; 0x24
+   0x0002406c <+28>:	e7 f7 3e e9	blx	0xb2ec <close@plt>
+   0x00024070 <+32>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x00024074 <+36>:	44 f8 35 30	str.w	r3, [r4, r5, lsl #3]
+   0x00024078 <+40>:	73 62	str	r3, [r6, #36]	; 0x24
+   0x0002407a <+42>:	e6 f7 9e ef	blx	0xafb8 <__errno_location@plt>
+   0x0002407e <+46>:	07 60	str	r7, [r0, #0]
+   0x00024080 <+48>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function do_command:
+   0x00024084 <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x00024086 <+2>:	06 46	mov	r6, r0
+   0x00024088 <+4>:	08 46	mov	r0, r1
+   0x0002408a <+6>:	0d 46	mov	r5, r1
+   0x0002408c <+8>:	e6 f7 48 ef	blx	0xaf20 <strlen@plt+4>
+   0x00024090 <+12>:	01 21	movs	r1, #1
+   0x00024092 <+14>:	04 46	mov	r4, r0
+   0x00024094 <+16>:	0d 20	movs	r0, #13
+   0x00024096 <+18>:	e6 f7 94 ed	blx	0xabc0 <signal@plt+4>
+   0x0002409a <+22>:	45 f2 5c 63	movw	r3, #22108	; 0x565c
+   0x0002409e <+26>:	c0 f2 04 03	movt	r3, #4
+   0x000240a2 <+30>:	29 46	mov	r1, r5
+   0x000240a4 <+32>:	03 eb c6 03	add.w	r3, r3, r6, lsl #3
+   0x000240a8 <+36>:	22 46	mov	r2, r4
+   0x000240aa <+38>:	07 46	mov	r7, r0
+   0x000240ac <+40>:	58 6a	ldr	r0, [r3, #36]	; 0x24
+   0x000240ae <+42>:	06 f0 99 fc	bl	0x2a9e4 <full_write>
+   0x000240b2 <+46>:	39 46	mov	r1, r7
+   0x000240b4 <+48>:	05 46	mov	r5, r0
+   0x000240b6 <+50>:	0d 20	movs	r0, #13
+   0x000240b8 <+52>:	e6 f7 82 ed	blx	0xabc0 <signal@plt+4>
+   0x000240bc <+56>:	ac 42	cmp	r4, r5
+   0x000240be <+58>:	01 d1	bne.n	0x240c4 <do_command+64>
+   0x000240c0 <+60>:	00 20	movs	r0, #0
+   0x000240c2 <+62>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x000240c4 <+64>:	30 46	mov	r0, r6
+   0x000240c6 <+66>:	05 21	movs	r1, #5
+   0x000240c8 <+68>:	ff f7 c2 ff	bl	0x24050 <_rmt_shutdown>
+   0x000240cc <+72>:	4f f0 ff 30	mov.w	r0, #4294967295
+   0x000240d0 <+76>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function get_status:
+   0x00024194 <+0>:	10 b5	push	{r4, lr}
+   0x00024196 <+2>:	45 f2 70 74	movw	r4, #22384	; 0x5770
+   0x0002419a <+6>:	c0 f2 04 04	movt	r4, #4
+   0x0002419e <+10>:	92 b0	sub	sp, #72	; 0x48
+   0x000241a0 <+12>:	01 a9	add	r1, sp, #4
+   0x000241a2 <+14>:	23 68	ldr	r3, [r4, #0]
+   0x000241a4 <+16>:	11 93	str	r3, [sp, #68]	; 0x44
+   0x000241a6 <+18>:	ff f7 95 ff	bl	0x240d4 <get_status_string>
+   0x000241aa <+22>:	60 b1	cbz	r0, 0x241c6 <get_status+50>
+   0x000241ac <+24>:	00 21	movs	r1, #0
+   0x000241ae <+26>:	0a 22	movs	r2, #10
+   0x000241b0 <+28>:	e6 f7 68 ec	blx	0xaa84 <strtol@plt>
+   0x000241b4 <+32>:	03 1e	subs	r3, r0, #0
+   0x000241b6 <+34>:	09 db	blt.n	0x241cc <get_status+56>
+   0x000241b8 <+36>:	11 9a	ldr	r2, [sp, #68]	; 0x44
+   0x000241ba <+38>:	18 46	mov	r0, r3
+   0x000241bc <+40>:	23 68	ldr	r3, [r4, #0]
+   0x000241be <+42>:	9a 42	cmp	r2, r3
+   0x000241c0 <+44>:	0b d1	bne.n	0x241da <get_status+70>
+   0x000241c2 <+46>:	12 b0	add	sp, #72	; 0x48
+   0x000241c4 <+48>:	10 bd	pop	{r4, pc}
+   0x000241c6 <+50>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000241ca <+54>:	f5 e7	b.n	0x241b8 <get_status+36>
+   0x000241cc <+56>:	e6 f7 f4 ee	blx	0xafb8 <__errno_location@plt>
+   0x000241d0 <+60>:	05 22	movs	r2, #5
+   0x000241d2 <+62>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000241d6 <+66>:	02 60	str	r2, [r0, #0]
+   0x000241d8 <+68>:	ee e7	b.n	0x241b8 <get_status+36>
+   0x000241da <+70>:	e6 f7 24 ed	blx	0xac24 <__stack_chk_fail@plt>
+End of assembler dump.
+Dump of assembler code for function get_status_string:
+   0x000240d4 <+0>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x000240d8 <+4>:	45 f2 5c 66	movw	r6, #22108	; 0x565c
+   0x000240dc <+8>:	83 b0	sub	sp, #12
+   0x000240de <+10>:	88 46	mov	r8, r1
+   0x000240e0 <+12>:	01 f1 40 09	add.w	r9, r1, #64	; 0x40
+   0x000240e4 <+16>:	c0 f2 04 06	movt	r6, #4
+   0x000240e8 <+20>:	07 46	mov	r7, r0
+   0x000240ea <+22>:	0c 46	mov	r4, r1
+   0x000240ec <+24>:	04 e0	b.n	0x240f8 <get_status_string+36>
+   0x000240ee <+26>:	2b 78	ldrb	r3, [r5, #0]
+   0x000240f0 <+28>:	0a 2b	cmp	r3, #10
+   0x000240f2 <+30>:	13 d0	beq.n	0x2411c <get_status_string+72>
+   0x000240f4 <+32>:	4c 45	cmp	r4, r9
+   0x000240f6 <+34>:	09 d0	beq.n	0x2410c <get_status_string+56>
+   0x000240f8 <+36>:	21 46	mov	r1, r4
+   0x000240fa <+38>:	56 f8 37 00	ldr.w	r0, [r6, r7, lsl #3]
+   0x000240fe <+42>:	01 22	movs	r2, #1
+   0x00024100 <+44>:	25 46	mov	r5, r4
+   0x00024102 <+46>:	0a f0 5d fe	bl	0x2edc0 <safe_read>
+   0x00024106 <+50>:	01 34	adds	r4, #1
+   0x00024108 <+52>:	01 28	cmp	r0, #1
+   0x0002410a <+54>:	f0 d0	beq.n	0x240ee <get_status_string+26>
+   0x0002410c <+56>:	38 46	mov	r0, r7
+   0x0002410e <+58>:	05 21	movs	r1, #5
+   0x00024110 <+60>:	ff f7 9e ff	bl	0x24050 <_rmt_shutdown>
+   0x00024114 <+64>:	00 20	movs	r0, #0
+   0x00024116 <+66>:	03 b0	add	sp, #12
+   0x00024118 <+68>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x0002411c <+72>:	00 23	movs	r3, #0
+   0x0002411e <+74>:	2b 70	strb	r3, [r5, #0]
+   0x00024120 <+76>:	98 f8 00 30	ldrb.w	r3, [r8]
+   0x00024124 <+80>:	23 b9	cbnz	r3, 0x24130 <get_status_string+92>
+   0x00024126 <+82>:	f1 e7	b.n	0x2410c <get_status_string+56>
+   0x00024128 <+84>:	18 f8 01 3f	ldrb.w	r3, [r8, #1]!
+   0x0002412c <+88>:	00 2b	cmp	r3, #0
+   0x0002412e <+90>:	ed d0	beq.n	0x2410c <get_status_string+56>
+   0x00024130 <+92>:	20 2b	cmp	r3, #32
+   0x00024132 <+94>:	f9 d0	beq.n	0x24128 <get_status_string+84>
+   0x00024134 <+96>:	a3 f1 45 02	sub.w	r2, r3, #69	; 0x45
+   0x00024138 <+100>:	01 2a	cmp	r2, #1
+   0x0002413a <+102>:	0b d9	bls.n	0x24154 <get_status_string+128>
+   0x0002413c <+104>:	41 2b	cmp	r3, #65	; 0x41
+   0x0002413e <+106>:	08 bf	it	eq
+   0x00024140 <+108>:	08 f1 01 00	addeq.w	r0, r8, #1
+   0x00024144 <+112>:	e2 d1	bne.n	0x2410c <get_status_string+56>
+   0x00024146 <+114>:	03 b0	add	sp, #12
+   0x00024148 <+116>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x0002414c <+120>:	9d f8 07 30	ldrb.w	r3, [sp, #7]
+   0x00024150 <+124>:	0a 2b	cmp	r3, #10
+   0x00024152 <+126>:	08 d0	beq.n	0x24166 <get_status_string+146>
+   0x00024154 <+128>:	56 f8 37 00	ldr.w	r0, [r6, r7, lsl #3]
+   0x00024158 <+132>:	0d f1 07 01	add.w	r1, sp, #7
+   0x0002415c <+136>:	01 22	movs	r2, #1
+   0x0002415e <+138>:	0a f0 2f fe	bl	0x2edc0 <safe_read>
+   0x00024162 <+142>:	01 28	cmp	r0, #1
+   0x00024164 <+144>:	f2 d0	beq.n	0x2414c <get_status_string+120>
+   0x00024166 <+146>:	e6 f7 28 ef	blx	0xafb8 <__errno_location@plt>
+   0x0002416a <+150>:	00 21	movs	r1, #0
+   0x0002416c <+152>:	0a 22	movs	r2, #10
+   0x0002416e <+154>:	04 46	mov	r4, r0
+   0x00024170 <+156>:	08 f1 01 00	add.w	r0, r8, #1
+   0x00024174 <+160>:	e6 f7 86 ec	blx	0xaa84 <strtol@plt>
+   0x00024178 <+164>:	20 60	str	r0, [r4, #0]
+   0x0002417a <+166>:	01 46	mov	r1, r0
+   0x0002417c <+168>:	98 f8 00 30	ldrb.w	r3, [r8]
+   0x00024180 <+172>:	46 2b	cmp	r3, #70	; 0x46
+   0x00024182 <+174>:	18 bf	it	ne
+   0x00024184 <+176>:	00 20	movne	r0, #0
+   0x00024186 <+178>:	c6 d1	bne.n	0x24116 <get_status_string+66>
+   0x00024188 <+180>:	38 46	mov	r0, r7
+   0x0002418a <+182>:	ff f7 61 ff	bl	0x24050 <_rmt_shutdown>
+   0x0002418e <+186>:	00 20	movs	r0, #0
+   0x00024190 <+188>:	c1 e7	b.n	0x24116 <get_status_string+66>
+End of assembler dump.
+Dump of assembler code for function safe_read:
+   0x0002edc0 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x0002edc4 <+4>:	4f f4 60 48	mov.w	r8, #57344	; 0xe000
+   0x0002edc8 <+8>:	c7 f6 ff 78	movt	r8, #32767	; 0x7fff
+   0x0002edcc <+12>:	07 46	mov	r7, r0
+   0x0002edce <+14>:	0e 46	mov	r6, r1
+   0x0002edd0 <+16>:	14 46	mov	r4, r2
+   0x0002edd2 <+18>:	38 46	mov	r0, r7
+   0x0002edd4 <+20>:	31 46	mov	r1, r6
+   0x0002edd6 <+22>:	22 46	mov	r2, r4
+   0x0002edd8 <+24>:	db f7 66 ee	blx	0xaaa8 <read@plt>
+   0x0002eddc <+28>:	05 1e	subs	r5, r0, #0
+   0x0002edde <+30>:	0c da	bge.n	0x2edfa <safe_read+58>
+   0x0002ede0 <+32>:	dc f7 ea e8	blx	0xafb8 <__errno_location@plt>
+   0x0002ede4 <+36>:	03 68	ldr	r3, [r0, #0]
+   0x0002ede6 <+38>:	04 2b	cmp	r3, #4
+   0x0002ede8 <+40>:	f3 d0	beq.n	0x2edd2 <safe_read+18>
+   0x0002edea <+42>:	16 2b	cmp	r3, #22
+   0x0002edec <+44>:	05 d1	bne.n	0x2edfa <safe_read+58>
+   0x0002edee <+46>:	44 45	cmp	r4, r8
+   0x0002edf0 <+48>:	4f f4 60 44	mov.w	r4, #57344	; 0xe000
+   0x0002edf4 <+52>:	c7 f6 ff 74	movt	r4, #32767	; 0x7fff
+   0x0002edf8 <+56>:	eb d8	bhi.n	0x2edd2 <safe_read+18>
+   0x0002edfa <+58>:	28 46	mov	r0, r5
+   0x0002edfc <+60>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.
+Dump of assembler code for function safe_write:
+   0x0002ee00 <+0>:	2d e9 f0 41	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+   0x0002ee04 <+4>:	4f f4 60 48	mov.w	r8, #57344	; 0xe000
+   0x0002ee08 <+8>:	c7 f6 ff 78	movt	r8, #32767	; 0x7fff
+   0x0002ee0c <+12>:	07 46	mov	r7, r0
+   0x0002ee0e <+14>:	0e 46	mov	r6, r1
+   0x0002ee10 <+16>:	14 46	mov	r4, r2
+   0x0002ee12 <+18>:	38 46	mov	r0, r7
+   0x0002ee14 <+20>:	31 46	mov	r1, r6
+   0x0002ee16 <+22>:	22 46	mov	r2, r4
+   0x0002ee18 <+24>:	dc f7 2a e9	blx	0xb070 <write@plt>
+   0x0002ee1c <+28>:	05 1e	subs	r5, r0, #0
+   0x0002ee1e <+30>:	0c da	bge.n	0x2ee3a <safe_write+58>
+   0x0002ee20 <+32>:	dc f7 ca e8	blx	0xafb8 <__errno_location@plt>
+   0x0002ee24 <+36>:	03 68	ldr	r3, [r0, #0]
+   0x0002ee26 <+38>:	04 2b	cmp	r3, #4
+   0x0002ee28 <+40>:	f3 d0	beq.n	0x2ee12 <safe_write+18>
+   0x0002ee2a <+42>:	16 2b	cmp	r3, #22
+   0x0002ee2c <+44>:	05 d1	bne.n	0x2ee3a <safe_write+58>
+   0x0002ee2e <+46>:	44 45	cmp	r4, r8
+   0x0002ee30 <+48>:	4f f4 60 44	mov.w	r4, #57344	; 0xe000
+   0x0002ee34 <+52>:	c7 f6 ff 74	movt	r4, #32767	; 0x7fff
+   0x0002ee38 <+56>:	eb d8	bhi.n	0x2ee12 <safe_write+18>
+   0x0002ee3a <+58>:	28 46	mov	r0, r5
+   0x0002ee3c <+60>:	bd e8 f0 81	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+End of assembler dump.

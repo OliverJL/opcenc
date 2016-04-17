@@ -1,0 +1,760 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /usr/bin/vim.tiny...Reading symbols from /usr/lib/debug//usr/bin/vim.tiny...done.
+done.
+Dump of assembler code for function set_option_value:
+   0x0005389c <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x000538a0 <+4>:	85 b0	sub	sp, #20
+   0x000538a2 <+6>:	88 46	mov	r8, r1
+   0x000538a4 <+8>:	16 46	mov	r6, r2
+   0x000538a6 <+10>:	1d 46	mov	r5, r3
+   0x000538a8 <+12>:	82 46	mov	r10, r0
+   0x000538aa <+14>:	fa f7 67 fd	bl	0x4e37c <findoption>
+   0x000538ae <+18>:	df f8 2c b1	ldr.w	r11, [pc, #300]	; 0x539dc <set_option_value+320>
+   0x000538b2 <+22>:	fb 44	add	r11, pc
+   0x000538b4 <+24>:	04 1e	subs	r4, r0, #0
+   0x000538b6 <+26>:	c0 f2 89 80	blt.w	0x539cc <set_option_value+304>
+   0x000538ba <+30>:	49 4b	ldr	r3, [pc, #292]	; (0x539e0 <set_option_value+324>)
+   0x000538bc <+32>:	4f ea 84 09	mov.w	r9, r4, lsl #2
+   0x000538c0 <+36>:	67 01	lsls	r7, r4, #5
+   0x000538c2 <+38>:	c9 eb 07 02	rsb	r2, r9, r7
+   0x000538c6 <+42>:	7b 44	add	r3, pc
+   0x000538c8 <+44>:	13 44	add	r3, r2
+   0x000538ca <+46>:	9a 68	ldr	r2, [r3, #8]
+   0x000538cc <+48>:	51 07	lsls	r1, r2, #29
+   0x000538ce <+50>:	2f d4	bmi.n	0x53930 <set_option_value+148>
+   0x000538d0 <+52>:	18 46	mov	r0, r3
+   0x000538d2 <+54>:	29 46	mov	r1, r5
+   0x000538d4 <+56>:	03 92	str	r2, [sp, #12]
+   0x000538d6 <+58>:	fb f7 09 fb	bl	0x4eeec <get_varp_scope>
+   0x000538da <+62>:	00 28	cmp	r0, #0
+   0x000538dc <+64>:	68 d0	beq.n	0x539b0 <set_option_value+276>
+   0x000538de <+66>:	b8 fa 88 f3	clz	r3, r8
+   0x000538e2 <+70>:	00 2e	cmp	r6, #0
+   0x000538e4 <+72>:	03 9a	ldr	r2, [sp, #12]
+   0x000538e6 <+74>:	4f ea 53 13	mov.w	r3, r3, lsr #5
+   0x000538ea <+78>:	08 bf	it	eq
+   0x000538ec <+80>:	00 23	moveq	r3, #0
+   0x000538ee <+82>:	4b b1	cbz	r3, 0x53904 <set_option_value+104>
+   0x000538f0 <+84>:	33 78	ldrb	r3, [r6, #0]
+   0x000538f2 <+86>:	30 2b	cmp	r3, #48	; 0x30
+   0x000538f4 <+88>:	56 d1	bne.n	0x539a4 <set_option_value+264>
+   0x000538f6 <+90>:	33 46	mov	r3, r6
+   0x000538f8 <+92>:	13 f8 01 7f	ldrb.w	r7, [r3, #1]!
+   0x000538fc <+96>:	30 2f	cmp	r7, #48	; 0x30
+   0x000538fe <+98>:	fb d0	beq.n	0x538f8 <set_option_value+92>
+   0x00053900 <+100>:	00 2f	cmp	r7, #0
+   0x00053902 <+102>:	4f d1	bne.n	0x539a4 <set_option_value+264>
+   0x00053904 <+104>:	93 07	lsls	r3, r2, #30
+   0x00053906 <+106>:	08 d4	bmi.n	0x5391a <set_option_value+126>
+   0x00053908 <+108>:	01 46	mov	r1, r0
+   0x0005390a <+110>:	2b 46	mov	r3, r5
+   0x0005390c <+112>:	42 46	mov	r2, r8
+   0x0005390e <+114>:	20 46	mov	r0, r4
+   0x00053910 <+116>:	05 b0	add	sp, #20
+   0x00053912 <+118>:	bd e8 f0 4f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00053916 <+122>:	fe f7 b7 bc	b.w	0x52288 <set_bool_option>
+   0x0005391a <+126>:	00 23	movs	r3, #0
+   0x0005391c <+128>:	01 46	mov	r1, r0
+   0x0005391e <+130>:	01 95	str	r5, [sp, #4]
+   0x00053920 <+132>:	42 46	mov	r2, r8
+   0x00053922 <+134>:	20 46	mov	r0, r4
+   0x00053924 <+136>:	00 93	str	r3, [sp, #0]
+   0x00053926 <+138>:	fb f7 4b fb	bl	0x4efc0 <set_num_option>
+   0x0005392a <+142>:	05 b0	add	sp, #20
+   0x0005392c <+144>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00053930 <+148>:	da 68	ldr	r2, [r3, #12]
+   0x00053932 <+150>:	00 2a	cmp	r2, #0
+   0x00053934 <+152>:	3c d0	beq.n	0x539b0 <set_option_value+276>
+   0x00053936 <+154>:	30 46	mov	r0, r6
+   0x00053938 <+156>:	03 93	str	r3, [sp, #12]
+   0x0005393a <+158>:	ea f7 15 fe	bl	0x3e568 <vim_strsave>
+   0x0005393e <+162>:	06 46	mov	r6, r0
+   0x00053940 <+164>:	00 28	cmp	r0, #0
+   0x00053942 <+166>:	35 d0	beq.n	0x539b0 <set_option_value+276>
+   0x00053944 <+168>:	15 f0 06 0f	tst.w	r5, #6
+   0x00053948 <+172>:	03 9b	ldr	r3, [sp, #12]
+   0x0005394a <+174>:	18 bf	it	ne
+   0x0005394c <+176>:	29 46	movne	r1, r5
+   0x0005394e <+178>:	05 d1	bne.n	0x5395c <set_option_value+192>
+   0x00053950 <+180>:	1a 69	ldr	r2, [r3, #16]
+   0x00053952 <+182>:	12 f4 80 5f	tst.w	r2, #4096	; 0x1000
+   0x00053956 <+186>:	14 bf	ite	ne
+   0x00053958 <+188>:	02 21	movne	r1, #2
+   0x0005395a <+190>:	04 21	moveq	r1, #4
+   0x0005395c <+192>:	18 46	mov	r0, r3
+   0x0005395e <+194>:	fb f7 c5 fa	bl	0x4eeec <get_varp_scope>
+   0x00053962 <+198>:	00 23	movs	r3, #0
+   0x00053964 <+200>:	01 46	mov	r1, r0
+   0x00053966 <+202>:	02 68	ldr	r2, [r0, #0]
+   0x00053968 <+204>:	0e 60	str	r6, [r1, #0]
+   0x0005396a <+206>:	20 46	mov	r0, r4
+   0x0005396c <+208>:	00 95	str	r5, [sp, #0]
+   0x0005396e <+210>:	fc f7 37 f9	bl	0x4fbe0 <did_set_string_option>
+   0x00053972 <+214>:	00 28	cmp	r0, #0
+   0x00053974 <+216>:	d9 d1	bne.n	0x5392a <set_option_value+142>
+   0x00053976 <+218>:	1b 4a	ldr	r2, [pc, #108]	; (0x539e4 <set_option_value+328>)
+   0x00053978 <+220>:	c9 eb 07 03	rsb	r3, r9, r7
+   0x0005397c <+224>:	1a 49	ldr	r1, [pc, #104]	; (0x539e8 <set_option_value+332>)
+   0x0005397e <+226>:	7a 44	add	r2, pc
+   0x00053980 <+228>:	13 44	add	r3, r2
+   0x00053982 <+230>:	9a 68	ldr	r2, [r3, #8]
+   0x00053984 <+232>:	42 f4 80 70	orr.w	r0, r2, #256	; 0x100
+   0x00053988 <+236>:	98 60	str	r0, [r3, #8]
+   0x0005398a <+238>:	5b f8 01 10	ldr.w	r1, [r11, r1]
+   0x0005398e <+242>:	09 68	ldr	r1, [r1, #0]
+   0x00053990 <+244>:	81 b9	cbnz	r1, 0x539b4 <set_option_value+280>
+   0x00053992 <+246>:	15 f0 08 00	ands.w	r0, r5, #8
+   0x00053996 <+250>:	0d d1	bne.n	0x539b4 <set_option_value+280>
+   0x00053998 <+252>:	22 f4 80 02	bic.w	r2, r2, #4194304	; 0x400000
+   0x0005399c <+256>:	42 f4 80 72	orr.w	r2, r2, #256	; 0x100
+   0x000539a0 <+260>:	9a 60	str	r2, [r3, #8]
+   0x000539a2 <+262>:	c2 e7	b.n	0x5392a <set_option_value+142>
+   0x000539a4 <+264>:	11 48	ldr	r0, [pc, #68]	; (0x539ec <set_option_value+336>)
+   0x000539a6 <+266>:	32 46	mov	r2, r6
+   0x000539a8 <+268>:	51 46	mov	r1, r10
+   0x000539aa <+270>:	78 44	add	r0, pc
+   0x000539ac <+272>:	ea f7 4e fd	bl	0x3e44c <emsg3>
+   0x000539b0 <+276>:	00 20	movs	r0, #0
+   0x000539b2 <+278>:	ba e7	b.n	0x5392a <set_option_value+142>
+   0x000539b4 <+280>:	0e 4b	ldr	r3, [pc, #56]	; (0x539f0 <set_option_value+340>)
+   0x000539b6 <+282>:	c9 eb 07 07	rsb	r7, r9, r7
+   0x000539ba <+286>:	42 f4 80 02	orr.w	r2, r2, #4194304	; 0x400000
+   0x000539be <+290>:	00 20	movs	r0, #0
+   0x000539c0 <+292>:	7b 44	add	r3, pc
+   0x000539c2 <+294>:	42 f4 80 72	orr.w	r2, r2, #256	; 0x100
+   0x000539c6 <+298>:	3b 44	add	r3, r7
+   0x000539c8 <+300>:	9a 60	str	r2, [r3, #8]
+   0x000539ca <+302>:	ae e7	b.n	0x5392a <set_option_value+142>
+   0x000539cc <+304>:	09 48	ldr	r0, [pc, #36]	; (0x539f4 <set_option_value+344>)
+   0x000539ce <+306>:	51 46	mov	r1, r10
+   0x000539d0 <+308>:	78 44	add	r0, pc
+   0x000539d2 <+310>:	e2 f7 d3 f9	bl	0x35d7c <emsg2>
+   0x000539d6 <+314>:	00 20	movs	r0, #0
+   0x000539d8 <+316>:	a7 e7	b.n	0x5392a <set_option_value+142>
+   0x000539da <+318>:	00 bf	nop
+   0x000539dc <+320>:	e6 3d	subs	r5, #230	; 0xe6
+   0x000539de <+322>:	05 00	movs	r5, r0
+   0x000539e0 <+324>:	e2 74	strb	r2, [r4, #19]
+   0x000539e2 <+326>:	05 00	movs	r5, r0
+   0x000539e4 <+328>:	2a 74	strb	r2, [r5, #16]
+   0x000539e6 <+330>:	05 00	movs	r5, r0
+   0x000539e8 <+332>:	b0 05	lsls	r0, r6, #22
+   0x000539ea <+334>:	00 00	movs	r0, r0
+   0x000539ec <+336>:	ee 98	ldr	r0, [sp, #952]	; 0x3b8
+   0x000539ee <+338>:	03 00	movs	r3, r0
+   0x000539f0 <+340>:	e8 73	strb	r0, [r5, #15]
+   0x000539f2 <+342>:	05 00	movs	r5, r0
+   0x000539f4 <+344>:	ac 98	ldr	r0, [sp, #688]	; 0x2b0
+   0x000539f6 <+346>:	03 00	movs	r3, r0
+End of assembler dump.
+Dump of assembler code for function set_options_bin:
+   0x00050b04 <+0>:	3c 4b	ldr	r3, [pc, #240]	; (0x50bf8 <set_options_bin+244>)
+   0x00050b06 <+2>:	70 b4	push	{r4, r5, r6}
+   0x00050b08 <+4>:	7b 44	add	r3, pc
+   0x00050b0a <+6>:	21 b3	cbz	r1, 0x50b56 <set_options_bin+82>
+   0x00050b0c <+8>:	00 28	cmp	r0, #0
+   0x00050b0e <+10>:	46 d1	bne.n	0x50b9e <set_options_bin+154>
+   0x00050b10 <+12>:	94 07	lsls	r4, r2, #30
+   0x00050b12 <+14>:	64 d4	bmi.n	0x50bde <set_options_bin+218>
+   0x00050b14 <+16>:	39 49	ldr	r1, [pc, #228]	; (0x50bfc <set_options_bin+248>)
+   0x00050b16 <+18>:	12 f0 04 02	ands.w	r2, r2, #4
+   0x00050b1a <+22>:	59 58	ldr	r1, [r3, r1]
+   0x00050b1c <+24>:	0b 68	ldr	r3, [r1, #0]
+   0x00050b1e <+26>:	d3 f8 bc 65	ldr.w	r6, [r3, #1468]	; 0x5bc
+   0x00050b22 <+30>:	d3 f8 c8 55	ldr.w	r5, [r3, #1480]	; 0x5c8
+   0x00050b26 <+34>:	d3 f8 88 45	ldr.w	r4, [r3, #1416]	; 0x588
+   0x00050b2a <+38>:	d3 f8 60 05	ldr.w	r0, [r3, #1376]	; 0x560
+   0x00050b2e <+42>:	c3 f8 c0 65	str.w	r6, [r3, #1472]	; 0x5c0
+   0x00050b32 <+46>:	c3 f8 cc 55	str.w	r5, [r3, #1484]	; 0x5cc
+   0x00050b36 <+50>:	c3 f8 8c 45	str.w	r4, [r3, #1420]	; 0x58c
+   0x00050b3a <+54>:	c3 f8 64 05	str.w	r0, [r3, #1380]	; 0x564
+   0x00050b3e <+58>:	37 d1	bne.n	0x50bb0 <set_options_bin+172>
+   0x00050b40 <+60>:	2f 4b	ldr	r3, [pc, #188]	; (0x50c00 <set_options_bin+252>)
+   0x00050b42 <+62>:	7b 44	add	r3, pc
+   0x00050b44 <+64>:	1e 6d	ldr	r6, [r3, #80]	; 0x50
+   0x00050b46 <+66>:	5d 6d	ldr	r5, [r3, #84]	; 0x54
+   0x00050b48 <+68>:	9c 6d	ldr	r4, [r3, #88]	; 0x58
+   0x00050b4a <+70>:	d8 6d	ldr	r0, [r3, #92]	; 0x5c
+   0x00050b4c <+72>:	5e 66	str	r6, [r3, #100]	; 0x64
+   0x00050b4e <+74>:	9d 66	str	r5, [r3, #104]	; 0x68
+   0x00050b50 <+76>:	dc 66	str	r4, [r3, #108]	; 0x6c
+   0x00050b52 <+78>:	18 67	str	r0, [r3, #112]	; 0x70
+   0x00050b54 <+80>:	2c e0	b.n	0x50bb0 <set_options_bin+172>
+   0x00050b56 <+82>:	00 b3	cbz	r0, 0x50b9a <set_options_bin+150>
+   0x00050b58 <+84>:	91 07	lsls	r1, r2, #30
+   0x00050b5a <+86>:	12 d4	bmi.n	0x50b82 <set_options_bin+126>
+   0x00050b5c <+88>:	27 49	ldr	r1, [pc, #156]	; (0x50bfc <set_options_bin+248>)
+   0x00050b5e <+90>:	5b 58	ldr	r3, [r3, r1]
+   0x00050b60 <+92>:	1b 68	ldr	r3, [r3, #0]
+   0x00050b62 <+94>:	d3 f8 c0 55	ldr.w	r5, [r3, #1472]	; 0x5c0
+   0x00050b66 <+98>:	d3 f8 cc 45	ldr.w	r4, [r3, #1484]	; 0x5cc
+   0x00050b6a <+102>:	d3 f8 8c 05	ldr.w	r0, [r3, #1420]	; 0x58c
+   0x00050b6e <+106>:	d3 f8 64 15	ldr.w	r1, [r3, #1380]	; 0x564
+   0x00050b72 <+110>:	c3 f8 bc 55	str.w	r5, [r3, #1468]	; 0x5bc
+   0x00050b76 <+114>:	c3 f8 c8 45	str.w	r4, [r3, #1480]	; 0x5c8
+   0x00050b7a <+118>:	c3 f8 88 05	str.w	r0, [r3, #1416]	; 0x588
+   0x00050b7e <+122>:	c3 f8 60 15	str.w	r1, [r3, #1376]	; 0x560
+   0x00050b82 <+126>:	52 07	lsls	r2, r2, #29
+   0x00050b84 <+128>:	09 d4	bmi.n	0x50b9a <set_options_bin+150>
+   0x00050b86 <+130>:	1f 4b	ldr	r3, [pc, #124]	; (0x50c04 <set_options_bin+256>)
+   0x00050b88 <+132>:	7b 44	add	r3, pc
+   0x00050b8a <+134>:	03 f1 68 00	add.w	r0, r3, #104	; 0x68
+   0x00050b8e <+138>:	5c 6e	ldr	r4, [r3, #100]	; 0x64
+   0x00050b90 <+140>:	07 c8	ldmia	r0, {r0, r1, r2}
+   0x00050b92 <+142>:	1c 65	str	r4, [r3, #80]	; 0x50
+   0x00050b94 <+144>:	58 65	str	r0, [r3, #84]	; 0x54
+   0x00050b96 <+146>:	99 65	str	r1, [r3, #88]	; 0x58
+   0x00050b98 <+148>:	da 65	str	r2, [r3, #92]	; 0x5c
+   0x00050b9a <+150>:	70 bc	pop	{r4, r5, r6}
+   0x00050b9c <+152>:	70 47	bx	lr
+   0x00050b9e <+154>:	90 07	lsls	r0, r2, #30
+   0x00050ba0 <+156>:	48 bf	it	mi
+   0x00050ba2 <+158>:	02 f0 04 02	andmi.w	r2, r2, #4
+   0x00050ba6 <+162>:	0d d4	bmi.n	0x50bc4 <set_options_bin+192>
+   0x00050ba8 <+164>:	14 49	ldr	r1, [pc, #80]	; (0x50bfc <set_options_bin+248>)
+   0x00050baa <+166>:	02 f0 04 02	and.w	r2, r2, #4
+   0x00050bae <+170>:	59 58	ldr	r1, [r3, r1]
+   0x00050bb0 <+172>:	0b 68	ldr	r3, [r1, #0]
+   0x00050bb2 <+174>:	00 21	movs	r1, #0
+   0x00050bb4 <+176>:	c3 f8 bc 15	str.w	r1, [r3, #1468]	; 0x5bc
+   0x00050bb8 <+180>:	c3 f8 c8 15	str.w	r1, [r3, #1480]	; 0x5c8
+   0x00050bbc <+184>:	c3 f8 88 15	str.w	r1, [r3, #1416]	; 0x588
+   0x00050bc0 <+188>:	c3 f8 60 15	str.w	r1, [r3, #1376]	; 0x560
+   0x00050bc4 <+192>:	00 2a	cmp	r2, #0
+   0x00050bc6 <+194>:	e8 d1	bne.n	0x50b9a <set_options_bin+150>
+   0x00050bc8 <+196>:	0f 4b	ldr	r3, [pc, #60]	; (0x50c08 <set_options_bin+260>)
+   0x00050bca <+198>:	00 22	movs	r2, #0
+   0x00050bcc <+200>:	01 21	movs	r1, #1
+   0x00050bce <+202>:	7b 44	add	r3, pc
+   0x00050bd0 <+204>:	70 bc	pop	{r4, r5, r6}
+   0x00050bd2 <+206>:	19 66	str	r1, [r3, #96]	; 0x60
+   0x00050bd4 <+208>:	1a 65	str	r2, [r3, #80]	; 0x50
+   0x00050bd6 <+210>:	5a 65	str	r2, [r3, #84]	; 0x54
+   0x00050bd8 <+212>:	9a 65	str	r2, [r3, #88]	; 0x58
+   0x00050bda <+214>:	da 65	str	r2, [r3, #92]	; 0x5c
+   0x00050bdc <+216>:	70 47	bx	lr
+   0x00050bde <+218>:	53 07	lsls	r3, r2, #29
+   0x00050be0 <+220>:	db d4	bmi.n	0x50b9a <set_options_bin+150>
+   0x00050be2 <+222>:	0a 4b	ldr	r3, [pc, #40]	; (0x50c0c <set_options_bin+264>)
+   0x00050be4 <+224>:	7b 44	add	r3, pc
+   0x00050be6 <+226>:	03 f1 54 00	add.w	r0, r3, #84	; 0x54
+   0x00050bea <+230>:	1c 6d	ldr	r4, [r3, #80]	; 0x50
+   0x00050bec <+232>:	07 c8	ldmia	r0, {r0, r1, r2}
+   0x00050bee <+234>:	5c 66	str	r4, [r3, #100]	; 0x64
+   0x00050bf0 <+236>:	98 66	str	r0, [r3, #104]	; 0x68
+   0x00050bf2 <+238>:	d9 66	str	r1, [r3, #108]	; 0x6c
+   0x00050bf4 <+240>:	1a 67	str	r2, [r3, #112]	; 0x70
+   0x00050bf6 <+242>:	e7 e7	b.n	0x50bc8 <set_options_bin+196>
+   0x00050bf8 <+244>:	90 6b	ldr	r0, [r2, #56]	; 0x38
+   0x00050bfa <+246>:	05 00	movs	r5, r0
+   0x00050bfc <+248>:	b0 07	lsls	r0, r6, #30
+   0x00050bfe <+250>:	00 00	movs	r0, r0
+   0x00050c00 <+252>:	76 f5 05 00	sbcs.w	r0, r6, #8716288	; 0x850000
+   0x00050c04 <+256>:	30 f5 05 00			; <UNDEFINED> instruction: 0xf5300005
+   0x00050c08 <+260>:	ea f4 05 00			; <UNDEFINED> instruction: 0xf4ea0005
+   0x00050c0c <+264>:	d4 f4 05 00			; <UNDEFINED> instruction: 0xf4d40005
+End of assembler dump.
+Dump of assembler code for function set_string_default:
+   0x0005094c <+0>:	f8 b5	push	{r3, r4, r5, r6, r7, lr}
+   0x0005094e <+2>:	04 46	mov	r4, r0
+   0x00050950 <+4>:	08 46	mov	r0, r1
+   0x00050952 <+6>:	ed f7 09 fe	bl	0x3e568 <vim_strsave>
+   0x00050956 <+10>:	b0 b1	cbz	r0, 0x50986 <set_string_default+58>
+   0x00050958 <+12>:	06 46	mov	r6, r0
+   0x0005095a <+14>:	20 46	mov	r0, r4
+   0x0005095c <+16>:	fd f7 0e fd	bl	0x4e37c <findoption>
+   0x00050960 <+20>:	00 28	cmp	r0, #0
+   0x00050962 <+22>:	10 db	blt.n	0x50986 <set_string_default+58>
+   0x00050964 <+24>:	0b 4d	ldr	r5, [pc, #44]	; (0x50994 <set_string_default+72>)
+   0x00050966 <+26>:	87 00	lsls	r7, r0, #2
+   0x00050968 <+28>:	44 01	lsls	r4, r0, #5
+   0x0005096a <+30>:	e3 1b	subs	r3, r4, r7
+   0x0005096c <+32>:	7d 44	add	r5, pc
+   0x0005096e <+34>:	1d 44	add	r5, r3
+   0x00050970 <+36>:	ab 68	ldr	r3, [r5, #8]
+   0x00050972 <+38>:	1a 06	lsls	r2, r3, #24
+   0x00050974 <+40>:	08 d4	bmi.n	0x50988 <set_string_default+60>
+   0x00050976 <+42>:	08 48	ldr	r0, [pc, #32]	; (0x50998 <set_string_default+76>)
+   0x00050978 <+44>:	e4 1b	subs	r4, r4, r7
+   0x0005097a <+46>:	43 f0 80 03	orr.w	r3, r3, #128	; 0x80
+   0x0005097e <+50>:	78 44	add	r0, pc
+   0x00050980 <+52>:	20 44	add	r0, r4
+   0x00050982 <+54>:	46 61	str	r6, [r0, #20]
+   0x00050984 <+56>:	83 60	str	r3, [r0, #8]
+   0x00050986 <+58>:	f8 bd	pop	{r3, r4, r5, r6, r7, pc}
+   0x00050988 <+60>:	68 69	ldr	r0, [r5, #20]
+   0x0005098a <+62>:	ec f7 0b fd	bl	0x3d3a4 <vim_free>
+   0x0005098e <+66>:	ab 68	ldr	r3, [r5, #8]
+   0x00050990 <+68>:	f1 e7	b.n	0x50976 <set_string_default+42>
+   0x00050992 <+70>:	00 bf	nop
+   0x00050994 <+72>:	3c a4	add	r4, pc, #240	; (adr r4, 0x50a88 <set_init_3+204>)
+   0x00050996 <+74>:	05 00	movs	r5, r0
+   0x00050998 <+76>:	2a a4	add	r4, pc, #168	; (adr r4, 0x50a44 <set_init_3+136>)
+   0x0005099a <+78>:	05 00	movs	r5, r0
+End of assembler dump.
+Dump of assembler code for function set_string_option_direct:
+   0x00050e24 <+0>:	2d e9 f0 4f	stmdb	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00050e28 <+4>:	4c 1c	adds	r4, r1, #1
+   0x00050e2a <+6>:	df f8 1c 91	ldr.w	r9, [pc, #284]	; 0x50f48 <set_string_option_direct+292>
+   0x00050e2e <+10>:	83 b0	sub	sp, #12
+   0x00050e30 <+12>:	1f 46	mov	r7, r3
+   0x00050e32 <+14>:	18 bf	it	ne
+   0x00050e34 <+16>:	0e 46	movne	r6, r1
+   0x00050e36 <+18>:	f9 44	add	r9, pc
+   0x00050e38 <+20>:	6f d0	beq.n	0x50f1a <set_string_option_direct+246>
+   0x00050e3a <+22>:	44 4d	ldr	r5, [pc, #272]	; (0x50f4c <set_string_option_direct+296>)
+   0x00050e3c <+24>:	b4 00	lsls	r4, r6, #2
+   0x00050e3e <+26>:	4f ea 46 18	mov.w	r8, r6, lsl #5
+   0x00050e42 <+30>:	c4 eb 08 03	rsb	r3, r4, r8
+   0x00050e46 <+34>:	7d 44	add	r5, pc
+   0x00050e48 <+36>:	1d 44	add	r5, r3
+   0x00050e4a <+38>:	eb 68	ldr	r3, [r5, #12]
+   0x00050e4c <+40>:	db b1	cbz	r3, 0x50e86 <set_string_option_direct+98>
+   0x00050e4e <+42>:	10 46	mov	r0, r2
+   0x00050e50 <+44>:	ed f7 8a fb	bl	0x3e568 <vim_strsave>
+   0x00050e54 <+48>:	83 46	mov	r11, r0
+   0x00050e56 <+50>:	b0 b1	cbz	r0, 0x50e86 <set_string_option_direct+98>
+   0x00050e58 <+52>:	17 f0 06 03	ands.w	r3, r7, #6
+   0x00050e5c <+56>:	01 93	str	r3, [sp, #4]
+   0x00050e5e <+58>:	15 d0	beq.n	0x50e8c <set_string_option_direct+104>
+   0x00050e60 <+60>:	39 46	mov	r1, r7
+   0x00050e62 <+62>:	28 46	mov	r0, r5
+   0x00050e64 <+64>:	fe f7 42 f8	bl	0x4eeec <get_varp_scope>
+   0x00050e68 <+68>:	82 46	mov	r10, r0
+   0x00050e6a <+70>:	f8 07	lsls	r0, r7, #31
+   0x00050e6c <+72>:	51 d4	bmi.n	0x50f12 <set_string_option_direct+238>
+   0x00050e6e <+74>:	ca f8 00 b0	str.w	r11, [r10]
+   0x00050e72 <+78>:	37 4a	ldr	r2, [pc, #220]	; (0x50f50 <set_string_option_direct+300>)
+   0x00050e74 <+80>:	c4 eb 08 03	rsb	r3, r4, r8
+   0x00050e78 <+84>:	7a 44	add	r2, pc
+   0x00050e7a <+86>:	14 46	mov	r4, r2
+   0x00050e7c <+88>:	1c 44	add	r4, r3
+   0x00050e7e <+90>:	a3 68	ldr	r3, [r4, #8]
+   0x00050e80 <+92>:	43 f0 08 03	orr.w	r3, r3, #8
+   0x00050e84 <+96>:	a3 60	str	r3, [r4, #8]
+   0x00050e86 <+98>:	03 b0	add	sp, #12
+   0x00050e88 <+100>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00050e8c <+104>:	04 21	movs	r1, #4
+   0x00050e8e <+106>:	28 46	mov	r0, r5
+   0x00050e90 <+108>:	fe f7 2c f8	bl	0x4eeec <get_varp_scope>
+   0x00050e94 <+112>:	f9 07	lsls	r1, r7, #31
+   0x00050e96 <+114>:	82 46	mov	r10, r0
+   0x00050e98 <+116>:	12 d5	bpl.n	0x50ec0 <set_string_option_direct+156>
+   0x00050e9a <+118>:	aa 68	ldr	r2, [r5, #8]
+   0x00050e9c <+120>:	13 07	lsls	r3, r2, #28
+   0x00050e9e <+122>:	0f d5	bpl.n	0x50ec0 <set_string_option_direct+156>
+   0x00050ea0 <+124>:	2c 4a	ldr	r2, [pc, #176]	; (0x50f54 <set_string_option_direct+304>)
+   0x00050ea2 <+126>:	da f8 00 00	ldr.w	r0, [r10]
+   0x00050ea6 <+130>:	59 f8 02 20	ldr.w	r2, [r9, r2]
+   0x00050eaa <+134>:	12 68	ldr	r2, [r2, #0]
+   0x00050eac <+136>:	90 42	cmp	r0, r2
+   0x00050eae <+138>:	01 d0	beq.n	0x50eb4 <set_string_option_direct+144>
+   0x00050eb0 <+140>:	ec f7 78 fa	bl	0x3d3a4 <vim_free>
+   0x00050eb4 <+144>:	01 9b	ldr	r3, [sp, #4]
+   0x00050eb6 <+146>:	ca f8 00 b0	str.w	r11, [r10]
+   0x00050eba <+150>:	00 2b	cmp	r3, #0
+   0x00050ebc <+152>:	d9 d1	bne.n	0x50e72 <set_string_option_direct+78>
+   0x00050ebe <+154>:	01 e0	b.n	0x50ec4 <set_string_option_direct+160>
+   0x00050ec0 <+156>:	ca f8 00 b0	str.w	r11, [r10]
+   0x00050ec4 <+160>:	51 46	mov	r1, r10
+   0x00050ec6 <+162>:	30 46	mov	r0, r6
+   0x00050ec8 <+164>:	fd f7 28 fa	bl	0x4e31c <set_string_option_global>
+   0x00050ecc <+168>:	22 4a	ldr	r2, [pc, #136]	; (0x50f58 <set_string_option_direct+308>)
+   0x00050ece <+170>:	c4 eb 08 03	rsb	r3, r4, r8
+   0x00050ed2 <+174>:	01 99	ldr	r1, [sp, #4]
+   0x00050ed4 <+176>:	7a 44	add	r2, pc
+   0x00050ed6 <+178>:	b1 fa 81 fb	clz	r11, r1
+   0x00050eda <+182>:	14 46	mov	r4, r2
+   0x00050edc <+184>:	1c 44	add	r4, r3
+   0x00050ede <+186>:	4f ea 5b 1b	mov.w	r11, r11, lsr #5
+   0x00050ee2 <+190>:	22 69	ldr	r2, [r4, #16]
+   0x00050ee4 <+192>:	a3 68	ldr	r3, [r4, #8]
+   0x00050ee6 <+194>:	43 f0 08 03	orr.w	r3, r3, #8
+   0x00050eea <+198>:	a3 60	str	r3, [r4, #8]
+   0x00050eec <+200>:	1b ea 12 33	ands.w	r3, r11, r2, lsr #12
+   0x00050ef0 <+204>:	c9 d0	beq.n	0x50e86 <set_string_option_direct+98>
+   0x00050ef2 <+206>:	18 4b	ldr	r3, [pc, #96]	; (0x50f54 <set_string_option_direct+304>)
+   0x00050ef4 <+208>:	da f8 00 00	ldr.w	r0, [r10]
+   0x00050ef8 <+212>:	59 f8 03 40	ldr.w	r4, [r9, r3]
+   0x00050efc <+216>:	23 68	ldr	r3, [r4, #0]
+   0x00050efe <+218>:	83 42	cmp	r3, r0
+   0x00050f00 <+220>:	02 d0	beq.n	0x50f08 <set_string_option_direct+228>
+   0x00050f02 <+222>:	ec f7 4f fa	bl	0x3d3a4 <vim_free>
+   0x00050f06 <+226>:	20 68	ldr	r0, [r4, #0]
+   0x00050f08 <+228>:	ca f8 00 00	str.w	r0, [r10]
+   0x00050f0c <+232>:	03 b0	add	sp, #12
+   0x00050f0e <+234>:	bd e8 f0 8f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+   0x00050f12 <+238>:	aa 68	ldr	r2, [r5, #8]
+   0x00050f14 <+240>:	12 07	lsls	r2, r2, #28
+   0x00050f16 <+242>:	aa d5	bpl.n	0x50e6e <set_string_option_direct+74>
+   0x00050f18 <+244>:	c2 e7	b.n	0x50ea0 <set_string_option_direct+124>
+   0x00050f1a <+246>:	01 92	str	r2, [sp, #4]
+   0x00050f1c <+248>:	04 46	mov	r4, r0
+   0x00050f1e <+250>:	fd f7 2d fa	bl	0x4e37c <findoption>
+   0x00050f22 <+254>:	01 9a	ldr	r2, [sp, #4]
+   0x00050f24 <+256>:	06 1e	subs	r6, r0, #0
+   0x00050f26 <+258>:	88 da	bge.n	0x50e3a <set_string_option_direct+22>
+   0x00050f28 <+260>:	0c 4b	ldr	r3, [pc, #48]	; (0x50f5c <set_string_option_direct+312>)
+   0x00050f2a <+262>:	0d 49	ldr	r1, [pc, #52]	; (0x50f60 <set_string_option_direct+316>)
+   0x00050f2c <+264>:	59 f8 03 00	ldr.w	r0, [r9, r3]
+   0x00050f30 <+268>:	79 44	add	r1, pc
+   0x00050f32 <+270>:	e4 f7 23 ff	bl	0x35d7c <emsg2>
+   0x00050f36 <+274>:	0b 48	ldr	r0, [pc, #44]	; (0x50f64 <set_string_option_direct+320>)
+   0x00050f38 <+276>:	21 46	mov	r1, r4
+   0x00050f3a <+278>:	78 44	add	r0, pc
+   0x00050f3c <+280>:	03 b0	add	sp, #12
+   0x00050f3e <+282>:	bd e8 f0 4f	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+   0x00050f42 <+286>:	e4 f7 1b bf	b.w	0x35d7c <emsg2>
+   0x00050f46 <+290>:	00 bf	nop
+   0x00050f48 <+292>:	62 68	ldr	r2, [r4, #4]
+   0x00050f4a <+294>:	05 00	movs	r5, r0
+   0x00050f4c <+296>:	62 9f	ldr	r7, [sp, #392]	; 0x188
+   0x00050f4e <+298>:	05 00	movs	r5, r0
+   0x00050f50 <+300>:	30 9f	ldr	r7, [sp, #192]	; 0xc0
+   0x00050f52 <+302>:	05 00	movs	r5, r0
+   0x00050f54 <+304>:	98 05	lsls	r0, r3, #22
+   0x00050f56 <+306>:	00 00	movs	r0, r0
+   0x00050f58 <+308>:	d4 9e	ldr	r6, [sp, #848]	; 0x350
+   0x00050f5a <+310>:	05 00	movs	r5, r0
+   0x00050f5c <+312>:	e4 07	lsls	r4, r4, #31
+   0x00050f5e <+314>:	00 00	movs	r0, r0
+   0x00050f60 <+316>:	ac c1	stmia	r1!, {r2, r3, r5, r7}
+   0x00050f62 <+318>:	03 00	movs	r3, r0
+   0x00050f64 <+320>:	be c1	stmia	r1!, {r1, r2, r3, r4, r5, r7}
+   0x00050f66 <+322>:	03 00	movs	r3, r0
+End of assembler dump.
+Dump of assembler code for function set_term_defaults:
+   0x000517bc <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x000517be <+2>:	19 4c	ldr	r4, [pc, #100]	; (0x51824 <set_term_defaults+104>)
+   0x000517c0 <+4>:	19 4d	ldr	r5, [pc, #100]	; (0x51828 <set_term_defaults+108>)
+   0x000517c2 <+6>:	7c 44	add	r4, pc
+   0x000517c4 <+8>:	7d 44	add	r5, pc
+   0x000517c6 <+10>:	23 68	ldr	r3, [r4, #0]
+   0x000517c8 <+12>:	1b b9	cbnz	r3, 0x517d2 <set_term_defaults+22>
+   0x000517ca <+14>:	2a e0	b.n	0x51822 <set_term_defaults+102>
+   0x000517cc <+16>:	54 f8 1c 3f	ldr.w	r3, [r4, #28]!
+   0x000517d0 <+20>:	33 b3	cbz	r3, 0x51820 <set_term_defaults+100>
+   0x000517d2 <+22>:	1a 78	ldrb	r2, [r3, #0]
+   0x000517d4 <+24>:	74 2a	cmp	r2, #116	; 0x74
+   0x000517d6 <+26>:	f9 d1	bne.n	0x517cc <set_term_defaults+16>
+   0x000517d8 <+28>:	5b 78	ldrb	r3, [r3, #1]
+   0x000517da <+30>:	5f 2b	cmp	r3, #95	; 0x5f
+   0x000517dc <+32>:	f6 d1	bne.n	0x517cc <set_term_defaults+16>
+   0x000517de <+34>:	e3 68	ldr	r3, [r4, #12]
+   0x000517e0 <+36>:	60 69	ldr	r0, [r4, #20]
+   0x000517e2 <+38>:	1a 68	ldr	r2, [r3, #0]
+   0x000517e4 <+40>:	90 42	cmp	r0, r2
+   0x000517e6 <+42>:	f1 d0	beq.n	0x517cc <set_term_defaults+16>
+   0x000517e8 <+44>:	a3 68	ldr	r3, [r4, #8]
+   0x000517ea <+46>:	19 06	lsls	r1, r3, #24
+   0x000517ec <+48>:	0c d5	bpl.n	0x51808 <set_term_defaults+76>
+   0x000517ee <+50>:	0f 49	ldr	r1, [pc, #60]	; (0x5182c <set_term_defaults+112>)
+   0x000517f0 <+52>:	69 58	ldr	r1, [r5, r1]
+   0x000517f2 <+54>:	09 68	ldr	r1, [r1, #0]
+   0x000517f4 <+56>:	88 42	cmp	r0, r1
+   0x000517f6 <+58>:	04 d0	beq.n	0x51802 <set_term_defaults+70>
+   0x000517f8 <+60>:	eb f7 d4 fd	bl	0x3d3a4 <vim_free>
+   0x000517fc <+64>:	e2 68	ldr	r2, [r4, #12]
+   0x000517fe <+66>:	a3 68	ldr	r3, [r4, #8]
+   0x00051800 <+68>:	12 68	ldr	r2, [r2, #0]
+   0x00051802 <+70>:	23 f0 80 03	bic.w	r3, r3, #128	; 0x80
+   0x00051806 <+74>:	a3 60	str	r3, [r4, #8]
+   0x00051808 <+76>:	62 61	str	r2, [r4, #20]
+   0x0005180a <+78>:	1a 07	lsls	r2, r3, #28
+   0x0005180c <+80>:	42 bf	ittt	mi
+   0x0005180e <+82>:	23 f0 08 03	bicmi.w	r3, r3, #8
+   0x00051812 <+86>:	43 f0 80 03	orrmi.w	r3, r3, #128	; 0x80
+   0x00051816 <+90>:	a3 60	strmi	r3, [r4, #8]
+   0x00051818 <+92>:	54 f8 1c 3f	ldr.w	r3, [r4, #28]!
+   0x0005181c <+96>:	00 2b	cmp	r3, #0
+   0x0005181e <+98>:	d8 d1	bne.n	0x517d2 <set_term_defaults+22>
+   0x00051820 <+100>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051822 <+102>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051824 <+104>:	e6 95	str	r5, [sp, #920]	; 0x398
+   0x00051826 <+106>:	05 00	movs	r5, r0
+   0x00051828 <+108>:	d4 5e	ldrsh	r4, [r2, r3]
+   0x0005182a <+110>:	05 00	movs	r5, r0
+   0x0005182c <+112>:	98 05	lsls	r0, r3, #22
+   0x0005182e <+114>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function set_term_option_alloced:
+   0x00050ddc <+0>:	0f 4b	ldr	r3, [pc, #60]	; (0x50e1c <set_term_option_alloced+64>)
+   0x00050dde <+2>:	7b 44	add	r3, pc
+   0x00050de0 <+4>:	da 69	ldr	r2, [r3, #28]
+   0x00050de2 <+6>:	6a b1	cbz	r2, 0x50e00 <set_term_option_alloced+36>
+   0x00050de4 <+8>:	9a 6a	ldr	r2, [r3, #40]	; 0x28
+   0x00050de6 <+10>:	90 42	cmp	r0, r2
+   0x00050de8 <+12>:	18 bf	it	ne
+   0x00050dea <+14>:	01 22	movne	r2, #1
+   0x00050dec <+16>:	03 d1	bne.n	0x50df6 <set_term_option_alloced+26>
+   0x00050dee <+18>:	08 e0	b.n	0x50e02 <set_term_option_alloced+38>
+   0x00050df0 <+20>:	99 6a	ldr	r1, [r3, #40]	; 0x28
+   0x00050df2 <+22>:	81 42	cmp	r1, r0
+   0x00050df4 <+24>:	06 d0	beq.n	0x50e04 <set_term_option_alloced+40>
+   0x00050df6 <+26>:	99 6b	ldr	r1, [r3, #56]	; 0x38
+   0x00050df8 <+28>:	01 32	adds	r2, #1
+   0x00050dfa <+30>:	1c 33	adds	r3, #28
+   0x00050dfc <+32>:	00 29	cmp	r1, #0
+   0x00050dfe <+34>:	f7 d1	bne.n	0x50df0 <set_term_option_alloced+20>
+   0x00050e00 <+36>:	70 47	bx	lr
+   0x00050e02 <+38>:	01 22	movs	r2, #1
+   0x00050e04 <+40>:	06 49	ldr	r1, [pc, #24]	; (0x50e20 <set_term_option_alloced+68>)
+   0x00050e06 <+42>:	53 01	lsls	r3, r2, #5
+   0x00050e08 <+44>:	a3 eb 82 03	sub.w	r3, r3, r2, lsl #2
+   0x00050e0c <+48>:	79 44	add	r1, pc
+   0x00050e0e <+50>:	0a 46	mov	r2, r1
+   0x00050e10 <+52>:	1a 44	add	r2, r3
+   0x00050e12 <+54>:	93 68	ldr	r3, [r2, #8]
+   0x00050e14 <+56>:	43 f0 08 03	orr.w	r3, r3, #8
+   0x00050e18 <+60>:	93 60	str	r3, [r2, #8]
+   0x00050e1a <+62>:	70 47	bx	lr
+   0x00050e1c <+64>:	ca 9f	ldr	r7, [sp, #808]	; 0x328
+   0x00050e1e <+66>:	05 00	movs	r5, r0
+   0x00050e20 <+68>:	9c 9f	ldr	r7, [sp, #624]	; 0x270
+   0x00050e22 <+70>:	05 00	movs	r5, r0
+End of assembler dump.
+Dump of assembler code for function shortmess:
+   0x00051d4c <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00051d4e <+2>:	0f 4b	ldr	r3, [pc, #60]	; (0x51d8c <shortmess+64>)
+   0x00051d50 <+4>:	0f 4a	ldr	r2, [pc, #60]	; (0x51d90 <shortmess+68>)
+   0x00051d52 <+6>:	7b 44	add	r3, pc
+   0x00051d54 <+8>:	9d 58	ldr	r5, [r3, r2]
+   0x00051d56 <+10>:	2b 68	ldr	r3, [r5, #0]
+   0x00051d58 <+12>:	3b b1	cbz	r3, 0x51d6a <shortmess+30>
+   0x00051d5a <+14>:	04 46	mov	r4, r0
+   0x00051d5c <+16>:	18 46	mov	r0, r3
+   0x00051d5e <+18>:	21 46	mov	r1, r4
+   0x00051d60 <+20>:	eb f7 2e fb	bl	0x3d3c0 <vim_strchr>
+   0x00051d64 <+24>:	18 b1	cbz	r0, 0x51d6e <shortmess+34>
+   0x00051d66 <+26>:	01 20	movs	r0, #1
+   0x00051d68 <+28>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051d6a <+30>:	00 20	movs	r0, #0
+   0x00051d6c <+32>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051d6e <+34>:	28 68	ldr	r0, [r5, #0]
+   0x00051d70 <+36>:	61 21	movs	r1, #97	; 0x61
+   0x00051d72 <+38>:	eb f7 25 fb	bl	0x3d3c0 <vim_strchr>
+   0x00051d76 <+42>:	00 28	cmp	r0, #0
+   0x00051d78 <+44>:	f7 d0	beq.n	0x51d6a <shortmess+30>
+   0x00051d7a <+46>:	06 48	ldr	r0, [pc, #24]	; (0x51d94 <shortmess+72>)
+   0x00051d7c <+48>:	21 46	mov	r1, r4
+   0x00051d7e <+50>:	78 44	add	r0, pc
+   0x00051d80 <+52>:	eb f7 1e fb	bl	0x3d3c0 <vim_strchr>
+   0x00051d84 <+56>:	00 30	adds	r0, #0
+   0x00051d86 <+58>:	18 bf	it	ne
+   0x00051d88 <+60>:	01 20	movne	r0, #1
+   0x00051d8a <+62>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051d8c <+64>:	46 59	ldr	r6, [r0, r5]
+   0x00051d8e <+66>:	05 00	movs	r5, r0
+   0x00051d90 <+68>:	a4 04	lsls	r4, r4, #18
+   0x00051d92 <+70>:	00 00	movs	r0, r0
+   0x00051d94 <+72>:	a2 b3	cbz	r2, 0x51e00 <vimrc_found+104>
+   0x00051d96 <+74>:	03 00	movs	r3, r0
+End of assembler dump.
+Dump of assembler code for function unset_global_local_option:
+   0x00051860 <+0>:	38 b5	push	{r3, r4, r5, lr}
+   0x00051862 <+2>:	0c 46	mov	r4, r1
+   0x00051864 <+4>:	fc f7 8a fd	bl	0x4e37c <findoption>
+   0x00051868 <+8>:	02 46	mov	r2, r0
+   0x0005186a <+10>:	43 01	lsls	r3, r0, #5
+   0x0005186c <+12>:	38 48	ldr	r0, [pc, #224]	; (0x51950 <unset_global_local_option+240>)
+   0x0005186e <+14>:	a3 eb 82 03	sub.w	r3, r3, r2, lsl #2
+   0x00051872 <+18>:	38 4a	ldr	r2, [pc, #224]	; (0x51954 <unset_global_local_option+244>)
+   0x00051874 <+20>:	78 44	add	r0, pc
+   0x00051876 <+22>:	18 44	add	r0, r3
+   0x00051878 <+24>:	7a 44	add	r2, pc
+   0x0005187a <+26>:	03 69	ldr	r3, [r0, #16]
+   0x0005187c <+28>:	a3 f5 a0 43	sub.w	r3, r3, #20480	; 0x5000
+   0x00051880 <+32>:	01 3b	subs	r3, #1
+   0x00051882 <+34>:	24 2b	cmp	r3, #36	; 0x24
+   0x00051884 <+36>:	1a d8	bhi.n	0x518bc <unset_global_local_option+92>
+   0x00051886 <+38>:	df e8 03 f0	tbb	[pc, r3]
+   0x0005188a <+42>:	1a 1f	subs	r2, r3, #4
+   0x0005188c <+44>:	19 19	adds	r1, r3, r4
+   0x0005188e <+46>:	19 19	adds	r1, r3, r4
+   0x00051890 <+48>:	19 19	adds	r1, r3, r4
+   0x00051892 <+50>:	2f 19	adds	r7, r5, r4
+   0x00051894 <+52>:	19 19	adds	r1, r3, r4
+   0x00051896 <+54>:	19 19	adds	r1, r3, r4
+   0x00051898 <+56>:	19 19	adds	r1, r3, r4
+   0x0005189a <+58>:	19 19	adds	r1, r3, r4
+   0x0005189c <+60>:	3c 19	adds	r4, r7, r4
+   0x0005189e <+62>:	19 19	adds	r1, r3, r4
+   0x000518a0 <+64>:	19 19	adds	r1, r3, r4
+   0x000518a2 <+66>:	49 19	adds	r1, r1, r5
+   0x000518a4 <+68>:	19 19	adds	r1, r3, r4
+   0x000518a6 <+70>:	19 19	adds	r1, r3, r4
+   0x000518a8 <+72>:	19 56	ldrsb	r1, [r3, r0]
+   0x000518aa <+74>:	19 19	adds	r1, r3, r4
+   0x000518ac <+76>:	19 19	adds	r1, r3, r4
+   0x000518ae <+78>:	13 00	movs	r3, r2
+   0x000518b0 <+80>:	4f f4 ee 53	mov.w	r3, #7616	; 0x1dc0
+   0x000518b4 <+84>:	cf f6 fe 73	movt	r3, #65534	; 0xfffe
+   0x000518b8 <+88>:	c4 f8 e4 35	str.w	r3, [r4, #1508]	; 0x5e4
+   0x000518bc <+92>:	38 bd	pop	{r3, r4, r5, pc}
+   0x000518be <+94>:	4f f0 ff 33	mov.w	r3, #4294967295
+   0x000518c2 <+98>:	c4 f8 dc 35	str.w	r3, [r4, #1500]	; 0x5dc
+   0x000518c6 <+102>:	38 bd	pop	{r3, r4, r5, pc}
+   0x000518c8 <+104>:	23 4b	ldr	r3, [pc, #140]	; (0x51958 <unset_global_local_option+248>)
+   0x000518ca <+106>:	d4 f8 44 05	ldr.w	r0, [r4, #1348]	; 0x544
+   0x000518ce <+110>:	d5 58	ldr	r5, [r2, r3]
+   0x000518d0 <+112>:	2b 68	ldr	r3, [r5, #0]
+   0x000518d2 <+114>:	98 42	cmp	r0, r3
+   0x000518d4 <+116>:	02 d0	beq.n	0x518dc <unset_global_local_option+124>
+   0x000518d6 <+118>:	eb f7 65 fd	bl	0x3d3a4 <vim_free>
+   0x000518da <+122>:	2b 68	ldr	r3, [r5, #0]
+   0x000518dc <+124>:	c4 f8 44 35	str.w	r3, [r4, #1348]	; 0x544
+   0x000518e0 <+128>:	00 23	movs	r3, #0
+   0x000518e2 <+130>:	c4 f8 48 35	str.w	r3, [r4, #1352]	; 0x548
+   0x000518e6 <+134>:	38 bd	pop	{r3, r4, r5, pc}
+   0x000518e8 <+136>:	1b 4b	ldr	r3, [pc, #108]	; (0x51958 <unset_global_local_option+248>)
+   0x000518ea <+138>:	d4 f8 d4 05	ldr.w	r0, [r4, #1492]	; 0x5d4
+   0x000518ee <+142>:	d5 58	ldr	r5, [r2, r3]
+   0x000518f0 <+144>:	2b 68	ldr	r3, [r5, #0]
+   0x000518f2 <+146>:	98 42	cmp	r0, r3
+   0x000518f4 <+148>:	02 d0	beq.n	0x518fc <unset_global_local_option+156>
+   0x000518f6 <+150>:	eb f7 55 fd	bl	0x3d3a4 <vim_free>
+   0x000518fa <+154>:	2b 68	ldr	r3, [r5, #0]
+   0x000518fc <+156>:	c4 f8 d4 35	str.w	r3, [r4, #1492]	; 0x5d4
+   0x00051900 <+160>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051902 <+162>:	15 4b	ldr	r3, [pc, #84]	; (0x51958 <unset_global_local_option+248>)
+   0x00051904 <+164>:	d4 f8 80 05	ldr.w	r0, [r4, #1408]	; 0x580
+   0x00051908 <+168>:	d5 58	ldr	r5, [r2, r3]
+   0x0005190a <+170>:	2b 68	ldr	r3, [r5, #0]
+   0x0005190c <+172>:	98 42	cmp	r0, r3
+   0x0005190e <+174>:	02 d0	beq.n	0x51916 <unset_global_local_option+182>
+   0x00051910 <+176>:	eb f7 48 fd	bl	0x3d3a4 <vim_free>
+   0x00051914 <+180>:	2b 68	ldr	r3, [r5, #0]
+   0x00051916 <+182>:	c4 f8 80 35	str.w	r3, [r4, #1408]	; 0x580
+   0x0005191a <+186>:	38 bd	pop	{r3, r4, r5, pc}
+   0x0005191c <+188>:	0e 4b	ldr	r3, [pc, #56]	; (0x51958 <unset_global_local_option+248>)
+   0x0005191e <+190>:	d4 f8 d8 05	ldr.w	r0, [r4, #1496]	; 0x5d8
+   0x00051922 <+194>:	d5 58	ldr	r5, [r2, r3]
+   0x00051924 <+196>:	2b 68	ldr	r3, [r5, #0]
+   0x00051926 <+198>:	98 42	cmp	r0, r3
+   0x00051928 <+200>:	02 d0	beq.n	0x51930 <unset_global_local_option+208>
+   0x0005192a <+202>:	eb f7 3b fd	bl	0x3d3a4 <vim_free>
+   0x0005192e <+206>:	2b 68	ldr	r3, [r5, #0]
+   0x00051930 <+208>:	c4 f8 d8 35	str.w	r3, [r4, #1496]	; 0x5d8
+   0x00051934 <+212>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051936 <+214>:	08 4b	ldr	r3, [pc, #32]	; (0x51958 <unset_global_local_option+248>)
+   0x00051938 <+216>:	d4 f8 e0 05	ldr.w	r0, [r4, #1504]	; 0x5e0
+   0x0005193c <+220>:	d5 58	ldr	r5, [r2, r3]
+   0x0005193e <+222>:	2b 68	ldr	r3, [r5, #0]
+   0x00051940 <+224>:	98 42	cmp	r0, r3
+   0x00051942 <+226>:	02 d0	beq.n	0x5194a <unset_global_local_option+234>
+   0x00051944 <+228>:	eb f7 2e fd	bl	0x3d3a4 <vim_free>
+   0x00051948 <+232>:	2b 68	ldr	r3, [r5, #0]
+   0x0005194a <+234>:	c4 f8 e0 35	str.w	r3, [r4, #1504]	; 0x5e0
+   0x0005194e <+238>:	38 bd	pop	{r3, r4, r5, pc}
+   0x00051950 <+240>:	34 95	str	r5, [sp, #208]	; 0xd0
+   0x00051952 <+242>:	05 00	movs	r5, r0
+   0x00051954 <+244>:	20 5e	ldrsh	r0, [r4, r0]
+   0x00051956 <+246>:	05 00	movs	r5, r0
+   0x00051958 <+248>:	98 05	lsls	r0, r3, #22
+   0x0005195a <+250>:	00 00	movs	r0, r0
+End of assembler dump.
+Dump of assembler code for function vimrc_found:
+   0x00051d98 <+0>:	2d e9 f0 43	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+   0x00051d9c <+4>:	07 46	mov	r7, r0
+   0x00051d9e <+6>:	df f8 b4 90	ldr.w	r9, [pc, #180]	; 0x51e54 <vimrc_found+188>
+   0x00051da2 <+10>:	83 b0	sub	sp, #12
+   0x00051da4 <+12>:	2c 4b	ldr	r3, [pc, #176]	; (0x51e58 <vimrc_found+192>)
+   0x00051da6 <+14>:	00 22	movs	r2, #0
+   0x00051da8 <+16>:	f9 44	add	r9, pc
+   0x00051daa <+18>:	2c 48	ldr	r0, [pc, #176]	; (0x51e5c <vimrc_found+196>)
+   0x00051dac <+20>:	88 46	mov	r8, r1
+   0x00051dae <+22>:	59 f8 03 60	ldr.w	r6, [r9, r3]
+   0x00051db2 <+26>:	78 44	add	r0, pc
+   0x00051db4 <+28>:	00 92	str	r2, [sp, #0]
+   0x00051db6 <+30>:	33 68	ldr	r3, [r6, #0]
+   0x00051db8 <+32>:	01 93	str	r3, [sp, #4]
+   0x00051dba <+34>:	fc f7 df fa	bl	0x4e37c <findoption>
+   0x00051dbe <+38>:	00 28	cmp	r0, #0
+   0x00051dc0 <+40>:	08 db	blt.n	0x51dd4 <vimrc_found+60>
+   0x00051dc2 <+42>:	27 4b	ldr	r3, [pc, #156]	; (0x51e60 <vimrc_found+200>)
+   0x00051dc4 <+44>:	42 01	lsls	r2, r0, #5
+   0x00051dc6 <+46>:	a2 eb 80 02	sub.w	r2, r2, r0, lsl #2
+   0x00051dca <+50>:	7b 44	add	r3, pc
+   0x00051dcc <+52>:	13 44	add	r3, r2
+   0x00051dce <+54>:	9b 68	ldr	r3, [r3, #8]
+   0x00051dd0 <+56>:	db 05	lsls	r3, r3, #23
+   0x00051dd2 <+58>:	1c d4	bmi.n	0x51e0e <vimrc_found+118>
+   0x00051dd4 <+60>:	23 4b	ldr	r3, [pc, #140]	; (0x51e64 <vimrc_found+204>)
+   0x00051dd6 <+62>:	00 22	movs	r2, #0
+   0x00051dd8 <+64>:	23 4c	ldr	r4, [pc, #140]	; (0x51e68 <vimrc_found+208>)
+   0x00051dda <+66>:	15 46	mov	r5, r2
+   0x00051ddc <+68>:	59 f8 03 30	ldr.w	r3, [r9, r3]
+   0x00051de0 <+72>:	7c 44	add	r4, pc
+   0x00051de2 <+74>:	1a 60	str	r2, [r3, #0]
+   0x00051de4 <+76>:	01 e0	b.n	0x51dea <vimrc_found+82>
+   0x00051de6 <+78>:	01 35	adds	r5, #1
+   0x00051de8 <+80>:	1c 34	adds	r4, #28
+   0x00051dea <+82>:	23 68	ldr	r3, [r4, #0]
+   0x00051dec <+84>:	1a 78	ldrb	r2, [r3, #0]
+   0x00051dee <+86>:	74 2a	cmp	r2, #116	; 0x74
+   0x00051df0 <+88>:	08 d0	beq.n	0x51e04 <vimrc_found+108>
+   0x00051df2 <+90>:	a2 68	ldr	r2, [r4, #8]
+   0x00051df4 <+92>:	12 f4 a0 62	ands.w	r2, r2, #1280	; 0x500
+   0x00051df8 <+96>:	f5 d1	bne.n	0x51de6 <vimrc_found+78>
+   0x00051dfa <+98>:	01 21	movs	r1, #1
+   0x00051dfc <+100>:	28 46	mov	r0, r5
+   0x00051dfe <+102>:	ff f7 b3 f8	bl	0x50f68 <set_option_default>
+   0x00051e02 <+106>:	f0 e7	b.n	0x51de6 <vimrc_found+78>
+   0x00051e04 <+108>:	5b 78	ldrb	r3, [r3, #1]
+   0x00051e06 <+110>:	5f 2b	cmp	r3, #95	; 0x5f
+   0x00051e08 <+112>:	f3 d1	bne.n	0x51df2 <vimrc_found+90>
+   0x00051e0a <+114>:	fc f7 db fb	bl	0x4e5c4 <didset_options>
+   0x00051e0e <+118>:	3f b1	cbz	r7, 0x51e20 <vimrc_found+136>
+   0x00051e10 <+120>:	69 46	mov	r1, sp
+   0x00051e12 <+122>:	40 46	mov	r0, r8
+   0x00051e14 <+124>:	e9 f7 c6 fd	bl	0x3b9a4 <vim_getenv>
+   0x00051e18 <+128>:	01 46	mov	r1, r0
+   0x00051e1a <+130>:	58 b1	cbz	r0, 0x51e34 <vimrc_found+156>
+   0x00051e1c <+132>:	00 9b	ldr	r3, [sp, #0]
+   0x00051e1e <+134>:	33 b9	cbnz	r3, 0x51e2e <vimrc_found+150>
+   0x00051e20 <+136>:	01 9a	ldr	r2, [sp, #4]
+   0x00051e22 <+138>:	33 68	ldr	r3, [r6, #0]
+   0x00051e24 <+140>:	9a 42	cmp	r2, r3
+   0x00051e26 <+142>:	13 d1	bne.n	0x51e50 <vimrc_found+184>
+   0x00051e28 <+144>:	03 b0	add	sp, #12
+   0x00051e2a <+146>:	bd e8 f0 83	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+   0x00051e2e <+150>:	eb f7 b9 fa	bl	0x3d3a4 <vim_free>
+   0x00051e32 <+154>:	f5 e7	b.n	0x51e20 <vimrc_found+136>
+   0x00051e34 <+156>:	38 46	mov	r0, r7
+   0x00051e36 <+158>:	ea f7 05 f9	bl	0x3c044 <FullName_save>
+   0x00051e3a <+162>:	04 46	mov	r4, r0
+   0x00051e3c <+164>:	00 28	cmp	r0, #0
+   0x00051e3e <+166>:	ef d0	beq.n	0x51e20 <vimrc_found+136>
+   0x00051e40 <+168>:	40 46	mov	r0, r8
+   0x00051e42 <+170>:	21 46	mov	r1, r4
+   0x00051e44 <+172>:	e9 f7 16 fb	bl	0x3b474 <vim_setenv>
+   0x00051e48 <+176>:	20 46	mov	r0, r4
+   0x00051e4a <+178>:	eb f7 ab fa	bl	0x3d3a4 <vim_free>
+   0x00051e4e <+182>:	e7 e7	b.n	0x51e20 <vimrc_found+136>
+   0x00051e50 <+184>:	bb f7 06 e8	blx	0xce60 <__stack_chk_fail@plt>
+   0x00051e54 <+188>:	f0 58	ldr	r0, [r6, r3]
+   0x00051e56 <+190>:	05 00	movs	r5, r0
+   0x00051e58 <+192>:	78 03	lsls	r0, r7, #13
+   0x00051e5a <+194>:	00 00	movs	r0, r0
+   0x00051e5c <+196>:	7a b3	cbz	r2, 0x51ebe <option_was_set+10>
+   0x00051e5e <+198>:	03 00	movs	r3, r0
+   0x00051e60 <+200>:	de 8f	ldrh	r6, [r3, #62]	; 0x3e
+   0x00051e62 <+202>:	05 00	movs	r5, r0
+   0x00051e64 <+204>:	54 02	lsls	r4, r2, #9
+   0x00051e66 <+206>:	00 00	movs	r0, r0
+   0x00051e68 <+208>:	c8 8f	ldrh	r0, [r1, #62]	; 0x3e
+   0x00051e6a <+210>:	05 00	movs	r5, r0
+End of assembler dump.

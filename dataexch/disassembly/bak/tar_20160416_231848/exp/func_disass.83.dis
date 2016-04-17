@@ -1,0 +1,138 @@
+GNU gdb (Ubuntu 7.10-1ubuntu2) 7.10
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "arm-linux-gnueabihf".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from /bin/tar...Reading symbols from /usr/lib/debug//bin/tar...done.
+done.
+Dump of assembler code for function sparse_offset_decoder:
+   0x000157b8 <+0>:	30 b5	push	{r4, r5, lr}
+   0x000157ba <+2>:	85 b0	sub	sp, #20
+   0x000157bc <+4>:	15 46	mov	r5, r2
+   0x000157be <+6>:	04 46	mov	r4, r0
+   0x000157c0 <+8>:	00 91	str	r1, [sp, #0]
+   0x000157c2 <+10>:	02 a8	add	r0, sp, #8
+   0x000157c4 <+12>:	11 46	mov	r1, r2
+   0x000157c6 <+14>:	6f f0 00 43	mvn.w	r3, #2147483648	; 0x80000000
+   0x000157ca <+18>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x000157ce <+22>:	ff f7 79 ff	bl	0x156c4 <decode_num>
+   0x000157d2 <+26>:	68 b1	cbz	r0, 0x157f0 <sparse_offset_decoder+56>
+   0x000157d4 <+28>:	d4 f8 c4 10	ldr.w	r1, [r4, #196]	; 0xc4
+   0x000157d8 <+32>:	d4 f8 c8 30	ldr.w	r3, [r4, #200]	; 0xc8
+   0x000157dc <+36>:	99 42	cmp	r1, r3
+   0x000157de <+38>:	09 d2	bcs.n	0x157f4 <sparse_offset_decoder+60>
+   0x000157e0 <+40>:	d4 f8 cc 00	ldr.w	r0, [r4, #204]	; 0xcc
+   0x000157e4 <+44>:	dd e9 02 23	ldrd	r2, r3, [sp, #8]
+   0x000157e8 <+48>:	00 eb 01 11	add.w	r1, r0, r1, lsl #4
+   0x000157ec <+52>:	c1 e9 00 23	strd	r2, r3, [r1]
+   0x000157f0 <+56>:	05 b0	add	sp, #20
+   0x000157f2 <+58>:	30 bd	pop	{r4, r5, pc}
+   0x000157f4 <+60>:	05 22	movs	r2, #5
+   0x000157f6 <+62>:	43 f6 c8 71	movw	r1, #16328	; 0x3fc8
+   0x000157fa <+66>:	00 20	movs	r0, #0
+   0x000157fc <+68>:	c0 f2 03 01	movt	r1, #3
+   0x00015800 <+72>:	f5 f7 0a ea	blx	0xac18 <dcgettext@plt>
+   0x00015804 <+76>:	00 95	str	r5, [sp, #0]
+   0x00015806 <+78>:	44 f2 84 13	movw	r3, #16772	; 0x4184
+   0x0001580a <+82>:	c0 f2 03 03	movt	r3, #3
+   0x0001580e <+86>:	02 46	mov	r2, r0
+   0x00015810 <+88>:	00 20	movs	r0, #0
+   0x00015812 <+90>:	01 46	mov	r1, r0
+   0x00015814 <+92>:	f5 f7 d4 ea	blx	0xadc0 <error@plt+4>
+   0x00015818 <+96>:	45 f6 ac 63	movw	r3, #24236	; 0x5eac
+   0x0001581c <+100>:	c0 f2 04 03	movt	r3, #4
+   0x00015820 <+104>:	02 22	movs	r2, #2
+   0x00015822 <+106>:	1a 60	str	r2, [r3, #0]
+   0x00015824 <+108>:	05 b0	add	sp, #20
+   0x00015826 <+110>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_size_coder:
+   0x0001597c <+0>:	f0 b5	push	{r4, r5, r6, r7, lr}
+   0x0001597e <+2>:	85 b0	sub	sp, #20
+   0x00015980 <+4>:	d0 e9 18 67	ldrd	r6, r7, [r0, #96]	; 0x60
+   0x00015984 <+8>:	0b 46	mov	r3, r1
+   0x00015986 <+10>:	02 92	str	r2, [sp, #8]
+   0x00015988 <+12>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x0001598c <+16>:	4f f0 ff 35	mov.w	r5, #4294967295
+   0x00015990 <+20>:	1a 46	mov	r2, r3
+   0x00015992 <+22>:	30 46	mov	r0, r6
+   0x00015994 <+24>:	39 46	mov	r1, r7
+   0x00015996 <+26>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x0001599a <+30>:	ff f7 ab ff	bl	0x158f4 <code_signed_num>
+   0x0001599e <+34>:	05 b0	add	sp, #20
+   0x000159a0 <+36>:	f0 bd	pop	{r4, r5, r6, r7, pc}
+End of assembler dump.
+Dump of assembler code for function sparse_size_decoder:
+   0x00015828 <+0>:	10 b5	push	{r4, lr}
+   0x0001582a <+2>:	84 b0	sub	sp, #16
+   0x0001582c <+4>:	04 46	mov	r4, r0
+   0x0001582e <+6>:	6f f0 00 43	mvn.w	r3, #2147483648	; 0x80000000
+   0x00015832 <+10>:	00 91	str	r1, [sp, #0]
+   0x00015834 <+12>:	02 a8	add	r0, sp, #8
+   0x00015836 <+14>:	11 46	mov	r1, r2
+   0x00015838 <+16>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x0001583c <+20>:	ff f7 42 ff	bl	0x156c4 <decode_num>
+   0x00015840 <+24>:	18 b1	cbz	r0, 0x1584a <sparse_size_decoder+34>
+   0x00015842 <+26>:	dd e9 02 23	ldrd	r2, r3, [sp, #8]
+   0x00015846 <+30>:	c4 e9 18 23	strd	r2, r3, [r4, #96]	; 0x60
+   0x0001584a <+34>:	04 b0	add	sp, #16
+   0x0001584c <+36>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function uid_coder:
+   0x0001595c <+0>:	30 b5	push	{r4, r5, lr}
+   0x0001595e <+2>:	85 b0	sub	sp, #20
+   0x00015960 <+4>:	80 6c	ldr	r0, [r0, #72]	; 0x48
+   0x00015962 <+6>:	4f f0 ff 34	mov.w	r4, #4294967295
+   0x00015966 <+10>:	02 92	str	r2, [sp, #8]
+   0x00015968 <+12>:	00 25	movs	r5, #0
+   0x0001596a <+14>:	0a 46	mov	r2, r1
+   0x0001596c <+16>:	cd e9 00 45	strd	r4, r5, [sp]
+   0x00015970 <+20>:	00 21	movs	r1, #0
+   0x00015972 <+22>:	ff f7 bf ff	bl	0x158f4 <code_signed_num>
+   0x00015976 <+26>:	05 b0	add	sp, #20
+   0x00015978 <+28>:	30 bd	pop	{r4, r5, pc}
+End of assembler dump.
+Dump of assembler code for function uid_decoder:
+   0x000156a4 <+0>:	10 b5	push	{r4, lr}
+   0x000156a6 <+2>:	84 b0	sub	sp, #16
+   0x000156a8 <+4>:	04 46	mov	r4, r0
+   0x000156aa <+6>:	00 23	movs	r3, #0
+   0x000156ac <+8>:	00 91	str	r1, [sp, #0]
+   0x000156ae <+10>:	02 a8	add	r0, sp, #8
+   0x000156b0 <+12>:	11 46	mov	r1, r2
+   0x000156b2 <+14>:	4f f0 ff 32	mov.w	r2, #4294967295
+   0x000156b6 <+18>:	ff f7 9b ff	bl	0x155f0 <decode_signed_num>
+   0x000156ba <+22>:	08 b1	cbz	r0, 0x156c0 <uid_decoder+28>
+   0x000156bc <+24>:	02 9b	ldr	r3, [sp, #8]
+   0x000156be <+26>:	a3 64	str	r3, [r4, #72]	; 0x48
+   0x000156c0 <+28>:	04 b0	add	sp, #16
+   0x000156c2 <+30>:	10 bd	pop	{r4, pc}
+End of assembler dump.
+Dump of assembler code for function uname_coder:
+   0x00015440 <+0>:	00 69	ldr	r0, [r0, #16]
+   0x00015442 <+2>:	dd e7	b.n	0x15400 <code_string>
+End of assembler dump.
+Dump of assembler code for function uname_decoder:
+   0x00014d38 <+0>:	10 30	adds	r0, #16
+   0x00014d3a <+2>:	11 46	mov	r1, r2
+   0x00014d3c <+4>:	d6 e7	b.n	0x14cec <decode_string>
+End of assembler dump.
+Dump of assembler code for function volume_filename_decoder:
+   0x00014d20 <+0>:	46 f2 78 00	movw	r0, #24696	; 0x6078
+   0x00014d24 <+4>:	11 46	mov	r1, r2
+   0x00014d26 <+6>:	c0 f2 04 00	movt	r0, #4
+   0x00014d2a <+10>:	df e7	b.n	0x14cec <decode_string>
+End of assembler dump.
+Dump of assembler code for function volume_label_coder:
+   0x0001543c <+0>:	18 46	mov	r0, r3
+   0x0001543e <+2>:	df e7	b.n	0x15400 <code_string>
+End of assembler dump.
